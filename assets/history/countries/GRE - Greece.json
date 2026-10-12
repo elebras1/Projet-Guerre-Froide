@@ -43,5 +43,127 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "GRE_A1",
+            "province": 6475,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.19,
+                    "name_id": "GRE_U1"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.9,
+                    "experience": 0.19,
+                    "name_id": "GRE_U2"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.2,
+                    "name_id": "GRE_U3"
+                }
+            ]
+        },
+        {
+            "name_id": "GRE_A2",
+            "province": 6697,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.2,
+                    "name_id": "GRE_U4"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.88,
+                    "experience": 0.21,
+                    "name_id": "GRE_U5"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.2,
+                    "name_id": "GRE_U6"
+                }
+            ]
+        },
+        {
+            "name_id": "GRE_A3",
+            "province": 6590,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.2,
+                    "name_id": "GRE_U7"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.875,
+                    "experience": 0.2,
+                    "name_id": "GRE_U8"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.9,
+                    "experience": 0.2,
+                    "name_id": "GRE_U9"
+                }
+            ]
+        },
+        {
+            "name_id": "GRE_A4",
+            "province": 6696,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.14,
+                    "name_id": "GRE_U10"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.14,
+                    "name_id": "GRE_U11"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.88,
+                    "experience": 0.14,
+                    "name_id": "GRE_U12"
+                }
+            ]
+        }
+    ],
+    "navies": [
+        {
+            "name_id": "GRE_N1",
+            "province": 6590,
+            "base": 6590,
+            "ships": [
+                {
+                    "type": "submarine",
+                    "strength": 0.4,
+                    "experience": 0.0,
+                    "name_id": "GRE_U14"
+                }
+            ]
+        }
+    ],
+    "air_wings": [
+        {
+            "type": "multirole_fighter",
+            "base": 6697,
+            "strength": 0.3,
+            "experience": 0.0,
+            "name_id": "GRE_U13"
+        }
+    ]
 }

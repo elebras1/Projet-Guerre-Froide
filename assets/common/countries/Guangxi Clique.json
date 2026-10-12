@@ -6,69 +6,69 @@
     ],
     "default_templates": {
         "CHC_airborne_division": [
-            "air_cav_brigade",
-            "air_cav_brigade",
-            "air_cav_brigade",
-            "air_cav_brigade"
+            "special_forces",
+            "special_forces",
+            "special_forces",
+            "special_forces"
         ],
         "CHC_armoured_division": [
-            "armor_brigade",
-            "armor_brigade",
-            "heavy_mechanized_brigade",
-            "sp_artillery_brigade"
+            "tank",
+            "tank",
+            "mechanised_infantry",
+            "artillery"
         ],
         "CHC_cavalry_division": [
-            "cavalry_brigade",
-            "cavalry_brigade",
-            "cavalry_brigade",
-            "cavalry_brigade",
-            "sp_artillery_brigade"
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "artillery"
         ],
         "CHC_heavy_mechanized_division": [
-            "heavy_mechanized_brigade",
-            "heavy_mechanized_brigade",
-            "light_mechanized_brigade",
-            "sp_artillery_brigade"
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "artillery"
         ],
         "CHC_light_mechanized_division": [
-            "light_mechanized_brigade",
-            "light_mechanized_brigade",
-            "heavy_mechanized_brigade",
-            "sp_artillery_brigade"
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "artillery"
         ],
         "CHC_motorized_division": [
-            "motorized_brigade",
-            "motorized_brigade",
-            "light_mechanized_brigade",
-            "sp_artillery_brigade"
+            "heavy_infantry",
+            "heavy_infantry",
+            "mechanised_infantry",
+            "artillery"
         ],
         "CHC_infantry_division": [
-            "infantry_brigade",
-            "infantry_brigade",
-            "infantry_brigade",
-            "infantry_brigade",
-            "artillery_brigade"
+            "light_infantry",
+            "light_infantry",
+            "light_infantry",
+            "light_infantry",
+            "artillery"
         ],
         "CHC_marine_division": [
-            "marine_brigade",
-            "marine_brigade",
-            "marine_brigade",
-            "marine_brigade"
+            "special_forces",
+            "special_forces",
+            "special_forces",
+            "special_forces"
         ],
         "CHC_mountain_division": [
-            "bergsjaeger_brigade",
-            "bergsjaeger_brigade",
-            "bergsjaeger_brigade",
-            "bergsjaeger_brigade"
+            "light_infantry",
+            "light_infantry",
+            "light_infantry",
+            "light_infantry"
         ],
         "CHC_volunteer_division": [
-            "militia_brigade",
-            "militia_brigade",
-            "militia_brigade",
-            "militia_brigade"
+            "irregular",
+            "irregular",
+            "irregular",
+            "irregular"
         ]
     },
-    "unit_names": "",
+    "unit_names": {},
     "ministers": {
         "Bai_Chongxi_1": {
             "name": "Bai Chongxi",

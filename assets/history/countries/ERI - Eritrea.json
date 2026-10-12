@@ -41,5 +41,27 @@
     "welfare": "poor_laws",
     "migration": "migration_controls",
     "slavery": "slavery_banned"
-  }
+  },
+  "armies": [
+    {
+      "name_id": "ERI_A1",
+      "province": 8073,
+      "regiments": [
+        {
+          "type": "irregular",
+          "strength": 0.95,
+          "experience": 0.05,
+          "name_id": "ERI_U1"
+        },
+        {
+          "type": "irregular",
+          "strength": 0.975,
+          "experience": 0.05,
+          "name_id": "ERI_U2"
+        }
+      ]
+    }
+  ],
+  "navies": [],
+  "air_wings": []
 }

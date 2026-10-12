@@ -43,5 +43,185 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "MEX_A1",
+            "province": 1277,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.04,
+                    "name_id": "MEX_U1"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.88,
+                    "experience": 0.04,
+                    "name_id": "MEX_U2"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.04,
+                    "name_id": "MEX_U3"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.07,
+                    "name_id": "MEX_U4"
+                }
+            ]
+        },
+        {
+            "name_id": "MEX_A2",
+            "province": 1130,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "MEX_U5"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.09,
+                    "name_id": "MEX_U6"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.07,
+                    "name_id": "MEX_U7"
+                }
+            ]
+        },
+        {
+            "name_id": "MEX_A3",
+            "province": 1545,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.05,
+                    "name_id": "MEX_U8"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.04,
+                    "name_id": "MEX_U9"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.04,
+                    "name_id": "MEX_U10"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.07,
+                    "name_id": "MEX_U11"
+                }
+            ]
+        },
+        {
+            "name_id": "MEX_A4",
+            "province": 1333,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "MEX_U12"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.06,
+                    "name_id": "MEX_U13"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.07,
+                    "name_id": "MEX_U14"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.07,
+                    "name_id": "MEX_U15"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.07,
+                    "name_id": "MEX_U16"
+                }
+            ]
+        },
+        {
+            "name_id": "MEX_A5",
+            "province": 1333,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.09,
+                    "name_id": "MEX_U18"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.1,
+                    "name_id": "MEX_U19"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.07,
+                    "name_id": "MEX_U20"
+                }
+            ]
+        },
+        {
+            "name_id": "MEX_A6",
+            "province": 1333,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.09,
+                    "name_id": "MEX_U21"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.1,
+                    "name_id": "MEX_U22"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.09,
+                    "name_id": "MEX_U23"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": [
+        {
+            "type": "multirole_fighter",
+            "base": 1333,
+            "strength": 0.25,
+            "experience": 0.0,
+            "name_id": "MEX_U17"
+        }
+    ]
 }

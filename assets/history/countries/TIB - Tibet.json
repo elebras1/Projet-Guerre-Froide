@@ -41,5 +41,45 @@
         "welfare": "poor_laws",
         "migration": "closed_borders",
         "slavery": "slavery_allowed"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "TIB_A1",
+            "province": 11096,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.95,
+                    "experience": 0.05,
+                    "name_id": "TIB_U1"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.875,
+                    "experience": 0.04,
+                    "name_id": "TIB_U2"
+                }
+            ]
+        },
+        {
+            "name_id": "TIB_A2",
+            "province": 11313,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.05,
+                    "name_id": "TIB_U3"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.9,
+                    "experience": 0.05,
+                    "name_id": "TIB_U4"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": []
 }

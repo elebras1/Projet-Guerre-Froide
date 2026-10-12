@@ -41,5 +41,27 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "GUA_A1",
+            "province": 1709,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.04,
+                    "name_id": "GUA_U1"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.875,
+                    "experience": 0.04,
+                    "name_id": "GUA_U2"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": []
 }

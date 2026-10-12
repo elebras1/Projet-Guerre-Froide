@@ -51,5 +51,683 @@
         "welfare": "universal_social_security",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "YUG_A1",
+            "province": 6369,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U1"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U2"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U3"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U4"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U5"
+                }
+            ]
+        },
+        {
+            "name_id": "YUG_A2",
+            "province": 6369,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U6"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.04,
+                    "name_id": "YUG_U7"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "YUG_U8"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "YUG_U9"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.05,
+                    "name_id": "YUG_U10"
+                }
+            ]
+        },
+        {
+            "name_id": "YUG_A3",
+            "province": 6369,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U11"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "YUG_U12"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U13"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U14"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U15"
+                }
+            ]
+        },
+        {
+            "name_id": "YUG_A4",
+            "province": 6368,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U16"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U17"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U18"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U19"
+                }
+            ]
+        },
+        {
+            "name_id": "YUG_A5",
+            "province": 6471,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U20"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U21"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U22"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.05,
+                    "name_id": "YUG_U23"
+                }
+            ]
+        },
+        {
+            "name_id": "YUG_A6",
+            "province": 6000,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "YUG_U24"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U25"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U26"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "YUG_U27"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U28"
+                }
+            ]
+        },
+        {
+            "name_id": "YUG_A7",
+            "province": 6000,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U29"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "YUG_U30"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "YUG_U31"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U32"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U33"
+                }
+            ]
+        },
+        {
+            "name_id": "YUG_A8",
+            "province": 14919,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "YUG_U34"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "YUG_U35"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "YUG_U36"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U37"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U38"
+                }
+            ]
+        },
+        {
+            "name_id": "YUG_A9",
+            "province": 6278,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U39"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U40"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U41"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U42"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U43"
+                }
+            ]
+        },
+        {
+            "name_id": "YUG_A10",
+            "province": 6473,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U44"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U45"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U46"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U47"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "YUG_U48"
+                }
+            ]
+        },
+        {
+            "name_id": "YUG_A11",
+            "province": 6369,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "YUG_U50"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "YUG_U51"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U52"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U53"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U54"
+                }
+            ]
+        },
+        {
+            "name_id": "YUG_A12",
+            "province": 6369,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U55"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U56"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U57"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "YUG_U58"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U59"
+                }
+            ]
+        },
+        {
+            "name_id": "YUG_A13",
+            "province": 6369,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "YUG_U60"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "YUG_U61"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U62"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U63"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "YUG_U64"
+                }
+            ]
+        },
+        {
+            "name_id": "YUG_A14",
+            "province": 6369,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "YUG_U65"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "YUG_U66"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "YUG_U67"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U68"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.05,
+                    "name_id": "YUG_U69"
+                }
+            ]
+        },
+        {
+            "name_id": "YUG_A15",
+            "province": 6369,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U70"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U71"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U72"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U73"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U74"
+                }
+            ]
+        },
+        {
+            "name_id": "YUG_A16",
+            "province": 6369,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U75"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.04,
+                    "name_id": "YUG_U76"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U77"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U78"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U79"
+                }
+            ]
+        },
+        {
+            "name_id": "YUG_A17",
+            "province": 6369,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U80"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U81"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U82"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.04,
+                    "name_id": "YUG_U83"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U84"
+                }
+            ]
+        },
+        {
+            "name_id": "YUG_A18",
+            "province": 6369,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U85"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U86"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "YUG_U87"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "YUG_U88"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "YUG_U89"
+                }
+            ]
+        },
+        {
+            "name_id": "YUG_A19",
+            "province": 6369,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "YUG_U90"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "YUG_U91"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "YUG_U92"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.05,
+                    "name_id": "YUG_U93"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": [
+        {
+            "type": "multirole_fighter",
+            "base": 6369,
+            "strength": 0.25,
+            "experience": 0.0,
+            "name_id": "YUG_U49"
+        }
+    ]
 }

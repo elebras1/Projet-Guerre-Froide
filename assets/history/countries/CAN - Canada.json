@@ -94,5 +94,256 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "CAN_A1",
+            "province": 2174,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "CAN_U1"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "CAN_U2"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "CAN_U3"
+                }
+            ]
+        },
+        {
+            "name_id": "CAN_A2",
+            "province": 2046,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "CAN_U4"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "CAN_U5"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "CAN_U6"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "CAN_U7"
+                }
+            ]
+        },
+        {
+            "name_id": "CAN_A3",
+            "province": 2857,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CAN_U8"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CAN_U9"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CAN_U10"
+                }
+            ]
+        },
+        {
+            "name_id": "CAN_A4",
+            "province": 2388,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CAN_U11"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.5,
+                    "experience": 0.05,
+                    "name_id": "CAN_U12"
+                }
+            ]
+        },
+        {
+            "name_id": "CAN_A5",
+            "province": 683,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CAN_U13"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CAN_U14"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CAN_U15"
+                }
+            ]
+        },
+        {
+            "name_id": "CAN_A6",
+            "province": 2174,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CAN_U25"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.04,
+                    "name_id": "CAN_U26"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.05,
+                    "name_id": "CAN_U27"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CAN_U28"
+                }
+            ]
+        },
+        {
+            "name_id": "CAN_A7",
+            "province": 2174,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CAN_U29"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CAN_U30"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CAN_U31"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CAN_U32"
+                }
+            ]
+        }
+    ],
+    "navies": [
+        {
+            "name_id": "CAN_N1",
+            "province": 398,
+            "base": 398,
+            "ships": [
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "CAN_U20"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "CAN_U21"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "CAN_U22"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "CAN_U23"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "CAN_U24"
+                }
+            ]
+        }
+    ],
+    "air_wings": [
+        {
+            "type": "interceptor_fighter",
+            "base": 2174,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "CAN_U16"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 2174,
+            "strength": 0.5,
+            "experience": 0.0,
+            "name_id": "CAN_U17"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2174,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "CAN_U18"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2174,
+            "strength": 0.5,
+            "experience": 0.0,
+            "name_id": "CAN_U19"
+        }
+    ]
 }

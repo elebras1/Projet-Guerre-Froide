@@ -43,5 +43,63 @@
         "welfare": "poor_laws",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "IDC_A1",
+            "province": 12352,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "IDC_U1"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "IDC_U2"
+                }
+            ]
+        },
+        {
+            "name_id": "IDC_A2",
+            "province": 12352,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "IDC_U3"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "IDC_U4"
+                }
+            ]
+        },
+        {
+            "name_id": "IDC_A3",
+            "province": 12352,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "IDC_U5"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "IDC_U6"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": []
 }

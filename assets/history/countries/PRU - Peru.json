@@ -50,5 +50,114 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "PRU_A1",
+            "province": 2493,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.04,
+                    "name_id": "PRU_U1"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.04,
+                    "name_id": "PRU_U2"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.04,
+                    "name_id": "PRU_U3"
+                }
+            ]
+        },
+        {
+            "name_id": "PRU_A2",
+            "province": 2204,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.04,
+                    "name_id": "PRU_U4"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.05,
+                    "name_id": "PRU_U5"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.05,
+                    "name_id": "PRU_U6"
+                }
+            ]
+        },
+        {
+            "name_id": "PRU_A3",
+            "province": 2209,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.05,
+                    "name_id": "PRU_U10"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.05,
+                    "name_id": "PRU_U11"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.05,
+                    "name_id": "PRU_U12"
+                }
+            ]
+        }
+    ],
+    "navies": [
+        {
+            "name_id": "PRU_N1",
+            "province": 2209,
+            "base": 2209,
+            "ships": [
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "PRU_U7"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "PRU_U8"
+                }
+            ]
+        },
+        {
+            "name_id": "PRU_N2",
+            "province": 2209,
+            "base": 2209,
+            "ships": [
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "PRU_U9"
+                }
+            ]
+        }
+    ],
+    "air_wings": []
 }

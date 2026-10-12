@@ -6,97 +6,97 @@
     ],
     "default_templates": {
         "CHC_airborne_division": [
-            "air_cav_brigade",
-            "air_cav_brigade",
-            "air_cav_brigade",
-            "air_cav_brigade"
+            "special_forces",
+            "special_forces",
+            "special_forces",
+            "special_forces"
         ],
         "CHC_armoured_division": [
-            "armor_brigade",
-            "armor_brigade",
-            "heavy_mechanized_brigade",
-            "sp_artillery_brigade"
+            "tank",
+            "tank",
+            "mechanised_infantry",
+            "artillery"
         ],
         "CHC_cavalry_division": [
-            "cavalry_brigade",
-            "cavalry_brigade",
-            "cavalry_brigade",
-            "cavalry_brigade",
-            "sp_artillery_brigade"
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "artillery"
         ],
         "CHC_heavy_mechanized_division": [
-            "heavy_mechanized_brigade",
-            "heavy_mechanized_brigade",
-            "light_mechanized_brigade",
-            "sp_artillery_brigade"
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "artillery"
         ],
         "CHC_light_mechanized_division": [
-            "light_mechanized_brigade",
-            "light_mechanized_brigade",
-            "heavy_mechanized_brigade",
-            "sp_artillery_brigade"
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "artillery"
         ],
         "CHC_motorized_division": [
-            "motorized_brigade",
-            "motorized_brigade",
-            "light_mechanized_brigade",
-            "sp_artillery_brigade"
+            "heavy_infantry",
+            "heavy_infantry",
+            "mechanised_infantry",
+            "artillery"
         ],
         "CHC_infantry_division": [
-            "infantry_brigade",
-            "infantry_brigade",
-            "infantry_brigade",
-            "infantry_brigade",
-            "artillery_brigade"
+            "light_infantry",
+            "light_infantry",
+            "light_infantry",
+            "light_infantry",
+            "artillery"
         ],
         "CHC_marine_division": [
-            "marine_brigade",
-            "marine_brigade",
-            "marine_brigade",
-            "marine_brigade"
+            "special_forces",
+            "special_forces",
+            "special_forces",
+            "special_forces"
         ],
         "CHC_mountain_division": [
-            "bergsjaeger_brigade",
-            "bergsjaeger_brigade",
-            "bergsjaeger_brigade",
-            "bergsjaeger_brigade"
+            "light_infantry",
+            "light_infantry",
+            "light_infantry",
+            "light_infantry"
         ],
         "CHC_volunteer_division": [
-            "militia_brigade",
-            "militia_brigade",
-            "militia_brigade",
-            "militia_brigade"
+            "irregular",
+            "irregular",
+            "irregular",
+            "irregular"
         ]
     },
     "unit_names": {
-        "infantry_brigade": [
-            "304th 'Glory' Inf. Division",
-            "308th 'Pioneer' Inf. Div.",
-            "312th 'Victory' Inf. Div.",
-            "316th 'Bong Lau' Inf. Div.",
-            "320th 'Delta' Inf. Div.",
-            "325th 'Binh Tri Thien'",
-            "330th Inf. Div.",
-            "338th Inf. Div.",
-            "328th Inf. Div.",
-            "332nd Inf. Div.",
-            "350th Inf Div.",
-            "305th Inf. Div.",
-            "324th Inf. Div.",
-            "335th 'Laos Vol.' Inf. Div.",
-            "3rd 'Yellow Star' Div.",
-            "5th Inf. Div.",
-            "7th Inf. Div.",
-            "9th 'Mekong' Inf. Div.",
-            "10th 'Dakto' Inf. Div."
+        "irregular": [
+            "DRV_irregular_1",
+            "DRV_irregular_2",
+            "DRV_irregular_3",
+            "DRV_irregular_4",
+            "DRV_irregular_5",
+            "DRV_irregular_6"
         ],
-        "militia_brigade": [
-            "1st People's Militia",
-            "2nd People's Militia",
-            "3rd People's Militia",
-            "4th People's Militia",
-            "5th People's Militia",
-            "6th People's Militia"
+        "light_infantry": [
+            "DRV_light_infantry_1",
+            "DRV_light_infantry_2",
+            "DRV_light_infantry_3",
+            "DRV_light_infantry_4",
+            "DRV_light_infantry_5",
+            "DRV_light_infantry_6",
+            "DRV_light_infantry_7",
+            "DRV_light_infantry_8",
+            "DRV_light_infantry_9",
+            "DRV_light_infantry_10",
+            "DRV_light_infantry_11",
+            "DRV_light_infantry_12",
+            "DRV_light_infantry_13",
+            "DRV_light_infantry_14",
+            "DRV_light_infantry_15",
+            "DRV_light_infantry_16",
+            "DRV_light_infantry_17",
+            "DRV_light_infantry_18",
+            "DRV_light_infantry_19"
         ]
     },
     "ministers": {

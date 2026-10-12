@@ -43,5 +43,609 @@
         "welfare": "poor_laws",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "CSX_A1",
+            "province": 12575,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.14,
+                    "name_id": "CSX_U1"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.15,
+                    "name_id": "CSX_U2"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.76,
+                    "experience": 0.13,
+                    "name_id": "CSX_U3"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.14,
+                    "name_id": "CSX_U4"
+                }
+            ]
+        },
+        {
+            "name_id": "CSX_A2",
+            "province": 12575,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.16,
+                    "name_id": "CSX_U5"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.14,
+                    "name_id": "CSX_U6"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.15,
+                    "name_id": "CSX_U7"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.13,
+                    "name_id": "CSX_U8"
+                }
+            ]
+        },
+        {
+            "name_id": "CSX_A3",
+            "province": 12575,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CSX_U9"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.11,
+                    "name_id": "CSX_U10"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CSX_U11"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CSX_U12"
+                }
+            ]
+        },
+        {
+            "name_id": "CSX_A4",
+            "province": 12575,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CSX_U13"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CSX_U14"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CSX_U15"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CSX_U16"
+                }
+            ]
+        },
+        {
+            "name_id": "CSX_A5",
+            "province": 12576,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.13,
+                    "name_id": "CSX_U17"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.15,
+                    "name_id": "CSX_U18"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.13,
+                    "name_id": "CSX_U19"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.15,
+                    "name_id": "CSX_U20"
+                }
+            ]
+        },
+        {
+            "name_id": "CSX_A6",
+            "province": 12578,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.13,
+                    "name_id": "CSX_U21"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.15,
+                    "name_id": "CSX_U22"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.16,
+                    "name_id": "CSX_U23"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.14,
+                    "name_id": "CSX_U24"
+                }
+            ]
+        },
+        {
+            "name_id": "CSX_A7",
+            "province": 12578,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.15,
+                    "name_id": "CSX_U25"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.76,
+                    "experience": 0.13,
+                    "name_id": "CSX_U26"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.15,
+                    "name_id": "CSX_U27"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.13,
+                    "name_id": "CSX_U28"
+                }
+            ]
+        },
+        {
+            "name_id": "CSX_A8",
+            "province": 12517,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CSX_U29"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CSX_U30"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CSX_U31"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CSX_U32"
+                }
+            ]
+        },
+        {
+            "name_id": "CSX_A9",
+            "province": 12638,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.09,
+                    "name_id": "CSX_U33"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CSX_U34"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CSX_U35"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CSX_U36"
+                }
+            ]
+        },
+        {
+            "name_id": "CSX_A10",
+            "province": 12638,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CSX_U37"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CSX_U38"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CSX_U39"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CSX_U40"
+                }
+            ]
+        },
+        {
+            "name_id": "CSX_A11",
+            "province": 12635,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.16,
+                    "name_id": "CSX_U41"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.14,
+                    "name_id": "CSX_U42"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.15,
+                    "name_id": "CSX_U43"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.13,
+                    "name_id": "CSX_U44"
+                }
+            ]
+        },
+        {
+            "name_id": "CSX_A12",
+            "province": 12635,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.09,
+                    "name_id": "CSX_U45"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CSX_U46"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CSX_U47"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CSX_U48"
+                }
+            ]
+        },
+        {
+            "name_id": "CSX_A13",
+            "province": 12574,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.16,
+                    "name_id": "CSX_U49"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.8,
+                    "experience": 0.15,
+                    "name_id": "CSX_U50"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.13,
+                    "name_id": "CSX_U51"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.15,
+                    "name_id": "CSX_U52"
+                }
+            ]
+        },
+        {
+            "name_id": "CSX_A14",
+            "province": 12574,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.15,
+                    "name_id": "CSX_U53"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.14,
+                    "name_id": "CSX_U54"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.15,
+                    "name_id": "CSX_U55"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.13,
+                    "name_id": "CSX_U56"
+                }
+            ]
+        },
+        {
+            "name_id": "CSX_A15",
+            "province": 12635,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.15,
+                    "name_id": "CSX_U57"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.16,
+                    "name_id": "CSX_U58"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.14,
+                    "name_id": "CSX_U59"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.15,
+                    "name_id": "CSX_U60"
+                }
+            ]
+        },
+        {
+            "name_id": "CSX_A16",
+            "province": 12517,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.15,
+                    "name_id": "CSX_U61"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.16,
+                    "name_id": "CSX_U62"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.14,
+                    "name_id": "CSX_U63"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.15,
+                    "name_id": "CSX_U64"
+                }
+            ]
+        },
+        {
+            "name_id": "CSX_A17",
+            "province": 12517,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.13,
+                    "name_id": "CSX_U65"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.14,
+                    "name_id": "CSX_U66"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.16,
+                    "name_id": "CSX_U67"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.14,
+                    "name_id": "CSX_U68"
+                }
+            ]
+        },
+        {
+            "name_id": "CSX_A18",
+            "province": 12576,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.15,
+                    "name_id": "CSX_U69"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.13,
+                    "name_id": "CSX_U70"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.15,
+                    "name_id": "CSX_U71"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.13,
+                    "name_id": "CSX_U72"
+                }
+            ]
+        },
+        {
+            "name_id": "CSX_A19",
+            "province": 12518,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CSX_U73"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CSX_U74"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CSX_U75"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CSX_U76"
+                }
+            ]
+        },
+        {
+            "name_id": "CSX_A20",
+            "province": 12638,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CSX_U77"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CSX_U78"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CSX_U79"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CSX_U80"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": []
 }

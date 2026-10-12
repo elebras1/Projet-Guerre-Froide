@@ -50,5 +50,113 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "SCH_A1",
+            "province": 5297,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SCH_U1"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SCH_U2"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.05,
+                    "name_id": "SCH_U3"
+                }
+            ]
+        },
+        {
+            "name_id": "SCH_A2",
+            "province": 5425,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "SCH_U4"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SCH_U5"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SCH_U6"
+                }
+            ]
+        },
+        {
+            "name_id": "SCH_A3",
+            "province": 5297,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SCH_U8"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SCH_U9"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SCH_U10"
+                }
+            ]
+        },
+        {
+            "name_id": "SCH_A4",
+            "province": 5297,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "SCH_U11"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SCH_U12"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SCH_U13"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": [
+        {
+            "type": "multirole_fighter",
+            "base": 4626,
+            "strength": 0.25,
+            "experience": 0.0,
+            "name_id": "SCH_U7"
+        }
+    ]
 }

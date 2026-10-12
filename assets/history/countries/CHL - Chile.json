@@ -51,5 +51,239 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "CHL_A1",
+            "province": 2584,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.05,
+                    "name_id": "CHL_U1"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.04,
+                    "name_id": "CHL_U2"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.88,
+                    "experience": 0.05,
+                    "name_id": "CHL_U3"
+                }
+            ]
+        },
+        {
+            "name_id": "CHL_A2",
+            "province": 2584,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.05,
+                    "name_id": "CHL_U4"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHL_U5"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.05,
+                    "name_id": "CHL_U6"
+                }
+            ]
+        },
+        {
+            "name_id": "CHL_A3",
+            "province": 2580,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.04,
+                    "name_id": "CHL_U7"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.96,
+                    "experience": 0.04,
+                    "name_id": "CHL_U8"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHL_U9"
+                }
+            ]
+        },
+        {
+            "name_id": "CHL_A4",
+            "province": 2435,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.05,
+                    "name_id": "CHL_U10"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.04,
+                    "name_id": "CHL_U11"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.04,
+                    "name_id": "CHL_U12"
+                }
+            ]
+        },
+        {
+            "name_id": "CHL_A5",
+            "province": 2513,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.05,
+                    "name_id": "CHL_U13"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.05,
+                    "name_id": "CHL_U14"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHL_U15"
+                }
+            ]
+        },
+        {
+            "name_id": "CHL_A6",
+            "province": 2584,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.04,
+                    "name_id": "CHL_U19"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.04,
+                    "name_id": "CHL_U20"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.05,
+                    "name_id": "CHL_U21"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.04,
+                    "name_id": "CHL_U22"
+                }
+            ]
+        },
+        {
+            "name_id": "CHL_A7",
+            "province": 2584,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.05,
+                    "name_id": "CHL_U23"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.04,
+                    "name_id": "CHL_U24"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.04,
+                    "name_id": "CHL_U25"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.04,
+                    "name_id": "CHL_U26"
+                }
+            ]
+        },
+        {
+            "name_id": "CHL_A8",
+            "province": 2584,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.04,
+                    "name_id": "CHL_U27"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.05,
+                    "name_id": "CHL_U28"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.04,
+                    "name_id": "CHL_U29"
+                }
+            ]
+        }
+    ],
+    "navies": [
+        {
+            "name_id": "CHL_N1",
+            "province": 2500,
+            "base": 2500,
+            "ships": [
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "CHL_U16"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "CHL_U17"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "CHL_U18"
+                }
+            ]
+        }
+    ],
+    "air_wings": []
 }

@@ -41,5 +41,75 @@
         "welfare": "poor_laws",
         "migration": "migration_controls",
         "slavery": "slavery_allowed"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "SAU_A1",
+            "province": 8810,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.05,
+                    "name_id": "SAU_U1"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.04,
+                    "name_id": "SAU_U2"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.05,
+                    "name_id": "SAU_U3"
+                }
+            ]
+        },
+        {
+            "name_id": "SAU_A2",
+            "province": 8147,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.05,
+                    "name_id": "SAU_U4"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.05,
+                    "name_id": "SAU_U5"
+                }
+            ]
+        },
+        {
+            "name_id": "SAU_A3",
+            "province": 8810,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.04,
+                    "name_id": "SAU_U6"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.05,
+                    "name_id": "SAU_U7"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.04,
+                    "name_id": "SAU_U8"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": []
 }

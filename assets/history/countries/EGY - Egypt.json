@@ -44,5 +44,57 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "EGY_A1",
+            "province": 14869,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.04,
+                    "name_id": "EGY_U1"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.07,
+                    "name_id": "EGY_U2"
+                }
+            ]
+        },
+        {
+            "name_id": "EGY_A2",
+            "province": 14869,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.04,
+                    "name_id": "EGY_U3"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.84,
+                    "experience": 0.04,
+                    "name_id": "EGY_U4"
+                }
+            ]
+        },
+        {
+            "name_id": "EGY_A3",
+            "province": 14869,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.02,
+                    "name_id": "EGY_U5"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": []
 }

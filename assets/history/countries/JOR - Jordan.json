@@ -46,5 +46,27 @@
         "welfare": "poor_laws",
         "migration": "migration_controls",
         "slavery": "slavery_allowed"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "JOR_A1",
+            "province": 7892,
+            "regiments": [
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 0.8649,
+                    "experience": 0.04,
+                    "name_id": "JOR_U1"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.03,
+                    "name_id": "JOR_U2"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": []
 }

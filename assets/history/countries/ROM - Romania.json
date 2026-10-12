@@ -45,5 +45,119 @@
         "welfare": "universal_social_security",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "ROM_A1",
+            "province": 6902,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.14,
+                    "name_id": "ROM_U1"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.84,
+                    "experience": 0.15,
+                    "name_id": "ROM_U2"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.15,
+                    "name_id": "ROM_U3"
+                }
+            ]
+        },
+        {
+            "name_id": "ROM_A2",
+            "province": 6690,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.05,
+                    "name_id": "ROM_U4"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.9,
+                    "experience": 0.04,
+                    "name_id": "ROM_U5"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.04,
+                    "name_id": "ROM_U6"
+                }
+            ]
+        },
+        {
+            "name_id": "ROM_A3",
+            "province": 6691,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.04,
+                    "name_id": "ROM_U7"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.05,
+                    "name_id": "ROM_U8"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.05,
+                    "name_id": "ROM_U9"
+                }
+            ]
+        },
+        {
+            "name_id": "ROM_A4",
+            "province": 6902,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.04,
+                    "name_id": "ROM_U11"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.04,
+                    "name_id": "ROM_U12"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.04,
+                    "name_id": "ROM_U13"
+                }
+            ]
+        }
+    ],
+    "navies": [
+        {
+            "name_id": "ROM_N1",
+            "province": 7214,
+            "base": 7214,
+            "ships": [
+                {
+                    "type": "destroyer",
+                    "strength": 0.4,
+                    "experience": 0.0,
+                    "name_id": "ROM_U10"
+                }
+            ]
+        }
+    ],
+    "air_wings": []
 }

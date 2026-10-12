@@ -6,70 +6,70 @@
     ],
     "default_templates": {
         "FRA_light_aviation_division": [
-            "air_cav_brigade",
-            "air_cav_brigade",
-            "air_cav_brigade",
-            "air_cav_brigade"
+            "special_forces",
+            "special_forces",
+            "special_forces",
+            "special_forces"
         ],
         "FRA_armoured_division": [
-            "armor_brigade",
-            "armor_brigade",
-            "heavy_mechanized_brigade",
-            "light_mechanized_brigade",
-            "sp_artillery_brigade"
+            "tank",
+            "tank",
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "artillery"
         ],
         "FRA_cavalry_division": [
-            "cavalry_brigade",
-            "cavalry_brigade",
-            "cavalry_brigade",
-            "cavalry_brigade",
-            "sp_artillery_brigade"
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "artillery"
         ],
         "FRA_heavy_mechanized_division": [
-            "heavy_mechanized_brigade",
-            "heavy_mechanized_brigade",
-            "light_mechanized_brigade",
-            "armor_brigade",
-            "sp_artillery_brigade"
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "tank",
+            "artillery"
         ],
         "FRA_light_mechanized_division": [
-            "light_mechanized_brigade",
-            "light_mechanized_brigade",
-            "heavy_mechanized_brigade",
-            "sp_artillery_brigade"
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "artillery"
         ],
         "FRA_motorized_division": [
-            "motorized_brigade",
-            "motorized_brigade",
-            "heavy_mechanized_brigade",
-            "sp_artillery_brigade"
+            "heavy_infantry",
+            "heavy_infantry",
+            "mechanised_infantry",
+            "artillery"
         ],
         "FRA_infantry_division": [
-            "infantry_brigade",
-            "infantry_brigade",
-            "infantry_brigade",
-            "infantry_brigade",
-            "artillery_brigade"
+            "light_infantry",
+            "light_infantry",
+            "light_infantry",
+            "light_infantry",
+            "artillery"
         ],
         "FRA_marine_inf_division": [
-            "marine_brigade",
-            "marine_brigade",
-            "marine_brigade",
-            "marine_brigade"
+            "special_forces",
+            "special_forces",
+            "special_forces",
+            "special_forces"
         ],
         "FRA_chasseurs_alpins_division": [
-            "bergsjaeger_brigade",
-            "bergsjaeger_brigade",
-            "bergsjaeger_brigade",
-            "bergsjaeger_brigade"
+            "light_infantry",
+            "light_infantry",
+            "light_infantry",
+            "light_infantry"
         ],
         "FRA_gendarmerie_division": [
-            "police_brigade",
-            "infantry_brigade",
-            "militia_brigade"
+            "irregular",
+            "light_infantry",
+            "irregular"
         ]
     },
-    "unit_names": "",
+    "unit_names": {},
     "ministers": {
         "Patrice_Lumumba_1": {
             "name": "Patrice Lumumba",

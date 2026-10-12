@@ -43,5 +43,309 @@
         "welfare": "poor_laws",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "CYN_A1",
+            "province": 12003,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CYN_U1"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.09,
+                    "name_id": "CYN_U2"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.875,
+                    "experience": 0.1,
+                    "name_id": "CYN_U3"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CYN_U4"
+                }
+            ]
+        },
+        {
+            "name_id": "CYN_A2",
+            "province": 12003,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CYN_U5"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.08,
+                    "name_id": "CYN_U6"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.9,
+                    "experience": 0.09,
+                    "name_id": "CYN_U7"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CYN_U8"
+                }
+            ]
+        },
+        {
+            "name_id": "CYN_A3",
+            "province": 12005,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CYN_U9"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.875,
+                    "experience": 0.1,
+                    "name_id": "CYN_U10"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CYN_U11"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CYN_U12"
+                }
+            ]
+        },
+        {
+            "name_id": "CYN_A4",
+            "province": 11932,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.08,
+                    "name_id": "CYN_U13"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CYN_U14"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CYN_U15"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.09,
+                    "name_id": "CYN_U16"
+                }
+            ]
+        },
+        {
+            "name_id": "CYN_A5",
+            "province": 11932,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.1,
+                    "name_id": "CYN_U17"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.11,
+                    "name_id": "CYN_U18"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.09,
+                    "name_id": "CYN_U19"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.875,
+                    "experience": 0.1,
+                    "name_id": "CYN_U20"
+                }
+            ]
+        },
+        {
+            "name_id": "CYN_A6",
+            "province": 11792,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CYN_U21"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CYN_U22"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.875,
+                    "experience": 0.09,
+                    "name_id": "CYN_U23"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CYN_U24"
+                }
+            ]
+        },
+        {
+            "name_id": "CYN_A7",
+            "province": 11791,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CYN_U25"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.11,
+                    "name_id": "CYN_U26"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.9,
+                    "experience": 0.09,
+                    "name_id": "CYN_U27"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CYN_U28"
+                }
+            ]
+        },
+        {
+            "name_id": "CYN_A8",
+            "province": 11859,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.09,
+                    "name_id": "CYN_U29"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.875,
+                    "experience": 0.1,
+                    "name_id": "CYN_U30"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CYN_U31"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CYN_U32"
+                }
+            ]
+        },
+        {
+            "name_id": "CYN_A9",
+            "province": 11859,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CYN_U33"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CYN_U34"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CYN_U35"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.08,
+                    "name_id": "CYN_U36"
+                }
+            ]
+        },
+        {
+            "name_id": "CYN_A10",
+            "province": 11861,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.1,
+                    "name_id": "CYN_U37"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.08,
+                    "name_id": "CYN_U38"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CYN_U39"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.875,
+                    "experience": 0.11,
+                    "name_id": "CYN_U40"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": []
 }

@@ -47,5 +47,129 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "CUB_A1",
+            "province": 1997,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CUB_U1"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CUB_U2"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CUB_U3"
+                }
+            ]
+        },
+        {
+            "name_id": "CUB_A2",
+            "province": 2060,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.04,
+                    "name_id": "CUB_U4"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.04,
+                    "name_id": "CUB_U5"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CUB_U6"
+                }
+            ]
+        },
+        {
+            "name_id": "CUB_A3",
+            "province": 2141,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CUB_U7"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.05,
+                    "name_id": "CUB_U8"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CUB_U9"
+                }
+            ]
+        },
+        {
+            "name_id": "CUB_A4",
+            "province": 2236,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CUB_U10"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.04,
+                    "name_id": "CUB_U11"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.04,
+                    "name_id": "CUB_U12"
+                }
+            ]
+        },
+        {
+            "name_id": "CUB_A5",
+            "province": 1997,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.9524,
+                    "experience": 0.05,
+                    "name_id": "CUB_U13"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CUB_U14"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CUB_U15"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": []
 }

@@ -50,5 +50,201 @@
         "welfare": "poor_laws",
         "migration": "migration_controls",
         "slavery": "slavery_allowed"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "AFG_A1",
+            "province": 9992,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.04,
+                    "name_id": "AFG_U1"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.875,
+                    "experience": 0.05,
+                    "name_id": "AFG_U2"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.9,
+                    "experience": 0.05,
+                    "name_id": "AFG_U3"
+                }
+            ]
+        },
+        {
+            "name_id": "AFG_A2",
+            "province": 10047,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.05,
+                    "name_id": "AFG_U4"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.05,
+                    "name_id": "AFG_U5"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.9,
+                    "experience": 0.04,
+                    "name_id": "AFG_U6"
+                }
+            ]
+        },
+        {
+            "name_id": "AFG_A3",
+            "province": 9993,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.05,
+                    "name_id": "AFG_U7"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.04,
+                    "name_id": "AFG_U8"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.05,
+                    "name_id": "AFG_U9"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.05,
+                    "name_id": "AFG_U10"
+                }
+            ]
+        },
+        {
+            "name_id": "AFG_A4",
+            "province": 9739,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.05,
+                    "name_id": "AFG_U11"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.05,
+                    "name_id": "AFG_U12"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.9,
+                    "experience": 0.05,
+                    "name_id": "AFG_U13"
+                }
+            ]
+        },
+        {
+            "name_id": "AFG_A5",
+            "province": 9842,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.09,
+                    "name_id": "AFG_U14"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.9,
+                    "experience": 0.1,
+                    "name_id": "AFG_U15"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "AFG_U16"
+                }
+            ]
+        },
+        {
+            "name_id": "AFG_A6",
+            "province": 9993,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "AFG_U17"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.875,
+                    "experience": 0.09,
+                    "name_id": "AFG_U18"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.9,
+                    "experience": 0.09,
+                    "name_id": "AFG_U19"
+                }
+            ]
+        },
+        {
+            "name_id": "AFG_A7",
+            "province": 9993,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.04,
+                    "name_id": "AFG_U20"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.9,
+                    "experience": 0.05,
+                    "name_id": "AFG_U21"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.04,
+                    "name_id": "AFG_U22"
+                }
+            ]
+        },
+        {
+            "name_id": "AFG_A8",
+            "province": 9993,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.925,
+                    "experience": 0.1,
+                    "name_id": "AFG_U23"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.11,
+                    "name_id": "AFG_U24"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": []
 }

@@ -44,5 +44,137 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "BEL_A1",
+            "province": 5113,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.13,
+                    "name_id": "BEL_U1"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.15,
+                    "name_id": "BEL_U2"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.88,
+                    "experience": 0.13,
+                    "name_id": "BEL_U3"
+                }
+            ]
+        },
+        {
+            "name_id": "BEL_A2",
+            "province": 5167,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.05,
+                    "name_id": "BEL_U4"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.05,
+                    "name_id": "BEL_U5"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.92,
+                    "experience": 0.04,
+                    "name_id": "BEL_U6"
+                }
+            ]
+        },
+        {
+            "name_id": "BEL_A3",
+            "province": 5946,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.05,
+                    "name_id": "BEL_U8"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.05,
+                    "name_id": "BEL_U9"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.04,
+                    "name_id": "BEL_U10"
+                }
+            ]
+        },
+        {
+            "name_id": "BEL_A4",
+            "province": 5113,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.05,
+                    "name_id": "BEL_U11"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.04,
+                    "name_id": "BEL_U12"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.05,
+                    "name_id": "BEL_U13"
+                }
+            ]
+        },
+        {
+            "name_id": "BEL_A5",
+            "province": 5113,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.04,
+                    "name_id": "BEL_U14"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.05,
+                    "name_id": "BEL_U15"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.84,
+                    "experience": 0.05,
+                    "name_id": "BEL_U16"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": [
+        {
+            "type": "interceptor_fighter",
+            "base": 5113,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "BEL_U7"
+        }
+    ]
 }

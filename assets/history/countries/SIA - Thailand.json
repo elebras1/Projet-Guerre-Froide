@@ -43,5 +43,127 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "SIA_A1",
+            "province": 11873,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.04,
+                    "name_id": "SIA_U1"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.05,
+                    "name_id": "SIA_U2"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.04,
+                    "name_id": "SIA_U3"
+                }
+            ]
+        },
+        {
+            "name_id": "SIA_A2",
+            "province": 11731,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.09,
+                    "name_id": "SIA_U4"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.09,
+                    "name_id": "SIA_U5"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SIA_U6"
+                }
+            ]
+        },
+        {
+            "name_id": "SIA_A3",
+            "province": 12085,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "SIA_U7"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.1,
+                    "name_id": "SIA_U8"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.925,
+                    "experience": 0.1,
+                    "name_id": "SIA_U9"
+                }
+            ]
+        },
+        {
+            "name_id": "SIA_A4",
+            "province": 11873,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.09,
+                    "name_id": "SIA_U12"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.1,
+                    "name_id": "SIA_U13"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "SIA_U14"
+                }
+            ]
+        }
+    ],
+    "navies": [
+        {
+            "name_id": "SIA_N1",
+            "province": 11873,
+            "base": 11873,
+            "ships": [
+                {
+                    "type": "submarine",
+                    "strength": 0.4,
+                    "experience": 0.0,
+                    "name_id": "SIA_U11"
+                }
+            ]
+        }
+    ],
+    "air_wings": [
+        {
+            "type": "interceptor_fighter",
+            "base": 11873,
+            "strength": 0.25,
+            "experience": 0.0,
+            "name_id": "SIA_U10"
+        }
+    ]
 }

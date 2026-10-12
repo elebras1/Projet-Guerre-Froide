@@ -41,5 +41,21 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "LUX_A1",
+            "province": 14872,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.04,
+                    "name_id": "LUX_U1"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": []
 }

@@ -90,5 +90,4955 @@
         "welfare": "poor_laws",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "CHI_A1",
+            "province": 12702,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U1"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U2"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U3"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A2",
+            "province": 12639,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U4"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.76,
+                    "experience": 0.1,
+                    "name_id": "CHI_U5"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U6"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A3",
+            "province": 12519,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U7"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U8"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U9"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U10"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A4",
+            "province": 12639,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U11"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U12"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U13"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U14"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A5",
+            "province": 12459,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U15"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U16"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U17"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.09,
+                    "name_id": "CHI_U18"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A6",
+            "province": 12911,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U19"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U20"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.76,
+                    "experience": 0.09,
+                    "name_id": "CHI_U21"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U22"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A7",
+            "province": 12988,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U23"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U24"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U25"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U26"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A8",
+            "province": 13115,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.05,
+                    "name_id": "CHI_U27"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.05,
+                    "name_id": "CHI_U28"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.04,
+                    "name_id": "CHI_U29"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.05,
+                    "name_id": "CHI_U30"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A9",
+            "province": 12915,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.15,
+                    "name_id": "CHI_U31"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.15,
+                    "name_id": "CHI_U32"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.15,
+                    "name_id": "CHI_U33"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.72,
+                    "experience": 0.14,
+                    "name_id": "CHI_U34"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A10",
+            "province": 11937,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.09,
+                    "name_id": "CHI_U35"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U36"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U37"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U38"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A11",
+            "province": 12288,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U39"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U40"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U41"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.09,
+                    "name_id": "CHI_U42"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A12",
+            "province": 11937,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.15,
+                    "name_id": "CHI_U43"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.15,
+                    "name_id": "CHI_U44"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.15,
+                    "name_id": "CHI_U45"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.14,
+                    "name_id": "CHI_U46"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A13",
+            "province": 11937,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U47"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U48"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U49"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U50"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A14",
+            "province": 11937,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.04,
+                    "name_id": "CHI_U51"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.05,
+                    "name_id": "CHI_U52"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.04,
+                    "name_id": "CHI_U53"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.05,
+                    "name_id": "CHI_U54"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A15",
+            "province": 12458,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.09,
+                    "name_id": "CHI_U55"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U56"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U57"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U58"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A16",
+            "province": 12455,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U59"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U60"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U61"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U62"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A17",
+            "province": 12395,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U63"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.09,
+                    "name_id": "CHI_U64"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U65"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U66"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A18",
+            "province": 12397,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.16,
+                    "name_id": "CHI_U67"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.14,
+                    "name_id": "CHI_U68"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.16,
+                    "name_id": "CHI_U69"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.14,
+                    "name_id": "CHI_U70"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A19",
+            "province": 12458,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U71"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.09,
+                    "name_id": "CHI_U72"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U73"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U74"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A20",
+            "province": 12275,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U75"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U76"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U77"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U78"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A21",
+            "province": 12399,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.15,
+                    "name_id": "CHI_U79"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.13,
+                    "name_id": "CHI_U80"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.15,
+                    "name_id": "CHI_U81"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.13,
+                    "name_id": "CHI_U82"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A22",
+            "province": 12138,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.15,
+                    "name_id": "CHI_U83"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.14,
+                    "name_id": "CHI_U84"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.76,
+                    "experience": 0.15,
+                    "name_id": "CHI_U85"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.13,
+                    "name_id": "CHI_U86"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A23",
+            "province": 12140,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U87"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U88"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U89"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U90"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A24",
+            "province": 12339,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U91"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U92"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U93"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U94"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A25",
+            "province": 12923,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.15,
+                    "name_id": "CHI_U95"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.14,
+                    "name_id": "CHI_U96"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.14,
+                    "name_id": "CHI_U97"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.15,
+                    "name_id": "CHI_U98"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A26",
+            "province": 12776,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.13,
+                    "name_id": "CHI_U99"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.14,
+                    "name_id": "CHI_U100"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.16,
+                    "name_id": "CHI_U101"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.14,
+                    "name_id": "CHI_U102"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A27",
+            "province": 12775,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.14,
+                    "name_id": "CHI_U103"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.15,
+                    "name_id": "CHI_U104"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.13,
+                    "name_id": "CHI_U105"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.15,
+                    "name_id": "CHI_U106"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A28",
+            "province": 12709,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.16,
+                    "name_id": "CHI_U107"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.14,
+                    "name_id": "CHI_U108"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.76,
+                    "experience": 0.15,
+                    "name_id": "CHI_U109"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.14,
+                    "name_id": "CHI_U110"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A29",
+            "province": 12589,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U111"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U112"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U113"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U114"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A30",
+            "province": 12840,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.15,
+                    "name_id": "CHI_U115"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.16,
+                    "name_id": "CHI_U116"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.14,
+                    "name_id": "CHI_U117"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.15,
+                    "name_id": "CHI_U118"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A31",
+            "province": 12916,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.08,
+                    "name_id": "CHI_U119"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U120"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U121"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U122"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A32",
+            "province": 12991,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.14,
+                    "name_id": "CHI_U123"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.16,
+                    "name_id": "CHI_U124"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.14,
+                    "name_id": "CHI_U125"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.76,
+                    "experience": 0.16,
+                    "name_id": "CHI_U126"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A33",
+            "province": 12918,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.14,
+                    "name_id": "CHI_U127"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.15,
+                    "name_id": "CHI_U128"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.13,
+                    "name_id": "CHI_U129"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.15,
+                    "name_id": "CHI_U130"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A34",
+            "province": 12841,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U131"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U132"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.09,
+                    "name_id": "CHI_U133"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U134"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A35",
+            "province": 12836,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.13,
+                    "name_id": "CHI_U135"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.15,
+                    "name_id": "CHI_U136"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.13,
+                    "name_id": "CHI_U137"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.14,
+                    "name_id": "CHI_U138"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A36",
+            "province": 12913,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.13,
+                    "name_id": "CHI_U139"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.15,
+                    "name_id": "CHI_U140"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.16,
+                    "name_id": "CHI_U141"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.14,
+                    "name_id": "CHI_U142"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A37",
+            "province": 12912,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.13,
+                    "name_id": "CHI_U143"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.15,
+                    "name_id": "CHI_U144"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.15,
+                    "name_id": "CHI_U145"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.14,
+                    "name_id": "CHI_U146"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A38",
+            "province": 12701,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.16,
+                    "name_id": "CHI_U147"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.14,
+                    "name_id": "CHI_U148"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.15,
+                    "name_id": "CHI_U149"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.13,
+                    "name_id": "CHI_U150"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A39",
+            "province": 12640,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.14,
+                    "name_id": "CHI_U151"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.15,
+                    "name_id": "CHI_U152"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.13,
+                    "name_id": "CHI_U153"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.15,
+                    "name_id": "CHI_U154"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A40",
+            "province": 12845,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.15,
+                    "name_id": "CHI_U155"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.13,
+                    "name_id": "CHI_U156"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.15,
+                    "name_id": "CHI_U157"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.13,
+                    "name_id": "CHI_U158"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A41",
+            "province": 12845,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.13,
+                    "name_id": "CHI_U159"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.15,
+                    "name_id": "CHI_U160"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.16,
+                    "name_id": "CHI_U161"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.14,
+                    "name_id": "CHI_U162"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A42",
+            "province": 12846,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.14,
+                    "name_id": "CHI_U163"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.16,
+                    "name_id": "CHI_U164"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.14,
+                    "name_id": "CHI_U165"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.15,
+                    "name_id": "CHI_U166"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A43",
+            "province": 12846,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.14,
+                    "name_id": "CHI_U167"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.15,
+                    "name_id": "CHI_U168"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.13,
+                    "name_id": "CHI_U169"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.14,
+                    "name_id": "CHI_U170"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A44",
+            "province": 12846,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.15,
+                    "name_id": "CHI_U171"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.13,
+                    "name_id": "CHI_U172"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.15,
+                    "name_id": "CHI_U173"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.16,
+                    "name_id": "CHI_U174"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A45",
+            "province": 12521,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.16,
+                    "name_id": "CHI_U175"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.14,
+                    "name_id": "CHI_U176"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.16,
+                    "name_id": "CHI_U177"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.14,
+                    "name_id": "CHI_U178"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A46",
+            "province": 12581,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.15,
+                    "name_id": "CHI_U179"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.16,
+                    "name_id": "CHI_U180"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.14,
+                    "name_id": "CHI_U181"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.16,
+                    "name_id": "CHI_U182"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A47",
+            "province": 12460,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.13,
+                    "name_id": "CHI_U183"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.15,
+                    "name_id": "CHI_U184"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.13,
+                    "name_id": "CHI_U185"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.15,
+                    "name_id": "CHI_U186"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A48",
+            "province": 12580,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.13,
+                    "name_id": "CHI_U187"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.14,
+                    "name_id": "CHI_U188"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.16,
+                    "name_id": "CHI_U189"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.13,
+                    "name_id": "CHI_U190"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A49",
+            "province": 12580,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.13,
+                    "name_id": "CHI_U191"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.15,
+                    "name_id": "CHI_U192"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.13,
+                    "name_id": "CHI_U193"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.15,
+                    "name_id": "CHI_U194"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A50",
+            "province": 12460,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.13,
+                    "name_id": "CHI_U195"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.15,
+                    "name_id": "CHI_U196"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.16,
+                    "name_id": "CHI_U197"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.14,
+                    "name_id": "CHI_U198"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A51",
+            "province": 12520,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U199"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.08,
+                    "name_id": "CHI_U200"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U201"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U202"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A52",
+            "province": 12520,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U203"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U204"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U205"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U206"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A53",
+            "province": 12460,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U207"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U208"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U209"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U210"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A54",
+            "province": 12340,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U211"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U212"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U213"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U214"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A55",
+            "province": 12581,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U215"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U216"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.08,
+                    "name_id": "CHI_U217"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U218"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A56",
+            "province": 12581,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.08,
+                    "name_id": "CHI_U219"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U220"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.11,
+                    "name_id": "CHI_U221"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U222"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A57",
+            "province": 12581,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U223"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U224"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U225"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U226"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A58",
+            "province": 12768,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U227"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U228"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U229"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U230"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A59",
+            "province": 12702,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U231"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U232"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U233"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.09,
+                    "name_id": "CHI_U234"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A60",
+            "province": 13055,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U235"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.09,
+                    "name_id": "CHI_U236"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U237"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U238"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A61",
+            "province": 13054,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.12,
+                    "name_id": "CHI_U239"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U240"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.07,
+                    "name_id": "CHI_U241"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.08,
+                    "name_id": "CHI_U242"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A62",
+            "province": 13054,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U243"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U244"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U245"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U246"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A63",
+            "province": 12837,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U247"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U248"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U249"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U250"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A64",
+            "province": 12988,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U251"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U252"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U253"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U254"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A65",
+            "province": 12206,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U255"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U256"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.08,
+                    "name_id": "CHI_U257"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U258"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A66",
+            "province": 12206,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.08,
+                    "name_id": "CHI_U259"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U260"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U261"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U262"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A67",
+            "province": 12138,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.11,
+                    "name_id": "CHI_U263"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.09,
+                    "name_id": "CHI_U264"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U265"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U266"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A68",
+            "province": 12068,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U267"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.11,
+                    "name_id": "CHI_U268"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U269"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U270"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A69",
+            "province": 11996,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U271"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U272"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U273"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.08,
+                    "name_id": "CHI_U274"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A70",
+            "province": 12400,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U275"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U276"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U277"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.09,
+                    "name_id": "CHI_U278"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A71",
+            "province": 12338,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U279"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U280"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U281"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U282"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A72",
+            "province": 12338,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U283"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U284"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U285"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.08,
+                    "name_id": "CHI_U286"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A73",
+            "province": 12399,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U287"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.09,
+                    "name_id": "CHI_U288"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U289"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.11,
+                    "name_id": "CHI_U290"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A74",
+            "province": 12399,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.09,
+                    "name_id": "CHI_U291"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U292"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U293"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U294"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A75",
+            "province": 12581,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U295"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U296"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U297"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.09,
+                    "name_id": "CHI_U298"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A76",
+            "province": 12581,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U299"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.09,
+                    "name_id": "CHI_U300"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U301"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.08,
+                    "name_id": "CHI_U302"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A77",
+            "province": 12642,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U303"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U304"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U305"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U306"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A78",
+            "province": 12702,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U307"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.09,
+                    "name_id": "CHI_U308"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U309"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.09,
+                    "name_id": "CHI_U310"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A79",
+            "province": 12702,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U311"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U312"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U313"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.11,
+                    "name_id": "CHI_U314"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A80",
+            "province": 12705,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U315"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U316"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U317"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U318"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A81",
+            "province": 12705,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U319"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U320"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U321"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.08,
+                    "name_id": "CHI_U322"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A82",
+            "province": 12704,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U323"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U324"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U325"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.11,
+                    "name_id": "CHI_U326"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A83",
+            "province": 12704,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U327"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U328"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U329"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U330"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A84",
+            "province": 12704,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.08,
+                    "name_id": "CHI_U331"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U332"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.11,
+                    "name_id": "CHI_U333"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U334"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A85",
+            "province": 12992,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.09,
+                    "name_id": "CHI_U335"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U336"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U337"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U338"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A86",
+            "province": 12992,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U339"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U340"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U341"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.09,
+                    "name_id": "CHI_U342"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A87",
+            "province": 12992,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U343"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U344"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U345"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.08,
+                    "name_id": "CHI_U346"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A88",
+            "province": 13057,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U347"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U348"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U349"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U350"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A89",
+            "province": 12918,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U351"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U352"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.08,
+                    "name_id": "CHI_U353"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.09,
+                    "name_id": "CHI_U354"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A90",
+            "province": 12289,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U355"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U356"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U357"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U358"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A91",
+            "province": 12289,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U359"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U360"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U361"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.09,
+                    "name_id": "CHI_U362"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A92",
+            "province": 12289,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U363"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.08,
+                    "name_id": "CHI_U364"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U365"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U366"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A93",
+            "province": 12288,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U367"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.11,
+                    "name_id": "CHI_U368"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.09,
+                    "name_id": "CHI_U369"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U370"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A94",
+            "province": 12288,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U371"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U372"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U373"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U374"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A95",
+            "province": 12400,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U375"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U376"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U377"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U378"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A96",
+            "province": 12400,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U379"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U380"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U381"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.08,
+                    "name_id": "CHI_U382"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A97",
+            "province": 12400,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U383"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U384"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.08,
+                    "name_id": "CHI_U385"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U386"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A98",
+            "province": 12399,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U387"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U388"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U389"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U390"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A99",
+            "province": 12339,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U391"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U392"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U393"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U394"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A100",
+            "province": 11996,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U395"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U396"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U397"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U398"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A101",
+            "province": 11996,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.08,
+                    "name_id": "CHI_U399"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U400"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U401"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U402"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A102",
+            "province": 11996,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U403"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.11,
+                    "name_id": "CHI_U404"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U405"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U406"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A103",
+            "province": 12206,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U407"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U408"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U409"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.08,
+                    "name_id": "CHI_U410"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A104",
+            "province": 12206,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U411"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.08,
+                    "name_id": "CHI_U412"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U413"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U414"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A105",
+            "province": 13121,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U415"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.09,
+                    "name_id": "CHI_U416"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U417"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U418"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A106",
+            "province": 13121,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.09,
+                    "name_id": "CHI_U419"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U420"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.08,
+                    "name_id": "CHI_U421"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U422"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A107",
+            "province": 13119,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U423"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U424"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U425"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U426"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A108",
+            "province": 13119,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U427"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U428"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U429"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U430"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A109",
+            "province": 13119,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U431"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U432"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U433"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.11,
+                    "name_id": "CHI_U434"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A110",
+            "province": 12582,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U435"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.08,
+                    "name_id": "CHI_U436"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U437"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U438"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A111",
+            "province": 12582,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U439"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U440"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U441"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U442"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A112",
+            "province": 12521,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U443"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U444"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U445"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U446"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A113",
+            "province": 12521,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U447"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U448"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.11,
+                    "name_id": "CHI_U449"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U450"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A114",
+            "province": 12521,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U451"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.11,
+                    "name_id": "CHI_U452"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.09,
+                    "name_id": "CHI_U453"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U454"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A115",
+            "province": 13189,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U455"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.09,
+                    "name_id": "CHI_U456"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U457"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.08,
+                    "name_id": "CHI_U458"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A116",
+            "province": 13189,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.75,
+                    "experience": 0.09,
+                    "name_id": "CHI_U459"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U460"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.08,
+                    "name_id": "CHI_U461"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U462"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A117",
+            "province": 13189,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U463"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U464"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U465"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.11,
+                    "name_id": "CHI_U466"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A118",
+            "province": 13125,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U467"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.09,
+                    "name_id": "CHI_U468"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U469"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.1,
+                    "name_id": "CHI_U470"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A119",
+            "province": 13190,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.1,
+                    "name_id": "CHI_U471"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.75,
+                    "experience": 0.1,
+                    "name_id": "CHI_U472"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.775,
+                    "experience": 0.09,
+                    "name_id": "CHI_U473"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "CHI_U474"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A120",
+            "province": 13478,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U475"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U476"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U477"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U478"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U479"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A121",
+            "province": 13478,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U480"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U481"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U482"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U483"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U484"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A122",
+            "province": 13415,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U485"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U486"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U487"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U488"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U489"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A123",
+            "province": 13415,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U490"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U491"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U492"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U493"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U494"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A124",
+            "province": 13415,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U495"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U496"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U497"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U498"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U499"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A125",
+            "province": 13362,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U500"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U501"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U502"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U503"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U504"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A126",
+            "province": 13362,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U505"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U506"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U507"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U508"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U509"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A127",
+            "province": 13362,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U510"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U511"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U512"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U513"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U514"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A128",
+            "province": 13305,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U515"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U516"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U517"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U518"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U519"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A129",
+            "province": 13361,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U520"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U521"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U522"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U523"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U524"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A130",
+            "province": 13180,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U525"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U526"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U527"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U528"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U529"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A131",
+            "province": 13180,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U530"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U531"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U532"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U533"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U534"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A132",
+            "province": 13181,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U535"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U536"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U537"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U538"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U539"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A133",
+            "province": 13113,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.04,
+                    "name_id": "CHI_U540"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U541"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U542"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U543"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U544"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A134",
+            "province": 13245,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U545"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U546"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U547"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U548"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U549"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A135",
+            "province": 12831,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U550"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U551"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U552"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U553"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U554"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A136",
+            "province": 12828,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U555"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U556"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U557"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U558"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U559"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A137",
+            "province": 12829,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U560"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U561"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U562"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U563"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U564"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A138",
+            "province": 12830,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U565"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U566"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.04,
+                    "name_id": "CHI_U567"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U568"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.05,
+                    "name_id": "CHI_U569"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A139",
+            "province": 12906,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U570"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U571"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U572"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U573"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U574"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A140",
+            "province": 12906,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U575"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U576"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.04,
+                    "name_id": "CHI_U577"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U578"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U579"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A141",
+            "province": 12906,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U580"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U581"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U582"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U583"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U584"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A142",
+            "province": 12983,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U585"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U586"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U587"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U588"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U589"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A143",
+            "province": 12831,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U590"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U591"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U592"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U593"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U594"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A144",
+            "province": 12909,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U595"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U596"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.05,
+                    "name_id": "CHI_U597"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U598"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U599"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A145",
+            "province": 12907,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U600"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U601"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U602"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U603"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U604"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A146",
+            "province": 12907,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U605"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U606"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U607"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U608"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U609"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A147",
+            "province": 12760,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U610"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U611"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U612"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U613"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U614"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A148",
+            "province": 12759,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U615"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U616"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U617"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U618"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U619"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A149",
+            "province": 12759,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U620"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.04,
+                    "name_id": "CHI_U621"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.04,
+                    "name_id": "CHI_U622"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U623"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U624"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A150",
+            "province": 12267,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.04,
+                    "name_id": "CHI_U625"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.04,
+                    "name_id": "CHI_U626"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U627"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U628"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U629"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A151",
+            "province": 12389,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U630"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U631"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U632"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U633"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U634"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A152",
+            "province": 12331,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U635"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U636"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U637"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U638"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U639"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A153",
+            "province": 12268,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U640"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U641"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U642"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U643"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U644"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A154",
+            "province": 12268,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U645"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "CHI_U646"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U647"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "CHI_U648"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "CHI_U649"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A155",
+            "province": 11081,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.04,
+                    "name_id": "CHI_U651"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.05,
+                    "name_id": "CHI_U652"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.05,
+                    "name_id": "CHI_U653"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A156",
+            "province": 11139,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "CHI_U654"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.9,
+                    "experience": 0.1,
+                    "name_id": "CHI_U655"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.09,
+                    "name_id": "CHI_U656"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A157",
+            "province": 10970,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.04,
+                    "name_id": "CHI_U657"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.875,
+                    "experience": 0.05,
+                    "name_id": "CHI_U658"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.05,
+                    "name_id": "CHI_U659"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A158",
+            "province": 10398,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.825,
+                    "experience": 0.05,
+                    "name_id": "CHI_U660"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.05,
+                    "name_id": "CHI_U661"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.04,
+                    "name_id": "CHI_U662"
+                }
+            ]
+        },
+        {
+            "name_id": "CHI_A159",
+            "province": 12279,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.05,
+                    "name_id": "CHI_U663"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.8,
+                    "experience": 0.05,
+                    "name_id": "CHI_U664"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.825,
+                    "experience": 0.05,
+                    "name_id": "CHI_U665"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": [
+        {
+            "type": "multirole_fighter",
+            "base": 13120,
+            "strength": 0.5,
+            "experience": 0.0,
+            "name_id": "CHI_U650"
+        }
+    ]
 }

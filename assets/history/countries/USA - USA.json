@@ -167,5 +167,5732 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "USA_A1",
+            "province": 2336,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U1"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U2"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U3"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A2",
+            "province": 2336,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U4"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.09,
+                    "name_id": "USA_U5"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U6"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U7"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U8"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A3",
+            "province": 2336,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "USA_U9"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U10"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U11"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A4",
+            "province": 2336,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U12"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U13"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U14"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U15"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A5",
+            "province": 2336,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U16"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U17"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U18"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U19"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U20"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A6",
+            "province": 2285,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U21"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U22"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U23"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U24"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U25"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A7",
+            "province": 2185,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U26"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U27"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 0.973,
+                    "experience": 0.1,
+                    "name_id": "USA_U28"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 0.973,
+                    "experience": 0.1,
+                    "name_id": "USA_U29"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A8",
+            "province": 2183,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U30"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U31"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U32"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U33"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U34"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A9",
+            "province": 2133,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U35"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U36"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U37"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U38"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A10",
+            "province": 2056,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U39"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U40"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U41"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A11",
+            "province": 1992,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U42"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "USA_U43"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A12",
+            "province": 1992,
+            "regiments": [
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U44"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 0.973,
+                    "experience": 0.1,
+                    "name_id": "USA_U45"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U46"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U47"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U48"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A13",
+            "province": 1880,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U49"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U50"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U51"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U52"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A14",
+            "province": 1812,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U53"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U54"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U55"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A15",
+            "province": 1368,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U56"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U57"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U58"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 0.9667,
+                    "experience": 0.09,
+                    "name_id": "USA_U59"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A16",
+            "province": 887,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U60"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U61"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U62"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A17",
+            "province": 534,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U63"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U64"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U65"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A18",
+            "province": 438,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U66"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U67"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.475,
+                    "experience": 0.1,
+                    "name_id": "USA_U68"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U69"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A19",
+            "province": 429,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U70"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U71"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U72"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U73"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A20",
+            "province": 404,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U74"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U75"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U76"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "USA_U77"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A21",
+            "province": 1368,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U78"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U79"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U80"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A22",
+            "province": 2465,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U81"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U82"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U83"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A23",
+            "province": 5420,
+            "regiments": [
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U249"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U250"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U251"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U252"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A24",
+            "province": 5495,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U253"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U254"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U255"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U256"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U257"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A25",
+            "province": 5567,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "USA_U258"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U259"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U260"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U261"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U262"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A26",
+            "province": 5725,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U263"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U264"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U265"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U266"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U267"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A27",
+            "province": 12909,
+            "regiments": [
+                {
+                    "type": "special_forces",
+                    "strength": 0.975,
+                    "experience": 0.15,
+                    "name_id": "USA_U308"
+                },
+                {
+                    "type": "special_forces",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "USA_U309"
+                },
+                {
+                    "type": "special_forces",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "USA_U310"
+                },
+                {
+                    "type": "special_forces",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "USA_U311"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "USA_U312"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A28",
+            "province": 13608,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U313"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U314"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U315"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U316"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A29",
+            "province": 13663,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "USA_U317"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.12,
+                    "name_id": "USA_U318"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 0.973,
+                    "experience": 0.12,
+                    "name_id": "USA_U319"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.12,
+                    "name_id": "USA_U320"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A30",
+            "province": 13770,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U321"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U322"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U323"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U324"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U325"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A31",
+            "province": 13822,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.12,
+                    "name_id": "USA_U326"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.12,
+                    "name_id": "USA_U327"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.12,
+                    "name_id": "USA_U328"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 0.973,
+                    "experience": 0.12,
+                    "name_id": "USA_U329"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "USA_U330"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A32",
+            "province": 13990,
+            "regiments": [
+                {
+                    "type": "special_forces",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "USA_U331"
+                },
+                {
+                    "type": "special_forces",
+                    "strength": 0.975,
+                    "experience": 0.15,
+                    "name_id": "USA_U332"
+                },
+                {
+                    "type": "special_forces",
+                    "strength": 0.975,
+                    "experience": 0.15,
+                    "name_id": "USA_U333"
+                },
+                {
+                    "type": "special_forces",
+                    "strength": 0.975,
+                    "experience": 0.15,
+                    "name_id": "USA_U334"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.96,
+                    "experience": 0.15,
+                    "name_id": "USA_U335"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A33",
+            "province": 14093,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U336"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 0.973,
+                    "experience": 0.1,
+                    "name_id": "USA_U337"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U338"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U339"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U340"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A34",
+            "province": 14192,
+            "regiments": [
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 0.9714,
+                    "experience": 0.15,
+                    "name_id": "USA_U341"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "USA_U342"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "USA_U343"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "USA_U344"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "USA_U345"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A35",
+            "province": 14240,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U346"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U347"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U348"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U349"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U350"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A36",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U377"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U378"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.8,
+                    "experience": 0.1,
+                    "name_id": "USA_U379"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U380"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U381"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A37",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U382"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U383"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U384"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U385"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A38",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U386"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U387"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U388"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A39",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U389"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U390"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "USA_U391"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U392"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A40",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U393"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U394"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U395"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A41",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U396"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U397"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U398"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A42",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U399"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U400"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U401"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U402"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A43",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U403"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U404"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U405"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "USA_U406"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A44",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U407"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U408"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U409"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U410"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A45",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U411"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U412"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U413"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U414"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A46",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U415"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U416"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U417"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A47",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.09,
+                    "name_id": "USA_U418"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U419"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U420"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A48",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U421"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U422"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 0.9667,
+                    "experience": 0.09,
+                    "name_id": "USA_U423"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 0.973,
+                    "experience": 0.1,
+                    "name_id": "USA_U424"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A49",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U425"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U426"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U427"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U428"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A50",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U429"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U430"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U431"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U432"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A51",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U433"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "USA_U434"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 0.973,
+                    "experience": 0.1,
+                    "name_id": "USA_U435"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U436"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A52",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U437"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U438"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U439"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 0.973,
+                    "experience": 0.1,
+                    "name_id": "USA_U440"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A53",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U441"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "USA_U442"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U443"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 0.973,
+                    "experience": 0.1,
+                    "name_id": "USA_U444"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A54",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U445"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U446"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U447"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "USA_U448"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A55",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U449"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 0.9667,
+                    "experience": 0.1,
+                    "name_id": "USA_U450"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U451"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U452"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A56",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 0.9714,
+                    "experience": 0.1,
+                    "name_id": "USA_U453"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U454"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U455"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A57",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U456"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U457"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 0.973,
+                    "experience": 0.1,
+                    "name_id": "USA_U458"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U459"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 0.9667,
+                    "experience": 0.1,
+                    "name_id": "USA_U460"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A58",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U461"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U462"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U463"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U464"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A59",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U465"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U466"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U467"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U468"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.96,
+                    "experience": 0.09,
+                    "name_id": "USA_U469"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A60",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U470"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U471"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U472"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U473"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A61",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U474"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U475"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U476"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U477"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A62",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U478"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U479"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U480"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U481"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U482"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A63",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U483"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U484"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U485"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "USA_U486"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "USA_U487"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A64",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U488"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U489"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U490"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A65",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U491"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U492"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U493"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U494"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A66",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U495"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U496"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U497"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A67",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U498"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U499"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U500"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U501"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A68",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U502"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U503"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U504"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U505"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A69",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U506"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U507"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U508"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U509"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A70",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U510"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U511"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U512"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A71",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U513"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U514"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U515"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A72",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U516"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U517"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U518"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A73",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U519"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U520"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U521"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U522"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A74",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U523"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U524"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U525"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U526"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A75",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U527"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U528"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U529"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A76",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U530"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U531"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U532"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A77",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U533"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U534"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U535"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U536"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A78",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U537"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U538"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U539"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A79",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U540"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U541"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U542"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U543"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A80",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U544"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U545"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U546"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A81",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U547"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U548"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U549"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U550"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U551"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A82",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U552"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "USA_U553"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U554"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A83",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U555"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U556"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U557"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A84",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U558"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U559"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U560"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U561"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A85",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U562"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U563"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U564"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A86",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U565"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U566"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U567"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A87",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U568"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U569"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U570"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A88",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U571"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 0.973,
+                    "experience": 0.1,
+                    "name_id": "USA_U572"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U573"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A89",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U574"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U575"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U576"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A90",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U577"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U578"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U579"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A91",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U580"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U581"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U582"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U583"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U584"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A92",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U585"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U586"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U587"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U588"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A93",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U589"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U590"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U591"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A94",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U592"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U593"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U594"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A95",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U595"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U596"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U597"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A96",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U598"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U599"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U600"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A97",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "USA_U601"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U602"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U603"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "USA_U604"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A98",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "USA_U605"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "USA_U606"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "USA_U607"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A99",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "special_forces",
+                    "strength": 0.975,
+                    "experience": 0.15,
+                    "name_id": "USA_U608"
+                },
+                {
+                    "type": "special_forces",
+                    "strength": 0.975,
+                    "experience": 0.15,
+                    "name_id": "USA_U609"
+                },
+                {
+                    "type": "special_forces",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "USA_U610"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "USA_U611"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.9524,
+                    "experience": 0.15,
+                    "name_id": "USA_U612"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A100",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "special_forces",
+                    "strength": 0.975,
+                    "experience": 0.15,
+                    "name_id": "USA_U613"
+                },
+                {
+                    "type": "special_forces",
+                    "strength": 0.975,
+                    "experience": 0.15,
+                    "name_id": "USA_U614"
+                },
+                {
+                    "type": "special_forces",
+                    "strength": 0.975,
+                    "experience": 0.15,
+                    "name_id": "USA_U615"
+                },
+                {
+                    "type": "special_forces",
+                    "strength": 0.975,
+                    "experience": 0.15,
+                    "name_id": "USA_U616"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.96,
+                    "experience": 0.15,
+                    "name_id": "USA_U617"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A101",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "special_forces",
+                    "strength": 0.975,
+                    "experience": 0.14,
+                    "name_id": "USA_U618"
+                },
+                {
+                    "type": "special_forces",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "USA_U619"
+                },
+                {
+                    "type": "special_forces",
+                    "strength": 0.975,
+                    "experience": 0.14,
+                    "name_id": "USA_U620"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "USA_U621"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "USA_U622"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_A102",
+            "province": 2182,
+            "regiments": [
+                {
+                    "type": "special_forces",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "USA_U623"
+                },
+                {
+                    "type": "special_forces",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "USA_U624"
+                },
+                {
+                    "type": "special_forces",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "USA_U625"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "USA_U626"
+                }
+            ]
+        }
+    ],
+    "navies": [
+        {
+            "name_id": "USA_N1",
+            "province": 2184,
+            "base": 2184,
+            "ships": [
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 0.35,
+                    "experience": 0.0,
+                    "name_id": "USA_U109"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U110"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U111"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U112"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U113"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U114"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U115"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U116"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U117"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U118"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U119"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U120"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U121"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U122"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U123"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U124"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U125"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U126"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U127"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U128"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U129"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U130"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U131"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U132"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U133"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U134"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U135"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U136"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U137"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U138"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U139"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U140"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U141"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U142"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_N2",
+            "province": 2184,
+            "base": 2184,
+            "ships": [
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U143"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U144"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U145"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_N3",
+            "province": 399,
+            "base": 399,
+            "ships": [
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U146"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U147"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U148"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U149"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U150"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U151"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U152"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U153"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U154"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U155"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U156"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U157"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U158"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U159"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U160"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U161"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U162"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U163"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U164"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U165"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U166"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U167"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U168"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U169"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U170"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U171"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_N4",
+            "province": 399,
+            "base": 399,
+            "ships": [
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U172"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U173"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_N5",
+            "province": 426,
+            "base": 426,
+            "ships": [
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 0.35,
+                    "experience": 0.0,
+                    "name_id": "USA_U174"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U175"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U176"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U177"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U178"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U179"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_N6",
+            "province": 534,
+            "base": 534,
+            "ships": [
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U180"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U181"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U182"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U183"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U184"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U185"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U186"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U187"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U188"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U189"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U190"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_N7",
+            "province": 534,
+            "base": 534,
+            "ships": [
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U191"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U192"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U193"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U194"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U195"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U196"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U197"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U198"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U199"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U200"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_N8",
+            "province": 600,
+            "base": 600,
+            "ships": [
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U201"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U202"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U203"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U204"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U205"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U206"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U207"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U208"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U209"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_N9",
+            "province": 438,
+            "base": 438,
+            "ships": [
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U210"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U211"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U212"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U213"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U214"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U215"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U216"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U217"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U218"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U219"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U220"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U221"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U222"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U223"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U224"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U225"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U226"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U227"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U228"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_N10",
+            "province": 534,
+            "base": 534,
+            "ships": [
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U229"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U230"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U231"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_N11",
+            "province": 2464,
+            "base": 2464,
+            "ships": [
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U232"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U233"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U234"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U235"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U236"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_N12",
+            "province": 2336,
+            "base": 2336,
+            "ships": [
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 0.35,
+                    "experience": 0.0,
+                    "name_id": "USA_U237"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U238"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U239"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U240"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U241"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U242"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U243"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U244"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U245"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U246"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U247"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U248"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_N13",
+            "province": 14192,
+            "base": 14192,
+            "ships": [
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U351"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U352"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U353"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U354"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U355"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U356"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U357"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_N14",
+            "province": 14192,
+            "base": 14192,
+            "ships": [
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U358"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U359"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U360"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_N15",
+            "province": 13186,
+            "base": 13186,
+            "ships": [
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U361"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U362"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U363"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U364"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U365"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_N16",
+            "province": 13186,
+            "base": 13186,
+            "ships": [
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U366"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U367"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_N17",
+            "province": 13487,
+            "base": 13487,
+            "ships": [
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U368"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U369"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_N18",
+            "province": 95,
+            "base": 95,
+            "ships": [
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U370"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U371"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U372"
+                }
+            ]
+        },
+        {
+            "name_id": "USA_N19",
+            "province": 14429,
+            "base": 14429,
+            "ships": [
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U373"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U374"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U375"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "USA_U376"
+                }
+            ]
+        }
+    ],
+    "air_wings": [
+        {
+            "type": "multirole_fighter",
+            "base": 1990,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U84"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 1990,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U85"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 1990,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U86"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 1990,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U87"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 1990,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U88"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 1990,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U89"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 1990,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U90"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 1990,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U91"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 1990,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U92"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 1990,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U93"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U94"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U95"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U96"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U97"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U98"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U99"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U100"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U101"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U102"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U103"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U104"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U105"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U106"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U107"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U108"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 5356,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U268"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 5356,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U269"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 5356,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U270"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 5356,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U271"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 5356,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U272"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 5356,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U273"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 5356,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U274"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 5356,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U275"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 5356,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U276"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 5356,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U277"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U278"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U279"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U280"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U281"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U282"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U283"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U284"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U285"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U286"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U287"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U288"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U289"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U290"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U291"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U292"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U293"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U294"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U295"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U296"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U297"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U298"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U299"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U300"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U301"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U302"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U303"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U304"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U305"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U306"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4903,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U307"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U627"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U628"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U629"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U630"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U631"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U632"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U633"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U634"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U635"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U636"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U637"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U638"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U639"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U640"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U641"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U642"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U643"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U644"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U645"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U646"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U647"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U648"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U649"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U650"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U651"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U652"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U653"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U654"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U655"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U656"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U657"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U658"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U659"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U660"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U661"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U662"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U663"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U664"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U665"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U666"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U667"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U668"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U669"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U670"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U671"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U672"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U673"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U674"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U675"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U676"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U677"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U678"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U679"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U680"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U681"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U682"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U683"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U684"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U685"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U686"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U687"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U688"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U689"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U690"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U691"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U692"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U693"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U694"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U695"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U696"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U697"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U698"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U699"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U700"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U701"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U702"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U703"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U704"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U705"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U706"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U707"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U708"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U709"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U710"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U711"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U712"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U713"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U714"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U715"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U716"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U717"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U718"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U719"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U720"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U721"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U722"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U723"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U724"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U725"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U726"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U727"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U728"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U729"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U730"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U731"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U732"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U733"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U734"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U735"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U736"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U737"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U738"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U739"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U740"
+        },
+        {
+            "type": "bomber",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U741"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U742"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U743"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U744"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U745"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U746"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U747"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U748"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U749"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U750"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U751"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U752"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U753"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U754"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U755"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U756"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U757"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U758"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U759"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U760"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U761"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U762"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U763"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U764"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U765"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U766"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U767"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U768"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U769"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U770"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U771"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U772"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U773"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U774"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U775"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U776"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U777"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U778"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U779"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U780"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U781"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U782"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U783"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U784"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U785"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U786"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U787"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U788"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U789"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U790"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 2182,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "USA_U791"
+        }
+    ]
 }

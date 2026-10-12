@@ -99,5 +99,1305 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "ENG_A1",
+            "province": 4903,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.1,
+                    "name_id": "ENG_U1"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.09,
+                    "name_id": "ENG_U2"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.84,
+                    "experience": 0.1,
+                    "name_id": "ENG_U3"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A2",
+            "province": 4903,
+            "regiments": [
+                {
+                    "type": "heavy_infantry",
+                    "strength": 0.875,
+                    "experience": 0.09,
+                    "name_id": "ENG_U4"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.1,
+                    "name_id": "ENG_U5"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.09,
+                    "name_id": "ENG_U6"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A3",
+            "province": 4731,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.05,
+                    "name_id": "ENG_U7"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.88,
+                    "experience": 0.05,
+                    "name_id": "ENG_U8"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.05,
+                    "name_id": "ENG_U9"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A4",
+            "province": 4903,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.09,
+                    "name_id": "ENG_U10"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.1,
+                    "name_id": "ENG_U11"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.08,
+                    "name_id": "ENG_U12"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A5",
+            "province": 5418,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "ENG_U13"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.88,
+                    "experience": 0.1,
+                    "name_id": "ENG_U14"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.09,
+                    "name_id": "ENG_U15"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A6",
+            "province": 5353,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.04,
+                    "name_id": "ENG_U16"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.95,
+                    "experience": 0.05,
+                    "name_id": "ENG_U17"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.04,
+                    "name_id": "ENG_U18"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A7",
+            "province": 5292,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.1,
+                    "name_id": "ENG_U19"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.92,
+                    "experience": 0.1,
+                    "name_id": "ENG_U20"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.09,
+                    "name_id": "ENG_U21"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A8",
+            "province": 5724,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.15,
+                    "name_id": "ENG_U22"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.16,
+                    "name_id": "ENG_U23"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.14,
+                    "name_id": "ENG_U24"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A9",
+            "province": 5903,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.16,
+                    "name_id": "ENG_U25"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.88,
+                    "experience": 0.15,
+                    "name_id": "ENG_U26"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.13,
+                    "name_id": "ENG_U27"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A10",
+            "province": 7630,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.09,
+                    "name_id": "ENG_U71"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.1,
+                    "name_id": "ENG_U72"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.09,
+                    "name_id": "ENG_U73"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A11",
+            "province": 7632,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "ENG_U74"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.09,
+                    "name_id": "ENG_U75"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A12",
+            "province": 7063,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.09,
+                    "name_id": "ENG_U76"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "ENG_U77"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A13",
+            "province": 5460,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.14,
+                    "name_id": "ENG_U78"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.88,
+                    "experience": 0.15,
+                    "name_id": "ENG_U79"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.14,
+                    "name_id": "ENG_U80"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A14",
+            "province": 5329,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.8571,
+                    "experience": 0.1,
+                    "name_id": "ENG_U81"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.1,
+                    "name_id": "ENG_U82"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.11,
+                    "name_id": "ENG_U83"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A15",
+            "province": 7800,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.1,
+                    "name_id": "ENG_U84"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.09,
+                    "name_id": "ENG_U85"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "ENG_U86"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A16",
+            "province": 8567,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.3,
+                    "name_id": "ENG_U87"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.925,
+                    "experience": 0.1,
+                    "name_id": "ENG_U88"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.925,
+                    "experience": 0.07,
+                    "name_id": "ENG_U89"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.9048,
+                    "experience": 0.09,
+                    "name_id": "ENG_U90"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A17",
+            "province": 10348,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "ENG_U92"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.9048,
+                    "experience": 0.09,
+                    "name_id": "ENG_U93"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.1,
+                    "name_id": "ENG_U94"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A18",
+            "province": 10482,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "ENG_U95"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.09,
+                    "name_id": "ENG_U96"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.09,
+                    "name_id": "ENG_U97"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A19",
+            "province": 11374,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "ENG_U98"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.09,
+                    "name_id": "ENG_U99"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.1,
+                    "name_id": "ENG_U100"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A20",
+            "province": 11608,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "ENG_U101"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "ENG_U102"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.09,
+                    "name_id": "ENG_U103"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A21",
+            "province": 14890,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.1,
+                    "name_id": "ENG_U104"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.11,
+                    "name_id": "ENG_U105"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A22",
+            "province": 4903,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "ENG_U135"
+                },
+                {
+                    "type": "special_forces",
+                    "strength": 0.9,
+                    "experience": 0.09,
+                    "name_id": "ENG_U136"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.1,
+                    "name_id": "ENG_U137"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A23",
+            "province": 4903,
+            "regiments": [
+                {
+                    "type": "heavy_infantry",
+                    "strength": 0.925,
+                    "experience": 0.1,
+                    "name_id": "ENG_U138"
+                },
+                {
+                    "type": "heavy_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "ENG_U139"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.88,
+                    "experience": 0.09,
+                    "name_id": "ENG_U140"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A24",
+            "province": 4903,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.1,
+                    "name_id": "ENG_U141"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.84,
+                    "experience": 0.09,
+                    "name_id": "ENG_U142"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.1,
+                    "name_id": "ENG_U143"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A25",
+            "province": 4903,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "ENG_U144"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "ENG_U145"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "ENG_U146"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "ENG_U147"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "ENG_U148"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_A26",
+            "province": 4903,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "ENG_U149"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "ENG_U150"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "ENG_U151"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "ENG_U152"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "ENG_U153"
+                }
+            ]
+        }
+    ],
+    "navies": [
+        {
+            "name_id": "ENG_N1",
+            "province": 4792,
+            "base": 4792,
+            "ships": [
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U41"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U42"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U43"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U44"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U45"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U46"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U47"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U48"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U49"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 0.85,
+                    "experience": 0.0,
+                    "name_id": "ENG_U50"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 0.95,
+                    "experience": 0.0,
+                    "name_id": "ENG_U51"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 0.95,
+                    "experience": 0.0,
+                    "name_id": "ENG_U52"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 0.9,
+                    "experience": 0.0,
+                    "name_id": "ENG_U53"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U54"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 0.65,
+                    "experience": 0.0,
+                    "name_id": "ENG_U55"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U56"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U57"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U58"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 0.7,
+                    "experience": 0.0,
+                    "name_id": "ENG_U59"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_N2",
+            "province": 4789,
+            "base": 4789,
+            "ships": [
+                {
+                    "type": "submarine",
+                    "strength": 0.8,
+                    "experience": 0.0,
+                    "name_id": "ENG_U60"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 0.8,
+                    "experience": 0.0,
+                    "name_id": "ENG_U61"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_N3",
+            "province": 5819,
+            "base": 5819,
+            "ships": [
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U62"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 0.85,
+                    "experience": 0.0,
+                    "name_id": "ENG_U63"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U64"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 0.95,
+                    "experience": 0.0,
+                    "name_id": "ENG_U65"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U66"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U67"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U68"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_N4",
+            "province": 5819,
+            "base": 5819,
+            "ships": [
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U69"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U70"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_N5",
+            "province": 10700,
+            "base": 10700,
+            "ships": [
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U106"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U107"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U108"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_N6",
+            "province": 10700,
+            "base": 10700,
+            "ships": [
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U109"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U110"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_N7",
+            "province": 12713,
+            "base": 12713,
+            "ships": [
+                {
+                    "type": "cruiser",
+                    "strength": 0.95,
+                    "experience": 0.0,
+                    "name_id": "ENG_U111"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 0.8,
+                    "experience": 0.0,
+                    "name_id": "ENG_U112"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U113"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U114"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U115"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_N8",
+            "province": 12713,
+            "base": 12713,
+            "ships": [
+                {
+                    "type": "submarine",
+                    "strength": 0.7,
+                    "experience": 0.0,
+                    "name_id": "ENG_U116"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 0.6,
+                    "experience": 0.0,
+                    "name_id": "ENG_U117"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 0.6,
+                    "experience": 0.0,
+                    "name_id": "ENG_U118"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_N9",
+            "province": 13990,
+            "base": 13990,
+            "ships": [
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U119"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U120"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U121"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_N10",
+            "province": 2534,
+            "base": 12534,
+            "ships": [
+                {
+                    "type": "cruiser",
+                    "strength": 0.85,
+                    "experience": 0.0,
+                    "name_id": "ENG_U122"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 0.9,
+                    "experience": 0.0,
+                    "name_id": "ENG_U123"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U124"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U125"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U126"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_N11",
+            "province": 14534,
+            "base": 14534,
+            "ships": [
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U127"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U128"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U129"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U130"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_N12",
+            "province": 14642,
+            "base": 14642,
+            "ships": [
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U131"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U132"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U133"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U134"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_N13",
+            "province": 362,
+            "base": 362,
+            "ships": [
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U154"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U155"
+                },
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U156"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U157"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U158"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U159"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U160"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U161"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U162"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U163"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U164"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U165"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 0.8,
+                    "experience": 0.0,
+                    "name_id": "ENG_U166"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 0.6,
+                    "experience": 0.0,
+                    "name_id": "ENG_U167"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 0.75,
+                    "experience": 0.0,
+                    "name_id": "ENG_U168"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U169"
+                }
+            ]
+        },
+        {
+            "name_id": "ENG_N14",
+            "province": 362,
+            "base": 362,
+            "ships": [
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U170"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ENG_U171"
+                }
+            ]
+        }
+    ],
+    "air_wings": [
+        {
+            "type": "interceptor_fighter",
+            "base": 5356,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "ENG_U28"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 5356,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "ENG_U29"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 5356,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "ENG_U30"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 4734,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "ENG_U31"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 4734,
+            "strength": 0.5,
+            "experience": 0.0,
+            "name_id": "ENG_U32"
+        },
+        {
+            "type": "bomber",
+            "base": 4734,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "ENG_U33"
+        },
+        {
+            "type": "bomber",
+            "base": 4734,
+            "strength": 0.5,
+            "experience": 0.0,
+            "name_id": "ENG_U34"
+        },
+        {
+            "type": "bomber",
+            "base": 4734,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "ENG_U35"
+        },
+        {
+            "type": "bomber",
+            "base": 4734,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "ENG_U36"
+        },
+        {
+            "type": "bomber",
+            "base": 4734,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "ENG_U37"
+        },
+        {
+            "type": "bomber",
+            "base": 4734,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "ENG_U38"
+        },
+        {
+            "type": "bomber",
+            "base": 4734,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "ENG_U39"
+        },
+        {
+            "type": "bomber",
+            "base": 4734,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "ENG_U40"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 4734,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "ENG_U91"
+        }
+    ]
 }

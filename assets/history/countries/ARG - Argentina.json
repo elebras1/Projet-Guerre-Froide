@@ -55,5 +55,345 @@
         "welfare": "poor_laws",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "ARG_A1",
+            "province": 3248,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.05,
+                    "name_id": "ARG_U1"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.05,
+                    "name_id": "ARG_U2"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.88,
+                    "experience": 0.05,
+                    "name_id": "ARG_U3"
+                }
+            ]
+        },
+        {
+            "name_id": "ARG_A2",
+            "province": 3311,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.04,
+                    "name_id": "ARG_U4"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.05,
+                    "name_id": "ARG_U5"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.04,
+                    "name_id": "ARG_U6"
+                }
+            ]
+        },
+        {
+            "name_id": "ARG_A3",
+            "province": 2983,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.04,
+                    "name_id": "ARG_U7"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.04,
+                    "name_id": "ARG_U8"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.05,
+                    "name_id": "ARG_U9"
+                }
+            ]
+        },
+        {
+            "name_id": "ARG_A4",
+            "province": 2839,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.05,
+                    "name_id": "ARG_U10"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.05,
+                    "name_id": "ARG_U11"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.04,
+                    "name_id": "ARG_U12"
+                }
+            ]
+        },
+        {
+            "name_id": "ARG_A5",
+            "province": 2757,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.05,
+                    "name_id": "ARG_U13"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.05,
+                    "name_id": "ARG_U14"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.04,
+                    "name_id": "ARG_U15"
+                }
+            ]
+        },
+        {
+            "name_id": "ARG_A6",
+            "province": 2754,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.05,
+                    "name_id": "ARG_U16"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.05,
+                    "name_id": "ARG_U17"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.84,
+                    "experience": 0.05,
+                    "name_id": "ARG_U18"
+                }
+            ]
+        },
+        {
+            "name_id": "ARG_A7",
+            "province": 2756,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.0,
+                    "name_id": "ARG_U19"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.9,
+                    "experience": 0.01,
+                    "name_id": "ARG_U20"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.01,
+                    "name_id": "ARG_U21"
+                }
+            ]
+        },
+        {
+            "name_id": "ARG_A8",
+            "province": 3435,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.05,
+                    "name_id": "ARG_U34"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.05,
+                    "name_id": "ARG_U35"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.84,
+                    "experience": 0.05,
+                    "name_id": "ARG_U36"
+                }
+            ]
+        },
+        {
+            "name_id": "ARG_A9",
+            "province": 3435,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.04,
+                    "name_id": "ARG_U37"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.04,
+                    "name_id": "ARG_U38"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.88,
+                    "experience": 0.04,
+                    "name_id": "ARG_U39"
+                }
+            ]
+        },
+        {
+            "name_id": "ARG_A10",
+            "province": 3435,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.09,
+                    "name_id": "ARG_U40"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.09,
+                    "name_id": "ARG_U41"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "ARG_U42"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.88,
+                    "experience": 0.1,
+                    "name_id": "ARG_U43"
+                }
+            ]
+        }
+    ],
+    "navies": [
+        {
+            "name_id": "ARG_N1",
+            "province": 3435,
+            "base": 3435,
+            "ships": [
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ARG_U24"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ARG_U25"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ARG_U26"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ARG_U27"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ARG_U28"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 0.8,
+                    "experience": 0.0,
+                    "name_id": "ARG_U29"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ARG_U30"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 0.6,
+                    "experience": 0.0,
+                    "name_id": "ARG_U31"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 0.6,
+                    "experience": 0.0,
+                    "name_id": "ARG_U32"
+                }
+            ]
+        },
+        {
+            "name_id": "ARG_N2",
+            "province": 3435,
+            "base": 3435,
+            "ships": [
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ARG_U33"
+                }
+            ]
+        }
+    ],
+    "air_wings": [
+        {
+            "type": "interceptor_fighter",
+            "base": 3435,
+            "strength": 0.5,
+            "experience": 0.0,
+            "name_id": "ARG_U22"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 3435,
+            "strength": 0.25,
+            "experience": 0.0,
+            "name_id": "ARG_U23"
+        }
+    ]
 }

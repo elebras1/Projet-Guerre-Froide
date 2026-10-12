@@ -52,5 +52,91 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "NOR_A1",
+            "province": 5485,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.05,
+                    "name_id": "NOR_U1"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.05,
+                    "name_id": "NOR_U2"
+                }
+            ]
+        },
+        {
+            "name_id": "NOR_A2",
+            "province": 5224,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.04,
+                    "name_id": "NOR_U3"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.84,
+                    "experience": 0.05,
+                    "name_id": "NOR_U4"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.05,
+                    "name_id": "NOR_U5"
+                }
+            ]
+        },
+        {
+            "name_id": "NOR_A3",
+            "province": 5485,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.09,
+                    "name_id": "NOR_U8"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.09,
+                    "name_id": "NOR_U9"
+                }
+            ]
+        }
+    ],
+    "navies": [
+        {
+            "name_id": "NOR_N1",
+            "province": 5163,
+            "base": 5163,
+            "ships": [
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "NOR_U7"
+                }
+            ]
+        }
+    ],
+    "air_wings": [
+        {
+            "type": "interceptor_fighter",
+            "base": 5485,
+            "strength": 0.2,
+            "experience": 0.0,
+            "name_id": "NOR_U6"
+        }
+    ]
 }

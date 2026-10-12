@@ -71,5 +71,284 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "ITA_A1",
+            "province": 5643,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.15,
+                    "name_id": "ITA_U1"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.88,
+                    "experience": 0.15,
+                    "name_id": "ITA_U2"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.14,
+                    "name_id": "ITA_U3"
+                }
+            ]
+        },
+        {
+            "name_id": "ITA_A2",
+            "province": 5643,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.15,
+                    "name_id": "ITA_U4"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.88,
+                    "experience": 0.15,
+                    "name_id": "ITA_U5"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.14,
+                    "name_id": "ITA_U6"
+                }
+            ]
+        },
+        {
+            "name_id": "ITA_A3",
+            "province": 5647,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.13,
+                    "name_id": "ITA_U7"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.15,
+                    "name_id": "ITA_U8"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.88,
+                    "experience": 0.15,
+                    "name_id": "ITA_U9"
+                }
+            ]
+        },
+        {
+            "name_id": "ITA_A4",
+            "province": 5647,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.15,
+                    "name_id": "ITA_U28"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.22,
+                    "name_id": "ITA_U29"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.88,
+                    "experience": 0.14,
+                    "name_id": "ITA_U30"
+                }
+            ]
+        }
+    ],
+    "navies": [
+        {
+            "name_id": "ITA_N1",
+            "province": 5428,
+            "base": 5428,
+            "ships": [
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ITA_U11"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ITA_U12"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ITA_U13"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ITA_U14"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ITA_U15"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ITA_U16"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ITA_U17"
+                }
+            ]
+        },
+        {
+            "name_id": "ITA_N2",
+            "province": 5428,
+            "base": 5428,
+            "ships": [
+                {
+                    "type": "submarine",
+                    "strength": 0.6,
+                    "experience": 0.0,
+                    "name_id": "ITA_U18"
+                }
+            ]
+        },
+        {
+            "name_id": "ITA_N3",
+            "province": 5816,
+            "base": 5816,
+            "ships": [
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ITA_U19"
+                }
+            ]
+        },
+        {
+            "name_id": "ITA_N4",
+            "province": 5726,
+            "base": 5726,
+            "ships": [
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ITA_U20"
+                }
+            ]
+        },
+        {
+            "name_id": "ITA_N5",
+            "province": 5501,
+            "base": 5501,
+            "ships": [
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ITA_U21"
+                }
+            ]
+        },
+        {
+            "name_id": "ITA_N6",
+            "province": 5730,
+            "base": 5730,
+            "ships": [
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ITA_U22"
+                }
+            ]
+        },
+        {
+            "name_id": "ITA_N7",
+            "province": 6096,
+            "base": 6096,
+            "ships": [
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ITA_U23"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ITA_U24"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ITA_U25"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ITA_U26"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ITA_U27"
+                }
+            ]
+        },
+        {
+            "name_id": "ITA_N8",
+            "province": 5647,
+            "base": 5647,
+            "ships": [
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ITA_U31"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "ITA_U32"
+                }
+            ]
+        }
+    ],
+    "air_wings": [
+        {
+            "type": "multirole_fighter",
+            "base": 5644,
+            "strength": 0.2,
+            "experience": 0.0,
+            "name_id": "ITA_U10"
+        }
+    ]
 }

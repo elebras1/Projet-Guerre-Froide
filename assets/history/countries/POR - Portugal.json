@@ -44,5 +44,152 @@
         "welfare": "poor_laws",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "POR_A1",
+            "province": 4467,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.05,
+                    "name_id": "POR_U1"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.85,
+                    "experience": 0.05,
+                    "name_id": "POR_U2"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.05,
+                    "name_id": "POR_U3"
+                }
+            ]
+        },
+        {
+            "name_id": "POR_A2",
+            "province": 5775,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.04,
+                    "name_id": "POR_U7"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.05,
+                    "name_id": "POR_U8"
+                }
+            ]
+        },
+        {
+            "name_id": "POR_A3",
+            "province": 6324,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.04,
+                    "name_id": "POR_U9"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.05,
+                    "name_id": "POR_U10"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.05,
+                    "name_id": "POR_U11"
+                }
+            ]
+        },
+        {
+            "name_id": "POR_A4",
+            "province": 7848,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.04,
+                    "name_id": "POR_U12"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.04,
+                    "name_id": "POR_U13"
+                }
+            ]
+        },
+        {
+            "name_id": "POR_A5",
+            "province": 4423,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.04,
+                    "name_id": "POR_U15"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.05,
+                    "name_id": "POR_U16"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.88,
+                    "experience": 0.05,
+                    "name_id": "POR_U17"
+                }
+            ]
+        }
+    ],
+    "navies": [
+        {
+            "name_id": "POR_N1",
+            "province": 4423,
+            "base": 4423,
+            "ships": [
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "POR_U5"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 0.3,
+                    "experience": 0.0,
+                    "name_id": "POR_U6"
+                }
+            ]
+        }
+    ],
+    "air_wings": [
+        {
+            "type": "interceptor_fighter",
+            "base": 4423,
+            "strength": 0.5,
+            "experience": 0.0,
+            "name_id": "POR_U4"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 5773,
+            "strength": 0.3,
+            "experience": 0.0,
+            "name_id": "POR_U14"
+        }
+    ]
 }

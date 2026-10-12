@@ -47,5 +47,149 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "FIN_A1",
+            "province": 6777,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.19,
+                    "name_id": "FIN_U1"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.19,
+                    "name_id": "FIN_U2"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.19,
+                    "name_id": "FIN_U3"
+                }
+            ]
+        },
+        {
+            "name_id": "FIN_A2",
+            "province": 7188,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.2,
+                    "name_id": "FIN_U4"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.22,
+                    "name_id": "FIN_U5"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.19,
+                    "name_id": "FIN_U6"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.19,
+                    "name_id": "FIN_U7"
+                }
+            ]
+        },
+        {
+            "name_id": "FIN_A3",
+            "province": 4127,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.19,
+                    "name_id": "FIN_U8"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.21,
+                    "name_id": "FIN_U9"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.18,
+                    "name_id": "FIN_U10"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.19,
+                    "name_id": "FIN_U11"
+                }
+            ]
+        },
+        {
+            "name_id": "FIN_A4",
+            "province": 4508,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.21,
+                    "name_id": "FIN_U12"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.88,
+                    "experience": 0.2,
+                    "name_id": "FIN_U13"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.17,
+                    "name_id": "FIN_U14"
+                }
+            ]
+        },
+        {
+            "name_id": "FIN_A5",
+            "province": 6777,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.26,
+                    "name_id": "FIN_U16"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.23,
+                    "name_id": "FIN_U17"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.23,
+                    "name_id": "FIN_U18"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": [
+        {
+            "type": "multirole_fighter",
+            "base": 7189,
+            "strength": 0.3,
+            "experience": 0.0,
+            "name_id": "FIN_U15"
+        }
+    ]
 }

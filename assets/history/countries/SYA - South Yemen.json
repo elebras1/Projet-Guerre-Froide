@@ -43,5 +43,33 @@
         "welfare": "poor_laws",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "SYA_A1",
+            "province": 8567,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.02,
+                    "name_id": "SYA_U1"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.02,
+                    "name_id": "SYA_U2"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.02,
+                    "name_id": "SYA_U3"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": []
 }

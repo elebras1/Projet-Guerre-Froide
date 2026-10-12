@@ -71,5 +71,286 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "SWE_A1",
+            "province": 6082,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SWE_U1"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SWE_U2"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SWE_U3"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.05,
+                    "name_id": "SWE_U4"
+                }
+            ]
+        },
+        {
+            "name_id": "SWE_A2",
+            "province": 5987,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SWE_U5"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SWE_U6"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SWE_U7"
+                }
+            ]
+        },
+        {
+            "name_id": "SWE_A3",
+            "province": 6172,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SWE_U8"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SWE_U9"
+                }
+            ]
+        },
+        {
+            "name_id": "SWE_A4",
+            "province": 4156,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SWE_U10"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SWE_U11"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SWE_U12"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SWE_U13"
+                }
+            ]
+        },
+        {
+            "name_id": "SWE_A5",
+            "province": 4349,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SWE_U14"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.05,
+                    "name_id": "SWE_U15"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 0.973,
+                    "experience": 0.05,
+                    "name_id": "SWE_U16"
+                }
+            ]
+        },
+        {
+            "name_id": "SWE_A6",
+            "province": 6082,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SWE_U24"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SWE_U25"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SWE_U26"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SWE_U27"
+                }
+            ]
+        },
+        {
+            "name_id": "SWE_A7",
+            "province": 6082,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SWE_U28"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SWE_U29"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SWE_U30"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.04,
+                    "name_id": "SWE_U31"
+                }
+            ]
+        },
+        {
+            "name_id": "SWE_A8",
+            "province": 6082,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SWE_U32"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SWE_U33"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SWE_U34"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.05,
+                    "name_id": "SWE_U35"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SWE_U36"
+                }
+            ]
+        }
+    ],
+    "navies": [
+        {
+            "name_id": "SWE_N1",
+            "province": 5803,
+            "base": 5803,
+            "ships": [
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SWE_U21"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SWE_U22"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SWE_U23"
+                }
+            ]
+        }
+    ],
+    "air_wings": [
+        {
+            "type": "interceptor_fighter",
+            "base": 5803,
+            "strength": 0.75,
+            "experience": 0.0,
+            "name_id": "SWE_U17"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 5803,
+            "strength": 0.75,
+            "experience": 0.0,
+            "name_id": "SWE_U18"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 4156,
+            "strength": 0.75,
+            "experience": 0.0,
+            "name_id": "SWE_U19"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 4156,
+            "strength": 0.75,
+            "experience": 0.0,
+            "name_id": "SWE_U20"
+        }
+    ]
 }

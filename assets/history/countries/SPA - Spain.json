@@ -65,5 +65,646 @@
         "welfare": "poor_laws",
         "migration": "closed_borders",
         "slavery": "slavery_allowed"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "SPA_A1",
+            "province": 4569,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U1"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U2"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U3"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U4"
+                }
+            ]
+        },
+        {
+            "name_id": "SPA_A2",
+            "province": 4465,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SPA_U5"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SPA_U6"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U7"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U8"
+                }
+            ]
+        },
+        {
+            "name_id": "SPA_A3",
+            "province": 4680,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SPA_U9"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U10"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U11"
+                }
+            ]
+        },
+        {
+            "name_id": "SPA_A4",
+            "province": 4856,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SPA_U12"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U13"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U14"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U15"
+                }
+            ]
+        },
+        {
+            "name_id": "SPA_A5",
+            "province": 5018,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.04,
+                    "name_id": "SPA_U16"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SPA_U17"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.05,
+                    "name_id": "SPA_U18"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SPA_U19"
+                }
+            ]
+        },
+        {
+            "name_id": "SPA_A6",
+            "province": 4857,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.04,
+                    "name_id": "SPA_U20"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.05,
+                    "name_id": "SPA_U21"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SPA_U22"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SPA_U23"
+                }
+            ]
+        },
+        {
+            "name_id": "SPA_A7",
+            "province": 4859,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SPA_U24"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U25"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U26"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SPA_U27"
+                }
+            ]
+        },
+        {
+            "name_id": "SPA_A8",
+            "province": 14916,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SPA_U28"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SPA_U29"
+                }
+            ]
+        },
+        {
+            "name_id": "SPA_A9",
+            "province": 4574,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U30"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U31"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U32"
+                }
+            ]
+        },
+        {
+            "name_id": "SPA_A10",
+            "province": 4745,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SPA_U33"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SPA_U34"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SPA_U35"
+                }
+            ]
+        },
+        {
+            "name_id": "SPA_A11",
+            "province": 4293,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U49"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SPA_U50"
+                }
+            ]
+        },
+        {
+            "name_id": "SPA_A12",
+            "province": 4683,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U51"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.04,
+                    "name_id": "SPA_U52"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U53"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U54"
+                }
+            ]
+        },
+        {
+            "name_id": "SPA_A13",
+            "province": 4683,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SPA_U55"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SPA_U56"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SPA_U57"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SPA_U58"
+                }
+            ]
+        },
+        {
+            "name_id": "SPA_A14",
+            "province": 4683,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SPA_U59"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SPA_U60"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SPA_U61"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SPA_U62"
+                }
+            ]
+        },
+        {
+            "name_id": "SPA_A15",
+            "province": 4683,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U63"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SPA_U64"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SPA_U65"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SPA_U66"
+                }
+            ]
+        },
+        {
+            "name_id": "SPA_A16",
+            "province": 4683,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SPA_U67"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SPA_U68"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.04,
+                    "name_id": "SPA_U69"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.04,
+                    "name_id": "SPA_U70"
+                }
+            ]
+        },
+        {
+            "name_id": "SPA_A17",
+            "province": 4683,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U71"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U72"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SPA_U73"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U74"
+                }
+            ]
+        },
+        {
+            "name_id": "SPA_A18",
+            "province": 4683,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SPA_U75"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SPA_U76"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SPA_U77"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SPA_U78"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SPA_U79"
+                }
+            ]
+        },
+        {
+            "name_id": "SPA_A19",
+            "province": 4683,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.04,
+                    "name_id": "SPA_U80"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SPA_U81"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U82"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U83"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SPA_U84"
+                }
+            ]
+        }
+    ],
+    "navies": [
+        {
+            "name_id": "SPA_N1",
+            "province": 4859,
+            "base": 4859,
+            "ships": [
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SPA_U39"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SPA_U40"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SPA_U41"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SPA_U42"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SPA_U43"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SPA_U44"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SPA_U45"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 0.8,
+                    "experience": 0.0,
+                    "name_id": "SPA_U46"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 0.8,
+                    "experience": 0.0,
+                    "name_id": "SPA_U47"
+                }
+            ]
+        },
+        {
+            "name_id": "SPA_N2",
+            "province": 4859,
+            "base": 4859,
+            "ships": [
+                {
+                    "type": "submarine",
+                    "strength": 0.2,
+                    "experience": 0.0,
+                    "name_id": "SPA_U48"
+                }
+            ]
+        }
+    ],
+    "air_wings": [
+        {
+            "type": "interceptor_fighter",
+            "base": 4573,
+            "strength": 0.4,
+            "experience": 0.0,
+            "name_id": "SPA_U36"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 4573,
+            "strength": 0.4,
+            "experience": 0.0,
+            "name_id": "SPA_U37"
+        },
+        {
+            "type": "bomber",
+            "base": 4573,
+            "strength": 0.2,
+            "experience": 0.0,
+            "name_id": "SPA_U38"
+        }
+    ]
 }

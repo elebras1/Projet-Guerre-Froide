@@ -41,5 +41,27 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "HAI_A1",
+            "province": 7758,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.875,
+                    "experience": 0.05,
+                    "name_id": "HAI_U1"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.04,
+                    "name_id": "HAI_U2"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": []
 }

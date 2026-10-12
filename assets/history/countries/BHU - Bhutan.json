@@ -50,5 +50,39 @@
         "welfare": "poor_laws",
         "migration": "migration_controls",
         "slavery": "slavery_allowed"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "BHU_A1",
+            "province": 11262,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.05,
+                    "name_id": "BHU_U1"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.05,
+                    "name_id": "BHU_U2"
+                }
+            ]
+        },
+        {
+            "name_id": "BHU_A2",
+            "province": 11209,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.05,
+                    "name_id": "BHU_U3"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": []
 }

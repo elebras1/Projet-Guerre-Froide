@@ -105,5 +105,388 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "FRA_A1",
+            "province": 5926,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.15,
+                    "name_id": "FRA_U1"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.84,
+                    "experience": 0.13,
+                    "name_id": "FRA_U2"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.15,
+                    "name_id": "FRA_U3"
+                }
+            ]
+        },
+        {
+            "name_id": "FRA_A2",
+            "province": 5358,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.2,
+                    "name_id": "FRA_U4"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.8947,
+                    "experience": 0.19,
+                    "name_id": "FRA_U5"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.21,
+                    "name_id": "FRA_U6"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.12,
+                    "name_id": "FRA_U7"
+                }
+            ]
+        },
+        {
+            "name_id": "FRA_A3",
+            "province": 6373,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.11,
+                    "name_id": "FRA_U8"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.12,
+                    "name_id": "FRA_U9"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.84,
+                    "experience": 0.11,
+                    "name_id": "FRA_U10"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.12,
+                    "name_id": "FRA_U11"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "FRA_U12"
+                }
+            ]
+        },
+        {
+            "name_id": "FRA_A4",
+            "province": 5170,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.1,
+                    "name_id": "FRA_U13"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.09,
+                    "name_id": "FRA_U14"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "FRA_U15"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.12,
+                    "name_id": "FRA_U16"
+                }
+            ]
+        },
+        {
+            "name_id": "FRA_A5",
+            "province": 5012,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "FRA_U17"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.88,
+                    "experience": 0.11,
+                    "name_id": "FRA_U18"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.09,
+                    "name_id": "FRA_U19"
+                }
+            ]
+        },
+        {
+            "name_id": "FRA_A6",
+            "province": 6373,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.09,
+                    "name_id": "FRA_U20"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.1,
+                    "name_id": "FRA_U21"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.9,
+                    "experience": 0.1,
+                    "name_id": "FRA_U22"
+                }
+            ]
+        },
+        {
+            "name_id": "FRA_A7",
+            "province": 5571,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.21,
+                    "name_id": "FRA_U23"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.19,
+                    "name_id": "FRA_U24"
+                }
+            ]
+        },
+        {
+            "name_id": "FRA_A8",
+            "province": 5071,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.21,
+                    "name_id": "FRA_U38"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.21,
+                    "name_id": "FRA_U39"
+                }
+            ]
+        },
+        {
+            "name_id": "FRA_A9",
+            "province": 6373,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.19,
+                    "name_id": "FRA_U40"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.21,
+                    "name_id": "FRA_U41"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.85,
+                    "experience": 0.18,
+                    "name_id": "FRA_U42"
+                }
+            ]
+        },
+        {
+            "name_id": "FRA_A10",
+            "province": 6373,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.11,
+                    "name_id": "FRA_U43"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.12,
+                    "name_id": "FRA_U44"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.84,
+                    "experience": 0.11,
+                    "name_id": "FRA_U45"
+                }
+            ]
+        }
+    ],
+    "navies": [
+        {
+            "name_id": "FRA_N1",
+            "province": 5175,
+            "base": 5175,
+            "ships": [
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "FRA_U26"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "FRA_U27"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "FRA_U28"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "FRA_U29"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "FRA_U30"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "FRA_U31"
+                }
+            ]
+        },
+        {
+            "name_id": "FRA_N2",
+            "province": 4522,
+            "base": 4522,
+            "ships": [
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "FRA_U32"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "FRA_U33"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "FRA_U34"
+                }
+            ]
+        },
+        {
+            "name_id": "FRA_N3",
+            "province": 12352,
+            "base": 12352,
+            "ships": [
+                {
+                    "type": "aircraft_carrier",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "FRA_U35"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "FRA_U36"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "FRA_U37"
+                }
+            ]
+        },
+        {
+            "name_id": "FRA_N4",
+            "province": 4961,
+            "base": 4961,
+            "ships": [
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "FRA_U46"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "FRA_U47"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 0.3,
+                    "experience": 0.0,
+                    "name_id": "FRA_U48"
+                }
+            ]
+        }
+    ],
+    "air_wings": [
+        {
+            "type": "multirole_fighter",
+            "base": 5012,
+            "strength": 0.5,
+            "experience": 0.0,
+            "name_id": "FRA_U25"
+        }
+    ]
 }

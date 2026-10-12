@@ -41,5 +41,21 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "SYR_A1",
+            "province": 7891,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SYR_U1"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": []
 }

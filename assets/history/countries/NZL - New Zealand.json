@@ -47,5 +47,53 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "NZL_A1",
+            "province": 14843,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.05,
+                    "name_id": "NZL_U1"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.05,
+                    "name_id": "NZL_U2"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.88,
+                    "experience": 0.05,
+                    "name_id": "NZL_U3"
+                }
+            ]
+        },
+        {
+            "name_id": "NZL_A2",
+            "province": 14843,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "NZL_U5"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": [
+        {
+            "type": "multirole_fighter",
+            "base": 14837,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "NZL_U4"
+        }
+    ]
 }

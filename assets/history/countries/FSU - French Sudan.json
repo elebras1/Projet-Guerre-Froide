@@ -43,5 +43,45 @@
         "welfare": "poor_laws",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "FSU_A1",
+            "province": 4493,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.05,
+                    "name_id": "FSU_U1"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.9,
+                    "experience": 0.05,
+                    "name_id": "FSU_U2"
+                }
+            ]
+        },
+        {
+            "name_id": "FSU_A2",
+            "province": 4597,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.04,
+                    "name_id": "FSU_U3"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.05,
+                    "name_id": "FSU_U4"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": []
 }

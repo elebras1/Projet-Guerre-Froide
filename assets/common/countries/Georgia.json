@@ -6,71 +6,71 @@
     ],
     "default_templates": {
         "USA_air_cavalry_division": [
-            "air_cav_brigade",
-            "air_cav_brigade",
-            "air_cav_brigade",
-            "air_cav_brigade"
+            "special_forces",
+            "special_forces",
+            "special_forces",
+            "special_forces"
         ],
         "USA_armored_division": [
-            "armor_brigade",
-            "armor_brigade",
-            "heavy_mechanized_brigade",
-            "light_mechanized_brigade",
-            "sp_artillery_brigade"
+            "tank",
+            "tank",
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "artillery"
         ],
         "USA_cavalry_division": [
-            "cavalry_brigade",
-            "cavalry_brigade",
-            "cavalry_brigade",
-            "cavalry_brigade",
-            "sp_artillery_brigade"
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "artillery"
         ],
         "USA_heavy_mechanized_division": [
-            "heavy_mechanized_brigade",
-            "heavy_mechanized_brigade",
-            "light_mechanized_brigade",
-            "armor_brigade",
-            "sp_artillery_brigade"
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "tank",
+            "artillery"
         ],
         "USA_light_mechanized_division": [
-            "light_mechanized_brigade",
-            "light_mechanized_brigade",
-            "heavy_mechanized_brigade",
-            "sp_artillery_brigade"
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "artillery"
         ],
         "USA_motorized_division": [
-            "motorized_brigade",
-            "motorized_brigade",
-            "heavy_mechanized_brigade",
-            "sp_artillery_brigade"
+            "heavy_infantry",
+            "heavy_infantry",
+            "mechanised_infantry",
+            "artillery"
         ],
         "USA_infantry_division": [
-            "infantry_brigade",
-            "infantry_brigade",
-            "infantry_brigade",
-            "infantry_brigade",
-            "artillery_brigade"
+            "light_infantry",
+            "light_infantry",
+            "light_infantry",
+            "light_infantry",
+            "artillery"
         ],
         "USA_marine_division": [
-            "marine_brigade",
-            "marine_brigade",
-            "marine_brigade",
-            "marine_brigade"
+            "special_forces",
+            "special_forces",
+            "special_forces",
+            "special_forces"
         ],
         "USA_mountain_division": [
-            "bergsjaeger_brigade",
-            "bergsjaeger_brigade",
-            "bergsjaeger_brigade",
-            "bergsjaeger_brigade"
+            "light_infantry",
+            "light_infantry",
+            "light_infantry",
+            "light_infantry"
         ],
         "USA_national_guard_division": [
-            "infantry_brigade",
-            "infantry_brigade",
-            "infantry_brigade",
-            "artillery_brigade"
+            "light_infantry",
+            "light_infantry",
+            "light_infantry",
+            "artillery"
         ]
     },
-    "unit_names": "",
+    "unit_names": {},
     "ministers": {
         "Valerian_Bakradze_1": {
             "name": "Valerian Bakradze",

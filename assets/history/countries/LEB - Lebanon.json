@@ -41,5 +41,21 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "LEB_A1",
+            "province": 7890,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.05,
+                    "name_id": "LEB_U1"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": []
 }

@@ -41,5 +41,99 @@
         "welfare": "universal_social_security",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "DRV_A1",
+            "province": 12215,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.62,
+                    "name_id": "DRV_U1"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.52,
+                    "name_id": "DRV_U2"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.4,
+                    "name_id": "DRV_U3"
+                }
+            ]
+        },
+        {
+            "name_id": "DRV_A2",
+            "province": 12149,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.2,
+                    "name_id": "DRV_U4"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.95,
+                    "experience": 0.2,
+                    "name_id": "DRV_U5"
+                }
+            ]
+        },
+        {
+            "name_id": "DRV_A3",
+            "province": 12079,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.875,
+                    "experience": 0.21,
+                    "name_id": "DRV_U6"
+                }
+            ]
+        },
+        {
+            "name_id": "DRV_A4",
+            "province": 12006,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.9,
+                    "experience": 0.22,
+                    "name_id": "DRV_U7"
+                }
+            ]
+        },
+        {
+            "name_id": "DRV_A5",
+            "province": 12078,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.925,
+                    "experience": 0.23,
+                    "name_id": "DRV_U8"
+                }
+            ]
+        },
+        {
+            "name_id": "DRV_A6",
+            "province": 12149,
+            "regiments": [
+                {
+                    "type": "irregular",
+                    "strength": 0.85,
+                    "experience": 0.25,
+                    "name_id": "DRV_U9"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": []
 }

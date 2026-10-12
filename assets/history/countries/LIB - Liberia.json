@@ -41,5 +41,45 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "LIB_A1",
+            "province": 4373,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.04,
+                    "name_id": "LIB_U1"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.9,
+                    "experience": 0.05,
+                    "name_id": "LIB_U2"
+                }
+            ]
+        },
+        {
+            "name_id": "LIB_A2",
+            "province": 4373,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.04,
+                    "name_id": "LIB_U3"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 0.875,
+                    "experience": 0.05,
+                    "name_id": "LIB_U4"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": []
 }

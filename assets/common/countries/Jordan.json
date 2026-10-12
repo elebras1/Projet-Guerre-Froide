@@ -6,80 +6,79 @@
     ],
     "default_templates": {
         "ENG_air_cavalry_division": [
-            "air_cav_brigade",
-            "air_cav_brigade",
-            "air_cav_brigade",
-            "air_cav_brigade"
+            "special_forces",
+            "special_forces",
+            "special_forces",
+            "special_forces"
         ],
         "ENG_armoured_division": [
-            "armor_brigade",
-            "armor_brigade",
-            "heavy_mechanized_brigade",
-            "light_mechanized_brigade",
-            "sp_artillery_brigade"
+            "tank",
+            "tank",
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "artillery"
         ],
         "ENG_cavalry_division": [
-            "cavalry_brigade",
-            "cavalry_brigade",
-            "cavalry_brigade",
-            "cavalry_brigade",
-            "sp_artillery_brigade"
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "artillery"
         ],
         "ENG_heavy_mechanized_division": [
-            "heavy_mechanized_brigade",
-            "heavy_mechanized_brigade",
-            "light_mechanized_brigade",
-            "armor_brigade",
-            "sp_artillery_brigade"
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "tank",
+            "artillery"
         ],
         "ENG_light_mechanized_division": [
-            "light_mechanized_brigade",
-            "light_mechanized_brigade",
-            "heavy_mechanized_brigade",
-            "sp_artillery_brigade"
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "mechanised_infantry",
+            "artillery"
         ],
         "ENG_motorized_division": [
-            "motorized_brigade",
-            "motorized_brigade",
-            "heavy_mechanized_brigade",
-            "sp_artillery_brigade"
+            "heavy_infantry",
+            "heavy_infantry",
+            "mechanised_infantry",
+            "artillery"
         ],
         "ENG_infantry_division": [
-            "infantry_brigade",
-            "infantry_brigade",
-            "infantry_brigade",
-            "infantry_brigade",
-            "artillery_brigade"
+            "light_infantry",
+            "light_infantry",
+            "light_infantry",
+            "light_infantry",
+            "artillery"
         ],
         "ENG_marine_division": [
-            "marine_brigade",
-            "marine_brigade",
-            "marine_brigade",
-            "marine_brigade"
+            "special_forces",
+            "special_forces",
+            "special_forces",
+            "special_forces"
         ],
         "ENG_mountain_division": [
-            "bergsjaeger_brigade",
-            "bergsjaeger_brigade",
-            "bergsjaeger_brigade",
-            "bergsjaeger_brigade"
+            "light_infantry",
+            "light_infantry",
+            "light_infantry",
+            "light_infantry"
         ],
         "ENG_national_guard_division": [
-            "infantry_brigade",
-            "infantry_brigade",
-            "infantry_brigade",
-            "artillery_brigade"
+            "light_infantry",
+            "light_infantry",
+            "light_infantry",
+            "artillery"
         ]
     },
     "unit_names": {
-        "infantry_brigade": [
-            "1st Division",
-            "2nd Division",
-            "3rd Division",
-            "4th Division",
-            "5th Division",
-            "6th Division"
-        ],
-        "militia_brigade": ""
+        "light_infantry": [
+            "JOR_light_infantry_1",
+            "JOR_light_infantry_2",
+            "JOR_light_infantry_3",
+            "JOR_light_infantry_4",
+            "JOR_light_infantry_5",
+            "JOR_light_infantry_6"
+        ]
     },
     "ministers": {
         "Fuad_Nassar_1": {

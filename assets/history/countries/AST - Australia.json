@@ -90,5 +90,289 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "AST_A1",
+            "province": 14619,
+            "regiments": [
+                {
+                    "type": "special_forces",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "AST_U1"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.1,
+                    "name_id": "AST_U2"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.88,
+                    "experience": 0.09,
+                    "name_id": "AST_U3"
+                }
+            ]
+        },
+        {
+            "name_id": "AST_A2",
+            "province": 14455,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.1,
+                    "name_id": "AST_U4"
+                },
+                {
+                    "type": "special_forces",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "AST_U5"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.09,
+                    "name_id": "AST_U6"
+                }
+            ]
+        },
+        {
+            "name_id": "AST_A3",
+            "province": 13317,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.15,
+                    "name_id": "AST_U7"
+                },
+                {
+                    "type": "special_forces",
+                    "strength": 0.85,
+                    "experience": 0.13,
+                    "name_id": "AST_U8"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.88,
+                    "experience": 0.15,
+                    "name_id": "AST_U9"
+                }
+            ]
+        },
+        {
+            "name_id": "AST_A4",
+            "province": 13202,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.05,
+                    "name_id": "AST_U10"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.05,
+                    "name_id": "AST_U11"
+                },
+                {
+                    "type": "special_forces",
+                    "strength": 0.85,
+                    "experience": 0.05,
+                    "name_id": "AST_U12"
+                }
+            ]
+        },
+        {
+            "name_id": "AST_A5",
+            "province": 14510,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.875,
+                    "experience": 0.1,
+                    "name_id": "AST_U13"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.09,
+                    "name_id": "AST_U14"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "AST_U15"
+                }
+            ]
+        },
+        {
+            "name_id": "AST_A6",
+            "province": 14346,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.1,
+                    "name_id": "AST_U16"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.88,
+                    "experience": 0.1,
+                    "name_id": "AST_U17"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.1,
+                    "name_id": "AST_U18"
+                }
+            ]
+        },
+        {
+            "name_id": "AST_A7",
+            "province": 14619,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.04,
+                    "name_id": "AST_U31"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.04,
+                    "name_id": "AST_U32"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.04,
+                    "name_id": "AST_U33"
+                }
+            ]
+        },
+        {
+            "name_id": "AST_A8",
+            "province": 14619,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.1,
+                    "name_id": "AST_U34"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.1,
+                    "name_id": "AST_U35"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.09,
+                    "name_id": "AST_U36"
+                }
+            ]
+        }
+    ],
+    "navies": [
+        {
+            "name_id": "AST_N1",
+            "province": 14642,
+            "base": 14642,
+            "ships": [
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "AST_U26"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "AST_U27"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "AST_U28"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "AST_U29"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "AST_U30"
+                }
+            ]
+        }
+    ],
+    "air_wings": [
+        {
+            "type": "interceptor_fighter",
+            "base": 14673,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "AST_U19"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 14673,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "AST_U20"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 14673,
+            "strength": 0.5,
+            "experience": 0.0,
+            "name_id": "AST_U21"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 14673,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "AST_U22"
+        },
+        {
+            "type": "bomber",
+            "base": 12723,
+            "strength": 0.5,
+            "experience": 0.0,
+            "name_id": "AST_U23"
+        },
+        {
+            "type": "bomber",
+            "base": 13774,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "AST_U24"
+        },
+        {
+            "type": "bomber",
+            "base": 13774,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "AST_U25"
+        }
+    ]
 }

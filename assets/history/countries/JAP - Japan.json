@@ -43,5 +43,105 @@
         "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "JAP_A1",
+            "province": 14192,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.19,
+                    "name_id": "JAP_U1"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.22,
+                    "name_id": "JAP_U2"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.88,
+                    "experience": 0.18,
+                    "name_id": "JAP_U3"
+                }
+            ]
+        },
+        {
+            "name_id": "JAP_A2",
+            "province": 14192,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.16,
+                    "name_id": "JAP_U4"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.14,
+                    "name_id": "JAP_U5"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.88,
+                    "experience": 0.16,
+                    "name_id": "JAP_U6"
+                }
+            ]
+        },
+        {
+            "name_id": "JAP_A3",
+            "province": 13989,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.15,
+                    "name_id": "JAP_U7"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.13,
+                    "name_id": "JAP_U8"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.85,
+                    "experience": 0.15,
+                    "name_id": "JAP_U9"
+                }
+            ]
+        },
+        {
+            "name_id": "JAP_A4",
+            "province": 14282,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.9,
+                    "experience": 0.16,
+                    "name_id": "JAP_U10"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.925,
+                    "experience": 0.14,
+                    "name_id": "JAP_U11"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.84,
+                    "experience": 0.16,
+                    "name_id": "JAP_U12"
+                }
+            ]
+        }
+    ],
+    "navies": [],
+    "air_wings": []
 }

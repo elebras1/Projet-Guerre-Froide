@@ -168,5 +168,5912 @@
         "welfare": "universal_social_security",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
-    }
+    },
+    "armies": [
+        {
+            "name_id": "SOV_A1",
+            "province": 5634,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.35,
+                    "name_id": "SOV_U1"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.34,
+                    "name_id": "SOV_U2"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.34,
+                    "name_id": "SOV_U3"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A2",
+            "province": 5636,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.29,
+                    "name_id": "SOV_U4"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.29,
+                    "name_id": "SOV_U5"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.28,
+                    "name_id": "SOV_U6"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A3",
+            "province": 5564,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.29,
+                    "name_id": "SOV_U7"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.26,
+                    "name_id": "SOV_U8"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.27,
+                    "name_id": "SOV_U9"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A4",
+            "province": 5719,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.26,
+                    "name_id": "SOV_U10"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.24,
+                    "name_id": "SOV_U11"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.24,
+                    "name_id": "SOV_U12"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A5",
+            "province": 5716,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.28,
+                    "name_id": "SOV_U13"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.27,
+                    "name_id": "SOV_U14"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.27,
+                    "name_id": "SOV_U15"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A6",
+            "province": 5717,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.33,
+                    "name_id": "SOV_U16"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.32,
+                    "name_id": "SOV_U17"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.25,
+                    "name_id": "SOV_U18"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A7",
+            "province": 5637,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.26,
+                    "name_id": "SOV_U19"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.35,
+                    "name_id": "SOV_U20"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.24,
+                    "name_id": "SOV_U21"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A8",
+            "province": 5564,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.25,
+                    "name_id": "SOV_U22"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.3,
+                    "name_id": "SOV_U23"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.24,
+                    "name_id": "SOV_U24"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A9",
+            "province": 5565,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.31,
+                    "name_id": "SOV_U25"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.33,
+                    "name_id": "SOV_U26"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.31,
+                    "name_id": "SOV_U27"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A10",
+            "province": 5721,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.34,
+                    "name_id": "SOV_U28"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.26,
+                    "name_id": "SOV_U29"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.23,
+                    "name_id": "SOV_U30"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A11",
+            "province": 5900,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.32,
+                    "name_id": "SOV_U31"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.25,
+                    "name_id": "SOV_U32"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.24,
+                    "name_id": "SOV_U33"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A12",
+            "province": 5996,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.23,
+                    "name_id": "SOV_U34"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.31,
+                    "name_id": "SOV_U35"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.24,
+                    "name_id": "SOV_U36"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A13",
+            "province": 6089,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.22,
+                    "name_id": "SOV_U37"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.26,
+                    "name_id": "SOV_U38"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.24,
+                    "name_id": "SOV_U39"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A14",
+            "province": 5899,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 0.92,
+                    "experience": 0.24,
+                    "name_id": "SOV_U40"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.23,
+                    "name_id": "SOV_U41"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.27,
+                    "name_id": "SOV_U42"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A15",
+            "province": 6180,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.34,
+                    "name_id": "SOV_U43"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.3,
+                    "name_id": "SOV_U44"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.26,
+                    "name_id": "SOV_U45"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A16",
+            "province": 6365,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.28,
+                    "name_id": "SOV_U46"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.3,
+                    "name_id": "SOV_U47"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.28,
+                    "name_id": "SOV_U48"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A17",
+            "province": 6090,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.22,
+                    "name_id": "SOV_U49"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.26,
+                    "name_id": "SOV_U50"
+                },
+                {
+                    "type": "heavy_infantry",
+                    "strength": 0.95,
+                    "experience": 0.31,
+                    "name_id": "SOV_U51"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A18",
+            "province": 6089,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.24,
+                    "name_id": "SOV_U52"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.33,
+                    "name_id": "SOV_U53"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.32,
+                    "name_id": "SOV_U54"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A19",
+            "province": 6091,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.34,
+                    "name_id": "SOV_U55"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.3,
+                    "name_id": "SOV_U56"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A20",
+            "province": 6092,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.32,
+                    "name_id": "SOV_U57"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.34,
+                    "name_id": "SOV_U58"
+                },
+                {
+                    "type": "heavy_infantry",
+                    "strength": 1.0,
+                    "experience": 0.31,
+                    "name_id": "SOV_U59"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A21",
+            "province": 6273,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.22,
+                    "name_id": "SOV_U60"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.3,
+                    "name_id": "SOV_U61"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A22",
+            "province": 6367,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.22,
+                    "name_id": "SOV_U62"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.26,
+                    "name_id": "SOV_U63"
+                },
+                {
+                    "type": "heavy_infantry",
+                    "strength": 0.95,
+                    "experience": 0.35,
+                    "name_id": "SOV_U64"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A23",
+            "province": 6366,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.3,
+                    "name_id": "SOV_U65"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.31,
+                    "name_id": "SOV_U66"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.33,
+                    "name_id": "SOV_U67"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A24",
+            "province": 5991,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.34,
+                    "name_id": "SOV_U68"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.3,
+                    "name_id": "SOV_U69"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.23,
+                    "name_id": "SOV_U70"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A25",
+            "province": 5992,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.33,
+                    "name_id": "SOV_U71"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.31,
+                    "name_id": "SOV_U72"
+                },
+                {
+                    "type": "heavy_infantry",
+                    "strength": 1.0,
+                    "experience": 0.3,
+                    "name_id": "SOV_U73"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A26",
+            "province": 5805,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.24,
+                    "name_id": "SOV_U74"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.28,
+                    "name_id": "SOV_U75"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.23,
+                    "name_id": "SOV_U76"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A27",
+            "province": 6177,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.23,
+                    "name_id": "SOV_U77"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.24,
+                    "name_id": "SOV_U78"
+                },
+                {
+                    "type": "heavy_infantry",
+                    "strength": 1.0,
+                    "experience": 0.33,
+                    "name_id": "SOV_U79"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A28",
+            "province": 6267,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.31,
+                    "name_id": "SOV_U80"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.31,
+                    "name_id": "SOV_U81"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.31,
+                    "name_id": "SOV_U82"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A29",
+            "province": 5994,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.33,
+                    "name_id": "SOV_U83"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.32,
+                    "name_id": "SOV_U84"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.23,
+                    "name_id": "SOV_U85"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A30",
+            "province": 6086,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.31,
+                    "name_id": "SOV_U86"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.31,
+                    "name_id": "SOV_U87"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A31",
+            "province": 5898,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.24,
+                    "name_id": "SOV_U88"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.22,
+                    "name_id": "SOV_U89"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A32",
+            "province": 6270,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.31,
+                    "name_id": "SOV_U90"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.31,
+                    "name_id": "SOV_U91"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.31,
+                    "name_id": "SOV_U92"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A33",
+            "province": 6469,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.22,
+                    "name_id": "SOV_U93"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.22,
+                    "name_id": "SOV_U94"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.25,
+                    "name_id": "SOV_U95"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A34",
+            "province": 6691,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U96"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.16,
+                    "name_id": "SOV_U97"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.16,
+                    "name_id": "SOV_U98"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A35",
+            "province": 6688,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.26,
+                    "name_id": "SOV_U99"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.22,
+                    "name_id": "SOV_U100"
+                },
+                {
+                    "type": "heavy_infantry",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U101"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A36",
+            "province": 6693,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.22,
+                    "name_id": "SOV_U102"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "SOV_U103"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U104"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A37",
+            "province": 5716,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.24,
+                    "name_id": "SOV_U105"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.35,
+                    "name_id": "SOV_U106"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.22,
+                    "name_id": "SOV_U107"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.15,
+                    "name_id": "SOV_U108"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A38",
+            "province": 5636,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.11,
+                    "name_id": "SOV_U109"
+                },
+                {
+                    "type": "heavy_infantry",
+                    "strength": 1.0,
+                    "experience": 0.13,
+                    "name_id": "SOV_U110"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "SOV_U111"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A39",
+            "province": 5563,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.11,
+                    "name_id": "SOV_U112"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.21,
+                    "name_id": "SOV_U113"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A40",
+            "province": 5564,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U114"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.23,
+                    "name_id": "SOV_U115"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.15,
+                    "name_id": "SOV_U116"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A41",
+            "province": 5719,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U117"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.15,
+                    "name_id": "SOV_U118"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.95,
+                    "experience": 0.15,
+                    "name_id": "SOV_U119"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A42",
+            "province": 5716,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.22,
+                    "name_id": "SOV_U120"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "SOV_U121"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.15,
+                    "name_id": "SOV_U122"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U123"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A43",
+            "province": 5897,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.19,
+                    "name_id": "SOV_U124"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.09,
+                    "name_id": "SOV_U125"
+                },
+                {
+                    "type": "heavy_infantry",
+                    "strength": 0.975,
+                    "experience": 0.14,
+                    "name_id": "SOV_U126"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A44",
+            "province": 5993,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.19,
+                    "name_id": "SOV_U127"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SOV_U128"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.12,
+                    "name_id": "SOV_U129"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A45",
+            "province": 5991,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SOV_U130"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SOV_U131"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.05,
+                    "name_id": "SOV_U132"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A46",
+            "province": 5992,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SOV_U133"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U134"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.11,
+                    "name_id": "SOV_U135"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A47",
+            "province": 6693,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.05,
+                    "name_id": "SOV_U136"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "SOV_U137"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.21,
+                    "name_id": "SOV_U138"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A48",
+            "province": 6800,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.06,
+                    "name_id": "SOV_U139"
+                },
+                {
+                    "type": "heavy_infantry",
+                    "strength": 0.975,
+                    "experience": 0.11,
+                    "name_id": "SOV_U140"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SOV_U141"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A49",
+            "province": 6903,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.06,
+                    "name_id": "SOV_U142"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.04,
+                    "name_id": "SOV_U143"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A50",
+            "province": 6904,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U144"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SOV_U145"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.11,
+                    "name_id": "SOV_U146"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A51",
+            "province": 5995,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.06,
+                    "name_id": "SOV_U147"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U148"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.04,
+                    "name_id": "SOV_U149"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A52",
+            "province": 5721,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.15,
+                    "name_id": "SOV_U150"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.23,
+                    "name_id": "SOV_U151"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "SOV_U152"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A53",
+            "province": 5900,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.15,
+                    "name_id": "SOV_U153"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U154"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U155"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.11,
+                    "name_id": "SOV_U156"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A54",
+            "province": 5996,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "SOV_U157"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.06,
+                    "name_id": "SOV_U158"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.06,
+                    "name_id": "SOV_U159"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A55",
+            "province": 6180,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.07,
+                    "name_id": "SOV_U160"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.07,
+                    "name_id": "SOV_U161"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U162"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A56",
+            "province": 6456,
+            "regiments": [
+                {
+                    "type": "heavy_infantry",
+                    "strength": 0.95,
+                    "experience": 0.06,
+                    "name_id": "SOV_U163"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.04,
+                    "name_id": "SOV_U164"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "SOV_U165"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A57",
+            "province": 6784,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.04,
+                    "name_id": "SOV_U166"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.11,
+                    "name_id": "SOV_U167"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U168"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A58",
+            "province": 6889,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U169"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U170"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U171"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A59",
+            "province": 6890,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.07,
+                    "name_id": "SOV_U172"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.08,
+                    "name_id": "SOV_U173"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.07,
+                    "name_id": "SOV_U174"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A60",
+            "province": 6273,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "SOV_U175"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SOV_U176"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.15,
+                    "name_id": "SOV_U177"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A61",
+            "province": 6182,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.06,
+                    "name_id": "SOV_U178"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.22,
+                    "name_id": "SOV_U179"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.11,
+                    "name_id": "SOV_U180"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A62",
+            "province": 6902,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.06,
+                    "name_id": "SOV_U181"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U182"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.06,
+                    "name_id": "SOV_U183"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A63",
+            "province": 6578,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.16,
+                    "name_id": "SOV_U184"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.13,
+                    "name_id": "SOV_U185"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U186"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A64",
+            "province": 6578,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.13,
+                    "name_id": "SOV_U187"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.95,
+                    "experience": 0.16,
+                    "name_id": "SOV_U188"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.16,
+                    "name_id": "SOV_U189"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A65",
+            "province": 6578,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U190"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.14,
+                    "name_id": "SOV_U191"
+                },
+                {
+                    "type": "heavy_infantry",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U192"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A66",
+            "province": 6579,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U193"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.9545,
+                    "experience": 0.14,
+                    "name_id": "SOV_U194"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.15,
+                    "name_id": "SOV_U195"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A67",
+            "province": 6469,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U196"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.15,
+                    "name_id": "SOV_U197"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.14,
+                    "name_id": "SOV_U198"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A68",
+            "province": 6091,
+            "regiments": [
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U199"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U200"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.16,
+                    "name_id": "SOV_U201"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A69",
+            "province": 6091,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.15,
+                    "name_id": "SOV_U202"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U203"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.16,
+                    "name_id": "SOV_U204"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A70",
+            "province": 6366,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.15,
+                    "name_id": "SOV_U205"
+                },
+                {
+                    "type": "heavy_infantry",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U206"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.13,
+                    "name_id": "SOV_U207"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A71",
+            "province": 6360,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.15,
+                    "name_id": "SOV_U208"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.15,
+                    "name_id": "SOV_U209"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U210"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A72",
+            "province": 6267,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.16,
+                    "name_id": "SOV_U211"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.13,
+                    "name_id": "SOV_U212"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U213"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A73",
+            "province": 6177,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.13,
+                    "name_id": "SOV_U214"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.14,
+                    "name_id": "SOV_U215"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.14,
+                    "name_id": "SOV_U216"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A74",
+            "province": 5994,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U217"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U218"
+                },
+                {
+                    "type": "heavy_infantry",
+                    "strength": 0.95,
+                    "experience": 0.16,
+                    "name_id": "SOV_U219"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A75",
+            "province": 5717,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U220"
+                },
+                {
+                    "type": "heavy_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U221"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.16,
+                    "name_id": "SOV_U222"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A76",
+            "province": 5634,
+            "regiments": [
+                {
+                    "type": "combat_support",
+                    "strength": 0.95,
+                    "experience": 0.14,
+                    "name_id": "SOV_U223"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U224"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U225"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A77",
+            "province": 5563,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.15,
+                    "name_id": "SOV_U226"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U227"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.13,
+                    "name_id": "SOV_U228"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A78",
+            "province": 5637,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.16,
+                    "name_id": "SOV_U229"
+                },
+                {
+                    "type": "mechanised_infantry",
+                    "strength": 0.973,
+                    "experience": 0.14,
+                    "name_id": "SOV_U230"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.13,
+                    "name_id": "SOV_U231"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A79",
+            "province": 5996,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.13,
+                    "name_id": "SOV_U232"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.15,
+                    "name_id": "SOV_U233"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.13,
+                    "name_id": "SOV_U234"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A80",
+            "province": 5996,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.13,
+                    "name_id": "SOV_U235"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.13,
+                    "name_id": "SOV_U236"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U237"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A81",
+            "province": 5900,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U238"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.14,
+                    "name_id": "SOV_U239"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U240"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A82",
+            "province": 6090,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U241"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.15,
+                    "name_id": "SOV_U242"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.15,
+                    "name_id": "SOV_U243"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A83",
+            "province": 7294,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U244"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U245"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "SOV_U246"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A84",
+            "province": 7585,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.15,
+                    "name_id": "SOV_U247"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U248"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U249"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A85",
+            "province": 4783,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U250"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "SOV_U251"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U252"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A86",
+            "province": 7487,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U253"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U254"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U255"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A87",
+            "province": 4148,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U256"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U257"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "SOV_U258"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A88",
+            "province": 5341,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.16,
+                    "name_id": "SOV_U259"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.15,
+                    "name_id": "SOV_U260"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.16,
+                    "name_id": "SOV_U261"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A89",
+            "province": 7308,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.13,
+                    "name_id": "SOV_U262"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U263"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.15,
+                    "name_id": "SOV_U264"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A90",
+            "province": 7207,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.13,
+                    "name_id": "SOV_U265"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U266"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.13,
+                    "name_id": "SOV_U267"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A91",
+            "province": 7000,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.15,
+                    "name_id": "SOV_U268"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U269"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.13,
+                    "name_id": "SOV_U270"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A92",
+            "province": 7000,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.14,
+                    "name_id": "SOV_U271"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.16,
+                    "name_id": "SOV_U272"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U273"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A93",
+            "province": 7311,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.13,
+                    "name_id": "SOV_U274"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U275"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.13,
+                    "name_id": "SOV_U276"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A94",
+            "province": 8535,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.15,
+                    "name_id": "SOV_U277"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.15,
+                    "name_id": "SOV_U278"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U279"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A95",
+            "province": 8536,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U280"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.08,
+                    "name_id": "SOV_U281"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U282"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A96",
+            "province": 8380,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.13,
+                    "name_id": "SOV_U283"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.13,
+                    "name_id": "SOV_U284"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.14,
+                    "name_id": "SOV_U285"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A97",
+            "province": 8624,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U286"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.15,
+                    "name_id": "SOV_U287"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.14,
+                    "name_id": "SOV_U288"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A98",
+            "province": 8539,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U289"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U290"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.14,
+                    "name_id": "SOV_U291"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A99",
+            "province": 9418,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U292"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U293"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U294"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A100",
+            "province": 9240,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "SOV_U295"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U296"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U297"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A101",
+            "province": 9682,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.15,
+                    "name_id": "SOV_U298"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.13,
+                    "name_id": "SOV_U299"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U300"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A102",
+            "province": 9628,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.14,
+                    "name_id": "SOV_U301"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U302"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U303"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A103",
+            "province": 9836,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.16,
+                    "name_id": "SOV_U304"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.14,
+                    "name_id": "SOV_U305"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U306"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A104",
+            "province": 10209,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U307"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "SOV_U308"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U309"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A105",
+            "province": 10396,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U310"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.11,
+                    "name_id": "SOV_U311"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U312"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A106",
+            "province": 14884,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U313"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U314"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "SOV_U315"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A107",
+            "province": 10150,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "SOV_U316"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U317"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U318"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A108",
+            "province": 10593,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U319"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.11,
+                    "name_id": "SOV_U320"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.09,
+                    "name_id": "SOV_U321"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A109",
+            "province": 10788,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U322"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U323"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U324"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A110",
+            "province": 10595,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "SOV_U325"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U326"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U327"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A111",
+            "province": 10846,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U328"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U329"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U330"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A112",
+            "province": 10846,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U331"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "SOV_U332"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U333"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A113",
+            "province": 10846,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U334"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U335"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "SOV_U336"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A114",
+            "province": 10961,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U337"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.09,
+                    "name_id": "SOV_U338"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "SOV_U339"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A115",
+            "province": 11288,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U340"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U341"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U342"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A116",
+            "province": 11340,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U343"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U344"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U345"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A117",
+            "province": 11181,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "SOV_U346"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U347"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U348"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A118",
+            "province": 11452,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "SOV_U349"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U350"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U351"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A119",
+            "province": 11629,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U352"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U353"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U354"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A120",
+            "province": 10044,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U355"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "SOV_U356"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U357"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A121",
+            "province": 9990,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U358"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U359"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U360"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A122",
+            "province": 10153,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "SOV_U361"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.1,
+                    "name_id": "SOV_U362"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "SOV_U363"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A123",
+            "province": 7500,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U364"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U365"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U366"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A124",
+            "province": 7401,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "SOV_U367"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U368"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.1,
+                    "name_id": "SOV_U369"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A125",
+            "province": 7302,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "SOV_U370"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U371"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U372"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A126",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U373"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U374"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U375"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A127",
+            "province": 8040,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U376"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "SOV_U377"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U378"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A128",
+            "province": 8051,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U379"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "SOV_U380"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U381"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A129",
+            "province": 7793,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U382"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "SOV_U383"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U384"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A130",
+            "province": 8134,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U385"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U386"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "SOV_U387"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A131",
+            "province": 7698,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U388"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U389"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.08,
+                    "name_id": "SOV_U390"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A132",
+            "province": 6460,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.15,
+                    "name_id": "SOV_U391"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.16,
+                    "name_id": "SOV_U392"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.13,
+                    "name_id": "SOV_U393"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A133",
+            "province": 6175,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U394"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U395"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U396"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A134",
+            "province": 6360,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U397"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.09,
+                    "name_id": "SOV_U398"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U399"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A135",
+            "province": 6267,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U400"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "SOV_U401"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U402"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A136",
+            "province": 12044,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U472"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.09,
+                    "name_id": "SOV_U473"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U474"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A137",
+            "province": 12044,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U475"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.09,
+                    "name_id": "SOV_U476"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "SOV_U477"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A138",
+            "province": 11830,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U478"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U479"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "SOV_U480"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A139",
+            "province": 12183,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U481"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U482"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.09,
+                    "name_id": "SOV_U483"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A140",
+            "province": 12319,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U484"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U485"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U486"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A141",
+            "province": 12501,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "SOV_U487"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U488"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U489"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A142",
+            "province": 12502,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U490"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U491"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U492"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A143",
+            "province": 12562,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.11,
+                    "name_id": "SOV_U493"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "SOV_U494"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U495"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A144",
+            "province": 12254,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U496"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U497"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U498"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A145",
+            "province": 13299,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U499"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U500"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "SOV_U501"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A146",
+            "province": 13409,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U502"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U503"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "SOV_U504"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A147",
+            "province": 12894,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U505"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U506"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U507"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A148",
+            "province": 12819,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U508"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U509"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.09,
+                    "name_id": "SOV_U510"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A149",
+            "province": 12970,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.11,
+                    "name_id": "SOV_U511"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U512"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U513"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A150",
+            "province": 13357,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U514"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U515"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U516"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A151",
+            "province": 13357,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U517"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "SOV_U518"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U519"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A152",
+            "province": 13765,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U520"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U521"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "SOV_U522"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A153",
+            "province": 13421,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U523"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U524"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U525"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A154",
+            "province": 13604,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U526"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U527"
+                },
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "SOV_U528"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A155",
+            "province": 13545,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "SOV_U529"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U530"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "SOV_U531"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A156",
+            "province": 13662,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 0.96,
+                    "experience": 0.09,
+                    "name_id": "SOV_U532"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U533"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.08,
+                    "name_id": "SOV_U534"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A157",
+            "province": 13484,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "SOV_U535"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "SOV_U536"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.08,
+                    "name_id": "SOV_U537"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A158",
+            "province": 13710,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U538"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U539"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U540"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A159",
+            "province": 13709,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U541"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U542"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U543"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A160",
+            "province": 13656,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "SOV_U544"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U545"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U546"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A161",
+            "province": 13872,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U547"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U548"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U549"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A162",
+            "province": 14331,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U550"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "SOV_U551"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U552"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A163",
+            "province": 14332,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U553"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.09,
+                    "name_id": "SOV_U554"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U555"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A164",
+            "province": 14335,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U556"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U557"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "SOV_U558"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A165",
+            "province": 14386,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U559"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "SOV_U560"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U561"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A166",
+            "province": 12895,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "SOV_U562"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U563"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U564"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A167",
+            "province": 12819,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "SOV_U565"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U566"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U567"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A168",
+            "province": 13036,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U568"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U569"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U570"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A169",
+            "province": 13651,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "SOV_U571"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "SOV_U572"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U573"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A170",
+            "province": 13592,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "SOV_U574"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U575"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.1,
+                    "name_id": "SOV_U576"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A171",
+            "province": 13704,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "SOV_U577"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U578"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U579"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A172",
+            "province": 13923,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U580"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.09,
+                    "name_id": "SOV_U581"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U582"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A173",
+            "province": 13975,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U583"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.08,
+                    "name_id": "SOV_U584"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U585"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A174",
+            "province": 13704,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "SOV_U586"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U587"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U588"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A175",
+            "province": 13866,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U589"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U590"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U591"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A176",
+            "province": 13923,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U592"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.09,
+                    "name_id": "SOV_U593"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U594"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A177",
+            "province": 13975,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U595"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.08,
+                    "name_id": "SOV_U596"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U597"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A178",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.32,
+                    "name_id": "SOV_U620"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.36,
+                    "name_id": "SOV_U621"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.24,
+                    "name_id": "SOV_U622"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A179",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.32,
+                    "name_id": "SOV_U623"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.24,
+                    "name_id": "SOV_U624"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.23,
+                    "name_id": "SOV_U625"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A180",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.23,
+                    "name_id": "SOV_U626"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.24,
+                    "name_id": "SOV_U627"
+                },
+                {
+                    "type": "heavy_infantry",
+                    "strength": 0.975,
+                    "experience": 0.33,
+                    "name_id": "SOV_U628"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A181",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.18,
+                    "name_id": "SOV_U629"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SOV_U630"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SOV_U631"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A182",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.05,
+                    "name_id": "SOV_U632"
+                },
+                {
+                    "type": "irregular",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U633"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.04,
+                    "name_id": "SOV_U634"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A183",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.06,
+                    "name_id": "SOV_U635"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.05,
+                    "name_id": "SOV_U636"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.06,
+                    "name_id": "SOV_U637"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A184",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.11,
+                    "name_id": "SOV_U638"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.12,
+                    "name_id": "SOV_U639"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U640"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A185",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U641"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U642"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.14,
+                    "name_id": "SOV_U643"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A186",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.13,
+                    "name_id": "SOV_U644"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.13,
+                    "name_id": "SOV_U645"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U646"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A187",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U647"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.95,
+                    "experience": 0.15,
+                    "name_id": "SOV_U648"
+                },
+                {
+                    "type": "heavy_infantry",
+                    "strength": 0.975,
+                    "experience": 0.14,
+                    "name_id": "SOV_U649"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A188",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.15,
+                    "name_id": "SOV_U650"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U651"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.13,
+                    "name_id": "SOV_U652"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A189",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U653"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.14,
+                    "name_id": "SOV_U654"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.13,
+                    "name_id": "SOV_U655"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.13,
+                    "name_id": "SOV_U656"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A190",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.13,
+                    "name_id": "SOV_U657"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.14,
+                    "name_id": "SOV_U658"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.15,
+                    "name_id": "SOV_U659"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A191",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.13,
+                    "name_id": "SOV_U660"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.13,
+                    "name_id": "SOV_U661"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.15,
+                    "name_id": "SOV_U662"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A192",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.14,
+                    "name_id": "SOV_U663"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.13,
+                    "name_id": "SOV_U664"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.15,
+                    "name_id": "SOV_U665"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A193",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.15,
+                    "name_id": "SOV_U666"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.16,
+                    "name_id": "SOV_U667"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.14,
+                    "name_id": "SOV_U668"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A194",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "SOV_U669"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.09,
+                    "name_id": "SOV_U670"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "SOV_U671"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A195",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U672"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U673"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U674"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A196",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "SOV_U675"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U676"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U677"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A197",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U678"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U679"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.11,
+                    "name_id": "SOV_U680"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A198",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U681"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "SOV_U682"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U683"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A199",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.08,
+                    "name_id": "SOV_U684"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.11,
+                    "name_id": "SOV_U685"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U686"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A200",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U687"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U688"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "SOV_U689"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A201",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.08,
+                    "name_id": "SOV_U690"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U691"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U692"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A202",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U693"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "SOV_U694"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U695"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A203",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U696"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.08,
+                    "name_id": "SOV_U697"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U698"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A204",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U699"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U700"
+                },
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U701"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A205",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U702"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.1,
+                    "name_id": "SOV_U703"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "SOV_U704"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A206",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "SOV_U705"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U706"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U707"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A207",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.08,
+                    "name_id": "SOV_U708"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "SOV_U709"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U710"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A208",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U711"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U712"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U713"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A209",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U714"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U715"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "SOV_U716"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A210",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "SOV_U717"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U718"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U719"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A211",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U720"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "SOV_U721"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "SOV_U722"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A212",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U723"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U724"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.11,
+                    "name_id": "SOV_U725"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A213",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U726"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.1,
+                    "name_id": "SOV_U727"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.08,
+                    "name_id": "SOV_U728"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A214",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U729"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U730"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U731"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A215",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "tank",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U732"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U733"
+                },
+                {
+                    "type": "combat_support",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U734"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A216",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.08,
+                    "name_id": "SOV_U735"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U736"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.96,
+                    "experience": 0.1,
+                    "name_id": "SOV_U737"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A217",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.09,
+                    "name_id": "SOV_U738"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U739"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U740"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A218",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 0.975,
+                    "experience": 0.09,
+                    "name_id": "SOV_U741"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.09,
+                    "name_id": "SOV_U742"
+                },
+                {
+                    "type": "artillery",
+                    "strength": 0.92,
+                    "experience": 0.1,
+                    "name_id": "SOV_U743"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_A219",
+            "province": 8039,
+            "regiments": [
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U744"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 1.0,
+                    "experience": 0.1,
+                    "name_id": "SOV_U745"
+                },
+                {
+                    "type": "light_infantry",
+                    "strength": 0.95,
+                    "experience": 0.1,
+                    "name_id": "SOV_U746"
+                }
+            ]
+        }
+    ],
+    "navies": [
+        {
+            "name_id": "SOV_N1",
+            "province": 7295,
+            "base": 7295,
+            "ships": [
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U443"
+                },
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U444"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U445"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U446"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U447"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U448"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_N2",
+            "province": 7295,
+            "base": 7295,
+            "ships": [
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U449"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U450"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U451"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U452"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U453"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U454"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U455"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_N3",
+            "province": 3932,
+            "base": 3932,
+            "ships": [
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U456"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U457"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 0.6,
+                    "experience": 0.0,
+                    "name_id": "SOV_U458"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_N4",
+            "province": 3932,
+            "base": 3932,
+            "ships": [
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U459"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U460"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U461"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U462"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_N5",
+            "province": 7701,
+            "base": 7701,
+            "ships": [
+                {
+                    "type": "battlecruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U463"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U464"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U465"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 0.8,
+                    "experience": 0.0,
+                    "name_id": "SOV_U466"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_N6",
+            "province": 7701,
+            "base": 7701,
+            "ships": [
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U467"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U468"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U469"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U470"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U471"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_N7",
+            "province": 13820,
+            "base": 13820,
+            "ships": [
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U613"
+                },
+                {
+                    "type": "cruiser",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U614"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U615"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U616"
+                },
+                {
+                    "type": "destroyer",
+                    "strength": 0.6,
+                    "experience": 0.0,
+                    "name_id": "SOV_U617"
+                }
+            ]
+        },
+        {
+            "name_id": "SOV_N8",
+            "province": 14727,
+            "base": 14727,
+            "ships": [
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U618"
+                },
+                {
+                    "type": "submarine",
+                    "strength": 1.0,
+                    "experience": 0.0,
+                    "name_id": "SOV_U619"
+                }
+            ]
+        }
+    ],
+    "air_wings": [
+        {
+            "type": "interceptor_fighter",
+            "base": 6357,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U403"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6357,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U404"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6357,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U405"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6357,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U406"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6357,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U407"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6357,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U408"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6357,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U409"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6357,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U410"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6357,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U411"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6357,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U412"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6361,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U413"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6361,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U414"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6361,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U415"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6361,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U416"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6361,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U417"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6361,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U418"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6361,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U419"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6361,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U420"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6361,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U421"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6361,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U422"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6682,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U423"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6682,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U424"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6682,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U425"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6682,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U426"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6682,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U427"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6682,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U428"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6682,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U429"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6682,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U430"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6682,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U431"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 6682,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U432"
+        },
+        {
+            "type": "bomber",
+            "base": 6682,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U433"
+        },
+        {
+            "type": "bomber",
+            "base": 6682,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U434"
+        },
+        {
+            "type": "bomber",
+            "base": 6682,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U435"
+        },
+        {
+            "type": "bomber",
+            "base": 6682,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U436"
+        },
+        {
+            "type": "bomber",
+            "base": 6682,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U437"
+        },
+        {
+            "type": "bomber",
+            "base": 6682,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U438"
+        },
+        {
+            "type": "bomber",
+            "base": 6682,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U439"
+        },
+        {
+            "type": "bomber",
+            "base": 6682,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U440"
+        },
+        {
+            "type": "bomber",
+            "base": 6682,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U441"
+        },
+        {
+            "type": "bomber",
+            "base": 6682,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U442"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 13820,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U598"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 13820,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U599"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 13820,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U600"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 13820,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U601"
+        },
+        {
+            "type": "interceptor_fighter",
+            "base": 13820,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U602"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 13820,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U603"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 13820,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U604"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 13820,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U605"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 13820,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U606"
+        },
+        {
+            "type": "multirole_fighter",
+            "base": 13820,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U607"
+        },
+        {
+            "type": "bomber",
+            "base": 13820,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U608"
+        },
+        {
+            "type": "bomber",
+            "base": 13820,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U609"
+        },
+        {
+            "type": "bomber",
+            "base": 13820,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U610"
+        },
+        {
+            "type": "bomber",
+            "base": 13820,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U611"
+        },
+        {
+            "type": "bomber",
+            "base": 13820,
+            "strength": 1.0,
+            "experience": 0.0,
+            "name_id": "SOV_U612"
+        }
+    ]
 }
