@@ -1,9 +1,7 @@
 {
   "build_cost": {
-    "aeroplanes": 15,
-    "fuel": 12.5,
-    "weaponry": 5,
-    "electronic_components": 15
+    "aeroplanes": 185,
+    "weaponry": 37
   },
   "attack": 8,
   "defence": 15,
@@ -17,9 +15,10 @@
   "unit_type": "assault",
   "max_strength": 3,
   "supply_cost": {
-    "canned_food": 0.02,
-    "ammunition": 0.1,
-    "fuel": 0.25,
-    "machine_parts": 0.15
+    "canned_food": 0.0264,
+    "ammunition": 0.255,
+    "weaponry": 0.0352,
+    "fuel": 0.254,
+    "aeroplanes": 0.352
   }
 }

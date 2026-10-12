@@ -1,8 +1,7 @@
 {
   "build_cost": {
-    "ships": 100,
-    "weaponry": 30,
-    "electronic_components": 25
+    "ships": 889,
+    "weaponry": 296
   },
   "attack": 18,
   "defence": 16,
@@ -16,11 +15,10 @@
   "unit_type": "big_ship",
   "max_strength": 100,
   "supply_cost": {
-    "canned_food": 1.6,
-    "ammunition": 4,
-    "fuel": 8,
-    "clothes": 0.2,
-    "ships": 1,
-    "weaponry": 1.2
+    "canned_food": 0.229,
+    "ammunition": 0.271,
+    "weaponry": 0.167,
+    "fuel": 0.171,
+    "ships": 1.61
   }
 }

@@ -1,6 +1,6 @@
 {
   "build_cost": {
-    "weaponry": 5
+    "weaponry": 22.2
   },
   "attack": 1,
   "defence": 2,
@@ -14,6 +14,8 @@
   "unit_type": "infantry",
   "max_strength": 3,
   "supply_cost": {
-    "ammunition": 0.05
+    "canned_food": 0.0397,
+    "ammunition": 0.0721,
+    "weaponry": 0.0251
   }
 }

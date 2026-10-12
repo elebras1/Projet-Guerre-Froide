@@ -1,7 +1,7 @@
 {
   "build_cost": {
-    "weaponry": 12,
-    "machine_parts": 5
+    "weaponry": 111,
+    "armoured_vehicles": 14.8
   },
   "attack": 1.5,
   "defence": 3,
@@ -15,10 +15,8 @@
   "unit_type": "support",
   "max_strength": 3,
   "supply_cost": {
-    "canned_food": 0.03,
-    "ammunition": 0.2,
-    "fuel": 0.02,
-    "clothes": 0.02,
-    "automobiles": 0.1
+    "canned_food": 0.198,
+    "ammunition": 0.36,
+    "weaponry": 0.125
   }
 }

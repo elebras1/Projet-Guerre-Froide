@@ -1,8 +1,7 @@
 {
   "build_cost": {
-    "fuel": 15,
-    "weaponry": 20,
-    "electronic_components": 5
+    "weaponry": 88.9,
+    "armoured_vehicles": 59.3
   },
   "attack": 2,
   "defence": 6,
@@ -16,10 +15,10 @@
   "unit_type": "special",
   "max_strength": 3,
   "supply_cost": {
-    "ammunition": 0.06,
-    "canned_food": 0.06,
-    "fuel": 0.05,
-    "clothes": 0.05,
-    "automobiles": 0.05
+    "canned_food": 0.177,
+    "ammunition": 0.321,
+    "weaponry": 0.112,
+    "fuel": 0.121,
+    "armoured_vehicles": 0.355
   }
 }
