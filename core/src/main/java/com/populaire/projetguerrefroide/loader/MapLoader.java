@@ -47,7 +47,7 @@ public final class MapLoader {
     }
 
     public ProvinceBuildings loadProvinces(Map<String, ProvinceJson> provinces, Map<String, PopulationTemplateJson> populationTemplatesJson) {
-        IntObjectMap<LongIntMap> regionBuildingsByProvince = new IntObjectMap<>(396, 1f);
+        IntObjectMap<LongIntOrderedMap> regionBuildingsByProvince = new IntObjectMap<>(396, 1f);
         IntObjectMap<LongIntMap> regionBuildingModes = new IntObjectMap<>(396, 1f);
         Map<String, PopulationTemplate> populationTemplates = new ObjectObjectMap<>();
         for(var populationTemplateEntry : populationTemplatesJson.entrySet()) {
@@ -70,7 +70,7 @@ public final class MapLoader {
         return new ProvinceBuildings(regionBuildingsByProvince, regionBuildingModes);
     }
 
-    private void loadProvince(ProvinceJson provinceJson, int provinceNameId, IntObjectMap<LongIntMap> regionBuildingsByProvince, IntObjectMap<LongIntMap> regionBuildingModes, Map<String, PopulationTemplate> populationTemplates) {
+    private void loadProvince(ProvinceJson provinceJson, int provinceNameId, IntObjectMap<LongIntOrderedMap> regionBuildingsByProvince, IntObjectMap<LongIntMap> regionBuildingModes, Map<String, PopulationTemplate> populationTemplates) {
         try {
 
             long provinceId = this.ecsWorld.entity(String.valueOf(provinceNameId));
@@ -99,7 +99,7 @@ public final class MapLoader {
             Pair<long[], int[]> religions = this.parseDistribution(population.religions(), adultsAmount, RELIGION_COUNT);
 
             if(provinceJson.economyBuildings() != null) {
-                LongIntMap buildings = new LongIntMap();
+                LongIntOrderedMap buildings = new LongIntOrderedMap();
                 LongIntMap buildingModes = new LongIntMap();
                 for(ProvinceBuildingJson buildingJson : provinceJson.economyBuildings()) {
                     long buildingTypeId = this.ecsWorld.lookup(buildingJson.name());
@@ -165,7 +165,7 @@ public final class MapLoader {
     }
 
     public void loadRegions(Map<String, int[]> regions, ProvinceBuildings provinceBuildings) {
-        IntObjectMap<LongIntMap> regionBuildingsByProvince = provinceBuildings.buildings();
+        IntObjectMap<LongIntOrderedMap> regionBuildingsByProvince = provinceBuildings.buildings();
         IntObjectMap<LongIntMap> regionBuildingModes = provinceBuildings.modes();
         try {
             for(var regionEntry : regions.entrySet()) {
@@ -186,7 +186,7 @@ public final class MapLoader {
                             regionInstance.set(new RegionDemographics(0, 0, 0, 0f, 0f, 0f, 0f, 0f, 0f, new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
                         }
                         provinceData.regionId(regionEntityId).regionInstanceId(regionInstanceId);
-                        LongIntMap regionBuildingIds = regionBuildingsByProvince.get(provinceId);
+                        LongIntOrderedMap regionBuildingIds = regionBuildingsByProvince.get(provinceId);
                         if(regionBuildingIds != null) {
                             LongIntMap regionBuildingModesById = regionBuildingModes.get(provinceId);
                             for(var buildingEntry : regionBuildingIds) {

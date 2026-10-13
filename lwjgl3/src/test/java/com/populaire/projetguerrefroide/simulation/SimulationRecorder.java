@@ -72,6 +72,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 import static com.populaire.projetguerrefroide.util.Constants.GOOD_COUNT;
 import static com.populaire.projetguerrefroide.util.Constants.NEEDS_SCALING_FACTOR;
@@ -184,7 +185,7 @@ public class SimulationRecorder implements AutoCloseable {
 
     private final Map<Long, float[]> countryRgoByGood = new HashMap<>();
     private final Map<Long, float[]> countryBuildingByGood = new HashMap<>();
-    private final Map<Long, Float> buildingTypeInputDemand = new HashMap<>();
+    private final Map<Long, Float> buildingTypeInputDemand = new TreeMap<>();
     private final Map<Long, float[]> countryRegionIncome = new HashMap<>();
 
     private double worldProductionTotal = 0.0;
