@@ -9,8 +9,10 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -84,6 +86,61 @@ public class WorldDaoImplTest {
         for (ProvinceJson province : this.worldDao.readProvinces().values()) {
             assertFalse(province.addCore().isEmpty());
         }
+    }
+
+    @Test
+    public void readsForcesOf1946() {
+        Map<String, ProvinceJson> provinces = this.worldDao.readProvinces();
+        Set<String> owners = new HashSet<>();
+        for (ProvinceJson province : provinces.values()) {
+            owners.add(province.owner());
+        }
+
+        int armies = 0;
+        int regiments = 0;
+        int navies = 0;
+        int ships = 0;
+        int airWings = 0;
+        for (var countryHistoryEntry : this.worldDao.readCountriesHistory().entrySet()) {
+            CountryHistoryJson countryHistory = countryHistoryEntry.getValue();
+            List<ArmyJson> countryArmies = countryHistory.armies() != null ? countryHistory.armies() : List.of();
+            List<NavyJson> countryNavies = countryHistory.navies() != null ? countryHistory.navies() : List.of();
+            List<AirWingJson> countryAirWings = countryHistory.airWings() != null ? countryHistory.airWings() : List.of();
+            if (!countryArmies.isEmpty() || !countryNavies.isEmpty() || !countryAirWings.isEmpty()) {
+                assertTrue(owners.contains(countryHistoryEntry.getKey()), countryHistoryEntry.getKey());
+            }
+            for (ArmyJson army : countryArmies) {
+                armies++;
+                regiments += army.regiments().size();
+            }
+            for (NavyJson navy : countryNavies) {
+                navies++;
+                ships += navy.ships().size();
+                assertTrue(this.hasBuilding(provinces.get(String.valueOf(navy.base())), "naval_base"), navy.nameId());
+            }
+            for (AirWingJson airWing : countryAirWings) {
+                airWings++;
+                assertTrue(this.hasBuilding(provinces.get(String.valueOf(airWing.base())), "air_base"), airWing.nameId());
+            }
+        }
+
+        assertEquals(951, armies);
+        assertEquals(3301, regiments);
+        assertEquals(75, navies);
+        assertEquals(374, ships);
+        assertEquals(344, airWings);
+    }
+
+    private boolean hasBuilding(ProvinceJson province, String buildingName) {
+        if (province == null || province.buildings() == null) {
+            return false;
+        }
+        for (ProvinceBuildingJson building : province.buildings()) {
+            if (building.name().equals(buildingName) && building.size() >= 1) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Test

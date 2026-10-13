@@ -1,6 +1,7 @@
 package com.populaire.projetguerrefroide.simulation;
 
 import io.github.elebras1.flecs.Field;
+import io.github.elebras1.flecs.Query;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.TestGdxFiles;
 import com.populaire.projetguerrefroide.component.*;
@@ -50,6 +51,7 @@ public class EconomySimulationAnalysisTest {
     private static final double REAL_OUTPUT_GROWTH = 2.0;
 
     private World ecsWorld;
+    private EcsConstants ecsConstants;
     private EconomyService economyService;
     private LocalDate startDate;
     private Set<String> forcedLaws;
@@ -61,10 +63,10 @@ public class EconomySimulationAnalysisTest {
         this.ecsWorld = new World();
         this.registerComponents(this.ecsWorld);
 
-        EcsConstants ecsConstants = new EcsConstants(this.ecsWorld);
+        this.ecsConstants = new EcsConstants(this.ecsWorld);
         GameContext gameContext = Mockito.mock(GameContext.class);
         Mockito.when(gameContext.getEcsWorld()).thenReturn(this.ecsWorld);
-        Mockito.when(gameContext.getEcsConstants()).thenReturn(ecsConstants);
+        Mockito.when(gameContext.getEcsConstants()).thenReturn(this.ecsConstants);
 
         this.startDate = this.loadStartDate();
 
@@ -136,6 +138,9 @@ public class EconomySimulationAnalysisTest {
         world.component(CountryProfitDistributionPolicy.class);
         world.component(RegionInstanceIncome.class);
         world.component(Unit.class);
+        world.component(Formation.class);
+        world.component(UnitInstance.class);
+        world.component(AirWing.class);
     }
 
     private LocalDate loadStartDate() {
@@ -149,6 +154,70 @@ public class EconomySimulationAnalysisTest {
             this.ecsWorld.close();
             this.ecsWorld = null;
         }
+    }
+
+    @Test
+    public void loadsForcesOf1946() {
+        long landForceTag = this.ecsConstants.landForceTag();
+        long seaForceTag = this.ecsConstants.seaForceTag();
+        long airForceTag = this.ecsConstants.airForceTag();
+        int[] formations = new int[2];
+        Query formationQuery = this.ecsWorld.query().with(Formation.class).build();
+        formationQuery.iter(iter -> {
+            Field<Formation> formationField = iter.field(Formation.class, 0);
+            for (int i = 0; i < iter.count(); i++) {
+                FormationView formation = formationField.getMutView(i);
+                assertTrue(formation.countryId() != 0 && formation.provinceId() != 0);
+                if (formation.forceTypeTagId() == landForceTag) {
+                    formations[0]++;
+                } else if (formation.forceTypeTagId() == seaForceTag) {
+                    formations[1]++;
+                    assertTrue(formation.baseId() != 0);
+                }
+            }
+        });
+        assertEquals(951, formations[0]);
+        assertEquals(75, formations[1]);
+
+        int[] unitInstances = new int[2];
+        Query unitInstanceQuery = this.ecsWorld.query().with(UnitInstance.class).build();
+        unitInstanceQuery.iter(iter -> {
+            Field<UnitInstance> unitInstanceField = iter.field(UnitInstance.class, 0);
+            for (int i = 0; i < iter.count(); i++) {
+                UnitInstanceView unitInstance = unitInstanceField.getMutView(i);
+                assertTrue(unitInstance.typeId() != 0 && unitInstance.strength() > 0f);
+                unitInstances[0]++;
+                if (unitInstance.formationId() == 0) {
+                    unitInstances[1]++;
+                }
+            }
+        });
+        assertEquals(4019, unitInstances[0]);
+        assertEquals(344, unitInstances[1]);
+
+        int[] airWings = new int[1];
+        this.ecsWorld.query().with(AirWing.class).with(UnitInstance.class).build().each((long id) -> airWings[0]++);
+        assertEquals(344, airWings[0]);
+
+        Query unitQuery = this.ecsWorld.query().with(Unit.class).build();
+        unitQuery.iter(iter -> {
+            Field<Unit> unitField = iter.field(Unit.class, 0);
+            for (int i = 0; i < iter.count(); i++) {
+                UnitView unit = unitField.getMutView(i);
+                long forceTypeTagId = unit.forceTypeTagId();
+                assertTrue(forceTypeTagId == landForceTag || forceTypeTagId == seaForceTag || forceTypeTagId == airForceTag);
+            }
+        });
+
+        Query leaderQuery = this.ecsWorld.query().with(Leader.class).build();
+        leaderQuery.iter(iter -> {
+            Field<Leader> leaderField = iter.field(Leader.class, 0);
+            for (int i = 0; i < iter.count(); i++) {
+                LeaderView leader = leaderField.getMutView(i);
+                long forceTypeTagId = leader.forceTypeTagId();
+                assertTrue(forceTypeTagId == landForceTag || forceTypeTagId == seaForceTag || forceTypeTagId == airForceTag);
+            }
+        });
     }
 
     @Test

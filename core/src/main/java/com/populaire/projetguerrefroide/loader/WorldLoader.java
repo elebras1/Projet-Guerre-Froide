@@ -2,6 +2,7 @@ package com.populaire.projetguerrefroide.loader;
 
 import com.github.tommyettinger.ds.IntLongMap;
 import com.populaire.projetguerrefroide.dao.WorldDao;
+import com.populaire.projetguerrefroide.dao.json.CountryHistoryJson;
 import com.populaire.projetguerrefroide.pojo.Borders;
 import com.populaire.projetguerrefroide.pojo.ProductionType;
 import com.populaire.projetguerrefroide.pojo.WorldData;
@@ -46,10 +47,12 @@ public final class WorldLoader {
         map.loadRegions(this.worldDao.readRegions(), provinceBuildings);
         IntLongMap provinces = map.loadProvinceDefinitions(this.worldDao.readProvinceDefinitions());
         Borders borders = map.loadBorders(this.worldDao.readProvincesBitmap(), provinces);
-        country.loadCountriesHistory(this.worldDao.readCountriesHistory());
+        Map<String, CountryHistoryJson> countriesHistory = this.worldDao.readCountriesHistory();
+        country.loadCountriesHistory(countriesHistory);
         map.loadContinents(this.worldDao.readContinents());
         map.loadAdjacencies(this.worldDao.readAdjacencies());
         map.loadPositions(this.worldDao.readPositions());
+        military.loadForces(countriesHistory);
 
         return new WorldData(provinces, borders);
     }

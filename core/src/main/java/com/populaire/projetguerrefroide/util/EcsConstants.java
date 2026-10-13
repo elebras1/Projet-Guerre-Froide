@@ -186,4 +186,13 @@ public class EcsConstants {
         };
     }
 
+    public long getForceTypeTag(String forceType) {
+        return switch (forceType) {
+            case "land" -> this.landForceTag();
+            case "sea" -> this.seaForceTag();
+            case "air" -> this.airForceTag();
+            default -> throw new IllegalArgumentException("Invalid force type: " + forceType);
+        };
+    }
+
 }

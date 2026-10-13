@@ -20,6 +20,7 @@ public record Unit(
     int maxStrength,
     @FixedArray(length = MAX_GOODS) long[] buildCostIds,
     @FixedArray(length = MAX_GOODS) float[] buildCostAmounts,
+    @FixedArray(length = MAX_GOODS) int[] supplyCostGoodIndexes,
     @FixedArray(length = MAX_GOODS) long[] supplyCostIds,
     @FixedArray(length = MAX_GOODS) float[] supplyCostAmounts){
 

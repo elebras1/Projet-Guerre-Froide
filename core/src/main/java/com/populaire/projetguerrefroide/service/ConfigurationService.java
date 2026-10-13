@@ -77,6 +77,7 @@ public class ConfigurationService {
         gameContext.putAllLocalisation(this.localisationDao.readPopup());
         gameContext.putAllLocalisation(this.localisationDao.readProvinces());
         gameContext.putAllLocalisation(this.localisationDao.readRegions());
+        gameContext.putAllLocalisation(this.localisationDao.readUnits());
         gameContext.putAllLocalisation(this.localisationDao.readLanguage());
         gameContext.putAllLocalisation(this.localisationDao.readInterface());
         gameContext.putAllLocalisation(this.localisationDao.readEconomy());

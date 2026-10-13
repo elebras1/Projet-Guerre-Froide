@@ -14,6 +14,7 @@ public interface LocalisationDao {
     Map<String, String> readCountries();
     Map<String, String> readProvinces();
     Map<String, String> readRegions();
+    Map<String, String> readUnits();
     Map<String, String> readInterface();
     Map<String , String> readEconomy();
 }
