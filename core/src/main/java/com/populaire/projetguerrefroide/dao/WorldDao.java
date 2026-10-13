@@ -12,7 +12,7 @@ public interface WorldDao {
 
     LawsJson readLaws();
 
-    Map<String, Map<String, Object>> readGovernments();
+    Map<String, GovernmentJson> readGovernments();
 
     NationalIdeasJson readNationalIdeas();
 

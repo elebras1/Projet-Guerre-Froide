@@ -7,7 +7,6 @@ import io.github.elebras1.flecs.Entity;
 import io.github.elebras1.flecs.EntityView;
 import io.github.elebras1.flecs.World;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 
 import static com.populaire.projetguerrefroide.util.Constants.*;
@@ -105,44 +104,38 @@ public final class PoliticsLoader {
         }
     }
 
-    public void loadGovernments(Map<String, Map<String, Object>> governments) {
+    public void loadGovernments(Map<String, GovernmentJson> governments) {
         try {
 
             for(var governmentEntry : governments.entrySet()) {
                 String governmentName = governmentEntry.getKey();
-                Map<String, Object> government = governmentEntry.getValue();
+                GovernmentJson government = governmentEntry.getValue();
 
                 long governmentEntityId = this.ecsWorld.entity(governmentName);
                 EntityView governmentEntity = this.ecsWorld.obtainEntityView(governmentEntityId);
 
                 long[] associatedIdeologieIds = new long[MAX_GOVERNMENT_ASSOCIATED_IDEOLOGIES];
                 int i = 0;
-                for(Object associatedIdeology : (List<?>) government.get("associated_ideologies")) {
-                    long ideologyEntityId = this.ecsWorld.lookup((String) associatedIdeology);
+                for(String associatedIdeology : government.associatedIdeologies()) {
+                    long ideologyEntityId = this.ecsWorld.lookup(associatedIdeology);
                     associatedIdeologieIds[i] = ideologyEntityId;
                     i++;
                 }
 
-                Map<?, ?> election = (Map<?, ?>) government.get("election");
-                if(election != null && !election.isEmpty()) {
-                    boolean headOfState = (Boolean) election.get("head_of_state");
-                    boolean headOfGovernment = (Boolean) election.get("head_of_government");
-                    int duration = ((Number) election.get("duration")).intValue();
-                    governmentEntity.set(new ElectoralMechanism(headOfState, headOfGovernment, duration));
+                ElectionJson election = government.election();
+                if(election.duration() != null) {
+                    governmentEntity.set(new ElectoralMechanism(election.headOfState(), election.headOfGovernment(), election.duration().intValue()));
                 }
 
                 long[] supportedLawGroupIds = new long[LAW_COUNT];
                 long[] supportedLawIds = new long[LAW_COUNT];
                 int lawIndex = 0;
-                for(var governmentElementEntry : government.entrySet()) {
-                    long lawGroupId = this.ecsWorld.lookup(governmentElementEntry.getKey());
-                    if(lawGroupId != 0) {
-                        for(Object supportedLaw : (List<?>) governmentElementEntry.getValue()) {
-                            long lawId = this.ecsWorld.lookup((String) supportedLaw);
-                            supportedLawGroupIds[lawIndex] = lawGroupId;
-                            supportedLawIds[lawIndex] = lawId;
-                            lawIndex++;
-                        }
+                for(var lawGroupEntry : government.laws().entrySet()) {
+                    long lawGroupId = this.ecsWorld.lookup(lawGroupEntry.getKey());
+                    for(String supportedLaw : lawGroupEntry.getValue()) {
+                        supportedLawGroupIds[lawIndex] = lawGroupId;
+                        supportedLawIds[lawIndex] = this.ecsWorld.lookup(supportedLaw);
+                        lawIndex++;
                     }
                 }
 

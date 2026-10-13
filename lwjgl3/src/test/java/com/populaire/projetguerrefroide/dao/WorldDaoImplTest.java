@@ -31,7 +31,16 @@ public class WorldDaoImplTest {
         assertEquals(268, this.worldDao.readCountries().size());
         assertFalse(this.worldDao.readIdeologies().isEmpty());
         assertFalse(this.worldDao.readLaws().groups().isEmpty());
-        assertFalse(this.worldDao.readGovernments().isEmpty());
+        Map<String, GovernmentJson> governments = this.worldDao.readGovernments();
+        assertEquals(10, governments.size());
+        GovernmentJson proletarianDictatorship = governments.get("proletarian_dictatorship_gov");
+        assertEquals(List.of("maoist_idolg", "communist_idolg"), proletarianDictatorship.associatedIdeologies());
+        assertEquals(List.of("governance_principles", "distribution_of_power", "economic_system"), List.copyOf(proletarianDictatorship.laws().keySet()));
+        assertNull(proletarianDictatorship.election().duration());
+        ElectionJson presidentialElection = governments.get("presidential_republic_gov").election();
+        assertTrue(presidentialElection.headOfState());
+        assertTrue(presidentialElection.headOfGovernment());
+        assertEquals(48L, presidentialElection.duration());
         assertFalse(this.worldDao.readNationalIdeas().cultures().isEmpty());
         assertFalse(this.worldDao.readMinisterTypes().isEmpty());
         assertFalse(this.worldDao.readTraits().isEmpty());

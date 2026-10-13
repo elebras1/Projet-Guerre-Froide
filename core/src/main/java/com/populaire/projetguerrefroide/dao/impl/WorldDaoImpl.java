@@ -53,7 +53,7 @@ public class WorldDaoImpl implements WorldDao {
     private final Type pathsType = new TypeDefinition<Map<String, String>>() {}.type;
     private final Type pathListType = new TypeDefinition<List<String>>() {}.type;
     private final Type modifiersType = new TypeDefinition<Map<String, Map<String, Double>>>() {}.type;
-    private final Type governmentsType = new TypeDefinition<Map<String, Map<String, Object>>>() {}.type;
+    private final Type governmentsType = new TypeDefinition<Map<String, GovernmentJson>>() {}.type;
     private final Type ideologiesType = new TypeDefinition<Map<String, IdeologyJson>>() {}.type;
     private final Type terrainsType = new TypeDefinition<Map<String, TerrainJson>>() {}.type;
     private final Type resourceProductionsType = new TypeDefinition<Map<String, ResourceProductionJson>>() {}.type;
@@ -72,7 +72,7 @@ public class WorldDaoImpl implements WorldDao {
     }
 
     @Override
-    public Map<String, Map<String, Object>> readGovernments() {
+    public Map<String, GovernmentJson> readGovernments() {
         return this.readJson(this.governmentJsonFile, this.governmentsType);
     }
 

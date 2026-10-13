@@ -3,16 +3,17 @@
     "associated_ideologies": [
       "fascistic_idolg"
     ],
-    "distribution_of_power": [
-      "autocracy",
-      "oligarchy",
-      "single_party_state"
-    ],
-    "citizenship": [
-      "ethnostate",
-      "national_supremacy"
-    ],
-
+    "laws": {
+      "distribution_of_power": [
+        "autocracy",
+        "oligarchy",
+        "single_party_state"
+      ],
+      "citizenship": [
+        "ethnostate",
+        "national_supremacy"
+      ]
+    },
     "election": {}
   },
   "proletarian_dictatorship_gov": {
@@ -20,38 +21,44 @@
       "maoist_idolg",
       "communist_idolg"
     ],
-    "governance_principles": [
-      "concil_republic"
-    ],
-    "distribution_of_power": [
-      "single_party_state"
-    ],
-    "economic_system": [
-      "planned_economy",
-      "cooperative_ownership"
-    ],
+    "laws": {
+      "governance_principles": [
+        "concil_republic"
+      ],
+      "distribution_of_power": [
+        "single_party_state"
+      ],
+      "economic_system": [
+        "planned_economy",
+        "cooperative_ownership"
+      ]
+    },
     "election": {}
   },
   "authoritarian_gov": {
     "associated_ideologies": [],
-    "distribution_of_power": [
-      "autocracy",
-      "technocracy",
-      "oligarchy",
-      "single_party_state"
-    ],
+    "laws": {
+      "distribution_of_power": [
+        "autocracy",
+        "technocracy",
+        "oligarchy",
+        "single_party_state"
+      ]
+    },
     "election": {}
   },
   "theocracy_gov": {
     "associated_ideologies": [
       "paternal_auto_idolg"
     ],
-    "governance_principles": [
-      "theocracy"
-    ],
-    "church_and_state": [
-      "state_religion"
-    ],
+    "laws": {
+      "governance_principles": [
+        "theocracy"
+      ],
+      "church_and_state": [
+        "state_religion"
+      ]
+    },
     "election": {
       "head_of_state": false,
       "head_of_government": true,
@@ -60,27 +67,31 @@
   },
   "absolute_monarchy_gov": {
     "associated_ideologies": [],
-    "governance_principles": [
-      "monarchy"
-    ],
-    "distribution_of_power": [
-      "autocracy",
-      "technocracy",
-      "oligarchy"
-    ],
+    "laws": {
+      "governance_principles": [
+        "monarchy"
+      ],
+      "distribution_of_power": [
+        "autocracy",
+        "technocracy",
+        "oligarchy"
+      ]
+    },
     "election": {}
   },
   "constitutional_monarchy_gov": {
     "associated_ideologies": [],
-    "governance_principles": [
-      "monarchy"
-    ],
-    "distribution_of_power": [
-      "landed_voting",
-      "wealth_voting",
-      "census_suffrage",
-      "universal_suffrage"
-    ],
+    "laws": {
+      "governance_principles": [
+        "monarchy"
+      ],
+      "distribution_of_power": [
+        "landed_voting",
+        "wealth_voting",
+        "census_suffrage",
+        "universal_suffrage"
+      ]
+    },
     "election": {
       "head_of_state": false,
       "head_of_government": true,
@@ -89,9 +100,11 @@
   },
   "presidential_republic_gov": {
     "associated_ideologies": [],
-    "governance_principles": [
-      "presidential_republic"
-    ],
+    "laws": {
+      "governance_principles": [
+        "presidential_republic"
+      ]
+    },
     "election": {
       "head_of_state": true,
       "head_of_government": true,
@@ -100,9 +113,11 @@
   },
   "parliamentary_republic_gov": {
     "associated_ideologies": [],
-    "governance_principles": [
-      "parliamentary_republic"
-    ],
+    "laws": {
+      "governance_principles": [
+        "parliamentary_republic"
+      ]
+    },
     "election": {
       "head_of_state": false,
       "head_of_government": true,
@@ -111,13 +126,15 @@
   },
   "direct_democracy_gov": {
     "associated_ideologies": [],
-    "governance_principles": [
-      "parliamentary_republic",
-      "concil_republic"
-    ],
-    "distribution_of_power": [
-      "universal_suffrage"
-    ],
+    "laws": {
+      "governance_principles": [
+        "parliamentary_republic",
+        "concil_republic"
+      ],
+      "distribution_of_power": [
+        "universal_suffrage"
+      ]
+    },
     "election": {}
   },
   "anarchy_gov": {
@@ -125,22 +142,24 @@
       "left_wing_radical_idolg",
       "market_liberal_idolg"
     ],
-    "governance_principles": [
-      "anarchy"
-    ],
-    "taxation": [
-      "no_taxes"
-    ],
-    "public_expression": [
-      "free_speech"
-    ],
-    "policing": [
-      "no_police"
-    ],
-    "economic_system": [
-      "laissez_faire",
-      "cooperative_ownership"
-    ],
+    "laws": {
+      "governance_principles": [
+        "anarchy"
+      ],
+      "taxation": [
+        "no_taxes"
+      ],
+      "public_expression": [
+        "free_speech"
+      ],
+      "policing": [
+        "no_police"
+      ],
+      "economic_system": [
+        "laissez_faire",
+        "cooperative_ownership"
+      ]
+    },
     "election": {}
   }
 }
