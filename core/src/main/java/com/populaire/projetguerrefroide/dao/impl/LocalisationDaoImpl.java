@@ -25,7 +25,8 @@ public class LocalisationDaoImpl implements LocalisationDao {
     private final String regionsCsvFile = this.localisationPath + "regions.csv";
     private final String economyCsvFile = this.localisationPath + "economy.csv";
     private final String unitsCsvFile = this.localisationPath + "units.csv";
-    private String language = "ENGLISH";
+    private final String defaultLanguage = "ENGLISH";
+    private String language = this.defaultLanguage;
 
     @Override
     public void setLanguage(String language) {
@@ -74,7 +75,7 @@ public class LocalisationDaoImpl implements LocalisationDao {
 
     @Override
     public Map<String, String> readProvinces() {
-        return this.readLocalisationCsv(this.language, this.provincesCsvFile, "ENGLISH");
+        return this.readLocalisationCsv(this.language, this.provincesCsvFile);
     }
 
     @Override
@@ -84,7 +85,7 @@ public class LocalisationDaoImpl implements LocalisationDao {
 
     @Override
     public Map<String, String> readUnits() {
-        return this.readLocalisationCsv(this.language, this.unitsCsvFile, "ENGLISH");
+        return this.readLocalisationCsv(this.language, this.unitsCsvFile);
     }
 
     @Override
@@ -98,7 +99,7 @@ public class LocalisationDaoImpl implements LocalisationDao {
     }
 
     private Map<String, String> readLocalisationCsv(String language, String filename) {
-        return this.readLocalisationCsv(language, filename, language);
+        return this.readLocalisationCsv(language, filename, this.defaultLanguage);
     }
 
     private Map<String, String> readLocalisationCsv(String language, String filename, String fallbackLanguage) {
