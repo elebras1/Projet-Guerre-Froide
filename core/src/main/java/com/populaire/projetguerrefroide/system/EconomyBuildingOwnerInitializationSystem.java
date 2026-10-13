@@ -17,7 +17,6 @@ public class EconomyBuildingOwnerInitializationSystem {
             .kind(phaseId)
             .with(Building.class)
             .with(EconomyBuilding.class)
-            .multiThreaded()
             .iter(this::process);
     }
 

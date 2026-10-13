@@ -13,7 +13,6 @@ public class ExpansionBuildingSystem {
         ecsWorld.system("ExpansionBuildingSystem")
             .kind(Flecs.OnUpdate)
             .with(ExpansionBuilding.class)
-            .multiThreaded()
             .iter(this::expand);
     }
 
