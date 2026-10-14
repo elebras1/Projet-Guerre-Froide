@@ -11,6 +11,8 @@ public record EconomyBuilding(
     float production,
     float scale,
     float profit,
+    double treasury,
+    float inputBudgetRatio,
     int primaryWorkerAmount,
     int secondaryWorkerAmount,
     float primaryWorkerMinWage,

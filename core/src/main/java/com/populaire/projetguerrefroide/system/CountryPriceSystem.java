@@ -27,16 +27,22 @@ public class CountryPriceSystem {
             CountryTradePolicyView countryTradePolicy = countryTradePolicyField.getMutView(i);
 
             float tariffRate = countryTradePolicy.tariffRate();
+            float effectiveTariffRate = tariffRate;
+            if (tariffRate < 0f) {
+                double subsidies = 0.0;
+                for (int g = 0; g < countryMarket.goodPricesLength(); g++) {
+                    subsidies += (double) countryMarket.goodImportedAmounts(g) * globalMarketData.goodPrices(g) * -tariffRate;
+                }
+                double affordableSubsidies = Math.min(subsidies, countryMarket.treasury());
+                effectiveTariffRate = affordableSubsidies > 0.0 ? (float) (tariffRate * affordableSubsidies / subsidies) : 0f;
+            }
+            countryMarket.effectiveTariffRate(effectiveTariffRate);
 
+            float maximumTariff = 1f + Math.max(0f, tariffRate);
             for (int g = 0; g < countryMarket.goodPricesLength(); g++) {
-                float demand = countryMarket.goodDemandAmounts(g);
-                float basePrice = globalMarketData.goodPrices(g);
-                float importedFraction = Math.min(1.0f, countryMarket.goodImportedAmounts(g) / (demand + 0.001f));
-                float referencePrice = basePrice * (1f + tariffRate * importedFraction);
-                float scarcity = Math.max(0f, (demand - countryMarket.goodConsumedAmounts(g)) / (demand + 0.001f));
-                float targetPrice = Math.max(0.001f, referencePrice * (1f + scarcity));
-                float localPrice = countryMarket.goodPrices(g) * 0.95f + targetPrice * 0.05f;
-                countryMarket.goodPrices(g, Math.max(0.001f, localPrice));
+                float consumed = countryMarket.goodConsumedAmounts(g);
+                float importedShare = consumed > 0f ? countryMarket.goodImportedAmounts(g) / consumed : 0f;
+                countryMarket.goodPrices(g, countryMarket.goodBudgetPrices(g) * ((1f + effectiveTariffRate * importedShare) / maximumTariff));
             }
         }
     }

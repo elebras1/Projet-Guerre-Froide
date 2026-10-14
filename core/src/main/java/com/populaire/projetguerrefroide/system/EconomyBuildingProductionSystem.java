@@ -77,7 +77,7 @@ public class EconomyBuildingProductionSystem {
 
             float efficiencySatisfaction = 1f;
 
-            float production = baseOutput * throughput * outputMultiplier * (0.75f + 0.25f * efficiencySatisfaction) * minInputSatisfaction * effectiveScale;
+            float production = baseOutput * throughput * outputMultiplier * (0.75f + 0.25f * efficiencySatisfaction) * minInputSatisfaction * economyBuilding.inputBudgetRatio() * effectiveScale;
 
             economyBuilding.production(production);
         }

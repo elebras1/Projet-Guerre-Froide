@@ -32,25 +32,21 @@ public class PopulationConsumptionSystem {
 
             int popTypeIndex = pop.index();
 
-            float lifeCost = countryMarket.lifeCostsByPopType(popTypeIndex);
-            float everydayCost = countryMarket.everydayCostsByPopType(popTypeIndex);
-            float luxuryCost = countryMarket.luxuryCostsByPopType(popTypeIndex);
-
             float budget = pop.savings() * (1.0f - countryBudgetPolicy.popSpending());
             float scaledAmount = pop.amount() / NEEDS_SCALING_FACTOR;
 
-            float neededLife = lifeCost * scaledAmount;
-            float lifeFraction = Math.min(1f, Math.max(0f, budget / Math.max(0.001f, neededLife)));
-            budget -= neededLife * lifeFraction;
-            budget = Math.max(0f, budget);
+            float neededLife = countryMarket.lifeBudgetCostsByPopType(popTypeIndex) * scaledAmount;
+            float lifeSpending = Math.min(budget, neededLife);
+            float lifeFraction = neededLife > 0f ? lifeSpending / neededLife : 1f;
+            budget -= lifeSpending;
 
-            float neededEveryday = everydayCost * scaledAmount;
-            float everydayFraction = Math.min(1f, Math.max(0f, budget / Math.max(0.001f, neededEveryday)));
-            budget -= neededEveryday * everydayFraction;
-            budget = Math.max(0f, budget);
+            float neededEveryday = countryMarket.everydayBudgetCostsByPopType(popTypeIndex) * scaledAmount;
+            float everydaySpending = Math.min(budget, neededEveryday);
+            float everydayFraction = neededEveryday > 0f ? everydaySpending / neededEveryday : 1f;
+            budget -= everydaySpending;
 
-            float neededLuxury = luxuryCost * scaledAmount;
-            float luxuryFraction = Math.min(1f, Math.max(0f, budget / Math.max(0.001f, neededLuxury)));
+            float neededLuxury = countryMarket.luxuryBudgetCostsByPopType(popTypeIndex) * scaledAmount;
+            float luxuryFraction = neededLuxury > 0f ? Math.min(budget, neededLuxury) / neededLuxury : 1f;
 
             pop.lifeNeedsSatisfaction(lifeFraction);
             pop.everydayNeedsSatisfaction(everydayFraction);

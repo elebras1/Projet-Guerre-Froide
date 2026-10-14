@@ -20,7 +20,7 @@ public class EconomyBuildingRevenueSystem {
 
     private void distribute(Iter iter) {
         long countryId = 0;
-        CountryMarketMutView countryMarket = null;
+        CountryMarketView countryMarket = null;
         CountryLaborPolicyView countryLaborPolicy = null;
 
         long buildingTypeId = 0;
@@ -48,27 +48,9 @@ public class EconomyBuildingRevenueSystem {
 
             int outputIndex = buildingTypeData.goodOutputIndex();
             float producedAmount = countryMarket.goodProducedAmounts(outputIndex);
-            float revenue = producedAmount > 0f ? (float) (countryMarket.goodRevenues(outputIndex) * economyBuilding.production() / producedAmount) : 0f;
-
-            float inputCost = 0f;
-            for(int g = 0; g < buildingTypeData.goodInputIndexesLength(); g++) {
-                int goodIndex = economyBuilding.activeInputGoodIndexes(g);
-                if(goodIndex < 0) {
-                    break;
-                }
-                inputCost += this.inputCost(countryMarket, economyBuilding, g, goodIndex);
-            }
-
-            float paidInputs = Math.min(inputCost, revenue);
-            float paidInputsRatio = inputCost > 0f ? paidInputs / inputCost : 0f;
-            for(int g = 0; g < buildingTypeData.goodInputIndexesLength(); g++) {
-                int goodIndex = economyBuilding.activeInputGoodIndexes(g);
-                if(goodIndex < 0) {
-                    break;
-                }
-                countryMarket.goodPendingRevenues(goodIndex, countryMarket.goodPendingRevenues(goodIndex) + this.inputCost(countryMarket, economyBuilding, g, goodIndex) * paidInputsRatio);
-            }
-            float availableForWages = revenue - paidInputs;
+            double revenue = producedAmount > 0f ? countryMarket.goodRevenues(outputIndex) * economyBuilding.production() / producedAmount : 0.0;
+            float availableForWages = (float) economyBuilding.treasury();
+            economyBuilding.treasury(revenue);
 
             float primaryMinWageFactor = (countryMarket.lifeCostsByPopType(buildingTypeData.primaryWorkerPopTypeIndex()) + 0.2f * countryMarket.everydayCostsByPopType(buildingTypeData.primaryWorkerPopTypeIndex())) * (1f + countryLaborPolicy.minWageFactor());
             float secondaryMinWageFactor = (countryMarket.lifeCostsByPopType(buildingTypeData.secondaryWorkerPopTypeIndex()) + 0.2f * countryMarket.everydayCostsByPopType(buildingTypeData.secondaryWorkerPopTypeIndex())) * (1f + countryLaborPolicy.minWageFactor());
@@ -93,13 +75,5 @@ public class EconomyBuildingRevenueSystem {
             economyBuilding.primaryWorkerMinWage(primaryWorkerMinWage);
             economyBuilding.secondaryWorkerMinWage(secondaryWorkerMinWage);
         }
-    }
-
-    private float inputCost(CountryMarketMutView countryMarket, EconomyBuildingMutView economyBuilding, int slot, int goodIndex) {
-        float demand = countryMarket.goodDemandAmounts(goodIndex);
-        if(demand <= 0f) {
-            return 0f;
-        }
-        return economyBuilding.goodInputDemandAmounts(slot) * countryMarket.goodConsumedAmounts(goodIndex) / demand * countryMarket.goodPrices(goodIndex);
     }
 }

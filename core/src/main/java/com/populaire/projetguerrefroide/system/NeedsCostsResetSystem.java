@@ -24,6 +24,9 @@ public class NeedsCostsResetSystem {
                 countryMarket.lifeCostsByPopType(p, 0f);
                 countryMarket.everydayCostsByPopType(p, 0f);
                 countryMarket.luxuryCostsByPopType(p, 0f);
+                countryMarket.lifeBudgetCostsByPopType(p, 0f);
+                countryMarket.everydayBudgetCostsByPopType(p, 0f);
+                countryMarket.luxuryBudgetCostsByPopType(p, 0f);
             }
         }
     }

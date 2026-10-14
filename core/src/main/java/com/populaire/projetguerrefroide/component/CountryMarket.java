@@ -9,6 +9,7 @@ import static com.populaire.projetguerrefroide.util.Constants.POP_TYPE_COUNT;
 @Component
 public record CountryMarket(
     @FixedArray(length = GOOD_COUNT) float[] goodPrices,
+    @FixedArray(length = GOOD_COUNT) float[] goodBudgetPrices,
     @FixedArray(length = GOOD_COUNT) float[] goodDemandAmounts,
     @FixedArray(length = GOOD_COUNT) double[] goodPopulationDemandAmounts,
     @FixedArray(length = GOOD_COUNT) float[] goodDemandSatisfactionRatios,
@@ -16,6 +17,9 @@ public record CountryMarket(
     @FixedArray(length = POP_TYPE_COUNT) float[] lifeCostsByPopType,
     @FixedArray(length = POP_TYPE_COUNT) float[] everydayCostsByPopType,
     @FixedArray(length = POP_TYPE_COUNT) float[] luxuryCostsByPopType,
+    @FixedArray(length = POP_TYPE_COUNT) float[] lifeBudgetCostsByPopType,
+    @FixedArray(length = POP_TYPE_COUNT) float[] everydayBudgetCostsByPopType,
+    @FixedArray(length = POP_TYPE_COUNT) float[] luxuryBudgetCostsByPopType,
     @FixedArray(length = POP_TYPE_COUNT) float[] paidLifeCostsByPopType,
     @FixedArray(length = POP_TYPE_COUNT) float[] paidEverydayCostsByPopType,
     @FixedArray(length = POP_TYPE_COUNT) float[] paidLuxuryCostsByPopType,
@@ -29,7 +33,7 @@ public record CountryMarket(
     double treasury,
     float privateInvestmentAmount,
     @FixedArray(length = GOOD_COUNT) double[] goodRevenues,
-    @FixedArray(length = GOOD_COUNT) double[] goodPendingRevenues,
     float productionValue,
+    float effectiveTariffRate,
     float tariffRevenue) {
 }

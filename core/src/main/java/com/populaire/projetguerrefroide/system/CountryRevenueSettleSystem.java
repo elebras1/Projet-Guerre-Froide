@@ -24,8 +24,7 @@ public class CountryRevenueSettleSystem {
                 if(countryMarket.goodProducedAmounts(g) <= 0f) {
                     countryMarket.treasury(countryMarket.treasury() + countryMarket.goodRevenues(g));
                 }
-                countryMarket.goodRevenues(g, countryMarket.goodPendingRevenues(g));
-                countryMarket.goodPendingRevenues(g, 0.0);
+                countryMarket.goodRevenues(g, 0.0);
             }
         }
     }

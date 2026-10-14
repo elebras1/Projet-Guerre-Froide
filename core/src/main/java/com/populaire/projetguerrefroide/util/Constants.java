@@ -57,4 +57,10 @@ public class Constants {
     public static final String MIGRATION_PUSH = "migration_push";
 
     public static float NEEDS_SCALING_FACTOR = 100000f;
+    public static final float SHORTAGE_PRICE_PREMIUM = 0.5f;
+    public static final float PRICE_ADJUSTMENT_RATE = 0.01f;
+    public static final float MINIMUM_PRICE_RATIO = 0.1f;
+    public static final float MAXIMUM_PRICE_RATIO = 4f;
+    public static final float STOCK_TARGET_DAYS = 15f;
+    public static final float STOCK_ADJUSTMENT_DAYS = 60f;
 }

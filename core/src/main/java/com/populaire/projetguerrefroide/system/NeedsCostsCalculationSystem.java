@@ -36,8 +36,8 @@ public class NeedsCostsCalculationSystem {
                         break;
                     }
                     float amount = popTypeData.lifeNeedsGoodAmounts(j);
-                    float price = countryMarket.goodPrices(goodIndex);
-                    countryMarket.lifeCostsByPopType(ptIndex, countryMarket.lifeCostsByPopType(ptIndex) + amount * price);
+                    countryMarket.lifeCostsByPopType(ptIndex, countryMarket.lifeCostsByPopType(ptIndex) + amount * countryMarket.goodPrices(goodIndex));
+                    countryMarket.lifeBudgetCostsByPopType(ptIndex, countryMarket.lifeBudgetCostsByPopType(ptIndex) + amount * countryMarket.goodBudgetPrices(goodIndex));
                 }
 
                 for (int j = 0; j < popTypeData.everydayNeedsGoodIdsLength(); j++) {
@@ -46,8 +46,8 @@ public class NeedsCostsCalculationSystem {
                         break;
                     }
                     float amount = popTypeData.everydayNeedsGoodAmounts(j);
-                    float price = countryMarket.goodPrices(goodIndex);
-                    countryMarket.everydayCostsByPopType(ptIndex, countryMarket.everydayCostsByPopType(ptIndex) + amount * price);
+                    countryMarket.everydayCostsByPopType(ptIndex, countryMarket.everydayCostsByPopType(ptIndex) + amount * countryMarket.goodPrices(goodIndex));
+                    countryMarket.everydayBudgetCostsByPopType(ptIndex, countryMarket.everydayBudgetCostsByPopType(ptIndex) + amount * countryMarket.goodBudgetPrices(goodIndex));
                 }
 
                 for (int j = 0; j < popTypeData.luxuryNeedsGoodAmountsLength(); j++) {
@@ -56,8 +56,8 @@ public class NeedsCostsCalculationSystem {
                         break;
                     }
                     float amount = popTypeData.luxuryNeedsGoodAmounts(j);
-                    float price = countryMarket.goodPrices(goodIndex);
-                    countryMarket.luxuryCostsByPopType(ptIndex, countryMarket.luxuryCostsByPopType(ptIndex) + amount * price);
+                    countryMarket.luxuryCostsByPopType(ptIndex, countryMarket.luxuryCostsByPopType(ptIndex) + amount * countryMarket.goodPrices(goodIndex));
+                    countryMarket.luxuryBudgetCostsByPopType(ptIndex, countryMarket.luxuryBudgetCostsByPopType(ptIndex) + amount * countryMarket.goodBudgetPrices(goodIndex));
                 }
             }
         }

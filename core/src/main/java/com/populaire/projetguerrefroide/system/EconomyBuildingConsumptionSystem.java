@@ -47,13 +47,24 @@ public class EconomyBuildingConsumptionSystem {
             float maxProductionScale = primaryRatio * level;
             float effectiveScale = Math.min(economyBuilding.scale() * level, maxProductionScale);
 
+            float inputScale = inputMultiplier * throughput * effectiveScale;
+            double budgetCost = 0.0;
             for (int g = 0; g < economyBuildingTypeData.goodInputIdsLength(); g++) {
                 int goodIndex = economyBuilding.activeInputGoodIndexes(g);
                 if (goodIndex < 0) {
                     break;
                 }
-                float amount = economyBuilding.activeInputAmounts(g);
-                float demand = inputMultiplier * throughput * amount * effectiveScale;
+                budgetCost += (double) inputScale * economyBuilding.activeInputAmounts(g) * countryMarket.goodBudgetPrices(goodIndex);
+            }
+            float inputBudgetRatio = budgetCost > economyBuilding.treasury() ? (float) (economyBuilding.treasury() / budgetCost) : 1f;
+            economyBuilding.inputBudgetRatio(inputBudgetRatio);
+
+            for (int g = 0; g < economyBuildingTypeData.goodInputIdsLength(); g++) {
+                int goodIndex = economyBuilding.activeInputGoodIndexes(g);
+                if (goodIndex < 0) {
+                    break;
+                }
+                float demand = inputScale * economyBuilding.activeInputAmounts(g) * inputBudgetRatio;
                 countryMarket.goodDemandAmounts(goodIndex, countryMarket.goodDemandAmounts(goodIndex) + demand);
                 economyBuilding.goodInputDemandAmounts(g, demand);
             }

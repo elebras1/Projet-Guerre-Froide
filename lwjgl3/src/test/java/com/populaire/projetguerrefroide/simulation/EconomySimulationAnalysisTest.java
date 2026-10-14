@@ -23,6 +23,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -36,9 +37,9 @@ public class EconomySimulationAnalysisTest {
     private static final int DEFAULT_YEARS = 5;
     private static final int LONG_RUN_YEARS = 62;
     private static final int LONG_RUN_DETAIL_EVERY = 30;
-    private static final String FREEZE_PRODUCTION = "production";
-    private static final List<String> FROZEN_PRODUCTION_SYSTEMS = List.of(
-        "RGOProductionSystem", "EconomyBuildingProductionSystem", "EconomyBuildingScaleSystem");
+    private static final Map<String, List<String>> FROZEN_SYSTEMS = Map.of(
+        "production", List.of("RGOProductionSystem", "EconomyBuildingProductionSystem", "EconomyBuildingScaleSystem"),
+        "prices", List.of("GlobalMarketResolveSystem"));
 
     private static final float NEGATIVE_BALANCE_TOLERANCE = 1e-6f;
     private static final double MONEY_DRIFT_TOLERANCE = 1e-3;
@@ -236,7 +237,7 @@ public class EconomySimulationAnalysisTest {
         int detailEvery = this.intProperty("simulation.detailEvery", years > DEFAULT_YEARS ? LONG_RUN_DETAIL_EVERY : 1);
         Set<String> freeze = this.listProperty("simulation.freeze");
         for (String mode : freeze) {
-            assertTrue(FREEZE_PRODUCTION.equals(mode), "Unknown freeze mode: " + mode);
+            assertTrue(FROZEN_SYSTEMS.containsKey(mode), "Unknown freeze mode: " + mode);
         }
         System.out.printf("Simulation: %d years, detailed CSV every %d ticks, frozen: %s, forced laws: %s%n", years, detailEvery,
             freeze.isEmpty() ? "none" : freeze, this.forcedLaws.isEmpty() ? "none" : this.forcedLaws);
@@ -251,8 +252,8 @@ public class EconomySimulationAnalysisTest {
                 if (tick == 0) {
                     calibration = CalibrationReport.measure(this.ecsWorld);
                     calibration.write(new File(outputDir));
-                    if (freeze.contains(FREEZE_PRODUCTION)) {
-                        this.disableSystems(FROZEN_PRODUCTION_SYSTEMS);
+                    for (String mode : freeze) {
+                        this.disableSystems(FROZEN_SYSTEMS.get(mode));
                     }
                 }
                 recorder.recordTick(tick, tickNanos);

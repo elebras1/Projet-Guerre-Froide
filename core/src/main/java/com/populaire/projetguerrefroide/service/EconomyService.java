@@ -24,6 +24,7 @@ public class EconomyService {
     private final GlobalMarketResetSystem globalMarketResetSystem;
     private final CountryMarketResetSystem countryMarketResetSystem;
     private final NeedsCostsResetSystem needsCostsResetSystem;
+    private final CountryBudgetPriceSystem countryBudgetPriceSystem;
     private final NeedsCostsCalculationSystem needsCostsCalculationSystem;
     private final PopulationConsumptionSystem populationConsumptionSystem;
     private final EconomyBuildingConsumptionSystem economyBuildingConsumptionSystem;
@@ -34,11 +35,14 @@ public class EconomyService {
     private final EconomyBuildingScaleSystem economyBuildingScaleSystem;
     private final CountryStockSystem countryStockSystem;
     private final CountryProductionSpreadSystem countryProductionSpreadSystem;
+    private final EconomyBuildingTreasuryInitializationSystem economyBuildingTreasuryInitializationSystem;
+    private final CountryStockInitializationSystem countryStockInitializationSystem;
     private final WorldMarketTotalsSystem worldMarketTotalsSystem;
     private final GlobalTradeRatioSystem globalTradeRatioSystem;
     private final CountryMarketResolveSystem countryMarketResolveSystem;
     private final CountryMarketSpreadSystem countryMarketSpreadSystem;
     private final CountryPurchaseSystem countryPurchaseSystem;
+    private final EconomyBuildingPurchaseSystem economyBuildingPurchaseSystem;
     private final CountryImportPaymentSystem countryImportPaymentSystem;
     private final CountryExportPayoutSystem countryExportPayoutSystem;
     private final WorldTradeMoneySettleSystem worldTradeMoneySettleSystem;
@@ -81,6 +85,8 @@ public class EconomyService {
         long phaseRevenue = ecsWorld.entity("PhaseRevenue");
         long phaseIncome = ecsWorld.entity("PhaseIncome");
         long phaseState = ecsWorld.entity("PhaseState");
+        long phaseInitTreasury = ecsWorld.entity("PhaseInitTreasury");
+        long phaseInitStock = ecsWorld.entity("PhaseInitStock");
 
         this.initPipeline = ecsWorld.pipeline("InitEconomyPipeline")
             .with(Flecs.System)
@@ -89,8 +95,12 @@ public class EconomyService {
             .with(phaseInit).or()
             .with(phaseEmployment).or()
             .with(phaseSync).or()
+            .with(phaseNeedsCosts).or()
+            .with(phaseInitTreasury).or()
+            .with(phaseConsumption).or()
             .with(phaseProduction).or()
-            .with(phaseToStock)
+            .with(phaseToStock).or()
+            .with(phaseInitStock)
             .build();
 
         this.mainPipeline = ecsWorld.pipeline("MainEconomyPipeline")
@@ -132,14 +142,18 @@ public class EconomyService {
         this.countryMarketResetSystem = new CountryMarketResetSystem(ecsWorld, phaseReset);
         this.needsCostsResetSystem = new NeedsCostsResetSystem(ecsWorld, phaseReset);
         this.regionIncomeResetSystem = new RegionIncomeResetSystem(ecsWorld, phaseReset);
+        this.countryBudgetPriceSystem = new CountryBudgetPriceSystem(ecsWorld, phaseNeedsCosts);
         this.needsCostsCalculationSystem = new NeedsCostsCalculationSystem(ecsWorld, phaseNeedsCosts);
+        this.economyBuildingTreasuryInitializationSystem = new EconomyBuildingTreasuryInitializationSystem(ecsWorld, phaseInitTreasury);
         this.populationConsumptionSystem = new PopulationConsumptionSystem(ecsWorld, phaseConsumption);
         this.economyBuildingConsumptionSystem = new EconomyBuildingConsumptionSystem(ecsWorld, phaseConsumption);
         this.worldMarketTotalsSystem = new WorldMarketTotalsSystem(ecsWorld, phaseMarket);
         this.globalTradeRatioSystem = new GlobalTradeRatioSystem(ecsWorld, phaseMarket);
         this.countryMarketResolveSystem = new CountryMarketResolveSystem(ecsWorld, phaseMarket);
         this.countryMarketSpreadSystem = new CountryMarketSpreadSystem(ecsWorld, phaseMarket);
+        this.countryPriceSystem = new CountryPriceSystem(ecsWorld, phaseMarket);
         this.countryPurchaseSystem = new CountryPurchaseSystem(ecsWorld, phaseSettlement);
+        this.economyBuildingPurchaseSystem = new EconomyBuildingPurchaseSystem(ecsWorld, phaseSettlement);
         this.countryImportPaymentSystem = new CountryImportPaymentSystem(ecsWorld, phaseSettlement);
         this.countryExportPayoutSystem = new CountryExportPayoutSystem(ecsWorld, phaseSettlement);
         this.worldTradeMoneySettleSystem = new WorldTradeMoneySettleSystem(ecsWorld, phaseSettlement);
@@ -149,7 +163,7 @@ public class EconomyService {
         this.economyBuildingSpreadProductionSystem = new EconomyBuildingSpreadProductionSystem(ecsWorld, phaseToStock);
         this.countryStockSystem = new CountryStockSystem(ecsWorld, phaseToStock);
         this.countryProductionSpreadSystem = new CountryProductionSpreadSystem(ecsWorld, phaseToStock);
-        this.countryPriceSystem = new CountryPriceSystem(ecsWorld, phasePrice);
+        this.countryStockInitializationSystem = new CountryStockInitializationSystem(ecsWorld, phaseInitStock);
         this.globalMarketResolveSystem = new GlobalMarketResolveSystem(ecsWorld, phasePrice);
         this.countryProductionValueSystem = new CountryProductionValueSystem(ecsWorld, phaseRevenue);
         this.rgoRevenueSystem = new RGORevenueSystem(ecsWorld, phaseRevenue);

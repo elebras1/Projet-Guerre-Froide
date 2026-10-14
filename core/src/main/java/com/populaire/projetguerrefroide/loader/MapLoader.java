@@ -199,7 +199,7 @@ public final class MapLoader {
                                         activeInputGoodIndexes[g] = advancedRecipe ? buildingTypeData.advancedGoodInputIndexes(g) : buildingTypeData.goodInputIndexes(g);
                                         activeInputAmounts[g] = advancedRecipe ? buildingTypeData.advancedGoodInputAmounts(g) : buildingTypeData.goodInputAmounts(g);
                                     }
-                                    building.set(new EconomyBuilding(0, 0f, 1f, 0f, 0, 0, 0f, 0f, new float[MAX_GOODS], activeInputGoodIndexes, activeInputAmounts, advancedRecipe));
+                                    building.set(new EconomyBuilding(0, 0f, 1f, 0f, 0d, 1f, 0, 0, 0f, 0f, new float[MAX_GOODS], activeInputGoodIndexes, activeInputAmounts, advancedRecipe));
                                 } else if (buildingType.has(SpecialBuildingType.class)) {
                                     building.set(new SpecialBuilding());
                                 }

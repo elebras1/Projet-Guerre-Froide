@@ -36,9 +36,7 @@ public class CountryMarketResolveSystem {
                 float exportRatio = offerTotal > 0f ? Math.min(1f, globalMarketData.goodNeedTotals(g) / offerTotal) : 0f;
                 float exported = countryMarket.goodExportOffers(g) * exportRatio;
 
-                float satisfaction = Math.min(1.0f, consumed / (demand + 0.001f));
-                float oldSatisfaction = countryMarket.goodDemandSatisfactionRatios(g);
-                countryMarket.goodDemandSatisfactionRatios(g, oldSatisfaction * 0.95f + satisfaction * 0.05f);
+                countryMarket.goodDemandSatisfactionRatios(g, demand > 0f ? consumed / demand : 1f);
 
                 countryMarket.goodStocks(g, stock - consumedDomestic - exported);
                 countryMarket.goodConsumedAmounts(g, consumed);

@@ -160,6 +160,9 @@ public class LawEffectInitializationSystem {
                 }
             }
 
+            taxPolicy.poorTaxRate(Math.max(0f, taxPolicy.poorTaxRate()));
+            taxPolicy.middleTaxRate(Math.max(0f, taxPolicy.middleTaxRate()));
+            taxPolicy.richTaxRate(Math.max(0f, taxPolicy.richTaxRate()));
             profitDistributionPolicy.capitalistProfitShareRate(Math.max(0f, profitDistributionPolicy.capitalistProfitShareRate()));
             profitDistributionPolicy.workerProfitShareRate(Math.max(0f, profitDistributionPolicy.workerProfitShareRate()));
             profitDistributionPolicy.aristocratProfitShareRate(Math.max(0f, profitDistributionPolicy.aristocratProfitShareRate()));
