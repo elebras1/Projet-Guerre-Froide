@@ -9,5 +9,6 @@ import java.util.Map;
 public record GoodsJson(
     @JsonAttribute(name = "resource_goods", mandatory = true) Map<String, GoodJson> resourceGoods,
     @JsonAttribute(name = "advanced_goods", mandatory = true) Map<String, GoodJson> advancedGoods,
+    @JsonAttribute(name = "service_goods", mandatory = true) Map<String, GoodJson> serviceGoods,
     @JsonAttribute(name = "military_goods", mandatory = true) Map<String, GoodJson> militaryGoods) {
 }

@@ -57,6 +57,17 @@ public final class EconomyLoader {
                 goodIndex++;
             }
 
+            for(var serviceGoodEntry : goods.serviceGoods().entrySet()) {
+                GoodJson serviceGood = serviceGoodEntry.getValue();
+                long goodId = this.ecsWorld.entity(serviceGoodEntry.getKey());
+                EntityView good = this.ecsWorld.obtainEntityView(goodId);
+                good.add(this.ecsConstants.serviceGoodTag());
+                good.set(new Color(this.context.parseColor(serviceGood.color())));
+                good.set(new Good((float) serviceGood.cost(), 1));
+                this.context.goodIds()[goodIndex] = goodId;
+                goodIndex++;
+            }
+
             for(var militaryGoodEntry : goods.militaryGoods().entrySet()) {
                 GoodJson militaryGood = militaryGoodEntry.getValue();
                 long goodId = this.ecsWorld.entity(militaryGoodEntry.getKey());

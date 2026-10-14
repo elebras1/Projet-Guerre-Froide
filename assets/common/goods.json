@@ -136,14 +136,6 @@
         0
       ]
     },
-    "electricity": {
-      "cost": 3.5,
-      "color": [
-        0,
-        0,
-        255
-      ]
-    },
     "cement": {
       "cost": 1.5,
       "color": [
@@ -263,13 +255,15 @@
         200,
         110
       ]
-    },
-    "communication": {
-      "cost": 4,
+    }
+  },
+  "service_goods": {
+    "electricity": {
+      "cost": 3.5,
       "color": [
-        129,
-        63,
-        10
+        0,
+        0,
+        255
       ]
     },
     "transport": {
@@ -278,6 +272,14 @@
         133,
         0,
         54
+      ]
+    },
+    "communication": {
+      "cost": 4,
+      "color": [
+        129,
+        63,
+        10
       ]
     }
   },

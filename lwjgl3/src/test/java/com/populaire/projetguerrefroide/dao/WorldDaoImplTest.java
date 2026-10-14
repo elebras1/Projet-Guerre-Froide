@@ -50,7 +50,8 @@ public class WorldDaoImplTest {
         assertFalse(this.worldDao.readPopulationTemplates().isEmpty());
 
         GoodsJson goods = this.worldDao.readGoods();
-        assertEquals(41, goods.resourceGoods().size() + goods.advancedGoods().size() + goods.militaryGoods().size());
+        assertEquals(41, goods.resourceGoods().size() + goods.advancedGoods().size() + goods.serviceGoods().size() + goods.militaryGoods().size());
+        assertEquals(List.of("electricity", "transport", "communication"), List.copyOf(goods.serviceGoods().keySet()));
 
         ProductionTypesJson productionTypes = this.worldDao.readProductionTypes();
         assertFalse(productionTypes.typesWorkers().isEmpty());

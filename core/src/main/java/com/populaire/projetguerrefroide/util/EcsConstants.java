@@ -20,6 +20,7 @@ public class EcsConstants {
     public static final String RESSOURCE_GOOD_TAG = "RessourceGoodTag";
     public static final String ADVANCED_GOOD_TAG = "AdvancedGoodTag";
     public static final String MILITARY_GOOD_TAG = "MilitaryGoodTag";
+    public static final String SERVICE_GOOD_TAG = "ServiceGoodTag";
     public static final String ON_MAP = "OnMap";
     public static final String SUSPENDED = "Suspended";
     public static final String CAPITALIST_TAG = "CapitalistTag";
@@ -45,6 +46,7 @@ public class EcsConstants {
     private final long ressourceGoodTag;
     private final long advancedGoodTag;
     private final long militaryGoodTag;
+    private final long serviceGoodTag;
     private final long onMap;
     private final long suspended;
     private final long capitalistTag;
@@ -71,6 +73,7 @@ public class EcsConstants {
         this.ressourceGoodTag = ecsWorld.entity(RESSOURCE_GOOD_TAG);
         this.advancedGoodTag = ecsWorld.entity(ADVANCED_GOOD_TAG);
         this.militaryGoodTag = ecsWorld.entity(MILITARY_GOOD_TAG);
+        this.serviceGoodTag = ecsWorld.entity(SERVICE_GOOD_TAG);
         this.onMap = ecsWorld.entity(ON_MAP);
         this.suspended = ecsWorld.entity(SUSPENDED);
         this.capitalistTag = ecsWorld.entity(CAPITALIST_TAG);
@@ -146,6 +149,10 @@ public class EcsConstants {
 
     public long militaryGoodTag() {
         return this.militaryGoodTag;
+    }
+
+    public long serviceGoodTag() {
+        return this.serviceGoodTag;
     }
 
     public long onMap() {
