@@ -167,6 +167,14 @@ public class SimulationRecorder implements AutoCloseable {
     private final float[] worldDemandByGood = new float[GOOD_COUNT];
     private final float[] countryProductionByGood = new float[GOOD_COUNT];
     private final float[] countryDemandByGood = new float[GOOD_COUNT];
+    private final double[] worldStockByGood = new double[GOOD_COUNT];
+    private final double[] previousWorldStockByGood = new double[GOOD_COUNT];
+    private final double[] worldStockFlowByGood = new double[GOOD_COUNT];
+    private final double[] worldStockInflowByGood = new double[GOOD_COUNT];
+    private final double[] worldImportedByGood = new double[GOOD_COUNT];
+    private final double[] worldExportedByGood = new double[GOOD_COUNT];
+    private double maxGoodsResidual = 0.0;
+    private String maxGoodsResidualSource = "";
 
     private final float[] buildingTypeProduction;
     private final float[] buildingTypePrimaryWorkers;
@@ -280,8 +288,18 @@ public class SimulationRecorder implements AutoCloseable {
 
         this.readBaseCosts();
         this.readCpiWeights();
+        this.readInitialStocks();
 
         this.openWriters();
+    }
+
+    private void readInitialStocks() {
+        this.countryQuery.each((long countryId) -> {
+            CountryMarketView cm = this.ecsWorld.obtainEntityView(countryId).getMutView(CountryMarket.class);
+            for (int g = 0; g < GOOD_COUNT; g++) {
+                this.previousWorldStockByGood[g] += cm.goodStocks(g);
+            }
+        });
     }
 
     private void readBaseCosts() {
@@ -420,10 +438,10 @@ public class SimulationRecorder implements AutoCloseable {
         this.writer("meta/building_types.csv").header("building_type", "output_good", "primary_worker_pop_type", "secondary_worker_pop_type");
         this.writer("meta/rgo_types.csv").header("good", "worker_pop_type", "slave_pop_type");
 
-        this.writer("world/market.csv").header("tick", "date", "good", "production", "demand", "price", "pool", "leftover", "offer_total", "need_total", "trade_ratio");
+        this.writer("world/market.csv").header("tick", "date", "good", "production", "demand", "price", "stock", "offer_total", "need_total", "trade_ratio");
 
-        this.writer("country/market.csv").header("tick", "date", "country", "good", "price", "demand", "satisfaction", "pool", "stockpile", "stockpile_target", "stockpile_deficit", "drawing_on_stockpile", "import_need", "imported");
-        this.writer("country/treasury.csv").header("tick", "date", "country", "treasury", "spending_ratio", "private_investment", "sales_revenue", "pending_revenue", "production_value", "tariff_revenue");
+        this.writer("country/market.csv").header("tick", "date", "country", "good", "price", "demand", "satisfaction", "stock", "produced", "consumed", "import_need", "imported", "exported", "lost");
+        this.writer("country/treasury.csv").header("tick", "date", "country", "treasury", "private_investment", "sales_revenue", "pending_revenue", "production_value", "tariff_revenue");
         this.writer("country/employment_ratio.csv").header("tick", "date", "country", "employment", "workers", "ratio");
         this.writer("country/demographics.csv").header("tick", "date", "country", "pop_type", "total", "employment", "consciousness", "militancy", "literacy", "savings", "life_satisfaction", "everyday_satisfaction", "luxury_satisfaction");
         this.writer("country/demographics_totals.csv").header("tick", "date", "country", "total_population", "total_employment", "consciousness", "militancy", "literacy", "savings", "life_satisfaction", "everyday_satisfaction", "luxury_satisfaction", "children", "adults", "seniors", "pop_entities", "life_satisfaction_avg", "total_population_scratch");
@@ -533,9 +551,27 @@ public class SimulationRecorder implements AutoCloseable {
         }
 
         this.checkConsistency();
+        this.trackGoodsConservation();
         this.trackInvariants(tick, tickNanos);
         if ((tick + 1) % DAYS_PER_YEAR == 0) {
             this.recordYear(tick, date);
+        }
+    }
+
+    private void trackGoodsConservation() {
+        for (int g = 0; g < GOOD_COUNT; g++) {
+            double scale = this.previousWorldStockByGood[g] + this.worldStockInflowByGood[g] + this.worldImportedByGood[g] + 1.0;
+            double stockResidual = Math.abs(this.worldStockByGood[g] - this.previousWorldStockByGood[g] - this.worldStockFlowByGood[g]) / scale;
+            double tradeResidual = Math.abs(this.worldImportedByGood[g] - this.worldExportedByGood[g]) / scale;
+            if (stockResidual > this.maxGoodsResidual) {
+                this.maxGoodsResidual = stockResidual;
+                this.maxGoodsResidualSource = "stock " + this.goodNames[g];
+            }
+            if (tradeResidual > this.maxGoodsResidual) {
+                this.maxGoodsResidual = tradeResidual;
+                this.maxGoodsResidualSource = "commerce " + this.goodNames[g];
+            }
+            this.previousWorldStockByGood[g] = this.worldStockByGood[g];
         }
     }
 
@@ -681,6 +717,11 @@ public class SimulationRecorder implements AutoCloseable {
         Arrays.fill(this.worldDemandByGood, 0f);
         Arrays.fill(this.countryProductionByGood, 0f);
         Arrays.fill(this.countryDemandByGood, 0f);
+        Arrays.fill(this.worldStockByGood, 0.0);
+        Arrays.fill(this.worldStockFlowByGood, 0.0);
+        Arrays.fill(this.worldStockInflowByGood, 0.0);
+        Arrays.fill(this.worldImportedByGood, 0.0);
+        Arrays.fill(this.worldExportedByGood, 0.0);
         Arrays.fill(this.buildingTypeProduction, 0f);
         Arrays.fill(this.buildingTypePrimaryWorkers, 0f);
         Arrays.fill(this.buildingTypeSecondaryWorkers, 0f);
@@ -745,7 +786,7 @@ public class SimulationRecorder implements AutoCloseable {
             this.worldProductionTotal += production;
             this.tickRevenueTotal += production * price;
             this.lastPrices[g] = price;
-            writer.row(tick, date, this.goodNames[g], production, demand, price, data.goodAmountsPool(g), data.goodLeftoverAmounts(g),
+            writer.row(tick, date, this.goodNames[g], production, demand, price, data.goodStockAmounts(g),
                 data.goodOfferTotals(g), data.goodNeedTotals(g), data.goodTradeRatios(g));
             this.tickTradeMoneyTotal += data.goodTradeMoney(g);
         }
@@ -780,12 +821,19 @@ public class SimulationRecorder implements AutoCloseable {
 
             this.tickPopulationTotal += cd.totalPopulation();
             this.tickTreasuryTotal += cm.treasury();
-            this.tickSalesRevenueTotal += cm.salesRevenue();
-            this.tickPendingRevenueTotal += cm.pendingRevenue();
+            double goodRevenues = 0.0;
+            double goodPendingRevenues = 0.0;
+            double minGoodRevenue = 0.0;
+            for (int g = 0; g < GOOD_COUNT; g++) {
+                goodRevenues += cm.goodRevenues(g);
+                goodPendingRevenues += cm.goodPendingRevenues(g);
+                minGoodRevenue = Math.min(minGoodRevenue, Math.min(cm.goodRevenues(g), cm.goodPendingRevenues(g)));
+            }
+            this.tickSalesRevenueTotal += goodRevenues;
+            this.tickPendingRevenueTotal += goodPendingRevenues;
             this.tickTariffTotal += cm.tariffRevenue();
             this.trackBalance((float) cm.treasury(), "treasury", name);
-            this.trackBalance((float) cm.salesRevenue(), "sales_revenue", name);
-            this.trackBalance((float) cm.pendingRevenue(), "pending_revenue", name);
+            this.trackBalance((float) minGoodRevenue, "good_revenue", name);
             for (int p = 0; p < POP_TYPE_COUNT; p++) {
                 float popTypeTotal = countryIndex != null ? this.countryPopTypeTotal[countryIndex * POP_TYPE_COUNT + p] : cd.totalByPopType(p);
                 float popTypeEmployment = countryIndex != null ? this.countryPopTypeEmployment[countryIndex * POP_TYPE_COUNT + p] : cd.employmentByPopType(p);
@@ -799,14 +847,19 @@ public class SimulationRecorder implements AutoCloseable {
             for (int g = 0; g < GOOD_COUNT; g++) {
                 float demand = cm.goodDemandAmounts(g);
                 this.countryDemandByGood[g] += demand;
+                this.worldStockByGood[g] += cm.goodStocks(g);
+                this.worldStockInflowByGood[g] += cm.goodProducedAmounts(g);
+                this.worldStockFlowByGood[g] += (double) cm.goodProducedAmounts(g) - (cm.goodConsumedAmounts(g) - cm.goodImportedAmounts(g))
+                    - cm.goodExportedAmounts(g) - cm.goodLostAmounts(g);
+                this.worldImportedByGood[g] += cm.goodImportedAmounts(g);
+                this.worldExportedByGood[g] += cm.goodExportedAmounts(g);
                 market.row(tick, date, name, this.goodNames[g],
                     cm.goodPrices(g), demand, cm.goodDemandSatisfactionRatios(g),
-                    cm.goodAmountsPool(g), cm.goodStockpiles(g), cm.goodStockpileTargets(g),
-                    cm.goodStockpileDailyDeficits(g), cm.goodDrawingOnStockpiles(g) ? 1 : 0, cm.goodImportNeeds(g),
-                    cm.goodImportedAmounts(g));
+                    cm.goodStocks(g), cm.goodProducedAmounts(g), cm.goodConsumedAmounts(g), cm.goodImportNeeds(g),
+                    cm.goodImportedAmounts(g), cm.goodExportedAmounts(g), cm.goodLostAmounts(g));
             }
 
-            treasury.row(tick, date, name, cm.treasury(), cm.spendingRatio(), cm.privateInvestmentAmount(), cm.salesRevenue(), cm.pendingRevenue(), cm.productionValue(), cm.tariffRevenue());
+            treasury.row(tick, date, name, cm.treasury(), cm.privateInvestmentAmount(), goodRevenues, goodPendingRevenues, cm.productionValue(), cm.tariffRevenue());
 
             for (int p = 0; p < POP_TYPE_COUNT; p++) {
                 float popTypeEmployment = countryIndex != null ? this.countryPopTypeEmployment[countryIndex * POP_TYPE_COUNT + p] : cd.employmentByPopType(p);
@@ -1203,6 +1256,14 @@ public class SimulationRecorder implements AutoCloseable {
 
     public double getRealOutputPerAdultGrowth() {
         return this.firstRealOutputPerAdult > 0.0 ? this.lastRealOutputPerAdult / this.firstRealOutputPerAdult : 0.0;
+    }
+
+    public double getMaxGoodsResidual() {
+        return this.maxGoodsResidual;
+    }
+
+    public String getMaxGoodsResidualSource() {
+        return this.maxGoodsResidualSource;
     }
 
     public double getMaxMoneyDrift() {

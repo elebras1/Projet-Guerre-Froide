@@ -32,7 +32,6 @@ public class RGOSpreadProductionSystem {
                 countryMarket = country.getMutView(CountryMarket.class);
             }
 
-            countryMarket.goodAmountsPool(resourceGathering.goodIndex(), countryMarket.goodAmountsPool(resourceGathering.goodIndex()) + resourceGathering.production());
             countryMarket.goodProducedAmounts(resourceGathering.goodIndex(), countryMarket.goodProducedAmounts(resourceGathering.goodIndex()) + resourceGathering.production());
         }
     }

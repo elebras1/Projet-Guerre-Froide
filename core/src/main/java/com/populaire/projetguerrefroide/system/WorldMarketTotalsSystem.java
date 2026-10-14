@@ -26,11 +26,10 @@ public class WorldMarketTotalsSystem {
 
             for (int g = 0; g < countryMarket.goodImportNeedsLength(); g++) {
                 float demand = countryMarket.goodDemandAmounts(g);
-                float domestic = countryMarket.goodAmountsPool(g);
-                float stock = countryMarket.goodDrawingOnStockpiles(g) ? countryMarket.goodStockpiles(g) : 0f;
+                float stock = countryMarket.goodStocks(g);
 
-                float need = Math.max(0f, demand - domestic - stock);
-                float offer = Math.max(0f, domestic - demand);
+                float need = Math.max(0f, demand - stock);
+                float offer = Math.max(0f, stock - demand);
 
                 countryMarket.goodImportNeeds(g, need);
                 countryMarket.goodExportOffers(g, offer);

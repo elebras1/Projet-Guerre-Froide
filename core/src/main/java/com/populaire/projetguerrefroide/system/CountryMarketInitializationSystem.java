@@ -31,7 +31,6 @@ public class CountryMarketInitializationSystem {
                 countryMarket.goodPrices(g, goodData.cost());
                 countryMarket.goodDemandSatisfactionRatios(g, 1f);
             }
-            countryMarket.spendingRatio(1f);
         }
     }
 }

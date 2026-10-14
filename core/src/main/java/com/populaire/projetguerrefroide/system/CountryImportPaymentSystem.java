@@ -26,35 +26,33 @@ public class CountryImportPaymentSystem {
             CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
             CountryTradePolicyView countryTradePolicy = countryTradePolicyField.getMutView(i);
 
-            float importValue = 0f;
+            float tariffRate = countryTradePolicy.tariffRate();
+            double tariffRevenue = 0.0;
             for (int g = 0; g < countryMarket.goodImportedAmountsLength(); g++) {
-                importValue += countryMarket.goodImportedAmounts(g) * globalMarketData.goodPrices(g);
-            }
-            if (importValue <= 0f) {
-                continue;
-            }
+                float importValue = countryMarket.goodImportedAmounts(g) * globalMarketData.goodPrices(g);
+                if (importValue <= 0f) {
+                    continue;
+                }
 
-            float tariff = importValue * countryTradePolicy.tariffRate();
-            float scale;
-            if (tariff >= 0f) {
-                float obligation = importValue + tariff;
-                scale = obligation > 0f ? Math.min(1f, Math.max(0f, (float) countryMarket.salesRevenue()) / obligation) : 0f;
-            } else {
-                float cash = Math.max(0f, (float) countryMarket.salesRevenue()) + Math.min(-tariff, Math.max(0f, (float) countryMarket.treasury()));
-                scale = Math.min(1f, cash / importValue);
-            }
+                float tariff = importValue * tariffRate;
+                double cash = Math.max(0.0, countryMarket.goodRevenues(g));
+                double scale;
+                if (tariff >= 0f) {
+                    scale = Math.min(1.0, cash / (importValue + tariff));
+                } else {
+                    scale = Math.min(1.0, (cash + Math.min(-tariff, Math.max(0.0, countryMarket.treasury()))) / importValue);
+                }
 
-            float paidImports = importValue * scale;
-            float taxPaid = Math.max(0f, tariff) * scale;
-            float subsidyPaid = Math.min(Math.max(0f, -tariff) * scale, Math.max(0f, (float) countryMarket.treasury()));
+                double paidImport = importValue * scale;
+                double taxPaid = Math.max(0f, tariff) * scale;
+                double subsidyPaid = Math.min(Math.max(0f, -tariff) * scale, Math.max(0.0, countryMarket.treasury()));
 
-            for (int g = 0; g < countryMarket.goodImportedAmountsLength(); g++) {
-                float value = countryMarket.goodImportedAmounts(g) * globalMarketData.goodPrices(g) * scale;
-                globalMarketData.goodTradeMoney(g, globalMarketData.goodTradeMoney(g) + value);
+                globalMarketData.goodTradeMoney(g, globalMarketData.goodTradeMoney(g) + paidImport);
+                countryMarket.goodRevenues(g, countryMarket.goodRevenues(g) - paidImport - taxPaid + subsidyPaid);
+                countryMarket.treasury(countryMarket.treasury() + taxPaid - subsidyPaid);
+                tariffRevenue += taxPaid - subsidyPaid;
             }
-            countryMarket.salesRevenue(countryMarket.salesRevenue() - paidImports - taxPaid + subsidyPaid);
-            countryMarket.treasury(countryMarket.treasury() + taxPaid - subsidyPaid);
-            countryMarket.tariffRevenue(taxPaid - subsidyPaid);
+            countryMarket.tariffRevenue((float) tariffRevenue);
         }
     }
 }

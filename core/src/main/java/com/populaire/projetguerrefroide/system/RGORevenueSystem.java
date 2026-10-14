@@ -46,9 +46,9 @@ public class RGORevenueSystem {
                 resourceGatheringTypeData = resourceGatheringType.getMutView(ResourceGatheringType.class);
             }
 
-            float productionValue = countryMarket.productionValue();
-            float value = resourceGathering.production() * countryMarket.goodPrices(resourceGathering.goodIndex());
-            float revenue = productionValue > 0f ? (float) (countryMarket.salesRevenue() * value / productionValue) : 0f;
+            int goodIndex = resourceGathering.goodIndex();
+            float producedAmount = countryMarket.goodProducedAmounts(goodIndex);
+            float revenue = producedAmount > 0f ? (float) (countryMarket.goodRevenues(goodIndex) * resourceGathering.production() / producedAmount) : 0f;
 
             float workerMinWageFactor = (countryMarket.lifeCostsByPopType(resourceGatheringTypeData.workerPopTypeIndex()) + 0.2f * countryMarket.everydayCostsByPopType(resourceGatheringTypeData.workerPopTypeIndex())) * (1f + countryLaborPolicy.minWageFactor());
             float normalizedWages = workerMinWageFactor * resourceGathering.workerAmount() / NEEDS_SCALING_FACTOR;

@@ -22,7 +22,7 @@ public class GlobalTradeRatioSystem {
             GlobalMarketMutView globalMarket = globalMarketField.getMutView(i);
 
             for (int g = 0; g < globalMarket.goodTradeRatiosLength(); g++) {
-                float available = globalMarket.goodAmountsPool(g) + globalMarket.goodOfferTotals(g);
+                float available = globalMarket.goodOfferTotals(g);
                 float needs = globalMarket.goodNeedTotals(g);
 
                 globalMarket.goodTradeRatios(g, needs > 0f ? Math.min(1f, available / needs) : 0f);

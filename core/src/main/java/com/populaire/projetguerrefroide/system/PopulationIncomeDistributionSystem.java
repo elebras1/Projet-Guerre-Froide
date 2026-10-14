@@ -7,6 +7,7 @@ import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 
+import static com.populaire.projetguerrefroide.util.Constants.NEEDS_SCALING_FACTOR;
 import static com.populaire.projetguerrefroide.util.StrataUtils.*;
 
 public class PopulationIncomeDistributionSystem {
@@ -110,7 +111,10 @@ public class PopulationIncomeDistributionSystem {
             float tax = grossIncome * taxRate;
             float netIncome = grossIncome - tax;
 
-            population.savings(population.savings() + netIncome);
+            float purchase = population.amount() / NEEDS_SCALING_FACTOR * (population.lifeNeedsSatisfaction() * countryMarket.paidLifeCostsByPopType(typeIdx)
+                + population.everydayNeedsSatisfaction() * countryMarket.paidEverydayCostsByPopType(typeIdx)
+                + population.luxuryNeedsSatisfaction() * countryMarket.paidLuxuryCostsByPopType(typeIdx));
+            population.savings(population.savings() + netIncome - purchase);
             countryMarket.treasury(countryMarket.treasury() + tax);
         }
     }

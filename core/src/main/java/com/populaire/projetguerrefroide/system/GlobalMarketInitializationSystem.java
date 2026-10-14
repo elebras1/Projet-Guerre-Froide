@@ -24,7 +24,7 @@ public class GlobalMarketInitializationSystem {
         for(int i = 0; i < iter.count(); i++) {
             GlobalMarketMutView globalMarket = globalMarketField.getMutView(i);
 
-            for(int g = 0; g < globalMarket.goodAmountsPoolLength(); g++) {
+            for(int g = 0; g < globalMarket.goodPricesLength(); g++) {
                 EntityView good = iter.world().obtainEntityView(globalGoodData.goodIds(g));
                 GoodView goodData = good.getMutView(Good.class);
                 globalMarket.goodPrices(g, goodData.cost());

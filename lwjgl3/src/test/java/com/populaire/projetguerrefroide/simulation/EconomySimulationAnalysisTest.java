@@ -42,6 +42,7 @@ public class EconomySimulationAnalysisTest {
 
     private static final float NEGATIVE_BALANCE_TOLERANCE = 1e-6f;
     private static final double MONEY_DRIFT_TOLERANCE = 1e-3;
+    private static final double GOODS_CONSERVATION_TOLERANCE = 1e-4;
     private static final double LIFE_NEEDS_FLOOR = 0.9;
     private static final double REAL_OUTPUT_FLOOR = 0.85;
     private static final double START_STEADY_TOLERANCE = 0.1;
@@ -326,6 +327,9 @@ public class EconomySimulationAnalysisTest {
             new HealthCheck("no_negative_balance",
                 recorder.getMinBalance() >= -NEGATIVE_BALANCE_TOLERANCE * Math.abs(firstMoney),
                 String.format("solde min=%.4f (%s)", recorder.getMinBalance(), recorder.getMinBalanceSource())),
+            new HealthCheck("goods_conservation",
+                recorder.getMaxGoodsResidual() <= GOODS_CONSERVATION_TOLERANCE,
+                String.format("ecart max=%.2e (%s)", recorder.getMaxGoodsResidual(), recorder.getMaxGoodsResidualSource())),
             new HealthCheck("money_conservation",
                 recorder.getMaxMoneyDrift() <= MONEY_DRIFT_TOLERANCE,
                 String.format("derive max=%.4f%% de la masse initiale %.0f", 100.0 * recorder.getMaxMoneyDrift(), firstMoney)),
@@ -401,7 +405,7 @@ public class EconomySimulationAnalysisTest {
     }
 
     private static final Set<String> KNOWN_FAILING_HEALTH_CHECKS = Set.of(
-        "money_conservation", "life_needs_floor", "real_output_floor", "start_steady", "cpi_band",
+        "life_needs_floor", "real_output_floor", "start_steady", "cpi_band",
         "price_bounds", "calibration_ratio", "population_growth", "real_output_growth");
 
     private static final int HEALTH_TREASURY_MULTIPLIER = 100;

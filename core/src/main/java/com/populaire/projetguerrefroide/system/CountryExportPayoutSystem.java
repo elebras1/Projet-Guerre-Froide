@@ -24,16 +24,14 @@ public class CountryExportPayoutSystem {
         for (int i = 0; i < iter.count(); i++) {
             CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
 
-            float payout = 0f;
             for (int g = 0; g < countryMarket.goodExportOffersLength(); g++) {
                 float offers = countryMarket.goodExportOffers(g);
                 float offerTotals = globalMarketData.goodOfferTotals(g);
                 if (offers <= 0f || offerTotals <= 0f) {
                     continue;
                 }
-                payout += globalMarketData.goodTradeMoney(g) * offers / offerTotals;
+                countryMarket.goodRevenues(g, countryMarket.goodRevenues(g) + globalMarketData.goodTradeMoney(g) * offers / offerTotals);
             }
-            countryMarket.salesRevenue(countryMarket.salesRevenue() + payout);
         }
     }
 }

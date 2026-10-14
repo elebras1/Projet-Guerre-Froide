@@ -27,20 +27,22 @@ public class EconomyService {
     private final NeedsCostsCalculationSystem needsCostsCalculationSystem;
     private final PopulationConsumptionSystem populationConsumptionSystem;
     private final EconomyBuildingConsumptionSystem economyBuildingConsumptionSystem;
-    private final StockpileDemandSystem stockpileDemandSystem;
     private final RGOProductionSystem rgoProduceSystem;
     private final RGOSpreadProductionSystem rgoSpreadProductionSystem;
     private final EconomyBuildingProductionSystem economyBuildingProductionSystem;
     private final EconomyBuildingSpreadProductionSystem economyBuildingSpreadProductionSystem;
     private final EconomyBuildingScaleSystem economyBuildingScaleSystem;
+    private final CountryStockSystem countryStockSystem;
     private final CountryProductionSpreadSystem countryProductionSpreadSystem;
     private final WorldMarketTotalsSystem worldMarketTotalsSystem;
     private final GlobalTradeRatioSystem globalTradeRatioSystem;
     private final CountryMarketResolveSystem countryMarketResolveSystem;
     private final CountryMarketSpreadSystem countryMarketSpreadSystem;
+    private final CountryPurchaseSystem countryPurchaseSystem;
     private final CountryImportPaymentSystem countryImportPaymentSystem;
     private final CountryExportPayoutSystem countryExportPayoutSystem;
     private final WorldTradeMoneySettleSystem worldTradeMoneySettleSystem;
+    private final CountryPriceSystem countryPriceSystem;
     private final GlobalMarketResolveSystem globalMarketResolveSystem;
     private final CountryProductionValueSystem countryProductionValueSystem;
     private final RGORevenueSystem rgoRevenueSystem;
@@ -71,9 +73,11 @@ public class EconomyService {
         long phaseReset = ecsWorld.entity("PhaseReset");
         long phaseNeedsCosts = ecsWorld.entity("PhaseNeedsCosts");
         long phaseConsumption = ecsWorld.entity("PhaseConsumption");
-        long phaseProduction = ecsWorld.entity("PhaseProduction");
-        long phaseToMarket = ecsWorld.entity("PhaseToMarket");
         long phaseMarket = ecsWorld.entity("PhaseMarket");
+        long phaseSettlement = ecsWorld.entity("PhaseSettlement");
+        long phaseProduction = ecsWorld.entity("PhaseProduction");
+        long phaseToStock = ecsWorld.entity("PhaseToStock");
+        long phasePrice = ecsWorld.entity("PhasePrice");
         long phaseRevenue = ecsWorld.entity("PhaseRevenue");
         long phaseIncome = ecsWorld.entity("PhaseIncome");
         long phaseState = ecsWorld.entity("PhaseState");
@@ -84,7 +88,9 @@ public class EconomyService {
             .with(phaseSpread).or()
             .with(phaseInit).or()
             .with(phaseEmployment).or()
-            .with(phaseSync)
+            .with(phaseSync).or()
+            .with(phaseProduction).or()
+            .with(phaseToStock)
             .build();
 
         this.mainPipeline = ecsWorld.pipeline("MainEconomyPipeline")
@@ -96,9 +102,11 @@ public class EconomyService {
             .with(phaseReset).or()
             .with(phaseNeedsCosts).or()
             .with(phaseConsumption).or()
-            .with(phaseProduction).or()
-            .with(phaseToMarket).or()
             .with(phaseMarket).or()
+            .with(phaseSettlement).or()
+            .with(phaseProduction).or()
+            .with(phaseToStock).or()
+            .with(phasePrice).or()
             .with(phaseRevenue).or()
             .with(phaseIncome).or()
             .with(phaseState)
@@ -127,20 +135,22 @@ public class EconomyService {
         this.needsCostsCalculationSystem = new NeedsCostsCalculationSystem(ecsWorld, phaseNeedsCosts);
         this.populationConsumptionSystem = new PopulationConsumptionSystem(ecsWorld, phaseConsumption);
         this.economyBuildingConsumptionSystem = new EconomyBuildingConsumptionSystem(ecsWorld, phaseConsumption);
-        this.stockpileDemandSystem = new StockpileDemandSystem(ecsWorld, phaseConsumption);
-        this.rgoProduceSystem = new RGOProductionSystem(ecsWorld, phaseProduction);
-        this.economyBuildingProductionSystem = new EconomyBuildingProductionSystem(ecsWorld, phaseProduction);
-        this.rgoSpreadProductionSystem = new RGOSpreadProductionSystem(ecsWorld, phaseToMarket);
-        this.economyBuildingSpreadProductionSystem = new EconomyBuildingSpreadProductionSystem(ecsWorld, phaseToMarket);
-        this.countryProductionSpreadSystem = new CountryProductionSpreadSystem(ecsWorld, phaseToMarket);
         this.worldMarketTotalsSystem = new WorldMarketTotalsSystem(ecsWorld, phaseMarket);
         this.globalTradeRatioSystem = new GlobalTradeRatioSystem(ecsWorld, phaseMarket);
         this.countryMarketResolveSystem = new CountryMarketResolveSystem(ecsWorld, phaseMarket);
         this.countryMarketSpreadSystem = new CountryMarketSpreadSystem(ecsWorld, phaseMarket);
-        this.countryImportPaymentSystem = new CountryImportPaymentSystem(ecsWorld, phaseMarket);
-        this.countryExportPayoutSystem = new CountryExportPayoutSystem(ecsWorld, phaseMarket);
-        this.worldTradeMoneySettleSystem = new WorldTradeMoneySettleSystem(ecsWorld, phaseMarket);
-        this.globalMarketResolveSystem = new GlobalMarketResolveSystem(ecsWorld, phaseMarket);
+        this.countryPurchaseSystem = new CountryPurchaseSystem(ecsWorld, phaseSettlement);
+        this.countryImportPaymentSystem = new CountryImportPaymentSystem(ecsWorld, phaseSettlement);
+        this.countryExportPayoutSystem = new CountryExportPayoutSystem(ecsWorld, phaseSettlement);
+        this.worldTradeMoneySettleSystem = new WorldTradeMoneySettleSystem(ecsWorld, phaseSettlement);
+        this.rgoProduceSystem = new RGOProductionSystem(ecsWorld, phaseProduction);
+        this.economyBuildingProductionSystem = new EconomyBuildingProductionSystem(ecsWorld, phaseProduction);
+        this.rgoSpreadProductionSystem = new RGOSpreadProductionSystem(ecsWorld, phaseToStock);
+        this.economyBuildingSpreadProductionSystem = new EconomyBuildingSpreadProductionSystem(ecsWorld, phaseToStock);
+        this.countryStockSystem = new CountryStockSystem(ecsWorld, phaseToStock);
+        this.countryProductionSpreadSystem = new CountryProductionSpreadSystem(ecsWorld, phaseToStock);
+        this.countryPriceSystem = new CountryPriceSystem(ecsWorld, phasePrice);
+        this.globalMarketResolveSystem = new GlobalMarketResolveSystem(ecsWorld, phasePrice);
         this.countryProductionValueSystem = new CountryProductionValueSystem(ecsWorld, phaseRevenue);
         this.rgoRevenueSystem = new RGORevenueSystem(ecsWorld, phaseRevenue);
         this.economyBuildingRevenueSystem = new EconomyBuildingRevenueSystem(ecsWorld, phaseRevenue);

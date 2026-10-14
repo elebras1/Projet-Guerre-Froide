@@ -21,9 +21,9 @@ public class GlobalMarketResetSystem {
         for (int i = 0; i < iter.count(); i++) {
             GlobalMarketMutView globalMarket = globalMarketField.getMutView(i);
             for (int g = 0; g < globalMarket.goodProductionAmountsLength(); g++) {
+                globalMarket.goodStockAmounts(g, 0f);
                 globalMarket.goodProductionAmounts(g, 0f);
                 globalMarket.goodDemandAmounts(g, 0f);
-                globalMarket.goodLeftoverAmounts(g, 0f);
                 globalMarket.goodOfferTotals(g, 0f);
                 globalMarket.goodNeedTotals(g, 0f);
                 globalMarket.goodTradeRatios(g, 0f);

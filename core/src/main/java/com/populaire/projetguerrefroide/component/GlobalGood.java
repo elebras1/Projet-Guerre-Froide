@@ -7,5 +7,7 @@ import static com.populaire.projetguerrefroide.util.Constants.GOOD_COUNT;
 
 @Component
 public record GlobalGood(
-    @FixedArray(length = GOOD_COUNT) long[] goodIds) {
+    @FixedArray(length = GOOD_COUNT) long[] goodIds,
+    int serviceGoodStartIndex,
+    int serviceGoodEndIndex) {
 }

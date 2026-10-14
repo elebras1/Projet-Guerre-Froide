@@ -46,9 +46,9 @@ public class EconomyBuildingRevenueSystem {
                 buildingTypeData = buildingType.getMutView(EconomyBuildingType.class);
             }
 
-            float productionValue = countryMarket.productionValue();
-            float value = economyBuilding.production() * countryMarket.goodPrices(buildingTypeData.goodOutputIndex());
-            float revenue = productionValue > 0f ? (float) (countryMarket.salesRevenue() * value / productionValue) : 0f;
+            int outputIndex = buildingTypeData.goodOutputIndex();
+            float producedAmount = countryMarket.goodProducedAmounts(outputIndex);
+            float revenue = producedAmount > 0f ? (float) (countryMarket.goodRevenues(outputIndex) * economyBuilding.production() / producedAmount) : 0f;
 
             float inputCost = 0f;
             for(int g = 0; g < buildingTypeData.goodInputIndexesLength(); g++) {
@@ -56,10 +56,18 @@ public class EconomyBuildingRevenueSystem {
                 if(goodIndex < 0) {
                     break;
                 }
-                inputCost += economyBuilding.goodInputDemandAmounts(g) * countryMarket.goodDemandSatisfactionRatios(goodIndex) * countryMarket.goodPrices(goodIndex);
+                inputCost += this.inputCost(countryMarket, economyBuilding, g, goodIndex);
             }
 
             float paidInputs = Math.min(inputCost, revenue);
+            float paidInputsRatio = inputCost > 0f ? paidInputs / inputCost : 0f;
+            for(int g = 0; g < buildingTypeData.goodInputIndexesLength(); g++) {
+                int goodIndex = economyBuilding.activeInputGoodIndexes(g);
+                if(goodIndex < 0) {
+                    break;
+                }
+                countryMarket.goodPendingRevenues(goodIndex, countryMarket.goodPendingRevenues(goodIndex) + this.inputCost(countryMarket, economyBuilding, g, goodIndex) * paidInputsRatio);
+            }
             float availableForWages = revenue - paidInputs;
 
             float primaryMinWageFactor = (countryMarket.lifeCostsByPopType(buildingTypeData.primaryWorkerPopTypeIndex()) + 0.2f * countryMarket.everydayCostsByPopType(buildingTypeData.primaryWorkerPopTypeIndex())) * (1f + countryLaborPolicy.minWageFactor());
@@ -84,8 +92,14 @@ public class EconomyBuildingRevenueSystem {
 
             economyBuilding.primaryWorkerMinWage(primaryWorkerMinWage);
             economyBuilding.secondaryWorkerMinWage(secondaryWorkerMinWage);
-
-            countryMarket.pendingRevenue(countryMarket.pendingRevenue() + paidInputs);
         }
+    }
+
+    private float inputCost(CountryMarketMutView countryMarket, EconomyBuildingMutView economyBuilding, int slot, int goodIndex) {
+        float demand = countryMarket.goodDemandAmounts(goodIndex);
+        if(demand <= 0f) {
+            return 0f;
+        }
+        return economyBuilding.goodInputDemandAmounts(slot) * countryMarket.goodConsumedAmounts(goodIndex) / demand * countryMarket.goodPrices(goodIndex);
     }
 }

@@ -28,7 +28,7 @@ public final class EconomyLoader {
 
     public void createGlobalMarket() {
         long globalMarketId = this.ecsWorld.entity("global_market");
-        this.ecsWorld.obtainEntity(globalMarketId).set(new GlobalMarket(new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT]));
+        this.ecsWorld.obtainEntity(globalMarketId).set(new GlobalMarket(new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new double[GOOD_COUNT]));
     }
 
     public void loadGoods(GoodsJson goods) {
@@ -57,6 +57,7 @@ public final class EconomyLoader {
                 goodIndex++;
             }
 
+            int serviceGoodStartIndex = goodIndex;
             for(var serviceGoodEntry : goods.serviceGoods().entrySet()) {
                 GoodJson serviceGood = serviceGoodEntry.getValue();
                 long goodId = this.ecsWorld.entity(serviceGoodEntry.getKey());
@@ -67,6 +68,7 @@ public final class EconomyLoader {
                 this.context.goodIds()[goodIndex] = goodId;
                 goodIndex++;
             }
+            int serviceGoodEndIndex = goodIndex;
 
             for(var militaryGoodEntry : goods.militaryGoods().entrySet()) {
                 GoodJson militaryGood = militaryGoodEntry.getValue();
@@ -80,7 +82,7 @@ public final class EconomyLoader {
             }
 
             Entity globalGood = this.ecsWorld.obtainEntity(this.ecsWorld.entity("global_good"));
-            globalGood.set(new GlobalGood(this.context.goodIds()));
+            globalGood.set(new GlobalGood(this.context.goodIds(), serviceGoodStartIndex, serviceGoodEndIndex));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }

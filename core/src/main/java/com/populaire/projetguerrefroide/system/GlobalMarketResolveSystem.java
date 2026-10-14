@@ -21,12 +21,8 @@ public class GlobalMarketResolveSystem {
         for (int i = 0; i < iter.count(); i++) {
             GlobalMarketMutView gm = marketField.getMutView(i);
 
-            for (int g = 0; g < gm.goodAmountsPoolLength(); g++) {
-                float oldPool = gm.goodAmountsPool(g);
-                float leftover = gm.goodLeftoverAmounts(g);
-                float newPool = Math.max(0f, oldPool + leftover);
-
-                float supply = gm.goodProductionAmounts(g) + newPool / 12.0f;
+            for (int g = 0; g < gm.goodPricesLength(); g++) {
+                float supply = gm.goodProductionAmounts(g) + gm.goodStockAmounts(g) / 12.0f;
                 float demand = gm.goodDemandAmounts(g);
 
                 float oversupply = Math.clamp(((supply + 2.0f) / (demand + 2.0f) - 1.0f) * 10.0f, 0.0f, 10.0f);
@@ -43,7 +39,6 @@ public class GlobalMarketResolveSystem {
                 newPrice = Math.max(0.001f, newPrice);
 
                 gm.goodPrices(g, newPrice);
-                gm.goodAmountsPool(g, newPool);
             }
         }
     }
