@@ -61,6 +61,10 @@ public class EconomySimulationAnalysisTest {
         this.setupGdxFiles();
 
         this.ecsWorld = new World();
+        int threads = this.intProperty("simulation.threads", 1);
+        if (threads > 1) {
+            this.ecsWorld.setThreads(threads);
+        }
         this.registerComponents(this.ecsWorld);
 
         this.ecsConstants = new EcsConstants(this.ecsWorld);

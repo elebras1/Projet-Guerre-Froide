@@ -88,7 +88,7 @@ public class CountrySpendingSystem {
                     activeRate += socialRate;
                 }
 
-                float treasury = countryMarket.treasury();
+                float treasury = (float) countryMarket.treasury();
                 administrationBudget = administrationWeight > 0f && administrationRate > 0f && activeRate > 0f ? treasury * administrationRate / activeRate : 0f;
                 militaryBudget = militaryWeight > 0f && militaryRate > 0f && activeRate > 0f ? treasury * militaryRate / activeRate : 0f;
                 educationBudget = educationWeight > 0f && educationRate > 0f && activeRate > 0f ? treasury * educationRate / activeRate : 0f;

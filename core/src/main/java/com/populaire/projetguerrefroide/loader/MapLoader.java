@@ -54,14 +54,9 @@ public final class MapLoader {
             double[] ratios = populationTemplateEntry.getValue().value();
             populationTemplates.put(populationTemplateEntry.getKey(), new PopulationTemplate((float) ratios[0], (float) ratios[1], (float) ratios[2]));
         }
-        IntObjectMap<ProvinceJson> provincesById = new IntObjectMap<>(15000, 1f);
         try {
-            for(var provinceEntry : provinces.entrySet()) {
-                provincesById.put(Integer.parseInt(provinceEntry.getKey()), provinceEntry.getValue());
-            }
-
-            for (IntObjectMap.Entry<ProvinceJson> provinceEntry : provincesById.entrySet()) {
-                int provinceId = provinceEntry.getKey();
+            for (Map.Entry<String, ProvinceJson> provinceEntry : provinces.entrySet()) {
+                int provinceId = Integer.parseInt(provinceEntry.getKey());
                 this.loadProvince(provinceEntry.getValue(), provinceId, regionBuildingsByProvince, regionBuildingModes, populationTemplates);
             }
         } catch (Exception exception) {
@@ -245,7 +240,7 @@ public final class MapLoader {
     public Borders loadBorders(Pixmap provincesPixmap, IntLongMap provinces) {
 
         IntList xyValues = new IntList();
-        LongObjectMap<IntList> temporaryGroups = new LongObjectMap<>();
+        LongObjectOrderedMap<IntList> temporaryGroups = new LongObjectOrderedMap<>();
 
         int height = provincesPixmap.getHeight();
         int width = provincesPixmap.getWidth();

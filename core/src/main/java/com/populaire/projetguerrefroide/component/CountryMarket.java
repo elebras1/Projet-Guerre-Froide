@@ -23,11 +23,11 @@ public record CountryMarket(
     @FixedArray(length = GOOD_COUNT) float[] goodImportNeeds,
     @FixedArray(length = GOOD_COUNT) float[] goodExportOffers,
     @FixedArray(length = GOOD_COUNT) float[] goodImportedAmounts,
-    float treasury,
+    double treasury,
     float spendingRatio,
     float privateInvestmentAmount,
-    float salesRevenue,
-    float pendingRevenue,
+    double salesRevenue,
+    double pendingRevenue,
     float productionValue,
     float tariffRevenue) {
 }

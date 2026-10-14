@@ -48,7 +48,7 @@ public class EconomyBuildingRevenueSystem {
 
             float productionValue = countryMarket.productionValue();
             float value = economyBuilding.production() * countryMarket.goodPrices(buildingTypeData.goodOutputIndex());
-            float revenue = productionValue > 0f ? countryMarket.salesRevenue() * value / productionValue : 0f;
+            float revenue = productionValue > 0f ? (float) (countryMarket.salesRevenue() * value / productionValue) : 0f;
 
             float inputCost = 0f;
             for(int g = 0; g < buildingTypeData.goodInputIndexesLength(); g++) {

@@ -20,7 +20,7 @@ public class CountryRevenueSettleSystem {
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         for(int i = 0; i < iter.count(); i++) {
             CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
-            float undistributedRevenue = countryMarket.productionValue() > 0f ? 0f : countryMarket.salesRevenue();
+            double undistributedRevenue = countryMarket.productionValue() > 0f ? 0f : countryMarket.salesRevenue();
             countryMarket.salesRevenue(countryMarket.pendingRevenue() + undistributedRevenue);
             countryMarket.pendingRevenue(0f);
         }

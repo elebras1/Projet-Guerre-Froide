@@ -48,7 +48,7 @@ public class RGORevenueSystem {
 
             float productionValue = countryMarket.productionValue();
             float value = resourceGathering.production() * countryMarket.goodPrices(resourceGathering.goodIndex());
-            float revenue = productionValue > 0f ? countryMarket.salesRevenue() * value / productionValue : 0f;
+            float revenue = productionValue > 0f ? (float) (countryMarket.salesRevenue() * value / productionValue) : 0f;
 
             float workerMinWageFactor = (countryMarket.lifeCostsByPopType(resourceGatheringTypeData.workerPopTypeIndex()) + 0.2f * countryMarket.everydayCostsByPopType(resourceGatheringTypeData.workerPopTypeIndex())) * (1f + countryLaborPolicy.minWageFactor());
             float normalizedWages = workerMinWageFactor * resourceGathering.workerAmount() / NEEDS_SCALING_FACTOR;

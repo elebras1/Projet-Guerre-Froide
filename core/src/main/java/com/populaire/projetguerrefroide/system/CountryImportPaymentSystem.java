@@ -38,15 +38,15 @@ public class CountryImportPaymentSystem {
             float scale;
             if (tariff >= 0f) {
                 float obligation = importValue + tariff;
-                scale = obligation > 0f ? Math.min(1f, Math.max(0f, countryMarket.salesRevenue()) / obligation) : 0f;
+                scale = obligation > 0f ? Math.min(1f, Math.max(0f, (float) countryMarket.salesRevenue()) / obligation) : 0f;
             } else {
-                float cash = Math.max(0f, countryMarket.salesRevenue()) + Math.min(-tariff, Math.max(0f, countryMarket.treasury()));
+                float cash = Math.max(0f, (float) countryMarket.salesRevenue()) + Math.min(-tariff, Math.max(0f, (float) countryMarket.treasury()));
                 scale = Math.min(1f, cash / importValue);
             }
 
             float paidImports = importValue * scale;
             float taxPaid = Math.max(0f, tariff) * scale;
-            float subsidyPaid = Math.min(Math.max(0f, -tariff) * scale, Math.max(0f, countryMarket.treasury()));
+            float subsidyPaid = Math.min(Math.max(0f, -tariff) * scale, Math.max(0f, (float) countryMarket.treasury()));
 
             for (int g = 0; g < countryMarket.goodImportedAmountsLength(); g++) {
                 float value = countryMarket.goodImportedAmounts(g) * globalMarketData.goodPrices(g) * scale;

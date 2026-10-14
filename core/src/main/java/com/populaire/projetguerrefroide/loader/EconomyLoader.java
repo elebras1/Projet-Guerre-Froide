@@ -76,16 +76,11 @@ public final class EconomyLoader {
     }
 
     public void loadPopulationTypes(Map<String, PopulationTypeJson> populationTypes) {
-        Map<String, PopulationTypeJson> populationTypesByName = new ObjectObjectMap<>(POP_TYPE_COUNT, 1f);
         try {
-            for(var populationTypeEntry : populationTypes.entrySet()) {
-                populationTypesByName.put(populationTypeEntry.getKey(), populationTypeEntry.getValue());
-            }
-
             int index = 0;
             int capitalistPopTypeIndex = -1;
             int aristocratPopTypeIndex = -1;
-            for (Map.Entry<String, PopulationTypeJson> populationType : populationTypesByName.entrySet()) {
+            for (Map.Entry<String, PopulationTypeJson> populationType : populationTypes.entrySet()) {
                 this.loadPopulationType(populationType.getValue(), populationType.getKey());
                 long populationTypeId = this.ecsWorld.lookup(populationType.getKey());
                 this.context.populationTypeIds()[index] = populationTypeId;

@@ -51,6 +51,7 @@ test {
   systemProperty "simulation.detailEvery", project.findProperty("simulation.detailEvery") ?: ""
   systemProperty "simulation.freeze", project.findProperty("simulation.freeze") ?: ""
   systemProperty "simulation.laws", project.findProperty("simulation.laws") ?: ""
+  systemProperty "simulation.threads", project.findProperty("simulation.threads") ?: "1"
 }
 
 def os = System.properties['os.name'].toLowerCase()

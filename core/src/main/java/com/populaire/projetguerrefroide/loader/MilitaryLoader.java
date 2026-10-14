@@ -1,6 +1,5 @@
 package com.populaire.projetguerrefroide.loader;
 
-import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dao.json.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
@@ -43,13 +42,8 @@ public final class MilitaryLoader {
     }
 
     public void loadUnits(Map<String, UnitJson> units) {
-        Map<String, UnitJson> unitsByName = new ObjectObjectMap<>(POP_TYPE_COUNT, 1f);
         try {
-            for(var unitEntry : units.entrySet()) {
-                unitsByName.put(unitEntry.getKey(), unitEntry.getValue());
-            }
-
-            for (Map.Entry<String, UnitJson> unit : unitsByName.entrySet()) {
+            for (Map.Entry<String, UnitJson> unit : units.entrySet()) {
                 this.loadUnit(unit.getKey(), unit.getValue());
             }
         } catch (Exception exception) {

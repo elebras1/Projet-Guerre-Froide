@@ -783,9 +783,9 @@ public class SimulationRecorder implements AutoCloseable {
             this.tickSalesRevenueTotal += cm.salesRevenue();
             this.tickPendingRevenueTotal += cm.pendingRevenue();
             this.tickTariffTotal += cm.tariffRevenue();
-            this.trackBalance(cm.treasury(), "treasury", name);
-            this.trackBalance(cm.salesRevenue(), "sales_revenue", name);
-            this.trackBalance(cm.pendingRevenue(), "pending_revenue", name);
+            this.trackBalance((float) cm.treasury(), "treasury", name);
+            this.trackBalance((float) cm.salesRevenue(), "sales_revenue", name);
+            this.trackBalance((float) cm.pendingRevenue(), "pending_revenue", name);
             for (int p = 0; p < POP_TYPE_COUNT; p++) {
                 float popTypeTotal = countryIndex != null ? this.countryPopTypeTotal[countryIndex * POP_TYPE_COUNT + p] : cd.totalByPopType(p);
                 float popTypeEmployment = countryIndex != null ? this.countryPopTypeEmployment[countryIndex * POP_TYPE_COUNT + p] : cd.employmentByPopType(p);

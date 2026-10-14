@@ -1,6 +1,5 @@
 package com.populaire.projetguerrefroide.loader;
 
-import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dao.json.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
@@ -23,13 +22,8 @@ public final class CountryLoader {
     }
 
     public void loadCountries(Map<String, CountryJson> countries) {
-        Map<String, CountryJson> countriesById = new ObjectObjectMap<>(262, 1f);
         try {
-            for(var countryEntry : countries.entrySet()) {
-                countriesById.put(countryEntry.getKey(), countryEntry.getValue());
-            }
-
-            for (Map.Entry<String, CountryJson> countryEntry : countriesById.entrySet()) {
+            for (Map.Entry<String, CountryJson> countryEntry : countries.entrySet()) {
                 this.loadCountry(countryEntry.getKey(), countryEntry.getValue());
             }
         } catch (Exception exception) {
@@ -92,12 +86,8 @@ public final class CountryLoader {
     }
 
     public void loadCountriesHistory(Map<String, CountryHistoryJson> countriesHistory) {
-        ObjectObjectMap<String, CountryHistoryJson> countriesHistoryById = new ObjectObjectMap<>(262, 1f);
         try {
-            for(var countryEntry : countriesHistory.entrySet()) {
-                countriesHistoryById.put(countryEntry.getKey(), countryEntry.getValue());
-            }
-            for (var countryHistory : countriesHistoryById) {
+            for (Map.Entry<String, CountryHistoryJson> countryHistory : countriesHistory.entrySet()) {
                 this.loadCountryHistory(countryHistory.getKey(), countryHistory.getValue());
             }
         } catch (Exception exception) {
