@@ -33,6 +33,7 @@ public class CountryMarketResetSystem {
                 countryMarket.goodLostAmounts(g, 0f);
             }
             countryMarket.tariffRevenue(0f);
+            countryMarket.taxRevenue(0.0);
 
         }
     }

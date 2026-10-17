@@ -61,6 +61,13 @@ public class Constants {
     public static final float[] SPENDING_RATES_BY_STRATA = {0.10f, 0.06f, 0.03f};
     public static final float MAXIMUM_LUXURY_BASKETS = 4f;
     public static final float SUBSISTENCE_LIFE_SHARE = 0.75f;
+    public static final float STATE_LUXURY_WAGE_SHARE = 0.2f;
+    public static final float SOCIAL_LIFE_SHARE = 0.3f;
+    public static final float TARGET_TREASURY_DAYS = 60f;
+    public static final float EXCESS_TREASURY_SPENDING_RATE = 0.02f;
+    public static final float BANK_MINIMUM_SPENDING_RATE = 0.01f;
+    public static final float STATE_LOAN_INTEREST_RATE = 0.02f;
+    public static final float DAYS_PER_YEAR = 365f;
     public static final float PRICE_ADJUSTMENT_RATE = 0.01f;
     public static final float MINIMUM_PRICE_RATIO = 0.1f;
     public static final float MAXIMUM_PRICE_RATIO = 4f;

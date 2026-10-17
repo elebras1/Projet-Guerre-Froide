@@ -56,7 +56,9 @@ public class PopulationConsumptionSystem {
             budget -= everydaySpending;
 
             float neededLuxury = countryMarket.luxuryBudgetCostsByPopType(popTypeIndex) * scaledAmount;
-            float luxuryFraction = neededLuxury > 0f ? Math.min(budget, MAXIMUM_LUXURY_BASKETS * neededLuxury) / neededLuxury : 1f;
+            float luxurySpending = neededLuxury > 0f ? Math.min(budget, MAXIMUM_LUXURY_BASKETS * neededLuxury) : 0f;
+            float luxuryFraction = neededLuxury > 0f ? luxurySpending / neededLuxury : 1f;
+            pop.unspentBudget(budget - luxurySpending);
 
             pop.lifeNeedsDemandRatio(lifeFraction);
             pop.everydayNeedsDemandRatio(everydayFraction);

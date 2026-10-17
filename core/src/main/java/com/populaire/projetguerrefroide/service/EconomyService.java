@@ -39,6 +39,7 @@ public class EconomyService {
     private final CountryStockSystem countryStockSystem;
     private final CountryProductionSpreadSystem countryProductionSpreadSystem;
     private final EconomyBuildingTreasuryInitializationSystem economyBuildingTreasuryInitializationSystem;
+    private final CountryTreasuryInitializationSystem countryTreasuryInitializationSystem;
     private final GoodAvailabilityInitializationSystem goodAvailabilityInitializationSystem;
     private final CountryStockInitializationSystem countryStockInitializationSystem;
     private final WorldMarketTotalsSystem worldMarketTotalsSystem;
@@ -63,10 +64,11 @@ public class EconomyService {
     private final CountryIncomeDistributionSystem countryIncomeDistributionSystem;
     private final PopulationIncomeDistributionSystem populationIncomeDistributionSystem;
     private final RegionIncomeResidualSystem regionIncomeResidualSystem;
-    private final CountrySpendingBudgetSystem countrySpendingBudgetSystem;
-    private final CountrySpendingSystem countrySpendingSystem;
+    private final CountryBudgetSystem countryBudgetSystem;
+    private final CountryBankSystem countryBankSystem;
 
     private final Pipeline initPipeline;
+    private final Pipeline initBudgetPipeline;
     private final Pipeline mainPipeline;
 
     public EconomyService(GameContext gameContext) {
@@ -93,6 +95,7 @@ public class EconomyService {
         long phaseInitTreasury = ecsWorld.entity("PhaseInitTreasury");
         long phaseInitAvailability = ecsWorld.entity("PhaseInitAvailability");
         long phaseInitStock = ecsWorld.entity("PhaseInitStock");
+        long phaseInitBudget = ecsWorld.entity("PhaseInitBudget");
 
         this.initPipeline = ecsWorld.pipeline("InitEconomyPipeline")
             .with(Flecs.System)
@@ -108,6 +111,14 @@ public class EconomyService {
             .with(phaseToStock).or()
             .with(phaseInitAvailability).or()
             .with(phaseInitStock)
+            .build();
+
+        this.initBudgetPipeline = ecsWorld.pipeline("InitBudgetPipeline")
+            .with(Flecs.System)
+            .with(phaseDemographicsReset).or()
+            .with(phaseSpread).or()
+            .with(phaseInitBudget).or()
+            .with(phaseState)
             .build();
 
         this.mainPipeline = ecsWorld.pipeline("MainEconomyPipeline")
@@ -154,6 +165,7 @@ public class EconomyService {
         this.countryBudgetPriceSystem = new CountryBudgetPriceSystem(ecsWorld, phaseNeedsCosts);
         this.needsCostsCalculationSystem = new NeedsCostsCalculationSystem(ecsWorld, phaseNeedsCosts);
         this.economyBuildingTreasuryInitializationSystem = new EconomyBuildingTreasuryInitializationSystem(ecsWorld, phaseInitTreasury);
+        this.countryTreasuryInitializationSystem = new CountryTreasuryInitializationSystem(ecsWorld, phaseInitBudget);
         this.populationConsumptionSystem = new PopulationConsumptionSystem(ecsWorld, gameContext.getEcsConstants(), phaseConsumption);
         this.countryPopulationDemandSystem = new CountryPopulationDemandSystem(ecsWorld, phaseConsumption);
         this.economyBuildingConsumptionSystem = new EconomyBuildingConsumptionSystem(ecsWorld, phaseConsumption);
@@ -186,12 +198,16 @@ public class EconomyService {
         this.countryIncomeDistributionSystem = new CountryIncomeDistributionSystem(ecsWorld, phaseIncome);
         this.populationIncomeDistributionSystem = new PopulationIncomeDistributionSystem(ecsWorld, gameContext.getEcsConstants(), phaseIncome);
         this.regionIncomeResidualSystem = new RegionIncomeResidualSystem(ecsWorld, phaseIncome);
-        this.countrySpendingBudgetSystem = new CountrySpendingBudgetSystem(ecsWorld, phaseState);
-        this.countrySpendingSystem = new CountrySpendingSystem(ecsWorld, phaseState);
+        this.countryBudgetSystem = new CountryBudgetSystem(ecsWorld, phaseState);
+        this.countryBankSystem = new CountryBankSystem(ecsWorld, phaseState);
     }
 
     public Pipeline getInitPipeline() {
         return initPipeline;
+    }
+
+    public Pipeline getInitBudgetPipeline() {
+        return initBudgetPipeline;
     }
 
     public Pipeline getMainPipeline() {

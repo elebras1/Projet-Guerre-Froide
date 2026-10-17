@@ -8,7 +8,7 @@ import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 import com.populaire.projetguerrefroide.util.SubsistenceUtils;
 
-import static com.populaire.projetguerrefroide.util.Constants.NEEDS_SCALING_FACTOR;
+import static com.populaire.projetguerrefroide.util.Constants.*;
 import static com.populaire.projetguerrefroide.util.StrataUtils.*;
 
 public class PopulationIncomeDistributionSystem {
@@ -40,6 +40,8 @@ public class PopulationIncomeDistributionSystem {
         long countryId = 0;
         CountryMarketMutView countryMarket = null;
         CountryTaxPolicyView countryTaxPolicy = null;
+        CountryBudgetView countryBudget = null;
+        CountryBankMutView countryBank = null;
 
         Field<Population> populationField = iter.field(Population.class, 0);
         for (int i = 0; i < iter.count(); i++) {
@@ -57,6 +59,8 @@ public class PopulationIncomeDistributionSystem {
                 EntityView country = iter.world().obtainEntityView(countryId);
                 countryMarket = country.getMutView(CountryMarket.class);
                 countryTaxPolicy = country.getMutView(CountryTaxPolicy.class);
+                countryBudget = country.getMutView(CountryBudget.class);
+                countryBank = country.getMutView(CountryBank.class);
             }
 
             float grossIncome = 0f;
@@ -104,8 +108,28 @@ public class PopulationIncomeDistributionSystem {
             float purchase = population.amount() / NEEDS_SCALING_FACTOR * (population.lifeNeedsDemandRatio() * countryMarket.paidLifeCostsByPopType(typeIdx)
                 + population.everydayNeedsDemandRatio() * countryMarket.paidEverydayCostsByPopType(typeIdx)
                 + population.luxuryNeedsDemandRatio() * countryMarket.paidLuxuryCostsByPopType(typeIdx));
-            population.savings(population.savings() + netIncome - purchase);
             countryMarket.treasury(countryMarket.treasury() + tax);
+            countryMarket.taxRevenue(countryMarket.taxRevenue() + tax);
+
+            float scaledAmount = popAmount / NEEDS_SCALING_FACTOR;
+            float scaledUnemployed = Math.max(0, population.amount() - population.employment()) / NEEDS_SCALING_FACTOR;
+            float stateIncome = scaledAmount * (countryBudget.wageRatesByPopType(typeIdx) + countryBudget.transferRatesByPopType(typeIdx))
+                + scaledUnemployed * countryBudget.socialRatesByPopType(typeIdx);
+            stateIncome = (float) Math.min(stateIncome, Math.max(0.0, countryMarket.treasury()));
+            countryMarket.treasury(countryMarket.treasury() - stateIncome);
+
+            float bankIncome = (float) Math.min(scaledAmount * countryBank.transferRatesByPopType(typeIdx), Math.max(0.0, countryBank.deposits()));
+            countryBank.deposits(countryBank.deposits() - bankIncome);
+
+            float income = netIncome + stateIncome + bankIncome;
+            population.income(income);
+            population.savings(population.savings() + income - purchase);
+
+            float deposit = Math.min(population.unspentBudget(), Math.max(0f, population.savings()));
+            if (deposit > 0f) {
+                population.savings(population.savings() - deposit);
+                countryBank.deposits(countryBank.deposits() + deposit);
+            }
 
             float coveredLifeShare = SubsistenceUtils.coveredLifeShare(rural, population.amount(), population.employment());
             population.lifeNeedsSatisfaction(coveredLifeShare + population.lifeNeedsDemandRatio() * countryMarket.servedLifeRatiosByPopType(typeIdx));

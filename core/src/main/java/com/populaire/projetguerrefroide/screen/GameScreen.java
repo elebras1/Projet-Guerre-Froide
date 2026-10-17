@@ -104,6 +104,7 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
         this.timeService.addListener(this.topBarPresenter);
         this.timeService.addListener(this.provincePanelPresenter);
         this.gameContext.getEcsWorld().runPipeline(this.economyService.getInitPipeline().id(), 1f);
+        this.gameContext.getEcsWorld().runPipeline(this.economyService.getInitBudgetPipeline().id(), 1f);
         this.timeService.initialize();
         this.paused = false;
     }

@@ -87,6 +87,7 @@ public class EconomySimulationAnalysisTest {
         }
 
         this.ecsWorld.runPipeline(this.economyService.getInitPipeline().id(), 1f);
+        this.ecsWorld.runPipeline(this.economyService.getInitBudgetPipeline().id(), 1f);
     }
 
     private void setupGdxFiles() {
@@ -124,7 +125,8 @@ public class EconomySimulationAnalysisTest {
         world.component(ExpansionBuilding.class);
         world.component(RegionInstance.class);
         world.component(Population.class);
-        world.component(CountrySpendingBudget.class);
+        world.component(CountryBudget.class);
+        world.component(CountryBank.class);
         world.component(ResourceGatheringType.class);
         world.component(Demographics.class);
         world.component(RegionDemographics.class);
@@ -335,6 +337,9 @@ public class EconomySimulationAnalysisTest {
             new HealthCheck("money_conservation",
                 recorder.getMaxMoneyDrift() <= MONEY_DRIFT_TOLERANCE,
                 String.format("derive max=%.4f%% de la masse initiale %.0f", 100.0 * recorder.getMaxMoneyDrift(), firstMoney)),
+            new HealthCheck("cash_holdings",
+                recorder.getLastYearCashHoldings() <= 1.0,
+                String.format("pire encaisse, derniere annee=%.2f x 2/mu (%s)", recorder.getLastYearCashHoldings(), recorder.getLastYearCashHoldingsSource())),
             new HealthCheck("life_needs_floor",
                 recorder.getMinYearlyPoorLifeWorld() >= LIFE_NEEDS_FLOOR && recorder.getMinYearlyPoorLifeCountry() >= LIFE_NEEDS_FLOOR,
                 String.format("pauvres, moyenne annuelle min : monde=%.3f, pire pays=%.3f %s",

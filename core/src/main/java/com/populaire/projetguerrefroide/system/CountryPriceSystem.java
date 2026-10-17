@@ -13,6 +13,7 @@ public class CountryPriceSystem {
             .kind(phaseId)
             .with(CountryMarket.class)
             .with(CountryTradePolicy.class)
+            .with(CountryBudget.class)
             .iter(this::price);
     }
 
@@ -22,9 +23,11 @@ public class CountryPriceSystem {
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         Field<CountryTradePolicy> countryTradePolicyField = iter.field(CountryTradePolicy.class, 1);
+        Field<CountryBudget> countryBudgetField = iter.field(CountryBudget.class, 2);
         for (int i = 0; i < iter.count(); i++) {
             CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
             CountryTradePolicyView countryTradePolicy = countryTradePolicyField.getMutView(i);
+            CountryBudgetView countryBudget = countryBudgetField.getMutView(i);
 
             float tariffRate = countryTradePolicy.tariffRate();
             float effectiveTariffRate = tariffRate;
@@ -33,7 +36,7 @@ public class CountryPriceSystem {
                 for (int g = 0; g < countryMarket.goodPricesLength(); g++) {
                     subsidies += (double) countryMarket.goodImportedAmounts(g) * globalMarketData.goodPrices(g) * -tariffRate;
                 }
-                double affordableSubsidies = Math.min(subsidies, countryMarket.treasury());
+                double affordableSubsidies = Math.min(Math.min(subsidies, countryBudget.subsidyAllowance()), countryMarket.treasury());
                 effectiveTariffRate = affordableSubsidies > 0.0 ? (float) (tariffRate * affordableSubsidies / subsidies) : 0f;
             }
             countryMarket.effectiveTariffRate(effectiveTariffRate);
