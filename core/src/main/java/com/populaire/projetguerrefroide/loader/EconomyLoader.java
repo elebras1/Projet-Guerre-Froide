@@ -28,7 +28,7 @@ public final class EconomyLoader {
 
     public void createGlobalMarket() {
         long globalMarketId = this.ecsWorld.entity("global_market");
-        this.ecsWorld.obtainEntity(globalMarketId).set(new GlobalMarket(new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new double[GOOD_COUNT]));
+        this.ecsWorld.obtainEntity(globalMarketId).set(new GlobalMarket(new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new double[GOOD_COUNT], new boolean[GOOD_COUNT]));
     }
 
     public void loadGoods(GoodsJson goods) {
@@ -119,9 +119,10 @@ public final class EconomyLoader {
             long populationTypeId = this.ecsWorld.entity(name);
             EntityView populationType = this.ecsWorld.obtainEntityView(populationTypeId);
             populationType.set(new Color(color));
-            switch (name) {
-                case "aristocrats" -> populationType.add(this.ecsConstants.aristocratTag());
-                case "capitalists" -> populationType.add(this.ecsConstants.capitalistTag());
+            int incomeType = IncomeTypeUtils.getIncomeType(populationTypeJson.incomeType());
+            switch (incomeType) {
+                case IncomeTypeUtils.ARISTOCRAT_INCOME_TYPE -> populationType.add(this.ecsConstants.aristocratTag());
+                case IncomeTypeUtils.CAPITALIST_INCOME_TYPE -> populationType.add(this.ecsConstants.capitalistTag());
             }
 
             int[] lifeNeedsGoodIndexes = new int[MAX_LIFE_NEEDS_GOODS];
@@ -143,7 +144,6 @@ public final class EconomyLoader {
             this.context.fillGoods(populationTypeJson.luxuryNeeds(), luxuryNeedsGoodIndexes, luxuryNeedsGoodIds, luxuryNeedsGoodAmounts);
 
             int strata = StrataUtils.getStrata(populationTypeJson.strata());
-            int incomeType = IncomeTypeUtils.getIncomeType(populationTypeJson.incomeType());
             populationType.set(new PopulationType(lifeNeedsGoodIndexes, lifeNeedsGoodIds, lifeNeedsGoodAmounts, everydayNeedsGoodIndexes, everydayNeedsGoodIds, everydayNeedsGoodAmounts, luxuryNeedsGoodIndexes, luxuryNeedsGoodIds, luxuryNeedsGoodAmounts, strata, incomeType));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
@@ -171,6 +171,9 @@ public final class EconomyLoader {
 
             for(var typeRgoEntry : productionTypesJson.typesRgo().entrySet()) {
                 productionTypes.put(typeRgoEntry.getKey(), this.createProductionType(typeRgoEntry.getValue(), workerPopTypeIdsByType, workerPopTypeRatiosByType, workerPopTypeEffectMultiplierByType));
+                for(String workerTypeName : typeRgoEntry.getValue().workers()) {
+                    this.ecsWorld.obtainEntityView(workerPopTypeIdsByType.get(workerTypeName)).add(this.ecsConstants.ruralTag());
+                }
             }
 
             return productionTypes;

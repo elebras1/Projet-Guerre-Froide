@@ -27,6 +27,7 @@ public class EconomyService {
     private final CountryBudgetPriceSystem countryBudgetPriceSystem;
     private final NeedsCostsCalculationSystem needsCostsCalculationSystem;
     private final PopulationConsumptionSystem populationConsumptionSystem;
+    private final CountryPopulationDemandSystem countryPopulationDemandSystem;
     private final EconomyBuildingConsumptionSystem economyBuildingConsumptionSystem;
     private final RGOProductionSystem rgoProduceSystem;
     private final RGOSpreadProductionSystem rgoSpreadProductionSystem;
@@ -36,6 +37,7 @@ public class EconomyService {
     private final CountryStockSystem countryStockSystem;
     private final CountryProductionSpreadSystem countryProductionSpreadSystem;
     private final EconomyBuildingTreasuryInitializationSystem economyBuildingTreasuryInitializationSystem;
+    private final GoodAvailabilityInitializationSystem goodAvailabilityInitializationSystem;
     private final CountryStockInitializationSystem countryStockInitializationSystem;
     private final WorldMarketTotalsSystem worldMarketTotalsSystem;
     private final GlobalTradeRatioSystem globalTradeRatioSystem;
@@ -86,6 +88,7 @@ public class EconomyService {
         long phaseIncome = ecsWorld.entity("PhaseIncome");
         long phaseState = ecsWorld.entity("PhaseState");
         long phaseInitTreasury = ecsWorld.entity("PhaseInitTreasury");
+        long phaseInitAvailability = ecsWorld.entity("PhaseInitAvailability");
         long phaseInitStock = ecsWorld.entity("PhaseInitStock");
 
         this.initPipeline = ecsWorld.pipeline("InitEconomyPipeline")
@@ -100,6 +103,7 @@ public class EconomyService {
             .with(phaseConsumption).or()
             .with(phaseProduction).or()
             .with(phaseToStock).or()
+            .with(phaseInitAvailability).or()
             .with(phaseInitStock)
             .build();
 
@@ -145,7 +149,8 @@ public class EconomyService {
         this.countryBudgetPriceSystem = new CountryBudgetPriceSystem(ecsWorld, phaseNeedsCosts);
         this.needsCostsCalculationSystem = new NeedsCostsCalculationSystem(ecsWorld, phaseNeedsCosts);
         this.economyBuildingTreasuryInitializationSystem = new EconomyBuildingTreasuryInitializationSystem(ecsWorld, phaseInitTreasury);
-        this.populationConsumptionSystem = new PopulationConsumptionSystem(ecsWorld, phaseConsumption);
+        this.populationConsumptionSystem = new PopulationConsumptionSystem(ecsWorld, gameContext.getEcsConstants(), phaseConsumption);
+        this.countryPopulationDemandSystem = new CountryPopulationDemandSystem(ecsWorld, phaseConsumption);
         this.economyBuildingConsumptionSystem = new EconomyBuildingConsumptionSystem(ecsWorld, phaseConsumption);
         this.worldMarketTotalsSystem = new WorldMarketTotalsSystem(ecsWorld, phaseMarket);
         this.globalTradeRatioSystem = new GlobalTradeRatioSystem(ecsWorld, phaseMarket);
@@ -163,6 +168,7 @@ public class EconomyService {
         this.economyBuildingSpreadProductionSystem = new EconomyBuildingSpreadProductionSystem(ecsWorld, phaseToStock);
         this.countryStockSystem = new CountryStockSystem(ecsWorld, phaseToStock);
         this.countryProductionSpreadSystem = new CountryProductionSpreadSystem(ecsWorld, phaseToStock);
+        this.goodAvailabilityInitializationSystem = new GoodAvailabilityInitializationSystem(ecsWorld, phaseInitAvailability);
         this.countryStockInitializationSystem = new CountryStockInitializationSystem(ecsWorld, phaseInitStock);
         this.globalMarketResolveSystem = new GlobalMarketResolveSystem(ecsWorld, phasePrice);
         this.countryProductionValueSystem = new CountryProductionValueSystem(ecsWorld, phaseRevenue);

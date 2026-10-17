@@ -141,7 +141,7 @@ public final class MapLoader {
             int index = this.context.getPopulationTypeIndex(typeId);
             long popId = this.ecsWorld.entity();
             EntityView pop = this.ecsWorld.obtainEntityView(popId);
-            pop.set(new Population(index, typeId, countryId, provinceId, amount, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
+            pop.set(new Population(index, typeId, countryId, provinceId, amount, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
         }
     }
 

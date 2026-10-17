@@ -19,6 +19,8 @@ public class NeedsCostsCalculationSystem {
     private void calculate(Iter iter) {
         EntityView globalPopType = iter.world().obtainEntityView(iter.world().lookup("global_population_type"));
         GlobalPopulationTypeView globalPopTypeData = globalPopType.getMutView(GlobalPopulationType.class);
+        EntityView globalMarket = iter.world().obtainEntityView(iter.world().lookup("global_market"));
+        GlobalMarketView globalMarketData = globalMarket.getMutView(GlobalMarket.class);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         for (int i = 0; i < iter.count(); i++) {
@@ -35,6 +37,9 @@ public class NeedsCostsCalculationSystem {
                     if(goodIndex < 0) {
                         break;
                     }
+                    if(!globalMarketData.goodAvailabilities(goodIndex)) {
+                        continue;
+                    }
                     float amount = popTypeData.lifeNeedsGoodAmounts(j);
                     countryMarket.lifeCostsByPopType(ptIndex, countryMarket.lifeCostsByPopType(ptIndex) + amount * countryMarket.goodPrices(goodIndex));
                     countryMarket.lifeBudgetCostsByPopType(ptIndex, countryMarket.lifeBudgetCostsByPopType(ptIndex) + amount * countryMarket.goodBudgetPrices(goodIndex));
@@ -45,6 +50,9 @@ public class NeedsCostsCalculationSystem {
                     if(goodIndex < 0) {
                         break;
                     }
+                    if(!globalMarketData.goodAvailabilities(goodIndex)) {
+                        continue;
+                    }
                     float amount = popTypeData.everydayNeedsGoodAmounts(j);
                     countryMarket.everydayCostsByPopType(ptIndex, countryMarket.everydayCostsByPopType(ptIndex) + amount * countryMarket.goodPrices(goodIndex));
                     countryMarket.everydayBudgetCostsByPopType(ptIndex, countryMarket.everydayBudgetCostsByPopType(ptIndex) + amount * countryMarket.goodBudgetPrices(goodIndex));
@@ -54,6 +62,9 @@ public class NeedsCostsCalculationSystem {
                     int goodIndex = popTypeData.luxuryNeedsGoodIndexes(j);
                     if(goodIndex < 0) {
                         break;
+                    }
+                    if(!globalMarketData.goodAvailabilities(goodIndex)) {
+                        continue;
                     }
                     float amount = popTypeData.luxuryNeedsGoodAmounts(j);
                     countryMarket.luxuryCostsByPopType(ptIndex, countryMarket.luxuryCostsByPopType(ptIndex) + amount * countryMarket.goodPrices(goodIndex));

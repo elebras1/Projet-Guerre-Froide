@@ -58,6 +58,9 @@ public class Constants {
 
     public static float NEEDS_SCALING_FACTOR = 100000f;
     public static final float SHORTAGE_PRICE_PREMIUM = 0.5f;
+    public static final float[] SPENDING_RATES_BY_STRATA = {0.10f, 0.06f, 0.03f};
+    public static final float MAXIMUM_LUXURY_BASKETS = 4f;
+    public static final float SUBSISTENCE_LIFE_SHARE = 0.75f;
     public static final float PRICE_ADJUSTMENT_RATE = 0.01f;
     public static final float MINIMUM_PRICE_RATIO = 0.1f;
     public static final float MAXIMUM_PRICE_RATIO = 4f;

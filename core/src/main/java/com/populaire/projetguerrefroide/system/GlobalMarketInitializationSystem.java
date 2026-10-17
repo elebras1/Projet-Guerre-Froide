@@ -28,6 +28,7 @@ public class GlobalMarketInitializationSystem {
                 EntityView good = iter.world().obtainEntityView(globalGoodData.goodIds(g));
                 GoodView goodData = good.getMutView(Good.class);
                 globalMarket.goodPrices(g, goodData.cost());
+                globalMarket.goodAvailabilities(g, true);
             }
         }
     }

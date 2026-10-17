@@ -23,13 +23,15 @@ public class CountryStockInitializationSystem {
         GlobalGoodView globalGoodData = globalGood.getMutView(GlobalGood.class);
         int serviceGoodStartIndex = globalGoodData.serviceGoodStartIndex();
         int serviceGoodEndIndex = globalGoodData.serviceGoodEndIndex();
+        EntityView globalMarket = iter.world().obtainEntityView(iter.world().lookup("global_market"));
+        GlobalMarketView globalMarketData = globalMarket.getMutView(GlobalMarket.class);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         for (int i = 0; i < iter.count(); i++) {
             CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
 
             for (int g = 0; g < countryMarket.goodStocksLength(); g++) {
-                if (g < serviceGoodStartIndex || g >= serviceGoodEndIndex) {
+                if ((g < serviceGoodStartIndex || g >= serviceGoodEndIndex) && globalMarketData.goodAvailabilities(g)) {
                     countryMarket.goodStocks(g, countryMarket.goodStocks(g) + STOCK_TARGET_DAYS * countryMarket.goodDemandAmounts(g));
                 }
             }

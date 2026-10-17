@@ -16,5 +16,8 @@ public record Population(
     float savings,
     float lifeNeedsSatisfaction,
     float everydayNeedsSatisfaction,
-    float luxuryNeedsSatisfaction) {
+    float luxuryNeedsSatisfaction,
+    float lifeNeedsDemandRatio,
+    float everydayNeedsDemandRatio,
+    float luxuryNeedsDemandRatio) {
 }

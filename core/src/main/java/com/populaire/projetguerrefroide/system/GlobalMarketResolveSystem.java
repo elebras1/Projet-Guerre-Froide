@@ -45,6 +45,7 @@ public class GlobalMarketResolveSystem {
                 float cost = goodData.cost();
                 float price = gm.goodPrices(g) * (1f + PRICE_ADJUSTMENT_RATE * excessDemand);
                 gm.goodPrices(g, Math.clamp(price, MINIMUM_PRICE_RATIO * cost, MAXIMUM_PRICE_RATIO * cost));
+                gm.goodAvailabilities(g, gm.goodStockAmounts(g) > 0f);
             }
         }
     }

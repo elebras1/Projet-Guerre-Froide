@@ -2,12 +2,17 @@ package com.populaire.projetguerrefroide.system;
 
 import io.github.elebras1.flecs.*;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.util.SubsistenceUtils;
 
-import static com.populaire.projetguerrefroide.util.Constants.NEEDS_SCALING_FACTOR;
+import static com.populaire.projetguerrefroide.util.Constants.*;
 
 public class PopulationConsumptionSystem {
 
-    public PopulationConsumptionSystem(World ecsWorld, long phaseId) {
+    private final EcsConstants ecsConstants;
+
+    public PopulationConsumptionSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("PopulationConsumptionSystem")
             .kind(phaseId)
             .with(Population.class)
@@ -18,6 +23,17 @@ public class PopulationConsumptionSystem {
         long countryId = 0;
         CountryMarketMutView countryMarket = null;
         CountryBudgetPolicyView countryBudgetPolicy = null;
+
+        EntityView globalPopType = iter.world().obtainEntityView(iter.world().lookup("global_population_type"));
+        GlobalPopulationTypeView globalPopTypeData = globalPopType.getMutView(GlobalPopulationType.class);
+        float[] spendingRatesByPopType = new float[POP_TYPE_COUNT];
+        boolean[] ruralByPopType = new boolean[POP_TYPE_COUNT];
+        for (int ptIndex = 0; ptIndex < globalPopTypeData.popTypeIdsLength(); ptIndex++) {
+            EntityView popType = iter.world().obtainEntityView(globalPopTypeData.popTypeIds(ptIndex));
+            PopulationTypeView popTypeData = popType.getMutView(PopulationType.class);
+            spendingRatesByPopType[ptIndex] = SPENDING_RATES_BY_STRATA[popTypeData.strata()];
+            ruralByPopType[ptIndex] = popType.has(this.ecsConstants.ruralTag());
+        }
 
         Field<Population> popField = iter.field(Population.class, 0);
         for (int i = 0; i < iter.count(); i++) {
@@ -32,12 +48,14 @@ public class PopulationConsumptionSystem {
 
             int popTypeIndex = pop.index();
 
-            float budget = pop.savings() * (1.0f - countryBudgetPolicy.popSpending());
+            float spendingRate = spendingRatesByPopType[popTypeIndex] * (1f + countryBudgetPolicy.popSpending());
+            float budget = spendingRate * pop.savings();
             float scaledAmount = pop.amount() / NEEDS_SCALING_FACTOR;
 
-            float neededLife = countryMarket.lifeBudgetCostsByPopType(popTypeIndex) * scaledAmount;
+            float marketLifeShare = 1f - SubsistenceUtils.coveredLifeShare(ruralByPopType[popTypeIndex], pop.amount(), pop.employment());
+            float neededLife = marketLifeShare * countryMarket.lifeBudgetCostsByPopType(popTypeIndex) * scaledAmount;
             float lifeSpending = Math.min(budget, neededLife);
-            float lifeFraction = neededLife > 0f ? lifeSpending / neededLife : 1f;
+            float lifeFraction = marketLifeShare * (neededLife > 0f ? lifeSpending / neededLife : 1f);
             budget -= lifeSpending;
 
             float neededEveryday = countryMarket.everydayBudgetCostsByPopType(popTypeIndex) * scaledAmount;
@@ -46,47 +64,15 @@ public class PopulationConsumptionSystem {
             budget -= everydaySpending;
 
             float neededLuxury = countryMarket.luxuryBudgetCostsByPopType(popTypeIndex) * scaledAmount;
-            float luxuryFraction = neededLuxury > 0f ? Math.min(budget, neededLuxury) / neededLuxury : 1f;
+            float luxuryFraction = neededLuxury > 0f ? Math.min(budget, MAXIMUM_LUXURY_BASKETS * neededLuxury) / neededLuxury : 1f;
 
-            pop.lifeNeedsSatisfaction(lifeFraction);
-            pop.everydayNeedsSatisfaction(everydayFraction);
-            pop.luxuryNeedsSatisfaction(luxuryFraction);
+            pop.lifeNeedsDemandRatio(lifeFraction);
+            pop.everydayNeedsDemandRatio(everydayFraction);
+            pop.luxuryNeedsDemandRatio(luxuryFraction);
 
-            EntityView popType = iter.world().obtainEntityView(pop.typeId());
-            PopulationTypeView popTypeData = popType.getMutView(PopulationType.class);
-
-            for (int j = 0; j < popTypeData.lifeNeedsGoodAmountsLength(); j++) {
-                int goodIndex = popTypeData.lifeNeedsGoodIndexes(j);
-                if (goodIndex < 0) {
-                    break;
-                }
-                float base = popTypeData.lifeNeedsGoodAmounts(j);
-                float demand = base * lifeFraction * scaledAmount;
-                countryMarket.goodDemandAmounts(goodIndex, countryMarket.goodDemandAmounts(goodIndex) + demand);
-                countryMarket.goodPopulationDemandAmounts(goodIndex, countryMarket.goodPopulationDemandAmounts(goodIndex) + demand);
-            }
-
-            for (int j = 0; j < popTypeData.everydayNeedsGoodIndexesLength(); j++) {
-                int goodIndex = popTypeData.everydayNeedsGoodIndexes(j);
-                if (goodIndex < 0) {
-                    break;
-                }
-                float base = popTypeData.everydayNeedsGoodAmounts(j);
-                float demand = base * everydayFraction * scaledAmount;
-                countryMarket.goodDemandAmounts(goodIndex, countryMarket.goodDemandAmounts(goodIndex) + demand);
-                countryMarket.goodPopulationDemandAmounts(goodIndex, countryMarket.goodPopulationDemandAmounts(goodIndex) + demand);
-            }
-
-            for (int j = 0; j < popTypeData.luxuryNeedsGoodIndexesLength(); j++) {
-                int goodIndex = popTypeData.luxuryNeedsGoodIndexes(j);
-                if (goodIndex < 0) {
-                    break;
-                }
-                float base = popTypeData.luxuryNeedsGoodAmounts(j);
-                float demand = base * luxuryFraction * scaledAmount;
-                countryMarket.goodDemandAmounts(goodIndex, countryMarket.goodDemandAmounts(goodIndex) + demand);
-                countryMarket.goodPopulationDemandAmounts(goodIndex, countryMarket.goodPopulationDemandAmounts(goodIndex) + demand);
-            }
+            countryMarket.lifeDemandUnitsByPopType(popTypeIndex, countryMarket.lifeDemandUnitsByPopType(popTypeIndex) + (double) scaledAmount * lifeFraction);
+            countryMarket.everydayDemandUnitsByPopType(popTypeIndex, countryMarket.everydayDemandUnitsByPopType(popTypeIndex) + (double) scaledAmount * everydayFraction);
+            countryMarket.luxuryDemandUnitsByPopType(popTypeIndex, countryMarket.luxuryDemandUnitsByPopType(popTypeIndex) + (double) scaledAmount * luxuryFraction);
         }
     }
 }

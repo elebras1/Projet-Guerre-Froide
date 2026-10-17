@@ -6,6 +6,7 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.util.SubsistenceUtils;
 
 import static com.populaire.projetguerrefroide.util.Constants.NEEDS_SCALING_FACTOR;
 import static com.populaire.projetguerrefroide.util.StrataUtils.*;
@@ -25,6 +26,7 @@ public class PopulationIncomeDistributionSystem {
     public void distribute(Iter iter) {
         long populationTypeId = 0;
         EntityView populationType = null;
+        boolean rural = false;
         PopulationTypeView populationTypeData = null;
 
         long provinceId = 0;
@@ -45,6 +47,7 @@ public class PopulationIncomeDistributionSystem {
             if (population.typeId() != populationTypeId) {
                 populationTypeId = population.typeId();
                 populationType = iter.world().obtainEntityView(populationTypeId);
+                rural = populationType.has(this.ecsConstants.ruralTag());
                 populationTypeData = populationType.getMutView(PopulationType.class);
             }
 
@@ -111,11 +114,16 @@ public class PopulationIncomeDistributionSystem {
             float tax = grossIncome * taxRate;
             float netIncome = grossIncome - tax;
 
-            float purchase = population.amount() / NEEDS_SCALING_FACTOR * (population.lifeNeedsSatisfaction() * countryMarket.paidLifeCostsByPopType(typeIdx)
-                + population.everydayNeedsSatisfaction() * countryMarket.paidEverydayCostsByPopType(typeIdx)
-                + population.luxuryNeedsSatisfaction() * countryMarket.paidLuxuryCostsByPopType(typeIdx));
+            float purchase = population.amount() / NEEDS_SCALING_FACTOR * (population.lifeNeedsDemandRatio() * countryMarket.paidLifeCostsByPopType(typeIdx)
+                + population.everydayNeedsDemandRatio() * countryMarket.paidEverydayCostsByPopType(typeIdx)
+                + population.luxuryNeedsDemandRatio() * countryMarket.paidLuxuryCostsByPopType(typeIdx));
             population.savings(population.savings() + netIncome - purchase);
             countryMarket.treasury(countryMarket.treasury() + tax);
+
+            float coveredLifeShare = SubsistenceUtils.coveredLifeShare(rural, population.amount(), population.employment());
+            population.lifeNeedsSatisfaction(coveredLifeShare + population.lifeNeedsDemandRatio() * countryMarket.servedLifeRatiosByPopType(typeIdx));
+            population.everydayNeedsSatisfaction(population.everydayNeedsDemandRatio() * countryMarket.servedEverydayRatiosByPopType(typeIdx));
+            population.luxuryNeedsSatisfaction(population.luxuryNeedsDemandRatio() * countryMarket.servedLuxuryRatiosByPopType(typeIdx));
         }
     }
 }

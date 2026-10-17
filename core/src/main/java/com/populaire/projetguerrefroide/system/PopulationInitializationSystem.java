@@ -6,7 +6,7 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 
-import static com.populaire.projetguerrefroide.util.Constants.NEEDS_SCALING_FACTOR;
+import static com.populaire.projetguerrefroide.util.Constants.*;
 
 public class PopulationInitializationSystem {
 
@@ -22,7 +22,7 @@ public class PopulationInitializationSystem {
         long populationTypeId = 0;
         PopulationTypeView populationTypeData;
         float baseSavings = 0;
-        float strataMultiplier = 1f;
+        float spendingRate = 1f;
 
         Field<Population> populationField = iter.field(Population.class, 0);
         for(int i = 0; i < iter.count(); i++) {
@@ -32,10 +32,10 @@ public class PopulationInitializationSystem {
                 populationTypeId = population.typeId();
                 populationTypeData = iter.world().obtainEntityView(populationTypeId).getMutView(PopulationType.class);
                 baseSavings = this.calculateBaseSavings(iter.world(), populationTypeData);
-                strataMultiplier = (populationTypeData.strata() * 2) + 1;
+                spendingRate = SPENDING_RATES_BY_STRATA[populationTypeData.strata()];
             }
 
-            population.savings(baseSavings * strataMultiplier * population.amount() / NEEDS_SCALING_FACTOR);
+            population.savings(baseSavings / spendingRate * population.amount() / NEEDS_SCALING_FACTOR);
             population.lifeNeedsSatisfaction(1f);
             population.everydayNeedsSatisfaction(0.5f);
             population.luxuryNeedsSatisfaction(0f);
