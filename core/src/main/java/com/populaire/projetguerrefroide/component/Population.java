@@ -4,10 +4,9 @@ import io.github.elebras1.flecs.annotation.Component;
 
 @Component
 public record Population(
-    int index,
-    long typeId,
     long countryId,
     long provinceId,
+    long regionInstanceId,
     int amount,
     int employment,
     float consciousness,

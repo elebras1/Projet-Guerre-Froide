@@ -9,13 +9,12 @@ import static com.populaire.projetguerrefroide.util.Constants.*;
 
 public class PopulationConsumptionSystem {
 
-    private final EcsConstants ecsConstants;
-
     public PopulationConsumptionSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
-        this.ecsConstants = ecsConstants;
         ecsWorld.system("PopulationConsumptionSystem")
             .kind(phaseId)
             .with(Population.class)
+            .with(PopulationType.class)
+            .with(ecsConstants.ruralTag()).optional()
             .iter(this::consume);
     }
 
@@ -24,16 +23,11 @@ public class PopulationConsumptionSystem {
         CountryMarketMutView countryMarket = null;
         CountryBudgetPolicyView countryBudgetPolicy = null;
 
-        EntityView globalPopType = iter.world().obtainEntityView(iter.world().lookup("global_population_type"));
-        GlobalPopulationTypeView globalPopTypeData = globalPopType.getMutView(GlobalPopulationType.class);
-        float[] spendingRatesByPopType = new float[POP_TYPE_COUNT];
-        boolean[] ruralByPopType = new boolean[POP_TYPE_COUNT];
-        for (int ptIndex = 0; ptIndex < globalPopTypeData.popTypeIdsLength(); ptIndex++) {
-            EntityView popType = iter.world().obtainEntityView(globalPopTypeData.popTypeIds(ptIndex));
-            PopulationTypeView popTypeData = popType.getMutView(PopulationType.class);
-            spendingRatesByPopType[ptIndex] = SPENDING_RATES_BY_STRATA[popTypeData.strata()];
-            ruralByPopType[ptIndex] = popType.has(this.ecsConstants.ruralTag());
-        }
+        Field<PopulationType> populationTypeField = iter.field(PopulationType.class, 1);
+        PopulationTypeView populationTypeData = populationTypeField.getView(0);
+        int popTypeIndex = populationTypeData.index();
+        float strataSpendingRate = SPENDING_RATES_BY_STRATA[populationTypeData.strata()];
+        boolean rural = iter.isSet(2);
 
         Field<Population> popField = iter.field(Population.class, 0);
         for (int i = 0; i < iter.count(); i++) {
@@ -46,13 +40,11 @@ public class PopulationConsumptionSystem {
                 countryBudgetPolicy = country.getMutView(CountryBudgetPolicy.class);
             }
 
-            int popTypeIndex = pop.index();
-
-            float spendingRate = spendingRatesByPopType[popTypeIndex] * (1f + countryBudgetPolicy.popSpending());
+            float spendingRate = strataSpendingRate * (1f + countryBudgetPolicy.popSpending());
             float budget = spendingRate * pop.savings();
             float scaledAmount = pop.amount() / NEEDS_SCALING_FACTOR;
 
-            float marketLifeShare = 1f - SubsistenceUtils.coveredLifeShare(ruralByPopType[popTypeIndex], pop.amount(), pop.employment());
+            float marketLifeShare = 1f - SubsistenceUtils.coveredLifeShare(rural, pop.amount(), pop.employment());
             float neededLife = marketLifeShare * countryMarket.lifeBudgetCostsByPopType(popTypeIndex) * scaledAmount;
             float lifeSpending = Math.min(budget, neededLife);
             float lifeFraction = marketLifeShare * (neededLife > 0f ? lifeSpending / neededLife : 1f);

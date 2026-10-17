@@ -124,6 +124,7 @@ public class EconomySimulationAnalysisTest {
         world.component(ExpansionBuilding.class);
         world.component(RegionInstance.class);
         world.component(Population.class);
+        world.component(CountrySpendingBudget.class);
         world.component(ResourceGatheringType.class);
         world.component(Demographics.class);
         world.component(RegionDemographics.class);

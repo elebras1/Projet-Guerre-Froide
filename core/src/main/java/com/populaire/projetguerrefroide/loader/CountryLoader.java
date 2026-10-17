@@ -122,6 +122,7 @@ public final class CountryLoader {
             country.set(new CountryDemographics(0, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, new long[POP_TYPE_COUNT], new long[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
             country.set(new CountryTaxPolicy(0f, 0f, 0f));
             country.set(new CountryBudgetPolicy(0f, 0f, 0f, 0f));
+            country.set(new CountrySpendingBudget(0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
             country.set(new CountryEducationPolicy(0f, 0f));
             country.set(new CountryTradePolicy(0f));
             country.set(new CountryProfitDistributionPolicy(0.7f, 0.3f, 0.75f, 0.7f));

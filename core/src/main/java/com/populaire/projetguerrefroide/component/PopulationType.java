@@ -17,6 +17,7 @@ public record PopulationType(
     @FixedArray(length = MAX_LUXURY_DEMAND_GOODS) long[] luxuryNeedsGoodIds,
     @FixedArray(length = MAX_LUXURY_DEMAND_GOODS) float[] luxuryNeedsGoodAmounts,
     int strata,
-    int incomeType) {
+    int incomeType,
+    int index) {
 }
 

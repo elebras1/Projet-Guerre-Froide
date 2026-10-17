@@ -15,6 +15,7 @@ public class EconomyBuildingRevenueSystem {
             .kind(phaseId)
             .with(Building.class)
             .with(EconomyBuilding.class)
+            .with(EconomyBuildingType.class)
             .iter(this::distribute);
     }
 
@@ -23,11 +24,10 @@ public class EconomyBuildingRevenueSystem {
         CountryMarketView countryMarket = null;
         CountryLaborPolicyView countryLaborPolicy = null;
 
-        long buildingTypeId = 0;
-        EconomyBuildingTypeView buildingTypeData = null;
-
         Field<Building> buildingField = iter.field(Building.class, 0);
         Field<EconomyBuilding> economyBuildingField = iter.field(EconomyBuilding.class, 1);
+        Field<EconomyBuildingType> buildingTypeField = iter.field(EconomyBuildingType.class, 2);
+        EconomyBuildingTypeView buildingTypeData = buildingTypeField.getView(0);
 
         for(int i = 0; i < iter.count(); i++) {
             BuildingView building = buildingField.getMutView(i);
@@ -38,12 +38,6 @@ public class EconomyBuildingRevenueSystem {
                 EntityView country = iter.world().obtainEntityView(countryId);
                 countryMarket = country.getMutView(CountryMarket.class);
                 countryLaborPolicy = country.getMutView(CountryLaborPolicy.class);
-            }
-
-            if(building.typeId() != buildingTypeId) {
-                buildingTypeId = building.typeId();
-                EntityView buildingType = iter.world().obtainEntityView(buildingTypeId);
-                buildingTypeData = buildingType.getMutView(EconomyBuildingType.class);
             }
 
             int outputIndex = buildingTypeData.goodOutputIndex();

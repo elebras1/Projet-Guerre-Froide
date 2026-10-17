@@ -23,7 +23,10 @@ public class DemographicsProvinceSpreadSystem {
         Field<Demographics> demographicsField = iter.field(Demographics.class, 1);
         for(int i = 0; i < iter.count(); i++) {
             ProvinceView province = provinceField.getMutView(i);
-            DemographicsView demographics = demographicsField.getMutView(i);
+            DemographicsMutView demographics = demographicsField.getMutView(i);
+            demographics.totalChildren(province.childrenAmount());
+            demographics.totalAdults(province.adultsAmount());
+            demographics.totalSeniors(province.seniorsAmount());
 
             if(province.regionInstanceId() != ownerId) {
                 ownerId = province.regionInstanceId();

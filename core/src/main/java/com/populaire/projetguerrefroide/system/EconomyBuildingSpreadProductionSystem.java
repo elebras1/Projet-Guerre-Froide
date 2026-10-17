@@ -13,6 +13,7 @@ public class EconomyBuildingSpreadProductionSystem {
             .kind(phaseId)
             .with(Building.class)
             .with(EconomyBuilding.class)
+            .with(EconomyBuildingType.class)
             .iter(this::spread);
     }
 
@@ -20,11 +21,10 @@ public class EconomyBuildingSpreadProductionSystem {
         long countryId = 0;
         CountryMarketMutView countryMarket = null;
 
-        long economyBuildingTypeId = 0;
-        EconomyBuildingTypeView economyBuildingTypeData = null;
-
         Field<Building> buildingField = iter.field(Building.class, 0);
         Field<EconomyBuilding> economyBuildingField = iter.field(EconomyBuilding.class, 1);
+        Field<EconomyBuildingType> economyBuildingTypeField = iter.field(EconomyBuildingType.class, 2);
+        EconomyBuildingTypeView economyBuildingTypeData = economyBuildingTypeField.getView(0);
         for(int i = 0; i < iter.count(); i++) {
             BuildingView building = buildingField.getMutView(i);
             EconomyBuildingView economyBuilding = economyBuildingField.getMutView(i);
@@ -33,12 +33,6 @@ public class EconomyBuildingSpreadProductionSystem {
                 countryId = building.countryId();
                 EntityView country = iter.world().obtainEntityView(countryId);
                 countryMarket = country.getMutView(CountryMarket.class);
-            }
-
-            if(building.typeId() != economyBuildingTypeId) {
-                economyBuildingTypeId = building.typeId();
-                EntityView economyBuildingType = iter.world().obtainEntityView(economyBuildingTypeId);
-                economyBuildingTypeData = economyBuildingType.getMutView(EconomyBuildingType.class);
             }
 
             countryMarket.goodProducedAmounts(economyBuildingTypeData.goodOutputIndex(), countryMarket.goodProducedAmounts(economyBuildingTypeData.goodOutputIndex()) + economyBuilding.production());

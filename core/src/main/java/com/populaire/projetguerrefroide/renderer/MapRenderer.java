@@ -278,8 +278,7 @@ public class MapRenderer implements Disposable {
             for (int i = 0; i < iter.count(); i++) {
                 BuildingView buildingView = buildingField.getMutView(i);
                 long buildingEntityId = iter.entity(i);
-                EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingView.typeId());
-                if (buildingTypeView.has(ecsConstants.onMap())) {
+                if (ecsWorld.obtainEntityView(buildingEntityId).has(ecsConstants.onMap())) {
                     LongList buildings = buildingsByProvince.get(buildingView.parentId());
                     if (buildings != null) {
                         buildings.add(buildingEntityId);
@@ -324,8 +323,7 @@ public class MapRenderer implements Disposable {
             for (int bi = 0; bi < buildings.size(); bi++) {
                 long buildingEntityId = buildings.get(bi);
                 Entity building = ecsWorld.obtainEntity(buildingEntityId);
-                Building buildingData = building.get(Building.class);
-                Entity buildingType = ecsWorld.obtainEntity(buildingData.typeId());
+                Entity buildingType = ecsWorld.obtainEntity(building.target(Flecs.IsA, 0));
                 String buildingName = buildingType.name();
 
                 TextureRegion buildingRegion = this.mapElementsTextureAtlas.findRegion("building_" + buildingName + "_empty");

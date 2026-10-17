@@ -2,6 +2,7 @@ package com.populaire.projetguerrefroide.simulation;
 
 import io.github.elebras1.flecs.EntityView;
 import io.github.elebras1.flecs.Field;
+import io.github.elebras1.flecs.Flecs;
 import io.github.elebras1.flecs.Query;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.Building;
@@ -250,6 +251,7 @@ public class SimulationRecorder implements AutoCloseable {
         this.buildingQuery = ecsWorld.query()
             .with(Building.class)
             .with(EconomyBuilding.class)
+            .with(EconomyBuildingType.class)
             .build();
         this.regionIncomeQuery = ecsWorld.query()
             .with(RegionInstance.class)
@@ -257,6 +259,7 @@ public class SimulationRecorder implements AutoCloseable {
             .build();
         this.populationQuery = ecsWorld.query()
             .with(Population.class)
+            .with(PopulationType.class)
             .build();
 
         this.readGoodNames();
@@ -338,10 +341,11 @@ public class SimulationRecorder implements AutoCloseable {
 
         double[] popTypeAmounts = new double[POP_TYPE_COUNT];
         this.populationQuery.iter(iter -> {
+            int popTypeIndex = iter.field(PopulationType.class, 1).<PopulationTypeView>getView(0).index();
             Field<Population> populationField = iter.field(Population.class, 0);
             for (int i = 0; i < iter.count(); i++) {
                 PopulationView population = populationField.getMutView(i);
-                popTypeAmounts[population.index()] += population.amount();
+                popTypeAmounts[popTypeIndex] += population.amount();
             }
         });
 
@@ -388,7 +392,7 @@ public class SimulationRecorder implements AutoCloseable {
     }
 
     private void readBuildingTypes() {
-        Query query = this.ecsWorld.query().with(EconomyBuildingType.class).build();
+        Query query = this.ecsWorld.query().with(EconomyBuildingType.class).self().with(Flecs.Prefab).build();
         List<Long> ids = new ArrayList<>();
         query.each((long id) -> ids.add(id));
         ids.sort(Long::compareTo);
@@ -937,6 +941,7 @@ public class SimulationRecorder implements AutoCloseable {
         this.buildingQuery.iter(iter -> {
             Field<Building> buildingField = iter.field(Building.class, 0);
             Field<EconomyBuilding> economyBuildingField = iter.field(EconomyBuilding.class, 1);
+            long buildingTypeId = iter.src(2);
 
             for (int i = 0; i < iter.count(); i++) {
                 BuildingView building = buildingField.getMutView(i);
@@ -946,7 +951,7 @@ public class SimulationRecorder implements AutoCloseable {
                 this.tickBuildingTreasuryTotal += economyBuilding.treasury();
                 this.tickBuildingWagesTotal += economyBuilding.primaryWorkerMinWage() + economyBuilding.secondaryWorkerMinWage();
                 this.tickBuildingProfitTotal += economyBuilding.profit();
-                Integer typeIndex = this.buildingTypeIndexByEntity.get(building.typeId());
+                Integer typeIndex = this.buildingTypeIndexByEntity.get(buildingTypeId);
                 if (typeIndex != null) {
                     this.buildingTypeProduction[typeIndex] += production;
                     this.buildingTypePrimaryWorkers[typeIndex] += economyBuilding.primaryWorkerAmount();
@@ -962,7 +967,7 @@ public class SimulationRecorder implements AutoCloseable {
                     this.countryPrimaryWorkers[countryIndex] += economyBuilding.primaryWorkerAmount();
                     this.countrySecondaryWorkers[countryIndex] += economyBuilding.secondaryWorkerAmount();
 
-                    Integer outputGood = this.buildingTypeOutputGoodIndex.get(building.typeId());
+                    Integer outputGood = this.buildingTypeOutputGoodIndex.get(buildingTypeId);
                     if (outputGood != null && outputGood >= 0) {
                         long key = key(countryIndex, outputGood);
                         float[] agg = this.countryBuildingByGood.computeIfAbsent(key, k -> new float[1]);
@@ -977,7 +982,7 @@ public class SimulationRecorder implements AutoCloseable {
                     }
                     float demand = economyBuilding.goodInputDemandAmounts(slot);
                     if (demand > 0f) {
-                        long key = ((long) building.typeId() << 16) | goodIndex;
+                        long key = ((long) buildingTypeId << 16) | goodIndex;
                         this.buildingTypeInputDemand.merge(key, demand, Float::sum);
                     }
                 }
@@ -1064,11 +1069,12 @@ public class SimulationRecorder implements AutoCloseable {
     private void sumCountryEmployment() {
         double[] savings = new double[] { 0.0 };
         this.populationQuery.iter(iter -> {
+            int popTypeIndex = iter.field(PopulationType.class, 1).<PopulationTypeView>getView(0).index();
             Field<Population> populationField = iter.field(Population.class, 0);
             for (int i = 0; i < iter.count(); i++) {
                 PopulationView population = populationField.getMutView(i);
                 float amount = population.amount();
-                int strata = this.popTypeStrata[population.index()];
+                int strata = this.popTypeStrata[popTypeIndex];
                 savings[0] += population.savings();
                 this.strataAmount[strata] += amount;
                 this.strataLife[strata] += amount * population.lifeNeedsSatisfaction();
@@ -1079,8 +1085,8 @@ public class SimulationRecorder implements AutoCloseable {
                     this.trackBalance(population.savings(), "savings", this.countryNames.get(countryIndex));
                     this.countryPopEmployment[countryIndex] += population.employment();
                     this.countryPopEntities[countryIndex]++;
-                    this.countryPopTypeTotal[countryIndex * POP_TYPE_COUNT + population.index()] += population.amount();
-                    this.countryPopTypeEmployment[countryIndex * POP_TYPE_COUNT + population.index()] += population.employment();
+                    this.countryPopTypeTotal[countryIndex * POP_TYPE_COUNT + popTypeIndex] += population.amount();
+                    this.countryPopTypeEmployment[countryIndex * POP_TYPE_COUNT + popTypeIndex] += population.employment();
                     this.countryAdults[countryIndex] += amount;
                     if (strata == POOR_STRATA) {
                         this.countryPoorAmount[countryIndex] += amount;
@@ -1195,7 +1201,6 @@ public class SimulationRecorder implements AutoCloseable {
     public double getLastTickWorldPopulation() {
         return this.lastTickWorldPopulation;
     }
-
 
     public float getLastTickWorldTreasury() {
         return this.lastTickWorldTreasury;
@@ -1322,7 +1327,6 @@ public class SimulationRecorder implements AutoCloseable {
     public float getMinSurplusRatio() {
         return this.minSurplusRatio;
     }
-
 
     @Override
     public void close() throws IOException {

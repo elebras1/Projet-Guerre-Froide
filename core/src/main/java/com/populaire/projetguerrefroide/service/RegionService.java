@@ -60,7 +60,7 @@ public class RegionService {
                 if (regionInstance.regionId() == regionId && regionInstance.ownerId() == countryId) {
                     long buildingId = iter.entity(i);
 
-                    EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingDataView.typeId());
+                    EntityView buildingTypeView = ecsWorld.obtainEntityView(ecsWorld.obtainEntityView(iter.entity(i)).target(Flecs.IsA, 0));
 
                     if (buildingTypeView.has(EconomyBuildingType.class)) {
                         BuildingSummaryDto building = this.buildingService.buildSummary(buildingId);
@@ -102,7 +102,7 @@ public class RegionService {
                 if (!regionIds.contains(regionId)) {
                     continue;
                 }
-                EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingDataView.typeId());
+                EntityView buildingTypeView = ecsWorld.obtainEntityView(ecsWorld.obtainEntityView(iter.entity(i)).target(Flecs.IsA, 0));
                 if (!buildingTypeView.has(EconomyBuildingType.class)) {
                     continue;
                 }
@@ -148,7 +148,7 @@ public class RegionService {
                 }
                 RegionInstanceView regionInstance = parent.getMutView(RegionInstance.class);
                 if (regionInstance.regionId() == regionId && regionInstance.ownerId() == ownerId) {
-                    EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingView.typeId());
+                    EntityView buildingTypeView = ecsWorld.obtainEntityView(ecsWorld.obtainEntityView(iter.entity(i)).target(Flecs.IsA, 0));
                     if (buildingTypeView.has(EconomyBuildingType.class)) {
                         String color = BuildingUtils.getColor(buildingTypeView.name());
                         if (color != null) {
@@ -183,7 +183,7 @@ public class RegionService {
                 }
                 RegionInstanceView regionInstance = parent.getMutView(RegionInstance.class);
                 if(regionInstance.regionId() == regionId && regionInstance.ownerId() == ownerId) {
-                    EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingView.typeId());
+                    EntityView buildingTypeView = ecsWorld.obtainEntityView(ecsWorld.obtainEntityView(iter.entity(i)).target(Flecs.IsA, 0));
                     if(buildingTypeView.has(EconomyBuildingType.class)) {
                         industryCount.increment();
                     }
@@ -208,7 +208,7 @@ public class RegionService {
                 }
                 RegionInstanceView regionInstance = parent.getMutView(RegionInstance.class);
                 if(regionInstance.regionId() == regionId && regionInstance.ownerId() == ownerId) {
-                    EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingView.typeId());
+                    EntityView buildingTypeView = ecsWorld.obtainEntityView(ecsWorld.obtainEntityView(iter.entity(i)).target(Flecs.IsA, 0));
                     if(buildingTypeView.has(SpecialBuildingType.class)) {
                         specialBuildingNames.add(buildingTypeView.name());
                     }

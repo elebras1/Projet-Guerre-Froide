@@ -121,7 +121,8 @@ public final class MapLoader {
                 for(ProvinceBuildingJson buildingJson : provinceJson.buildings()) {
                     long buildingTypeId = this.ecsWorld.lookup(buildingJson.name());
                     EntityView building = this.ecsWorld.obtainEntityView(this.ecsWorld.entity());
-                    building.set(new Building(provinceId, buildingTypeId, countryOwnerId, (int) buildingJson.size()));
+                    building.isA(buildingTypeId);
+                    building.set(new Building(provinceId, countryOwnerId, (int) buildingJson.size()));
                     building.set(new DevelopmentBuilding());
                 }
             }
@@ -138,10 +139,10 @@ public final class MapLoader {
             float percentage = distributionEntry.getValue().floatValue();
             int amount = (int) (adultsAmount * percentage);
             long typeId = this.ecsWorld.lookup(distributionEntry.getKey());
-            int index = this.context.getPopulationTypeIndex(typeId);
             long popId = this.ecsWorld.entity();
             EntityView pop = this.ecsWorld.obtainEntityView(popId);
-            pop.set(new Population(index, typeId, countryId, provinceId, amount, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
+            pop.isA(typeId);
+            pop.set(new Population(countryId, provinceId, 0, amount, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
         }
     }
 
@@ -177,7 +178,7 @@ public final class MapLoader {
                         EntityView regionInstance = this.ecsWorld.obtainEntityView(regionInstanceId);
                         if(!regionInstance.has(RegionInstance.class)) {
                             regionInstance.set(new RegionInstance(regionEntityId, provinceData.ownerId(), new float[POP_TYPE_COUNT]));
-                            regionInstance.set(new RegionInstanceIncome(new float[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0f, 0f, 0f, 0f, 0f, 0f));
+                            regionInstance.set(new RegionInstanceIncome(new float[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0f, 0f, 0f, 0f, 0f, 0f));
                             regionInstance.set(new RegionDemographics(0, 0, 0, 0f, 0f, 0f, 0f, 0f, 0f, new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
                         }
                         provinceData.regionId(regionEntityId).regionInstanceId(regionInstanceId);
@@ -189,7 +190,8 @@ public final class MapLoader {
                                 int size = buildingEntry.value;
                                 EntityView building = this.ecsWorld.obtainEntityView(this.ecsWorld.entity());
                                 EntityView buildingType = this.ecsWorld.obtainEntityView(buildingTypeId);
-                                building.set(new Building(regionInstanceId, buildingTypeId, provinceData.ownerId(), size));
+                                building.isA(buildingTypeId);
+                                building.set(new Building(regionInstanceId, provinceData.ownerId(), size));
                                 if(buildingType.has(EconomyBuildingType.class)) {
                                     EconomyBuildingTypeView buildingTypeData = buildingType.getMutView(EconomyBuildingType.class);
                                     boolean advancedRecipe = regionBuildingModesById != null && regionBuildingModesById.get(buildingTypeId) == 1 && buildingTypeData.advancedGoodInputIndexes(0) >= 0;

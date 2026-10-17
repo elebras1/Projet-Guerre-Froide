@@ -23,21 +23,20 @@ public class ExpansionBuildingSystem {
             if(expansionBuildingDataView.timeLeft() <= 0) {
                 EntityView buildingView = iter.world().obtainEntityView(expansionBuildingDataView.buildingId());
                 BuildingMutView buildingViewData = buildingView.getMutView(Building.class);
-                EntityView buildingTypeView = iter.world().obtainEntityView(buildingViewData.typeId());
                 int newSize = buildingViewData.size() + 1;
                 buildingViewData.size(newSize);
                 this.commandBus.dispatch(new BuildingLevelUpCommand(expansionBuildingDataView.buildingId()));
 
                 if(expansionBuildingDataView.levelsQueued() > 1) {
                     expansionBuildingDataView.levelsQueued(expansionBuildingDataView.levelsQueued() - 1);
-                    if(buildingTypeView.has(EconomyBuildingType.class)) {
-                        EconomyBuildingTypeView economyBuildingTypeViewData = buildingTypeView.getMutView(EconomyBuildingType.class);
+                    if(buildingView.has(EconomyBuildingType.class)) {
+                        EconomyBuildingTypeView economyBuildingTypeViewData = buildingView.getView(EconomyBuildingType.class);
                         expansionBuildingDataView.timeLeft(economyBuildingTypeViewData.time());
-                    } else if(buildingTypeView.has(DevelopmentBuildingType.class)) {
-                        DevelopmentBuildingTypeView developmentBuildingTypeViewData = buildingTypeView.getMutView(DevelopmentBuildingType.class);
+                    } else if(buildingView.has(DevelopmentBuildingType.class)) {
+                        DevelopmentBuildingTypeView developmentBuildingTypeViewData = buildingView.getView(DevelopmentBuildingType.class);
                         expansionBuildingDataView.timeLeft(developmentBuildingTypeViewData.time());
-                    } else if(buildingTypeView.has(SpecialBuildingType.class)) {
-                        SpecialBuildingTypeView specialBuildingTypeViewData = buildingTypeView.getMutView(SpecialBuildingType.class);
+                    } else if(buildingView.has(SpecialBuildingType.class)) {
+                        SpecialBuildingTypeView specialBuildingTypeViewData = buildingView.getView(SpecialBuildingType.class);
                         expansionBuildingDataView.timeLeft(specialBuildingTypeViewData.time());
                     }
                 } else {

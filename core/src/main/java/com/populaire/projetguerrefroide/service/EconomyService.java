@@ -9,6 +9,7 @@ public class EconomyService {
     private final DemographicsResetSystem demographicsResetSystem;
     private final CountryDemographicsResetSystem countryDemographicsResetSystem;
     private final PopulationInitializationSystem populationInitializationSystem;
+    private final PopulationRegionInitializationSystem populationRegionInitializationSystem;
     private final DemographicsPopulationSpreadSystem demographicsPopulationSpreadSystem;
     private final DemographicsProvinceSpreadSystem demographicsProvinceSpreadSystem;
     private final DemographicsRegionInstanceSpreadSystem demographicsRegionInstanceSpreadSystem;
@@ -18,6 +19,7 @@ public class EconomyService {
     private final CountryMarketInitializationSystem countryMarketInitializationSystem;
     private final GlobalMarketInitializationSystem globalMarketInitializationSystem;
     private final RGOEmploymentSystem rgoEmploymentSystem;
+    private final EconomyBuildingWorkerDemandSystem economyBuildingWorkerDemandSystem;
     private final EconomyBuildingEmploymentSystem economyBuildingEmploymentSystem;
     private final PopulationEmploymentSynchronizationSystem populationEmploymentSynchronizationSystem;
 
@@ -61,6 +63,7 @@ public class EconomyService {
     private final CountryIncomeDistributionSystem countryIncomeDistributionSystem;
     private final PopulationIncomeDistributionSystem populationIncomeDistributionSystem;
     private final RegionIncomeResidualSystem regionIncomeResidualSystem;
+    private final CountrySpendingBudgetSystem countrySpendingBudgetSystem;
     private final CountrySpendingSystem countrySpendingSystem;
 
     private final Pipeline initPipeline;
@@ -130,6 +133,7 @@ public class EconomyService {
         this.countryDemographicsResetSystem = new CountryDemographicsResetSystem(ecsWorld, phaseDemographicsReset);
         this.regionIncomePreEmploymentResetSystem = new RegionIncomeResetSystem(ecsWorld, phaseDemographicsReset);
         this.populationInitializationSystem = new PopulationInitializationSystem(ecsWorld, phasePopInit);
+        this.populationRegionInitializationSystem = new PopulationRegionInitializationSystem(ecsWorld, phasePopInit);
         this.demographicsPopulationSpreadSystem = new DemographicsPopulationSpreadSystem(ecsWorld, phaseSpread);
         this.demographicsProvinceSpreadSystem = new DemographicsProvinceSpreadSystem(ecsWorld, phaseSpread);
         this.demographicsRegionInstanceSpreadSystem = new DemographicsRegionInstanceSpreadSystem(ecsWorld, phaseSpread);
@@ -139,8 +143,9 @@ public class EconomyService {
         this.countryMarketInitializationSystem = new CountryMarketInitializationSystem(ecsWorld, phaseInit);
         this.globalMarketInitializationSystem = new GlobalMarketInitializationSystem(ecsWorld, phaseInit);
         this.rgoEmploymentSystem = new RGOEmploymentSystem(ecsWorld, phaseEmployment);
+        this.economyBuildingWorkerDemandSystem = new EconomyBuildingWorkerDemandSystem(ecsWorld, phaseEmployment);
         this.economyBuildingEmploymentSystem = new EconomyBuildingEmploymentSystem(ecsWorld, phaseEmployment);
-        this.populationEmploymentSynchronizationSystem = new PopulationEmploymentSynchronizationSystem(ecsWorld, phaseSync);
+        this.populationEmploymentSynchronizationSystem = new PopulationEmploymentSynchronizationSystem(ecsWorld, gameContext.getEcsConstants(), phaseSync);
 
         this.globalMarketResetSystem = new GlobalMarketResetSystem(ecsWorld, phaseReset);
         this.countryMarketResetSystem = new CountryMarketResetSystem(ecsWorld, phaseReset);
@@ -181,6 +186,7 @@ public class EconomyService {
         this.countryIncomeDistributionSystem = new CountryIncomeDistributionSystem(ecsWorld, phaseIncome);
         this.populationIncomeDistributionSystem = new PopulationIncomeDistributionSystem(ecsWorld, gameContext.getEcsConstants(), phaseIncome);
         this.regionIncomeResidualSystem = new RegionIncomeResidualSystem(ecsWorld, phaseIncome);
+        this.countrySpendingBudgetSystem = new CountrySpendingBudgetSystem(ecsWorld, phaseState);
         this.countrySpendingSystem = new CountrySpendingSystem(ecsWorld, phaseState);
     }
 

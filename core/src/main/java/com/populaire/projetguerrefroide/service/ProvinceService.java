@@ -1,5 +1,6 @@
 package com.populaire.projetguerrefroide.service;
 
+import io.github.elebras1.flecs.Flecs;
 import io.github.elebras1.flecs.Entity;
 import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Query;
@@ -109,7 +110,7 @@ public class ProvinceService {
                     continue;
                 }
 
-                Entity buildingType = ecsWorld.obtainEntity(buildingView.typeId());
+                Entity buildingType = ecsWorld.obtainEntity(ecsWorld.obtainEntityView(iter.entity(i)).target(Flecs.IsA, 0));
 
                 switch (buildingType.name()) {
                     case "naval_base" -> navalBaseLevel.setValue(buildingView.size());

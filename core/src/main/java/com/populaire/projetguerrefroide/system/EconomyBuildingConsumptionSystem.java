@@ -10,6 +10,7 @@ public class EconomyBuildingConsumptionSystem {
             .kind(phaseId)
             .with(Building.class)
             .with(EconomyBuilding.class)
+            .with(EconomyBuildingType.class)
             .iter(this::consume);
     }
 
@@ -20,6 +21,8 @@ public class EconomyBuildingConsumptionSystem {
 
         Field<Building> buildingField = iter.field(Building.class, 0);
         Field<EconomyBuilding> economyBuildingField = iter.field(EconomyBuilding.class, 1);
+        Field<EconomyBuildingType> economyBuildingTypeField = iter.field(EconomyBuildingType.class, 2);
+        EconomyBuildingTypeView economyBuildingTypeData = economyBuildingTypeField.getView(0);
 
         for (int i = 0; i < iter.count(); i++) {
             BuildingView building = buildingField.getMutView(i);
@@ -31,9 +34,6 @@ public class EconomyBuildingConsumptionSystem {
                 countryMarket = country.getMutView(CountryMarket.class);
                 countryProductionPolicy = country.getMutView(CountryProductionPolicy.class);
             }
-
-            EntityView economyBuildingType = iter.world().obtainEntityView(building.typeId());
-            EconomyBuildingTypeView economyBuildingTypeData = economyBuildingType.getMutView(EconomyBuildingType.class);
 
             float throughput = 1f + Math.min(countryProductionPolicy.maximumEconomyScaleFactor(), building.size() * 0.01f);
 

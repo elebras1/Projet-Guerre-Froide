@@ -13,24 +13,25 @@ import static com.populaire.projetguerrefroide.util.StrataUtils.*;
 
 public class PopulationIncomeDistributionSystem {
 
-    private final EcsConstants ecsConstants;
-
     public PopulationIncomeDistributionSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
-        this.ecsConstants = ecsConstants;
         ecsWorld.system("PopulationIncomeDistributionSystem")
             .with(Population.class)
+            .with(PopulationType.class)
+            .with(ecsConstants.capitalistTag()).optional()
+            .with(ecsConstants.aristocratTag()).optional()
+            .with(ecsConstants.ruralTag()).optional()
             .kind(phaseId)
             .iter(this::distribute);
     }
 
     public void distribute(Iter iter) {
-        long populationTypeId = 0;
-        EntityView populationType = null;
-        boolean rural = false;
-        PopulationTypeView populationTypeData = null;
-
-        long provinceId = 0;
-        ProvinceView provinceData = null;
+        Field<PopulationType> populationTypeField = iter.field(PopulationType.class, 1);
+        PopulationTypeView populationTypeData = populationTypeField.getView(0);
+        int typeIdx = populationTypeData.index();
+        int strata = populationTypeData.strata();
+        boolean capitalist = iter.isSet(2);
+        boolean aristocrat = iter.isSet(3);
+        boolean rural = iter.isSet(4);
 
         long regionInstanceId = 0;
         RegionInstanceIncomeMutView regionInstanceIncome = null;
@@ -44,21 +45,8 @@ public class PopulationIncomeDistributionSystem {
         for (int i = 0; i < iter.count(); i++) {
             PopulationMutView population = populationField.getMutView(i);
 
-            if (population.typeId() != populationTypeId) {
-                populationTypeId = population.typeId();
-                populationType = iter.world().obtainEntityView(populationTypeId);
-                rural = populationType.has(this.ecsConstants.ruralTag());
-                populationTypeData = populationType.getMutView(PopulationType.class);
-            }
-
-            if (population.provinceId() != provinceId) {
-                provinceId = population.provinceId();
-                EntityView province = iter.world().obtainEntityView(provinceId);
-                provinceData = province.getMutView(Province.class);
-            }
-
-            if (provinceData.regionInstanceId() != regionInstanceId) {
-                regionInstanceId = provinceData.regionInstanceId();
+            if (population.regionInstanceId() != regionInstanceId) {
+                regionInstanceId = population.regionInstanceId();
                 EntityView regionEntity = iter.world().obtainEntityView(regionInstanceId);
                 regionInstanceIncome = regionEntity.getMutView(RegionInstanceIncome.class);
                 regionDemographics = regionEntity.getMutView(RegionDemographics.class);
@@ -72,7 +60,6 @@ public class PopulationIncomeDistributionSystem {
             }
 
             float grossIncome = 0f;
-            int typeIdx = population.index();
 
             float popAmount = population.amount();
 
@@ -85,7 +72,7 @@ public class PopulationIncomeDistributionSystem {
                 regionInstanceIncome.claimedIncomeByPopType(typeIdx, regionInstanceIncome.claimedIncomeByPopType(typeIdx) + distributedIncome);
             }
 
-            if (populationType.has(this.ecsConstants.capitalistTag())) {
+            if (capitalist) {
                 float capitalistTotal = regionInstanceIncome.capitalistProfitShare();
                 int totalCapitalists = regionDemographics.totalByPopType(typeIdx);
                 if (totalCapitalists > 0) {
@@ -95,7 +82,7 @@ public class PopulationIncomeDistributionSystem {
                 }
             }
 
-            if (populationType.has(this.ecsConstants.aristocratTag())) {
+            if (aristocrat) {
                 float aristocratTotal = regionInstanceIncome.aristocratProfitShare();
                 int totalAristocrats = regionDemographics.totalByPopType(typeIdx);
                 if (totalAristocrats > 0) {
@@ -106,7 +93,7 @@ public class PopulationIncomeDistributionSystem {
             }
 
             float taxRate = 0f;
-            switch (populationTypeData.strata()) {
+            switch (strata) {
                 case POOR_STRATA -> taxRate = countryTaxPolicy.poorTaxRate();
                 case MIDDLE_STRATA -> taxRate = countryTaxPolicy.middleTaxRate();
                 case RICH_STRATA -> taxRate = countryTaxPolicy.richTaxRate();

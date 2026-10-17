@@ -1,5 +1,6 @@
 package com.populaire.projetguerrefroide.service;
 
+import io.github.elebras1.flecs.Flecs;
 import io.github.elebras1.flecs.Entity;
 import io.github.elebras1.flecs.EntityView;
 import io.github.elebras1.flecs.World;
@@ -25,7 +26,7 @@ public class BuildingService {
         World ecsWorld = this.gameContext.getEcsWorld();
         EntityView building = ecsWorld.obtainEntityView(buildingId);
         BuildingView buildingData = building.getMutView(Building.class);
-        EntityView buildingType = ecsWorld.obtainEntityView(buildingData.typeId());
+        EntityView buildingType = ecsWorld.obtainEntityView(building.target(Flecs.IsA, 0));
         EconomyBuildingTypeView buildingTypeData = buildingType.getMutView(EconomyBuildingType.class);
         int levelsQueued = 0;
         long expansionBuildingId = ecsWorld.lookup("expand_" + buildingId);
@@ -45,7 +46,7 @@ public class BuildingService {
         EconomyBuilding economyBuilding = building.get(EconomyBuilding.class);
         Building buildingData = building.get(Building.class);
         Entity parent = ecsWorld.obtainEntity(buildingData.parentId());
-        Entity buildingType = ecsWorld.obtainEntity(buildingData.typeId());
+        Entity buildingType = ecsWorld.obtainEntity(building.target(Flecs.IsA, 0));
         EconomyBuildingType buildingTypeData = buildingType.get(EconomyBuildingType.class);
         String[] goodCostNameIds = new String[buildingTypeData.goodCostIds().length];
         for(int i = 0; i < buildingTypeData.goodCostIds().length; i++) {
@@ -82,7 +83,7 @@ public class BuildingService {
         Building buildingData = building.get(Building.class);
         Entity country = ecsWorld.obtainEntity(buildingData.countryId());
         CountryProductionPolicy countryProductionPolicy = country.get(CountryProductionPolicy.class);
-        Entity buildingType = ecsWorld.obtainEntity(buildingData.typeId());
+        Entity buildingType = ecsWorld.obtainEntity(building.target(Flecs.IsA, 0));
 
         int maxLevel = 0;
         int baseTime = 0;

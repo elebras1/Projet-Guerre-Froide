@@ -10,6 +10,7 @@ public class EconomyBuildingProductionSystem {
             .kind(phaseId)
             .with(EconomyBuilding.class)
             .with(Building.class)
+            .with(EconomyBuildingType.class)
             .multiThreaded()
             .iter(this::produce);
     }
@@ -19,11 +20,10 @@ public class EconomyBuildingProductionSystem {
         CountryMarketView countryMarket = null;
         CountryProductionPolicyView countryProductionPolicy = null;
 
-        long economyBuildingTypeId = 0;
-        EconomyBuildingTypeView economyBuildingTypeData = null;
-
         Field<EconomyBuilding> economyBuildingField = iter.field(EconomyBuilding.class, 0);
         Field<Building> buildingField = iter.field(Building.class, 1);
+        Field<EconomyBuildingType> economyBuildingTypeField = iter.field(EconomyBuildingType.class, 2);
+        EconomyBuildingTypeView economyBuildingTypeData = economyBuildingTypeField.getView(0);
 
         for (int i = 0; i < iter.count(); i++) {
             EconomyBuildingMutView economyBuilding = economyBuildingField.getMutView(i);
@@ -34,12 +34,6 @@ public class EconomyBuildingProductionSystem {
                 EntityView country = iter.world().obtainEntityView(countryId);
                 countryMarket = country.getMutView(CountryMarket.class);
                 countryProductionPolicy = country.getMutView(CountryProductionPolicy.class);
-            }
-
-            if(building.typeId() != economyBuildingTypeId) {
-                economyBuildingTypeId = building.typeId();
-                EntityView economyBuildingType = iter.world().obtainEntityView(economyBuildingTypeId);
-                economyBuildingTypeData = economyBuildingType.getMutView(EconomyBuildingType.class);
             }
 
             float primaryWorkers = economyBuilding.primaryWorkerAmount();

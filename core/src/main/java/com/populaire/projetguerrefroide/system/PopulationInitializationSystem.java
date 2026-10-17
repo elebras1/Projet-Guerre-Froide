@@ -14,26 +14,20 @@ public class PopulationInitializationSystem {
         ecsWorld.system("PopulationInitializationSystem")
             .kind(phaseId)
             .with(Population.class)
+            .with(PopulationType.class)
             .multiThreaded()
             .iter(this::initialize);
     }
 
     public void initialize(Iter iter) {
-        long populationTypeId = 0;
-        PopulationTypeView populationTypeData;
-        float baseSavings = 0;
-        float spendingRate = 1f;
+        Field<PopulationType> populationTypeField = iter.field(PopulationType.class, 1);
+        PopulationTypeView populationTypeData = populationTypeField.getView(0);
+        float baseSavings = this.calculateBaseSavings(iter.world(), populationTypeData);
+        float spendingRate = SPENDING_RATES_BY_STRATA[populationTypeData.strata()];
 
         Field<Population> populationField = iter.field(Population.class, 0);
         for(int i = 0; i < iter.count(); i++) {
             PopulationMutView population = populationField.getMutView(i);
-
-            if(population.typeId() != populationTypeId) {
-                populationTypeId = population.typeId();
-                populationTypeData = iter.world().obtainEntityView(populationTypeId).getMutView(PopulationType.class);
-                baseSavings = this.calculateBaseSavings(iter.world(), populationTypeData);
-                spendingRate = SPENDING_RATES_BY_STRATA[populationTypeData.strata()];
-            }
 
             population.savings(baseSavings / spendingRate * population.amount() / NEEDS_SCALING_FACTOR);
             population.lifeNeedsSatisfaction(1f);

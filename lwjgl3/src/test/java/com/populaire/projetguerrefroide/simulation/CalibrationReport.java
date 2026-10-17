@@ -2,6 +2,7 @@ package com.populaire.projetguerrefroide.simulation;
 
 import io.github.elebras1.flecs.EntityView;
 import io.github.elebras1.flecs.Field;
+import io.github.elebras1.flecs.Flecs;
 import io.github.elebras1.flecs.Query;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.Building;
@@ -122,7 +123,7 @@ public final class CalibrationReport {
         Map<Long, Integer> outputGoodByType = new HashMap<>();
         Map<Long, float[]> workforceByType = new HashMap<>();
         Map<Long, String> typeNames = new HashMap<>();
-        Query typeQuery = ecsWorld.query().with(EconomyBuildingType.class).build();
+        Query typeQuery = ecsWorld.query().with(EconomyBuildingType.class).self().with(Flecs.Prefab).build();
         List<Long> typeIds = new ArrayList<>();
         typeQuery.each((long id) -> typeIds.add(id));
         for (long typeId : typeIds) {
@@ -132,21 +133,22 @@ public final class CalibrationReport {
             typeNames.put(typeId, ecsWorld.obtainEntity(typeId).name());
         }
 
-        Query query = ecsWorld.query().with(Building.class).with(EconomyBuilding.class).build();
+        Query query = ecsWorld.query().with(Building.class).with(EconomyBuilding.class).with(EconomyBuildingType.class).build();
         query.iter(iter -> {
             Field<Building> buildingField = iter.field(Building.class, 0);
             Field<EconomyBuilding> economyBuildingField = iter.field(EconomyBuilding.class, 1);
+            long buildingTypeId = iter.src(2);
             for (int i = 0; i < iter.count(); i++) {
                 BuildingView building = buildingField.getMutView(i);
                 EconomyBuildingView economyBuilding = economyBuildingField.getMutView(i);
-                Integer outputGood = outputGoodByType.get(building.typeId());
+                Integer outputGood = outputGoodByType.get(buildingTypeId);
                 if (outputGood != null && outputGood >= 0) {
                     this.buildingSupply[outputGood] += economyBuilding.production();
                 }
-                float[] workforce = workforceByType.get(building.typeId());
-                double[] typeTotals = this.buildingTypes.computeIfAbsent(typeNames.get(building.typeId()), name -> new double[BUILDING_COLUMNS.length]);
-                double[] typeInputs = this.buildingInputs.computeIfAbsent(typeNames.get(building.typeId()), name -> new double[GOOD_COUNT]);
-                this.buildingOutputGoods.put(typeNames.get(building.typeId()), outputGood);
+                float[] workforce = workforceByType.get(buildingTypeId);
+                double[] typeTotals = this.buildingTypes.computeIfAbsent(typeNames.get(buildingTypeId), name -> new double[BUILDING_COLUMNS.length]);
+                double[] typeInputs = this.buildingInputs.computeIfAbsent(typeNames.get(buildingTypeId), name -> new double[GOOD_COUNT]);
+                this.buildingOutputGoods.put(typeNames.get(buildingTypeId), outputGood);
                 typeTotals[0] += 1;
                 typeTotals[1] += building.size();
                 typeTotals[2] = workforce[2];
@@ -198,12 +200,13 @@ public final class CalibrationReport {
         }
 
         double[] amountByPopType = new double[POP_TYPE_COUNT];
-        Query query = ecsWorld.query().with(Population.class).build();
+        Query query = ecsWorld.query().with(Population.class).with(PopulationType.class).build();
         query.iter(iter -> {
+            int popTypeIndex = iter.field(PopulationType.class, 1).<PopulationTypeView>getView(0).index();
             Field<Population> populationField = iter.field(Population.class, 0);
             for (int i = 0; i < iter.count(); i++) {
                 PopulationView population = populationField.getMutView(i);
-                amountByPopType[population.index()] += population.amount();
+                amountByPopType[popTypeIndex] += population.amount();
             }
         });
 

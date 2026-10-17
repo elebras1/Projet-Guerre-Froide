@@ -25,6 +25,7 @@ public final class WorldLoader {
         CountryLoader country = new CountryLoader(context);
         MapLoader map = new MapLoader(context);
 
+        economy.declareTypeInheritance();
         economy.createGlobalMarket();
         politics.loadIdeologies(this.worldDao.readIdeologies());
         politics.loadLaws(this.worldDao.readLaws());

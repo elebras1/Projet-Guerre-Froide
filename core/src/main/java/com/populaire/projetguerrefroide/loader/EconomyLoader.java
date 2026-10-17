@@ -9,6 +9,7 @@ import com.populaire.projetguerrefroide.util.IncomeTypeUtils;
 import com.populaire.projetguerrefroide.util.StrataUtils;
 import io.github.elebras1.flecs.Entity;
 import io.github.elebras1.flecs.EntityView;
+import io.github.elebras1.flecs.Flecs;
 import io.github.elebras1.flecs.World;
 import java.util.Arrays;
 import java.util.Map;
@@ -24,6 +25,19 @@ public final class EconomyLoader {
         this.context = context;
         this.ecsWorld = context.ecsWorld();
         this.ecsConstants = context.ecsConstants();
+    }
+
+    public void declareTypeInheritance() {
+        this.ecsWorld.obtainEntity(this.ecsWorld.component(PopulationType.class)).add(Flecs.OnInstantiate, Flecs.Inherit);
+        this.ecsWorld.obtainEntity(this.ecsWorld.component(Color.class)).add(Flecs.OnInstantiate, Flecs.DontInherit);
+        this.ecsWorld.obtainEntity(this.ecsConstants.capitalistTag()).add(Flecs.OnInstantiate, Flecs.Inherit);
+        this.ecsWorld.obtainEntity(this.ecsConstants.aristocratTag()).add(Flecs.OnInstantiate, Flecs.Inherit);
+        this.ecsWorld.obtainEntity(this.ecsConstants.ruralTag()).add(Flecs.OnInstantiate, Flecs.Inherit);
+        this.ecsWorld.obtainEntity(this.ecsWorld.component(EconomyBuildingType.class)).add(Flecs.OnInstantiate, Flecs.Inherit);
+        this.ecsWorld.obtainEntity(this.ecsWorld.component(SpecialBuildingType.class)).add(Flecs.OnInstantiate, Flecs.Inherit);
+        this.ecsWorld.obtainEntity(this.ecsWorld.component(DevelopmentBuildingType.class)).add(Flecs.OnInstantiate, Flecs.Inherit);
+        this.ecsWorld.obtainEntity(this.ecsWorld.component(Modifiers.class)).add(Flecs.OnInstantiate, Flecs.Inherit);
+        this.ecsWorld.obtainEntity(this.ecsConstants.onMap()).add(Flecs.OnInstantiate, Flecs.Inherit);
     }
 
     public void createGlobalMarket() {
@@ -94,7 +108,7 @@ public final class EconomyLoader {
             int capitalistPopTypeIndex = -1;
             int aristocratPopTypeIndex = -1;
             for (Map.Entry<String, PopulationTypeJson> populationType : populationTypes.entrySet()) {
-                this.loadPopulationType(populationType.getValue(), populationType.getKey());
+                this.loadPopulationType(populationType.getValue(), populationType.getKey(), index);
                 long populationTypeId = this.ecsWorld.lookup(populationType.getKey());
                 this.context.populationTypeIds()[index] = populationTypeId;
 
@@ -113,11 +127,12 @@ public final class EconomyLoader {
         }
     }
 
-    private void loadPopulationType(PopulationTypeJson populationTypeJson, String name) {
+    private void loadPopulationType(PopulationTypeJson populationTypeJson, String name, int index) {
         try {
             int color = this.context.parseColor(populationTypeJson.color());
             long populationTypeId = this.ecsWorld.entity(name);
             EntityView populationType = this.ecsWorld.obtainEntityView(populationTypeId);
+            populationType.add(Flecs.Prefab);
             populationType.set(new Color(color));
             int incomeType = IncomeTypeUtils.getIncomeType(populationTypeJson.incomeType());
             switch (incomeType) {
@@ -144,7 +159,7 @@ public final class EconomyLoader {
             this.context.fillGoods(populationTypeJson.luxuryNeeds(), luxuryNeedsGoodIndexes, luxuryNeedsGoodIds, luxuryNeedsGoodAmounts);
 
             int strata = StrataUtils.getStrata(populationTypeJson.strata());
-            populationType.set(new PopulationType(lifeNeedsGoodIndexes, lifeNeedsGoodIds, lifeNeedsGoodAmounts, everydayNeedsGoodIndexes, everydayNeedsGoodIds, everydayNeedsGoodAmounts, luxuryNeedsGoodIndexes, luxuryNeedsGoodIds, luxuryNeedsGoodAmounts, strata, incomeType));
+            populationType.set(new PopulationType(lifeNeedsGoodIndexes, lifeNeedsGoodIds, lifeNeedsGoodAmounts, everydayNeedsGoodIndexes, everydayNeedsGoodIds, everydayNeedsGoodAmounts, luxuryNeedsGoodIndexes, luxuryNeedsGoodIds, luxuryNeedsGoodAmounts, strata, incomeType, index));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }
@@ -205,6 +220,7 @@ public final class EconomyLoader {
         try {
             for(var economyBuildingEntry : buildings.economyBuilding().entrySet()) {
                 EntityView building = this.ecsWorld.obtainEntityView(this.ecsWorld.entity(economyBuildingEntry.getKey()));
+                building.add(Flecs.Prefab);
                 BuildingJson buildingJson = economyBuildingEntry.getValue();
                 int time = (int) buildingJson.time();
                 byte maxLevel = buildingJson.maxLevel().byteValue();
@@ -265,6 +281,7 @@ public final class EconomyLoader {
 
             for(var specialBuildingEntry : buildings.specialBuilding().entrySet()) {
                 EntityView building = this.ecsWorld.obtainEntityView(this.ecsWorld.entity(specialBuildingEntry.getKey()));
+                building.add(Flecs.Prefab);
                 BuildingJson buildingJson = specialBuildingEntry.getValue();
                 long[] goodCostIds = new long[MAX_GOODS];
                 float[] goodCostAmounts = new float[MAX_GOODS];
@@ -277,6 +294,7 @@ public final class EconomyLoader {
 
             for(var developmentBuildingEntry : buildings.developmentBuilding().entrySet()) {
                 EntityView building = this.ecsWorld.obtainEntityView(this.ecsWorld.entity(developmentBuildingEntry.getKey()));
+                building.add(Flecs.Prefab);
                 BuildingJson buildingJson = developmentBuildingEntry.getValue();
                 long[] goodCostIds = new long[MAX_GOODS];
                 float[] goodCostAmounts = new float[MAX_GOODS];
