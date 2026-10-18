@@ -33,6 +33,9 @@ public class EconomyBuildingWorkingCapitalSystem {
         CountryInvestmentMutView countryInvestment = null;
         CountryBudgetView countryBudget = null;
 
+        long regionId = 0;
+        RegionInstanceView regionInstance = null;
+
         Field<Building> buildingField = iter.field(Building.class, 0);
         Field<EconomyBuilding> economyBuildingField = iter.field(EconomyBuilding.class, 1);
         EconomyBuildingTypeView buildingTypeData = iter.field(EconomyBuildingType.class, 2).getView(0);
@@ -43,6 +46,10 @@ public class EconomyBuildingWorkingCapitalSystem {
                 continue;
             }
             BuildingView building = buildingField.getMutView(i);
+            if (building.parentId() != regionId) {
+                regionId = building.parentId();
+                regionInstance = iter.world().obtainEntityView(regionId).getView(RegionInstance.class);
+            }
             if (building.countryId() != countryId) {
                 countryId = building.countryId();
                 EntityView country = iter.world().obtainEntityView(countryId);
@@ -56,7 +63,7 @@ public class EconomyBuildingWorkingCapitalSystem {
             int level = building.size();
             float utilization = economyBuilding.utilization();
             double dailyCost = inputCost(economyBuilding, countryMarket, inputScale(countryProductionPolicy, level, utilization * level))
-                + wageBill(countryMarket, buildingTypeData, countryLaborPolicy.minWageFactor(),
+                + wageBill(countryMarket, regionInstance, buildingTypeData, countryLaborPolicy.minWageFactor(),
                     utilization * maxWorkers(buildingTypeData, level, buildingTypeData.primaryWorkerPopTypeRatio()),
                     utilization * maxWorkers(buildingTypeData, level, buildingTypeData.secondaryWorkerPopTypeRatio()));
             if (economyBuilding.treasury() >= dailyCost) {

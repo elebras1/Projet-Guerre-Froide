@@ -27,12 +27,19 @@ public class EconomyBuildingUtilizationSystem {
         CountryLaborPolicyView countryLaborPolicy = null;
         CountryProductionPolicyView countryProductionPolicy = null;
 
+        long regionId = 0;
+        RegionInstanceView regionInstance = null;
+
         Field<Building> buildingField = iter.field(Building.class, 0);
         Field<EconomyBuilding> economyBuildingField = iter.field(EconomyBuilding.class, 1);
         EconomyBuildingTypeView buildingTypeData = iter.field(EconomyBuildingType.class, 2).getView(0);
 
         for (int i = 0; i < iter.count(); i++) {
             BuildingView building = buildingField.getMutView(i);
+            if (building.parentId() != regionId) {
+                regionId = building.parentId();
+                regionInstance = iter.world().obtainEntityView(regionId).getView(RegionInstance.class);
+            }
             EconomyBuildingMutView economyBuilding = economyBuildingField.getMutView(i);
 
             if (building.countryId() != countryId) {
@@ -46,7 +53,7 @@ public class EconomyBuildingUtilizationSystem {
             int level = building.size();
             double value = (double) economyBuilding.unitRevenue() * buildingTypeData.goodOutputAmount() * outputScale(countryProductionPolicy, level, 1f, level);
             double costs = inputCost(economyBuilding, countryMarket, inputScale(countryProductionPolicy, level, level))
-                + wageBill(countryMarket, buildingTypeData, countryLaborPolicy.minWageFactor(),
+                + wageBill(countryMarket, regionInstance, buildingTypeData, countryLaborPolicy.minWageFactor(),
                     maxWorkers(buildingTypeData, level, buildingTypeData.primaryWorkerPopTypeRatio()),
                     maxWorkers(buildingTypeData, level, buildingTypeData.secondaryWorkerPopTypeRatio()));
             float unitMargin = costs > 0.0 ? (float) ((value - costs) / costs) : (value > 0.0 ? 1f : 0f);

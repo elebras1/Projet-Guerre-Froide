@@ -13,6 +13,7 @@ public record EconomyBuilding(
     float unitRevenue,
     float unitMargin,
     float profit,
+    float profitTrend,
     float dividend,
     double treasury,
     int primaryWorkerAmount,

@@ -39,6 +39,7 @@ public class EconomyService {
     private final EconomyBuildingProductionSystem economyBuildingProductionSystem;
     private final EconomyBuildingSpreadProductionSystem economyBuildingSpreadProductionSystem;
     private final EconomyBuildingUtilizationSystem economyBuildingUtilizationSystem;
+    private final LabourMarketSystem labourMarketSystem;
     private final EconomyBuildingWorkingCapitalSystem economyBuildingWorkingCapitalSystem;
     private final EconomyBuildingInputStockInitializationSystem economyBuildingInputStockInitializationSystem;
     private final CountryStockSystem countryStockSystem;
@@ -116,6 +117,7 @@ public class EconomyService {
         long phaseInitBudget = ecsWorld.entity("PhaseInitBudget");
         long phaseInitSavings = ecsWorld.entity("PhaseInitSavings");
         long phaseUtilization = ecsWorld.entity("PhaseUtilization");
+        long phaseLabourMarket = ecsWorld.entity("PhaseLabourMarket");
 
         this.initPipeline = ecsWorld.pipeline("InitEconomyPipeline")
             .with(Flecs.System)
@@ -169,6 +171,7 @@ public class EconomyService {
             .with(phaseSpread).or()
             .with(phaseRgoEmployment).or()
             .with(phaseEmployment).or()
+            .with(phaseLabourMarket).or()
             .with(phaseSync).or()
             .with(phaseReset).or()
             .with(phaseNeedsCosts).or()
@@ -201,6 +204,7 @@ public class EconomyService {
         this.rgoEmploymentSystem = new RGOEmploymentSystem(ecsWorld, gameContext.getEcsConstants(), phaseRgoEmployment);
         this.economyBuildingWorkerDemandSystem = new EconomyBuildingWorkerDemandSystem(ecsWorld, phaseEmployment);
         this.economyBuildingEmploymentSystem = new EconomyBuildingEmploymentSystem(ecsWorld, phaseEmployment);
+        this.labourMarketSystem = new LabourMarketSystem(ecsWorld, phaseLabourMarket);
         this.populationEmploymentSynchronizationSystem = new PopulationEmploymentSynchronizationSystem(ecsWorld, gameContext.getEcsConstants(), phaseSync);
 
         this.globalMarketResetSystem = new GlobalMarketResetSystem(ecsWorld, phaseReset);

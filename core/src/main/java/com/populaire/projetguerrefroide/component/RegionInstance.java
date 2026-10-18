@@ -10,5 +10,6 @@ import static com.populaire.projetguerrefroide.util.Constants.POP_TYPE_COUNT;
 public record RegionInstance(
     long regionId,
     long ownerId,
-    @FixedArray(length = POP_TYPE_COUNT) float[] workerPopTypeEmploymentRatios) {
+    @FixedArray(length = POP_TYPE_COUNT) float[] workerPopTypeEmploymentRatios,
+    @FixedArray(length = POP_TYPE_COUNT) float[] wagePremiumByPopType) {
 }

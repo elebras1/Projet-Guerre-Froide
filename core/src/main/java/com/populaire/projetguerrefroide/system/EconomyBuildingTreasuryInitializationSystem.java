@@ -27,11 +27,18 @@ public class EconomyBuildingTreasuryInitializationSystem {
         CountryLaborPolicyView countryLaborPolicy = null;
         CountryProductionPolicyView countryProductionPolicy = null;
 
+        long regionId = 0;
+        RegionInstanceView regionInstance = null;
+
         Field<Building> buildingField = iter.field(Building.class, 0);
         Field<EconomyBuilding> economyBuildingField = iter.field(EconomyBuilding.class, 1);
         EconomyBuildingTypeView buildingTypeData = iter.field(EconomyBuildingType.class, 2).getView(0);
         for (int i = 0; i < iter.count(); i++) {
             BuildingView building = buildingField.getMutView(i);
+            if (building.parentId() != regionId) {
+                regionId = building.parentId();
+                regionInstance = iter.world().obtainEntityView(regionId).getView(RegionInstance.class);
+            }
             EconomyBuildingMutView economyBuilding = economyBuildingField.getMutView(i);
 
             if (building.countryId() != countryId) {
@@ -45,8 +52,9 @@ public class EconomyBuildingTreasuryInitializationSystem {
             int level = building.size();
             float inputScale = inputScale(countryProductionPolicy, level, effectiveScale(economyBuilding, buildingTypeData, level));
             double dailyCost = inputCost(economyBuilding, countryMarket, inputScale)
-                + wageBill(countryMarket, buildingTypeData, countryLaborPolicy.minWageFactor(), economyBuilding.primaryWorkerAmount(), economyBuilding.secondaryWorkerAmount());
+                + wageBill(countryMarket, regionInstance, buildingTypeData, countryLaborPolicy.minWageFactor(), economyBuilding.primaryWorkerAmount(), economyBuilding.secondaryWorkerAmount());
             economyBuilding.treasury(FACTORY_TREASURY_BUFFER_DAYS * dailyCost + Math.max(0f, economyBuilding.profit()) / DIVIDEND_RATE);
+            economyBuilding.profitTrend(economyBuilding.profit());
         }
     }
 }

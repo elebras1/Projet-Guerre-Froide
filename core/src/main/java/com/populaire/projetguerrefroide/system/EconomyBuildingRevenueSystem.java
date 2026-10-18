@@ -26,6 +26,9 @@ public class EconomyBuildingRevenueSystem {
         CountryLaborPolicyView countryLaborPolicy = null;
         CountryProductionPolicyView countryProductionPolicy = null;
 
+        long regionId = 0;
+        RegionInstanceView regionInstance = null;
+
         Field<Building> buildingField = iter.field(Building.class, 0);
         Field<EconomyBuilding> economyBuildingField = iter.field(EconomyBuilding.class, 1);
         EconomyBuildingTypeView buildingTypeData = iter.field(EconomyBuildingType.class, 2).getView(0);
@@ -33,6 +36,10 @@ public class EconomyBuildingRevenueSystem {
 
         for (int i = 0; i < iter.count(); i++) {
             BuildingView building = buildingField.getMutView(i);
+            if (building.parentId() != regionId) {
+                regionId = building.parentId();
+                regionInstance = iter.world().obtainEntityView(regionId).getView(RegionInstance.class);
+            }
             EconomyBuildingMutView economyBuilding = economyBuildingField.getMutView(i);
 
             if (building.countryId() != countryId) {
@@ -49,8 +56,8 @@ public class EconomyBuildingRevenueSystem {
             double treasury = economyBuilding.treasury() + revenue;
 
             float minWageFactor = countryLaborPolicy.minWageFactor();
-            float primaryWages = minWagePerUnit(countryMarket, buildingTypeData.primaryWorkerPopTypeIndex(), minWageFactor) * economyBuilding.primaryWorkerAmount() / NEEDS_SCALING_FACTOR;
-            float secondaryWages = minWagePerUnit(countryMarket, buildingTypeData.secondaryWorkerPopTypeIndex(), minWageFactor) * economyBuilding.secondaryWorkerAmount() / NEEDS_SCALING_FACTOR;
+            float primaryWages = wagePerUnit(countryMarket, regionInstance, buildingTypeData.primaryWorkerPopTypeIndex(), minWageFactor) * economyBuilding.primaryWorkerAmount() / NEEDS_SCALING_FACTOR;
+            float secondaryWages = wagePerUnit(countryMarket, regionInstance, buildingTypeData.secondaryWorkerPopTypeIndex(), minWageFactor) * economyBuilding.secondaryWorkerAmount() / NEEDS_SCALING_FACTOR;
             float wageBill = primaryWages + secondaryWages;
             double available = Math.max(0.0, treasury);
             float wageRatio = wageBill > available ? (float) (available / wageBill) : 1f;
@@ -66,7 +73,9 @@ public class EconomyBuildingRevenueSystem {
             float maxSecondary = maxWorkers(buildingTypeData, level, buildingTypeData.secondaryWorkerPopTypeRatio());
             float fullOutput = buildingTypeData.goodOutputAmount() * outputScale(countryProductionPolicy, level, economyBuilding.secondaryWorkerAmount() / Math.max(1f, maxSecondary), effectiveScale);
             float stockRatio = fullOutput > 0f ? economyBuilding.production() / fullOutput : 0f;
-            economyBuilding.profit((float) (revenue - wages - dailyInputCost * stockRatio));
+            float profit = (float) (revenue - wages - dailyInputCost * stockRatio);
+            economyBuilding.profit(profit);
+            economyBuilding.profitTrend(economyBuilding.profitTrend() + (profit - economyBuilding.profitTrend()) / DAYS_PER_YEAR);
 
             double buffer = FACTORY_TREASURY_BUFFER_DAYS * (dailyInputCost + wageBill);
             double dividend = DIVIDEND_RATE * Math.max(0.0, treasury - buffer);

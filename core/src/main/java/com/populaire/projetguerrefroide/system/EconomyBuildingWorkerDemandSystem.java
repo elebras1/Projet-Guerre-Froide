@@ -46,6 +46,10 @@ public class EconomyBuildingWorkerDemandSystem {
 
             regionInstanceIncome.workerDemandByPopType(primaryWorkerPopTypeIndex, regionInstanceIncome.workerDemandByPopType(primaryWorkerPopTypeIndex) + primaryTarget);
             regionInstanceIncome.workerDemandByPopType(secondaryWorkerPopTypeIndex, regionInstanceIncome.workerDemandByPopType(secondaryWorkerPopTypeIndex) + secondaryTarget);
+            if (economyBuilding.unitMargin() > 0f) {
+                regionInstanceIncome.solventWorkerDemandByPopType(primaryWorkerPopTypeIndex, regionInstanceIncome.solventWorkerDemandByPopType(primaryWorkerPopTypeIndex) + primaryTarget);
+                regionInstanceIncome.solventWorkerDemandByPopType(secondaryWorkerPopTypeIndex, regionInstanceIncome.solventWorkerDemandByPopType(secondaryWorkerPopTypeIndex) + secondaryTarget);
+            }
         }
     }
 }
