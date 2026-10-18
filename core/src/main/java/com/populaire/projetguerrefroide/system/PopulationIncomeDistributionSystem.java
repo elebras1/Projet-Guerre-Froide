@@ -42,6 +42,7 @@ public class PopulationIncomeDistributionSystem {
         CountryTaxPolicyView countryTaxPolicy = null;
         CountryBudgetView countryBudget = null;
         CountryBankMutView countryBank = null;
+        CountryInvestmentMutView countryInvestment = null;
 
         Field<Population> populationField = iter.field(Population.class, 0);
         for (int i = 0; i < iter.count(); i++) {
@@ -61,6 +62,7 @@ public class PopulationIncomeDistributionSystem {
                 countryTaxPolicy = country.getMutView(CountryTaxPolicy.class);
                 countryBudget = country.getMutView(CountryBudget.class);
                 countryBank = country.getMutView(CountryBank.class);
+                countryInvestment = country.getMutView(CountryInvestment.class);
             }
 
             float grossIncome = 0f;
@@ -128,7 +130,11 @@ public class PopulationIncomeDistributionSystem {
             float deposit = Math.min(population.unspentBudget(), Math.max(0f, population.savings()));
             if (deposit > 0f) {
                 population.savings(population.savings() - deposit);
-                countryBank.deposits(countryBank.deposits() + deposit);
+                if (capitalist) {
+                    countryInvestment.funds(CAPITALIST_OWNER, countryInvestment.funds(CAPITALIST_OWNER) + deposit);
+                } else {
+                    countryBank.deposits(countryBank.deposits() + deposit);
+                }
             }
 
             float coveredLifeShare = SubsistenceUtils.coveredLifeShare(rural, population.amount(), population.employment());

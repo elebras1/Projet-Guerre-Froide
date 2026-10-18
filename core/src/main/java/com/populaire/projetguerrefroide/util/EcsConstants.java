@@ -23,7 +23,9 @@ public class EcsConstants {
     public static final String SERVICE_GOOD_TAG = "ServiceGoodTag";
     public static final String ON_MAP = "OnMap";
     public static final String SUSPENDED = "Suspended";
+    public static final String LEVELED_UP = "LeveledUp";
     public static final String CAPITALIST_TAG = "CapitalistTag";
+    public static final String WORKERS_TAG = "WorkersTag";
     public static final String ARISTOCRAT_TAG = "AristocratTag";
     public static final String RURAL_TAG = "RuralTag";
     public static final String SEA_FORCE_TAG = "SeaForceTypeTag";
@@ -50,7 +52,9 @@ public class EcsConstants {
     private final long serviceGoodTag;
     private final long onMap;
     private final long suspended;
+    private final long leveledUp;
     private final long capitalistTag;
+    private final long workersTag;
     private final long aristocratTag;
     private final long ruralTag;
     private final long seaForceTag;
@@ -78,7 +82,9 @@ public class EcsConstants {
         this.serviceGoodTag = ecsWorld.entity(SERVICE_GOOD_TAG);
         this.onMap = ecsWorld.entity(ON_MAP);
         this.suspended = ecsWorld.entity(SUSPENDED);
+        this.leveledUp = ecsWorld.entity(LEVELED_UP);
         this.capitalistTag = ecsWorld.entity(CAPITALIST_TAG);
+        this.workersTag = ecsWorld.entity(WORKERS_TAG);
         this.aristocratTag = ecsWorld.entity(ARISTOCRAT_TAG);
         this.ruralTag = ecsWorld.entity(RURAL_TAG);
         this.seaForceTag = ecsWorld.entity(SEA_FORCE_TAG);
@@ -164,6 +170,14 @@ public class EcsConstants {
 
     public long suspended() {
         return this.suspended;
+    }
+
+    public long leveledUp() {
+        return this.leveledUp;
+    }
+
+    public long workersTag() {
+        return this.workersTag;
     }
 
     public long capitalistTag() {

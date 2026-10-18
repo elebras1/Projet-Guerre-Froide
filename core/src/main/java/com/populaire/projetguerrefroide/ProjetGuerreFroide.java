@@ -42,9 +42,9 @@ public class ProjetGuerreFroide extends Game {
         this.registerComponents();
         this.gameContext = this.configurationService.getGameContext(this.ecsWorld);
         CommandBus commandBus = new CommandBus();
-        ExpansionBuildingSystem expandBuildingSystem = new ExpansionBuildingSystem(this.ecsWorld, commandBus);
+        new BuildingLevelUpNotificationSystem(this.ecsWorld, this.gameContext.getEcsConstants(), commandBus);
         QueryRepository queryRepository = new QueryRepository(this.gameContext.getEcsWorld());
-        BuildingService buildingService = new BuildingService(this.gameContext, expandBuildingSystem);
+        BuildingService buildingService = new BuildingService(this.gameContext);
         EconomyService economyService = new EconomyService(this.gameContext);
         RegionService regionService = new RegionService(this.gameContext, buildingService, queryRepository);
         CountryService countryService = new CountryService(this.gameContext, queryRepository, regionService);
@@ -87,7 +87,8 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(SpecialBuilding.class);
         this.ecsWorld.component(DevelopmentBuilding.class);
         this.ecsWorld.component(ResourceGathering.class);
-        this.ecsWorld.component(ExpansionBuilding.class);
+        this.ecsWorld.component(ConstructionSite.class);
+        this.ecsWorld.component(CountryInvestment.class);
         this.ecsWorld.component(RegionInstance.class);
         this.ecsWorld.component(Population.class);
         this.ecsWorld.component(CountryBudget.class);

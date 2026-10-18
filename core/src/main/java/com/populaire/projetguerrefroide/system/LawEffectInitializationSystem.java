@@ -92,6 +92,7 @@ public class LawEffectInitializationSystem {
                             case FACTORY_OUTPUT_MODIFIER -> productionPolicy.factoryOutputModifier(productionPolicy.factoryOutputModifier() + modifierValue);
                             case RGO_OUTPUT_MODIFIER -> productionPolicy.rgoOutputModifier(productionPolicy.rgoOutputModifier() + modifierValue);
                             case CONSTRUCTION_SPEED -> productionPolicy.constructionSpeed(productionPolicy.constructionSpeed() + modifierValue);
+                            case STATE_CONSTRUCTION -> productionPolicy.stateConstruction(productionPolicy.stateConstruction() + modifierValue);
                             case POP_GROWTH_FACTOR -> populationPolicy.popGrowthFactor(populationPolicy.popGrowthFactor() + modifierValue);
                             case EDUCATION_EFFICIENCY -> educationPolicy.educationEfficiency(educationPolicy.educationEfficiency() + modifierValue);
                             case MIGRATION_PULL -> populationPolicy.migrationPull(populationPolicy.migrationPull() + modifierValue);
@@ -140,6 +141,7 @@ public class LawEffectInitializationSystem {
                             case FACTORY_OUTPUT_MODIFIER -> productionPolicy.factoryOutputModifier(overrideValue);
                             case RGO_OUTPUT_MODIFIER -> productionPolicy.rgoOutputModifier(overrideValue);
                             case CONSTRUCTION_SPEED -> productionPolicy.constructionSpeed(overrideValue);
+                            case STATE_CONSTRUCTION -> productionPolicy.stateConstruction(overrideValue);
                             case POP_GROWTH_FACTOR -> populationPolicy.popGrowthFactor(overrideValue);
                             case EDUCATION_EFFICIENCY -> educationPolicy.educationEfficiency(overrideValue);
                             case MIGRATION_PULL -> populationPolicy.migrationPull(overrideValue);

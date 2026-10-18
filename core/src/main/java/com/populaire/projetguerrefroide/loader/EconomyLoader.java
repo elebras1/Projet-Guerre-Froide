@@ -296,16 +296,18 @@ public final class EconomyLoader {
                 EntityView building = this.ecsWorld.obtainEntityView(this.ecsWorld.entity(developmentBuildingEntry.getKey()));
                 building.add(Flecs.Prefab);
                 BuildingJson buildingJson = developmentBuildingEntry.getValue();
+                int[] goodCostIndexes = new int[MAX_GOODS];
+                Arrays.fill(goodCostIndexes, -1);
                 long[] goodCostIds = new long[MAX_GOODS];
                 float[] goodCostAmounts = new float[MAX_GOODS];
-                this.context.fillGoodCosts(buildingJson.goodsCost(), goodCostIds, goodCostAmounts);
+                this.context.fillGoods(buildingJson.goodsCost(), goodCostIndexes, goodCostIds, goodCostAmounts);
                 if(buildingJson.onmap()) {
                     building.add(this.ecsConstants.onMap());
                 }
                 if (buildingJson.modifier() != null) {
                     building.set(this.createBuildingModifiers(buildingJson.modifier()));
                 }
-                building.set(new DevelopmentBuildingType((int) buildingJson.time(), buildingJson.cost().intValue(), goodCostIds, goodCostAmounts, buildingJson.maxLevel().intValue()));
+                building.set(new DevelopmentBuildingType((int) buildingJson.time(), buildingJson.cost().intValue(), goodCostIndexes, goodCostIds, goodCostAmounts, buildingJson.maxLevel().intValue()));
             }
         } catch (Exception exception) {
             throw new RuntimeException(exception);

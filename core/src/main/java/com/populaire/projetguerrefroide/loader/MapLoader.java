@@ -7,6 +7,7 @@ import com.populaire.projetguerrefroide.component.Demographics;
 import com.populaire.projetguerrefroide.dao.csv.ProvinceDefinitionCsv;
 import com.populaire.projetguerrefroide.dao.json.*;
 import com.populaire.projetguerrefroide.pojo.*;
+import com.populaire.projetguerrefroide.util.EconomyBuildingUtils;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 import io.github.elebras1.flecs.Entity;
 import io.github.elebras1.flecs.EntityView;
@@ -195,13 +196,7 @@ public final class MapLoader {
                                 if(buildingType.has(EconomyBuildingType.class)) {
                                     EconomyBuildingTypeView buildingTypeData = buildingType.getMutView(EconomyBuildingType.class);
                                     boolean advancedRecipe = regionBuildingModesById != null && regionBuildingModesById.get(buildingTypeId) == 1 && buildingTypeData.advancedGoodInputIndexes(0) >= 0;
-                                    int[] activeInputGoodIndexes = new int[MAX_GOODS];
-                                    float[] activeInputAmounts = new float[MAX_GOODS];
-                                    for(int g = 0; g < MAX_GOODS; g++) {
-                                        activeInputGoodIndexes[g] = advancedRecipe ? buildingTypeData.advancedGoodInputIndexes(g) : buildingTypeData.goodInputIndexes(g);
-                                        activeInputAmounts[g] = advancedRecipe ? buildingTypeData.advancedGoodInputAmounts(g) : buildingTypeData.goodInputAmounts(g);
-                                    }
-                                    building.set(new EconomyBuilding(0, 0f, 1f, 0f, 0d, 1f, 0, 0, 0f, 0f, new float[MAX_GOODS], activeInputGoodIndexes, activeInputAmounts, advancedRecipe));
+                                    building.set(EconomyBuildingUtils.newEconomyBuilding(buildingTypeData, advancedRecipe, 0));
                                 } else if (buildingType.has(SpecialBuildingType.class)) {
                                     building.set(new SpecialBuilding());
                                 }

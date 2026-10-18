@@ -4,10 +4,10 @@
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 7
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 350
       },
       "input_goods": {
         "oil": 3.8
@@ -22,10 +22,10 @@
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 7
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 350
       },
       "input_goods": {
         "coal": 6.3
@@ -40,10 +40,10 @@
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 7
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 350
       },
       "input_goods": {
         "renewable_energy": 6.3
@@ -57,11 +57,11 @@
     "nuclear_powerplant": {
       "base_type": "type_economy_advanced",
       "goods_cost": {
-        "cement": 50,
-        "glass": 18,
-        "steel": 50,
-        "machine_parts": 25,
-        "electronic_components": 10
+        "cement": 2500,
+        "glass": 900,
+        "steel": 2500,
+        "machine_parts": 1250,
+        "electronic_components": 500
       },
       "input_goods": {
         "uranium": 3.4
@@ -76,9 +76,9 @@
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
       "goods_cost": {
-        "wood": 20,
-        "steel": 20,
-        "machine_parts": 7
+        "wood": 1000,
+        "steel": 1000,
+        "machine_parts": 350
       },
       "input_goods": {
         "iron": 1,
@@ -99,10 +99,10 @@
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "wood": 20,
-        "machine_parts": 7
+        "cement": 1000,
+        "glass": 350,
+        "wood": 1000,
+        "machine_parts": 350
       },
       "input_goods": {
         "iron": 13,
@@ -123,10 +123,10 @@
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 7
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 350
       },
       "input_goods": {
         "coal": 2.4,
@@ -148,10 +148,10 @@
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 7
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 350
       },
       "input_goods": {
         "fish": 1,
@@ -168,10 +168,10 @@
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 7
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 350
       },
       "input_goods": {
         "meat": 1,
@@ -188,10 +188,10 @@
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 7
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 350
       },
       "input_goods": {
         "fruits": 1,
@@ -208,10 +208,10 @@
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 7
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 350
       },
       "input_goods": {
         "vegetables": 1,
@@ -228,10 +228,10 @@
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 7
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 350
       },
       "input_goods": {
         "coal": 5.5
@@ -248,10 +248,10 @@
     "inorganic_chemicals_factory": {
       "base_type": "type_economy_advanced",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 7
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 350
       },
       "input_goods": {
         "coal": 1.5,
@@ -273,10 +273,10 @@
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 7
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 350
       },
       "input_goods": {
         "vegetables": 2.5,
@@ -296,10 +296,10 @@
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 7
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 350
       },
       "input_goods": {
         "oil": 0.76
@@ -314,10 +314,10 @@
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 7
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 350
       },
       "input_goods": {
         "wood": 2.7,
@@ -336,11 +336,11 @@
     "integrated_circuits_factory": {
       "base_type": "type_economy_advanced",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 20,
-        "aluminium": 10
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 1000,
+        "aluminium": 500
       },
       "input_goods": {
         "rare_metals": 2,
@@ -356,11 +356,11 @@
     "electronic_components_factory": {
       "base_type": "type_economy_advanced",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 20,
-        "aluminium": 10
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 1000,
+        "aluminium": 500
       },
       "input_goods": {
         "rare_metals": 3.2,
@@ -377,11 +377,11 @@
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "wood": 20,
-        "aluminium": 10
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "wood": 1000,
+        "aluminium": 500
       },
       "input_goods": {
         "steel": 0.76,
@@ -402,12 +402,12 @@
     "computers_factory": {
       "base_type": "type_economy_advanced",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "machine_parts": 20,
-        "electronic_components": 20,
-        "integrated_circuits": 15,
-        "aluminium": 10
+        "cement": 1000,
+        "glass": 350,
+        "machine_parts": 1000,
+        "electronic_components": 1000,
+        "integrated_circuits": 750,
+        "aluminium": 500
       },
       "input_goods": {
         "integrated_circuits": 2,
@@ -425,10 +425,10 @@
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 50
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 2500
       },
       "input_goods": {
         "plastics": 4.2,
@@ -452,10 +452,10 @@
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 7
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 350
       },
       "input_goods": {
         "fabric": 12,
@@ -474,11 +474,11 @@
     "pharmaceuticals_factory": {
       "base_type": "type_economy_advanced",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 7,
-        "electronic_components": 10
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 350,
+        "electronic_components": 500
       },
       "input_goods": {
         "inorganic_chemicals": 3,
@@ -493,11 +493,11 @@
     "communication_factory": {
       "base_type": "type_economy_advanced",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 7,
-        "electronic_components": 10
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 350,
+        "electronic_components": 500
       },
       "input_goods": {
         "electronic_components": 9.6,
@@ -513,10 +513,10 @@
     "multimodal_transport": {
       "base_type": "type_economy",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 7
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 350
       },
       "input_goods": {
         "automobiles": 1.8,
@@ -542,10 +542,10 @@
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 7
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 350
       },
       "input_goods": {
         "steel": 5,
@@ -569,10 +569,10 @@
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 7
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 350
       },
       "input_goods": {
         "steel": 4,
@@ -595,12 +595,12 @@
     "centrifuges": {
       "base_type": "type_economy_advanced",
       "goods_cost": {
-        "cement": 30,
-        "glass": 11,
-        "steel": 30,
-        "rare_metals": 20,
-        "machine_parts": 20,
-        "electronic_components": 10
+        "cement": 1500,
+        "glass": 550,
+        "steel": 1500,
+        "rare_metals": 1000,
+        "machine_parts": 1000,
+        "electronic_components": 500
       },
       "input_goods": {
         "uranium": 6,
@@ -615,12 +615,12 @@
     "military_satellites_factory": {
       "base_type": "type_economy_advanced",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 20,
-        "electronic_components": 10,
-        "computers": 5
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 1000,
+        "electronic_components": 500,
+        "computers": 250
       },
       "input_goods": {
         "machine_parts": 5,
@@ -636,11 +636,11 @@
     "armoured_vehicles_factory": {
       "base_type": "type_economy_advanced",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 20,
-        "electronic_components": 10
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 1000,
+        "electronic_components": 500
       },
       "input_goods": {
         "plastics": 3,
@@ -658,11 +658,11 @@
     "ships_factory": {
       "base_type": "type_economy_advanced",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 20,
-        "electronic_components": 10
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 1000,
+        "electronic_components": 500
       },
       "input_goods": {
         "steel": 4,
@@ -679,11 +679,11 @@
     "aeroplanes_factory": {
       "base_type": "type_economy_advanced",
       "goods_cost": {
-        "cement": 20,
-        "glass": 7,
-        "steel": 20,
-        "machine_parts": 20,
-        "electronic_components": 10
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 1000,
+        "electronic_components": 500
       },
       "input_goods": {
         "steel": 4,

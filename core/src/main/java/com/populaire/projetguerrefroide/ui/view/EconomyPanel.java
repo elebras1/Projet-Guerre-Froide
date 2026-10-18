@@ -2,6 +2,7 @@ package com.populaire.projetguerrefroide.ui.view;
 
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
@@ -142,6 +143,7 @@ public class EconomyPanel extends Table {
 
         Label.LabelStyle jockey16Dark = this.labelStylePool.get("jockey_16_dark");
         Button expandButton = this.widgetFactory.createButton(this.skin, "eco_folder_yellow_btn", 636, 94, this.buildingSelectedTable);
+        expandButton.setName("btn_expand");
         expandButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -171,6 +173,7 @@ public class EconomyPanel extends Table {
         this.widgetFactory.createLabel(this.localisation.get("SUSPEND"), jockey16Dark, 23, 0, suspendButton);
 
         Button demolishButton = this.widgetFactory.createButton(this.skin, "eco_folder_red_btn", 636, 22, this.buildingSelectedTable);
+        demolishButton.setName("btn_demolish");
         demolishButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -365,6 +368,12 @@ public class EconomyPanel extends Table {
         } else {
             suspendButton.setVisible(true);
             resumeButton.setVisible(false);
+        }
+        String[] stateActionButtonNames = {"btn_expand", "btn_suspend", "btn_resume", "btn_demolish"};
+        for (String buttonName : stateActionButtonNames) {
+            Button button = this.buildingSelectedTable.findActor(buttonName);
+            button.setDisabled(!buildingDto.stateControlled());
+            button.setTouchable(buildingDto.stateControlled() ? Touchable.enabled : Touchable.disabled);
         }
 
         Label provinceLabel = this.buildingSelectedTable.findActor("lbl_province");

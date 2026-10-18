@@ -11,6 +11,8 @@ import com.populaire.projetguerrefroide.component.Country;
 import com.populaire.projetguerrefroide.component.CountryBank;
 import com.populaire.projetguerrefroide.component.CountryBankView;
 import com.populaire.projetguerrefroide.component.CountryBudget;
+import com.populaire.projetguerrefroide.component.CountryInvestment;
+import com.populaire.projetguerrefroide.component.CountryInvestmentView;
 import com.populaire.projetguerrefroide.component.CountryBudgetPolicy;
 import com.populaire.projetguerrefroide.component.CountryBudgetPolicyView;
 import com.populaire.projetguerrefroide.component.CountryBudgetView;
@@ -137,6 +139,7 @@ public class SimulationRecorder implements AutoCloseable {
     private final double[] countryPopSpending;
     private final double[] yearCountryStrataSavings;
     private final double[] yearCountryStrataIncome;
+    private final double[] yearCountryStrataLifeCost;
     private double lastYearCashHoldings;
     private String lastYearCashHoldingsSource = "";
     private int yearTicks;
@@ -226,6 +229,11 @@ public class SimulationRecorder implements AutoCloseable {
     private double tickBankDepositsTotal;
     private double tickStateLoansTotal;
     private double tickBankTransfersTotal;
+    private final double[] tickFundsTotal = new double[3];
+    private double tickConstructionSpendingTotal;
+    private int tickSitesInProgressTotal;
+    private int tickSitesStartedTotal;
+    private int tickSitesCompletedTotal;
     private double tickStateWagesTotal;
     private double tickStateSocialTotal;
     private double tickStateTransfersTotal;
@@ -309,6 +317,7 @@ public class SimulationRecorder implements AutoCloseable {
         this.countryPopSpending = new double[this.countryNames.size()];
         this.yearCountryStrataSavings = new double[this.countryNames.size() * STRATA_COUNT];
         this.yearCountryStrataIncome = new double[this.countryNames.size() * STRATA_COUNT];
+        this.yearCountryStrataLifeCost = new double[this.countryNames.size() * STRATA_COUNT];
 
         this.readBaseCosts();
         this.readCpiWeights();
@@ -469,7 +478,9 @@ public class SimulationRecorder implements AutoCloseable {
         this.writer("country/poor_life.csv").header("year", "date", "country", "adults", "poor_life");
         this.writer("country/cash_holdings.csv").header("year", "date", "country", "strata", "savings", "income", "days", "limit");
         this.writer("country/treasury.csv").header("tick", "date", "country", "treasury", "private_investment", "sales_revenue", "production_value", "tariff_revenue",
-            "tax_revenue", "target_treasury", "spending_ratio", "bank_deposits", "state_loans");
+            "tax_revenue", "target_treasury", "spending_ratio", "bank_deposits", "state_loans",
+            "capitalist_fund", "state_fund", "workers_fund", "construction_spending",
+            "capitalist_committed", "state_committed", "workers_committed");
         this.writer("country/employment_ratio.csv").header("tick", "date", "country", "employment", "workers", "ratio");
         this.writer("country/demographics.csv").header("tick", "date", "country", "pop_type", "total", "employment", "consciousness", "militancy", "literacy", "savings", "life_satisfaction", "everyday_satisfaction", "luxury_satisfaction");
         this.writer("country/demographics_totals.csv").header("tick", "date", "country", "total_population", "total_employment", "consciousness", "militancy", "literacy", "savings", "life_satisfaction", "everyday_satisfaction", "luxury_satisfaction", "children", "adults", "seniors", "pop_entities", "life_satisfaction_avg", "total_population_scratch");
@@ -507,7 +518,9 @@ public class SimulationRecorder implements AutoCloseable {
             "revenue", "treasury_total", "sales_revenue_total", "building_treasury_total", "trade_money_total", "tariff_total", "savings_total",
             "employment_total", "workers_booked", "ratio_emp_workers",
             "tax_total", "state_wages_total", "state_social_total", "state_transfers_total", "target_treasury_total",
-            "bank_deposits_total", "state_loans_total", "bank_transfers_total");
+            "bank_deposits_total", "state_loans_total", "bank_transfers_total",
+            "capitalist_fund_total", "state_fund_total", "workers_fund_total", "construction_spending_total",
+            "sites_in_progress_total", "sites_started_total", "sites_completed_total");
     }
 
     private CsvWriter writer(String relativePath) {
@@ -622,7 +635,8 @@ public class SimulationRecorder implements AutoCloseable {
             this.priceOutOfBandStreak[g] = outOfBand ? this.priceOutOfBandStreak[g] + 1 : 0;
             this.priceOutOfBandMaxStreak[g] = Math.max(this.priceOutOfBandMaxStreak[g], this.priceOutOfBandStreak[g]);
         }
-        this.tickMoney += (double) this.tickTreasuryTotal + this.tickSalesRevenueTotal + this.tickBuildingTreasuryTotal + this.tickTradeMoneyTotal + this.tickBankDepositsTotal;
+        this.tickMoney += (double) this.tickTreasuryTotal + this.tickSalesRevenueTotal + this.tickBuildingTreasuryTotal + this.tickTradeMoneyTotal + this.tickBankDepositsTotal
+            + this.tickFundsTotal[0] + this.tickFundsTotal[1] + this.tickFundsTotal[2];
 
         double adults = 0.0;
         for (double countryAdult : this.countryAdults) {
@@ -712,7 +726,11 @@ public class SimulationRecorder implements AutoCloseable {
                 if (income <= 0.0) {
                     continue;
                 }
-                double days = this.yearCountryStrataSavings[c * STRATA_COUNT + s] / ticks / income;
+                double savings = this.yearCountryStrataSavings[c * STRATA_COUNT + s] / ticks;
+                if (savings < this.yearCountryStrataLifeCost[c * STRATA_COUNT + s] / ticks) {
+                    continue;
+                }
+                double days = savings / income;
                 double limit = 2.0 / (SPENDING_RATES_BY_STRATA[s] * (1.0 + this.countryPopSpending[c]));
                 this.writer("country/cash_holdings.csv").row(year, date, this.countryNames.get(c), s, this.yearCountryStrataSavings[c * STRATA_COUNT + s] / ticks, income, days, limit);
                 if (days / limit > this.lastYearCashHoldings) {
@@ -723,6 +741,7 @@ public class SimulationRecorder implements AutoCloseable {
         }
         Arrays.fill(this.yearCountryStrataSavings, 0.0);
         Arrays.fill(this.yearCountryStrataIncome, 0.0);
+        Arrays.fill(this.yearCountryStrataLifeCost, 0.0);
 
         int goodsOutOfBand = 0;
         for (int g = 0; g < GOOD_COUNT; g++) {
@@ -809,6 +828,11 @@ public class SimulationRecorder implements AutoCloseable {
         this.tickBankDepositsTotal = 0.0;
         this.tickStateLoansTotal = 0.0;
         this.tickBankTransfersTotal = 0.0;
+        Arrays.fill(this.tickFundsTotal, 0.0);
+        this.tickConstructionSpendingTotal = 0.0;
+        this.tickSitesInProgressTotal = 0;
+        this.tickSitesStartedTotal = 0;
+        this.tickSitesCompletedTotal = 0;
         this.tickStateWagesTotal = 0.0;
         this.tickStateSocialTotal = 0.0;
         this.tickStateTransfersTotal = 0.0;
@@ -868,6 +892,7 @@ public class SimulationRecorder implements AutoCloseable {
             CountryDemographicsView cd = country.getMutView(CountryDemographics.class);
             CountryBudgetView budget = country.getMutView(CountryBudget.class);
             CountryBankView bank = country.getMutView(CountryBank.class);
+            CountryInvestmentView investment = country.getMutView(CountryInvestment.class);
             CountryTaxPolicyView taxPolicy = country.getMutView(CountryTaxPolicy.class);
             CountryBudgetPolicyView budgetPolicy = country.getMutView(CountryBudgetPolicy.class);
             CountryEducationPolicyView educationPolicy = country.getMutView(CountryEducationPolicy.class);
@@ -902,6 +927,16 @@ public class SimulationRecorder implements AutoCloseable {
             this.tickStateLoansTotal += bank.stateLoans();
             this.tickBankTransfersTotal += bank.transfersBudget();
             this.trackBalance((float) bank.deposits(), "bank_deposits", name);
+            double constructionSpending = 0.0;
+            for (int o = 0; o < this.tickFundsTotal.length; o++) {
+                this.tickFundsTotal[o] += investment.funds(o);
+                constructionSpending += investment.spentToday(o);
+                this.trackBalance((float) investment.funds(o), "investment_fund", name);
+            }
+            this.tickConstructionSpendingTotal += constructionSpending;
+            this.tickSitesInProgressTotal += investment.sitesInProgress();
+            this.tickSitesStartedTotal += investment.sitesStarted();
+            this.tickSitesCompletedTotal += investment.sitesCompleted();
             if (countryIndex != null) {
                 this.countryPopSpending[countryIndex] = budgetPolicy.popSpending();
             }
@@ -909,6 +944,9 @@ public class SimulationRecorder implements AutoCloseable {
             this.trackBalance((float) minGoodRevenue, "good_revenue", name);
             for (int p = 0; p < POP_TYPE_COUNT; p++) {
                 float popTypeTotal = countryIndex != null ? this.countryPopTypeTotal[countryIndex * POP_TYPE_COUNT + p] : cd.totalByPopType(p);
+                if (countryIndex != null) {
+                    this.yearCountryStrataLifeCost[countryIndex * STRATA_COUNT + this.popTypeStrata[p]] += popTypeTotal / NEEDS_SCALING_FACTOR * cm.lifeCostsByPopType(p);
+                }
                 float popTypeEmployment = countryIndex != null ? this.countryPopTypeEmployment[countryIndex * POP_TYPE_COUNT + p] : cd.employmentByPopType(p);
                 if (popTypeEmployment > popTypeTotal) {
                     this.employmentExceedsPopulationRows++;
@@ -933,7 +971,9 @@ public class SimulationRecorder implements AutoCloseable {
             }
 
             treasury.row(tick, date, name, cm.treasury(), cm.privateInvestmentAmount(), goodRevenues, cm.productionValue(), cm.tariffRevenue(),
-                cm.taxRevenue(), budget.targetTreasury(), budget.spendingRatio(), bank.deposits(), bank.stateLoans());
+                cm.taxRevenue(), budget.targetTreasury(), budget.spendingRatio(), bank.deposits(), bank.stateLoans(),
+                investment.funds(0), investment.funds(1), investment.funds(2), constructionSpending,
+                investment.committed(0), investment.committed(1), investment.committed(2));
 
             for (int p = 0; p < POP_TYPE_COUNT; p++) {
                 float popTypeEmployment = countryIndex != null ? this.countryPopTypeEmployment[countryIndex * POP_TYPE_COUNT + p] : cd.employmentByPopType(p);
@@ -1191,7 +1231,9 @@ public class SimulationRecorder implements AutoCloseable {
             this.tickEmploymentTotal, this.tickWorkersBookedTotal,
             this.tickWorkersBookedTotal > 0f ? this.tickEmploymentTotal / this.tickWorkersBookedTotal : 0f,
             this.tickTaxTotal, this.tickStateWagesTotal, this.tickStateSocialTotal, this.tickStateTransfersTotal, this.tickTargetTreasuryTotal,
-            this.tickBankDepositsTotal, this.tickStateLoansTotal, this.tickBankTransfersTotal);
+            this.tickBankDepositsTotal, this.tickStateLoansTotal, this.tickBankTransfersTotal,
+            this.tickFundsTotal[0], this.tickFundsTotal[1], this.tickFundsTotal[2], this.tickConstructionSpendingTotal,
+            this.tickSitesInProgressTotal, this.tickSitesStartedTotal, this.tickSitesCompletedTotal);
     }
 
     private void commitCountryProduction(int tick, String date) {

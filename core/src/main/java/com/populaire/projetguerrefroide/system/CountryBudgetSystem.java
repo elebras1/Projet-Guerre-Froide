@@ -20,6 +20,7 @@ public class CountryBudgetSystem {
             .with(CountryTradePolicy.class)
             .with(CountryBudget.class)
             .with(CountryBank.class)
+            .with(CountryInvestment.class)
             .multiThreaded()
             .iter(this::budget);
     }
@@ -37,6 +38,7 @@ public class CountryBudgetSystem {
         Field<CountryTradePolicy> countryTradePolicyField = iter.field(CountryTradePolicy.class, 4);
         Field<CountryBudget> countryBudgetField = iter.field(CountryBudget.class, 5);
         Field<CountryBank> countryBankField = iter.field(CountryBank.class, 6);
+        Field<CountryInvestment> countryInvestmentField = iter.field(CountryInvestment.class, 7);
         for (int i = 0; i < iter.count(); i++) {
             CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
             CountryDemographicsView countryDemographics = countryDemographicsField.getMutView(i);
@@ -45,6 +47,7 @@ public class CountryBudgetSystem {
             CountryTradePolicyView countryTradePolicy = countryTradePolicyField.getMutView(i);
             CountryBudgetMutView countryBudget = countryBudgetField.getMutView(i);
             CountryBankMutView countryBank = countryBankField.getMutView(i);
+            CountryInvestmentMutView countryInvestment = countryInvestmentField.getMutView(i);
 
             double subsidies = 0.0;
             float tariffRate = countryTradePolicy.tariffRate();
@@ -96,12 +99,15 @@ public class CountryBudgetSystem {
                 countryBudget.socialRatesByPopType(p, popTypeSocialRate);
             }
 
-            double transfers = excess > 0.0 && assistedUnits > 0.0 ? EXCESS_TREASURY_SPENDING_RATE * excess : 0.0;
+            double investableSurplus = Math.max(0.0, excess - countryInvestment.committed(STATE_OWNER));
+            double transfers = assistedUnits > 0.0 ? EXCESS_TREASURY_SPENDING_RATE * investableSurplus : 0.0;
             for (int p = 0; p < POP_TYPE_COUNT; p++) {
                 countryBudget.transferRatesByPopType(p, assistedTypes[p] && transfers > 0.0 ? (float) (transfers / assistedUnits) : 0f);
             }
 
             countryBudget.targetTreasury(targetTreasury);
+            countryBudget.reservedNeeds(needs);
+            countryBudget.investableSurplus(investableSurplus);
             countryBudget.spendingRatio(spendingRatio);
             countryBudget.subsidyAllowance((float) (spendingRatio * subsidies));
             countryBudget.wagesBudget((float) wagesBudget);

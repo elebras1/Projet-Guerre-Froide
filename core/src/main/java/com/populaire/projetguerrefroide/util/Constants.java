@@ -40,6 +40,7 @@ public class Constants {
     public static final String FACTORY_OUTPUT_MODIFIER = "factory_output_modifier";
     public static final String RGO_OUTPUT_MODIFIER = "rgo_output_modifier";
     public static final String CONSTRUCTION_SPEED = "construction_speed";
+    public static final String STATE_CONSTRUCTION = "state_construction";
     public static final String POP_GROWTH_FACTOR = "pop_growth_factor";
     public static final String EDUCATION_EFFICIENCY = "education_efficiency";
     public static final String MIGRATION_PULL = "migration_pull";
@@ -68,6 +69,14 @@ public class Constants {
     public static final float BANK_MINIMUM_SPENDING_RATE = 0.01f;
     public static final float STATE_LOAN_INTEREST_RATE = 0.02f;
     public static final float DAYS_PER_YEAR = 365f;
+    public static final int OWNER_COUNT = 3;
+    public static final int CAPITALIST_OWNER = 0;
+    public static final int STATE_OWNER = 1;
+    public static final int WORKERS_OWNER = 2;
+    public static final float COOPERATIVE_RETAINED_SHARE = 0.2f;
+    public static final float CAPITALIST_MINIMUM_RETURN = 0.1f;
+    public static final float STATE_MINIMUM_RETURN = 0f;
+    public static final float MINIMUM_UTILIZATION_FOR_EXPANSION = 0.8f;
     public static final float PRICE_ADJUSTMENT_RATE = 0.01f;
     public static final float MINIMUM_PRICE_RATIO = 0.1f;
     public static final float MAXIMUM_PRICE_RATIO = 4f;

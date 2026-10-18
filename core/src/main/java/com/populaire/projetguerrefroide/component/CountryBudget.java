@@ -11,6 +11,8 @@ public record CountryBudget(
     @FixedArray(length = POP_TYPE_COUNT) float[] socialRatesByPopType,
     @FixedArray(length = POP_TYPE_COUNT) float[] transferRatesByPopType,
     double targetTreasury,
+    double reservedNeeds,
+    double investableSurplus,
     float spendingRatio,
     float subsidyAllowance,
     float wagesBudget,

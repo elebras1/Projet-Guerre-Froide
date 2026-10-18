@@ -7,6 +7,9 @@ import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 
+import static com.populaire.projetguerrefroide.util.Constants.COOPERATIVE_RETAINED_SHARE;
+import static com.populaire.projetguerrefroide.util.Constants.WORKERS_OWNER;
+
 public class EconomyBuildingProfitSharingSystem {
 
     private final EcsConstants ecsConstants;
@@ -31,6 +34,7 @@ public class EconomyBuildingProfitSharingSystem {
         RegionDemographicsView regionDemographics = null;
         long countryId = 0;
         CountryProfitDistributionPolicyView countryProfitDistributionPolicy = null;
+        CountryInvestmentMutView countryInvestment = null;
 
         Field<Building> buildingField = iter.field(Building.class, 0);
         Field<EconomyBuilding> economyBuildingField = iter.field(EconomyBuilding.class, 1);
@@ -51,6 +55,7 @@ public class EconomyBuildingProfitSharingSystem {
                 countryId = building.countryId();
                 EntityView country = iter.world().obtainEntityView(countryId);
                 countryProfitDistributionPolicy = country.getMutView(CountryProfitDistributionPolicy.class);
+                countryInvestment = country.getMutView(CountryInvestment.class);
             }
 
             int primaryWorkerPopTypeIndex = buildingTypeData.primaryWorkerPopTypeIndex();
@@ -68,7 +73,8 @@ public class EconomyBuildingProfitSharingSystem {
             float workerShareRatio = countryProfitDistributionPolicy.workerProfitShareRate();
             float stateShareRatio = countryProfitDistributionPolicy.stateProfitShareRate();
 
-            if(economyBuilding.ownerTagId() == this.ecsConstants.countryTag()) {
+            boolean workersOwned = economyBuilding.ownerTagId() == this.ecsConstants.workersTag();
+            if(economyBuilding.ownerTagId() == this.ecsConstants.countryTag() || workersOwned) {
                 float totalShareStateRatio = stateShareRatio + workerShareRatio;
                 if (totalShareStateRatio > 0f) {
                     float scalingFactor = 1f / totalShareStateRatio;
@@ -96,6 +102,11 @@ public class EconomyBuildingProfitSharingSystem {
             }
 
             float workerShare = workerShareRatio * economyBuilding.profit();
+            if (workersOwned) {
+                float retainedShare = COOPERATIVE_RETAINED_SHARE * workerShare;
+                countryInvestment.funds(WORKERS_OWNER, countryInvestment.funds(WORKERS_OWNER) + retainedShare);
+                workerShare -= retainedShare;
+            }
 
             float primaryWorkerShare = workerShare / 3.0f;
             float secondaryWorkerShare = workerShare - primaryWorkerShare;

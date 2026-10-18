@@ -38,7 +38,7 @@ public class EconomySimulationAnalysisTest {
     private static final int LONG_RUN_YEARS = 62;
     private static final int LONG_RUN_DETAIL_EVERY = 30;
     private static final Map<String, List<String>> FROZEN_SYSTEMS = Map.of(
-        "production", List.of("RGOProductionSystem", "EconomyBuildingProductionSystem", "EconomyBuildingScaleSystem"),
+        "production", List.of("RGOProductionSystem", "EconomyBuildingProductionSystem", "EconomyBuildingScaleSystem", "ConstructionCompletionSystem"),
         "prices", List.of("GlobalMarketResolveSystem"));
 
     private static final float NEGATIVE_BALANCE_TOLERANCE = 1e-6f;
@@ -122,7 +122,8 @@ public class EconomySimulationAnalysisTest {
         world.component(SpecialBuilding.class);
         world.component(DevelopmentBuilding.class);
         world.component(ResourceGathering.class);
-        world.component(ExpansionBuilding.class);
+        world.component(ConstructionSite.class);
+        world.component(CountryInvestment.class);
         world.component(RegionInstance.class);
         world.component(Population.class);
         world.component(CountryBudget.class);

@@ -66,6 +66,12 @@ public class EconomyService {
     private final RegionIncomeResidualSystem regionIncomeResidualSystem;
     private final CountryBudgetSystem countryBudgetSystem;
     private final CountryBankSystem countryBankSystem;
+    private final CountryInvestmentResetSystem countryInvestmentResetSystem;
+    private final ConstructionDemandSystem constructionDemandSystem;
+    private final ConstructionPurchaseSystem constructionPurchaseSystem;
+    private final ConstructionCompletionSystem constructionCompletionSystem;
+    private final ConstructionClosureSystem constructionClosureSystem;
+    private final InvestmentDecisionSystem investmentDecisionSystem;
 
     private final Pipeline initPipeline;
     private final Pipeline initBudgetPipeline;
@@ -161,6 +167,7 @@ public class EconomyService {
         this.globalMarketResetSystem = new GlobalMarketResetSystem(ecsWorld, phaseReset);
         this.countryMarketResetSystem = new CountryMarketResetSystem(ecsWorld, phaseReset);
         this.needsCostsResetSystem = new NeedsCostsResetSystem(ecsWorld, phaseReset);
+        this.countryInvestmentResetSystem = new CountryInvestmentResetSystem(ecsWorld, phaseReset);
         this.regionIncomeResetSystem = new RegionIncomeResetSystem(ecsWorld, phaseReset);
         this.countryBudgetPriceSystem = new CountryBudgetPriceSystem(ecsWorld, phaseNeedsCosts);
         this.needsCostsCalculationSystem = new NeedsCostsCalculationSystem(ecsWorld, phaseNeedsCosts);
@@ -169,6 +176,7 @@ public class EconomyService {
         this.populationConsumptionSystem = new PopulationConsumptionSystem(ecsWorld, gameContext.getEcsConstants(), phaseConsumption);
         this.countryPopulationDemandSystem = new CountryPopulationDemandSystem(ecsWorld, phaseConsumption);
         this.economyBuildingConsumptionSystem = new EconomyBuildingConsumptionSystem(ecsWorld, phaseConsumption);
+        this.constructionDemandSystem = new ConstructionDemandSystem(ecsWorld, gameContext.getEcsConstants(), phaseConsumption);
         this.worldMarketTotalsSystem = new WorldMarketTotalsSystem(ecsWorld, phaseMarket);
         this.globalTradeRatioSystem = new GlobalTradeRatioSystem(ecsWorld, phaseMarket);
         this.countryMarketResolveSystem = new CountryMarketResolveSystem(ecsWorld, phaseMarket);
@@ -176,6 +184,7 @@ public class EconomyService {
         this.countryPriceSystem = new CountryPriceSystem(ecsWorld, phaseMarket);
         this.countryPurchaseSystem = new CountryPurchaseSystem(ecsWorld, phaseSettlement);
         this.economyBuildingPurchaseSystem = new EconomyBuildingPurchaseSystem(ecsWorld, phaseSettlement);
+        this.constructionPurchaseSystem = new ConstructionPurchaseSystem(ecsWorld, gameContext.getEcsConstants(), phaseSettlement);
         this.countryImportPaymentSystem = new CountryImportPaymentSystem(ecsWorld, phaseSettlement);
         this.countryExportPayoutSystem = new CountryExportPayoutSystem(ecsWorld, phaseSettlement);
         this.worldTradeMoneySettleSystem = new WorldTradeMoneySettleSystem(ecsWorld, phaseSettlement);
@@ -200,6 +209,9 @@ public class EconomyService {
         this.regionIncomeResidualSystem = new RegionIncomeResidualSystem(ecsWorld, phaseIncome);
         this.countryBudgetSystem = new CountryBudgetSystem(ecsWorld, phaseState);
         this.countryBankSystem = new CountryBankSystem(ecsWorld, phaseState);
+        this.constructionCompletionSystem = new ConstructionCompletionSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);
+        this.constructionClosureSystem = new ConstructionClosureSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);
+        this.investmentDecisionSystem = new InvestmentDecisionSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);
     }
 
     public Pipeline getInitPipeline() {

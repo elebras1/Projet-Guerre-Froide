@@ -7,6 +7,8 @@ import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 
+import static com.populaire.projetguerrefroide.util.OwnerUtils.ownerTag;
+
 public class EconomyBuildingOwnerInitializationSystem {
 
     private final EcsConstants ecsConstants;
@@ -37,11 +39,8 @@ public class EconomyBuildingOwnerInitializationSystem {
                 countryProfitDistributionPolicy = country.getMutView(CountryProfitDistributionPolicy.class);
             }
 
-            if(countryProfitDistributionPolicy.capitalistProfitShareRate() <= 0f) {
-                economyBuilding.ownerTagId(this.ecsConstants.countryTag());
-            } else {
-                economyBuilding.ownerTagId(this.ecsConstants.capitalistTag());
-            }
+            economyBuilding.ownerTagId(ownerTag(countryProfitDistributionPolicy.capitalistProfitShareRate(), countryProfitDistributionPolicy.workerProfitShareRate(),
+                countryProfitDistributionPolicy.stateProfitShareRate(), this.ecsConstants));
         }
     }
 }
