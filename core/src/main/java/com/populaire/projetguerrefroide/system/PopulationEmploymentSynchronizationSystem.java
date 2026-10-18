@@ -9,7 +9,10 @@ import com.populaire.projetguerrefroide.util.EcsConstants;
 
 public class PopulationEmploymentSynchronizationSystem {
 
+    private final long rgoType;
+
     public PopulationEmploymentSynchronizationSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.rgoType = ecsConstants.rgoType();
         ecsWorld.system("PopulationEmploymentSynchronizationSystem")
             .kind(phaseId)
             .with(Population.class)
@@ -21,8 +24,11 @@ public class PopulationEmploymentSynchronizationSystem {
 
     private void synchronize(Iter iter) {
         long provinceId = 0;
-        ResourceGatheringView resourceGathering = null;
-        ResourceGatheringTypeView resourceGatheringType = null;
+        boolean hasResourceGathering = false;
+        int rgoWorkerAmount = 0;
+        int rgoSlaveAmount = 0;
+        long rgoWorkerPopTypeId = 0;
+        long rgoSlavePopTypeId = 0;
         long regionInstanceId = 0;
         RegionInstanceView regionInstanceData = null;
 
@@ -38,11 +44,14 @@ public class PopulationEmploymentSynchronizationSystem {
             if(rural && population.provinceId() != provinceId) {
                 provinceId = population.provinceId();
                 EntityView province = iter.world().obtainEntityView(provinceId);
-                if(province.has(ResourceGathering.class)) {
-                    resourceGathering = province.getMutView(ResourceGathering.class);
-                    resourceGatheringType = iter.world().obtainEntityView(resourceGathering.typeId()).getMutView(ResourceGatheringType.class);
-                } else {
-                    resourceGatheringType = null;
+                hasResourceGathering = province.has(ResourceGathering.class);
+                if(hasResourceGathering) {
+                    ResourceGatheringView resourceGathering = province.getMutView(ResourceGathering.class);
+                    rgoWorkerAmount = resourceGathering.workerAmount();
+                    rgoSlaveAmount = resourceGathering.slaveAmount();
+                    ResourceGatheringTypeView resourceGatheringType = iter.world().obtainEntityView(province.target(this.rgoType, 0)).getView(ResourceGatheringType.class);
+                    rgoWorkerPopTypeId = resourceGatheringType.workerPopTypeId();
+                    rgoSlavePopTypeId = resourceGatheringType.slavePopTypeId();
                 }
             }
 
@@ -53,13 +62,13 @@ public class PopulationEmploymentSynchronizationSystem {
                 regionInstanceData = regionInstance.getMutView(RegionInstance.class);
             }
 
-            if (resourceGatheringType != null && popTypeId == resourceGatheringType.slavePopTypeId()) {
-                population.employment(resourceGathering.slaveAmount());
+            if (hasResourceGathering && popTypeId == rgoSlavePopTypeId) {
+                population.employment(rgoSlaveAmount);
                 continue;
             }
 
-            if(resourceGatheringType != null && popTypeId == resourceGatheringType.workerPopTypeId()) {
-                population.employment(resourceGathering.workerAmount());
+            if(hasResourceGathering && popTypeId == rgoWorkerPopTypeId) {
+                population.employment(rgoWorkerAmount);
                 continue;
             }
 

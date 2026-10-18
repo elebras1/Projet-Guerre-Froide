@@ -32,7 +32,7 @@ public class CountryStockInitializationSystem {
 
             for (int g = 0; g < countryMarket.goodStocksLength(); g++) {
                 if ((g < serviceGoodStartIndex || g >= serviceGoodEndIndex) && globalMarketData.goodAvailabilities(g)) {
-                    countryMarket.goodStocks(g, countryMarket.goodStocks(g) + STOCK_TARGET_DAYS * countryMarket.goodDemandAmounts(g));
+                    countryMarket.goodStocks(g, STOCK_TARGET_DAYS * countryMarket.goodDemandAmounts(g));
                 }
             }
         }

@@ -4,17 +4,17 @@ import io.github.elebras1.flecs.annotation.Component;
 
 @Component
 public record ResourceGathering(
-    long typeId,
     long goodId,
     int goodIndex,
-    float goodAmount,
+    float efficiency,
     int size,
     float production,
     float scale,
     int workerAmount,
     int slaveAmount,
     float profit,
-    float workerMinWage) {
+    float workerMinWage,
+    double treasury) {
 
 }
 

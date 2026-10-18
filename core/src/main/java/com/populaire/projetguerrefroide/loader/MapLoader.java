@@ -111,11 +111,9 @@ public final class MapLoader {
             if(provinceJson.good() != null) {
                 String goodNameId = provinceJson.good();
                 long goodId = this.ecsWorld.lookup(goodNameId);
-                EntityView goodEntity = this.ecsWorld.obtainEntityView(goodId);
-                Good good = goodEntity.get(Good.class);
-                float goodAmount = good.value();
                 long rgoTypeId = this.ecsWorld.lookup("rgo_" + goodNameId);
-                province.set(new ResourceGathering(rgoTypeId, goodId, this.context.getGoodIndex(goodId), goodAmount, 0, 0f, 0f, 0, 0, 0f, 0f));
+                province.add(this.ecsConstants.rgoType(), rgoTypeId);
+                province.set(new ResourceGathering(goodId, this.context.getGoodIndex(goodId), 1f, 0, 0f, 0f, 0, 0, 0f, 0f, 0d));
             }
 
             if(provinceJson.buildings() != null) {

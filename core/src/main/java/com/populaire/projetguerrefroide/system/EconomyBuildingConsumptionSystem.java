@@ -56,7 +56,8 @@ public class EconomyBuildingConsumptionSystem {
                 }
                 budgetCost += (double) inputScale * economyBuilding.activeInputAmounts(g) * countryMarket.goodBudgetPrices(goodIndex);
             }
-            float inputBudgetRatio = budgetCost > economyBuilding.treasury() ? (float) (economyBuilding.treasury() / budgetCost) : 1f;
+            double available = Math.max(0.0, economyBuilding.treasury());
+            float inputBudgetRatio = budgetCost > available ? (float) (available / budgetCost) : 1f;
             economyBuilding.inputBudgetRatio(inputBudgetRatio);
 
             for (int g = 0; g < economyBuildingTypeData.goodInputIdsLength(); g++) {

@@ -1,5 +1,6 @@
 package com.populaire.projetguerrefroide.util;
 
+import io.github.elebras1.flecs.Flecs;
 import io.github.elebras1.flecs.World;
 
 public class EcsConstants {
@@ -24,6 +25,7 @@ public class EcsConstants {
     public static final String ON_MAP = "OnMap";
     public static final String SUSPENDED = "Suspended";
     public static final String LEVELED_UP = "LeveledUp";
+    public static final String RGO_TYPE = "RgoType";
     public static final String CAPITALIST_TAG = "CapitalistTag";
     public static final String WORKERS_TAG = "WorkersTag";
     public static final String ARISTOCRAT_TAG = "AristocratTag";
@@ -53,6 +55,7 @@ public class EcsConstants {
     private final long onMap;
     private final long suspended;
     private final long leveledUp;
+    private final long rgoType;
     private final long capitalistTag;
     private final long workersTag;
     private final long aristocratTag;
@@ -83,6 +86,8 @@ public class EcsConstants {
         this.onMap = ecsWorld.entity(ON_MAP);
         this.suspended = ecsWorld.entity(SUSPENDED);
         this.leveledUp = ecsWorld.entity(LEVELED_UP);
+        this.rgoType = ecsWorld.entity(RGO_TYPE);
+        ecsWorld.obtainEntity(this.rgoType).add(Flecs.Traversable);
         this.capitalistTag = ecsWorld.entity(CAPITALIST_TAG);
         this.workersTag = ecsWorld.entity(WORKERS_TAG);
         this.aristocratTag = ecsWorld.entity(ARISTOCRAT_TAG);
@@ -174,6 +179,10 @@ public class EcsConstants {
 
     public long leveledUp() {
         return this.leveledUp;
+    }
+
+    public long rgoType() {
+        return this.rgoType;
     }
 
     public long workersTag() {

@@ -231,6 +231,7 @@ public class SimulationRecorder implements AutoCloseable {
     private double tickBankTransfersTotal;
     private final double[] tickFundsTotal = new double[3];
     private double tickConstructionSpendingTotal;
+    private double tickRgoTreasuryTotal;
     private int tickSitesInProgressTotal;
     private int tickSitesStartedTotal;
     private int tickSitesCompletedTotal;
@@ -519,7 +520,7 @@ public class SimulationRecorder implements AutoCloseable {
             "employment_total", "workers_booked", "ratio_emp_workers",
             "tax_total", "state_wages_total", "state_social_total", "state_transfers_total", "target_treasury_total",
             "bank_deposits_total", "state_loans_total", "bank_transfers_total",
-            "capitalist_fund_total", "state_fund_total", "workers_fund_total", "construction_spending_total",
+            "capitalist_fund_total", "state_fund_total", "workers_fund_total", "construction_spending_total", "rgo_treasury_total",
             "sites_in_progress_total", "sites_started_total", "sites_completed_total");
     }
 
@@ -636,7 +637,7 @@ public class SimulationRecorder implements AutoCloseable {
             this.priceOutOfBandMaxStreak[g] = Math.max(this.priceOutOfBandMaxStreak[g], this.priceOutOfBandStreak[g]);
         }
         this.tickMoney += (double) this.tickTreasuryTotal + this.tickSalesRevenueTotal + this.tickBuildingTreasuryTotal + this.tickTradeMoneyTotal + this.tickBankDepositsTotal
-            + this.tickFundsTotal[0] + this.tickFundsTotal[1] + this.tickFundsTotal[2];
+            + this.tickFundsTotal[0] + this.tickFundsTotal[1] + this.tickFundsTotal[2] + this.tickRgoTreasuryTotal;
 
         double adults = 0.0;
         for (double countryAdult : this.countryAdults) {
@@ -830,6 +831,7 @@ public class SimulationRecorder implements AutoCloseable {
         this.tickBankTransfersTotal = 0.0;
         Arrays.fill(this.tickFundsTotal, 0.0);
         this.tickConstructionSpendingTotal = 0.0;
+        this.tickRgoTreasuryTotal = 0.0;
         this.tickSitesInProgressTotal = 0;
         this.tickSitesStartedTotal = 0;
         this.tickSitesCompletedTotal = 0;
@@ -1037,6 +1039,8 @@ public class SimulationRecorder implements AutoCloseable {
                 agg[4] += rgo.workerMinWage();
                 this.tickRgoWagesTotal += rgo.workerMinWage();
                 this.tickRgoProfitTotal += rgo.profit();
+                this.tickRgoTreasuryTotal += rgo.treasury();
+                this.trackBalance((float) rgo.treasury(), "rgo_treasury", this.countryNames.get(countryIndex));
             }
         });
 
@@ -1232,7 +1236,7 @@ public class SimulationRecorder implements AutoCloseable {
             this.tickWorkersBookedTotal > 0f ? this.tickEmploymentTotal / this.tickWorkersBookedTotal : 0f,
             this.tickTaxTotal, this.tickStateWagesTotal, this.tickStateSocialTotal, this.tickStateTransfersTotal, this.tickTargetTreasuryTotal,
             this.tickBankDepositsTotal, this.tickStateLoansTotal, this.tickBankTransfersTotal,
-            this.tickFundsTotal[0], this.tickFundsTotal[1], this.tickFundsTotal[2], this.tickConstructionSpendingTotal,
+            this.tickFundsTotal[0], this.tickFundsTotal[1], this.tickFundsTotal[2], this.tickConstructionSpendingTotal, this.tickRgoTreasuryTotal,
             this.tickSitesInProgressTotal, this.tickSitesStartedTotal, this.tickSitesCompletedTotal);
     }
 

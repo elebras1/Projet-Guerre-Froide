@@ -38,8 +38,9 @@ public class EconomySimulationAnalysisTest {
     private static final int LONG_RUN_YEARS = 62;
     private static final int LONG_RUN_DETAIL_EVERY = 30;
     private static final Map<String, List<String>> FROZEN_SYSTEMS = Map.of(
-        "production", List.of("RGOProductionSystem", "EconomyBuildingProductionSystem", "EconomyBuildingScaleSystem", "ConstructionCompletionSystem"),
-        "prices", List.of("GlobalMarketResolveSystem"));
+        "production", List.of("RGOEmploymentSystem", "RGOProductionSystem", "EconomyBuildingProductionSystem", "EconomyBuildingScaleSystem", "ConstructionCompletionSystem"),
+        "prices", List.of("GlobalMarketResolveSystem"),
+        "factories", List.of("EconomyBuildingProductionSystem", "EconomyBuildingScaleSystem", "ConstructionCompletionSystem"));
 
     private static final float NEGATIVE_BALANCE_TOLERANCE = 1e-6f;
     private static final double MONEY_DRIFT_TOLERANCE = 1e-3;
@@ -86,8 +87,7 @@ public class EconomySimulationAnalysisTest {
             this.forceLaw(lawName);
         }
 
-        this.ecsWorld.runPipeline(this.economyService.getInitPipeline().id(), 1f);
-        this.ecsWorld.runPipeline(this.economyService.getInitBudgetPipeline().id(), 1f);
+        this.economyService.initialize();
     }
 
     private void setupGdxFiles() {

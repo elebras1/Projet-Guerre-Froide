@@ -1,20 +1,23 @@
 package com.populaire.projetguerrefroide.system;
 
+import com.populaire.projetguerrefroide.util.EcsConstants;
 import io.github.elebras1.flecs.EntityView;
 import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 
-import static com.populaire.projetguerrefroide.util.Constants.NEEDS_SCALING_FACTOR;
+import static com.populaire.projetguerrefroide.util.Constants.RGO_TREASURY_BUFFER_DAYS;
+import static com.populaire.projetguerrefroide.util.RgoUtils.wageBill;
 
 public class RGORevenueSystem {
 
-    public RGORevenueSystem(World ecsWorld, long phaseId) {
+    public RGORevenueSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
         ecsWorld.system("RGORevenueSystem")
             .kind(phaseId)
             .with(Province.class)
             .with(ResourceGathering.class)
+            .with(ResourceGatheringType.class).up(ecsConstants.rgoType())
             .iter(this::distribute);
     }
 
@@ -23,11 +26,9 @@ public class RGORevenueSystem {
         CountryMarketView countryMarket = null;
         CountryLaborPolicyView countryLaborPolicy = null;
 
-        long resourceGatheringTypeId = 0;
-        ResourceGatheringTypeView resourceGatheringTypeData = null;
-
         Field<Province> provinceField = iter.field(Province.class, 0);
         Field<ResourceGathering> resourceGatheringField = iter.field(ResourceGathering.class, 1);
+        int workerPopTypeIndex = iter.field(ResourceGatheringType.class, 2).<ResourceGatheringTypeView>getView(0).workerPopTypeIndex();
 
         for(int i = 0; i < iter.count(); i++) {
             ProvinceView province = provinceField.getMutView(i);
@@ -40,22 +41,20 @@ public class RGORevenueSystem {
                 countryLaborPolicy = country.getMutView(CountryLaborPolicy.class);
             }
 
-            if(resourceGathering.typeId() != resourceGatheringTypeId) {
-                resourceGatheringTypeId = resourceGathering.typeId();
-                EntityView resourceGatheringType = iter.world().obtainEntityView(resourceGatheringTypeId);
-                resourceGatheringTypeData = resourceGatheringType.getMutView(ResourceGatheringType.class);
-            }
-
             int goodIndex = resourceGathering.goodIndex();
             float producedAmount = countryMarket.goodProducedAmounts(goodIndex);
-            float revenue = producedAmount > 0f ? (float) (countryMarket.goodRevenues(goodIndex) * resourceGathering.production() / producedAmount) : 0f;
+            double revenue = producedAmount > 0f ? countryMarket.goodRevenues(goodIndex) * resourceGathering.production() / producedAmount : 0.0;
+            double treasury = resourceGathering.treasury() + revenue;
 
-            float workerMinWageFactor = (countryMarket.lifeCostsByPopType(resourceGatheringTypeData.workerPopTypeIndex()) + 0.2f * countryMarket.everydayCostsByPopType(resourceGatheringTypeData.workerPopTypeIndex())) * (1f + countryLaborPolicy.minWageFactor());
-            float normalizedWages = workerMinWageFactor * resourceGathering.workerAmount() / NEEDS_SCALING_FACTOR;
+            float wageBill = wageBill(countryMarket, workerPopTypeIndex, countryLaborPolicy.minWageFactor(), resourceGathering.workerAmount());
+            float wage = (float) Math.min(wageBill, treasury);
+            treasury -= wage;
+            double profit = Math.max(0.0, treasury - RGO_TREASURY_BUFFER_DAYS * wageBill);
+            treasury -= profit;
 
-            float wage = Math.min(normalizedWages, revenue);
+            resourceGathering.treasury(treasury);
             resourceGathering.workerMinWage(wage);
-            resourceGathering.profit(revenue - wage);
+            resourceGathering.profit((float) profit);
         }
     }
 }

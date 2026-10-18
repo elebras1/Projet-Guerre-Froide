@@ -1,5 +1,6 @@
 package com.populaire.projetguerrefroide.system;
 
+import com.populaire.projetguerrefroide.util.EcsConstants;
 import io.github.elebras1.flecs.EntityView;
 import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
@@ -8,11 +9,12 @@ import com.populaire.projetguerrefroide.component.*;
 
 public class RGOProfitSharingSystem {
 
-    public RGOProfitSharingSystem(World ecsWorld, long phaseId) {
+    public RGOProfitSharingSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
         ecsWorld.system("RGOProfitSharingSystem")
             .kind(phaseId)
             .with(Province.class)
             .with(ResourceGathering.class)
+            .with(ResourceGatheringType.class).up(ecsConstants.rgoType())
             .iter(this::process);
     }
 
@@ -27,11 +29,10 @@ public class RGOProfitSharingSystem {
         RegionDemographicsView regionDemographics = null;
         long countryId = 0;
         CountryProfitDistributionPolicyView countryProfitDistributionPolicy = null;
-        long rgoTypeId = 0;
-        ResourceGatheringTypeView rgoTypeData = null;
 
         Field<Province> provinceField = iter.field(Province.class, 0);
         Field<ResourceGathering> resourceGatheringField = iter.field(ResourceGathering.class, 1);
+        int workerPopTypeIndex = iter.field(ResourceGatheringType.class, 2).<ResourceGatheringTypeView>getView(0).workerPopTypeIndex();
         for(int i = 0; i < iter.count(); i++) {
             ProvinceView province = provinceField.getMutView(i);
             ResourceGatheringView resourceGathering = resourceGatheringField.getMutView(i);
@@ -43,11 +44,6 @@ public class RGOProfitSharingSystem {
                 regionDemographics = region.getMutView(RegionDemographics.class);
             }
 
-            if(resourceGathering.typeId() != rgoTypeId) {
-                rgoTypeId = resourceGathering.typeId();
-                EntityView rgoType = iter.world().obtainEntityView(rgoTypeId);
-                rgoTypeData = rgoType.getMutView(ResourceGatheringType.class);
-            }
 
             if(province.ownerId() != countryId) {
                 countryId = province.ownerId();
@@ -55,7 +51,6 @@ public class RGOProfitSharingSystem {
                 countryProfitDistributionPolicy = country.getMutView(CountryProfitDistributionPolicy.class);
             }
 
-            int workerPopTypeIndex = rgoTypeData.workerPopTypeIndex();
             regionIncome.minWagesByPopType(workerPopTypeIndex, regionIncome.minWagesByPopType(workerPopTypeIndex) + resourceGathering.workerMinWage());
             regionIncome.workersByPopType(workerPopTypeIndex, regionIncome.workersByPopType(workerPopTypeIndex) + resourceGathering.workerAmount());
 

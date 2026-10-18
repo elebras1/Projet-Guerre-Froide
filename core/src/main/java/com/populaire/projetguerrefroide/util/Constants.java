@@ -69,6 +69,13 @@ public class Constants {
     public static final float BANK_MINIMUM_SPENDING_RATE = 0.01f;
     public static final float STATE_LOAN_INTEREST_RATE = 0.02f;
     public static final float DAYS_PER_YEAR = 365f;
+    public static final float RURAL_WAGE_SHARE = 0.5f;
+    public static final float RGO_TREASURY_BUFFER_DAYS = 15f;
+    public static final float RGO_EMPLOYMENT_ADJUSTMENT_RATE = 0.003f;
+    public static final float RGO_CLEARING_GAIN = 0.02f;
+    public static final float RGO_PRICE_GAIN = 0.0003f;
+    public static final float RGO_STOCK_ADJUSTMENT_DAYS = 365f;
+    public static final int INITIAL_SAVINGS_PASSES = 2;
     public static final int OWNER_COUNT = 3;
     public static final int CAPITALIST_OWNER = 0;
     public static final int STATE_OWNER = 1;
