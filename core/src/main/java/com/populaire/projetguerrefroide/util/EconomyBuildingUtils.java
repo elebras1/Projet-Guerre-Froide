@@ -1,9 +1,13 @@
 package com.populaire.projetguerrefroide.util;
 
+import com.populaire.projetguerrefroide.component.CountryMarketView;
+import com.populaire.projetguerrefroide.component.CountryProductionPolicyView;
 import com.populaire.projetguerrefroide.component.EconomyBuilding;
 import com.populaire.projetguerrefroide.component.EconomyBuildingTypeView;
+import com.populaire.projetguerrefroide.component.EconomyBuildingView;
 
 import static com.populaire.projetguerrefroide.util.Constants.MAX_GOODS;
+import static com.populaire.projetguerrefroide.util.Constants.NEEDS_SCALING_FACTOR;
 
 public class EconomyBuildingUtils {
 
@@ -14,6 +18,49 @@ public class EconomyBuildingUtils {
             activeInputGoodIndexes[g] = advancedRecipe ? buildingType.advancedGoodInputIndexes(g) : buildingType.goodInputIndexes(g);
             activeInputAmounts[g] = advancedRecipe ? buildingType.advancedGoodInputAmounts(g) : buildingType.goodInputAmounts(g);
         }
-        return new EconomyBuilding(ownerTagId, 0f, 1f, 0f, 0d, 1f, 0, 0, 0f, 0f, new float[MAX_GOODS], activeInputGoodIndexes, activeInputAmounts, advancedRecipe);
+        return new EconomyBuilding(ownerTagId, 0f, 1f, 0f, 0f, 0f, 0f, 0d, 0, 0, 0f, 0f, new float[MAX_GOODS], new float[MAX_GOODS], activeInputGoodIndexes, activeInputAmounts, advancedRecipe);
+    }
+
+    public static float throughput(CountryProductionPolicyView productionPolicy, int level) {
+        return 1f + Math.min(productionPolicy.maximumEconomyScaleFactor(), level * 0.01f);
+    }
+
+    public static float maxWorkers(EconomyBuildingTypeView buildingType, int level, float popTypeRatio) {
+        return level * buildingType.workforce() * popTypeRatio;
+    }
+
+    public static float effectiveScale(EconomyBuildingView economyBuilding, EconomyBuildingTypeView buildingType, int level) {
+        float maxPrimary = maxWorkers(buildingType, level, buildingType.primaryWorkerPopTypeRatio());
+        float primaryRatio = economyBuilding.primaryWorkerAmount() / Math.max(1f, maxPrimary);
+        return Math.min(economyBuilding.utilization() * level, primaryRatio * level);
+    }
+
+    public static float inputScale(CountryProductionPolicyView productionPolicy, int level, float effectiveScale) {
+        return (1f + productionPolicy.factoryInputModifier()) * throughput(productionPolicy, level) * effectiveScale;
+    }
+
+    public static float outputScale(CountryProductionPolicyView productionPolicy, int level, float secondaryRatio, float effectiveScale) {
+        return throughput(productionPolicy, level) * (1f + productionPolicy.factoryOutputModifier() + secondaryRatio * Constants.SECONDARY_WORKER_OUTPUT_EFFECT) * effectiveScale;
+    }
+
+    public static double inputCost(EconomyBuildingView economyBuilding, CountryMarketView countryMarket, float inputScale) {
+        double cost = 0.0;
+        for (int g = 0; g < economyBuilding.activeInputGoodIndexesLength(); g++) {
+            int goodIndex = economyBuilding.activeInputGoodIndexes(g);
+            if (goodIndex < 0) {
+                break;
+            }
+            cost += (double) inputScale * economyBuilding.activeInputAmounts(g) * countryMarket.goodBudgetPrices(goodIndex);
+        }
+        return cost;
+    }
+
+    public static float minWagePerUnit(CountryMarketView countryMarket, int popTypeIndex, float minWageFactor) {
+        return (countryMarket.lifeCostsByPopType(popTypeIndex) + 0.2f * countryMarket.everydayCostsByPopType(popTypeIndex)) * (1f + minWageFactor);
+    }
+
+    public static float wageBill(CountryMarketView countryMarket, EconomyBuildingTypeView buildingType, float minWageFactor, float primaryWorkers, float secondaryWorkers) {
+        return (minWagePerUnit(countryMarket, buildingType.primaryWorkerPopTypeIndex(), minWageFactor) * primaryWorkers
+            + minWagePerUnit(countryMarket, buildingType.secondaryWorkerPopTypeIndex(), minWageFactor) * secondaryWorkers) / NEEDS_SCALING_FACTOR;
     }
 }

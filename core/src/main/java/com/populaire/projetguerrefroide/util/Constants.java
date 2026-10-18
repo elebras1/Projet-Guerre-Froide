@@ -76,6 +76,11 @@ public class Constants {
     public static final float RGO_PRICE_GAIN = 0.0003f;
     public static final float RGO_STOCK_ADJUSTMENT_DAYS = 365f;
     public static final int INITIAL_SAVINGS_PASSES = 2;
+    public static final float FACTORY_UTILIZATION_RATE = 0.003f;
+    public static final float INPUT_STOCK_DAYS = 10f;
+    public static final float FACTORY_TREASURY_BUFFER_DAYS = 15f;
+    public static final float DIVIDEND_RATE = 0.1f;
+    public static final float SECONDARY_WORKER_OUTPUT_EFFECT = 1.5f;
     public static final int OWNER_COUNT = 3;
     public static final int CAPITALIST_OWNER = 0;
     public static final int STATE_OWNER = 1;

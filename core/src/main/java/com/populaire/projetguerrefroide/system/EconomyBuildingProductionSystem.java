@@ -3,6 +3,8 @@ package com.populaire.projetguerrefroide.system;
 import io.github.elebras1.flecs.*;
 import com.populaire.projetguerrefroide.component.*;
 
+import static com.populaire.projetguerrefroide.util.EconomyBuildingUtils.*;
+
 public class EconomyBuildingProductionSystem {
 
     public EconomyBuildingProductionSystem(World ecsWorld, long phaseId) {
@@ -17,13 +19,11 @@ public class EconomyBuildingProductionSystem {
 
     private void produce(Iter iter) {
         long countryId = 0;
-        CountryMarketView countryMarket = null;
         CountryProductionPolicyView countryProductionPolicy = null;
 
         Field<EconomyBuilding> economyBuildingField = iter.field(EconomyBuilding.class, 0);
         Field<Building> buildingField = iter.field(Building.class, 1);
-        Field<EconomyBuildingType> economyBuildingTypeField = iter.field(EconomyBuildingType.class, 2);
-        EconomyBuildingTypeView economyBuildingTypeData = economyBuildingTypeField.getView(0);
+        EconomyBuildingTypeView economyBuildingTypeData = iter.field(EconomyBuildingType.class, 2).getView(0);
 
         for (int i = 0; i < iter.count(); i++) {
             EconomyBuildingMutView economyBuilding = economyBuildingField.getMutView(i);
@@ -31,49 +31,36 @@ public class EconomyBuildingProductionSystem {
 
             if (building.countryId() != countryId) {
                 countryId = building.countryId();
-                EntityView country = iter.world().obtainEntityView(countryId);
-                countryMarket = country.getMutView(CountryMarket.class);
-                countryProductionPolicy = country.getMutView(CountryProductionPolicy.class);
+                countryProductionPolicy = iter.world().obtainEntityView(countryId).getMutView(CountryProductionPolicy.class);
             }
 
-            float primaryWorkers = economyBuilding.primaryWorkerAmount();
-            float secondaryWorkers = economyBuilding.secondaryWorkerAmount();
-            float level = building.size();
-            float workforce = economyBuildingTypeData.workforce();
-            float primaryRatioType = economyBuildingTypeData.primaryWorkerPopTypeRatio();
-            float secondaryRatioType = economyBuildingTypeData.secondaryWorkerPopTypeRatio();
+            int level = building.size();
+            float effectiveScale = effectiveScale(economyBuilding, economyBuildingTypeData, level);
+            float inputScale = inputScale(countryProductionPolicy, level, effectiveScale);
 
-            float maxPrimary = level * workforce * primaryRatioType;
-            float maxSecondary = level * workforce * secondaryRatioType;
-
-            float primaryRatio = primaryWorkers / Math.max(1f, maxPrimary);
-            float secondaryRatio = secondaryWorkers / Math.max(1f, maxSecondary);
-
-            float maxProductionScale = primaryRatio * level;
-
-            float scale = economyBuilding.scale();
-            float effectiveScale = Math.min(scale * level, maxProductionScale);
-            float baseOutput = economyBuildingTypeData.goodOutputAmount();
-            float throughput = 1f + Math.min(countryProductionPolicy.maximumEconomyScaleFactor(), level * 0.01f);
-
-            float secondaryEffectMultiplier = 1.5f;
-            float outputMultiplier = 1f + countryProductionPolicy.factoryOutputModifier() + secondaryRatio * secondaryEffectMultiplier;
-
-            float minInputSatisfaction = 1f;
-            for (int g = 0; g < economyBuildingTypeData.goodInputIndexesLength(); g++) {
-                int goodIndex = economyBuilding.activeInputGoodIndexes(g);
-                if (goodIndex < 0) {
+            float stockRatio = 1f;
+            for (int g = 0; g < economyBuilding.activeInputGoodIndexesLength(); g++) {
+                if (economyBuilding.activeInputGoodIndexes(g) < 0) {
                     break;
                 }
-                float satisfaction = countryMarket.goodDemandSatisfactionRatios(goodIndex);
-                minInputSatisfaction = Math.min(minInputSatisfaction, satisfaction);
+                float need = inputScale * economyBuilding.activeInputAmounts(g);
+                if (need > 0f) {
+                    stockRatio = Math.min(stockRatio, economyBuilding.inputStocks(g) / need);
+                }
             }
 
-            float efficiencySatisfaction = 1f;
+            for (int g = 0; g < economyBuilding.activeInputGoodIndexesLength(); g++) {
+                if (economyBuilding.activeInputGoodIndexes(g) < 0) {
+                    break;
+                }
+                float used = inputScale * economyBuilding.activeInputAmounts(g) * stockRatio;
+                economyBuilding.inputStocks(g, Math.max(0f, economyBuilding.inputStocks(g) - used));
+            }
 
-            float production = baseOutput * throughput * outputMultiplier * (0.75f + 0.25f * efficiencySatisfaction) * minInputSatisfaction * economyBuilding.inputBudgetRatio() * effectiveScale;
-
-            economyBuilding.production(production);
+            float maxSecondary = maxWorkers(economyBuildingTypeData, level, economyBuildingTypeData.secondaryWorkerPopTypeRatio());
+            float secondaryRatio = economyBuilding.secondaryWorkerAmount() / Math.max(1f, maxSecondary);
+            float outputScale = outputScale(countryProductionPolicy, level, secondaryRatio, effectiveScale);
+            economyBuilding.production(economyBuildingTypeData.goodOutputAmount() * outputScale * stockRatio);
         }
     }
 }

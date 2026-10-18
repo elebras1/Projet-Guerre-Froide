@@ -41,8 +41,8 @@ public class EconomyBuildingWorkerDemandSystem {
                 regionInstanceIncome = iter.world().obtainEntityView(regionInstanceId).getMutView(RegionInstanceIncome.class);
             }
 
-            int primaryTarget = workerTarget(workforce, building.size(), primaryWorkerPopTypeRatio, economyBuilding.scale());
-            int secondaryTarget = workerTarget(workforce, building.size(), secondaryWorkerPopTypeRatio, economyBuilding.scale());
+            int primaryTarget = workerTarget(workforce, building.size(), primaryWorkerPopTypeRatio, economyBuilding.utilization());
+            int secondaryTarget = workerTarget(workforce, building.size(), secondaryWorkerPopTypeRatio, economyBuilding.utilization());
 
             regionInstanceIncome.workerDemandByPopType(primaryWorkerPopTypeIndex, regionInstanceIncome.workerDemandByPopType(primaryWorkerPopTypeIndex) + primaryTarget);
             regionInstanceIncome.workerDemandByPopType(secondaryWorkerPopTypeIndex, regionInstanceIncome.workerDemandByPopType(secondaryWorkerPopTypeIndex) + secondaryTarget);

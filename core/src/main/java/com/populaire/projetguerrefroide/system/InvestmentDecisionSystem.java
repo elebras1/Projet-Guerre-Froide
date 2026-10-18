@@ -227,7 +227,7 @@ public class InvestmentDecisionSystem {
                 }
                 regionTypes.put(buildingTypeId, 1);
                 int freeLevels = maxLevel - building.size() - queuedLevels.get(buildingId);
-                if (freeLevels <= 0 || economyBuilding.scale() < MINIMUM_UTILIZATION_FOR_EXPANSION || levelCost <= 0.0) {
+                if (freeLevels <= 0 || economyBuilding.utilization() < MINIMUM_UTILIZATION_FOR_EXPANSION || levelCost <= 0.0) {
                     continue;
                 }
 

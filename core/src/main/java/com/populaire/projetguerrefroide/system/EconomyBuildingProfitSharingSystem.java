@@ -65,7 +65,7 @@ public class EconomyBuildingProfitSharingSystem {
             regionIncome.workersByPopType(primaryWorkerPopTypeIndex, regionIncome.workersByPopType(primaryWorkerPopTypeIndex) + economyBuilding.primaryWorkerAmount());
             regionIncome.workersByPopType(secondaryWorkerPopTypeIndex, regionIncome.workersByPopType(secondaryWorkerPopTypeIndex) + economyBuilding.secondaryWorkerAmount());
 
-            if(economyBuilding.profit() <= 0f) {
+            if(economyBuilding.dividend() <= 0f) {
                 continue;
             }
 
@@ -83,7 +83,7 @@ public class EconomyBuildingProfitSharingSystem {
                 } else {
                     stateShareRatio = 1f;
                 }
-                regionIncome.countryProfitShare(regionIncome.countryProfitShare() + stateShareRatio * economyBuilding.profit());
+                regionIncome.countryProfitShare(regionIncome.countryProfitShare() + stateShareRatio * economyBuilding.dividend());
             } else {
                 float totalShareCapitalist = capitalistShareRatio + workerShareRatio;
                 if(totalShareCapitalist > 0f) {
@@ -93,7 +93,7 @@ public class EconomyBuildingProfitSharingSystem {
                 } else {
                     capitalistShareRatio = 1f;
                 }
-                float capitalistProfitShare = capitalistShareRatio * economyBuilding.profit();
+                float capitalistProfitShare = capitalistShareRatio * economyBuilding.dividend();
                 if(capitalistPopTypeIndex >= 0 && regionDemographics.totalByPopType(capitalistPopTypeIndex) > 0) {
                     regionIncome.capitalistProfitShare(regionIncome.capitalistProfitShare() + capitalistProfitShare);
                 } else {
@@ -101,7 +101,7 @@ public class EconomyBuildingProfitSharingSystem {
                 }
             }
 
-            float workerShare = workerShareRatio * economyBuilding.profit();
+            float workerShare = workerShareRatio * economyBuilding.dividend();
             if (workersOwned) {
                 float retainedShare = COOPERATIVE_RETAINED_SHARE * workerShare;
                 countryInvestment.funds(WORKERS_OWNER, countryInvestment.funds(WORKERS_OWNER) + retainedShare);

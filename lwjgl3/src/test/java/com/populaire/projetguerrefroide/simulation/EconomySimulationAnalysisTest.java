@@ -38,9 +38,9 @@ public class EconomySimulationAnalysisTest {
     private static final int LONG_RUN_YEARS = 62;
     private static final int LONG_RUN_DETAIL_EVERY = 30;
     private static final Map<String, List<String>> FROZEN_SYSTEMS = Map.of(
-        "production", List.of("RGOEmploymentSystem", "RGOProductionSystem", "EconomyBuildingProductionSystem", "EconomyBuildingScaleSystem", "ConstructionCompletionSystem"),
+        "production", List.of("RGOEmploymentSystem", "RGOProductionSystem", "EconomyBuildingProductionSystem", "EconomyBuildingUtilizationSystem", "EconomyBuildingWorkingCapitalSystem", "ConstructionCompletionSystem"),
         "prices", List.of("GlobalMarketResolveSystem"),
-        "factories", List.of("EconomyBuildingProductionSystem", "EconomyBuildingScaleSystem", "ConstructionCompletionSystem"));
+        "factories", List.of("EconomyBuildingProductionSystem", "EconomyBuildingUtilizationSystem", "EconomyBuildingWorkingCapitalSystem", "ConstructionCompletionSystem"));
 
     private static final float NEGATIVE_BALANCE_TOLERANCE = 1e-6f;
     private static final double MONEY_DRIFT_TOLERANCE = 1e-3;

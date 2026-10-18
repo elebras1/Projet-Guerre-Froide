@@ -48,8 +48,8 @@ public class EconomyBuildingEmploymentSystem {
                 demographics = regionInstance.getMutView(RegionDemographics.class);
             }
 
-            int primaryTarget = workerTarget(workforce, building.size(), primaryWorkerPopTypeRatio, economyBuilding.scale());
-            int secondaryTarget = workerTarget(workforce, building.size(), secondaryWorkerPopTypeRatio, economyBuilding.scale());
+            int primaryTarget = workerTarget(workforce, building.size(), primaryWorkerPopTypeRatio, economyBuilding.utilization());
+            int secondaryTarget = workerTarget(workforce, building.size(), secondaryWorkerPopTypeRatio, economyBuilding.utilization());
 
             int primaryTotal = demographics.totalByPopType(primaryWorkerPopTypeIndex);
             int secondaryTotal = demographics.totalByPopType(secondaryWorkerPopTypeIndex);

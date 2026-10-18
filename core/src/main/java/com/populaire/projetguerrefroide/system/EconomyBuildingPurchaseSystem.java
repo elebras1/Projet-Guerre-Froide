@@ -42,7 +42,9 @@ public class EconomyBuildingPurchaseSystem {
                 if (demand <= 0f) {
                     continue;
                 }
-                double cost = (double) economyBuilding.goodInputDemandAmounts(g) * countryMarket.goodPrices(goodIndex) * countryMarket.goodConsumedAmounts(goodIndex) / demand;
+                float delivered = economyBuilding.goodInputDemandAmounts(g) * countryMarket.goodConsumedAmounts(goodIndex) / demand;
+                double cost = (double) delivered * countryMarket.goodPrices(goodIndex);
+                economyBuilding.inputStocks(g, economyBuilding.inputStocks(g) + delivered);
                 countryMarket.goodRevenues(goodIndex, countryMarket.goodRevenues(goodIndex) + cost);
                 paid += cost;
             }

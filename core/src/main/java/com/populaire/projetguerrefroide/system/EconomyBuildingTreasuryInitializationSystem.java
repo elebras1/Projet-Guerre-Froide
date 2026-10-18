@@ -6,6 +6,10 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 
+import static com.populaire.projetguerrefroide.util.Constants.DIVIDEND_RATE;
+import static com.populaire.projetguerrefroide.util.Constants.FACTORY_TREASURY_BUFFER_DAYS;
+import static com.populaire.projetguerrefroide.util.EconomyBuildingUtils.*;
+
 public class EconomyBuildingTreasuryInitializationSystem {
 
     public EconomyBuildingTreasuryInitializationSystem(World ecsWorld, long phaseId) {
@@ -20,12 +24,12 @@ public class EconomyBuildingTreasuryInitializationSystem {
     private void initialize(Iter iter) {
         long countryId = 0;
         CountryMarketView countryMarket = null;
+        CountryLaborPolicyView countryLaborPolicy = null;
         CountryProductionPolicyView countryProductionPolicy = null;
 
         Field<Building> buildingField = iter.field(Building.class, 0);
         Field<EconomyBuilding> economyBuildingField = iter.field(EconomyBuilding.class, 1);
-        Field<EconomyBuildingType> economyBuildingTypeField = iter.field(EconomyBuildingType.class, 2);
-        EconomyBuildingTypeView economyBuildingTypeData = economyBuildingTypeField.getView(0);
+        EconomyBuildingTypeView buildingTypeData = iter.field(EconomyBuildingType.class, 2).getView(0);
         for (int i = 0; i < iter.count(); i++) {
             BuildingView building = buildingField.getMutView(i);
             EconomyBuildingMutView economyBuilding = economyBuildingField.getMutView(i);
@@ -34,27 +38,15 @@ public class EconomyBuildingTreasuryInitializationSystem {
                 countryId = building.countryId();
                 EntityView country = iter.world().obtainEntityView(countryId);
                 countryMarket = country.getMutView(CountryMarket.class);
+                countryLaborPolicy = country.getMutView(CountryLaborPolicy.class);
                 countryProductionPolicy = country.getMutView(CountryProductionPolicy.class);
             }
 
-            float throughput = 1f + Math.min(countryProductionPolicy.maximumEconomyScaleFactor(), building.size() * 0.01f);
-            float inputMultiplier = 1.0f + countryProductionPolicy.factoryInputModifier();
-
-            float level = building.size();
-            float maxPrimary = level * economyBuildingTypeData.workforce() * economyBuildingTypeData.primaryWorkerPopTypeRatio();
-            float primaryRatio = economyBuilding.primaryWorkerAmount() / Math.max(1f, maxPrimary);
-            float effectiveScale = Math.min(economyBuilding.scale() * level, primaryRatio * level);
-
-            float inputScale = inputMultiplier * throughput * effectiveScale;
-            double budgetCost = 0.0;
-            for (int g = 0; g < economyBuildingTypeData.goodInputIdsLength(); g++) {
-                int goodIndex = economyBuilding.activeInputGoodIndexes(g);
-                if (goodIndex < 0) {
-                    break;
-                }
-                budgetCost += (double) inputScale * economyBuilding.activeInputAmounts(g) * countryMarket.goodBudgetPrices(goodIndex);
-            }
-            economyBuilding.treasury(budgetCost);
+            int level = building.size();
+            float inputScale = inputScale(countryProductionPolicy, level, effectiveScale(economyBuilding, buildingTypeData, level));
+            double dailyCost = inputCost(economyBuilding, countryMarket, inputScale)
+                + wageBill(countryMarket, buildingTypeData, countryLaborPolicy.minWageFactor(), economyBuilding.primaryWorkerAmount(), economyBuilding.secondaryWorkerAmount());
+            economyBuilding.treasury(FACTORY_TREASURY_BUFFER_DAYS * dailyCost + Math.max(0f, economyBuilding.profit()) / DIVIDEND_RATE);
         }
     }
 }
