@@ -109,6 +109,7 @@ public final class EconomyLoader {
             int index = 0;
             int capitalistPopTypeIndex = -1;
             int aristocratPopTypeIndex = -1;
+            int statePostPopTypeIndex = -1;
             for (Map.Entry<String, PopulationTypeJson> populationType : populationTypes.entrySet()) {
                 this.loadPopulationType(populationType.getValue(), populationType.getKey(), index);
                 long populationTypeId = this.ecsWorld.lookup(populationType.getKey());
@@ -120,6 +121,12 @@ public final class EconomyLoader {
                 } else if (populationTypeEntity.has(this.ecsConstants.aristocratTag())) {
                     aristocratPopTypeIndex = index;
                 }
+                if (populationTypeEntity.has(StatePostType.class)) {
+                    if (statePostPopTypeIndex >= 0) {
+                        throw new IllegalArgumentException("Only one population type can hold state posts: " + populationType.getKey());
+                    }
+                    statePostPopTypeIndex = index;
+                }
                 index++;
             }
             for (Map.Entry<String, PopulationTypeJson> populationType : populationTypes.entrySet()) {
@@ -128,7 +135,7 @@ public final class EconomyLoader {
                 this.fillMobilityWeights(populationType.getValue().demoteTo(), false, populationTypeData);
             }
             long globalPopType = this.ecsWorld.entity("global_population_type");
-            this.ecsWorld.obtainEntity(globalPopType).set(new GlobalPopulationType(this.context.populationTypeIds(), capitalistPopTypeIndex, aristocratPopTypeIndex));
+            this.ecsWorld.obtainEntity(globalPopType).set(new GlobalPopulationType(this.context.populationTypeIds(), capitalistPopTypeIndex, aristocratPopTypeIndex, statePostPopTypeIndex));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }
@@ -163,6 +170,12 @@ public final class EconomyLoader {
             switch (incomeType) {
                 case IncomeTypeUtils.ARISTOCRAT_INCOME_TYPE -> populationType.add(this.ecsConstants.aristocratTag());
                 case IncomeTypeUtils.CAPITALIST_INCOME_TYPE -> populationType.add(this.ecsConstants.capitalistTag());
+            }
+            StatePostsJson statePosts = populationTypeJson.statePosts();
+            if (statePosts != null) {
+                populationType.set(new StatePostType((float) statePosts.managementRatio(), (float) statePosts.administrationRatio(),
+                    (float) statePosts.taxCollectionFloor(), (float) statePosts.managementOutputBonus()));
+                populationType.add(this.ecsConstants.employeeTag());
             }
 
             int[] lifeNeedsGoodIndexes = new int[MAX_LIFE_NEEDS_GOODS];

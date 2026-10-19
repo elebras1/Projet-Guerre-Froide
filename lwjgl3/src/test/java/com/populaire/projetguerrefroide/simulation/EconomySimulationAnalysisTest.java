@@ -113,6 +113,7 @@ public class EconomySimulationAnalysisTest {
         world.component(LawGroup.class);
         world.component(GovernmentPolicy.class);
         world.component(PopulationType.class);
+        world.component(StatePostType.class);
         world.component(Good.class);
         world.component(EconomyBuildingType.class);
         world.component(SpecialBuildingType.class);

@@ -5,13 +5,17 @@ import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 import static com.populaire.projetguerrefroide.util.EmploymentUtils.rationedWorkers;
 import static com.populaire.projetguerrefroide.util.EmploymentUtils.workerTarget;
 
 public class EconomyBuildingEmploymentSystem {
 
-    public EconomyBuildingEmploymentSystem(World ecsWorld, long phaseId) {
+    private final long stateOwnerTag;
+
+    public EconomyBuildingEmploymentSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.stateOwnerTag = ecsConstants.countryTag();
         ecsWorld.system("EconomyBuildingEmploymentSystem")
             .kind(phaseId)
             .with(EconomyBuilding.class)
@@ -62,6 +66,9 @@ public class EconomyBuildingEmploymentSystem {
 
             regionInstanceIncome.workersByPopType(primaryWorkerPopTypeIndex, regionInstanceIncome.workersByPopType(primaryWorkerPopTypeIndex) + primaryWorkerAmount);
             regionInstanceIncome.workersByPopType(secondaryWorkerPopTypeIndex, regionInstanceIncome.workersByPopType(secondaryWorkerPopTypeIndex) + secondaryWorkerAmount);
+            if (economyBuilding.ownerTagId() == this.stateOwnerTag) {
+                regionInstanceIncome.stateBuildingWorkers(regionInstanceIncome.stateBuildingWorkers() + primaryWorkerAmount + secondaryWorkerAmount);
+            }
             regionInstanceData.workerPopTypeEmploymentRatios(primaryWorkerPopTypeIndex, regionInstanceIncome.workersByPopType(primaryWorkerPopTypeIndex) / Math.max(1f, primaryTotal));
             regionInstanceData.workerPopTypeEmploymentRatios(secondaryWorkerPopTypeIndex, regionInstanceIncome.workersByPopType(secondaryWorkerPopTypeIndex) / Math.max(1f, secondaryTotal));
         }

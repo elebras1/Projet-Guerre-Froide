@@ -5,13 +5,17 @@ import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 import static com.populaire.projetguerrefroide.util.Constants.FACTORY_UTILIZATION_RATE;
 import static com.populaire.projetguerrefroide.util.EconomyBuildingUtils.*;
 
 public class EconomyBuildingUtilizationSystem {
 
-    public EconomyBuildingUtilizationSystem(World ecsWorld, long phaseId) {
+    private final long stateOwnerTag;
+
+    public EconomyBuildingUtilizationSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.stateOwnerTag = ecsConstants.countryTag();
         ecsWorld.system("EconomyBuildingUtilizationSystem")
             .kind(phaseId)
             .with(Building.class)
@@ -51,7 +55,8 @@ public class EconomyBuildingUtilizationSystem {
             }
 
             int level = building.size();
-            double value = (double) economyBuilding.unitRevenue() * buildingTypeData.goodOutputAmount() * outputScale(countryProductionPolicy, level, 1f, level);
+            double value = (double) economyBuilding.unitRevenue() * buildingTypeData.goodOutputAmount() * outputScale(countryProductionPolicy, level, 1f, level)
+                * (1f + managementBonus(economyBuilding, regionInstance, this.stateOwnerTag));
             double costs = inputCost(economyBuilding, countryMarket, inputScale(countryProductionPolicy, level, level))
                 + wageBill(countryMarket, regionInstance, buildingTypeData, countryLaborPolicy.minWageFactor(),
                     maxWorkers(buildingTypeData, level, buildingTypeData.primaryWorkerPopTypeRatio()),

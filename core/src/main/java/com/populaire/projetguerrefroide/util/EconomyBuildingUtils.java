@@ -44,6 +44,10 @@ public class EconomyBuildingUtils {
         return throughput(productionPolicy, level) * (1f + productionPolicy.factoryOutputModifier() + secondaryRatio * Constants.SECONDARY_WORKER_OUTPUT_EFFECT) * effectiveScale;
     }
 
+    public static float managementBonus(EconomyBuildingView economyBuilding, RegionInstanceView regionInstance, long stateOwnerTag) {
+        return economyBuilding.ownerTagId() == stateOwnerTag ? regionInstance.managementOutputBonus() : 0f;
+    }
+
     public static double inputCost(EconomyBuildingView economyBuilding, CountryMarketView countryMarket, float inputScale) {
         double cost = 0.0;
         for (int g = 0; g < economyBuilding.activeInputGoodIndexesLength(); g++) {

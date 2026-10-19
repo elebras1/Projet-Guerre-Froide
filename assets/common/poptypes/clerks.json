@@ -30,10 +30,13 @@
     "strata": "middle",
     "income_type": "none",
     "promote_to": {
+        "bureaucrats": 1,
         "capitalists": 0.1
     },
     "demote_to": {
         "craftsmen": 1,
-        "artisans": 0.5
+        "artisans": 0.5,
+        "farmers": 0.5,
+        "labourers": 0.5
     }
 }

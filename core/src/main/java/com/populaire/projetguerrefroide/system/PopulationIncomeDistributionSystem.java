@@ -6,6 +6,7 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.util.StateBudgetUtils;
 import com.populaire.projetguerrefroide.util.SubsistenceUtils;
 
 import static com.populaire.projetguerrefroide.util.Constants.*;
@@ -32,8 +33,10 @@ public class PopulationIncomeDistributionSystem {
         boolean capitalist = iter.isSet(2);
         boolean aristocrat = iter.isSet(3);
         boolean rural = iter.isSet(4);
+        boolean statePost = typeIdx == StateBudgetUtils.statePostIndex(iter.world());
 
         long regionInstanceId = 0;
+        RegionInstanceView regionInstance = null;
         RegionInstanceIncomeMutView regionInstanceIncome = null;
         RegionDemographicsView regionDemographics = null;
 
@@ -51,6 +54,7 @@ public class PopulationIncomeDistributionSystem {
             if (population.regionInstanceId() != regionInstanceId) {
                 regionInstanceId = population.regionInstanceId();
                 EntityView regionEntity = iter.world().obtainEntityView(regionInstanceId);
+                regionInstance = regionEntity.getView(RegionInstance.class);
                 regionInstanceIncome = regionEntity.getMutView(RegionInstanceIncome.class);
                 regionDemographics = regionEntity.getMutView(RegionDemographics.class);
             }
@@ -104,7 +108,7 @@ public class PopulationIncomeDistributionSystem {
                 case MIDDLE_STRATA -> taxRate = countryTaxPolicy.middleTaxRate();
                 case RICH_STRATA -> taxRate = countryTaxPolicy.richTaxRate();
             }
-            float tax = grossIncome * taxRate;
+            float tax = grossIncome * taxRate * regionInstance.taxCollectionShare();
             float netIncome = grossIncome - tax;
 
             float purchase = population.amount() / NEEDS_SCALING_FACTOR * (population.lifeNeedsDemandRatio() * countryMarket.paidLifeCostsByPopType(typeIdx)
@@ -115,7 +119,8 @@ public class PopulationIncomeDistributionSystem {
 
             float scaledAmount = popAmount / NEEDS_SCALING_FACTOR;
             float scaledUnemployed = Math.max(0, population.amount() - population.employment()) / NEEDS_SCALING_FACTOR;
-            float stateIncome = scaledAmount * (countryBudget.wageRatesByPopType(typeIdx) + countryBudget.transferRatesByPopType(typeIdx))
+            float scaledWageBase = statePost ? population.employment() / NEEDS_SCALING_FACTOR : scaledAmount;
+            float stateIncome = scaledWageBase * countryBudget.wageRatesByPopType(typeIdx) + scaledAmount * countryBudget.transferRatesByPopType(typeIdx)
                 + scaledUnemployed * countryBudget.socialRatesByPopType(typeIdx);
             stateIncome = (float) Math.min(stateIncome, Math.max(0.0, countryMarket.treasury()));
             countryMarket.treasury(countryMarket.treasury() - stateIncome);

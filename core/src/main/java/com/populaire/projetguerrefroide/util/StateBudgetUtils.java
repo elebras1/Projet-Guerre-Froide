@@ -26,6 +26,16 @@ public class StateBudgetUtils {
         }
     }
 
+    public static int statePostIndex(World world) {
+        GlobalPopulationTypeView globalPopulationType = world.obtainEntityView(world.lookup("global_population_type")).getView(GlobalPopulationType.class);
+        return globalPopulationType.statePostPopTypeIndex();
+    }
+
+    public static double scaledWageBase(CountryDemographicsView countryDemographics, int popTypeIndex, int statePostIndex) {
+        long base = popTypeIndex == statePostIndex ? countryDemographics.employmentByPopType(popTypeIndex) : countryDemographics.totalByPopType(popTypeIndex);
+        return (double) base / NEEDS_SCALING_FACTOR;
+    }
+
     public static float wageSlider(int incomeType, CountryBudgetPolicyView budgetPolicy, CountryEducationPolicyView educationPolicy) {
         return switch (incomeType) {
             case ADMINISTRATION_INCOME_TYPE -> slider(budgetPolicy.administrationSpendingRate());
@@ -49,14 +59,14 @@ public class StateBudgetUtils {
     }
 
     public static double dailyNeeds(int[] incomeTypes, boolean[] assistedTypes, CountryMarketView countryMarket, CountryDemographicsView countryDemographics,
-                                    CountryBudgetPolicyView budgetPolicy, CountryEducationPolicyView educationPolicy) {
+                                    CountryBudgetPolicyView budgetPolicy, CountryEducationPolicyView educationPolicy, int statePostIndex) {
         float socialSlider = slider(budgetPolicy.socialSpendingRate());
         double needs = 0.0;
         for (int p = 0; p < POP_TYPE_COUNT; p++) {
             if (assistedTypes[p]) {
                 needs += (double) scaledUnemployed(countryDemographics, p) * socialRate(countryMarket, p, socialSlider);
             } else {
-                needs += (double) countryDemographics.totalByPopType(p) / NEEDS_SCALING_FACTOR * wageRate(countryMarket, p, wageSlider(incomeTypes[p], budgetPolicy, educationPolicy));
+                needs += scaledWageBase(countryDemographics, p, statePostIndex) * wageRate(countryMarket, p, wageSlider(incomeTypes[p], budgetPolicy, educationPolicy));
             }
         }
         return needs;

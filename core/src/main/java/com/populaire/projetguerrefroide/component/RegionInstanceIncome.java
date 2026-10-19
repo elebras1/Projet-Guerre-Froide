@@ -18,6 +18,7 @@ public record RegionInstanceIncome(
     float countryProfitShare,
     float claimedCapitalistShare,
     float claimedAristocratShare,
-    float claimedCountryShare
+    float claimedCountryShare,
+    int stateBuildingWorkers
 ) {
 }

@@ -29,6 +29,7 @@ public class CountryBudgetSystem {
         int[] incomeTypes = new int[POP_TYPE_COUNT];
         boolean[] assistedTypes = new boolean[POP_TYPE_COUNT];
         readPopulationTypes(iter.world(), incomeTypes, assistedTypes);
+        int statePostIndex = statePostIndex(iter.world());
         GlobalMarketView globalMarket = iter.world().obtainEntityView(iter.world().lookup("global_market")).getMutView(GlobalMarket.class);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
@@ -57,7 +58,7 @@ public class CountryBudgetSystem {
                 }
             }
 
-            double needs = dailyNeeds(incomeTypes, assistedTypes, countryMarket, countryDemographics, countryBudgetPolicy, countryEducationPolicy) + subsidies;
+            double needs = dailyNeeds(incomeTypes, assistedTypes, countryMarket, countryDemographics, countryBudgetPolicy, countryEducationPolicy, statePostIndex) + subsidies;
             double stateLoans = countryBank.stateLoans() * (1.0 + STATE_LOAN_INTEREST_RATE / DAYS_PER_YEAR);
             double treasury = Math.max(0.0, countryMarket.treasury());
             double loan = needs > treasury ? Math.min(needs - treasury, Math.max(0.0, countryBank.deposits())) : 0.0;
@@ -93,7 +94,7 @@ public class CountryBudgetSystem {
                     assistedUnits += countryDemographics.totalByPopType(p) / NEEDS_SCALING_FACTOR;
                 } else {
                     popTypeWageRate = spendingRatio * wageRate(countryMarket, p, wageSlider(incomeTypes[p], countryBudgetPolicy, countryEducationPolicy));
-                    wagesBudget += (double) countryDemographics.totalByPopType(p) / NEEDS_SCALING_FACTOR * popTypeWageRate;
+                    wagesBudget += scaledWageBase(countryDemographics, p, statePostIndex) * popTypeWageRate;
                 }
                 countryBudget.wageRatesByPopType(p, popTypeWageRate);
                 countryBudget.socialRatesByPopType(p, popTypeSocialRate);

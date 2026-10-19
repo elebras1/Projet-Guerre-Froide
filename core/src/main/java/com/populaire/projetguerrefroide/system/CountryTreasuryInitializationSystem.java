@@ -9,6 +9,7 @@ import static com.populaire.projetguerrefroide.util.Constants.POP_TYPE_COUNT;
 import static com.populaire.projetguerrefroide.util.Constants.TARGET_TREASURY_DAYS;
 import static com.populaire.projetguerrefroide.util.StateBudgetUtils.dailyNeeds;
 import static com.populaire.projetguerrefroide.util.StateBudgetUtils.readPopulationTypes;
+import static com.populaire.projetguerrefroide.util.StateBudgetUtils.statePostIndex;
 
 public class CountryTreasuryInitializationSystem {
 
@@ -27,6 +28,7 @@ public class CountryTreasuryInitializationSystem {
         int[] incomeTypes = new int[POP_TYPE_COUNT];
         boolean[] assistedTypes = new boolean[POP_TYPE_COUNT];
         readPopulationTypes(iter.world(), incomeTypes, assistedTypes);
+        int statePostIndex = statePostIndex(iter.world());
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         Field<CountryDemographics> countryDemographicsField = iter.field(CountryDemographics.class, 1);
@@ -38,7 +40,7 @@ public class CountryTreasuryInitializationSystem {
             CountryBudgetPolicyView countryBudgetPolicy = countryBudgetPolicyField.getMutView(i);
             CountryEducationPolicyView countryEducationPolicy = countryEducationPolicyField.getMutView(i);
 
-            double needs = dailyNeeds(incomeTypes, assistedTypes, countryMarket, countryDemographics, countryBudgetPolicy, countryEducationPolicy);
+            double needs = dailyNeeds(incomeTypes, assistedTypes, countryMarket, countryDemographics, countryBudgetPolicy, countryEducationPolicy, statePostIndex);
             countryMarket.treasury(TARGET_TREASURY_DAYS * needs);
         }
     }

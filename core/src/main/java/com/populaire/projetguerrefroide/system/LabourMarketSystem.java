@@ -20,6 +20,9 @@ public class LabourMarketSystem {
     }
 
     private void adjust(Iter iter) {
+        World world = iter.world();
+        GlobalPopulationTypeView globalPopulationType = world.obtainEntityView(world.lookup("global_population_type")).getView(GlobalPopulationType.class);
+        int statePostIndex = globalPopulationType.statePostPopTypeIndex();
         Field<RegionInstance> regionInstanceField = iter.field(RegionInstance.class, 0);
         Field<RegionInstanceIncome> regionInstanceIncomeField = iter.field(RegionInstanceIncome.class, 1);
         Field<RegionDemographics> regionDemographicsField = iter.field(RegionDemographics.class, 2);
@@ -28,6 +31,9 @@ public class LabourMarketSystem {
             RegionInstanceIncomeView regionInstanceIncome = regionInstanceIncomeField.getMutView(i);
             RegionDemographicsView regionDemographics = regionDemographicsField.getMutView(i);
             for (int p = 0; p < regionInstance.wagePremiumByPopTypeLength(); p++) {
+                if (p == statePostIndex) {
+                    continue;
+                }
                 float demand = regionInstanceIncome.solventWorkerDemandByPopType(p);
                 float available = regionDemographics.totalByPopType(p);
                 regionInstance.vacanciesByPopType(p, Math.max(0f, demand - available));

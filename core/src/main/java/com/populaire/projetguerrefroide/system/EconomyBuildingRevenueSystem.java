@@ -5,13 +5,17 @@ import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 import static com.populaire.projetguerrefroide.util.Constants.*;
 import static com.populaire.projetguerrefroide.util.EconomyBuildingUtils.*;
 
 public class EconomyBuildingRevenueSystem {
 
-    public EconomyBuildingRevenueSystem(World ecsWorld, long phaseId) {
+    private final long stateOwnerTag;
+
+    public EconomyBuildingRevenueSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.stateOwnerTag = ecsConstants.countryTag();
         ecsWorld.system("EconomyBuildingRevenueSystem")
             .kind(phaseId)
             .with(Building.class)
@@ -71,7 +75,8 @@ public class EconomyBuildingRevenueSystem {
             float inputScale = inputScale(countryProductionPolicy, level, effectiveScale);
             double dailyInputCost = inputCost(economyBuilding, countryMarket, inputScale);
             float maxSecondary = maxWorkers(buildingTypeData, level, buildingTypeData.secondaryWorkerPopTypeRatio());
-            float fullOutput = buildingTypeData.goodOutputAmount() * outputScale(countryProductionPolicy, level, economyBuilding.secondaryWorkerAmount() / Math.max(1f, maxSecondary), effectiveScale);
+            float fullOutput = buildingTypeData.goodOutputAmount() * outputScale(countryProductionPolicy, level, economyBuilding.secondaryWorkerAmount() / Math.max(1f, maxSecondary), effectiveScale)
+                * (1f + managementBonus(economyBuilding, regionInstance, this.stateOwnerTag));
             float stockRatio = fullOutput > 0f ? economyBuilding.production() / fullOutput : 0f;
             float profit = (float) (revenue - wages - dailyInputCost * stockRatio);
             economyBuilding.profit(profit);

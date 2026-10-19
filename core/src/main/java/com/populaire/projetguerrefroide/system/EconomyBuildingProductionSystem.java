@@ -2,12 +2,16 @@ package com.populaire.projetguerrefroide.system;
 
 import io.github.elebras1.flecs.*;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 import static com.populaire.projetguerrefroide.util.EconomyBuildingUtils.*;
 
 public class EconomyBuildingProductionSystem {
 
-    public EconomyBuildingProductionSystem(World ecsWorld, long phaseId) {
+    private final long stateOwnerTag;
+
+    public EconomyBuildingProductionSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.stateOwnerTag = ecsConstants.countryTag();
         ecsWorld.system("EconomyBuildingProductionSystem")
             .kind(phaseId)
             .with(EconomyBuilding.class)
@@ -21,6 +25,9 @@ public class EconomyBuildingProductionSystem {
         long countryId = 0;
         CountryProductionPolicyView countryProductionPolicy = null;
 
+        long regionId = 0;
+        RegionInstanceView regionInstance = null;
+
         Field<EconomyBuilding> economyBuildingField = iter.field(EconomyBuilding.class, 0);
         Field<Building> buildingField = iter.field(Building.class, 1);
         EconomyBuildingTypeView economyBuildingTypeData = iter.field(EconomyBuildingType.class, 2).getView(0);
@@ -32,6 +39,10 @@ public class EconomyBuildingProductionSystem {
             if (building.countryId() != countryId) {
                 countryId = building.countryId();
                 countryProductionPolicy = iter.world().obtainEntityView(countryId).getMutView(CountryProductionPolicy.class);
+            }
+            if (building.parentId() != regionId) {
+                regionId = building.parentId();
+                regionInstance = iter.world().obtainEntityView(regionId).getView(RegionInstance.class);
             }
 
             int level = building.size();
@@ -59,7 +70,7 @@ public class EconomyBuildingProductionSystem {
 
             float maxSecondary = maxWorkers(economyBuildingTypeData, level, economyBuildingTypeData.secondaryWorkerPopTypeRatio());
             float secondaryRatio = economyBuilding.secondaryWorkerAmount() / Math.max(1f, maxSecondary);
-            float outputScale = outputScale(countryProductionPolicy, level, secondaryRatio, effectiveScale);
+            float outputScale = outputScale(countryProductionPolicy, level, secondaryRatio, effectiveScale) * (1f + managementBonus(economyBuilding, regionInstance, this.stateOwnerTag));
             economyBuilding.production(economyBuildingTypeData.goodOutputAmount() * outputScale * stockRatio);
         }
     }

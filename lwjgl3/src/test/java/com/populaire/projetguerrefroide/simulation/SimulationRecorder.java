@@ -124,7 +124,8 @@ public class SimulationRecorder implements AutoCloseable {
     private static final int ACCOUNT_WAGE_PREMIUM = 13;
     private static final int ACCOUNT_VACANCIES = 14;
     private static final int ACCOUNT_UNCOVERED_VACANCIES = 15;
-    private static final int ACCOUNT_COUNT = 16;
+    private static final int ACCOUNT_STATE_POSTS = 16;
+    private static final int ACCOUNT_COUNT = 17;
 
     private final World ecsWorld;
     private final LocalDate startDate;
@@ -225,6 +226,8 @@ public class SimulationRecorder implements AutoCloseable {
     private final float[] buildingTypeScale;
     private final float[] buildingTypeMargin;
     private final int[] buildingTypeStoppedProfitable;
+    private final float[] buildingTypeStateProduction;
+    private final long stateOwnerTag;
     private final int[] buildingTypeCount;
 
     private final float[] countryPrimaryWorkers;
@@ -241,6 +244,7 @@ public class SimulationRecorder implements AutoCloseable {
     private final double[] tickWorkersByPopType = new double[POP_TYPE_COUNT];
     private final double[] tickVacancies = new double[POP_TYPE_COUNT];
     private final double[] tickUncoveredVacancies = new double[POP_TYPE_COUNT];
+    private final double[] tickStatePosts = new double[POP_TYPE_COUNT];
     private final boolean[] ruralPopTypes = new boolean[POP_TYPE_COUNT];
     private int capitalistPopTypeIndex = -1;
     private int aristocratPopTypeIndex = -1;
@@ -343,6 +347,8 @@ public class SimulationRecorder implements AutoCloseable {
         this.buildingTypeCount = new int[this.buildingTypeNames.size()];
         this.buildingTypeMargin = new float[this.buildingTypeNames.size()];
         this.buildingTypeStoppedProfitable = new int[this.buildingTypeNames.size()];
+        this.buildingTypeStateProduction = new float[this.buildingTypeNames.size()];
+        this.stateOwnerTag = ecsWorld.lookup(EcsConstants.COUNTRY_TAG);
 
         this.countryPrimaryWorkers = new float[this.countryNames.size()];
         this.countrySecondaryWorkers = new float[this.countryNames.size()];
@@ -552,7 +558,7 @@ public class SimulationRecorder implements AutoCloseable {
         this.writer("country/production.csv").header("tick", "date", "country", "good", "rgo_production", "building_production", "total");
         this.writer("country/building_employment.csv").header("tick", "date", "country", "primary_workers", "secondary_workers");
 
-        this.writer("building_types/production.csv").header("tick", "date", "building_type", "production", "primary_workers", "secondary_workers", "profit", "utilization", "count", "unit_margin", "stopped_profitable");
+        this.writer("building_types/production.csv").header("tick", "date", "building_type", "production", "primary_workers", "secondary_workers", "profit", "utilization", "count", "unit_margin", "stopped_profitable", "state_production");
         this.writer("building_types/input_demand.csv").header("tick", "date", "building_type", "good", "demand");
 
         this.writer("rgo/employment.csv").header("tick", "date", "country", "good", "production", "workers", "slaves", "profit", "wage");
@@ -561,7 +567,7 @@ public class SimulationRecorder implements AutoCloseable {
         this.writer("region_income/shares.csv").header("tick", "date", "country", "capitalist_share", "aristocrat_share", "country_share");
 
         this.writer("world/accounts.csv").header("year", "date", "pop_type", "strata", "population", "employed", "income", "wages", "profit_shares", "taxes",
-            "state", "bank", "life_spending", "everyday_spending", "luxury_spending", "savings", "deposits", "wage_premium", "vacancies", "uncovered_vacancies");
+            "state", "bank", "life_spending", "everyday_spending", "luxury_spending", "savings", "deposits", "wage_premium", "vacancies", "uncovered_vacancies", "state_posts");
         this.writer("world/yearly.csv").header("year", "date",
             "real_output", "real_output_ratio", "real_output_per_100k_adults", "adults", "cpi",
             "life_poor", "life_middle", "life_rich", "everyday_poor", "everyday_middle", "everyday_rich",
@@ -864,6 +870,7 @@ public class SimulationRecorder implements AutoCloseable {
         Arrays.fill(this.buildingTypeCount, 0);
         Arrays.fill(this.buildingTypeMargin, 0f);
         Arrays.fill(this.buildingTypeStoppedProfitable, 0);
+        Arrays.fill(this.buildingTypeStateProduction, 0f);
         Arrays.fill(this.countryPrimaryWorkers, 0f);
         Arrays.fill(this.countrySecondaryWorkers, 0f);
         Arrays.fill(this.countryPopEmployment, 0f);
@@ -876,6 +883,7 @@ public class SimulationRecorder implements AutoCloseable {
         Arrays.fill(this.tickWorkersByPopType, 0.0);
         Arrays.fill(this.tickVacancies, 0.0);
         Arrays.fill(this.tickUncoveredVacancies, 0.0);
+        Arrays.fill(this.tickStatePosts, 0.0);
         this.countryRgoByGood.clear();
         this.countryBuildingByGood.clear();
         this.buildingTypeInputDemand.clear();
@@ -1138,6 +1146,9 @@ public class SimulationRecorder implements AutoCloseable {
                 Integer typeIndex = this.buildingTypeIndexByEntity.get(buildingTypeId);
                 if (typeIndex != null) {
                     this.buildingTypeProduction[typeIndex] += production;
+                    if (economyBuilding.ownerTagId() == this.stateOwnerTag) {
+                        this.buildingTypeStateProduction[typeIndex] += production;
+                    }
                     this.buildingTypePrimaryWorkers[typeIndex] += economyBuilding.primaryWorkerAmount();
                     this.buildingTypeSecondaryWorkers[typeIndex] += economyBuilding.secondaryWorkerAmount();
                     this.buildingTypeProfit[typeIndex] += economyBuilding.profit();
@@ -1215,8 +1226,11 @@ public class SimulationRecorder implements AutoCloseable {
                     }
                 }
 
-                float[] agg = this.countryRegionIncome.computeIfAbsent((long) countryIndex, k -> new float[4 * POP_TYPE_COUNT + 5]);
+                float[] agg = this.countryRegionIncome.computeIfAbsent((long) countryIndex, k -> new float[5 * POP_TYPE_COUNT + 7]);
+                float collected = region.taxCollectionShare();
                 for (int p = 0; p < POP_TYPE_COUNT; p++) {
+                    agg[4 * POP_TYPE_COUNT + 5 + p] += income.claimedIncomeByPopType(p) * collected;
+                    this.tickStatePosts[p] += region.statePostsByPopType(p);
                     this.tickVacancies[p] += region.vacanciesByPopType(p);
                     this.tickUncoveredVacancies[p] += Math.max(0f, region.vacanciesByPopType(p) - ruralReserve);
                     this.tickPremiumWorkers[p] += (double) region.wagePremiumByPopType(p) * income.workersByPopType(p);
@@ -1232,6 +1246,8 @@ public class SimulationRecorder implements AutoCloseable {
                 agg[3 * POP_TYPE_COUNT + 2] += income.countryProfitShare();
                 agg[4 * POP_TYPE_COUNT + 3] += income.claimedCapitalistShare();
                 agg[4 * POP_TYPE_COUNT + 4] += income.claimedAristocratShare();
+                agg[5 * POP_TYPE_COUNT + 5] += income.claimedCapitalistShare() * collected;
+                agg[5 * POP_TYPE_COUNT + 6] += income.claimedAristocratShare() * collected;
             }
         });
 
@@ -1277,7 +1293,15 @@ public class SimulationRecorder implements AutoCloseable {
                 double amount = this.countryPopTypeTotal[countryIndex * POP_TYPE_COUNT + p];
                 double wages = 0.0;
                 double profitShares = 0.0;
+                double taxable = 0.0;
                 if (regionIncome != null) {
+                    taxable = regionIncome[4 * POP_TYPE_COUNT + 5 + p];
+                    if (p == this.capitalistPopTypeIndex) {
+                        taxable += regionIncome[5 * POP_TYPE_COUNT + 5];
+                    }
+                    if (p == this.aristocratPopTypeIndex) {
+                        taxable += regionIncome[5 * POP_TYPE_COUNT + 6];
+                    }
                     double wagesPool = regionIncome[p];
                     double profitPool = regionIncome[2 * POP_TYPE_COUNT + p];
                     double claimed = regionIncome[3 * POP_TYPE_COUNT + 3 + p];
@@ -1295,7 +1319,7 @@ public class SimulationRecorder implements AutoCloseable {
                     case MIDDLE_STRATA -> taxPolicy.middleTaxRate();
                     default -> taxPolicy.richTaxRate();
                 };
-                double taxes = (wages + profitShares) * taxRate;
+                double taxes = taxable * taxRate;
                 double bankIncome = amount / NEEDS_SCALING_FACTOR * bank.transferRatesByPopType(p);
                 double income = this.countryPopTypeAccounts[accountBase + POP_INCOME];
                 int tickBase = p * ACCOUNT_COUNT;
@@ -1318,6 +1342,7 @@ public class SimulationRecorder implements AutoCloseable {
             this.tickAccounts[p * ACCOUNT_COUNT + ACCOUNT_WAGE_PREMIUM] = this.tickWorkersByPopType[p] > 0.0 ? this.tickPremiumWorkers[p] / this.tickWorkersByPopType[p] : 0.0;
             this.tickAccounts[p * ACCOUNT_COUNT + ACCOUNT_VACANCIES] = this.tickVacancies[p];
             this.tickAccounts[p * ACCOUNT_COUNT + ACCOUNT_UNCOVERED_VACANCIES] = this.tickUncoveredVacancies[p];
+            this.tickAccounts[p * ACCOUNT_COUNT + ACCOUNT_STATE_POSTS] = this.tickStatePosts[p];
         }
         for (int i = 0; i < this.tickAccounts.length; i++) {
             this.yearAccounts[i] += this.tickAccounts[i];
@@ -1451,7 +1476,8 @@ public class SimulationRecorder implements AutoCloseable {
                 this.buildingTypeCount[t] > 0 ? this.buildingTypeScale[t] / this.buildingTypeCount[t] : 0f,
                 this.buildingTypeCount[t],
                 this.buildingTypeCount[t] > 0 ? this.buildingTypeMargin[t] / this.buildingTypeCount[t] : 0f,
-                this.buildingTypeStoppedProfitable[t]);
+                this.buildingTypeStoppedProfitable[t],
+                this.buildingTypeStateProduction[t]);
         }
     }
 

@@ -28,5 +28,17 @@
         "computers": 0.15
     },
     "strata": "middle",
-    "income_type": "administration"
+    "income_type": "administration",
+    "demote_to": {
+        "clerks": 1,
+        "craftsmen": 0.5,
+        "farmers": 0.5,
+        "labourers": 0.5
+    },
+    "state_posts": {
+        "management_ratio": 0.05,
+        "administration_ratio": 0.005,
+        "tax_collection_floor": 0.5,
+        "management_output_bonus": 0.1
+    }
 }

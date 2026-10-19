@@ -6,7 +6,7 @@ import io.github.elebras1.flecs.World;
 public class EcsConstants {
     private static final String SEA_PROVINCE_TAG = "SeaProvinceTag";
     private static final String REGION_TAG = "RegionTag";
-    private static final String COUNTRY_TAG = "CountryTag";
+    public static final String COUNTRY_TAG = "CountryTag";
     private static final String CULTURE_TAG = "CultureTag";
     private static final String RELIGION_TAG = "ReligionTag";
     private static final String IDENTITY_TAG = "IdentityTag";
