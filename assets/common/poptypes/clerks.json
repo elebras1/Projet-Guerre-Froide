@@ -28,5 +28,12 @@
         "computers": 0.1
     },
     "strata": "middle",
-    "income_type": "none"
+    "income_type": "none",
+    "promote_to": {
+        "capitalists": 0.1
+    },
+    "demote_to": {
+        "craftsmen": 1,
+        "artisans": 0.5
+    }
 }

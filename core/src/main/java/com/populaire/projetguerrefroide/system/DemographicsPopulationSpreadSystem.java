@@ -50,6 +50,7 @@ public class DemographicsPopulationSpreadSystem {
             provinceDemographics.lifeNeedsSatisfactionByPopType(popTypeIndex, provinceDemographics.lifeNeedsSatisfactionByPopType(popTypeIndex) + population.lifeNeedsSatisfaction());
             provinceDemographics.everydayNeedsSatisfactionByPopType(popTypeIndex, provinceDemographics.everydayNeedsSatisfactionByPopType(popTypeIndex) + population.everydayNeedsSatisfaction());
             provinceDemographics.luxuryNeedsSatisfactionByPopType(popTypeIndex, provinceDemographics.luxuryNeedsSatisfactionByPopType(popTypeIndex) + population.luxuryNeedsSatisfaction());
+            provinceDemographics.incomeByPopType(popTypeIndex, provinceDemographics.incomeByPopType(popTypeIndex) + population.income());
         }
     }
 }

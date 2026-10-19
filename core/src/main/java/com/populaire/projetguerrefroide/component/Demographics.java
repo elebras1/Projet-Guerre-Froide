@@ -25,6 +25,7 @@ public record Demographics(
     @FixedArray(length = POP_TYPE_COUNT) float[] lifeNeedsSatisfactionByPopType,
     @FixedArray(length = POP_TYPE_COUNT) float[] everydayNeedsSatisfactionByPopType,
     @FixedArray(length = POP_TYPE_COUNT) float[] luxuryNeedsSatisfactionByPopType,
+    @FixedArray(length = POP_TYPE_COUNT) float[] incomeByPopType,
     int totalChildren,
     int totalAdults,
     int totalSeniors) {

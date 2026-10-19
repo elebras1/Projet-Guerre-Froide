@@ -12,5 +12,7 @@ public record PopulationTypeJson(
     @JsonAttribute(name = "everyday_needs", mandatory = true) Map<String, Double> everydayNeeds,
     @JsonAttribute(name = "luxury_needs", mandatory = true) Map<String, Double> luxuryNeeds,
     @JsonAttribute(mandatory = true) String strata,
-    @JsonAttribute(name = "income_type", mandatory = true) String incomeType) {
+    @JsonAttribute(name = "income_type", mandatory = true) String incomeType,
+    @JsonAttribute(name = "promote_to") Map<String, Double> promoteTo,
+    @JsonAttribute(name = "demote_to") Map<String, Double> demoteTo) {
 }

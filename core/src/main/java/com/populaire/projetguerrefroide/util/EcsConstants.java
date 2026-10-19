@@ -30,6 +30,7 @@ public class EcsConstants {
     public static final String WORKERS_TAG = "WorkersTag";
     public static final String ARISTOCRAT_TAG = "AristocratTag";
     public static final String RURAL_TAG = "RuralTag";
+    public static final String EMPLOYEE_TAG = "EmployeeTag";
     public static final String SEA_FORCE_TAG = "SeaForceTypeTag";
     public static final String LAND_FORCE_TAG = "LandForceTypeTag";
     public static final String AIR_FORCE_TAG = "AirForceTypeTag";
@@ -60,6 +61,7 @@ public class EcsConstants {
     private final long workersTag;
     private final long aristocratTag;
     private final long ruralTag;
+    private final long employeeTag;
     private final long seaForceTag;
     private final long landForceTag;
     private final long airForceTag;
@@ -92,6 +94,7 @@ public class EcsConstants {
         this.workersTag = ecsWorld.entity(WORKERS_TAG);
         this.aristocratTag = ecsWorld.entity(ARISTOCRAT_TAG);
         this.ruralTag = ecsWorld.entity(RURAL_TAG);
+        this.employeeTag = ecsWorld.entity(EMPLOYEE_TAG);
         this.seaForceTag = ecsWorld.entity(SEA_FORCE_TAG);
         this.landForceTag = ecsWorld.entity(LAND_FORCE_TAG);
         this.airForceTag = ecsWorld.entity(AIR_FORCE_TAG);
@@ -199,6 +202,10 @@ public class EcsConstants {
 
     public long ruralTag() {
         return this.ruralTag;
+    }
+
+    public long employeeTag() {
+        return this.employeeTag;
     }
 
     public long seaForceTag() {

@@ -16,6 +16,8 @@ public record PopulationType(
     @FixedArray(length = MAX_LUXURY_DEMAND_GOODS) int[] luxuryNeedsGoodIndexes,
     @FixedArray(length = MAX_LUXURY_DEMAND_GOODS) long[] luxuryNeedsGoodIds,
     @FixedArray(length = MAX_LUXURY_DEMAND_GOODS) float[] luxuryNeedsGoodAmounts,
+    @FixedArray(length = POP_TYPE_COUNT) float[] promotionWeights,
+    @FixedArray(length = POP_TYPE_COUNT) float[] demotionWeights,
     int strata,
     int incomeType,
     int index) {

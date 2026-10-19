@@ -30,6 +30,8 @@ public class LabourMarketSystem {
             for (int p = 0; p < regionInstance.wagePremiumByPopTypeLength(); p++) {
                 float demand = regionInstanceIncome.solventWorkerDemandByPopType(p);
                 float available = regionDemographics.totalByPopType(p);
+                regionInstance.vacanciesByPopType(p, Math.max(0f, demand - available));
+                regionInstance.applicantsByPopType(p, 0f);
                 float excessDemand = demand > 0f ? Math.clamp((demand - available) / Math.max(demand, available), -1f, 1f) : -1f;
                 float wageMultiplier = (1f + regionInstance.wagePremiumByPopType(p)) * (1f + WAGE_ADJUSTMENT_RATE * excessDemand);
                 regionInstance.wagePremiumByPopType(p, Math.max(0f, wageMultiplier - 1f));

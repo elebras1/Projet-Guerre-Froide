@@ -59,6 +59,8 @@ import com.populaire.projetguerrefroide.component.PopulationTypeView;
 import com.populaire.projetguerrefroide.component.PopulationView;
 import com.populaire.projetguerrefroide.component.Province;
 import com.populaire.projetguerrefroide.component.ProvinceView;
+import com.populaire.projetguerrefroide.component.RegionDemographics;
+import com.populaire.projetguerrefroide.component.RegionDemographicsView;
 import com.populaire.projetguerrefroide.component.RegionInstance;
 import com.populaire.projetguerrefroide.component.RegionInstanceIncome;
 import com.populaire.projetguerrefroide.component.RegionInstanceIncomeView;
@@ -120,7 +122,9 @@ public class SimulationRecorder implements AutoCloseable {
     private static final int ACCOUNT_SAVINGS = 11;
     private static final int ACCOUNT_DEPOSITS = 12;
     private static final int ACCOUNT_WAGE_PREMIUM = 13;
-    private static final int ACCOUNT_COUNT = 14;
+    private static final int ACCOUNT_VACANCIES = 14;
+    private static final int ACCOUNT_UNCOVERED_VACANCIES = 15;
+    private static final int ACCOUNT_COUNT = 16;
 
     private final World ecsWorld;
     private final LocalDate startDate;
@@ -235,6 +239,9 @@ public class SimulationRecorder implements AutoCloseable {
     private final double[] yearAccounts = new double[POP_TYPE_COUNT * ACCOUNT_COUNT];
     private final double[] tickPremiumWorkers = new double[POP_TYPE_COUNT];
     private final double[] tickWorkersByPopType = new double[POP_TYPE_COUNT];
+    private final double[] tickVacancies = new double[POP_TYPE_COUNT];
+    private final double[] tickUncoveredVacancies = new double[POP_TYPE_COUNT];
+    private final boolean[] ruralPopTypes = new boolean[POP_TYPE_COUNT];
     private int capitalistPopTypeIndex = -1;
     private int aristocratPopTypeIndex = -1;
 
@@ -444,9 +451,11 @@ public class SimulationRecorder implements AutoCloseable {
         GlobalPopulationTypeView data = globalPopType.getMutView(GlobalPopulationType.class);
         long capitalistTag = this.ecsWorld.lookup(EcsConstants.CAPITALIST_TAG);
         long aristocratTag = this.ecsWorld.lookup(EcsConstants.ARISTOCRAT_TAG);
+        long ruralTag = this.ecsWorld.lookup(EcsConstants.RURAL_TAG);
         for (int p = 0; p < POP_TYPE_COUNT; p++) {
             Entity popType = this.ecsWorld.obtainEntity(data.popTypeIds(p));
             this.popTypeNames[p] = popType.name();
+            this.ruralPopTypes[p] = popType.has(ruralTag);
             if (popType.has(capitalistTag)) {
                 this.capitalistPopTypeIndex = p;
             }
@@ -552,7 +561,7 @@ public class SimulationRecorder implements AutoCloseable {
         this.writer("region_income/shares.csv").header("tick", "date", "country", "capitalist_share", "aristocrat_share", "country_share");
 
         this.writer("world/accounts.csv").header("year", "date", "pop_type", "strata", "population", "employed", "income", "wages", "profit_shares", "taxes",
-            "state", "bank", "life_spending", "everyday_spending", "luxury_spending", "savings", "deposits", "wage_premium");
+            "state", "bank", "life_spending", "everyday_spending", "luxury_spending", "savings", "deposits", "wage_premium", "vacancies", "uncovered_vacancies");
         this.writer("world/yearly.csv").header("year", "date",
             "real_output", "real_output_ratio", "real_output_per_100k_adults", "adults", "cpi",
             "life_poor", "life_middle", "life_rich", "everyday_poor", "everyday_middle", "everyday_rich",
@@ -865,6 +874,8 @@ public class SimulationRecorder implements AutoCloseable {
         Arrays.fill(this.countryPopTypeAccounts, 0.0);
         Arrays.fill(this.tickPremiumWorkers, 0.0);
         Arrays.fill(this.tickWorkersByPopType, 0.0);
+        Arrays.fill(this.tickVacancies, 0.0);
+        Arrays.fill(this.tickUncoveredVacancies, 0.0);
         this.countryRgoByGood.clear();
         this.countryBuildingByGood.clear();
         this.buildingTypeInputDemand.clear();
@@ -1193,8 +1204,21 @@ public class SimulationRecorder implements AutoCloseable {
                     continue;
                 }
 
+                float ruralReserve = 0f;
+                EntityView regionEntity = this.ecsWorld.obtainEntityView(iter.entity(i));
+                if (regionEntity.has(RegionDemographics.class)) {
+                    RegionDemographicsView regionDemographics = regionEntity.getView(RegionDemographics.class);
+                    for (int p = 0; p < POP_TYPE_COUNT; p++) {
+                        if (this.ruralPopTypes[p]) {
+                            ruralReserve += Math.max(0, regionDemographics.totalByPopType(p) - regionDemographics.employmentByPopType(p));
+                        }
+                    }
+                }
+
                 float[] agg = this.countryRegionIncome.computeIfAbsent((long) countryIndex, k -> new float[4 * POP_TYPE_COUNT + 5]);
                 for (int p = 0; p < POP_TYPE_COUNT; p++) {
+                    this.tickVacancies[p] += region.vacanciesByPopType(p);
+                    this.tickUncoveredVacancies[p] += Math.max(0f, region.vacanciesByPopType(p) - ruralReserve);
                     this.tickPremiumWorkers[p] += (double) region.wagePremiumByPopType(p) * income.workersByPopType(p);
                     this.tickWorkersByPopType[p] += income.workersByPopType(p);
                     agg[p] += income.minWagesByPopType(p);
@@ -1292,6 +1316,8 @@ public class SimulationRecorder implements AutoCloseable {
         });
         for (int p = 0; p < POP_TYPE_COUNT; p++) {
             this.tickAccounts[p * ACCOUNT_COUNT + ACCOUNT_WAGE_PREMIUM] = this.tickWorkersByPopType[p] > 0.0 ? this.tickPremiumWorkers[p] / this.tickWorkersByPopType[p] : 0.0;
+            this.tickAccounts[p * ACCOUNT_COUNT + ACCOUNT_VACANCIES] = this.tickVacancies[p];
+            this.tickAccounts[p * ACCOUNT_COUNT + ACCOUNT_UNCOVERED_VACANCIES] = this.tickUncoveredVacancies[p];
         }
         for (int i = 0; i < this.tickAccounts.length; i++) {
             this.yearAccounts[i] += this.tickAccounts[i];

@@ -40,6 +40,10 @@ public class EconomyService {
     private final EconomyBuildingSpreadProductionSystem economyBuildingSpreadProductionSystem;
     private final EconomyBuildingUtilizationSystem economyBuildingUtilizationSystem;
     private final LabourMarketSystem labourMarketSystem;
+    private final PopulationApplicationSystem populationApplicationSystem;
+    private final PopulationPromotionSystem populationPromotionSystem;
+    private final PopulationArrivalSystem populationArrivalSystem;
+    private final EconomyCalendarSystem economyCalendarSystem;
     private final EconomyBuildingWorkingCapitalSystem economyBuildingWorkingCapitalSystem;
     private final EconomyBuildingInputStockInitializationSystem economyBuildingInputStockInitializationSystem;
     private final CountryStockSystem countryStockSystem;
@@ -118,6 +122,8 @@ public class EconomyService {
         long phaseInitSavings = ecsWorld.entity("PhaseInitSavings");
         long phaseUtilization = ecsWorld.entity("PhaseUtilization");
         long phaseLabourMarket = ecsWorld.entity("PhaseLabourMarket");
+        long phasePromotion = ecsWorld.entity("PhasePromotion");
+        long phaseCalendar = ecsWorld.entity("PhaseCalendar");
 
         this.initPipeline = ecsWorld.pipeline("InitEconomyPipeline")
             .with(Flecs.System)
@@ -184,7 +190,9 @@ public class EconomyService {
             .with(phaseRevenue).or()
             .with(phaseUtilization).or()
             .with(phaseIncome).or()
-            .with(phaseState)
+            .with(phasePromotion).or()
+            .with(phaseState).or()
+            .with(phaseCalendar)
             .build();
 
         this.demographicsResetSystem = new DemographicsResetSystem(ecsWorld, phaseDemographicsReset);
@@ -254,11 +262,15 @@ public class EconomyService {
         this.populationIncomeDistributionSystem = new PopulationIncomeDistributionSystem(ecsWorld, gameContext.getEcsConstants(), phaseIncome);
         this.regionIncomeResidualSystem = new RegionIncomeResidualSystem(ecsWorld, phaseIncome);
         this.populationSavingsInitializationSystem = new PopulationSavingsInitializationSystem(ecsWorld, phaseInitSavings);
+        this.populationApplicationSystem = new PopulationApplicationSystem(ecsWorld, gameContext.getEcsConstants(), phasePromotion);
+        this.populationPromotionSystem = new PopulationPromotionSystem(ecsWorld, gameContext.getEcsConstants(), phasePromotion);
+        this.populationArrivalSystem = new PopulationArrivalSystem(ecsWorld, phasePromotion);
         this.countryBudgetSystem = new CountryBudgetSystem(ecsWorld, phaseState);
         this.countryBankSystem = new CountryBankSystem(ecsWorld, phaseState);
         this.constructionCompletionSystem = new ConstructionCompletionSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);
         this.constructionClosureSystem = new ConstructionClosureSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);
         this.investmentDecisionSystem = new InvestmentDecisionSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);
+        this.economyCalendarSystem = new EconomyCalendarSystem(ecsWorld, phaseCalendar);
     }
 
     public void initialize() {

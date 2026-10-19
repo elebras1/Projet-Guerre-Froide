@@ -57,6 +57,8 @@ public class RGOEmploymentSystem {
             int maximumWorkers = Math.min(targetWorkers, demographics.totalByPopType(workerIndex));
 
             int workerAmount = resourceGathering.workerAmount() + Math.round(adjustment * maximumWorkers);
+            resourceGathering.vacancies(adjustment > 0f ? Math.max(0, targetWorkers - demographics.totalByPopType(workerIndex)) : 0);
+            resourceGathering.applicants(0f);
             resourceGathering.workerAmount(Math.max(0, Math.min(maximumWorkers, workerAmount)));
             resourceGathering.slaveAmount(Math.min(targetSlaves, demographics.totalByPopType(slaveIndex)));
         }

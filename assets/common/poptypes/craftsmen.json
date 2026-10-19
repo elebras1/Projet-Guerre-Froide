@@ -28,5 +28,13 @@
         "computers": 0.05
     },
     "strata": "poor",
-    "income_type": "none"
+    "income_type": "none",
+    "promote_to": {
+        "clerks": 0.5,
+        "artisans": 0.5
+    },
+    "demote_to": {
+        "farmers": 1,
+        "labourers": 1
+    }
 }

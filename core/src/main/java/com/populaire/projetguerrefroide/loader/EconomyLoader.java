@@ -41,6 +41,8 @@ public final class EconomyLoader {
     }
 
     public void createGlobalMarket() {
+        long calendarId = this.ecsWorld.entity("economy_calendar");
+        this.ecsWorld.obtainEntity(calendarId).set(new EconomyCalendar(0));
         long globalMarketId = this.ecsWorld.entity("global_market");
         this.ecsWorld.obtainEntity(globalMarketId).set(new GlobalMarket(new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new double[GOOD_COUNT], new boolean[GOOD_COUNT]));
     }
@@ -120,10 +122,33 @@ public final class EconomyLoader {
                 }
                 index++;
             }
+            for (Map.Entry<String, PopulationTypeJson> populationType : populationTypes.entrySet()) {
+                PopulationTypeMutView populationTypeData = this.ecsWorld.obtainEntityView(this.ecsWorld.lookup(populationType.getKey())).getMutView(PopulationType.class);
+                this.fillMobilityWeights(populationType.getValue().promoteTo(), true, populationTypeData);
+                this.fillMobilityWeights(populationType.getValue().demoteTo(), false, populationTypeData);
+            }
             long globalPopType = this.ecsWorld.entity("global_population_type");
             this.ecsWorld.obtainEntity(globalPopType).set(new GlobalPopulationType(this.context.populationTypeIds(), capitalistPopTypeIndex, aristocratPopTypeIndex));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
+        }
+    }
+
+    private void fillMobilityWeights(Map<String, Double> targets, boolean promotion, PopulationTypeMutView populationTypeData) {
+        if (targets == null) {
+            return;
+        }
+        for (Map.Entry<String, Double> target : targets.entrySet()) {
+            long targetId = this.ecsWorld.lookup(target.getKey());
+            if (targetId == 0) {
+                throw new IllegalArgumentException("Unknown population type: " + target.getKey());
+            }
+            int targetIndex = this.context.getPopulationTypeIndex(targetId);
+            if (promotion) {
+                populationTypeData.promotionWeights(targetIndex, target.getValue().floatValue());
+            } else {
+                populationTypeData.demotionWeights(targetIndex, target.getValue().floatValue());
+            }
         }
     }
 
@@ -159,7 +184,7 @@ public final class EconomyLoader {
             this.context.fillGoods(populationTypeJson.luxuryNeeds(), luxuryNeedsGoodIndexes, luxuryNeedsGoodIds, luxuryNeedsGoodAmounts);
 
             int strata = StrataUtils.getStrata(populationTypeJson.strata());
-            populationType.set(new PopulationType(lifeNeedsGoodIndexes, lifeNeedsGoodIds, lifeNeedsGoodAmounts, everydayNeedsGoodIndexes, everydayNeedsGoodIds, everydayNeedsGoodAmounts, luxuryNeedsGoodIndexes, luxuryNeedsGoodIds, luxuryNeedsGoodAmounts, strata, incomeType, index));
+            populationType.set(new PopulationType(lifeNeedsGoodIndexes, lifeNeedsGoodIds, lifeNeedsGoodAmounts, everydayNeedsGoodIndexes, everydayNeedsGoodIds, everydayNeedsGoodAmounts, luxuryNeedsGoodIndexes, luxuryNeedsGoodIds, luxuryNeedsGoodAmounts, new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], strata, incomeType, index));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }
@@ -182,6 +207,9 @@ public final class EconomyLoader {
 
             for(var typeBuildingEntry : productionTypesJson.typesBuildings().entrySet()) {
                 productionTypes.put(typeBuildingEntry.getKey(), this.createProductionType(typeBuildingEntry.getValue(), workerPopTypeIdsByType, workerPopTypeRatiosByType, workerPopTypeEffectMultiplierByType));
+                for(String workerTypeName : typeBuildingEntry.getValue().workers()) {
+                    this.ecsWorld.obtainEntityView(workerPopTypeIdsByType.get(workerTypeName)).add(this.ecsConstants.employeeTag());
+                }
             }
 
             for(var typeRgoEntry : productionTypesJson.typesRgo().entrySet()) {
