@@ -40,8 +40,20 @@ public class EconomyBuildingUtils {
         return (1f + productionPolicy.factoryInputModifier()) * throughput(productionPolicy, level) * effectiveScale;
     }
 
-    public static float outputScale(CountryProductionPolicyView productionPolicy, int level, float secondaryRatio, float effectiveScale) {
-        return throughput(productionPolicy, level) * (1f + productionPolicy.factoryOutputModifier() + secondaryRatio * Constants.SECONDARY_WORKER_OUTPUT_EFFECT) * effectiveScale;
+    public static float secondaryFill(EconomyBuildingView economyBuilding, EconomyBuildingTypeView buildingType, int level, float effectiveScale) {
+        float needed = maxWorkers(buildingType, level, buildingType.secondaryWorkerPopTypeRatio()) * effectiveScale / Math.max(1, level);
+        return needed > 0f ? Math.min(1f, economyBuilding.secondaryWorkerAmount() / needed) : 0f;
+    }
+
+    public static float staffingFactor(EconomyBuildingTypeView buildingType, float secondaryFill) {
+        if (buildingType.secondaryWorkerPopTypeRatio() <= 0f) {
+            return 1f;
+        }
+        return 1f + (buildingType.secondaryWorkerEffectMultiplier() - 1f) * (2f * secondaryFill - 1f);
+    }
+
+    public static float outputScale(CountryProductionPolicyView productionPolicy, EconomyBuildingTypeView buildingType, int level, float secondaryFill, float effectiveScale) {
+        return throughput(productionPolicy, level) * (1f + productionPolicy.factoryOutputModifier()) * staffingFactor(buildingType, secondaryFill) * effectiveScale;
     }
 
     public static float managementBonus(EconomyBuildingView economyBuilding, RegionInstanceView regionInstance, long stateOwnerTag) {

@@ -74,8 +74,7 @@ public class EconomyBuildingRevenueSystem {
             float effectiveScale = effectiveScale(economyBuilding, buildingTypeData, level);
             float inputScale = inputScale(countryProductionPolicy, level, effectiveScale);
             double dailyInputCost = inputCost(economyBuilding, countryMarket, inputScale);
-            float maxSecondary = maxWorkers(buildingTypeData, level, buildingTypeData.secondaryWorkerPopTypeRatio());
-            float fullOutput = buildingTypeData.goodOutputAmount() * outputScale(countryProductionPolicy, level, economyBuilding.secondaryWorkerAmount() / Math.max(1f, maxSecondary), effectiveScale)
+            float fullOutput = buildingTypeData.goodOutputAmount() * outputScale(countryProductionPolicy, buildingTypeData, level, secondaryFill(economyBuilding, buildingTypeData, level, effectiveScale), effectiveScale)
                 * (1f + managementBonus(economyBuilding, regionInstance, this.stateOwnerTag));
             float stockRatio = fullOutput > 0f ? economyBuilding.production() / fullOutput : 0f;
             float profit = (float) (revenue - wages - dailyInputCost * stockRatio);

@@ -33,6 +33,7 @@ public final class EconomyLoader {
         this.ecsWorld.obtainEntity(this.ecsConstants.capitalistTag()).add(Flecs.OnInstantiate, Flecs.Inherit);
         this.ecsWorld.obtainEntity(this.ecsConstants.aristocratTag()).add(Flecs.OnInstantiate, Flecs.Inherit);
         this.ecsWorld.obtainEntity(this.ecsConstants.ruralTag()).add(Flecs.OnInstantiate, Flecs.Inherit);
+        this.ecsWorld.obtainEntity(this.ecsConstants.religiousTag()).add(Flecs.OnInstantiate, Flecs.Inherit);
         this.ecsWorld.obtainEntity(this.ecsWorld.component(EconomyBuildingType.class)).add(Flecs.OnInstantiate, Flecs.Inherit);
         this.ecsWorld.obtainEntity(this.ecsWorld.component(SpecialBuildingType.class)).add(Flecs.OnInstantiate, Flecs.Inherit);
         this.ecsWorld.obtainEntity(this.ecsWorld.component(DevelopmentBuildingType.class)).add(Flecs.OnInstantiate, Flecs.Inherit);
@@ -110,6 +111,7 @@ public final class EconomyLoader {
             int capitalistPopTypeIndex = -1;
             int aristocratPopTypeIndex = -1;
             int statePostPopTypeIndex = -1;
+            int religiousPopTypeIndex = -1;
             for (Map.Entry<String, PopulationTypeJson> populationType : populationTypes.entrySet()) {
                 this.loadPopulationType(populationType.getValue(), populationType.getKey(), index);
                 long populationTypeId = this.ecsWorld.lookup(populationType.getKey());
@@ -120,6 +122,12 @@ public final class EconomyLoader {
                     capitalistPopTypeIndex = index;
                 } else if (populationTypeEntity.has(this.ecsConstants.aristocratTag())) {
                     aristocratPopTypeIndex = index;
+                }
+                if (populationTypeEntity.has(this.ecsConstants.religiousTag())) {
+                    if (religiousPopTypeIndex >= 0) {
+                        throw new IllegalArgumentException("Only one population type can have the religious income type: " + populationType.getKey());
+                    }
+                    religiousPopTypeIndex = index;
                 }
                 if (populationTypeEntity.has(StatePostType.class)) {
                     if (statePostPopTypeIndex >= 0) {
@@ -135,7 +143,7 @@ public final class EconomyLoader {
                 this.fillMobilityWeights(populationType.getValue().demoteTo(), false, populationTypeData);
             }
             long globalPopType = this.ecsWorld.entity("global_population_type");
-            this.ecsWorld.obtainEntity(globalPopType).set(new GlobalPopulationType(this.context.populationTypeIds(), capitalistPopTypeIndex, aristocratPopTypeIndex, statePostPopTypeIndex));
+            this.ecsWorld.obtainEntity(globalPopType).set(new GlobalPopulationType(this.context.populationTypeIds(), capitalistPopTypeIndex, aristocratPopTypeIndex, statePostPopTypeIndex, religiousPopTypeIndex));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }
@@ -170,6 +178,7 @@ public final class EconomyLoader {
             switch (incomeType) {
                 case IncomeTypeUtils.ARISTOCRAT_INCOME_TYPE -> populationType.add(this.ecsConstants.aristocratTag());
                 case IncomeTypeUtils.CAPITALIST_INCOME_TYPE -> populationType.add(this.ecsConstants.capitalistTag());
+                case IncomeTypeUtils.RELIGIOUS_INCOME_TYPE -> populationType.add(this.ecsConstants.religiousTag());
             }
             StatePostsJson statePosts = populationTypeJson.statePosts();
             if (statePosts != null) {

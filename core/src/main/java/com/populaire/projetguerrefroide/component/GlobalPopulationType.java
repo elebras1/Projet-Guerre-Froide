@@ -10,6 +10,7 @@ public record GlobalPopulationType(
     @FixedArray(length = POP_TYPE_COUNT) long[] popTypeIds,
     int capitalistPopTypeIndex,
     int aristocratPopTypeIndex,
-    int statePostPopTypeIndex
+    int statePostPopTypeIndex,
+    int religiousPopTypeIndex
 ) {
 }

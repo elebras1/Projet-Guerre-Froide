@@ -76,6 +76,7 @@ public class EconomyService {
     private final CountryIncomeDistributionSystem countryIncomeDistributionSystem;
     private final PopulationIncomeDistributionSystem populationIncomeDistributionSystem;
     private final PopulationSavingsInitializationSystem populationSavingsInitializationSystem;
+    private final ReligiousDonationSystem religiousDonationSystem;
     private final RegionIncomeResidualSystem regionIncomeResidualSystem;
     private final CountryBudgetSystem countryBudgetSystem;
     private final CountryBankSystem countryBankSystem;
@@ -262,6 +263,7 @@ public class EconomyService {
         this.economyBuildingProfitSharingSystem = new EconomyBuildingProfitSharingSystem(ecsWorld, gameContext.getEcsConstants(), phaseIncome);
         this.countryIncomeDistributionSystem = new CountryIncomeDistributionSystem(ecsWorld, phaseIncome);
         this.populationIncomeDistributionSystem = new PopulationIncomeDistributionSystem(ecsWorld, gameContext.getEcsConstants(), phaseIncome);
+        this.religiousDonationSystem = new ReligiousDonationSystem(ecsWorld, gameContext.getEcsConstants(), phaseIncome);
         this.regionIncomeResidualSystem = new RegionIncomeResidualSystem(ecsWorld, phaseIncome);
         this.populationSavingsInitializationSystem = new PopulationSavingsInitializationSystem(ecsWorld, phaseInitSavings);
         this.populationApplicationSystem = new PopulationApplicationSystem(ecsWorld, gameContext.getEcsConstants(), phasePromotion);

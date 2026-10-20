@@ -28,7 +28,8 @@ public class RegionIncomeResidualSystem {
 
             float residual = regionInstanceIncome.capitalistProfitShare() - regionInstanceIncome.claimedCapitalistShare()
                 + regionInstanceIncome.aristocratProfitShare() - regionInstanceIncome.claimedAristocratShare()
-                + regionInstanceIncome.countryProfitShare() - regionInstanceIncome.claimedCountryShare();
+                + regionInstanceIncome.countryProfitShare() - regionInstanceIncome.claimedCountryShare()
+                + regionInstanceIncome.donations() - regionInstanceIncome.claimedDonations();
             for (int p = 0; p < regionInstanceIncome.minWagesByPopTypeLength(); p++) {
                 residual += regionInstanceIncome.minWagesByPopType(p) + regionInstanceIncome.profitShareByPopType(p) - regionInstanceIncome.claimedIncomeByPopType(p);
             }

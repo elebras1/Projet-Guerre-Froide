@@ -55,7 +55,7 @@ public class EconomyBuildingUtilizationSystem {
             }
 
             int level = building.size();
-            double value = (double) economyBuilding.unitRevenue() * buildingTypeData.goodOutputAmount() * outputScale(countryProductionPolicy, level, 1f, level)
+            double value = (double) economyBuilding.unitRevenue() * buildingTypeData.goodOutputAmount() * outputScale(countryProductionPolicy, buildingTypeData, level, 1f, level)
                 * (1f + managementBonus(economyBuilding, regionInstance, this.stateOwnerTag));
             double costs = inputCost(economyBuilding, countryMarket, inputScale(countryProductionPolicy, level, level))
                 + wageBill(countryMarket, regionInstance, buildingTypeData, countryLaborPolicy.minWageFactor(),

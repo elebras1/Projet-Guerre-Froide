@@ -125,7 +125,8 @@ public class SimulationRecorder implements AutoCloseable {
     private static final int ACCOUNT_VACANCIES = 14;
     private static final int ACCOUNT_UNCOVERED_VACANCIES = 15;
     private static final int ACCOUNT_STATE_POSTS = 16;
-    private static final int ACCOUNT_COUNT = 17;
+    private static final int ACCOUNT_DONATIONS = 17;
+    private static final int ACCOUNT_COUNT = 18;
 
     private final World ecsWorld;
     private final LocalDate startDate;
@@ -248,6 +249,7 @@ public class SimulationRecorder implements AutoCloseable {
     private final boolean[] ruralPopTypes = new boolean[POP_TYPE_COUNT];
     private int capitalistPopTypeIndex = -1;
     private int aristocratPopTypeIndex = -1;
+    private int religiousPopTypeIndex = -1;
 
     private final Map<Long, float[]> countryRgoByGood = new HashMap<>();
     private final Map<Long, float[]> countryBuildingByGood = new HashMap<>();
@@ -458,10 +460,14 @@ public class SimulationRecorder implements AutoCloseable {
         long capitalistTag = this.ecsWorld.lookup(EcsConstants.CAPITALIST_TAG);
         long aristocratTag = this.ecsWorld.lookup(EcsConstants.ARISTOCRAT_TAG);
         long ruralTag = this.ecsWorld.lookup(EcsConstants.RURAL_TAG);
+        long religiousTag = this.ecsWorld.lookup(EcsConstants.RELIGIOUS_TAG);
         for (int p = 0; p < POP_TYPE_COUNT; p++) {
             Entity popType = this.ecsWorld.obtainEntity(data.popTypeIds(p));
             this.popTypeNames[p] = popType.name();
             this.ruralPopTypes[p] = popType.has(ruralTag);
+            if (popType.has(religiousTag)) {
+                this.religiousPopTypeIndex = p;
+            }
             if (popType.has(capitalistTag)) {
                 this.capitalistPopTypeIndex = p;
             }
@@ -567,7 +573,7 @@ public class SimulationRecorder implements AutoCloseable {
         this.writer("region_income/shares.csv").header("tick", "date", "country", "capitalist_share", "aristocrat_share", "country_share");
 
         this.writer("world/accounts.csv").header("year", "date", "pop_type", "strata", "population", "employed", "income", "wages", "profit_shares", "taxes",
-            "state", "bank", "life_spending", "everyday_spending", "luxury_spending", "savings", "deposits", "wage_premium", "vacancies", "uncovered_vacancies", "state_posts");
+            "state", "bank", "life_spending", "everyday_spending", "luxury_spending", "savings", "deposits", "wage_premium", "vacancies", "uncovered_vacancies", "state_posts", "donations");
         this.writer("world/yearly.csv").header("year", "date",
             "real_output", "real_output_ratio", "real_output_per_100k_adults", "adults", "cpi",
             "life_poor", "life_middle", "life_rich", "everyday_poor", "everyday_middle", "everyday_rich",
@@ -1226,10 +1232,11 @@ public class SimulationRecorder implements AutoCloseable {
                     }
                 }
 
-                float[] agg = this.countryRegionIncome.computeIfAbsent((long) countryIndex, k -> new float[5 * POP_TYPE_COUNT + 7]);
+                float[] agg = this.countryRegionIncome.computeIfAbsent((long) countryIndex, k -> new float[6 * POP_TYPE_COUNT + 8]);
                 float collected = region.taxCollectionShare();
                 for (int p = 0; p < POP_TYPE_COUNT; p++) {
                     agg[4 * POP_TYPE_COUNT + 5 + p] += income.claimedIncomeByPopType(p) * collected;
+                    agg[5 * POP_TYPE_COUNT + 7 + p] += income.donationsByPopType(p);
                     this.tickStatePosts[p] += region.statePostsByPopType(p);
                     this.tickVacancies[p] += region.vacanciesByPopType(p);
                     this.tickUncoveredVacancies[p] += Math.max(0f, region.vacanciesByPopType(p) - ruralReserve);
@@ -1248,6 +1255,7 @@ public class SimulationRecorder implements AutoCloseable {
                 agg[4 * POP_TYPE_COUNT + 4] += income.claimedAristocratShare();
                 agg[5 * POP_TYPE_COUNT + 5] += income.claimedCapitalistShare() * collected;
                 agg[5 * POP_TYPE_COUNT + 6] += income.claimedAristocratShare() * collected;
+                agg[6 * POP_TYPE_COUNT + 7] += income.claimedDonations();
             }
         });
 
@@ -1294,7 +1302,9 @@ public class SimulationRecorder implements AutoCloseable {
                 double wages = 0.0;
                 double profitShares = 0.0;
                 double taxable = 0.0;
+                double donations = 0.0;
                 if (regionIncome != null) {
+                    donations = (p == this.religiousPopTypeIndex ? regionIncome[6 * POP_TYPE_COUNT + 7] : 0.0) - regionIncome[5 * POP_TYPE_COUNT + 7 + p];
                     taxable = regionIncome[4 * POP_TYPE_COUNT + 5 + p];
                     if (p == this.capitalistPopTypeIndex) {
                         taxable += regionIncome[5 * POP_TYPE_COUNT + 5];
@@ -1329,7 +1339,8 @@ public class SimulationRecorder implements AutoCloseable {
                 this.tickAccounts[tickBase + ACCOUNT_WAGES] += wages;
                 this.tickAccounts[tickBase + ACCOUNT_PROFIT_SHARES] += profitShares;
                 this.tickAccounts[tickBase + ACCOUNT_TAXES] += taxes;
-                this.tickAccounts[tickBase + ACCOUNT_STATE] += income - (wages + profitShares - taxes) - bankIncome;
+                this.tickAccounts[tickBase + ACCOUNT_STATE] += income - (wages + profitShares - taxes) - bankIncome - donations;
+                this.tickAccounts[tickBase + ACCOUNT_DONATIONS] += donations;
                 this.tickAccounts[tickBase + ACCOUNT_BANK] += bankIncome;
                 this.tickAccounts[tickBase + ACCOUNT_LIFE] += this.countryPopTypeAccounts[accountBase + POP_LIFE] / NEEDS_SCALING_FACTOR * market.paidLifeCostsByPopType(p);
                 this.tickAccounts[tickBase + ACCOUNT_EVERYDAY] += this.countryPopTypeAccounts[accountBase + POP_EVERYDAY] / NEEDS_SCALING_FACTOR * market.paidEverydayCostsByPopType(p);

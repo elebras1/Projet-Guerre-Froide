@@ -28,5 +28,9 @@
         "computers": 0.1
     },
     "strata": "middle",
-    "income_type": "education"
+    "income_type": "religious",
+    "demote_to": {
+        "farmers": 0.5,
+        "labourers": 0.5
+    }
 }

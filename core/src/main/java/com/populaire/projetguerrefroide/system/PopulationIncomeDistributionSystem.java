@@ -34,6 +34,9 @@ public class PopulationIncomeDistributionSystem {
         boolean aristocrat = iter.isSet(3);
         boolean rural = iter.isSet(4);
         boolean statePost = typeIdx == StateBudgetUtils.statePostIndex(iter.world());
+        GlobalPopulationTypeView globalPopulationType = iter.world().obtainEntityView(iter.world().lookup("global_population_type")).getView(GlobalPopulationType.class);
+        int religiousIndex = globalPopulationType.religiousPopTypeIndex();
+        boolean donor = religiousIndex >= 0 && typeIdx != religiousIndex;
 
         long regionInstanceId = 0;
         RegionInstanceView regionInstance = null;
@@ -43,6 +46,7 @@ public class PopulationIncomeDistributionSystem {
         long countryId = 0;
         CountryMarketMutView countryMarket = null;
         CountryTaxPolicyView countryTaxPolicy = null;
+        CountryCulturePolicyView countryCulturePolicy = null;
         CountryBudgetView countryBudget = null;
         CountryBankMutView countryBank = null;
         CountryInvestmentMutView countryInvestment = null;
@@ -64,6 +68,7 @@ public class PopulationIncomeDistributionSystem {
                 EntityView country = iter.world().obtainEntityView(countryId);
                 countryMarket = country.getMutView(CountryMarket.class);
                 countryTaxPolicy = country.getMutView(CountryTaxPolicy.class);
+                countryCulturePolicy = country.getView(CountryCulturePolicy.class);
                 countryBudget = country.getMutView(CountryBudget.class);
                 countryBank = country.getMutView(CountryBank.class);
                 countryInvestment = country.getMutView(CountryInvestment.class);
@@ -110,6 +115,12 @@ public class PopulationIncomeDistributionSystem {
             }
             float tax = grossIncome * taxRate * regionInstance.taxCollectionShare();
             float netIncome = grossIncome - tax;
+            float donation = 0f;
+            if (donor && regionDemographics.totalByPopType(religiousIndex) > 0) {
+                donation = Math.max(0f, netIncome) * countryCulturePolicy.religiousDonationRate();
+                regionInstanceIncome.donations(regionInstanceIncome.donations() + donation);
+                regionInstanceIncome.donationsByPopType(typeIdx, regionInstanceIncome.donationsByPopType(typeIdx) + donation);
+            }
 
             float purchase = population.amount() / NEEDS_SCALING_FACTOR * (population.lifeNeedsDemandRatio() * countryMarket.paidLifeCostsByPopType(typeIdx)
                 + population.everydayNeedsDemandRatio() * countryMarket.paidEverydayCostsByPopType(typeIdx)
@@ -128,7 +139,7 @@ public class PopulationIncomeDistributionSystem {
             float bankIncome = (float) Math.min(scaledAmount * countryBank.transferRatesByPopType(typeIdx), Math.max(0.0, countryBank.deposits()));
             countryBank.deposits(countryBank.deposits() - bankIncome);
 
-            float income = netIncome + stateIncome + bankIncome;
+            float income = netIncome - donation + stateIncome + bankIncome;
             population.income(income);
             population.savings(population.savings() + income - purchase);
 

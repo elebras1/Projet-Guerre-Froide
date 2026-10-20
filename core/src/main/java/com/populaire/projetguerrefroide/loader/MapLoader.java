@@ -185,7 +185,7 @@ public final class MapLoader {
                         EntityView regionInstance = this.ecsWorld.obtainEntityView(regionInstanceId);
                         if(!regionInstance.has(RegionInstance.class)) {
                             regionInstance.set(new RegionInstance(regionEntityId, provinceData.ownerId(), new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 1f, 0f));
-                            regionInstance.set(new RegionInstanceIncome(new float[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0f, 0f, 0f, 0f, 0f, 0f, 0));
+                            regionInstance.set(new RegionInstanceIncome(new float[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0f, 0f, 0f, 0f, 0f, 0f, 0, new float[POP_TYPE_COUNT], 0f, 0f));
                             regionInstance.set(new RegionDemographics(0, 0, 0, 0f, 0f, 0f, 0f, 0f, 0f, new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
                         }
                         provinceData.regionId(regionEntityId).regionInstanceId(regionInstanceId);

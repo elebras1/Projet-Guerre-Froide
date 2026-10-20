@@ -7,6 +7,7 @@ public class IncomeTypeUtils {
     public static final int EDUCATION_INCOME_TYPE = 3;
     public static final int CAPITALIST_INCOME_TYPE = 4;
     public static final int ARISTOCRAT_INCOME_TYPE = 5;
+    public static final int RELIGIOUS_INCOME_TYPE = 6;
 
     public static int getIncomeType(String incomeType) {
         return switch (incomeType) {
@@ -16,6 +17,7 @@ public class IncomeTypeUtils {
             case "education" -> EDUCATION_INCOME_TYPE;
             case "capitalist" -> CAPITALIST_INCOME_TYPE;
             case "aristocrat" -> ARISTOCRAT_INCOME_TYPE;
+            case "religious" -> RELIGIOUS_INCOME_TYPE;
             default -> throw new IllegalArgumentException("Unknown income type : " + incomeType);
         };
     }

@@ -19,6 +19,9 @@ public record RegionInstanceIncome(
     float claimedCapitalistShare,
     float claimedAristocratShare,
     float claimedCountryShare,
-    int stateBuildingWorkers
+    int stateBuildingWorkers,
+    @FixedArray(length = POP_TYPE_COUNT) float[] donationsByPopType,
+    float donations,
+    float claimedDonations
 ) {
 }

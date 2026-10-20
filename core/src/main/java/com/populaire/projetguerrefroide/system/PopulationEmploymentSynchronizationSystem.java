@@ -18,6 +18,7 @@ public class PopulationEmploymentSynchronizationSystem {
             .with(Population.class)
             .with(PopulationType.class)
             .with(ecsConstants.ruralTag()).optional()
+            .with(ecsConstants.religiousTag()).optional()
             .multiThreaded()
             .iter(this::synchronize);
     }
@@ -37,6 +38,7 @@ public class PopulationEmploymentSynchronizationSystem {
         int popTypeIndex = populationTypeData.index();
         long popTypeId = iter.src(1);
         boolean rural = iter.isSet(2);
+        boolean religious = iter.isSet(3);
 
         Field<Population> populationField = iter.field(Population.class, 0);
         for(int i = 0; i < iter.count(); i++) {
@@ -60,6 +62,11 @@ public class PopulationEmploymentSynchronizationSystem {
                 regionInstanceId = currentRegionInstanceId;
                 EntityView regionInstance = iter.world().obtainEntityView(currentRegionInstanceId);
                 regionInstanceData = regionInstance.getMutView(RegionInstance.class);
+            }
+
+            if (religious) {
+                population.employment(population.amount());
+                continue;
             }
 
             if (hasResourceGathering && popTypeId == rgoSlavePopTypeId) {

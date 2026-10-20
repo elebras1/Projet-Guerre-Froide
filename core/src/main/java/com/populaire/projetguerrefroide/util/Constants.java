@@ -56,6 +56,8 @@ public class Constants {
     public static final String SECULARISM = "secularism";
     public static final String ASSIMILATION_RATE = "assimilation_rate";
     public static final String MIGRATION_PUSH = "migration_push";
+    public static final String RELIGIOUS_DONATIONS = "religious_donations";
+    public static final String CLERGY_STATE_FUNDING = "clergy_state_funding";
 
     public static float NEEDS_SCALING_FACTOR = 100000f;
     public static final float SHORTAGE_PRICE_PREMIUM = 0.5f;
@@ -80,7 +82,6 @@ public class Constants {
     public static final float INPUT_STOCK_DAYS = 10f;
     public static final float FACTORY_TREASURY_BUFFER_DAYS = 15f;
     public static final float DIVIDEND_RATE = 0.1f;
-    public static final float SECONDARY_WORKER_OUTPUT_EFFECT = 1.5f;
     public static final float WAGE_ADJUSTMENT_RATE = 0.01f;
     public static final float PROMOTION_RATE = 0.01f;
     public static final int DAYS_PER_MONTH = 30;

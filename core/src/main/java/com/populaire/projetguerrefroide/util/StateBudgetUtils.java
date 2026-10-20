@@ -41,6 +41,7 @@ public class StateBudgetUtils {
             case ADMINISTRATION_INCOME_TYPE -> slider(budgetPolicy.administrationSpendingRate());
             case MILITARY_INCOME_TYPE -> slider(budgetPolicy.militarySpendingRate());
             case EDUCATION_INCOME_TYPE -> slider(educationPolicy.educationSpendingRate());
+            case RELIGIOUS_INCOME_TYPE -> budgetPolicy.clergyFundingRate();
             default -> 0f;
         };
     }

@@ -68,9 +68,8 @@ public class EconomyBuildingProductionSystem {
                 economyBuilding.inputStocks(g, Math.max(0f, economyBuilding.inputStocks(g) - used));
             }
 
-            float maxSecondary = maxWorkers(economyBuildingTypeData, level, economyBuildingTypeData.secondaryWorkerPopTypeRatio());
-            float secondaryRatio = economyBuilding.secondaryWorkerAmount() / Math.max(1f, maxSecondary);
-            float outputScale = outputScale(countryProductionPolicy, level, secondaryRatio, effectiveScale) * (1f + managementBonus(economyBuilding, regionInstance, this.stateOwnerTag));
+            float secondaryFill = secondaryFill(economyBuilding, economyBuildingTypeData, level, effectiveScale);
+            float outputScale = outputScale(countryProductionPolicy, economyBuildingTypeData, level, secondaryFill, effectiveScale) * (1f + managementBonus(economyBuilding, regionInstance, this.stateOwnerTag));
             economyBuilding.production(economyBuildingTypeData.goodOutputAmount() * outputScale * stockRatio);
         }
     }

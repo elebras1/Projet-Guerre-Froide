@@ -121,7 +121,7 @@ public final class CountryLoader {
             country.set(new CountryMarket(new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new double[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new double[POP_TYPE_COUNT], new double[POP_TYPE_COUNT], new double[POP_TYPE_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], 0d, 0f, new double[GOOD_COUNT], 0f, 0f, 0f, 0d));
             country.set(new CountryDemographics(0, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, new long[POP_TYPE_COUNT], new long[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
             country.set(new CountryTaxPolicy(0f, 0f, 0f));
-            country.set(new CountryBudgetPolicy(0f, 0f, 0f, 0f));
+            country.set(new CountryBudgetPolicy(0f, 0f, 0f, 0f, 0f));
             country.set(new CountryInvestment(new double[OWNER_COUNT], new double[OWNER_COUNT], new double[OWNER_COUNT], new double[OWNER_COUNT], 0, 0, 0));
             country.set(new CountryBank(0d, 0d, 0f, 0f, new float[POP_TYPE_COUNT]));
             country.set(new CountryBudget(new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0d, 0d, 0d, 0f, 0f, 0f, 0f, 0f));
@@ -132,7 +132,7 @@ public final class CountryLoader {
             country.set(new CountryProductionPolicy(0f, 0f, 0f, 0f, 0.2f, 0f));
             country.set(new CountryPopulationPolicy(0f, 0f, 0f));
             country.set(new CountryPoliticalPolicy(0f, 0f, 0f, 0f, 0f, 0f));
-            country.set(new CountryCulturePolicy(0f, 0f, 0f));
+            country.set(new CountryCulturePolicy(0f, 0f, 0f, 0f));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }

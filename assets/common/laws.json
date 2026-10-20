@@ -50,11 +50,11 @@
         "theocracy": {
           "requirements": [],
           "modifiers": {
-            "education_spending": 0.2,
             "tax_poor": 0.05,
             "religious_conversion_speed": 0.25,
             "secularism": -0.15,
-            "political_consciousness": -0.1
+            "political_consciousness": -0.1,
+            "clergy_state_funding": 1
           },
           "interest_ideologies": {
             "paternal_auto_idolg": 1,
@@ -352,9 +352,9 @@
         "state_religion": {
           "requirements": [],
           "modifiers": {
-            "education_spending": 0.1,
             "religious_conversion_speed": 0.2,
-            "secularism": -0.15
+            "secularism": -0.15,
+            "religious_donations": 0.01
           },
           "interest_ideologies": {
             "fascistic_idolg": 1,
@@ -373,7 +373,8 @@
             "education_efficiency": 0.05,
             "religious_conversion_speed": -0.1,
             "secularism": 0.05,
-            "migration_pull": 0.05
+            "migration_pull": 0.05,
+            "religious_donations": 0.005
           },
           "interest_ideologies": {
             "paternal_auto_idolg": -1,
@@ -388,7 +389,8 @@
           "requirements": [],
           "modifiers": {
             "education_efficiency": 0.1,
-            "secularism": 0.15
+            "secularism": 0.15,
+            "religious_donations": 0.0025
           },
           "interest_ideologies": {
             "paternal_auto_idolg": -1,
