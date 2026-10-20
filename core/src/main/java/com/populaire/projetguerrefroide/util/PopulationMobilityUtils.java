@@ -49,7 +49,7 @@ public class PopulationMobilityUtils {
 
     public static void shares(PopulationView population, float classRigidity, float[] promotionWeights, float[] demotionWeights,
                               boolean[] employeeTypes, boolean[] ruralTypes, int rgoWorkerIndex, DemographicsView demographics,
-                              float[] vacancyShares, float[] openShares) {
+                              float[] vacancyShares, float[] openShares, float[] fallbackSources, float[] fallbackWeights) {
         int amount = population.amount();
         float unemployedShare = Math.max(0f, (amount - population.employment()) / (float) amount);
         float openness = Math.max(0f, 1f - classRigidity);
@@ -57,12 +57,28 @@ public class PopulationMobilityUtils {
         float jobSearch = PROMOTION_RATE * unemployedShare * openness;
         float demotion = PROMOTION_RATE * Math.min(1f, unemployedShare + Math.max(0f, 1f - population.lifeNeedsSatisfaction()));
         float sourceIncome = population.income() / amount;
+        float primaryWeightTotal = 0f;
+        float fallbackWeightTotal = 0f;
+        for (int b = 0; b < POP_TYPE_COUNT; b++) {
+            if (ruralTypes[b]) {
+                fallbackWeightTotal += demotionWeights[b];
+            } else {
+                primaryWeightTotal += demotionWeights[b];
+            }
+        }
+        boolean fallback = primaryWeightTotal > 0f && fallbackWeightTotal > 0f;
         for (int b = 0; b < POP_TYPE_COUNT; b++) {
             float demotionPart = demotion * demotionWeights[b];
+            if (fallback) {
+                demotionPart = ruralTypes[b] ? 0f : demotion * demotionWeights[b] / primaryWeightTotal;
+            }
             vacancyShares[b] = 0f;
             openShares[b] = 0f;
+            fallbackSources[b] = 0f;
+            fallbackWeights[b] = fallback && ruralTypes[b] ? demotionWeights[b] / fallbackWeightTotal : 0f;
             if (employeeTypes[b]) {
                 vacancyShares[b] = (ambition + jobSearch) * promotionWeights[b] + demotionPart;
+                fallbackSources[b] = demotionPart;
             } else if (ruralTypes[b]) {
                 vacancyShares[b] = b == rgoWorkerIndex ? (ambition + jobSearch) * promotionWeights[b] : 0f;
                 openShares[b] = demotionPart;
@@ -72,6 +88,7 @@ public class PopulationMobilityUtils {
                     ? Math.clamp(demographics.incomeByPopType(b) / targetTotal / sourceIncome - 1f, 0f, 1f)
                     : 0f;
                 openShares[b] = (ambition * promotionWeights[b] + demotionPart) * attraction;
+                fallbackSources[b] = demotionPart * (1f - attraction);
             }
         }
     }

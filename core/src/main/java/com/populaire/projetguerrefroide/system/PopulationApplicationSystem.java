@@ -39,6 +39,8 @@ public class PopulationApplicationSystem {
         boolean[] ruralTypes = PopulationMobilityUtils.popTypesWith(world, this.ecsConstants.ruralTag());
         float[] vacancyShares = new float[POP_TYPE_COUNT];
         float[] openShares = new float[POP_TYPE_COUNT];
+        float[] fallbackSources = new float[POP_TYPE_COUNT];
+        float[] fallbackWeights = new float[POP_TYPE_COUNT];
 
         long countryId = 0;
         float classRigidity = 0f;
@@ -64,7 +66,7 @@ public class PopulationApplicationSystem {
                 rgoWorkerIndex = rgoType.workerPopTypeIndex();
             }
             PopulationMobilityUtils.shares(population, classRigidity, promotionWeights, demotionWeights, employeeTypes, ruralTypes,
-                rgoWorkerIndex, province.getView(Demographics.class), vacancyShares, openShares);
+                rgoWorkerIndex, province.getView(Demographics.class), vacancyShares, openShares, fallbackSources, fallbackWeights);
 
             RegionInstanceMutView regionInstance = world.obtainEntityView(population.regionInstanceId()).getMutView(RegionInstance.class);
             for (int b = 0; b < POP_TYPE_COUNT; b++) {

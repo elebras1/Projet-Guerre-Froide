@@ -39,6 +39,9 @@ public class PopulationPromotionSystem {
         boolean[] ruralTypes = PopulationMobilityUtils.popTypesWith(world, this.ecsConstants.ruralTag());
         float[] vacancyShares = new float[POP_TYPE_COUNT];
         float[] openShares = new float[POP_TYPE_COUNT];
+        float[] fallbackSources = new float[POP_TYPE_COUNT];
+        float[] fallbackWeights = new float[POP_TYPE_COUNT];
+        float[] hiredRatios = new float[POP_TYPE_COUNT];
 
         long countryId = 0;
         float classRigidity = 0f;
@@ -64,19 +67,23 @@ public class PopulationPromotionSystem {
                 rgoWorkerIndex = rgoType.workerPopTypeIndex();
             }
             PopulationMobilityUtils.shares(population, classRigidity, promotionWeights, demotionWeights, employeeTypes, ruralTypes,
-                rgoWorkerIndex, province.getView(Demographics.class), vacancyShares, openShares);
+                rgoWorkerIndex, province.getView(Demographics.class), vacancyShares, openShares, fallbackSources, fallbackWeights);
 
             PopulationTransferMutView transfer = province.getMutView(PopulationTransfer.class);
             RegionInstanceView regionInstance = world.obtainEntityView(population.regionInstanceId()).getView(RegionInstance.class);
+            float fallbackShare = 0f;
             for (int b = 0; b < POP_TYPE_COUNT; b++) {
-                float hiredRatio = 0f;
+                hiredRatios[b] = 0f;
                 if (vacancyShares[b] > 0f) {
                     float vacancies = employeeTypes[b] ? regionInstance.vacanciesByPopType(b) : resourceGathering.vacancies();
                     float applicants = employeeTypes[b] ? regionInstance.applicantsByPopType(b) : resourceGathering.applicants();
-                    hiredRatio = applicants > 0f ? Math.min(1f, vacancies / applicants) : 0f;
+                    hiredRatios[b] = applicants > 0f ? Math.min(1f, vacancies / applicants) : 0f;
                 }
+                fallbackShare += employeeTypes[b] ? fallbackSources[b] * (1f - hiredRatios[b]) : fallbackSources[b];
+            }
+            for (int b = 0; b < POP_TYPE_COUNT; b++) {
                 int current = population.amount();
-                int moving = Math.min((int) (amount * (vacancyShares[b] * hiredRatio + openShares[b])), current);
+                int moving = Math.min((int) (amount * (vacancyShares[b] * hiredRatios[b] + openShares[b] + fallbackShare * fallbackWeights[b])), current);
                 if (moving <= 0) {
                     continue;
                 }
