@@ -6,6 +6,7 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.util.EmploymentUtils;
 import com.populaire.projetguerrefroide.util.PopulationMobilityUtils;
 
 import static com.populaire.projetguerrefroide.util.Constants.POP_TYPE_COUNT;
@@ -45,6 +46,8 @@ public class PopulationPromotionSystem {
 
         long countryId = 0;
         float classRigidity = 0f;
+        float workforceShare = 0f;
+        float baseWorkforceShare = EmploymentUtils.baseWorkforceShares(world)[populationType.index()];
         Field<Population> populationField = iter.field(Population.class, 0);
         for (int i = 0; i < iter.count(); i++) {
             PopulationMutView population = populationField.getMutView(i);
@@ -54,8 +57,11 @@ public class PopulationPromotionSystem {
             }
             if (population.countryId() != countryId) {
                 countryId = population.countryId();
-                CountryPoliticalPolicyView politicalPolicy = world.obtainEntityView(countryId).getView(CountryPoliticalPolicy.class);
+                EntityView country = world.obtainEntityView(countryId);
+                CountryPoliticalPolicyView politicalPolicy = country.getView(CountryPoliticalPolicy.class);
+                CountryPopulationPolicyView populationPolicy = country.getView(CountryPopulationPolicy.class);
                 classRigidity = politicalPolicy.classRigidity();
+                workforceShare = EmploymentUtils.activeShare(baseWorkforceShare, populationPolicy.workforceShareModifier());
             }
 
             EntityView province = world.obtainEntityView(population.provinceId());
@@ -66,7 +72,7 @@ public class PopulationPromotionSystem {
                 ResourceGatheringTypeView rgoType = world.obtainEntityView(province.target(this.ecsConstants.rgoType(), 0)).getView(ResourceGatheringType.class);
                 rgoWorkerIndex = rgoType.workerPopTypeIndex();
             }
-            PopulationMobilityUtils.shares(population, classRigidity, promotionWeights, demotionWeights, employeeTypes, ruralTypes,
+            PopulationMobilityUtils.shares(population, classRigidity, workforceShare, promotionWeights, demotionWeights, employeeTypes, ruralTypes,
                 rgoWorkerIndex, province.getView(Demographics.class), vacancyShares, openShares, fallbackSources, fallbackWeights);
 
             PopulationTransferMutView transfer = province.getMutView(PopulationTransfer.class);

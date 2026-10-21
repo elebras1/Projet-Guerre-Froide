@@ -4,6 +4,7 @@ import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.util.EmploymentUtils;
 
 import static com.populaire.projetguerrefroide.util.Constants.POP_TYPE_COUNT;
 import static com.populaire.projetguerrefroide.util.Constants.TARGET_TREASURY_DAYS;
@@ -20,6 +21,7 @@ public class CountryTreasuryInitializationSystem {
             .with(CountryDemographics.class)
             .with(CountryBudgetPolicy.class)
             .with(CountryEducationPolicy.class)
+            .with(CountryPopulationPolicy.class)
             .multiThreaded()
             .iter(this::initialize);
     }
@@ -29,18 +31,22 @@ public class CountryTreasuryInitializationSystem {
         boolean[] assistedTypes = new boolean[POP_TYPE_COUNT];
         readPopulationTypes(iter.world(), incomeTypes, assistedTypes);
         int statePostIndex = statePostIndex(iter.world());
+        float[] baseWorkforceShares = EmploymentUtils.baseWorkforceShares(iter.world());
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         Field<CountryDemographics> countryDemographicsField = iter.field(CountryDemographics.class, 1);
         Field<CountryBudgetPolicy> countryBudgetPolicyField = iter.field(CountryBudgetPolicy.class, 2);
         Field<CountryEducationPolicy> countryEducationPolicyField = iter.field(CountryEducationPolicy.class, 3);
+        Field<CountryPopulationPolicy> countryPopulationPolicyField = iter.field(CountryPopulationPolicy.class, 4);
         for (int i = 0; i < iter.count(); i++) {
             CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
             CountryDemographicsView countryDemographics = countryDemographicsField.getMutView(i);
             CountryBudgetPolicyView countryBudgetPolicy = countryBudgetPolicyField.getMutView(i);
             CountryEducationPolicyView countryEducationPolicy = countryEducationPolicyField.getMutView(i);
 
-            double needs = dailyNeeds(incomeTypes, assistedTypes, countryMarket, countryDemographics, countryBudgetPolicy, countryEducationPolicy, statePostIndex);
+            CountryPopulationPolicyView countryPopulationPolicy = countryPopulationPolicyField.getMutView(i);
+            double needs = dailyNeeds(incomeTypes, assistedTypes, countryMarket, countryDemographics, countryBudgetPolicy, countryEducationPolicy, statePostIndex,
+                baseWorkforceShares, countryPopulationPolicy.workforceShareModifier());
             countryMarket.treasury(TARGET_TREASURY_DAYS * needs);
         }
     }

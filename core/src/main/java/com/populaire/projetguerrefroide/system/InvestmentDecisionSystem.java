@@ -12,6 +12,7 @@ import io.github.elebras1.flecs.Query;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.util.EmploymentUtils;
 
 import java.util.Comparator;
 
@@ -291,11 +292,15 @@ public class InvestmentDecisionSystem {
     }
 
     private float availableWorkers(World world, long regionInstanceId, int primaryWorkerPopTypeIndex, boolean[] ruralTypes) {
-        RegionDemographicsView regionDemographics = world.obtainEntityView(regionInstanceId).getView(RegionDemographics.class);
+        EntityView regionInstanceEntity = world.obtainEntityView(regionInstanceId);
+        RegionDemographicsView regionDemographics = regionInstanceEntity.getView(RegionDemographics.class);
+        RegionInstanceView regionInstance = regionInstanceEntity.getView(RegionInstance.class);
+        CountryPopulationPolicyView populationPolicy = world.obtainEntityView(regionInstance.ownerId()).getView(CountryPopulationPolicy.class);
+        float[] baseWorkforceShares = EmploymentUtils.baseWorkforceShares(world);
         float availableWorkers = 0f;
         for (int p = 0; p < POP_TYPE_COUNT; p++) {
             if (p == primaryWorkerPopTypeIndex || ruralTypes[p]) {
-                availableWorkers += Math.max(0, regionDemographics.totalByPopType(p) - regionDemographics.employmentByPopType(p));
+                availableWorkers += Math.max(0f, regionDemographics.totalByPopType(p) * EmploymentUtils.activeShare(baseWorkforceShares[p], populationPolicy.workforceShareModifier()) - regionDemographics.employmentByPopType(p));
             }
         }
         return availableWorkers;

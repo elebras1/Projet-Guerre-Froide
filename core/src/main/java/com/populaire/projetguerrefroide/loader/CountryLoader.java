@@ -130,7 +130,7 @@ public final class CountryLoader {
             country.set(new CountryProfitDistributionPolicy(0.7f, 0.3f, 0.75f, 0.7f));
             country.set(new CountryLaborPolicy(0f, false));
             country.set(new CountryProductionPolicy(0f, 0f, 0f, 0f, 0.2f, 0f));
-            country.set(new CountryPopulationPolicy(0f, 0f, 0f));
+            country.set(new CountryPopulationPolicy(0f, 0f, 0f, countryHistory.workforceShare() != null ? countryHistory.workforceShare().floatValue() : 0f));
             country.set(new CountryPoliticalPolicy(0f, 0f, 0f, 0f, 0f, 0f));
             country.set(new CountryCulturePolicy(0f, 0f, 0f, 0f));
         } catch (Exception exception) {

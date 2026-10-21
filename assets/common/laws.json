@@ -1300,7 +1300,8 @@
         "legal_guardianship": {
           "requirements": [],
           "modifiers": {
-            "class_rigidity": 0.05
+            "class_rigidity": 0.05,
+            "workforce_share": -0.25
           },
           "interest_ideologies": {
             "fascistic_idolg": -1,
@@ -1336,7 +1337,8 @@
           "requirements": [],
           "modifiers": {
             "political_consciousness": 0.1,
-            "social_mobility": 0.05
+            "social_mobility": 0.05,
+            "workforce_share": 0.2
           },
           "interest_ideologies": {
             "fascistic_idolg": -1,

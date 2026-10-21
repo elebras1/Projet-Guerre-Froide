@@ -55,17 +55,18 @@ public class StateBudgetUtils {
         return socialSlider * SOCIAL_LIFE_SHARE * countryMarket.lifeCostsByPopType(popTypeIndex);
     }
 
-    public static float scaledUnemployed(CountryDemographicsView countryDemographics, int popTypeIndex) {
-        return Math.max(0L, countryDemographics.totalByPopType(popTypeIndex) - countryDemographics.employmentByPopType(popTypeIndex)) / NEEDS_SCALING_FACTOR;
+    public static float scaledUnemployed(CountryDemographicsView countryDemographics, int popTypeIndex, float workforceShare) {
+        return Math.max(0f, countryDemographics.totalByPopType(popTypeIndex) * workforceShare - countryDemographics.employmentByPopType(popTypeIndex)) / NEEDS_SCALING_FACTOR;
     }
 
     public static double dailyNeeds(int[] incomeTypes, boolean[] assistedTypes, CountryMarketView countryMarket, CountryDemographicsView countryDemographics,
-                                    CountryBudgetPolicyView budgetPolicy, CountryEducationPolicyView educationPolicy, int statePostIndex) {
+                                    CountryBudgetPolicyView budgetPolicy, CountryEducationPolicyView educationPolicy, int statePostIndex,
+                                    float[] baseWorkforceShares, float workforceShareModifier) {
         float socialSlider = slider(budgetPolicy.socialSpendingRate());
         double needs = 0.0;
         for (int p = 0; p < POP_TYPE_COUNT; p++) {
             if (assistedTypes[p]) {
-                needs += (double) scaledUnemployed(countryDemographics, p) * socialRate(countryMarket, p, socialSlider);
+                needs += (double) scaledUnemployed(countryDemographics, p, EmploymentUtils.activeShare(baseWorkforceShares[p], workforceShareModifier)) * socialRate(countryMarket, p, socialSlider);
             } else {
                 needs += scaledWageBase(countryDemographics, p, statePostIndex) * wageRate(countryMarket, p, wageSlider(incomeTypes[p], budgetPolicy, educationPolicy));
             }

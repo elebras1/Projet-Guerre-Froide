@@ -16,6 +16,7 @@ public record CountryHistoryJson(
     @JsonAttribute(name = "head_of_state") String headOfState,
     @JsonAttribute(name = "head_of_government") String headOfGovernment,
     @JsonAttribute(mandatory = true) Map<String, String> laws,
+    @JsonAttribute(name = "workforce_share") Double workforceShare,
     List<ArmyJson> armies,
     List<NavyJson> navies,
     @JsonAttribute(name = "air_wings") List<AirWingJson> airWings) {

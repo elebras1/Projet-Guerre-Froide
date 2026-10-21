@@ -112,10 +112,13 @@ public final class EconomyLoader {
             int aristocratPopTypeIndex = -1;
             int statePostPopTypeIndex = -1;
             int religiousPopTypeIndex = -1;
+            float[] workforceShareByPopType = new float[POP_TYPE_COUNT];
             for (Map.Entry<String, PopulationTypeJson> populationType : populationTypes.entrySet()) {
                 this.loadPopulationType(populationType.getValue(), populationType.getKey(), index);
                 long populationTypeId = this.ecsWorld.lookup(populationType.getKey());
                 this.context.populationTypeIds()[index] = populationTypeId;
+                Double workforceShare = populationType.getValue().workforceShare();
+                workforceShareByPopType[index] = workforceShare != null ? workforceShare.floatValue() : 1f;
 
                 EntityView populationTypeEntity = this.ecsWorld.obtainEntityView(populationTypeId);
                 if (populationTypeEntity.has(this.ecsConstants.capitalistTag())) {
@@ -143,7 +146,7 @@ public final class EconomyLoader {
                 this.fillMobilityWeights(populationType.getValue().demoteTo(), false, populationTypeData);
             }
             long globalPopType = this.ecsWorld.entity("global_population_type");
-            this.ecsWorld.obtainEntity(globalPopType).set(new GlobalPopulationType(this.context.populationTypeIds(), capitalistPopTypeIndex, aristocratPopTypeIndex, statePostPopTypeIndex, religiousPopTypeIndex));
+            this.ecsWorld.obtainEntity(globalPopType).set(new GlobalPopulationType(this.context.populationTypeIds(), capitalistPopTypeIndex, aristocratPopTypeIndex, statePostPopTypeIndex, religiousPopTypeIndex, workforceShareByPopType));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }

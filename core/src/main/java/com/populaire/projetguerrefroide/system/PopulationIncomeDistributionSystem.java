@@ -6,6 +6,7 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.util.EmploymentUtils;
 import com.populaire.projetguerrefroide.util.StateBudgetUtils;
 import com.populaire.projetguerrefroide.util.SubsistenceUtils;
 
@@ -37,6 +38,7 @@ public class PopulationIncomeDistributionSystem {
         GlobalPopulationTypeView globalPopulationType = iter.world().obtainEntityView(iter.world().lookup("global_population_type")).getView(GlobalPopulationType.class);
         int religiousIndex = globalPopulationType.religiousPopTypeIndex();
         boolean donor = religiousIndex >= 0 && typeIdx != religiousIndex;
+        float baseWorkforceShare = globalPopulationType.workforceShareByPopType(typeIdx);
 
         long regionInstanceId = 0;
         RegionInstanceView regionInstance = null;
@@ -47,6 +49,7 @@ public class PopulationIncomeDistributionSystem {
         CountryMarketMutView countryMarket = null;
         CountryTaxPolicyView countryTaxPolicy = null;
         CountryCulturePolicyView countryCulturePolicy = null;
+        CountryPopulationPolicyView countryPopulationPolicy = null;
         CountryBudgetView countryBudget = null;
         CountryBankMutView countryBank = null;
         CountryInvestmentMutView countryInvestment = null;
@@ -69,6 +72,7 @@ public class PopulationIncomeDistributionSystem {
                 countryMarket = country.getMutView(CountryMarket.class);
                 countryTaxPolicy = country.getMutView(CountryTaxPolicy.class);
                 countryCulturePolicy = country.getView(CountryCulturePolicy.class);
+                countryPopulationPolicy = country.getView(CountryPopulationPolicy.class);
                 countryBudget = country.getMutView(CountryBudget.class);
                 countryBank = country.getMutView(CountryBank.class);
                 countryInvestment = country.getMutView(CountryInvestment.class);
@@ -129,7 +133,7 @@ public class PopulationIncomeDistributionSystem {
             countryMarket.taxRevenue(countryMarket.taxRevenue() + tax);
 
             float scaledAmount = popAmount / NEEDS_SCALING_FACTOR;
-            float scaledUnemployed = Math.max(0, population.amount() - population.employment()) / NEEDS_SCALING_FACTOR;
+            float scaledUnemployed = Math.max(0f, population.amount() * EmploymentUtils.activeShare(baseWorkforceShare, countryPopulationPolicy.workforceShareModifier()) - population.employment()) / NEEDS_SCALING_FACTOR;
             float scaledWageBase = statePost ? population.employment() / NEEDS_SCALING_FACTOR : scaledAmount;
             float stateIncome = scaledWageBase * countryBudget.wageRatesByPopType(typeIdx) + scaledAmount * countryBudget.transferRatesByPopType(typeIdx)
                 + scaledUnemployed * countryBudget.socialRatesByPopType(typeIdx);

@@ -11,6 +11,7 @@ public record GlobalPopulationType(
     int capitalistPopTypeIndex,
     int aristocratPopTypeIndex,
     int statePostPopTypeIndex,
-    int religiousPopTypeIndex
+    int religiousPopTypeIndex,
+    @FixedArray(length = POP_TYPE_COUNT) float[] workforceShareByPopType
 ) {
 }

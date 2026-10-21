@@ -58,6 +58,7 @@ public class Constants {
     public static final String MIGRATION_PUSH = "migration_push";
     public static final String RELIGIOUS_DONATIONS = "religious_donations";
     public static final String CLERGY_STATE_FUNDING = "clergy_state_funding";
+    public static final String WORKFORCE_SHARE = "workforce_share";
 
     public static float NEEDS_SCALING_FACTOR = 100000f;
     public static final float SHORTAGE_PRICE_PREMIUM = 0.5f;

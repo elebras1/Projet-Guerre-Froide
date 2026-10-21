@@ -47,11 +47,12 @@ public class PopulationMobilityUtils {
         return popTypes;
     }
 
-    public static void shares(PopulationView population, float classRigidity, float[] promotionWeights, float[] demotionWeights,
+    public static void shares(PopulationView population, float classRigidity, float workforceShare, float[] promotionWeights, float[] demotionWeights,
                               boolean[] employeeTypes, boolean[] ruralTypes, int rgoWorkerIndex, DemographicsView demographics,
                               float[] vacancyShares, float[] openShares, float[] fallbackSources, float[] fallbackWeights) {
         int amount = population.amount();
-        float unemployedShare = Math.max(0f, (amount - population.employment()) / (float) amount);
+        float active = amount * workforceShare;
+        float unemployedShare = active > 0f ? Math.max(0f, (active - population.employment()) / active) : 0f;
         float openness = Math.max(0f, 1f - classRigidity);
         float ambition = PROMOTION_RATE * Math.clamp(population.everydayNeedsSatisfaction(), 0f, 1f) * openness;
         float jobSearch = PROMOTION_RATE * unemployedShare * openness;

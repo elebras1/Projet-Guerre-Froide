@@ -5,8 +5,11 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.util.EmploymentUtils;
 
 import static com.populaire.projetguerrefroide.util.Constants.*;
+import static com.populaire.projetguerrefroide.util.EmploymentUtils.activeWorkers;
+import static com.populaire.projetguerrefroide.util.EmploymentUtils.activeShare;
 
 public class RGOEmploymentSystem {
 
@@ -16,6 +19,7 @@ public class RGOEmploymentSystem {
             .with(ResourceGathering.class)
             .with(Demographics.class)
             .with(ResourceGatheringType.class).up(ecsConstants.rgoType())
+            .with(Province.class)
             .multiThreaded()
             .iter(this::hire);
     }
@@ -27,6 +31,7 @@ public class RGOEmploymentSystem {
         Field<ResourceGathering> resourceGatheringField = iter.field(ResourceGathering.class, 0);
         Field<Demographics> demographicsField = iter.field(Demographics.class, 1);
         ResourceGatheringTypeView rgoTypeData = iter.field(ResourceGatheringType.class, 2).getView(0);
+        Field<Province> provinceField = iter.field(Province.class, 3);
         int workforce = rgoTypeData.workforce();
         float workerPopTypeRatio = rgoTypeData.workerPopTypeRatio();
         float slavePopTypeRatio = rgoTypeData.slavePopTypeRatio();
@@ -47,17 +52,27 @@ public class RGOEmploymentSystem {
         float adjustment = RGO_CLEARING_GAIN * clearingGap + RGO_PRICE_GAIN * (float) Math.log(worldPrice / goodCost);
         adjustment = Math.clamp(adjustment, -RGO_EMPLOYMENT_ADJUSTMENT_RATE, RGO_EMPLOYMENT_ADJUSTMENT_RATE);
 
+        float workerBaseShare = EmploymentUtils.baseWorkforceShares(iter.world())[workerIndex];
+        long countryId = 0;
+        float workforceShare = 0f;
         for (int i = 0; i < iter.count(); i++) {
             ResourceGatheringMutView resourceGathering = resourceGatheringField.getMutView(i);
             DemographicsView demographics = demographicsField.getMutView(i);
+            ProvinceView province = provinceField.getMutView(i);
+            if (province.ownerId() != countryId) {
+                countryId = province.ownerId();
+                CountryPopulationPolicyView populationPolicy = iter.world().obtainEntityView(countryId).getView(CountryPopulationPolicy.class);
+                workforceShare = activeShare(workerBaseShare, populationPolicy.workforceShareModifier());
+            }
+            int activeWorkerAmount = activeWorkers(demographics.totalByPopType(workerIndex), workforceShare);
 
             int maxCapacity = resourceGathering.size() * workforce;
             int targetWorkers = (int) (maxCapacity * workerPopTypeRatio);
             int targetSlaves = (int) (maxCapacity * slavePopTypeRatio);
-            int maximumWorkers = Math.min(targetWorkers, demographics.totalByPopType(workerIndex));
+            int maximumWorkers = Math.min(targetWorkers, activeWorkerAmount);
 
             int workerAmount = resourceGathering.workerAmount() + Math.round(adjustment * maximumWorkers);
-            resourceGathering.vacancies(adjustment > 0f ? Math.max(0, targetWorkers - demographics.totalByPopType(workerIndex)) : 0);
+            resourceGathering.vacancies(adjustment > 0f ? Math.max(0, targetWorkers - activeWorkerAmount) : 0);
             resourceGathering.applicants(0f);
             resourceGathering.workerAmount(Math.max(0, Math.min(maximumWorkers, workerAmount)));
             resourceGathering.slaveAmount(Math.min(targetSlaves, demographics.totalByPopType(slaveIndex)));

@@ -109,6 +109,7 @@ public class LawEffectInitializationSystem {
                             case MIGRATION_PUSH -> populationPolicy.migrationPush(populationPolicy.migrationPush() + modifierValue);
                             case RELIGIOUS_DONATIONS -> culturePolicy.religiousDonationRate(culturePolicy.religiousDonationRate() + modifierValue);
                             case CLERGY_STATE_FUNDING -> budgetPolicy.clergyFundingRate(budgetPolicy.clergyFundingRate() + modifierValue);
+                            case WORKFORCE_SHARE -> populationPolicy.workforceShareModifier(populationPolicy.workforceShareModifier() + modifierValue);
                         }
                     }
                 }
@@ -161,6 +162,7 @@ public class LawEffectInitializationSystem {
                             case MIGRATION_PUSH -> populationPolicy.migrationPush(overrideValue);
                             case RELIGIOUS_DONATIONS -> culturePolicy.religiousDonationRate(overrideValue);
                             case CLERGY_STATE_FUNDING -> budgetPolicy.clergyFundingRate(overrideValue);
+                            case WORKFORCE_SHARE -> populationPolicy.workforceShareModifier(overrideValue);
                         }
                     }
                 }
@@ -175,6 +177,7 @@ public class LawEffectInitializationSystem {
             profitDistributionPolicy.stateProfitShareRate(Math.max(0f, profitDistributionPolicy.stateProfitShareRate()));
             culturePolicy.religiousDonationRate(Math.max(0f, culturePolicy.religiousDonationRate()));
             budgetPolicy.clergyFundingRate(Math.max(0f, budgetPolicy.clergyFundingRate()));
+            populationPolicy.workforceShareModifier(Math.max(-1f, populationPolicy.workforceShareModifier()));
         }
     }
 }

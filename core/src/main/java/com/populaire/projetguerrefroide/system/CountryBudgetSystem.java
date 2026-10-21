@@ -4,6 +4,7 @@ import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.util.EmploymentUtils;
 
 import static com.populaire.projetguerrefroide.util.Constants.*;
 import static com.populaire.projetguerrefroide.util.StateBudgetUtils.*;
@@ -21,6 +22,7 @@ public class CountryBudgetSystem {
             .with(CountryBudget.class)
             .with(CountryBank.class)
             .with(CountryInvestment.class)
+            .with(CountryPopulationPolicy.class)
             .multiThreaded()
             .iter(this::budget);
     }
@@ -30,6 +32,7 @@ public class CountryBudgetSystem {
         boolean[] assistedTypes = new boolean[POP_TYPE_COUNT];
         readPopulationTypes(iter.world(), incomeTypes, assistedTypes);
         int statePostIndex = statePostIndex(iter.world());
+        float[] baseWorkforceShares = EmploymentUtils.baseWorkforceShares(iter.world());
         GlobalMarketView globalMarket = iter.world().obtainEntityView(iter.world().lookup("global_market")).getMutView(GlobalMarket.class);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
@@ -40,6 +43,7 @@ public class CountryBudgetSystem {
         Field<CountryBudget> countryBudgetField = iter.field(CountryBudget.class, 5);
         Field<CountryBank> countryBankField = iter.field(CountryBank.class, 6);
         Field<CountryInvestment> countryInvestmentField = iter.field(CountryInvestment.class, 7);
+        Field<CountryPopulationPolicy> countryPopulationPolicyField = iter.field(CountryPopulationPolicy.class, 8);
         for (int i = 0; i < iter.count(); i++) {
             CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
             CountryDemographicsView countryDemographics = countryDemographicsField.getMutView(i);
@@ -49,6 +53,8 @@ public class CountryBudgetSystem {
             CountryBudgetMutView countryBudget = countryBudgetField.getMutView(i);
             CountryBankMutView countryBank = countryBankField.getMutView(i);
             CountryInvestmentMutView countryInvestment = countryInvestmentField.getMutView(i);
+            CountryPopulationPolicyView countryPopulationPolicy = countryPopulationPolicyField.getMutView(i);
+            float workforceShareModifier = countryPopulationPolicy.workforceShareModifier();
 
             double subsidies = 0.0;
             float tariffRate = countryTradePolicy.tariffRate();
@@ -58,7 +64,7 @@ public class CountryBudgetSystem {
                 }
             }
 
-            double needs = dailyNeeds(incomeTypes, assistedTypes, countryMarket, countryDemographics, countryBudgetPolicy, countryEducationPolicy, statePostIndex) + subsidies;
+            double needs = dailyNeeds(incomeTypes, assistedTypes, countryMarket, countryDemographics, countryBudgetPolicy, countryEducationPolicy, statePostIndex, baseWorkforceShares, workforceShareModifier) + subsidies;
             double stateLoans = countryBank.stateLoans() * (1.0 + STATE_LOAN_INTEREST_RATE / DAYS_PER_YEAR);
             double treasury = Math.max(0.0, countryMarket.treasury());
             double loan = needs > treasury ? Math.min(needs - treasury, Math.max(0.0, countryBank.deposits())) : 0.0;
@@ -90,7 +96,7 @@ public class CountryBudgetSystem {
                 float popTypeSocialRate = 0f;
                 if (assistedTypes[p]) {
                     popTypeSocialRate = spendingRatio * socialRate(countryMarket, p, socialSlider);
-                    socialBudget += (double) scaledUnemployed(countryDemographics, p) * popTypeSocialRate;
+                    socialBudget += (double) scaledUnemployed(countryDemographics, p, EmploymentUtils.activeShare(baseWorkforceShares[p], workforceShareModifier)) * popTypeSocialRate;
                     assistedUnits += countryDemographics.totalByPopType(p) / NEEDS_SCALING_FACTOR;
                 } else {
                     popTypeWageRate = spendingRatio * wageRate(countryMarket, p, wageSlider(incomeTypes[p], countryBudgetPolicy, countryEducationPolicy));
