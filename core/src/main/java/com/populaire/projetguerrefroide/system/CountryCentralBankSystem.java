@@ -37,9 +37,9 @@ public class CountryCentralBankSystem {
         Field<CountryInvestment> countryInvestmentField = iter.field(CountryInvestment.class, 4);
         for (int i = 0; i < iter.count(); i++) {
             CountryCentralBankMutView countryCentralBank = countryCentralBankField.getMutView(i);
-            CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
+            CountryMarketView countryMarket = countryMarketField.getMutView(i);
             CountryDemographicsView countryDemographics = countryDemographicsField.getMutView(i);
-            CountryBankView countryBank = countryBankField.getMutView(i);
+            CountryBankMutView countryBank = countryBankField.getMutView(i);
             CountryInvestmentView countryInvestment = countryInvestmentField.getMutView(i);
 
             double realOutput = 0.0;
@@ -73,9 +73,9 @@ public class CountryCentralBankSystem {
             }
             double amount = moneyStock * annualRate / DAYS_PER_YEAR;
             if (amount < 0.0) {
-                amount = -Math.min(-amount, Math.max(0.0, countryMarket.treasury()));
+                amount = -Math.min(-amount, Math.max(0.0, countryBank.reserves()));
             }
-            countryMarket.treasury(countryMarket.treasury() + amount);
+            countryBank.reserves(countryBank.reserves() + amount);
             countryCentralBank.createdMoney(countryCentralBank.createdMoney() + amount);
             countryCentralBank.priceIndex((float) priceIndex);
             countryCentralBank.targetPriceIndex((float) targetPriceIndex);
