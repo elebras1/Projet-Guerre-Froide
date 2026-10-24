@@ -95,6 +95,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import com.populaire.projetguerrefroide.util.StateBudgetUtils;
+import com.populaire.projetguerrefroide.util.EmploymentUtils;
 import static com.populaire.projetguerrefroide.util.Constants.CAPITALIST_OWNER;
 import static com.populaire.projetguerrefroide.util.Constants.GOOD_COUNT;
 import static com.populaire.projetguerrefroide.util.Constants.NEEDS_SCALING_FACTOR;
@@ -102,6 +104,10 @@ import static com.populaire.projetguerrefroide.util.Constants.POP_TYPE_COUNT;
 import static com.populaire.projetguerrefroide.util.Constants.SPENDING_RATES_BY_STRATA;
 import static com.populaire.projetguerrefroide.util.Constants.STATE_OWNER;
 import static com.populaire.projetguerrefroide.util.Constants.WORKERS_OWNER;
+import static com.populaire.projetguerrefroide.util.IncomeTypeUtils.ADMINISTRATION_INCOME_TYPE;
+import static com.populaire.projetguerrefroide.util.IncomeTypeUtils.EDUCATION_INCOME_TYPE;
+import static com.populaire.projetguerrefroide.util.IncomeTypeUtils.MILITARY_INCOME_TYPE;
+import static com.populaire.projetguerrefroide.util.IncomeTypeUtils.RELIGIOUS_INCOME_TYPE;
 import static com.populaire.projetguerrefroide.util.StrataUtils.MIDDLE_STRATA;
 import static com.populaire.projetguerrefroide.util.StrataUtils.POOR_STRATA;
 import static com.populaire.projetguerrefroide.util.StrataUtils.RICH_STRATA;
@@ -592,6 +598,8 @@ public class SimulationRecorder implements AutoCloseable {
             "capitalist_committed", "state_committed", "workers_committed", "military_supply", "military_needed", "military_supply_ratio", "credit_limit", "revenue_trend",
             "lending_rate", "bankruptcies", "public_works_loan", "public_works_return", "price_index", "created_money",
             "public_works_sites", "public_works_daily", "maintenance_spending", "maintenance_satisfaction");
+        this.writer("country/budget.csv").header("tick", "date", "country", "needs", "military_pay", "administration_pay", "education_pay", "clergy_pay", "social",
+            "state_consumption", "military_supply", "maintenance", "subsidies", "tax", "tariff", "profit", "spending_ratio", "state_loans", "credit_limit", "military_pops");
         this.writer("country/employment_ratio.csv").header("tick", "date", "country", "employment", "workers", "ratio");
         this.writer("country/deposits.csv").header("tick", "date", "country", "pop_type", "total", "deposits", "savings", "unspent", "income");
         this.writer("country/demographics.csv").header("tick", "date", "country", "pop_type", "total", "employment", "consciousness", "militancy", "literacy", "savings", "life_satisfaction", "everyday_satisfaction", "luxury_satisfaction");
@@ -1031,6 +1039,12 @@ public class SimulationRecorder implements AutoCloseable {
         CsvWriter demographicsTotals = this.detailWriter("country/demographics_totals.csv");
         CsvWriter needsCosts = this.detailWriter("country/needs_costs.csv");
         CsvWriter effectPolicy = this.detailWriter("country/effect_policy.csv");
+        CsvWriter budgetWriter = this.detailWriter("country/budget.csv");
+        int[] incomeTypes = new int[POP_TYPE_COUNT];
+        boolean[] assistedTypes = new boolean[POP_TYPE_COUNT];
+        StateBudgetUtils.readPopulationTypes(this.ecsWorld, incomeTypes, assistedTypes);
+        int statePostIndex = StateBudgetUtils.statePostIndex(this.ecsWorld);
+        float[] baseWorkforceShares = EmploymentUtils.baseWorkforceShares(this.ecsWorld);
 
         this.countryQuery.each((long countryId) -> {
             EntityView country = this.ecsWorld.obtainEntityView(countryId);
@@ -1149,6 +1163,30 @@ public class SimulationRecorder implements AutoCloseable {
                 bank.lendingRate(), bank.bankruptcies(), budget.publicWorksLoan(), publicWorks.targetReturn(),
                 country.<CountryCentralBankView>getView(CountryCentralBank.class).priceIndex(), country.<CountryCentralBankView>getView(CountryCentralBank.class).createdMoney(),
                 publicWorks.sitesInProgress(), publicWorks.dailyCommitment(), maintenance.spentToday(), maintenance.satisfaction());
+
+            if (this.detail) {
+                double[] pay = new double[RELIGIOUS_INCOME_TYPE + 1];
+                double social = 0.0;
+                long militaryPops = 0;
+                float socialSlider = StateBudgetUtils.slider(budgetPolicy.socialSpendingRate());
+                for (int p = 0; p < POP_TYPE_COUNT; p++) {
+                    if (assistedTypes[p]) {
+                        float workforceShare = EmploymentUtils.activeShare(baseWorkforceShares[p], populationPolicy.workforceShareModifier());
+                        social += (double) StateBudgetUtils.scaledUnemployed(cd, p, workforceShare) * StateBudgetUtils.socialRate(cm, p, socialSlider);
+                    } else {
+                        float slider = StateBudgetUtils.wageSlider(incomeTypes[p], budgetPolicy, educationPolicy);
+                        pay[incomeTypes[p]] += StateBudgetUtils.scaledWageBase(cd, p, statePostIndex) * StateBudgetUtils.wageRate(cm, p, slider);
+                    }
+                    if (incomeTypes[p] == MILITARY_INCOME_TYPE) {
+                        militaryPops += cd.totalByPopType(p);
+                    }
+                }
+                float spendingRatio = budget.spendingRatio() > 0f ? budget.spendingRatio() : 1f;
+                budgetWriter.row(tick, date, name, budget.reservedNeeds(), pay[MILITARY_INCOME_TYPE], pay[ADMINISTRATION_INCOME_TYPE], pay[EDUCATION_INCOME_TYPE], pay[RELIGIOUS_INCOME_TYPE], social,
+                    budget.stateConsumptionBudget() / spendingRatio, StateBudgetUtils.militarySupplyCost(military, cm), StateBudgetUtils.maintenanceCost(maintenance, cm),
+                    budget.subsidyAllowance() / spendingRatio, cm.taxRevenue(), cm.tariffRevenue(), cm.profitRevenue(), budget.spendingRatio(),
+                    bank.loans(STATE_OWNER), bank.creditLimit(), militaryPops);
+            }
 
             for (int p = 0; p < POP_TYPE_COUNT; p++) {
                 float popTypeEmployment = countryIndex != null ? this.countryPopTypeEmployment[countryIndex * POP_TYPE_COUNT + p] : cd.employmentByPopType(p);
