@@ -20,5 +20,6 @@ public record Population(
     float everydayNeedsDemandRatio,
     float luxuryNeedsDemandRatio,
     float income,
-    float unspentBudget) {
+    float unspentBudget,
+    float deposit) {
 }

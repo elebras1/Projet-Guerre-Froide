@@ -46,6 +46,7 @@ public class EconomySimulationAnalysisTest {
     private static final double MONEY_DRIFT_TOLERANCE = 1e-3;
     private static final double GOODS_CONSERVATION_TOLERANCE = 1e-4;
     private static final double LIFE_NEEDS_FLOOR = 0.9;
+    private static final double ARMY_SUPPLY_FLOOR = 0.9;
     private static final double REAL_OUTPUT_FLOOR = 0.85;
     private static final double START_STEADY_TOLERANCE = 0.1;
     private static final double CPI_LOW = 0.7;
@@ -114,6 +115,11 @@ public class EconomySimulationAnalysisTest {
         world.component(GovernmentPolicy.class);
         world.component(PopulationType.class);
         world.component(StatePostType.class);
+        world.component(GlobalStateConsumption.class);
+        world.component(CountryStateConsumption.class);
+        world.component(CountryPublicWorks.class);
+        world.component(CountryMilitary.class);
+        world.component(ProvinceInfrastructure.class);
         world.component(Good.class);
         world.component(EconomyBuildingType.class);
         world.component(SpecialBuildingType.class);
@@ -348,6 +354,9 @@ public class EconomySimulationAnalysisTest {
                 recorder.getMinYearlyPoorLifeWorld() >= LIFE_NEEDS_FLOOR && recorder.getMinYearlyPoorLifeCountry() >= LIFE_NEEDS_FLOOR,
                 String.format("pauvres, moyenne annuelle min : monde=%.3f, pire pays=%.3f %s",
                     recorder.getMinYearlyPoorLifeWorld(), recorder.getMinYearlyPoorLifeCountry(), recorder.getWorstPoorLifeCountry())),
+            new HealthCheck("army_supply_floor",
+                recorder.getMinYearlyArmySupply() >= ARMY_SUPPLY_FLOOR,
+                String.format("entretien de l'armee servi, moyenne annuelle min=%.3f", recorder.getMinYearlyArmySupply())),
             new HealthCheck("real_output_floor",
                 recorder.getMinRealOutputRatio() >= REAL_OUTPUT_FLOOR,
                 String.format("production reelle min=%.1f%% du tick 0", 100.0 * recorder.getMinRealOutputRatio())),

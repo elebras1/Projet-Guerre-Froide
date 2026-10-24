@@ -26,9 +26,10 @@ public class EconomyBuildingRevenueSystem {
 
     private void distribute(Iter iter) {
         long countryId = 0;
-        CountryMarketView countryMarket = null;
+        CountryMarketMutView countryMarket = null;
         CountryLaborPolicyView countryLaborPolicy = null;
         CountryProductionPolicyView countryProductionPolicy = null;
+        CountryBudgetView countryBudget = null;
 
         long regionId = 0;
         RegionInstanceView regionInstance = null;
@@ -52,6 +53,7 @@ public class EconomyBuildingRevenueSystem {
                 countryMarket = country.getMutView(CountryMarket.class);
                 countryLaborPolicy = country.getMutView(CountryLaborPolicy.class);
                 countryProductionPolicy = country.getMutView(CountryProductionPolicy.class);
+                countryBudget = country.getView(CountryBudget.class);
             }
 
             float producedAmount = countryMarket.goodProducedAmounts(outputIndex);
@@ -75,13 +77,23 @@ public class EconomyBuildingRevenueSystem {
             float inputScale = inputScale(countryProductionPolicy, level, effectiveScale);
             double dailyInputCost = inputCost(economyBuilding, countryMarket, inputScale);
             float fullOutput = buildingTypeData.goodOutputAmount() * outputScale(countryProductionPolicy, buildingTypeData, level, secondaryFill(economyBuilding, buildingTypeData, level, effectiveScale), effectiveScale)
-                * (1f + managementBonus(economyBuilding, regionInstance, this.stateOwnerTag));
+                * (1f + managementBonus(economyBuilding, regionInstance, this.stateOwnerTag)) * (1f + infrastructureBonus(regionInstance));
             float stockRatio = fullOutput > 0f ? economyBuilding.production() / fullOutput : 0f;
             float profit = (float) (revenue - wages - dailyInputCost * stockRatio);
             economyBuilding.profit(profit);
             economyBuilding.profitTrend(economyBuilding.profitTrend() + (profit - economyBuilding.profitTrend()) / DAYS_PER_YEAR);
 
             double buffer = FACTORY_TREASURY_BUFFER_DAYS * (dailyInputCost + wageBill);
+            float lossCoverage = economyBuilding.ownerTagId() == this.stateOwnerTag ? 1f : countryProductionPolicy.industrySubsidyRate();
+            if (profit < 0f && lossCoverage > 0f) {
+                double surplus = Math.max(0.0, countryMarket.treasury() - countryBudget.targetTreasury());
+                double support = Math.min(Math.min(-profit * lossCoverage, Math.max(0.0, buffer - treasury)), surplus);
+                if (support > 0.0) {
+                    countryMarket.treasury(countryMarket.treasury() - support);
+                    countryMarket.enterpriseSupport(countryMarket.enterpriseSupport() + support);
+                    treasury += support;
+                }
+            }
             double dividend = DIVIDEND_RATE * Math.max(0.0, treasury - buffer);
             economyBuilding.dividend((float) dividend);
             economyBuilding.treasury(treasury - dividend);

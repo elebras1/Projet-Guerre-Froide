@@ -7,5 +7,6 @@ import com.dslplatform.json.JsonAttribute;
 public record GoodJson(
     @JsonAttribute(mandatory = true) double cost,
     Double value,
+    @JsonAttribute(name = "stock_decay") Double stockDecay,
     @JsonAttribute(mandatory = true) int[] color) {
 }

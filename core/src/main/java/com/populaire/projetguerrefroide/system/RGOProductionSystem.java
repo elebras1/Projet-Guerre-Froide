@@ -14,6 +14,7 @@ public class RGOProductionSystem {
             .with(ResourceGathering.class)
             .with(ResourceGatheringType.class).up(ecsConstants.rgoType())
             .with(Province.class)
+            .with(ProvinceInfrastructure.class)
             .multiThreaded()
             .iter(this::produce);
     }
@@ -27,6 +28,7 @@ public class RGOProductionSystem {
         float workerEffectMultiplier = resourceGatheringTypeData.workerEffectMultiplier();
         float slaveEffectMultiplier = resourceGatheringTypeData.slaveEffectMultiplier();
         Field<Province> provinceField = iter.field(Province.class, 2);
+        Field<ProvinceInfrastructure> provinceInfrastructureField = iter.field(ProvinceInfrastructure.class, 3);
         if (iter.count() == 0) {
             return;
         }
@@ -58,7 +60,8 @@ public class RGOProductionSystem {
             float maxBonus = slaveEffectMultiplier - 1.0f;
             float currentSlaveBonus = 1.0f + (slaveFulfillment * maxBonus);
 
-            resourceGathering.production(coreProduction * currentSlaveBonus);
+            ProvinceInfrastructureView provinceInfrastructure = provinceInfrastructureField.getMutView(i);
+            resourceGathering.production(coreProduction * currentSlaveBonus * (1f + provinceInfrastructure.productionBonus()));
         }
     }
 }

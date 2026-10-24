@@ -126,9 +126,10 @@ public final class MapLoader {
                 }
             }
 
+            province.set(new ProvinceInfrastructure(0f));
             province.set(new Province(coreIds, countryOwnerId, countryControllerId, terrainId, 0, 0, 0, childrenAmount, adultsAmount, seniorsAmount, cultures.first(), cultures.second(), religions.first(), religions.second()));
             province.set(new Demographics(0, 0, 0, 0f, 0f, 0f, 0f, 0f, 0f, new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
-            province.set(new PopulationTransfer(new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT]));
+            province.set(new PopulationTransfer(new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT]));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }
@@ -142,13 +143,13 @@ public final class MapLoader {
             long popId = this.ecsWorld.entity();
             EntityView pop = this.ecsWorld.obtainEntityView(popId);
             pop.isA(typeId);
-            pop.set(new Population(countryId, provinceId, 0, amount, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
+            pop.set(new Population(countryId, provinceId, 0, amount, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
         }
         for (long typeId : this.context.populationTypeIds()) {
             if (typeId != 0 && !distribution.containsKey(this.ecsWorld.obtainEntity(typeId).name())) {
                 EntityView pop = this.ecsWorld.obtainEntityView(this.ecsWorld.entity());
                 pop.isA(typeId);
-                pop.set(new Population(countryId, provinceId, 0, 0, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
+                pop.set(new Population(countryId, provinceId, 0, 0, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
             }
         }
     }
@@ -184,7 +185,7 @@ public final class MapLoader {
                         long regionInstanceId = this.ecsWorld.entity("region_instance_" + regionId + "_" + provinceData.ownerId());
                         EntityView regionInstance = this.ecsWorld.obtainEntityView(regionInstanceId);
                         if(!regionInstance.has(RegionInstance.class)) {
-                            regionInstance.set(new RegionInstance(regionEntityId, provinceData.ownerId(), new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 1f, 0f));
+                            regionInstance.set(new RegionInstance(regionEntityId, provinceData.ownerId(), new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 1f, 0f, 0f, 0));
                             regionInstance.set(new RegionInstanceIncome(new float[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0f, 0f, 0f, 0f, 0f, 0f, 0, new float[POP_TYPE_COUNT], 0f, 0f));
                             regionInstance.set(new RegionDemographics(0, 0, 0, 0f, 0f, 0f, 0f, 0f, 0f, new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
                         }

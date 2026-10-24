@@ -3,6 +3,7 @@
     "fish": {
       "value": 16.54,
       "cost": 1.4,
+      "stock_decay": 0.02,
       "color": [
         200,
         230,
@@ -12,6 +13,7 @@
     "grain": {
       "value": 2.92,
       "cost": 1.2,
+      "stock_decay": 0.005,
       "color": [
         255,
         204,
@@ -21,6 +23,7 @@
     "vegetables": {
       "value": 4.01,
       "cost": 1.2,
+      "stock_decay": 0.02,
       "color": [
         34,
         139,
@@ -30,6 +33,7 @@
     "fruits": {
       "value": 3.56,
       "cost": 1.4,
+      "stock_decay": 0.02,
       "color": [
         255,
         99,
@@ -39,6 +43,7 @@
     "meat": {
       "value": 3.43,
       "cost": 1.8,
+      "stock_decay": 0.02,
       "color": [
         255,
         69,
@@ -48,6 +53,7 @@
     "oil": {
       "value": 1.21,
       "cost": 2,
+      "stock_decay": 0.002,
       "color": [
         0,
         0,
@@ -57,6 +63,7 @@
     "coal": {
       "value": 3.87,
       "cost": 1.7,
+      "stock_decay": 0.002,
       "color": [
         70,
         70,
@@ -66,6 +73,7 @@
     "gas": {
       "value": 6.11,
       "cost": 2.5,
+      "stock_decay": 0.002,
       "color": [
         70,
         130,
@@ -75,6 +83,7 @@
     "wood": {
       "value": 5.04,
       "cost": 1.2,
+      "stock_decay": 0.002,
       "color": [
         139,
         69,
@@ -84,6 +93,7 @@
     "renewable_energy": {
       "value": 2.18,
       "cost": 1.4,
+      "stock_decay": 0.002,
       "color": [
         0,
         255,
@@ -93,6 +103,7 @@
     "uranium": {
       "value": 2.7,
       "cost": 3,
+      "stock_decay": 0.002,
       "color": [
         0,
         255,
@@ -102,6 +113,7 @@
     "iron": {
       "value": 3.08,
       "cost": 1.5,
+      "stock_decay": 0.002,
       "color": [
         139,
         137,
@@ -111,6 +123,7 @@
     "precious_metals": {
       "value": 2.06,
       "cost": 8,
+      "stock_decay": 0.002,
       "color": [
         255,
         215,
@@ -120,6 +133,7 @@
     "rare_metals": {
       "value": 1.66,
       "cost": 4,
+      "stock_decay": 0.002,
       "color": [
         75,
         0,
@@ -130,6 +144,7 @@
   "advanced_goods": {
     "fuel": {
       "cost": 2.5,
+      "stock_decay": 0.002,
       "color": [
         255,
         140,
@@ -138,6 +153,7 @@
     },
     "cement": {
       "cost": 1.5,
+      "stock_decay": 0.002,
       "color": [
         186,
         186,
@@ -146,6 +162,7 @@
     },
     "steel": {
       "cost": 3.8,
+      "stock_decay": 0.002,
       "color": [
         95,
         128,
@@ -154,6 +171,7 @@
     },
     "aluminium": {
       "cost": 5,
+      "stock_decay": 0.002,
       "color": [
         192,
         68,
@@ -162,6 +180,7 @@
     },
     "glass": {
       "cost": 1.8,
+      "stock_decay": 0.002,
       "color": [
         200,
         200,
@@ -170,6 +189,7 @@
     },
     "inorganic_chemicals": {
       "cost": 5,
+      "stock_decay": 0.002,
       "color": [
         133,
         101,
@@ -178,6 +198,7 @@
     },
     "fabric": {
       "cost": 1.5,
+      "stock_decay": 0.002,
       "color": [
         186,
         50,
@@ -186,6 +207,7 @@
     },
     "plastics": {
       "cost": 1.4,
+      "stock_decay": 0.002,
       "color": [
         211,
         200,
@@ -194,6 +216,7 @@
     },
     "paper": {
       "cost": 2.5,
+      "stock_decay": 0.002,
       "color": [
         216,
         185,
@@ -202,6 +225,7 @@
     },
     "integrated_circuits": {
       "cost": 5.4,
+      "stock_decay": 0.002,
       "color": [
         155,
         255,
@@ -210,6 +234,7 @@
     },
     "electronic_components": {
       "cost": 4.5,
+      "stock_decay": 0.002,
       "color": [
         70,
         130,
@@ -218,6 +243,7 @@
     },
     "machine_parts": {
       "cost": 2.0,
+      "stock_decay": 0.002,
       "color": [
         177,
         200,
@@ -226,6 +252,7 @@
     },
     "computers": {
       "cost": 4.5,
+      "stock_decay": 0.002,
       "color": [
         255,
         255,
@@ -234,6 +261,7 @@
     },
     "automobiles": {
       "cost": 5.1,
+      "stock_decay": 0.002,
       "color": [
         60,
         70,
@@ -242,6 +270,7 @@
     },
     "clothes": {
       "cost": 2.9,
+      "stock_decay": 0.002,
       "color": [
         255,
         192,
@@ -250,6 +279,7 @@
     },
     "pharmaceuticals": {
       "cost": 2.5,
+      "stock_decay": 0.002,
       "color": [
         255,
         200,
@@ -286,6 +316,7 @@
   "military_goods": {
     "canned_food": {
       "cost": 1.5,
+      "stock_decay": 0.005,
       "color": [
         255,
         39,
@@ -294,6 +325,7 @@
     },
     "ammunition": {
       "cost": 7,
+      "stock_decay": 0.002,
       "color": [
         208,
         202,
@@ -302,6 +334,7 @@
     },
     "weaponry": {
       "cost": 9,
+      "stock_decay": 0.002,
       "color": [
         189,
         118,
@@ -310,6 +343,7 @@
     },
     "refined_uranium": {
       "cost": 12,
+      "stock_decay": 0.002,
       "color": [
         50,
         205,
@@ -318,6 +352,7 @@
     },
     "military_satellites": {
       "cost": 25,
+      "stock_decay": 0.002,
       "color": [
         255,
         215,
@@ -326,6 +361,7 @@
     },
     "armoured_vehicles": {
       "cost": 10.5,
+      "stock_decay": 0.002,
       "color": [
         85,
         107,
@@ -334,6 +370,7 @@
     },
     "ships": {
       "cost": 12,
+      "stock_decay": 0.002,
       "color": [
         145,
         130,
@@ -342,6 +379,7 @@
     },
     "aeroplanes": {
       "cost": 13,
+      "stock_decay": 0.002,
       "color": [
         221,
         213,

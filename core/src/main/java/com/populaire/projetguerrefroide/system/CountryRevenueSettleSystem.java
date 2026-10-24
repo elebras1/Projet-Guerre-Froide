@@ -12,7 +12,6 @@ public class CountryRevenueSettleSystem {
         ecsWorld.system("CountryRevenueSettleSystem")
             .kind(phaseId)
             .with(CountryMarket.class)
-            .multiThreaded()
             .iter(this::settle);
     }
 

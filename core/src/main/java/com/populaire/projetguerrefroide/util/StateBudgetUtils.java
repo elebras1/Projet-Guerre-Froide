@@ -59,6 +59,19 @@ public class StateBudgetUtils {
         return Math.max(0f, countryDemographics.totalByPopType(popTypeIndex) * workforceShare - countryDemographics.employmentByPopType(popTypeIndex)) / NEEDS_SCALING_FACTOR;
     }
 
+    public static double stateInterestRate(double stateLoans, double creditLimit, float lendingRate) {
+        double debtRatio = creditLimit > 0.0 ? Math.min(1.0, stateLoans / creditLimit) : 1.0;
+        return lendingRate * (1.0 + debtRatio);
+    }
+
+    public static double militarySupplyCost(CountryMilitaryView countryMilitary, CountryMarketView countryMarket) {
+        double cost = 0.0;
+        for (int g = 0; g < countryMilitary.supplyNeedsLength(); g++) {
+            cost += (double) countryMilitary.supplyNeeds(g) * countryMarket.goodBudgetPrices(g);
+        }
+        return cost;
+    }
+
     public static double dailyNeeds(int[] incomeTypes, boolean[] assistedTypes, CountryMarketView countryMarket, CountryDemographicsView countryDemographics,
                                     CountryBudgetPolicyView budgetPolicy, CountryEducationPolicyView educationPolicy, int statePostIndex,
                                     float[] baseWorkforceShares, float workforceShareModifier) {

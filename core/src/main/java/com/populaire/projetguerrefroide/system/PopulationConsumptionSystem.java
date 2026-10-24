@@ -22,6 +22,7 @@ public class PopulationConsumptionSystem {
         long countryId = 0;
         CountryMarketMutView countryMarket = null;
         CountryBudgetPolicyView countryBudgetPolicy = null;
+        CountryBankMutView countryBank = null;
 
         Field<PopulationType> populationTypeField = iter.field(PopulationType.class, 1);
         PopulationTypeView populationTypeData = populationTypeField.getView(0);
@@ -38,6 +39,7 @@ public class PopulationConsumptionSystem {
                 EntityView country = iter.world().obtainEntityView(countryId);
                 countryMarket = country.getMutView(CountryMarket.class);
                 countryBudgetPolicy = country.getMutView(CountryBudgetPolicy.class);
+                countryBank = country.getMutView(CountryBank.class);
             }
 
             float spendingRate = strataSpendingRate * (1f + countryBudgetPolicy.popSpending());
@@ -46,11 +48,22 @@ public class PopulationConsumptionSystem {
 
             float marketLifeShare = 1f - SubsistenceUtils.coveredLifeShare(rural, pop.amount(), pop.employment());
             float neededLife = marketLifeShare * countryMarket.lifeBudgetCostsByPopType(popTypeIndex) * scaledAmount;
+            float neededEveryday = countryMarket.everydayBudgetCostsByPopType(popTypeIndex) * scaledAmount;
+            float shortfall = neededLife + neededEveryday - budget;
+            if (shortfall > 0f) {
+                float withdrawal = (float) Math.min(shortfall, Math.min(pop.deposit(), Math.max(0.0, countryBank.reserves())));
+                if (withdrawal > 0f) {
+                    pop.deposit(pop.deposit() - withdrawal);
+                    countryBank.reserves(countryBank.reserves() - withdrawal);
+                    pop.savings(pop.savings() + withdrawal);
+                    budget += withdrawal;
+                }
+            }
+
             float lifeSpending = Math.min(budget, neededLife);
             float lifeFraction = marketLifeShare * (neededLife > 0f ? lifeSpending / neededLife : 1f);
             budget -= lifeSpending;
 
-            float neededEveryday = countryMarket.everydayBudgetCostsByPopType(popTypeIndex) * scaledAmount;
             float everydaySpending = Math.min(budget, neededEveryday);
             float everydayFraction = neededEveryday > 0f ? everydaySpending / neededEveryday : 1f;
             budget -= everydaySpending;

@@ -56,6 +56,10 @@ public class EconomyBuildingUtils {
         return throughput(productionPolicy, level) * (1f + productionPolicy.factoryOutputModifier()) * staffingFactor(buildingType, secondaryFill) * effectiveScale;
     }
 
+    public static float infrastructureBonus(RegionInstanceView regionInstance) {
+        return regionInstance.provinceCount() > 0 ? regionInstance.infrastructureBonusSum() / regionInstance.provinceCount() : 0f;
+    }
+
     public static float managementBonus(EconomyBuildingView economyBuilding, RegionInstanceView regionInstance, long stateOwnerTag) {
         return economyBuilding.ownerTagId() == stateOwnerTag ? regionInstance.managementOutputBonus() : 0f;
     }

@@ -94,10 +94,13 @@ public class PopulationPromotionSystem {
                     continue;
                 }
                 float movingSavings = population.savings() * moving / current;
+                float movingDeposit = population.deposit() * moving / current;
                 population.amount(current - moving);
                 population.savings(population.savings() - movingSavings);
+                population.deposit(population.deposit() - movingDeposit);
                 transfer.arrivingAmounts(b, transfer.arrivingAmounts(b) + moving);
                 transfer.arrivingSavings(b, transfer.arrivingSavings(b) + movingSavings);
+                transfer.arrivingDeposits(b, transfer.arrivingDeposits(b) + movingDeposit);
             }
             population.employment(Math.min(population.employment(), population.amount()));
         }

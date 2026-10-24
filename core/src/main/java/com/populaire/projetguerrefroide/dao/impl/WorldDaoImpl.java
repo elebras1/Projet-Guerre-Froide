@@ -48,6 +48,7 @@ public class WorldDaoImpl implements WorldDao {
     private final String relationJsonFile = this.diplomacyPath + "relation.json";
     private final String alliancesJsonFile = this.diplomacyPath + "alliances.json";
     private final String traitsJsonFile = this.commonPath + "traits.json";
+    private final String stateConsumptionJsonFile = this.commonPath + "state_consumption.json";
     private final String unitsJsonFile = this.commonPath + "units.json";
     private final DslJson<Object> dslJson = new DslJson<>(Settings.withRuntime().includeServiceLoader());
     private final Type pathsType = new TypeDefinition<Map<String, String>>() {}.type;
@@ -114,6 +115,11 @@ public class WorldDaoImpl implements WorldDao {
     @Override
     public Map<String, Map<String, Double>> readTraits() {
         return this.readJson(this.traitsJsonFile, this.modifiersType);
+    }
+
+    @Override
+    public Map<String, Map<String, Double>> readStateConsumption() {
+        return this.readJson(this.stateConsumptionJsonFile, this.modifiersType);
     }
 
     @Override

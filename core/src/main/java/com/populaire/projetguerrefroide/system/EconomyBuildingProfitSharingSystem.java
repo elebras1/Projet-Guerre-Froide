@@ -5,8 +5,10 @@ import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.util.BankUtils;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 
+import static com.populaire.projetguerrefroide.util.Constants.CAPITALIST_OWNER;
 import static com.populaire.projetguerrefroide.util.Constants.COOPERATIVE_RETAINED_SHARE;
 import static com.populaire.projetguerrefroide.util.Constants.WORKERS_OWNER;
 
@@ -30,11 +32,15 @@ public class EconomyBuildingProfitSharingSystem {
         int capitalistPopTypeIndex = globalPopTypeData.capitalistPopTypeIndex();
 
         long regionId = 0;
+        RegionInstanceView regionInstance = null;
         RegionInstanceIncomeMutView regionIncome = null;
         RegionDemographicsView regionDemographics = null;
         long countryId = 0;
         CountryProfitDistributionPolicyView countryProfitDistributionPolicy = null;
         CountryInvestmentMutView countryInvestment = null;
+        CountryTaxPolicyView countryTaxPolicy = null;
+        CountryMarketMutView countryMarket = null;
+        CountryBankMutView countryBank = null;
 
         Field<Building> buildingField = iter.field(Building.class, 0);
         Field<EconomyBuilding> economyBuildingField = iter.field(EconomyBuilding.class, 1);
@@ -47,6 +53,7 @@ public class EconomyBuildingProfitSharingSystem {
             if(building.parentId() != regionId) {
                 regionId = building.parentId();
                 EntityView region = iter.world().obtainEntityView(regionId);
+                regionInstance = region.getView(RegionInstance.class);
                 regionIncome = region.getMutView(RegionInstanceIncome.class);
                 regionDemographics = region.getMutView(RegionDemographics.class);
             }
@@ -56,6 +63,9 @@ public class EconomyBuildingProfitSharingSystem {
                 EntityView country = iter.world().obtainEntityView(countryId);
                 countryProfitDistributionPolicy = country.getMutView(CountryProfitDistributionPolicy.class);
                 countryInvestment = country.getMutView(CountryInvestment.class);
+                countryTaxPolicy = country.getView(CountryTaxPolicy.class);
+                countryMarket = country.getMutView(CountryMarket.class);
+                countryBank = country.getMutView(CountryBank.class);
             }
 
             int primaryWorkerPopTypeIndex = buildingTypeData.primaryWorkerPopTypeIndex();
@@ -65,7 +75,8 @@ public class EconomyBuildingProfitSharingSystem {
             regionIncome.workersByPopType(primaryWorkerPopTypeIndex, regionIncome.workersByPopType(primaryWorkerPopTypeIndex) + economyBuilding.primaryWorkerAmount());
             regionIncome.workersByPopType(secondaryWorkerPopTypeIndex, regionIncome.workersByPopType(secondaryWorkerPopTypeIndex) + economyBuilding.secondaryWorkerAmount());
 
-            if(economyBuilding.dividend() <= 0f) {
+            float dividend = economyBuilding.dividend();
+            if(dividend <= 0f) {
                 continue;
             }
 
@@ -83,8 +94,12 @@ public class EconomyBuildingProfitSharingSystem {
                 } else {
                     stateShareRatio = 1f;
                 }
-                regionIncome.countryProfitShare(regionIncome.countryProfitShare() + stateShareRatio * economyBuilding.dividend());
+                regionIncome.countryProfitShare(regionIncome.countryProfitShare() + stateShareRatio * dividend);
             } else {
+                float profitTax = countryTaxPolicy.profitTaxRate() * regionInstance.taxCollectionShare() * dividend;
+                countryMarket.treasury(countryMarket.treasury() + profitTax);
+                countryMarket.taxRevenue(countryMarket.taxRevenue() + profitTax);
+                dividend -= profitTax;
                 float totalShareCapitalist = capitalistShareRatio + workerShareRatio;
                 if(totalShareCapitalist > 0f) {
                     float scalingFactor = 1f / totalShareCapitalist;
@@ -93,7 +108,7 @@ public class EconomyBuildingProfitSharingSystem {
                 } else {
                     capitalistShareRatio = 1f;
                 }
-                float capitalistProfitShare = capitalistShareRatio * economyBuilding.dividend();
+                float capitalistProfitShare = BankUtils.withholdDebtService(countryBank, countryInvestment, CAPITALIST_OWNER, capitalistShareRatio * dividend);
                 if(capitalistPopTypeIndex >= 0 && regionDemographics.totalByPopType(capitalistPopTypeIndex) > 0) {
                     regionIncome.capitalistProfitShare(regionIncome.capitalistProfitShare() + capitalistProfitShare);
                 } else {
@@ -101,8 +116,9 @@ public class EconomyBuildingProfitSharingSystem {
                 }
             }
 
-            float workerShare = workerShareRatio * economyBuilding.dividend();
+            float workerShare = workerShareRatio * dividend;
             if (workersOwned) {
+                workerShare = BankUtils.withholdDebtService(countryBank, countryInvestment, WORKERS_OWNER, workerShare);
                 float retainedShare = COOPERATIVE_RETAINED_SHARE * workerShare;
                 countryInvestment.funds(WORKERS_OWNER, countryInvestment.funds(WORKERS_OWNER) + retainedShare);
                 workerShare -= retainedShare;

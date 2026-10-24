@@ -38,8 +38,10 @@ public class PopulationArrivalSystem {
             }
             population.amount(population.amount() + arriving);
             population.savings(population.savings() + transfer.arrivingSavings(popTypeIndex));
+            population.deposit(population.deposit() + transfer.arrivingDeposits(popTypeIndex));
             transfer.arrivingAmounts(popTypeIndex, 0);
             transfer.arrivingSavings(popTypeIndex, 0f);
+            transfer.arrivingDeposits(popTypeIndex, 0f);
         }
     }
 }

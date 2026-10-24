@@ -16,5 +16,7 @@ public record RegionInstance(
     @FixedArray(length = POP_TYPE_COUNT) float[] applicantsByPopType,
     @FixedArray(length = POP_TYPE_COUNT) float[] statePostsByPopType,
     float taxCollectionShare,
-    float managementOutputBonus) {
+    float managementOutputBonus,
+    float infrastructureBonusSum,
+    int provinceCount) {
 }

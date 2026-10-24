@@ -6,6 +6,7 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.util.InfrastructureUtils;
 
 import static com.populaire.projetguerrefroide.util.ConstructionUtils.finished;
 import static com.populaire.projetguerrefroide.util.EconomyBuildingUtils.newEconomyBuilding;
@@ -37,10 +38,7 @@ public class ConstructionCompletionSystem {
                 building.set(newEconomyBuilding(buildingType, false, site.ownerTagId()));
                 continue;
             }
-            EntityView building = iter.world().obtainEntityView(site.buildingId());
-            BuildingMutView buildingData = building.getMutView(Building.class);
-            buildingData.size(buildingData.size() + 1);
-            building.add(this.ecsConstants.leveledUp());
+            InfrastructureUtils.levelUp(iter.world(), this.ecsConstants, site.buildingId(), site.buildingTypeId());
         }
     }
 }

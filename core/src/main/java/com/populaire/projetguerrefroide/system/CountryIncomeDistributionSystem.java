@@ -33,6 +33,7 @@ public class CountryIncomeDistributionSystem {
             }
 
             countryMarket.treasury(countryMarket.treasury() + regionInstanceIncome.countryProfitShare());
+            countryMarket.profitRevenue(countryMarket.profitRevenue() + regionInstanceIncome.countryProfitShare());
             regionInstanceIncome.claimedCountryShare(regionInstanceIncome.countryProfitShare());
         }
     }

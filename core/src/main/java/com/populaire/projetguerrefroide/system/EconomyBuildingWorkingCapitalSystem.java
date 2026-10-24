@@ -42,7 +42,8 @@ public class EconomyBuildingWorkingCapitalSystem {
 
         for (int i = 0; i < iter.count(); i++) {
             EconomyBuildingMutView economyBuilding = economyBuildingField.getMutView(i);
-            if (economyBuilding.unitMargin() <= 0f || economyBuilding.utilization() <= 0f) {
+            int owner = ownerIndex(economyBuilding.ownerTagId(), this.ecsConstants);
+            if ((owner != STATE_OWNER && economyBuilding.unitMargin() <= 0f) || economyBuilding.utilization() <= 0f) {
                 continue;
             }
             BuildingView building = buildingField.getMutView(i);
@@ -71,7 +72,6 @@ public class EconomyBuildingWorkingCapitalSystem {
             }
 
             double need = FACTORY_TREASURY_BUFFER_DAYS * dailyCost - economyBuilding.treasury();
-            int owner = ownerIndex(economyBuilding.ownerTagId(), this.ecsConstants);
             double available = owner == STATE_OWNER
                 ? countryMarket.treasury() - countryBudget.reservedNeeds()
                 : countryInvestment.funds(owner);

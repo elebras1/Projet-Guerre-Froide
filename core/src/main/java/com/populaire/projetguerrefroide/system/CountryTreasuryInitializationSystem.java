@@ -5,6 +5,7 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EmploymentUtils;
+import com.populaire.projetguerrefroide.util.StateConsumptionUtils;
 
 import static com.populaire.projetguerrefroide.util.Constants.POP_TYPE_COUNT;
 import static com.populaire.projetguerrefroide.util.Constants.TARGET_TREASURY_DAYS;
@@ -32,6 +33,7 @@ public class CountryTreasuryInitializationSystem {
         readPopulationTypes(iter.world(), incomeTypes, assistedTypes);
         int statePostIndex = statePostIndex(iter.world());
         float[] baseWorkforceShares = EmploymentUtils.baseWorkforceShares(iter.world());
+        GlobalStateConsumptionView stateConsumption = StateConsumptionUtils.globalStateConsumption(iter.world());
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         Field<CountryDemographics> countryDemographicsField = iter.field(CountryDemographics.class, 1);
@@ -46,7 +48,10 @@ public class CountryTreasuryInitializationSystem {
 
             CountryPopulationPolicyView countryPopulationPolicy = countryPopulationPolicyField.getMutView(i);
             double needs = dailyNeeds(incomeTypes, assistedTypes, countryMarket, countryDemographics, countryBudgetPolicy, countryEducationPolicy, statePostIndex,
-                baseWorkforceShares, countryPopulationPolicy.workforceShareModifier());
+                baseWorkforceShares, countryPopulationPolicy.workforceShareModifier())
+                + StateConsumptionUtils.dailyCost(stateConsumption, countryMarket,
+                    StateConsumptionUtils.administrationUnits(countryDemographics, statePostIndex, countryBudgetPolicy),
+                    StateConsumptionUtils.publicHealthUnits(countryDemographics, countryBudgetPolicy));
             countryMarket.treasury(TARGET_TREASURY_DAYS * needs);
         }
     }

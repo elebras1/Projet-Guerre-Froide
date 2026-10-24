@@ -6,6 +6,7 @@ import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 import com.populaire.projetguerrefroide.util.EmploymentUtils;
+import com.populaire.projetguerrefroide.util.MarketUtils;
 
 import static com.populaire.projetguerrefroide.util.Constants.*;
 import static com.populaire.projetguerrefroide.util.EmploymentUtils.activeWorkers;
@@ -44,12 +45,7 @@ public class RGOEmploymentSystem {
         float goodCost = good.cost();
         GlobalMarketView globalMarket = iter.world().obtainEntityView(iter.world().lookup("global_market")).getView(GlobalMarket.class);
         float worldPrice = globalMarket.goodPrices(goodIndex);
-        float worldProduction = globalMarket.goodProductionAmounts(goodIndex);
-        float worldDemand = globalMarket.goodDemandAmounts(goodIndex);
-        float inventory = globalMarket.goodStockAmounts(goodIndex) - worldProduction;
-        float clearingProduction = Math.max(0f, worldDemand - (inventory - STOCK_TARGET_DAYS * worldDemand) / RGO_STOCK_ADJUSTMENT_DAYS);
-        float clearingGap = worldProduction > 0f ? clearingProduction / worldProduction - 1f : (clearingProduction > 0f ? 1f : 0f);
-        float adjustment = RGO_CLEARING_GAIN * clearingGap + RGO_PRICE_GAIN * (float) Math.log(worldPrice / goodCost);
+        float adjustment = RGO_CLEARING_GAIN * MarketUtils.clearingGap(globalMarket, goodIndex) + RGO_PRICE_GAIN * (float) Math.log(worldPrice / goodCost);
         adjustment = Math.clamp(adjustment, -RGO_EMPLOYMENT_ADJUSTMENT_RATE, RGO_EMPLOYMENT_ADJUSTMENT_RATE);
 
         float workerBaseShare = EmploymentUtils.baseWorkforceShares(iter.world())[workerIndex];

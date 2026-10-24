@@ -25,6 +25,10 @@ import com.populaire.projetguerrefroide.component.PopulationTypeView;
 import com.populaire.projetguerrefroide.component.PopulationView;
 import com.populaire.projetguerrefroide.component.ResourceGathering;
 import com.populaire.projetguerrefroide.component.ResourceGatheringView;
+import com.populaire.projetguerrefroide.component.Unit;
+import com.populaire.projetguerrefroide.component.UnitInstance;
+import com.populaire.projetguerrefroide.component.UnitInstanceView;
+import com.populaire.projetguerrefroide.component.UnitView;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 
 import java.io.BufferedWriter;
@@ -69,6 +73,7 @@ public final class CalibrationReport {
     private final double[] buildingSupply = new double[GOOD_COUNT];
     private final double[] populationDemand = new double[GOOD_COUNT];
     private final double[] inputDemand = new double[GOOD_COUNT];
+    private final double[] armyDemand = new double[GOOD_COUNT];
     private final List<String> outOfBandGoods = new ArrayList<>();
     private final Map<String, double[]> buildingTypes = new TreeMap<>();
     private final Map<String, double[]> buildingInputs = new TreeMap<>();
@@ -89,6 +94,7 @@ public final class CalibrationReport {
         report.measurePopulationDemand(ecsWorld);
         report.measureRgoWorkforce(ecsWorld);
         report.measureConstructionDemand();
+        report.measureArmyDemand(ecsWorld);
         report.resolveArmyUtilization();
         report.classify();
         return report;
@@ -269,6 +275,25 @@ public final class CalibrationReport {
         }
     }
 
+    private void measureArmyDemand(World ecsWorld) {
+        Query query = ecsWorld.query().with(UnitInstance.class).build();
+        query.iter(iter -> {
+            Field<UnitInstance> unitInstanceField = iter.field(UnitInstance.class, 0);
+            for (int i = 0; i < iter.count(); i++) {
+                UnitInstanceView unitInstance = unitInstanceField.getMutView(i);
+                UnitView unit = ecsWorld.obtainEntityView(unitInstance.typeId()).getView(Unit.class);
+                float scale = unit.supplyConsumption() * unitInstance.strength();
+                for (int k = 0; k < unit.supplyCostGoodIndexesLength(); k++) {
+                    int goodIndex = unit.supplyCostGoodIndexes(k);
+                    if (goodIndex < 0) {
+                        break;
+                    }
+                    this.armyDemand[goodIndex] += unit.supplyCostAmounts(k) * scale;
+                }
+            }
+        });
+    }
+
     private void resolveArmyUtilization() {
         Arrays.fill(this.utilization, 1.0);
         for (int iteration = 0; iteration < ARMY_UTILIZATION_ITERATIONS; iteration++) {
@@ -323,7 +348,7 @@ public final class CalibrationReport {
     }
 
     private double demand(int good) {
-        return this.populationDemand[good] + this.inputDemand[good] + this.constructionDemand[good];
+        return this.populationDemand[good] + this.inputDemand[good] + this.constructionDemand[good] + this.armyDemand[good];
     }
 
     private String status(int good) {

@@ -30,6 +30,8 @@ public interface WorldDao {
 
     Map<String, Map<String, Double>> readTraits();
 
+    Map<String, Map<String, Double>> readStateConsumption();
+
     Map<String, UnitJson> readUnits();
 
     Map<String, CountryJson> readCountries();

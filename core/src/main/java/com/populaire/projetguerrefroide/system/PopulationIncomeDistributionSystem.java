@@ -135,15 +135,15 @@ public class PopulationIncomeDistributionSystem {
             float scaledAmount = popAmount / NEEDS_SCALING_FACTOR;
             float scaledUnemployed = Math.max(0f, population.amount() * EmploymentUtils.activeShare(baseWorkforceShare, countryPopulationPolicy.workforceShareModifier()) - population.employment()) / NEEDS_SCALING_FACTOR;
             float scaledWageBase = statePost ? population.employment() / NEEDS_SCALING_FACTOR : scaledAmount;
-            float stateIncome = scaledWageBase * countryBudget.wageRatesByPopType(typeIdx) + scaledAmount * countryBudget.transferRatesByPopType(typeIdx)
-                + scaledUnemployed * countryBudget.socialRatesByPopType(typeIdx);
+            float stateIncome = scaledWageBase * countryBudget.wageRatesByPopType(typeIdx) + scaledUnemployed * countryBudget.socialRatesByPopType(typeIdx);
             stateIncome = (float) Math.min(stateIncome, Math.max(0.0, countryMarket.treasury()));
             countryMarket.treasury(countryMarket.treasury() - stateIncome);
 
-            float bankIncome = (float) Math.min(scaledAmount * countryBank.transferRatesByPopType(typeIdx), Math.max(0.0, countryBank.deposits()));
-            countryBank.deposits(countryBank.deposits() - bankIncome);
+            population.deposit(population.deposit() * (1f - countryBank.depositLossRatio()));
+            float interestIncome = (float) Math.min(population.deposit() * countryBank.depositRate(), Math.max(0.0, countryBank.interestPool()));
+            countryBank.interestPool(countryBank.interestPool() - interestIncome);
 
-            float income = netIncome - donation + stateIncome + bankIncome;
+            float income = netIncome - donation + stateIncome + interestIncome;
             population.income(income);
             population.savings(population.savings() + income - purchase);
 
@@ -153,9 +153,11 @@ public class PopulationIncomeDistributionSystem {
                 if (capitalist) {
                     countryInvestment.funds(CAPITALIST_OWNER, countryInvestment.funds(CAPITALIST_OWNER) + deposit);
                 } else {
-                    countryBank.deposits(countryBank.deposits() + deposit);
+                    population.deposit(population.deposit() + deposit);
+                    countryBank.reserves(countryBank.reserves() + deposit);
                 }
             }
+            countryBank.deposits(countryBank.deposits() + population.deposit());
 
             float coveredLifeShare = SubsistenceUtils.coveredLifeShare(rural, population.amount(), population.employment());
             population.lifeNeedsSatisfaction(coveredLifeShare + population.lifeNeedsDemandRatio() * countryMarket.servedLifeRatiosByPopType(typeIdx));

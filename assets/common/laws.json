@@ -529,7 +529,8 @@
             "aristocrat_profit_share": 0.2,
             "social_mobility": -0.15,
             "class_rigidity": 0.15,
-            "state_construction": 1
+            "state_construction": 1,
+            "industry_subsidies": 0.25
           },
           "interest_ideologies": {
             "paternal_auto_idolg": 1,
@@ -545,7 +546,9 @@
             "factory_input_modifier": -0.1,
             "construction_speed": 0.1,
             "social_mobility": 0.05,
-            "state_construction": 1
+            "state_construction": 1,
+            "industry_subsidies": 0.5,
+            "public_works": 0.25
           },
           "interest_ideologies": {
             "fascistic_idolg": 1,
@@ -592,7 +595,8 @@
             "worker_profit_share": -0.1,
             "factory_output_modifier": 0.1,
             "social_mobility": 0.1,
-            "class_rigidity": -0.15
+            "class_rigidity": -0.15,
+            "public_works": -0.5
           },
           "interest_ideologies": {
             "fascistic_idolg": -1,
@@ -634,7 +638,8 @@
             "worker_profit_share": 0.2,
             "construction_speed": 0.2,
             "social_mobility": 0.1,
-            "class_rigidity": -0.1
+            "class_rigidity": -0.1,
+            "public_works": 0.5
           },
           "overrides": {
             "capitalist_profit_share": 0.0,
@@ -734,7 +739,9 @@
           "modifiers": {
             "tax_poor": 0.15,
             "tax_middle": 0.15,
-            "tax_rich": 0.15
+            "tax_rich": 0.15,
+            "resource_tax": 0.15,
+            "profit_tax": 0.15
           },
           "interest_ideologies": {
             "market_liberal_idolg": 1,
@@ -749,7 +756,9 @@
           "modifiers": {
             "tax_poor": 0.05,
             "tax_middle": 0.15,
-            "tax_rich": 0.25
+            "tax_rich": 0.25,
+            "resource_tax": 0.2,
+            "profit_tax": 0.2
           },
           "interest_ideologies": {
             "market_liberal_idolg": -1,
@@ -763,7 +772,9 @@
           "modifiers": {
             "tax_poor": 0.25,
             "tax_middle": 0.15,
-            "tax_rich": 0.05
+            "tax_rich": 0.05,
+            "resource_tax": 0.1,
+            "profit_tax": 0.1
           },
           "interest_ideologies": {
             "paternal_auto_idolg": 1,
@@ -1099,7 +1110,8 @@
           "modifiers": {
             "pop_growth_factor": 0.12,
             "pop_spending": 0.07,
-            "social_mobility": 0.1
+            "social_mobility": 0.1,
+            "public_health": 0.5
           },
           "interest_ideologies": {
             "social_liberal_idolg": 1
@@ -1111,7 +1123,8 @@
             "pop_growth_factor": 0.15,
             "social_spending": 0.2,
             "social_mobility": 0.1,
-            "migration_pull": 0.05
+            "migration_pull": 0.05,
+            "public_health": 1
           },
           "interest_ideologies": {
             "market_liberal_idolg": -1,

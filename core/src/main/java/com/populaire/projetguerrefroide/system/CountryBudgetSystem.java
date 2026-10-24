@@ -5,6 +5,7 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EmploymentUtils;
+import com.populaire.projetguerrefroide.util.StateConsumptionUtils;
 
 import static com.populaire.projetguerrefroide.util.Constants.*;
 import static com.populaire.projetguerrefroide.util.StateBudgetUtils.*;
@@ -23,6 +24,9 @@ public class CountryBudgetSystem {
             .with(CountryBank.class)
             .with(CountryInvestment.class)
             .with(CountryPopulationPolicy.class)
+            .with(CountryProductionPolicy.class)
+            .with(CountryMilitary.class)
+            .with(CountryPublicWorks.class)
             .multiThreaded()
             .iter(this::budget);
     }
@@ -44,6 +48,10 @@ public class CountryBudgetSystem {
         Field<CountryBank> countryBankField = iter.field(CountryBank.class, 6);
         Field<CountryInvestment> countryInvestmentField = iter.field(CountryInvestment.class, 7);
         Field<CountryPopulationPolicy> countryPopulationPolicyField = iter.field(CountryPopulationPolicy.class, 8);
+        Field<CountryProductionPolicy> countryProductionPolicyField = iter.field(CountryProductionPolicy.class, 9);
+        Field<CountryMilitary> countryMilitaryField = iter.field(CountryMilitary.class, 10);
+        Field<CountryPublicWorks> countryPublicWorksField = iter.field(CountryPublicWorks.class, 11);
+        GlobalStateConsumptionView stateConsumption = StateConsumptionUtils.globalStateConsumption(iter.world());
         for (int i = 0; i < iter.count(); i++) {
             CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
             CountryDemographicsView countryDemographics = countryDemographicsField.getMutView(i);
@@ -55,6 +63,9 @@ public class CountryBudgetSystem {
             CountryInvestmentMutView countryInvestment = countryInvestmentField.getMutView(i);
             CountryPopulationPolicyView countryPopulationPolicy = countryPopulationPolicyField.getMutView(i);
             float workforceShareModifier = countryPopulationPolicy.workforceShareModifier();
+            CountryProductionPolicyView countryProductionPolicy = countryProductionPolicyField.getMutView(i);
+            CountryMilitaryView countryMilitary = countryMilitaryField.getMutView(i);
+            CountryPublicWorksView countryPublicWorks = countryPublicWorksField.getMutView(i);
 
             double subsidies = 0.0;
             float tariffRate = countryTradePolicy.tariffRate();
@@ -64,40 +75,61 @@ public class CountryBudgetSystem {
                 }
             }
 
-            double needs = dailyNeeds(incomeTypes, assistedTypes, countryMarket, countryDemographics, countryBudgetPolicy, countryEducationPolicy, statePostIndex, baseWorkforceShares, workforceShareModifier) + subsidies;
-            double stateLoans = countryBank.stateLoans() * (1.0 + STATE_LOAN_INTEREST_RATE / DAYS_PER_YEAR);
+            double stateConsumptionCost = StateConsumptionUtils.dailyCost(stateConsumption, countryMarket,
+                StateConsumptionUtils.administrationUnits(countryDemographics, statePostIndex, countryBudgetPolicy),
+                StateConsumptionUtils.publicHealthUnits(countryDemographics, countryBudgetPolicy));
+            double militarySupplyCost = militarySupplyCost(countryMilitary, countryMarket);
+            double needs = dailyNeeds(incomeTypes, assistedTypes, countryMarket, countryDemographics, countryBudgetPolicy, countryEducationPolicy, statePostIndex, baseWorkforceShares, workforceShareModifier)
+                + subsidies + stateConsumptionCost + militarySupplyCost;
+            double revenue = countryMarket.taxRevenue() + countryMarket.tariffRevenue() + countryMarket.profitRevenue();
+            double revenueTrend = countryBudget.revenueTrend() > 0.0 ? countryBudget.revenueTrend() + (revenue - countryBudget.revenueTrend()) / DAYS_PER_YEAR : revenue;
+            double creditLimit = CREDIT_LIMIT_YEARS * DAYS_PER_YEAR * revenueTrend;
+            double stateLoans = countryBank.loans(STATE_OWNER);
+            double interest = stateLoans * stateInterestRate(stateLoans, creditLimit, countryBank.lendingRate()) / DAYS_PER_YEAR;
+            double interestPaid = Math.min(interest, Math.max(0.0, countryMarket.treasury()));
+            if (interestPaid > 0.0) {
+                countryMarket.treasury(countryMarket.treasury() - interestPaid);
+                countryBank.interestPool(countryBank.interestPool() + interestPaid);
+                countryBank.interestPaid(STATE_OWNER, countryBank.interestPaid(STATE_OWNER) + interestPaid);
+            }
+            double unpaidInterest = interest - interestPaid;
+            if (unpaidInterest > 0.0) {
+                if (unpaidInterest <= Math.min(Math.max(0.0, countryBank.reserves()), Math.max(0.0, creditLimit - stateLoans))) {
+                    stateLoans += unpaidInterest;
+                    countryBank.reserves(countryBank.reserves() - unpaidInterest);
+                    countryBank.borrowed(STATE_OWNER, countryBank.borrowed(STATE_OWNER) + unpaidInterest);
+                    countryBank.interestPool(countryBank.interestPool() + unpaidInterest);
+                    countryBank.interestPaid(STATE_OWNER, countryBank.interestPaid(STATE_OWNER) + unpaidInterest);
+                } else {
+                    countryBank.losses(countryBank.losses() + stateLoans);
+                    countryBank.writtenOff(STATE_OWNER, countryBank.writtenOff(STATE_OWNER) + stateLoans);
+                    countryBank.bankruptcies(countryBank.bankruptcies() + 1);
+                    stateLoans = 0.0;
+                }
+            }
             double treasury = Math.max(0.0, countryMarket.treasury());
-            double loan = needs > treasury ? Math.min(needs - treasury, Math.max(0.0, countryBank.deposits())) : 0.0;
+            double loan = needs > treasury
+                ? Math.min(needs - treasury, Math.min(Math.max(0.0, countryBank.reserves()), Math.max(0.0, creditLimit - stateLoans))) : 0.0;
             if (loan > 0.0) {
-                countryBank.deposits(countryBank.deposits() - loan);
+                countryBank.reserves(countryBank.reserves() - loan);
                 countryMarket.treasury(countryMarket.treasury() + loan);
+                countryBank.borrowed(STATE_OWNER, countryBank.borrowed(STATE_OWNER) + loan);
                 stateLoans += loan;
                 treasury += loan;
             }
             float spendingRatio = needs > treasury ? (float) (treasury / needs) : 1f;
             double targetTreasury = TARGET_TREASURY_DAYS * needs;
             double excess = treasury - needs - targetTreasury;
-            if (excess > 0.0 && stateLoans > 0.0) {
-                double repayment = Math.min(stateLoans, excess);
-                countryMarket.treasury(countryMarket.treasury() - repayment);
-                countryBank.deposits(countryBank.deposits() + repayment);
-                stateLoans -= repayment;
-                excess -= repayment;
-            }
-            countryBank.stateLoans(stateLoans);
-            countryBank.loansToday((float) loan);
 
             float socialSlider = slider(countryBudgetPolicy.socialSpendingRate());
             double wagesBudget = 0.0;
             double socialBudget = 0.0;
-            double assistedUnits = 0.0;
             for (int p = 0; p < POP_TYPE_COUNT; p++) {
                 float popTypeWageRate = 0f;
                 float popTypeSocialRate = 0f;
                 if (assistedTypes[p]) {
                     popTypeSocialRate = spendingRatio * socialRate(countryMarket, p, socialSlider);
                     socialBudget += (double) scaledUnemployed(countryDemographics, p, EmploymentUtils.activeShare(baseWorkforceShares[p], workforceShareModifier)) * popTypeSocialRate;
-                    assistedUnits += countryDemographics.totalByPopType(p) / NEEDS_SCALING_FACTOR;
                 } else {
                     popTypeWageRate = spendingRatio * wageRate(countryMarket, p, wageSlider(incomeTypes[p], countryBudgetPolicy, countryEducationPolicy));
                     wagesBudget += scaledWageBase(countryDemographics, p, statePostIndex) * popTypeWageRate;
@@ -107,19 +139,39 @@ public class CountryBudgetSystem {
             }
 
             double investableSurplus = Math.max(0.0, excess - countryInvestment.committed(STATE_OWNER));
-            double transfers = assistedUnits > 0.0 ? EXCESS_TREASURY_SPENDING_RATE * investableSurplus : 0.0;
-            for (int p = 0; p < POP_TYPE_COUNT; p++) {
-                countryBudget.transferRatesByPopType(p, assistedTypes[p] && transfers > 0.0 ? (float) (transfers / assistedUnits) : 0f);
+            double repaid = Math.min(stateLoans, investableSurplus);
+            if (repaid > 0.0) {
+                countryMarket.treasury(countryMarket.treasury() - repaid);
+                countryBank.reserves(countryBank.reserves() + repaid);
+                countryBank.repaid(STATE_OWNER, countryBank.repaid(STATE_OWNER) + repaid);
+                stateLoans -= repaid;
+                investableSurplus -= repaid;
             }
+            double publicWorksRate = PUBLIC_WORKS_RATE * Math.max(0f, 1f + countryProductionPolicy.publicWorksModifier());
+            double publicWorksLoan = 0.0;
+            if (countryPublicWorks.targetBuildingTypeId() != 0
+                && countryPublicWorks.targetReturn() >= stateInterestRate(stateLoans, creditLimit, countryBank.lendingRate())) {
+                publicWorksLoan = publicWorksRate * Math.min(Math.max(0.0, countryBank.reserves()), Math.max(0.0, creditLimit - stateLoans));
+                countryBank.reserves(countryBank.reserves() - publicWorksLoan);
+                countryMarket.treasury(countryMarket.treasury() + publicWorksLoan);
+                countryBank.borrowed(STATE_OWNER, countryBank.borrowed(STATE_OWNER) + publicWorksLoan);
+                stateLoans += publicWorksLoan;
+            }
+            countryBank.loans(STATE_OWNER, stateLoans);
+            countryBank.creditLimit(creditLimit);
+            countryBudget.publicWorksBudget((float) (publicWorksRate * investableSurplus + publicWorksLoan));
+            countryBudget.publicWorksLoan((float) publicWorksLoan);
 
             countryBudget.targetTreasury(targetTreasury);
             countryBudget.reservedNeeds(needs);
             countryBudget.investableSurplus(investableSurplus);
+            countryBudget.revenueTrend(revenueTrend);
             countryBudget.spendingRatio(spendingRatio);
             countryBudget.subsidyAllowance((float) (spendingRatio * subsidies));
             countryBudget.wagesBudget((float) wagesBudget);
             countryBudget.socialBudget((float) socialBudget);
-            countryBudget.transfersBudget((float) transfers);
+            countryBudget.stateConsumptionBudget((float) (spendingRatio * stateConsumptionCost));
+            countryBudget.militarySupplyRatio(spendingRatio);
         }
     }
 }

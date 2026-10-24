@@ -9,13 +9,16 @@ import static com.populaire.projetguerrefroide.util.Constants.POP_TYPE_COUNT;
 public record CountryBudget(
     @FixedArray(length = POP_TYPE_COUNT) float[] wageRatesByPopType,
     @FixedArray(length = POP_TYPE_COUNT) float[] socialRatesByPopType,
-    @FixedArray(length = POP_TYPE_COUNT) float[] transferRatesByPopType,
     double targetTreasury,
     double reservedNeeds,
     double investableSurplus,
+    double revenueTrend,
     float spendingRatio,
     float subsidyAllowance,
     float wagesBudget,
     float socialBudget,
-    float transfersBudget) {
+    float stateConsumptionBudget,
+    float publicWorksBudget,
+    float publicWorksLoan,
+    float militarySupplyRatio) {
 }

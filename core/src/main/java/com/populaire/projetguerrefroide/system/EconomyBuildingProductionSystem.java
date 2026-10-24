@@ -69,7 +69,7 @@ public class EconomyBuildingProductionSystem {
             }
 
             float secondaryFill = secondaryFill(economyBuilding, economyBuildingTypeData, level, effectiveScale);
-            float outputScale = outputScale(countryProductionPolicy, economyBuildingTypeData, level, secondaryFill, effectiveScale) * (1f + managementBonus(economyBuilding, regionInstance, this.stateOwnerTag));
+            float outputScale = outputScale(countryProductionPolicy, economyBuildingTypeData, level, secondaryFill, effectiveScale) * (1f + managementBonus(economyBuilding, regionInstance, this.stateOwnerTag)) * (1f + infrastructureBonus(regionInstance));
             economyBuilding.production(economyBuildingTypeData.goodOutputAmount() * outputScale * stockRatio);
         }
     }

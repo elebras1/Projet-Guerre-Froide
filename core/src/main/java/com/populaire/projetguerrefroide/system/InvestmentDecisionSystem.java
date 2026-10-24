@@ -21,6 +21,7 @@ import static com.populaire.projetguerrefroide.util.ConstructionUtils.levelCost;
 import static com.populaire.projetguerrefroide.util.ConstructionUtils.startSite;
 import static com.populaire.projetguerrefroide.util.OwnerUtils.ownerIndex;
 import static com.populaire.projetguerrefroide.util.OwnerUtils.ownerTag;
+import static com.populaire.projetguerrefroide.util.StateBudgetUtils.stateInterestRate;
 
 public class InvestmentDecisionSystem {
 
@@ -44,6 +45,8 @@ public class InvestmentDecisionSystem {
             .kind(phaseId)
             .with(CountryInvestment.class)
             .with(CountryBudget.class)
+            .with(CountryBank.class)
+            .with(CountryMarket.class)
             .run(this::decide);
     }
 
@@ -65,10 +68,14 @@ public class InvestmentDecisionSystem {
         while (iter.next()) {
             Field<CountryInvestment> countryInvestmentField = iter.field(CountryInvestment.class, 0);
             Field<CountryBudget> countryBudgetField = iter.field(CountryBudget.class, 1);
+            Field<CountryBank> countryBankField = iter.field(CountryBank.class, 2);
+            Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 3);
             for (int i = 0; i < iter.count(); i++) {
                 long countryId = iter.entity(i);
-                CountryInvestmentView countryInvestment = countryInvestmentField.getMutView(i);
+                CountryInvestmentMutView countryInvestment = countryInvestmentField.getMutView(i);
                 CountryBudgetView countryBudget = countryBudgetField.getMutView(i);
+                CountryBankMutView countryBank = countryBankField.getMutView(i);
+                CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
                 for (int o = 0; o < OWNER_COUNT; o++) {
                     availableFunds[o] = countryInvestment.funds(o) - countryInvestment.committed(o);
                 }
@@ -82,9 +89,10 @@ public class InvestmentDecisionSystem {
                 for (int c = 0; c < candidates.size(); c++) {
                     Candidate candidate = candidates.get(c);
                     int freeLevels = candidate.freeLevels();
-                    while (freeLevels > 0 && availableFunds[candidate.owner()] >= candidate.levelCost()
+                    while (freeLevels > 0
                         && this.availableWorkers(world, candidate, ruralTypes) - reservedWorkers.get(candidate.regionInstanceId()) >= candidate.workersPerLevel()
-                        && parkUtilization(parkUsedLevels, parkLevels, countryId, candidate.buildingTypeId()) >= MINIMUM_UTILIZATION_FOR_EXPANSION) {
+                        && parkUtilization(parkUsedLevels, parkLevels, countryId, candidate.buildingTypeId()) >= MINIMUM_UTILIZATION_FOR_EXPANSION
+                        && finance(countryBank, countryInvestment, countryMarket, availableFunds, candidate.owner(), candidate.levelCost(), candidate.annualReturn())) {
                         startSite(world, this.ecsConstants, candidate.buildingId(), candidate.buildingTypeId(), candidate.regionInstanceId(), candidate.countryId(), candidate.ownerTagId());
                         addLevels(parkLevels, countryId, candidate.buildingTypeId(), 1f);
                         availableFunds[candidate.owner()] -= candidate.levelCost();
@@ -102,9 +110,11 @@ public class InvestmentDecisionSystem {
                 CountryProfitDistributionPolicyView profitPolicy = country.getView(CountryProfitDistributionPolicy.class);
                 CountryProductionPolicyView productionPolicy = country.getView(CountryProductionPolicy.class);
                 long countryOwnerTag = ownerTag(profitPolicy.capitalistProfitShareRate(), profitPolicy.workerProfitShareRate(), profitPolicy.stateProfitShareRate(), this.ecsConstants);
-                this.buildNewBuildings(world, countryId, countryOwnerTag, typeReturns, regions, typesByRegion, reservedWorkers, ruralTypes, availableFunds, parkUsedLevels, parkLevels);
+                this.buildNewBuildings(world, countryId, countryOwnerTag, typeReturns, regions, typesByRegion, reservedWorkers, ruralTypes, availableFunds, parkUsedLevels, parkLevels,
+                    countryBank, countryInvestment, countryMarket);
                 if (countryOwnerTag != this.ecsConstants.countryTag() && productionPolicy.stateConstruction() > 0f) {
-                    this.buildNewBuildings(world, countryId, this.ecsConstants.countryTag(), typeReturns, regions, typesByRegion, reservedWorkers, ruralTypes, availableFunds, parkUsedLevels, parkLevels);
+                    this.buildNewBuildings(world, countryId, this.ecsConstants.countryTag(), typeReturns, regions, typesByRegion, reservedWorkers, ruralTypes, availableFunds, parkUsedLevels, parkLevels,
+                        countryBank, countryInvestment, countryMarket);
                 }
             }
         }
@@ -112,12 +122,13 @@ public class InvestmentDecisionSystem {
 
     private void buildNewBuildings(World world, long countryId, long ownerTagId, LongObjectMap<TypeReturn> typeReturns, LongList regions,
                                    LongObjectMap<LongIntMap> typesByRegion, LongFloatMap reservedWorkers, boolean[] ruralTypes, double[] availableFunds,
-                                   LongObjectMap<LongFloatMap> parkUsedLevels, LongObjectMap<LongFloatMap> parkLevels) {
+                                   LongObjectMap<LongFloatMap> parkUsedLevels, LongObjectMap<LongFloatMap> parkLevels,
+                                   CountryBankMutView countryBank, CountryInvestmentMutView countryInvestment, CountryMarketMutView countryMarket) {
         int owner = ownerIndex(ownerTagId, this.ecsConstants);
         ObjectList<TypeReturn> types = new ObjectList<>();
         for (LongObjectMap.Entry<TypeReturn> entry : typeReturns) {
             TypeReturn typeReturn = entry.value;
-            boolean qualifies = owner == CAPITALIST_OWNER ? typeReturn.annualReturn() >= CAPITALIST_MINIMUM_RETURN : typeReturn.annualReturn() > STATE_MINIMUM_RETURN;
+            boolean qualifies = qualifies(owner, typeReturn.annualReturn(), countryBank.lendingRate());
             if (qualifies) {
                 types.add(typeReturn);
             }
@@ -125,7 +136,7 @@ public class InvestmentDecisionSystem {
         types.sort(Comparator.comparingDouble((TypeReturn typeReturn) -> typeReturn.annualReturn()).reversed());
         for (int t = 0; t < types.size(); t++) {
             TypeReturn typeReturn = types.get(t);
-            if (availableFunds[owner] < typeReturn.levelCost() || parkUtilization(parkUsedLevels, parkLevels, countryId, typeReturn.buildingTypeId()) < MINIMUM_UTILIZATION_FOR_EXPANSION) {
+            if (parkUtilization(parkUsedLevels, parkLevels, countryId, typeReturn.buildingTypeId()) < MINIMUM_UTILIZATION_FOR_EXPANSION) {
                 continue;
             }
             long bestRegion = 0;
@@ -142,7 +153,7 @@ public class InvestmentDecisionSystem {
                     bestRegion = regionInstanceId;
                 }
             }
-            if (bestRegion == 0) {
+            if (bestRegion == 0 || !finance(countryBank, countryInvestment, countryMarket, availableFunds, owner, typeReturn.levelCost(), typeReturn.annualReturn())) {
                 continue;
             }
             startSite(world, this.ecsConstants, 0, typeReturn.buildingTypeId(), bestRegion, countryId, ownerTagId);
@@ -156,6 +167,36 @@ public class InvestmentDecisionSystem {
             }
             regionTypes.put(typeReturn.buildingTypeId(), 1);
         }
+    }
+
+    private static boolean finance(CountryBankMutView countryBank, CountryInvestmentMutView countryInvestment, CountryMarketMutView countryMarket,
+                                   double[] availableFunds, int owner, double cost, float annualReturn) {
+        boolean bankOnly = owner == CAPITALIST_OWNER && annualReturn < CAPITALIST_MINIMUM_RETURN;
+        double shortfall = bankOnly ? cost : cost - availableFunds[owner];
+        if (shortfall <= 0.0) {
+            return true;
+        }
+        double loans = countryBank.loans(owner);
+        boolean state = owner == STATE_OWNER;
+        double rate = state ? stateInterestRate(loans, countryBank.creditLimit(), countryBank.lendingRate()) : countryBank.lendingRate();
+        if (annualReturn < rate || countryBank.reserves() < shortfall
+            || state && loans + shortfall > countryBank.creditLimit()) {
+            return false;
+        }
+        countryBank.reserves(countryBank.reserves() - shortfall);
+        countryBank.loans(owner, countryBank.loans(owner) + shortfall);
+        countryBank.borrowed(owner, countryBank.borrowed(owner) + shortfall);
+        if (state) {
+            countryMarket.treasury(countryMarket.treasury() + shortfall);
+        } else {
+            countryInvestment.funds(owner, countryInvestment.funds(owner) + shortfall);
+        }
+        availableFunds[owner] += shortfall;
+        return true;
+    }
+
+    private static boolean qualifies(int owner, float annualReturn, float lendingRate) {
+        return owner == CAPITALIST_OWNER ? annualReturn >= Math.min(CAPITALIST_MINIMUM_RETURN, lendingRate) : annualReturn > STATE_MINIMUM_RETURN;
     }
 
     private LongObjectMap<LongList> readRegions(World world) {
@@ -235,6 +276,7 @@ public class InvestmentDecisionSystem {
 
             long countryId = 0;
             double levelCost = 0.0;
+            float lendingRate = 0f;
             Field<Building> buildingField = buildingIter.field(Building.class, 0);
             Field<EconomyBuilding> economyBuildingField = buildingIter.field(EconomyBuilding.class, 1);
             for (int i = 0; i < buildingIter.count(); i++) {
@@ -242,8 +284,11 @@ public class InvestmentDecisionSystem {
                 EconomyBuildingView economyBuilding = economyBuildingField.getMutView(i);
                 if (building.countryId() != countryId) {
                     countryId = building.countryId();
-                    CountryMarketView countryMarket = world.obtainEntityView(countryId).getView(CountryMarket.class);
+                    EntityView country = world.obtainEntityView(countryId);
+                    CountryMarketView countryMarket = country.getView(CountryMarket.class);
+                    CountryBankView countryBank = country.getView(CountryBank.class);
                     levelCost = levelCost(world, buildingTypeId, countryMarket);
+                    lendingRate = countryBank.lendingRate();
                 }
 
                 long buildingId = buildingIter.entity(i);
@@ -271,7 +316,7 @@ public class InvestmentDecisionSystem {
                     typeReturns.put(buildingTypeId, new TypeReturn(buildingTypeId, annualReturn, levelCost, workersPerLevel, primaryWorkerPopTypeIndex));
                 }
                 int owner = ownerIndex(economyBuilding.ownerTagId(), this.ecsConstants);
-                boolean qualifies = owner == CAPITALIST_OWNER ? annualReturn >= CAPITALIST_MINIMUM_RETURN : annualReturn > STATE_MINIMUM_RETURN;
+                boolean qualifies = qualifies(owner, annualReturn, lendingRate);
                 if (!qualifies) {
                     continue;
                 }

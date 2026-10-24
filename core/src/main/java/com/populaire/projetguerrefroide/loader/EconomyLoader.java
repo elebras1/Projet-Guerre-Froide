@@ -58,7 +58,7 @@ public final class EconomyLoader {
                 EntityView good = this.ecsWorld.obtainEntityView(goodId);
                 good.add(this.ecsConstants.ressourceGoodTag());
                 good.set(new Color(this.context.parseColor(resourceGood.color())));
-                good.set(new Good((float) resourceGood.cost(), resourceGood.value().floatValue()));
+                good.set(new Good((float) resourceGood.cost(), resourceGood.value().floatValue(), stockDecay(resourceGood)));
                 this.context.goodIds()[goodIndex] = goodId;
                 goodIndex++;
             }
@@ -69,7 +69,7 @@ public final class EconomyLoader {
                 EntityView good = this.ecsWorld.obtainEntityView(goodId);
                 good.add(this.ecsConstants.advancedGoodTag());
                 good.set(new Color(this.context.parseColor(advancedGood.color())));
-                good.set(new Good((float) advancedGood.cost(), 1));
+                good.set(new Good((float) advancedGood.cost(), 1, stockDecay(advancedGood)));
                 this.context.goodIds()[goodIndex] = goodId;
                 goodIndex++;
             }
@@ -81,7 +81,7 @@ public final class EconomyLoader {
                 EntityView good = this.ecsWorld.obtainEntityView(goodId);
                 good.add(this.ecsConstants.serviceGoodTag());
                 good.set(new Color(this.context.parseColor(serviceGood.color())));
-                good.set(new Good((float) serviceGood.cost(), 1));
+                good.set(new Good((float) serviceGood.cost(), 1, stockDecay(serviceGood)));
                 this.context.goodIds()[goodIndex] = goodId;
                 goodIndex++;
             }
@@ -93,7 +93,7 @@ public final class EconomyLoader {
                 EntityView good = this.ecsWorld.obtainEntityView(goodId);
                 good.add(this.ecsConstants.militaryGoodTag());
                 good.set(new Color(this.context.parseColor(militaryGood.color())));
-                good.set(new Good((float) militaryGood.cost(), 1));
+                good.set(new Good((float) militaryGood.cost(), 1, stockDecay(militaryGood)));
                 this.context.goodIds()[goodIndex] = goodId;
                 goodIndex++;
             }
@@ -103,6 +103,10 @@ public final class EconomyLoader {
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }
+    }
+
+    private float stockDecay(GoodJson good) {
+        return good.stockDecay() != null ? good.stockDecay().floatValue() : 0f;
     }
 
     public void loadPopulationTypes(Map<String, PopulationTypeJson> populationTypes) {
@@ -150,6 +154,19 @@ public final class EconomyLoader {
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }
+    }
+
+    public void loadStateConsumption(Map<String, Map<String, Double>> stateConsumption) {
+        int[] administrationGoodIndexes = new int[MAX_GOODS];
+        float[] administrationGoodAmounts = new float[MAX_GOODS];
+        int[] publicHealthGoodIndexes = new int[MAX_GOODS];
+        float[] publicHealthGoodAmounts = new float[MAX_GOODS];
+        Arrays.fill(administrationGoodIndexes, -1);
+        Arrays.fill(publicHealthGoodIndexes, -1);
+        this.context.fillGoods(stateConsumption.get("administration"), administrationGoodIndexes, new long[MAX_GOODS], administrationGoodAmounts);
+        this.context.fillGoods(stateConsumption.get("public_health"), publicHealthGoodIndexes, new long[MAX_GOODS], publicHealthGoodAmounts);
+        long globalStateConsumption = this.ecsWorld.entity("global_state_consumption");
+        this.ecsWorld.obtainEntity(globalStateConsumption).set(new GlobalStateConsumption(administrationGoodIndexes, administrationGoodAmounts, publicHealthGoodIndexes, publicHealthGoodAmounts));
     }
 
     private void fillMobilityWeights(Map<String, Double> targets, boolean promotion, PopulationTypeMutView populationTypeData) {

@@ -26,6 +26,8 @@ public class Constants {
     public static final String TAX_POOR = "tax_poor";
     public static final String TAX_MIDDLE = "tax_middle";
     public static final String TAX_RICH = "tax_rich";
+    public static final String RESOURCE_TAX = "resource_tax";
+    public static final String PROFIT_TAX = "profit_tax";
     public static final String TARIFF_RATE = "tariff_rate";
     public static final String MILITARY_SPENDING = "military_spending";
     public static final String EDUCATION_SPENDING = "education_spending";
@@ -59,6 +61,10 @@ public class Constants {
     public static final String RELIGIOUS_DONATIONS = "religious_donations";
     public static final String CLERGY_STATE_FUNDING = "clergy_state_funding";
     public static final String WORKFORCE_SHARE = "workforce_share";
+    public static final String INDUSTRY_SUBSIDIES = "industry_subsidies";
+    public static final String PUBLIC_HEALTH = "public_health";
+    public static final String PUBLIC_WORKS = "public_works";
+    public static final String PRODUCTION_MODIFIER = "production_modifier";
 
     public static float NEEDS_SCALING_FACTOR = 100000f;
     public static final float SHORTAGE_PRICE_PREMIUM = 0.5f;
@@ -68,9 +74,10 @@ public class Constants {
     public static final float STATE_LUXURY_WAGE_SHARE = 0.2f;
     public static final float SOCIAL_LIFE_SHARE = 0.3f;
     public static final float TARGET_TREASURY_DAYS = 60f;
-    public static final float EXCESS_TREASURY_SPENDING_RATE = 0.02f;
-    public static final float BANK_MINIMUM_SPENDING_RATE = 0.01f;
-    public static final float STATE_LOAN_INTEREST_RATE = 0.02f;
+    public static final float MAXIMUM_LENDING_RATE = 0.04f;
+    public static final float BANK_LOAN_TERM_DAYS = 3650f;
+    public static final float CREDIT_LIMIT_YEARS = 2f;
+    public static final float PUBLIC_WORKS_RATE = 0.02f;
     public static final float DAYS_PER_YEAR = 365f;
     public static final float RURAL_WAGE_SHARE = 0.5f;
     public static final float RGO_TREASURY_BUFFER_DAYS = 15f;

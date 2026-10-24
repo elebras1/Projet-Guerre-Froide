@@ -42,5 +42,7 @@ public record CountryMarket(
     float productionValue,
     float effectiveTariffRate,
     float tariffRevenue,
-    double taxRevenue) {
+    double taxRevenue,
+    double enterpriseSupport,
+    double profitRevenue) {
 }
