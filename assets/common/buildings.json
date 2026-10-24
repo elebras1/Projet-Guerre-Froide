@@ -10,10 +10,10 @@
         "machine_parts": 350
       },
       "input_goods": {
-        "oil": 2.42
+        "oil": 2
       },
       "output_goods": {
-        "fuel": 4.9
+        "fuel": 4.04
       },
       "max_level": 99,
       "time": 730
@@ -28,10 +28,10 @@
         "machine_parts": 350
       },
       "input_goods": {
-        "coal": 3.8
+        "coal": 3.22
       },
       "output_goods": {
-        "electricity": 6.23
+        "electricity": 5.28
       },
       "max_level": 99,
       "time": 200
@@ -46,10 +46,10 @@
         "machine_parts": 350
       },
       "input_goods": {
-        "renewable_energy": 3.8
+        "renewable_energy": 3.22
       },
       "output_goods": {
-        "electricity": 6.23
+        "electricity": 5.28
       },
       "max_level": 99,
       "time": 200
@@ -64,10 +64,10 @@
         "electronic_components": 500
       },
       "input_goods": {
-        "uranium": 2.06
+        "uranium": 1.75
       },
       "output_goods": {
-        "electricity": 6.23
+        "electricity": 5.28
       },
       "max_level": 99,
       "time": 200
@@ -105,16 +105,16 @@
         "machine_parts": 350
       },
       "input_goods": {
-        "iron": 18.28,
-        "coal": 7.32
+        "iron": 17.76,
+        "coal": 7.11
       },
       "advanced_input_goods": {
-        "iron": 18.28,
-        "coal": 3.66,
-        "electricity": 3.66
+        "iron": 17.76,
+        "coal": 3.55,
+        "electricity": 3.55
       },
       "output_goods": {
-        "steel": 23.4
+        "steel": 22.75
       },
       "max_level": 99,
       "time": 150
@@ -129,17 +129,17 @@
         "machine_parts": 350
       },
       "input_goods": {
-        "coal": 3.41,
+        "coal": 3.42,
         "rare_metals": 2.28,
         "inorganic_chemicals": 1.12
       },
       "advanced_input_goods": {
-        "electricity": 3.41,
+        "electricity": 3.42,
         "rare_metals": 2.28,
         "inorganic_chemicals": 1.12
       },
       "output_goods": {
-        "aluminium": 17.36
+        "aluminium": 17.39
       },
       "max_level": 99,
       "time": 120
@@ -254,17 +254,17 @@
         "machine_parts": 350
       },
       "input_goods": {
-        "coal": 2.48,
-        "oil": 3.31,
-        "rare_metals": 1.65
+        "coal": 2.4,
+        "oil": 3.19,
+        "rare_metals": 1.6
       },
       "advanced_input_goods": {
-        "electricity": 2.48,
-        "oil": 3.31,
-        "rare_metals": 1.65
+        "electricity": 2.4,
+        "oil": 3.19,
+        "rare_metals": 1.6
       },
       "output_goods": {
-        "inorganic_chemicals": 9.7
+        "inorganic_chemicals": 9.36
       },
       "max_level": 99,
       "time": 110
@@ -279,15 +279,15 @@
         "machine_parts": 350
       },
       "input_goods": {
-        "vegetables": 1.43,
-        "coal": 0.15
+        "vegetables": 1.17,
+        "coal": 0.12
       },
       "advanced_input_goods": {
-        "vegetables": 1.43,
-        "electricity": 0.15
+        "vegetables": 1.17,
+        "electricity": 0.12
       },
       "output_goods": {
-        "fabric": 3.31
+        "fabric": 2.71
       },
       "max_level": 99,
       "time": 90
@@ -302,10 +302,10 @@
         "machine_parts": 350
       },
       "input_goods": {
-        "oil": 0.96
+        "oil": 0.84
       },
       "output_goods": {
-        "plastics": 3.57
+        "plastics": 3.13
       },
       "max_level": 99,
       "time": 130
@@ -320,15 +320,15 @@
         "machine_parts": 350
       },
       "input_goods": {
-        "wood": 1.72,
-        "coal": 0.44
+        "wood": 1.44,
+        "coal": 0.37
       },
       "advanced_input_goods": {
-        "wood": 1.72,
-        "electricity": 0.44
+        "wood": 1.44,
+        "electricity": 0.37
       },
       "output_goods": {
-        "paper": 3.18
+        "paper": 2.66
       },
       "max_level": 99,
       "time": 100
@@ -363,12 +363,12 @@
         "aluminium": 500
       },
       "input_goods": {
-        "rare_metals": 3.61,
-        "inorganic_chemicals": 4.52,
-        "plastics": 3.61
+        "rare_metals": 3.43,
+        "inorganic_chemicals": 4.3,
+        "plastics": 3.43
       },
       "output_goods": {
-        "electronic_components": 33.16
+        "electronic_components": 31.55
       },
       "max_level": 99,
       "time": 150
@@ -384,17 +384,17 @@
         "aluminium": 500
       },
       "input_goods": {
-        "steel": 1.08,
-        "aluminium": 0.54,
-        "coal": 0.27
+        "steel": 1.04,
+        "aluminium": 0.52,
+        "coal": 0.26
       },
       "advanced_input_goods": {
-        "steel": 1.08,
-        "aluminium": 0.54,
-        "electricity": 0.27
+        "steel": 1.04,
+        "aluminium": 0.52,
+        "electricity": 0.26
       },
       "output_goods": {
-        "machine_parts": 12.77
+        "machine_parts": 12.27
       },
       "max_level": 99,
       "time": 140
@@ -431,19 +431,19 @@
         "machine_parts": 2500
       },
       "input_goods": {
-        "plastics": 2.85,
-        "steel": 3.82,
-        "machine_parts": 3.82,
-        "coal": 0.95
+        "plastics": 1.6,
+        "steel": 2.15,
+        "machine_parts": 2.15,
+        "coal": 0.53
       },
       "advanced_input_goods": {
-        "plastics": 2.85,
-        "steel": 3.82,
-        "machine_parts": 3.82,
-        "electricity": 0.95
+        "plastics": 1.6,
+        "steel": 2.15,
+        "machine_parts": 2.15,
+        "electricity": 0.53
       },
       "output_goods": {
-        "automobiles": 22.08
+        "automobiles": 12.4
       },
       "max_level": 99,
       "time": 200
@@ -458,15 +458,15 @@
         "machine_parts": 350
       },
       "input_goods": {
-        "fabric": 6.64,
-        "coal": 0.68
+        "fabric": 5.44,
+        "coal": 0.56
       },
       "advanced_input_goods": {
-        "fabric": 6.64,
-        "electricity": 0.68
+        "fabric": 5.44,
+        "electricity": 0.56
       },
       "output_goods": {
-        "clothes": 10.36
+        "clothes": 8.48
       },
       "max_level": 99,
       "time": 90
@@ -481,11 +481,11 @@
         "electronic_components": 500
       },
       "input_goods": {
-        "inorganic_chemicals": 2.96,
-        "plastics": 1.98
+        "inorganic_chemicals": 2.74,
+        "plastics": 1.83
       },
       "output_goods": {
-        "pharmaceuticals": 18.06
+        "pharmaceuticals": 16.66
       },
       "max_level": 99,
       "time": 160
@@ -500,12 +500,12 @@
         "electronic_components": 500
       },
       "input_goods": {
-        "electronic_components": 5.33,
-        "plastics": 1.78,
-        "rare_metals": 1.78
+        "electronic_components": 4.44,
+        "plastics": 1.48,
+        "rare_metals": 1.48
       },
       "output_goods": {
-        "communication": 34.2
+        "communication": 28.49
       },
       "max_level": 99,
       "time": 170
@@ -519,21 +519,21 @@
         "machine_parts": 350
       },
       "input_goods": {
-        "automobiles": 1.14,
-        "aeroplanes": 1.14,
-        "fuel": 1.14,
-        "ships": 1.14,
-        "coal": 1.14
+        "automobiles": 0.88,
+        "aeroplanes": 0.88,
+        "fuel": 0.88,
+        "ships": 0.88,
+        "coal": 0.88
       },
       "advanced_input_goods": {
-        "automobiles": 1.14,
-        "aeroplanes": 1.14,
-        "fuel": 1.14,
-        "ships": 1.14,
-        "electricity": 1.14
+        "automobiles": 0.88,
+        "aeroplanes": 0.88,
+        "fuel": 0.88,
+        "ships": 0.88,
+        "electricity": 0.88
       },
       "output_goods": {
-        "transport": 21.87
+        "transport": 16.83
       },
       "max_level": 99,
       "time": 240

@@ -858,7 +858,8 @@ public class SimulationRecorder implements AutoCloseable {
                     continue;
                 }
                 double savings = this.yearCountryStrataSavings[c * STRATA_COUNT + s] / ticks;
-                if (savings < this.yearCountryStrataLifeCost[c * STRATA_COUNT + s] / ticks) {
+                double lifeCost = this.yearCountryStrataLifeCost[c * STRATA_COUNT + s] / ticks;
+                if (savings < lifeCost || income < lifeCost) {
                     continue;
                 }
                 double days = savings / income;
