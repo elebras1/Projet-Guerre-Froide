@@ -812,7 +812,7 @@
           "requirements": [],
           "modifiers": {
             "rgo_output_modifier": -0.1,
-            "aristocrat_profit_share": 0.1,
+            "aristocrat_profit_share": 0,
             "class_rigidity": 0.1,
             "social_mobility": -0.1
           },
@@ -828,7 +828,7 @@
           "requirements": [],
           "modifiers": {
             "rgo_output_modifier": 0.2,
-            "aristocrat_profit_share": -0.1,
+            "aristocrat_profit_share": -0.35,
             "social_mobility": 0.1,
             "class_rigidity": -0.1
           },
@@ -844,7 +844,7 @@
           "requirements": [],
           "modifiers": {
             "rgo_output_modifier": 0.1,
-            "aristocrat_profit_share": -0.15,
+            "aristocrat_profit_share": -0.75,
             "social_mobility": 0.15,
             "class_rigidity": -0.1
           },
@@ -857,7 +857,7 @@
           "requirements": [],
           "modifiers": {
             "rgo_output_modifier": 0.3,
-            "aristocrat_profit_share": -0.3,
+            "aristocrat_profit_share": -0.75,
             "social_mobility": 0.2,
             "class_rigidity": -0.2
           },

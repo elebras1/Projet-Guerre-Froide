@@ -77,6 +77,9 @@ public class Constants {
     public static final float MAXIMUM_LENDING_RATE = 0.04f;
     public static final float BANK_LOAN_TERM_DAYS = 3650f;
     public static final float CREDIT_LIMIT_YEARS = 2f;
+    public static final float CENTRAL_BANK_TARGET_INFLATION = 0.02f;
+    public static final float CENTRAL_BANK_GAP_GAIN = 0.5f;
+    public static final float CENTRAL_BANK_MAX_RATE = 0.1f;
     public static final float PUBLIC_WORKS_RATE = 0.02f;
     public static final float DAYS_PER_YEAR = 365f;
     public static final float RURAL_WAGE_SHARE = 0.5f;

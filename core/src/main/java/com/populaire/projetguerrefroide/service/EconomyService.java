@@ -45,6 +45,7 @@ public class EconomyService {
     private final StateConsumptionDemandSystem stateConsumptionDemandSystem;
     private final StateConsumptionPurchaseSystem stateConsumptionPurchaseSystem;
     private final PublicWorksSystem publicWorksSystem;
+    private final CountryCentralBankSystem countryCentralBankSystem;
     private final PublicWorksDemandSystem publicWorksDemandSystem;
     private final PublicWorksPurchaseSystem publicWorksPurchaseSystem;
     private final MilitarySupplyResetSystem militarySupplyResetSystem;
@@ -290,6 +291,7 @@ public class EconomyService {
         this.populationApplicationSystem = new PopulationApplicationSystem(ecsWorld, gameContext.getEcsConstants(), phasePromotion);
         this.populationPromotionSystem = new PopulationPromotionSystem(ecsWorld, gameContext.getEcsConstants(), phasePromotion);
         this.populationArrivalSystem = new PopulationArrivalSystem(ecsWorld, phasePromotion);
+        this.countryCentralBankSystem = new CountryCentralBankSystem(ecsWorld, phaseState);
         this.countryBudgetSystem = new CountryBudgetSystem(ecsWorld, phaseState);
         this.bankSystem = new BankSystem(ecsWorld, phaseState);
         this.publicWorksSystem = new PublicWorksSystem(ecsWorld, phaseState);
