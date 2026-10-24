@@ -5,6 +5,8 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 
+import static com.populaire.projetguerrefroide.util.Constants.DAYS_PER_YEAR;
+
 public class MilitarySupplyNeedSystem {
 
     public MilitarySupplyNeedSystem(World ecsWorld, long phaseId) {
@@ -45,7 +47,7 @@ public class MilitarySupplyNeedSystem {
                 if (goodIndex < 0) {
                     break;
                 }
-                countryMilitary.supplyNeeds(goodIndex, countryMilitary.supplyNeeds(goodIndex) + unit.supplyCostAmounts(k) * scale);
+                countryMilitary.supplyNeeds(goodIndex, countryMilitary.supplyNeeds(goodIndex) + unit.supplyCostAmounts(k) * scale / DAYS_PER_YEAR);
             }
         }
     }

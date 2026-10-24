@@ -44,6 +44,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.TreeMap;
 
+import static com.populaire.projetguerrefroide.util.Constants.DAYS_PER_YEAR;
 import static com.populaire.projetguerrefroide.util.Constants.GOOD_COUNT;
 import static com.populaire.projetguerrefroide.util.Constants.NEEDS_SCALING_FACTOR;
 import static com.populaire.projetguerrefroide.util.Constants.POP_TYPE_COUNT;
@@ -288,7 +289,7 @@ public final class CalibrationReport {
                     if (goodIndex < 0) {
                         break;
                     }
-                    this.armyDemand[goodIndex] += unit.supplyCostAmounts(k) * scale;
+                    this.armyDemand[goodIndex] += unit.supplyCostAmounts(k) * scale / DAYS_PER_YEAR;
                 }
             }
         });
