@@ -4,6 +4,7 @@ import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.util.MilitaryUtils;
 
 import static com.populaire.projetguerrefroide.util.Constants.DAYS_PER_YEAR;
 
@@ -25,23 +26,18 @@ public class MilitarySupplyNeedSystem {
 
         long countryId = 0;
         CountryMilitaryMutView countryMilitary = null;
+        float fillRatio = 1f;
         for (int i = 0; i < iter.count(); i++) {
             UnitInstanceView unitInstance = unitInstanceField.getMutView(i);
-            long unitCountryId;
-            if (airWings) {
-                AirWingView airWing = airWingField.getMutView(i);
-                unitCountryId = airWing.countryId();
-            } else {
-                FormationView formation = world.obtainEntityView(unitInstance.formationId()).getView(Formation.class);
-                unitCountryId = formation.countryId();
-            }
+            long unitCountryId = MilitaryUtils.countryId(world, unitInstance, airWings ? airWingField.getMutView(i) : null);
             if (unitCountryId != countryId) {
                 countryId = unitCountryId;
                 countryMilitary = world.obtainEntityView(countryId).getMutView(CountryMilitary.class);
+                fillRatio = MilitaryUtils.fillRatio(countryMilitary);
             }
 
             UnitView unit = world.obtainEntityView(unitInstance.typeId()).getView(Unit.class);
-            float scale = unit.supplyConsumption() * unitInstance.strength();
+            float scale = unit.supplyConsumption() * unitInstance.strength() * fillRatio;
             for (int k = 0; k < unit.supplyCostGoodIndexesLength(); k++) {
                 int goodIndex = unit.supplyCostGoodIndexes(k);
                 if (goodIndex < 0) {

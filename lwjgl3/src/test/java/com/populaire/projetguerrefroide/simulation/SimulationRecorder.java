@@ -599,7 +599,8 @@ public class SimulationRecorder implements AutoCloseable {
             "lending_rate", "bankruptcies", "public_works_loan", "public_works_return", "price_index", "created_money",
             "public_works_sites", "public_works_daily", "maintenance_spending", "maintenance_satisfaction");
         this.writer("country/budget.csv").header("tick", "date", "country", "needs", "military_pay", "administration_pay", "education_pay", "clergy_pay", "social",
-            "state_consumption", "military_supply", "maintenance", "subsidies", "tax", "tariff", "profit", "spending_ratio", "state_loans", "credit_limit", "military_pops");
+            "state_consumption", "military_supply", "maintenance", "subsidies", "tax", "tariff", "profit", "spending_ratio", "state_loans", "credit_limit", "military_pops",
+            "military_posts", "military_filled", "units");
         this.writer("country/employment_ratio.csv").header("tick", "date", "country", "employment", "workers", "ratio");
         this.writer("country/deposits.csv").header("tick", "date", "country", "pop_type", "total", "deposits", "savings", "unspent", "income");
         this.writer("country/demographics.csv").header("tick", "date", "country", "pop_type", "total", "employment", "consciousness", "militancy", "literacy", "savings", "life_satisfaction", "everyday_satisfaction", "luxury_satisfaction");
@@ -1175,17 +1176,23 @@ public class SimulationRecorder implements AutoCloseable {
                         social += (double) StateBudgetUtils.scaledUnemployed(cd, p, workforceShare) * StateBudgetUtils.socialRate(cm, p, socialSlider);
                     } else {
                         float slider = StateBudgetUtils.wageSlider(incomeTypes[p], budgetPolicy, educationPolicy);
-                        pay[incomeTypes[p]] += StateBudgetUtils.scaledWageBase(cd, p, statePostIndex) * StateBudgetUtils.wageRate(cm, p, slider);
+                        pay[incomeTypes[p]] += StateBudgetUtils.scaledWageBase(cd, p, statePostIndex, incomeTypes[p]) * StateBudgetUtils.wageRate(cm, p, slider);
                     }
                     if (incomeTypes[p] == MILITARY_INCOME_TYPE) {
                         militaryPops += cd.totalByPopType(p);
                     }
                 }
                 float spendingRatio = budget.spendingRatio() > 0f ? budget.spendingRatio() : 1f;
+                double militaryPosts = 0.0;
+                double militaryFilled = 0.0;
+                for (int p = 0; p < POP_TYPE_COUNT; p++) {
+                    militaryPosts += military.posts(p);
+                    militaryFilled += military.filledPosts(p);
+                }
                 budgetWriter.row(tick, date, name, budget.reservedNeeds(), pay[MILITARY_INCOME_TYPE], pay[ADMINISTRATION_INCOME_TYPE], pay[EDUCATION_INCOME_TYPE], pay[RELIGIOUS_INCOME_TYPE], social,
                     budget.stateConsumptionBudget() / spendingRatio, StateBudgetUtils.militarySupplyCost(military, cm), StateBudgetUtils.maintenanceCost(maintenance, cm),
                     budget.subsidyAllowance() / spendingRatio, cm.taxRevenue(), cm.tariffRevenue(), cm.profitRevenue(), budget.spendingRatio(),
-                    bank.loans(STATE_OWNER), bank.creditLimit(), militaryPops);
+                    bank.loans(STATE_OWNER), bank.creditLimit(), militaryPops, militaryPosts, militaryFilled, military.units());
             }
 
             for (int p = 0; p < POP_TYPE_COUNT; p++) {

@@ -19,5 +19,6 @@ public record UnitJson(
     @JsonAttribute(name = "maximum_speed", mandatory = true) double maximumSpeed,
     @JsonAttribute(name = "max_strength", mandatory = true) double maxStrength,
     @JsonAttribute(name = "build_cost", mandatory = true) Map<String, Double> buildCost,
-    @JsonAttribute(name = "supply_cost", mandatory = true) Map<String, Double> supplyCost) {
+    @JsonAttribute(name = "supply_cost", mandatory = true) Map<String, Double> supplyCost,
+    @JsonAttribute(name = "crew") Map<String, Double> crew) {
 }

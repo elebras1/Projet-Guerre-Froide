@@ -31,8 +31,12 @@ public class StateBudgetUtils {
         return globalPopulationType.statePostPopTypeIndex();
     }
 
-    public static double scaledWageBase(CountryDemographicsView countryDemographics, int popTypeIndex, int statePostIndex) {
-        long base = popTypeIndex == statePostIndex ? countryDemographics.employmentByPopType(popTypeIndex) : countryDemographics.totalByPopType(popTypeIndex);
+    public static boolean paidOnPosts(int popTypeIndex, int statePostIndex, int incomeType) {
+        return popTypeIndex == statePostIndex || incomeType == MILITARY_INCOME_TYPE;
+    }
+
+    public static double scaledWageBase(CountryDemographicsView countryDemographics, int popTypeIndex, int statePostIndex, int incomeType) {
+        long base = paidOnPosts(popTypeIndex, statePostIndex, incomeType) ? countryDemographics.employmentByPopType(popTypeIndex) : countryDemographics.totalByPopType(popTypeIndex);
         return (double) base / NEEDS_SCALING_FACTOR;
     }
 
@@ -89,7 +93,7 @@ public class StateBudgetUtils {
             if (assistedTypes[p]) {
                 needs += (double) scaledUnemployed(countryDemographics, p, EmploymentUtils.activeShare(baseWorkforceShares[p], workforceShareModifier)) * socialRate(countryMarket, p, socialSlider);
             } else {
-                needs += scaledWageBase(countryDemographics, p, statePostIndex) * wageRate(countryMarket, p, wageSlider(incomeTypes[p], budgetPolicy, educationPolicy));
+                needs += scaledWageBase(countryDemographics, p, statePostIndex, incomeTypes[p]) * wageRate(countryMarket, p, wageSlider(incomeTypes[p], budgetPolicy, educationPolicy));
             }
         }
         return needs;

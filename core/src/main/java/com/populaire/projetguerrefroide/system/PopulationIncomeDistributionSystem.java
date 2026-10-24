@@ -34,7 +34,7 @@ public class PopulationIncomeDistributionSystem {
         boolean capitalist = iter.isSet(2);
         boolean aristocrat = iter.isSet(3);
         boolean rural = iter.isSet(4);
-        boolean statePost = typeIdx == StateBudgetUtils.statePostIndex(iter.world());
+        boolean paidOnPosts = StateBudgetUtils.paidOnPosts(typeIdx, StateBudgetUtils.statePostIndex(iter.world()), populationTypeData.incomeType());
         GlobalPopulationTypeView globalPopulationType = iter.world().obtainEntityView(iter.world().lookup("global_population_type")).getView(GlobalPopulationType.class);
         int religiousIndex = globalPopulationType.religiousPopTypeIndex();
         boolean donor = religiousIndex >= 0 && typeIdx != religiousIndex;
@@ -134,7 +134,7 @@ public class PopulationIncomeDistributionSystem {
 
             float scaledAmount = popAmount / NEEDS_SCALING_FACTOR;
             float scaledUnemployed = Math.max(0f, population.amount() * EmploymentUtils.activeShare(baseWorkforceShare, countryPopulationPolicy.workforceShareModifier()) - population.employment()) / NEEDS_SCALING_FACTOR;
-            float scaledWageBase = statePost ? population.employment() / NEEDS_SCALING_FACTOR : scaledAmount;
+            float scaledWageBase = paidOnPosts ? population.employment() / NEEDS_SCALING_FACTOR : scaledAmount;
             float stateIncome = scaledWageBase * countryBudget.wageRatesByPopType(typeIdx) + scaledUnemployed * countryBudget.socialRatesByPopType(typeIdx);
             stateIncome = (float) Math.min(stateIncome, Math.max(0.0, countryMarket.treasury()));
             countryMarket.treasury(countryMarket.treasury() - stateIncome);

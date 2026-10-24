@@ -28,5 +28,11 @@
         "computers": 0.5
     },
     "strata": "middle",
-    "income_type": "military"
+    "income_type": "military",
+    "demote_to": {
+        "clerks": 1,
+        "bureaucrats": 0.5,
+        "farmers": 0.5,
+        "labourers": 0.5
+    }
 }

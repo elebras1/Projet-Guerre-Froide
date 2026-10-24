@@ -130,7 +130,7 @@ public class CountryBudgetSystem {
                     socialBudget += (double) scaledUnemployed(countryDemographics, p, EmploymentUtils.activeShare(baseWorkforceShares[p], workforceShareModifier)) * popTypeSocialRate;
                 } else {
                     popTypeWageRate = spendingRatio * wageRate(countryMarket, p, wageSlider(incomeTypes[p], countryBudgetPolicy, countryEducationPolicy));
-                    wagesBudget += scaledWageBase(countryDemographics, p, statePostIndex) * popTypeWageRate;
+                    wagesBudget += scaledWageBase(countryDemographics, p, statePostIndex, incomeTypes[p]) * popTypeWageRate;
                 }
                 countryBudget.wageRatesByPopType(p, popTypeWageRate);
                 countryBudget.socialRatesByPopType(p, popTypeSocialRate);

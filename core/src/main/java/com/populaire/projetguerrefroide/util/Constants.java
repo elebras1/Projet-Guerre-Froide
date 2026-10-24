@@ -10,6 +10,7 @@ public class Constants {
     public static final int LAW_COUNT = 88;
     public static final int MAX_ADJACENCIES = 32;
     public static final int MAX_GOODS = 8;
+    public static final int MAX_CREW_TYPES = 4;
     public static final int MAX_POPS = 4;
     public static final int MAX_GOVERNMENT_ASSOCIATED_IDEOLOGIES = 4;
     public static final int MAX_LAW_IDEOLOGIES = 8;

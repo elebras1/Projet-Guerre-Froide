@@ -75,7 +75,23 @@ public final class MilitaryLoader {
                 }
             }
 
-            unit.set(new Unit(forceTypeId, unitTypeId, (int) unitJson.attack(), (int) unitJson.defence(), (int) unitJson.priority(), (int) unitJson.defaultOrganisation(), (int) unitJson.supplyConsumption(), (int) unitJson.weightedValue(), (int) unitJson.buildTime(), (int) unitJson.maximumSpeed(), (int) unitJson.maxStrength(), buildCostIds, buildCostAmounts, supplyCostGoodIndexes, supplyCostsIds, supplyCostsAmounts));
+            int[] crewPopTypeIndexes = new int[MAX_CREW_TYPES];
+            Arrays.fill(crewPopTypeIndexes, -1);
+            float[] crewAmounts = new float[MAX_CREW_TYPES];
+            if (unitJson.crew() != null) {
+                int k = 0;
+                for (Map.Entry<String, Double> crew : unitJson.crew().entrySet()) {
+                    int popTypeIndex = this.context.getPopulationTypeIndex(this.ecsWorld.lookup(crew.getKey()));
+                    if (popTypeIndex < 0) {
+                        throw new IllegalArgumentException("Unknown crew population type for unit " + unitName + ": " + crew.getKey());
+                    }
+                    crewPopTypeIndexes[k] = popTypeIndex;
+                    crewAmounts[k] = crew.getValue().floatValue();
+                    k++;
+                }
+            }
+
+            unit.set(new Unit(forceTypeId, unitTypeId, (int) unitJson.attack(), (int) unitJson.defence(), (int) unitJson.priority(), (int) unitJson.defaultOrganisation(), (int) unitJson.supplyConsumption(), (int) unitJson.weightedValue(), (int) unitJson.buildTime(), (int) unitJson.maximumSpeed(), (int) unitJson.maxStrength(), buildCostIds, buildCostAmounts, supplyCostGoodIndexes, supplyCostsIds, supplyCostsAmounts, crewPopTypeIndexes, crewAmounts));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }

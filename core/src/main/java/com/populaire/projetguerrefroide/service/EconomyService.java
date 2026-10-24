@@ -40,6 +40,8 @@ public class EconomyService {
     private final EconomyBuildingSpreadProductionSystem economyBuildingSpreadProductionSystem;
     private final EconomyBuildingUtilizationSystem economyBuildingUtilizationSystem;
     private final StatePostSystem statePostSystem;
+    private final MilitaryPostSystem militaryPostSystem;
+    private final ArmyDisbandSystem armyDisbandSystem;
     private final InfrastructureInitializationSystem infrastructureInitializationSystem;
     private final RegionProvinceCountSystem regionProvinceCountSystem;
     private final StateConsumptionDemandSystem stateConsumptionDemandSystem;
@@ -230,6 +232,7 @@ public class EconomyService {
         this.economyBuildingWorkerDemandSystem = new EconomyBuildingWorkerDemandSystem(ecsWorld, phaseEmployment);
         this.economyBuildingEmploymentSystem = new EconomyBuildingEmploymentSystem(ecsWorld, gameContext.getEcsConstants(), phaseEmployment);
         this.statePostSystem = new StatePostSystem(ecsWorld, phaseEmployment);
+        this.militaryPostSystem = new MilitaryPostSystem(ecsWorld, phaseEmployment);
         this.labourMarketSystem = new LabourMarketSystem(ecsWorld, phaseLabourMarket);
         this.populationEmploymentSynchronizationSystem = new PopulationEmploymentSynchronizationSystem(ecsWorld, gameContext.getEcsConstants(), phaseSync);
 
@@ -295,6 +298,7 @@ public class EconomyService {
         this.populationArrivalSystem = new PopulationArrivalSystem(ecsWorld, phasePromotion);
         this.countryCentralBankSystem = new CountryCentralBankSystem(ecsWorld, phaseState);
         this.countryBudgetSystem = new CountryBudgetSystem(ecsWorld, phaseState);
+        this.armyDisbandSystem = new ArmyDisbandSystem(ecsWorld, phaseState);
         this.bankSystem = new BankSystem(ecsWorld, phaseState);
         this.publicWorksSystem = new PublicWorksSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);
         this.constructionCompletionSystem = new ConstructionCompletionSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);

@@ -199,6 +199,7 @@ public final class EconomyLoader {
                 case IncomeTypeUtils.ARISTOCRAT_INCOME_TYPE -> populationType.add(this.ecsConstants.aristocratTag());
                 case IncomeTypeUtils.CAPITALIST_INCOME_TYPE -> populationType.add(this.ecsConstants.capitalistTag());
                 case IncomeTypeUtils.RELIGIOUS_INCOME_TYPE -> populationType.add(this.ecsConstants.religiousTag());
+                case IncomeTypeUtils.MILITARY_INCOME_TYPE -> populationType.add(this.ecsConstants.employeeTag());
             }
             StatePostsJson statePosts = populationTypeJson.statePosts();
             if (statePosts != null) {

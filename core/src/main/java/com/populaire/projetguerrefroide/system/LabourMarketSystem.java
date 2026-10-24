@@ -5,7 +5,9 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EmploymentUtils;
+import com.populaire.projetguerrefroide.util.StateBudgetUtils;
 
+import static com.populaire.projetguerrefroide.util.Constants.POP_TYPE_COUNT;
 import static com.populaire.projetguerrefroide.util.Constants.WAGE_ADJUSTMENT_RATE;
 
 public class LabourMarketSystem {
@@ -24,6 +26,8 @@ public class LabourMarketSystem {
         World world = iter.world();
         GlobalPopulationTypeView globalPopulationType = world.obtainEntityView(world.lookup("global_population_type")).getView(GlobalPopulationType.class);
         int statePostIndex = globalPopulationType.statePostPopTypeIndex();
+        int[] incomeTypes = new int[POP_TYPE_COUNT];
+        StateBudgetUtils.readPopulationTypes(world, incomeTypes, new boolean[POP_TYPE_COUNT]);
         Field<RegionInstance> regionInstanceField = iter.field(RegionInstance.class, 0);
         Field<RegionInstanceIncome> regionInstanceIncomeField = iter.field(RegionInstanceIncome.class, 1);
         Field<RegionDemographics> regionDemographicsField = iter.field(RegionDemographics.class, 2);
@@ -40,7 +44,7 @@ public class LabourMarketSystem {
             RegionInstanceIncomeView regionInstanceIncome = regionInstanceIncomeField.getMutView(i);
             RegionDemographicsView regionDemographics = regionDemographicsField.getMutView(i);
             for (int p = 0; p < regionInstance.wagePremiumByPopTypeLength(); p++) {
-                if (p == statePostIndex) {
+                if (StateBudgetUtils.paidOnPosts(p, statePostIndex, incomeTypes[p])) {
                     continue;
                 }
                 float demand = regionInstanceIncome.solventWorkerDemandByPopType(p);

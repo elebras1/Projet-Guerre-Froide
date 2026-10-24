@@ -28,5 +28,12 @@
         "computers": 0.25
     },
     "strata": "poor",
-    "income_type": "military"
+    "income_type": "military",
+    "promote_to": {
+        "officers": 0.1
+    },
+    "demote_to": {
+        "farmers": 1,
+        "labourers": 1
+    }
 }

@@ -14,8 +14,11 @@ import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.mockito.Mockito;
 
 import java.io.File;
@@ -31,6 +34,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class EconomySimulationAnalysisTest {
 
     private static final int DAYS_PER_YEAR = 365;
@@ -178,6 +182,7 @@ public class EconomySimulationAnalysisTest {
     }
 
     @Test
+    @Order(1)
     public void loadsForcesOf1946() {
         long landForceTag = this.ecsConstants.landForceTag();
         long seaForceTag = this.ecsConstants.seaForceTag();
@@ -242,6 +247,7 @@ public class EconomySimulationAnalysisTest {
     }
 
     @Test
+    @Order(2)
     public void simulateAndAnalyseEconomy() throws Exception {
         String outputDir = System.getProperty("simulation.outputDir");
         assertTrue(outputDir != null && !outputDir.isBlank(),

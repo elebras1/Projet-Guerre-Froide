@@ -3,6 +3,7 @@ package com.populaire.projetguerrefroide.component;
 import io.github.elebras1.flecs.annotation.Component;
 import io.github.elebras1.flecs.annotation.FixedArray;
 
+import static com.populaire.projetguerrefroide.util.Constants.MAX_CREW_TYPES;
 import static com.populaire.projetguerrefroide.util.Constants.MAX_GOODS;
 
 @Component
@@ -22,6 +23,8 @@ public record Unit(
     @FixedArray(length = MAX_GOODS) float[] buildCostAmounts,
     @FixedArray(length = MAX_GOODS) int[] supplyCostGoodIndexes,
     @FixedArray(length = MAX_GOODS) long[] supplyCostIds,
-    @FixedArray(length = MAX_GOODS) float[] supplyCostAmounts){
+    @FixedArray(length = MAX_GOODS) float[] supplyCostAmounts,
+    @FixedArray(length = MAX_CREW_TYPES) int[] crewPopTypeIndexes,
+    @FixedArray(length = MAX_CREW_TYPES) float[] crewAmounts){
 
 }
