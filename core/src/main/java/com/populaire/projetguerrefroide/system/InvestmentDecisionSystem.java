@@ -81,6 +81,11 @@ public class InvestmentDecisionSystem {
                 }
                 availableFunds[STATE_OWNER] = countryBudget.investableSurplus();
 
+                EntityView country = world.obtainEntityView(countryId);
+                CountryProfitDistributionPolicyView profitPolicy = country.getView(CountryProfitDistributionPolicy.class);
+                CountryProductionPolicyView productionPolicy = country.getView(CountryProductionPolicy.class);
+                long countryOwnerTag = ownerTag(profitPolicy.capitalistProfitShareRate(), profitPolicy.workerProfitShareRate(), profitPolicy.stateProfitShareRate(), this.ecsConstants);
+                boolean stateOwnedEconomy = countryOwnerTag == this.ecsConstants.countryTag();
                 ObjectList<Candidate> candidates = candidatesByCountry.get(countryId);
                 if (candidates == null) {
                     candidates = new ObjectList<>();
@@ -91,8 +96,9 @@ public class InvestmentDecisionSystem {
                     int freeLevels = candidate.freeLevels();
                     while (freeLevels > 0
                         && this.availableWorkers(world, candidate, ruralTypes) - reservedWorkers.get(candidate.regionInstanceId()) >= candidate.workersPerLevel()
-                        && parkUtilization(parkUsedLevels, parkLevels, countryId, candidate.buildingTypeId()) >= MINIMUM_UTILIZATION_FOR_EXPANSION
-                        && finance(countryBank, countryInvestment, countryMarket, availableFunds, candidate.owner(), candidate.levelCost(), candidate.annualReturn())) {
+                        && (parkUtilization(parkUsedLevels, parkLevels, countryId, candidate.buildingTypeId()) >= MINIMUM_UTILIZATION_FOR_EXPANSION
+                            ? finance(countryBank, countryInvestment, countryMarket, availableFunds, candidate.owner(), candidate.levelCost(), candidate.annualReturn())
+                            : stateOwnedEconomy && candidate.owner() == STATE_OWNER && availableFunds[STATE_OWNER] >= candidate.levelCost())) {
                         startSite(world, this.ecsConstants, candidate.buildingId(), candidate.buildingTypeId(), candidate.regionInstanceId(), candidate.countryId(), candidate.ownerTagId());
                         addLevels(parkLevels, countryId, candidate.buildingTypeId(), 1f);
                         availableFunds[candidate.owner()] -= candidate.levelCost();
@@ -106,21 +112,17 @@ public class InvestmentDecisionSystem {
                 if (typeReturns == null || regions == null) {
                     continue;
                 }
-                EntityView country = world.obtainEntityView(countryId);
-                CountryProfitDistributionPolicyView profitPolicy = country.getView(CountryProfitDistributionPolicy.class);
-                CountryProductionPolicyView productionPolicy = country.getView(CountryProductionPolicy.class);
-                long countryOwnerTag = ownerTag(profitPolicy.capitalistProfitShareRate(), profitPolicy.workerProfitShareRate(), profitPolicy.stateProfitShareRate(), this.ecsConstants);
-                this.buildNewBuildings(world, countryId, countryOwnerTag, typeReturns, regions, typesByRegion, reservedWorkers, ruralTypes, availableFunds, parkUsedLevels, parkLevels,
+                this.buildNewBuildings(world, countryId, countryOwnerTag, stateOwnedEconomy, typeReturns, regions, typesByRegion, reservedWorkers, ruralTypes, availableFunds, parkUsedLevels, parkLevels,
                     countryBank, countryInvestment, countryMarket);
                 if (countryOwnerTag != this.ecsConstants.countryTag() && productionPolicy.stateConstruction() > 0f) {
-                    this.buildNewBuildings(world, countryId, this.ecsConstants.countryTag(), typeReturns, regions, typesByRegion, reservedWorkers, ruralTypes, availableFunds, parkUsedLevels, parkLevels,
+                    this.buildNewBuildings(world, countryId, this.ecsConstants.countryTag(), false, typeReturns, regions, typesByRegion, reservedWorkers, ruralTypes, availableFunds, parkUsedLevels, parkLevels,
                         countryBank, countryInvestment, countryMarket);
                 }
             }
         }
     }
 
-    private void buildNewBuildings(World world, long countryId, long ownerTagId, LongObjectMap<TypeReturn> typeReturns, LongList regions,
+    private void buildNewBuildings(World world, long countryId, long ownerTagId, boolean stateOwnedEconomy, LongObjectMap<TypeReturn> typeReturns, LongList regions,
                                    LongObjectMap<LongIntMap> typesByRegion, LongFloatMap reservedWorkers, boolean[] ruralTypes, double[] availableFunds,
                                    LongObjectMap<LongFloatMap> parkUsedLevels, LongObjectMap<LongFloatMap> parkLevels,
                                    CountryBankMutView countryBank, CountryInvestmentMutView countryInvestment, CountryMarketMutView countryMarket) {
@@ -136,7 +138,8 @@ public class InvestmentDecisionSystem {
         types.sort(Comparator.comparingDouble((TypeReturn typeReturn) -> typeReturn.annualReturn()).reversed());
         for (int t = 0; t < types.size(); t++) {
             TypeReturn typeReturn = types.get(t);
-            if (parkUtilization(parkUsedLevels, parkLevels, countryId, typeReturn.buildingTypeId()) < MINIMUM_UTILIZATION_FOR_EXPANSION) {
+            boolean underused = parkUtilization(parkUsedLevels, parkLevels, countryId, typeReturn.buildingTypeId()) < MINIMUM_UTILIZATION_FOR_EXPANSION;
+            if (underused && !(stateOwnedEconomy && availableFunds[owner] >= typeReturn.levelCost())) {
                 continue;
             }
             long bestRegion = 0;
@@ -153,7 +156,7 @@ public class InvestmentDecisionSystem {
                     bestRegion = regionInstanceId;
                 }
             }
-            if (bestRegion == 0 || !finance(countryBank, countryInvestment, countryMarket, availableFunds, owner, typeReturn.levelCost(), typeReturn.annualReturn())) {
+            if (bestRegion == 0 || !underused && !finance(countryBank, countryInvestment, countryMarket, availableFunds, owner, typeReturn.levelCost(), typeReturn.annualReturn())) {
                 continue;
             }
             startSite(world, this.ecsConstants, 0, typeReturn.buildingTypeId(), bestRegion, countryId, ownerTagId);

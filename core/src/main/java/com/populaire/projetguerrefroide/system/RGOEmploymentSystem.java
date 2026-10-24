@@ -65,7 +65,7 @@ public class RGOEmploymentSystem {
             int maximumWorkers = Math.min(targetWorkers, activeWorkerAmount);
 
             float adjustment = RGO_EMPLOYMENT_ADJUSTMENT_RATE * Math.clamp(resourceGathering.unitMargin(), -1f, 1f);
-            if (adjustment > 0f && stocksAboveTarget) {
+            if (adjustment > 0f && stocksAboveTarget || adjustment < 0f && !stocksAboveTarget) {
                 adjustment = 0f;
             }
             int workerAmount = resourceGathering.workerAmount() + Math.round(adjustment * maximumWorkers);
