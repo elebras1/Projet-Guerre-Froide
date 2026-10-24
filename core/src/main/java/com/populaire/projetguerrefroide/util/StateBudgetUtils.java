@@ -64,6 +64,14 @@ public class StateBudgetUtils {
         return lendingRate * (1.0 + debtRatio);
     }
 
+    public static double maintenanceCost(CountryMaintenanceView countryMaintenance, CountryMarketView countryMarket) {
+        double cost = 0.0;
+        for (int g = 0; g < countryMaintenance.needsLength(); g++) {
+            cost += (double) countryMaintenance.needs(g) * countryMarket.goodBudgetPrices(g);
+        }
+        return cost;
+    }
+
     public static double militarySupplyCost(CountryMilitaryView countryMilitary, CountryMarketView countryMarket) {
         double cost = 0.0;
         for (int g = 0; g < countryMilitary.supplyNeedsLength(); g++) {

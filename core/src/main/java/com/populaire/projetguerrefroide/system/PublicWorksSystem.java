@@ -1,24 +1,39 @@
 package com.populaire.projetguerrefroide.system;
 
 import com.github.tommyettinger.ds.LongFloatMap;
+import com.github.tommyettinger.ds.LongIntMap;
 import com.github.tommyettinger.ds.LongObjectMap;
+import com.github.tommyettinger.ds.ObjectList;
 import io.github.elebras1.flecs.EntityView;
 import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.Query;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 import com.populaire.projetguerrefroide.util.InfrastructureUtils;
+import com.populaire.projetguerrefroide.util.PopulationMobilityUtils;
 
-import static com.populaire.projetguerrefroide.util.Constants.DAYS_PER_YEAR;
+import java.util.Comparator;
+
+import static com.populaire.projetguerrefroide.util.Constants.*;
+import static com.populaire.projetguerrefroide.util.ConstructionUtils.levelCost;
+import static com.populaire.projetguerrefroide.util.ConstructionUtils.startSite;
 import static com.populaire.projetguerrefroide.util.EconomyBuildingUtils.infrastructureBonus;
+import static com.populaire.projetguerrefroide.util.StateBudgetUtils.stateInterestRate;
 
 public class PublicWorksSystem {
 
+    private record Candidate(long buildingId, long buildingTypeId, long regionInstanceId, float annualReturn) {
+    }
+
+    private final EcsConstants ecsConstants;
     private final Query developmentQuery;
     private final Query factoryQuery;
+    private final Query siteQuery;
 
-    public PublicWorksSystem(World ecsWorld, long phaseId) {
+    public PublicWorksSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         this.developmentQuery = ecsWorld.query()
             .with(Building.class)
             .with(DevelopmentBuildingType.class)
@@ -27,73 +42,147 @@ public class PublicWorksSystem {
             .with(Building.class)
             .with(EconomyBuilding.class)
             .build();
+        this.siteQuery = ecsWorld.query().with(ConstructionSite.class).build();
         ecsWorld.system("PublicWorksSystem")
             .kind(phaseId)
             .with(CountryPublicWorks.class)
-            .iter(this::target);
+            .with(CountryBudget.class)
+            .with(CountryBank.class)
+            .with(CountryMarket.class)
+            .with(CountryProductionPolicy.class)
+            .run(this::plan);
     }
 
-    private void target(Iter iter) {
+    private void plan(Iter iter) {
         World world = iter.world();
-        Field<CountryPublicWorks> countryPublicWorksField = iter.field(CountryPublicWorks.class, 0);
-        LongFloatMap factoryValues = this.factoryValues();
-
-        LongFloatMap bestReturns = new LongFloatMap();
-        for (int i = 0; i < iter.count(); i++) {
-            CountryPublicWorksView countryPublicWorks = countryPublicWorksField.getMutView(i);
-            if (countryPublicWorks.targetBuildingId() == 0) {
-                bestReturns.put(iter.entity(i), 0f);
-            }
+        boolean planningDay = PopulationMobilityUtils.isMobilityDay(world);
+        LongIntMap queuedLevels = new LongIntMap();
+        LongFloatMap dailyCommitments = new LongFloatMap();
+        LongIntMap sitesInProgress = new LongIntMap();
+        this.readSites(world, queuedLevels, dailyCommitments, sitesInProgress);
+        LongObjectMap<ObjectList<Candidate>> candidatesByCountry = new LongObjectMap<>();
+        if (planningDay) {
+            this.collectCandidates(world, queuedLevels, candidatesByCountry);
         }
 
-        if (!bestReturns.isEmpty()) {
-            LongObjectMap<long[]> bestCandidates = new LongObjectMap<>();
-            this.developmentQuery.iter(developmentIter -> {
-                DevelopmentBuildingTypeView buildingType = developmentIter.field(DevelopmentBuildingType.class, 1).getView(0);
-                long buildingTypeId = developmentIter.src(1);
-                float productionModifier = InfrastructureUtils.productionModifier(world, buildingTypeId);
-                if (productionModifier <= 0f) {
-                    return;
-                }
-                Field<Building> buildingField = developmentIter.field(Building.class, 0);
-                for (int j = 0; j < developmentIter.count(); j++) {
-                    BuildingView building = buildingField.getMutView(j);
-                    long countryId = building.countryId();
-                    if (building.size() >= buildingType.maxLevel() || !bestReturns.containsKey(countryId)) {
-                        continue;
-                    }
-                    float annualReturn = annualReturn(world, factoryValues, building, buildingType, productionModifier);
-                    if (annualReturn > bestReturns.get(countryId)) {
-                        bestReturns.put(countryId, annualReturn);
-                        bestCandidates.put(countryId, new long[] {developmentIter.entity(j), buildingTypeId});
-                    }
-                }
-            });
-
+        while (iter.next()) {
+            Field<CountryPublicWorks> countryPublicWorksField = iter.field(CountryPublicWorks.class, 0);
+            Field<CountryBudget> countryBudgetField = iter.field(CountryBudget.class, 1);
+            Field<CountryBank> countryBankField = iter.field(CountryBank.class, 2);
+            Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 3);
+            Field<CountryProductionPolicy> countryProductionPolicyField = iter.field(CountryProductionPolicy.class, 4);
             for (int i = 0; i < iter.count(); i++) {
+                long countryId = iter.entity(i);
                 CountryPublicWorksMutView countryPublicWorks = countryPublicWorksField.getMutView(i);
-                if (countryPublicWorks.targetBuildingId() != 0) {
+                CountryBudgetMutView countryBudget = countryBudgetField.getMutView(i);
+                CountryBankMutView countryBank = countryBankField.getMutView(i);
+                CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
+                CountryProductionPolicyView productionPolicy = countryProductionPolicyField.getMutView(i);
+                double dailyCommitment = dailyCommitments.get(countryId);
+                int sites = sitesInProgress.get(countryId);
+                double borrowed = 0.0;
+
+                ObjectList<Candidate> candidates = candidatesByCountry.get(countryId);
+                if (planningDay) {
+                    double ownFunds = countryBudget.investableSurplus();
+                    double stateLoans = countryBank.loans(STATE_OWNER);
+                    float stateRate = (float) stateInterestRate(stateLoans, countryBank.creditLimit(), countryBank.lendingRate());
+                    double headroom = Math.max(0.0, Math.min(countryBank.reserves(), countryBank.creditLimit() - stateLoans));
+                    double monthlyShare = Math.min(1.0, PUBLIC_WORKS_RATE * Math.max(0f, 1f + productionPolicy.publicWorksModifier()) * DAYS_PER_MONTH);
+                    double ownBudget = monthlyShare * ownFunds;
+                    double loanBudget = monthlyShare * headroom;
+                    float bestReturn = 0f;
+                    if (candidates != null) {
+                        candidates.sort(Comparator.comparingDouble((Candidate candidate) -> candidate.annualReturn()).reversed());
+                        bestReturn = candidates.get(0).annualReturn();
+                        for (int c = 0; c < candidates.size(); c++) {
+                            Candidate candidate = candidates.get(c);
+                            DevelopmentBuildingTypeView buildingType = world.obtainEntityView(candidate.buildingTypeId()).getView(DevelopmentBuildingType.class);
+                            int duration = Math.max(1, (int) (buildingType.time() * (1f - productionPolicy.constructionSpeed())));
+                            double cost = levelCost(world, candidate.buildingTypeId(), countryMarket);
+                            double shortfall = Math.max(0.0, cost - ownBudget);
+                            if (shortfall > 0.0 && (candidate.annualReturn() < stateRate || shortfall > loanBudget)) {
+                                break;
+                            }
+                            if (shortfall > 0.0) {
+                                countryBank.reserves(countryBank.reserves() - shortfall);
+                                countryBank.loans(STATE_OWNER, countryBank.loans(STATE_OWNER) + shortfall);
+                                countryBank.borrowed(STATE_OWNER, countryBank.borrowed(STATE_OWNER) + shortfall);
+                                countryMarket.treasury(countryMarket.treasury() + shortfall);
+                                loanBudget -= shortfall;
+                                borrowed += shortfall;
+                            }
+                            ownBudget -= cost - shortfall;
+                            ownFunds -= cost - shortfall;
+                            startSite(world, this.ecsConstants, candidate.buildingId(), candidate.buildingTypeId(), candidate.regionInstanceId(), countryId, this.ecsConstants.countryTag());
+                            dailyCommitment += cost / duration;
+                            sites++;
+                        }
+                    }
+                    countryPublicWorks.targetReturn(bestReturn);
+                    countryBudget.investableSurplus(Math.max(0.0, ownFunds));
+                }
+                countryPublicWorks.sitesInProgress(sites);
+                countryPublicWorks.dailyCommitment(dailyCommitment);
+                countryBudget.publicWorksLoan((float) borrowed);
+            }
+        }
+    }
+
+    private void readSites(World world, LongIntMap queuedLevels, LongFloatMap dailyCommitments, LongIntMap sitesInProgress) {
+        long countryTag = this.ecsConstants.countryTag();
+        this.siteQuery.each((long siteId) -> {
+            ConstructionSiteView site = world.obtainEntityView(siteId).getView(ConstructionSite.class);
+            if (site.buildingId() == 0 || !world.obtainEntityView(site.buildingTypeId()).has(DevelopmentBuildingType.class)) {
+                return;
+            }
+            queuedLevels.put(site.buildingId(), queuedLevels.get(site.buildingId()) + 1);
+            if (site.ownerTagId() != countryTag) {
+                return;
+            }
+            CountryMarketView countryMarket = world.obtainEntityView(site.countryId()).getView(CountryMarket.class);
+            double dailyCost = 0.0;
+            for (int k = 0; k < site.goodIndexesLength(); k++) {
+                int goodIndex = site.goodIndexes(k);
+                if (goodIndex < 0) {
+                    break;
+                }
+                dailyCost += (double) Math.min(site.goodsLeft(k), site.dailyGoods(k)) * countryMarket.goodBudgetPrices(goodIndex);
+            }
+            dailyCommitments.put(site.countryId(), dailyCommitments.get(site.countryId()) + (float) dailyCost);
+            sitesInProgress.put(site.countryId(), sitesInProgress.get(site.countryId()) + 1);
+        });
+    }
+
+    private void collectCandidates(World world, LongIntMap queuedLevels, LongObjectMap<ObjectList<Candidate>> candidatesByCountry) {
+        LongFloatMap factoryValues = this.factoryValues();
+        this.developmentQuery.iter(developmentIter -> {
+            DevelopmentBuildingTypeView buildingType = developmentIter.field(DevelopmentBuildingType.class, 1).getView(0);
+            long buildingTypeId = developmentIter.src(1);
+            float productionModifier = InfrastructureUtils.productionModifier(world, buildingTypeId);
+            if (productionModifier <= 0f) {
+                return;
+            }
+            Field<Building> buildingField = developmentIter.field(Building.class, 0);
+            for (int j = 0; j < developmentIter.count(); j++) {
+                BuildingView building = buildingField.getMutView(j);
+                long buildingId = developmentIter.entity(j);
+                if (building.countryId() == 0 || building.size() >= buildingType.maxLevel() || queuedLevels.get(buildingId) > 0) {
                     continue;
                 }
-                long[] candidate = bestCandidates.get(iter.entity(i));
-                if (candidate != null) {
-                    countryPublicWorks.targetBuildingId(candidate[0]);
-                    countryPublicWorks.targetBuildingTypeId(candidate[1]);
+                float annualReturn = annualReturn(world, factoryValues, building, buildingType, productionModifier);
+                if (annualReturn <= STATE_MINIMUM_RETURN) {
+                    continue;
                 }
+                ObjectList<Candidate> candidates = candidatesByCountry.get(building.countryId());
+                if (candidates == null) {
+                    candidates = new ObjectList<>();
+                    candidatesByCountry.put(building.countryId(), candidates);
+                }
+                ProvinceView province = world.obtainEntityView(building.parentId()).getView(Province.class);
+                candidates.add(new Candidate(buildingId, buildingTypeId, province.regionInstanceId(), annualReturn));
             }
-        }
-
-        for (int i = 0; i < iter.count(); i++) {
-            CountryPublicWorksMutView countryPublicWorks = countryPublicWorksField.getMutView(i);
-            float annualReturn = 0f;
-            if (countryPublicWorks.targetBuildingId() != 0) {
-                long buildingTypeId = countryPublicWorks.targetBuildingTypeId();
-                BuildingView building = world.obtainEntityView(countryPublicWorks.targetBuildingId()).getView(Building.class);
-                DevelopmentBuildingTypeView buildingType = world.obtainEntityView(buildingTypeId).getView(DevelopmentBuildingType.class);
-                annualReturn = annualReturn(world, factoryValues, building, buildingType, InfrastructureUtils.productionModifier(world, buildingTypeId));
-            }
-            countryPublicWorks.targetReturn(annualReturn);
-        }
+        });
     }
 
     private LongFloatMap factoryValues() {
@@ -126,6 +215,14 @@ public class PublicWorksSystem {
         if (levelCost <= 0.0) {
             return 0f;
         }
+        double maintenanceCost = 0.0;
+        for (int k = 0; k < buildingType.maintenanceGoodIndexesLength(); k++) {
+            int goodIndex = buildingType.maintenanceGoodIndexes(k);
+            if (goodIndex < 0) {
+                break;
+            }
+            maintenanceCost += (double) buildingType.maintenanceGoodAmounts(k) * countryMarket.goodBudgetPrices(goodIndex);
+        }
 
         EntityView province = world.obtainEntityView(building.parentId());
         double baseValue = 0.0;
@@ -142,6 +239,6 @@ public class PublicWorksSystem {
                 baseValue += factoryValues.getOrDefault(regionInstanceId, 0f) / (1f + infrastructureBonus(regionInstance)) / regionInstance.provinceCount();
             }
         }
-        return (float) (productionModifier * baseValue * DAYS_PER_YEAR / levelCost);
+        return (float) ((productionModifier * baseValue * DAYS_PER_YEAR - maintenanceCost) / levelCost);
     }
 }

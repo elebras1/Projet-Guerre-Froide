@@ -18,7 +18,6 @@ public record CountryBudget(
     float wagesBudget,
     float socialBudget,
     float stateConsumptionBudget,
-    float publicWorksBudget,
     float publicWorksLoan,
     float militarySupplyRatio) {
 }

@@ -7,10 +7,7 @@ import static com.populaire.projetguerrefroide.util.Constants.GOOD_COUNT;
 
 @Component
 public record CountryPublicWorks(
-    long targetBuildingId,
-    long targetBuildingTypeId,
-    float progress,
     float targetReturn,
-    @FixedArray(length = GOOD_COUNT) float[] demandedAmounts,
-    double spentToday) {
+    int sitesInProgress,
+    double dailyCommitment) {
 }

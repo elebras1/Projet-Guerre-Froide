@@ -46,8 +46,9 @@ public class EconomyService {
     private final StateConsumptionPurchaseSystem stateConsumptionPurchaseSystem;
     private final PublicWorksSystem publicWorksSystem;
     private final CountryCentralBankSystem countryCentralBankSystem;
-    private final PublicWorksDemandSystem publicWorksDemandSystem;
-    private final PublicWorksPurchaseSystem publicWorksPurchaseSystem;
+    private final MaintenanceSystem maintenanceSystem;
+    private final MaintenanceDemandSystem maintenanceDemandSystem;
+    private final MaintenancePurchaseSystem maintenancePurchaseSystem;
     private final MilitarySupplyResetSystem militarySupplyResetSystem;
     private final BankSystem bankSystem;
     private final MilitarySupplyNeedSystem militarySupplyNeedSystem;
@@ -241,6 +242,7 @@ public class EconomyService {
         this.countryBudgetPriceSystem = new CountryBudgetPriceSystem(ecsWorld, phaseNeedsCosts);
         this.needsCostsCalculationSystem = new NeedsCostsCalculationSystem(ecsWorld, phaseNeedsCosts);
         this.militarySupplyNeedSystem = new MilitarySupplyNeedSystem(ecsWorld, phaseNeedsCosts);
+        this.maintenanceSystem = new MaintenanceSystem(ecsWorld, phaseNeedsCosts);
         this.economyBuildingTreasuryInitializationSystem = new EconomyBuildingTreasuryInitializationSystem(ecsWorld, phaseInitTreasury);
         this.economyBuildingInputStockInitializationSystem = new EconomyBuildingInputStockInitializationSystem(ecsWorld, phaseInitTreasury);
         this.rgoTreasuryInitializationSystem = new RGOTreasuryInitializationSystem(ecsWorld, gameContext.getEcsConstants(), phaseInitTreasury);
@@ -250,7 +252,7 @@ public class EconomyService {
         this.economyBuildingConsumptionSystem = new EconomyBuildingConsumptionSystem(ecsWorld, phaseConsumption);
         this.constructionDemandSystem = new ConstructionDemandSystem(ecsWorld, gameContext.getEcsConstants(), phaseConsumption);
         this.stateConsumptionDemandSystem = new StateConsumptionDemandSystem(ecsWorld, phaseConsumption);
-        this.publicWorksDemandSystem = new PublicWorksDemandSystem(ecsWorld, phaseConsumption);
+        this.maintenanceDemandSystem = new MaintenanceDemandSystem(ecsWorld, phaseConsumption);
         this.militarySupplyDemandSystem = new MilitarySupplyDemandSystem(ecsWorld, phaseConsumption);
         this.worldMarketTotalsSystem = new WorldMarketTotalsSystem(ecsWorld, phaseMarket);
         this.globalTradeRatioSystem = new GlobalTradeRatioSystem(ecsWorld, phaseMarket);
@@ -261,7 +263,7 @@ public class EconomyService {
         this.economyBuildingPurchaseSystem = new EconomyBuildingPurchaseSystem(ecsWorld, phaseSettlement);
         this.constructionPurchaseSystem = new ConstructionPurchaseSystem(ecsWorld, gameContext.getEcsConstants(), phaseSettlement);
         this.stateConsumptionPurchaseSystem = new StateConsumptionPurchaseSystem(ecsWorld, phaseSettlement);
-        this.publicWorksPurchaseSystem = new PublicWorksPurchaseSystem(ecsWorld, gameContext.getEcsConstants(), phaseSettlement);
+        this.maintenancePurchaseSystem = new MaintenancePurchaseSystem(ecsWorld, phaseSettlement);
         this.militarySupplyPurchaseSystem = new MilitarySupplyPurchaseSystem(ecsWorld, phaseSettlement);
         this.countryImportPaymentSystem = new CountryImportPaymentSystem(ecsWorld, phaseSettlement);
         this.countryExportPayoutSystem = new CountryExportPayoutSystem(ecsWorld, phaseSettlement);
@@ -294,7 +296,7 @@ public class EconomyService {
         this.countryCentralBankSystem = new CountryCentralBankSystem(ecsWorld, phaseState);
         this.countryBudgetSystem = new CountryBudgetSystem(ecsWorld, phaseState);
         this.bankSystem = new BankSystem(ecsWorld, phaseState);
-        this.publicWorksSystem = new PublicWorksSystem(ecsWorld, phaseState);
+        this.publicWorksSystem = new PublicWorksSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);
         this.constructionCompletionSystem = new ConstructionCompletionSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);
         this.constructionClosureSystem = new ConstructionClosureSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);
         this.investmentDecisionSystem = new InvestmentDecisionSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);

@@ -24,9 +24,8 @@ public class CountryBudgetSystem {
             .with(CountryBank.class)
             .with(CountryInvestment.class)
             .with(CountryPopulationPolicy.class)
-            .with(CountryProductionPolicy.class)
             .with(CountryMilitary.class)
-            .with(CountryPublicWorks.class)
+            .with(CountryMaintenance.class)
             .multiThreaded()
             .iter(this::budget);
     }
@@ -48,9 +47,8 @@ public class CountryBudgetSystem {
         Field<CountryBank> countryBankField = iter.field(CountryBank.class, 6);
         Field<CountryInvestment> countryInvestmentField = iter.field(CountryInvestment.class, 7);
         Field<CountryPopulationPolicy> countryPopulationPolicyField = iter.field(CountryPopulationPolicy.class, 8);
-        Field<CountryProductionPolicy> countryProductionPolicyField = iter.field(CountryProductionPolicy.class, 9);
-        Field<CountryMilitary> countryMilitaryField = iter.field(CountryMilitary.class, 10);
-        Field<CountryPublicWorks> countryPublicWorksField = iter.field(CountryPublicWorks.class, 11);
+        Field<CountryMilitary> countryMilitaryField = iter.field(CountryMilitary.class, 9);
+        Field<CountryMaintenance> countryMaintenanceField = iter.field(CountryMaintenance.class, 10);
         GlobalStateConsumptionView stateConsumption = StateConsumptionUtils.globalStateConsumption(iter.world());
         for (int i = 0; i < iter.count(); i++) {
             CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
@@ -63,9 +61,8 @@ public class CountryBudgetSystem {
             CountryInvestmentMutView countryInvestment = countryInvestmentField.getMutView(i);
             CountryPopulationPolicyView countryPopulationPolicy = countryPopulationPolicyField.getMutView(i);
             float workforceShareModifier = countryPopulationPolicy.workforceShareModifier();
-            CountryProductionPolicyView countryProductionPolicy = countryProductionPolicyField.getMutView(i);
             CountryMilitaryView countryMilitary = countryMilitaryField.getMutView(i);
-            CountryPublicWorksView countryPublicWorks = countryPublicWorksField.getMutView(i);
+            CountryMaintenanceView countryMaintenance = countryMaintenanceField.getMutView(i);
 
             double subsidies = 0.0;
             float tariffRate = countryTradePolicy.tariffRate();
@@ -79,8 +76,9 @@ public class CountryBudgetSystem {
                 StateConsumptionUtils.administrationUnits(countryDemographics, statePostIndex, countryBudgetPolicy),
                 StateConsumptionUtils.publicHealthUnits(countryDemographics, countryBudgetPolicy));
             double militarySupplyCost = militarySupplyCost(countryMilitary, countryMarket);
+            double maintenanceCost = maintenanceCost(countryMaintenance, countryMarket);
             double needs = dailyNeeds(incomeTypes, assistedTypes, countryMarket, countryDemographics, countryBudgetPolicy, countryEducationPolicy, statePostIndex, baseWorkforceShares, workforceShareModifier)
-                + subsidies + stateConsumptionCost + militarySupplyCost;
+                + subsidies + stateConsumptionCost + militarySupplyCost + maintenanceCost;
             double revenue = countryMarket.taxRevenue() + countryMarket.tariffRevenue() + countryMarket.profitRevenue();
             double revenueTrend = countryBudget.revenueTrend() > 0.0 ? countryBudget.revenueTrend() + (revenue - countryBudget.revenueTrend()) / DAYS_PER_YEAR : revenue;
             double creditLimit = CREDIT_LIMIT_YEARS * DAYS_PER_YEAR * revenueTrend;
@@ -147,20 +145,8 @@ public class CountryBudgetSystem {
                 stateLoans -= repaid;
                 investableSurplus -= repaid;
             }
-            double publicWorksRate = PUBLIC_WORKS_RATE * Math.max(0f, 1f + countryProductionPolicy.publicWorksModifier());
-            double publicWorksLoan = 0.0;
-            if (countryPublicWorks.targetBuildingTypeId() != 0
-                && countryPublicWorks.targetReturn() >= stateInterestRate(stateLoans, creditLimit, countryBank.lendingRate())) {
-                publicWorksLoan = publicWorksRate * Math.min(Math.max(0.0, countryBank.reserves()), Math.max(0.0, creditLimit - stateLoans));
-                countryBank.reserves(countryBank.reserves() - publicWorksLoan);
-                countryMarket.treasury(countryMarket.treasury() + publicWorksLoan);
-                countryBank.borrowed(STATE_OWNER, countryBank.borrowed(STATE_OWNER) + publicWorksLoan);
-                stateLoans += publicWorksLoan;
-            }
             countryBank.loans(STATE_OWNER, stateLoans);
             countryBank.creditLimit(creditLimit);
-            countryBudget.publicWorksBudget((float) (publicWorksRate * investableSurplus + publicWorksLoan));
-            countryBudget.publicWorksLoan((float) publicWorksLoan);
 
             countryBudget.targetTreasury(targetTreasury);
             countryBudget.reservedNeeds(needs);

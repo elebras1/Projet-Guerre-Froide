@@ -46,7 +46,13 @@ test {
   useJUnitPlatform()
   workingDir = rootProject.file('assets').path
   jvmArgs += "--enable-native-access=ALL-UNNAMED"
-  systemProperty "simulation.outputDir", file("build/simulation-analysis").absolutePath
+  systemProperty "simulation.outputDir", project.findProperty("simulation.outputDir") ?: file("build/simulation-analysis").absolutePath
+  if (project.hasProperty("simulation.outputDir")) {
+    def resultsDir = "${project.property('simulation.outputDir')}-test-results"
+    reports.junitXml.outputLocation = file(resultsDir)
+    reports.html.outputLocation = file("${resultsDir}/html")
+    binaryResultsDirectory = file("${resultsDir}/binary")
+  }
   systemProperty "simulation.years", project.findProperty("simulation.years") ?: "5"
   systemProperty "simulation.detailEvery", project.findProperty("simulation.detailEvery") ?: ""
   systemProperty "simulation.freeze", project.findProperty("simulation.freeze") ?: ""

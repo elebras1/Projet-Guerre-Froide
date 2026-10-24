@@ -118,6 +118,7 @@ public class EconomySimulationAnalysisTest {
         world.component(GlobalStateConsumption.class);
         world.component(CountryStateConsumption.class);
         world.component(CountryPublicWorks.class);
+        world.component(CountryMaintenance.class);
         world.component(CountryCentralBank.class);
         world.component(CountryMilitary.class);
         world.component(ProvinceInfrastructure.class);

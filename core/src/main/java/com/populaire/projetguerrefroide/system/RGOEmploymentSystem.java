@@ -6,7 +6,6 @@ import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 import com.populaire.projetguerrefroide.util.EmploymentUtils;
-import com.populaire.projetguerrefroide.util.MarketUtils;
 
 import static com.populaire.projetguerrefroide.util.Constants.*;
 import static com.populaire.projetguerrefroide.util.EmploymentUtils.activeWorkers;
@@ -41,12 +40,10 @@ public class RGOEmploymentSystem {
 
         ResourceGatheringView firstResourceGathering = resourceGatheringField.getMutView(0);
         int goodIndex = firstResourceGathering.goodIndex();
-        GoodView good = iter.world().obtainEntityView(firstResourceGathering.goodId()).getView(Good.class);
-        float goodCost = good.cost();
         GlobalMarketView globalMarket = iter.world().obtainEntityView(iter.world().lookup("global_market")).getView(GlobalMarket.class);
-        float worldPrice = globalMarket.goodPrices(goodIndex);
-        float adjustment = RGO_CLEARING_GAIN * MarketUtils.clearingGap(globalMarket, goodIndex) + RGO_PRICE_GAIN * (float) Math.log(worldPrice / goodCost);
-        adjustment = Math.clamp(adjustment, -RGO_EMPLOYMENT_ADJUSTMENT_RATE, RGO_EMPLOYMENT_ADJUSTMENT_RATE);
+        float worldDemand = globalMarket.goodDemandAmounts(goodIndex);
+        float inventory = globalMarket.goodStockAmounts(goodIndex) - globalMarket.goodProductionAmounts(goodIndex);
+        boolean stocksAboveTarget = inventory > STOCK_TARGET_DAYS * worldDemand;
 
         float workerBaseShare = EmploymentUtils.baseWorkforceShares(iter.world())[workerIndex];
         long countryId = 0;
@@ -67,6 +64,10 @@ public class RGOEmploymentSystem {
             int targetSlaves = (int) (maxCapacity * slavePopTypeRatio);
             int maximumWorkers = Math.min(targetWorkers, activeWorkerAmount);
 
+            float adjustment = RGO_EMPLOYMENT_ADJUSTMENT_RATE * Math.clamp(resourceGathering.unitMargin(), -1f, 1f);
+            if (adjustment > 0f && stocksAboveTarget) {
+                adjustment = 0f;
+            }
             int workerAmount = resourceGathering.workerAmount() + Math.round(adjustment * maximumWorkers);
             resourceGathering.vacancies(adjustment > 0f ? Math.max(0, targetWorkers - activeWorkerAmount) : 0);
             resourceGathering.applicants(0f);

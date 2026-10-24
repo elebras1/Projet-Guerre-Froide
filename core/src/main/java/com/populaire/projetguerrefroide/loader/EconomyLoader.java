@@ -359,7 +359,7 @@ public final class EconomyLoader {
                 if (buildingJson.modifier() != null) {
                     building.set(this.createBuildingModifiers(buildingJson.modifier()));
                 }
-                building.set(new SpecialBuildingType((int) buildingJson.time(), buildingJson.cost().intValue(), goodCostIds, goodCostAmounts));
+                building.set(new SpecialBuildingType((int) buildingJson.time(), goodCostIds, goodCostAmounts));
             }
 
             for(var developmentBuildingEntry : buildings.developmentBuilding().entrySet()) {
@@ -371,13 +371,19 @@ public final class EconomyLoader {
                 long[] goodCostIds = new long[MAX_GOODS];
                 float[] goodCostAmounts = new float[MAX_GOODS];
                 this.context.fillGoods(buildingJson.goodsCost(), goodCostIndexes, goodCostIds, goodCostAmounts);
+                int[] maintenanceGoodIndexes = new int[MAX_GOODS];
+                Arrays.fill(maintenanceGoodIndexes, -1);
+                float[] maintenanceGoodAmounts = new float[MAX_GOODS];
+                if (buildingJson.maintenanceGoods() != null) {
+                    this.context.fillGoods(buildingJson.maintenanceGoods(), maintenanceGoodIndexes, new long[MAX_GOODS], maintenanceGoodAmounts);
+                }
                 if(buildingJson.onmap()) {
                     building.add(this.ecsConstants.onMap());
                 }
                 if (buildingJson.modifier() != null) {
                     building.set(this.createBuildingModifiers(buildingJson.modifier()));
                 }
-                building.set(new DevelopmentBuildingType((int) buildingJson.time(), buildingJson.cost().intValue(), goodCostIndexes, goodCostIds, goodCostAmounts, buildingJson.maxLevel().intValue()));
+                building.set(new DevelopmentBuildingType((int) buildingJson.time(), goodCostIndexes, goodCostIds, goodCostAmounts, maintenanceGoodIndexes, maintenanceGoodAmounts, buildingJson.maxLevel().intValue()));
             }
         } catch (Exception exception) {
             throw new RuntimeException(exception);

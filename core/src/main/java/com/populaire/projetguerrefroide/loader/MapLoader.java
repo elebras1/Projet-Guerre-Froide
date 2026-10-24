@@ -113,7 +113,7 @@ public final class MapLoader {
                 long goodId = this.ecsWorld.lookup(goodNameId);
                 long rgoTypeId = this.ecsWorld.lookup("rgo_" + goodNameId);
                 province.add(this.ecsConstants.rgoType(), rgoTypeId);
-                province.set(new ResourceGathering(goodId, this.context.getGoodIndex(goodId), 1f, 0, 0f, 0f, 0, 0, 0, 0f, 0f, 0f, 0d));
+                province.set(new ResourceGathering(goodId, this.context.getGoodIndex(goodId), 1f, 0, 0f, 0f, 0, 0, 0, 0f, 0f, 0f, 0f, 0d));
             }
 
             if(provinceJson.buildings() != null) {
@@ -122,7 +122,7 @@ public final class MapLoader {
                     EntityView building = this.ecsWorld.obtainEntityView(this.ecsWorld.entity());
                     building.isA(buildingTypeId);
                     building.set(new Building(provinceId, countryOwnerId, (int) buildingJson.size()));
-                    building.set(new DevelopmentBuilding());
+                    building.set(new DevelopmentBuilding(0f));
                 }
             }
 

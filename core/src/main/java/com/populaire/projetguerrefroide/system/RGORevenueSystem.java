@@ -55,6 +55,7 @@ public class RGORevenueSystem {
             resourceGathering.treasury(treasury);
             resourceGathering.workerMinWage(wage);
             resourceGathering.profit((float) profit);
+            resourceGathering.unitMargin(wageBill > 0f ? (float) ((revenue - wageBill) / wageBill) : (revenue > 0.0 ? 1f : 0f));
         }
     }
 }
