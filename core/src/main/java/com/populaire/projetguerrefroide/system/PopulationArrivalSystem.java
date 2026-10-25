@@ -33,7 +33,7 @@ public class PopulationArrivalSystem {
                 transfer = world.obtainEntityView(provinceId).getMutView(PopulationTransfer.class);
             }
             int arriving = transfer.arrivingAmounts(popTypeIndex);
-            if (arriving == 0) {
+            if (arriving == 0 && transfer.arrivingSavings(popTypeIndex) == 0f && transfer.arrivingDeposits(popTypeIndex) == 0f) {
                 continue;
             }
             population.amount(population.amount() + arriving);

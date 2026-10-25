@@ -21,5 +21,6 @@ public record Population(
     float luxuryNeedsDemandRatio,
     float income,
     float unspentBudget,
-    float deposit) {
+    float deposit,
+    float growthRemainder) {
 }

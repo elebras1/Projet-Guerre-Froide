@@ -66,6 +66,8 @@ public class EconomyService {
     private final MilitarySupplyPurchaseSystem militarySupplyPurchaseSystem;
     private final LabourMarketSystem labourMarketSystem;
     private final PopulationApplicationSystem populationApplicationSystem;
+    private final ProvinceDemographySystem provinceDemographySystem;
+    private final PopulationGrowthSystem populationGrowthSystem;
     private final PopulationPromotionSystem populationPromotionSystem;
     private final PopulationArrivalSystem populationArrivalSystem;
     private final EconomyCalendarSystem economyCalendarSystem;
@@ -308,6 +310,8 @@ public class EconomyService {
         this.religiousDonationSystem = new ReligiousDonationSystem(ecsWorld, gameContext.getEcsConstants(), phaseIncome);
         this.regionIncomeResidualSystem = new RegionIncomeResidualSystem(ecsWorld, phaseIncome);
         this.populationSavingsInitializationSystem = new PopulationSavingsInitializationSystem(ecsWorld, phaseInitSavings);
+        this.provinceDemographySystem = new ProvinceDemographySystem(ecsWorld, phasePromotion);
+        this.populationGrowthSystem = new PopulationGrowthSystem(ecsWorld, phasePromotion);
         this.populationApplicationSystem = new PopulationApplicationSystem(ecsWorld, gameContext.getEcsConstants(), phasePromotion);
         this.populationPromotionSystem = new PopulationPromotionSystem(ecsWorld, gameContext.getEcsConstants(), phasePromotion);
         this.populationArrivalSystem = new PopulationArrivalSystem(ecsWorld, phasePromotion);

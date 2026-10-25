@@ -90,7 +90,8 @@ public final class MapLoader {
             int adultsAmount = (int) (amount * populationTemplate.adultsRatio());
             int seniorsAmount = (int) (amount * populationTemplate.seniorsRatio());
 
-            this.parsePopulation(countryOwnerId, provinceId, population.populations(), adultsAmount);
+            int popsAmount = this.parsePopulation(countryOwnerId, provinceId, population.populations(), adultsAmount);
+            float childrenPerAdult = populationTemplate.adultsRatio() > 0f ? populationTemplate.childrenRatio() / populationTemplate.adultsRatio() : 0f;
             Pair<long[], int[]> cultures = this.parseDistribution(population.cultures(), adultsAmount, CULTURE_COUNT);
             Pair<long[], int[]> religions = this.parseDistribution(population.religions(), adultsAmount, RELIGION_COUNT);
 
@@ -127,7 +128,8 @@ public final class MapLoader {
             }
 
             province.set(new ProvinceInfrastructure(0f));
-            province.set(new Province(coreIds, countryOwnerId, countryControllerId, terrainId, 0, 0, 0, childrenAmount, adultsAmount, seniorsAmount, cultures.first(), cultures.second(), religions.first(), religions.second()));
+            province.set(new Province(coreIds, countryOwnerId, countryControllerId, terrainId, 0, 0, 0, childrenAmount, popsAmount, seniorsAmount, cultures.first(), cultures.second(), religions.first(), religions.second()));
+            province.set(new ProvinceDemography(childrenPerAdult, 0f, 0f, 0f, 0f));
             province.set(new Demographics(0, 0, 0, 0f, 0f, 0f, 0f, 0f, 0f, new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
             province.set(new PopulationTransfer(new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT]));
         } catch (Exception exception) {
@@ -135,23 +137,26 @@ public final class MapLoader {
         }
     }
 
-    private void parsePopulation(long countryId, long provinceId, Map<String, Double> distribution, int adultsAmount) {
+    private int parsePopulation(long countryId, long provinceId, Map<String, Double> distribution, int adultsAmount) {
+        int popsAmount = 0;
         for(var distributionEntry : distribution.entrySet()) {
             float percentage = distributionEntry.getValue().floatValue();
             int amount = (int) (adultsAmount * percentage);
+            popsAmount += amount;
             long typeId = this.ecsWorld.lookup(distributionEntry.getKey());
             long popId = this.ecsWorld.entity();
             EntityView pop = this.ecsWorld.obtainEntityView(popId);
             pop.isA(typeId);
-            pop.set(new Population(countryId, provinceId, 0, amount, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
+            pop.set(new Population(countryId, provinceId, 0, amount, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
         }
         for (long typeId : this.context.populationTypeIds()) {
             if (typeId != 0 && !distribution.containsKey(this.ecsWorld.obtainEntity(typeId).name())) {
                 EntityView pop = this.ecsWorld.obtainEntityView(this.ecsWorld.entity());
                 pop.isA(typeId);
-                pop.set(new Population(countryId, provinceId, 0, 0, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
+                pop.set(new Population(countryId, provinceId, 0, 0, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
             }
         }
+        return popsAmount;
     }
 
     private Pair<long[], int[]> parseDistribution(Map<String, Double> distribution, int adultsAmount, int length) {

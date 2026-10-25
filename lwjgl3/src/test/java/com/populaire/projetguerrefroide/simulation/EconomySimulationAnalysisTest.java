@@ -437,7 +437,7 @@ public class EconomySimulationAnalysisTest {
 
     private static final Set<String> KNOWN_FAILING_HEALTH_CHECKS = Set.of(
         "life_needs_floor", "real_output_floor", "start_steady", "cpi_band",
-        "price_bounds", "calibration_ratio", "population_growth", "real_output_growth", "army_supply_floor");
+        "price_bounds", "calibration_ratio", "real_output_growth", "army_supply_floor");
 
     private static final int HEALTH_TREASURY_MULTIPLIER = 100;
 

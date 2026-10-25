@@ -79,20 +79,18 @@ public class ProvinceService {
     public ObjectIntMap<String> getCultures(long provinceId) {
         Entity province = this.gameContext.getEcsWorld().obtainEntity(provinceId);
         Province provinceData = province.get(Province.class);
-        int amountAdults = provinceData.adultsAmount();
         long[] cultureIds = provinceData.cultureIds();
         int[] cultureAmounts = provinceData.cultureAmounts();
-        return this.calculatePercentageDistributionFromProvinceData(cultureIds, cultureAmounts, amountAdults);
+        return this.calculatePercentageDistributionFromProvinceData(cultureIds, cultureAmounts);
     }
 
     public ObjectIntMap<String> getReligions(long provinceId) {
         Entity province = this.gameContext.getEcsWorld().obtainEntity(provinceId);
         Province provinceData = province.get(Province.class);
-        int amountAdults = provinceData.adultsAmount();
         long[] religionIds = provinceData.religionIds();
         int[] religionAmounts = provinceData.religionAmounts();
 
-        return this.calculatePercentageDistributionFromProvinceData(religionIds, religionAmounts, amountAdults);
+        return this.calculatePercentageDistributionFromProvinceData(religionIds, religionAmounts);
     }
 
     public DevelopementBuildingLevelDto getDevelopementBuildingLevel(long provinceId) {
@@ -168,9 +166,13 @@ public class ProvinceService {
         return -1f;
     }
 
-    private ObjectIntMap<String> calculatePercentageDistributionFromProvinceData(long[] provinceElementIds, int[] provinceElementValues, int amountAdults) {
+    private ObjectIntMap<String> calculatePercentageDistributionFromProvinceData(long[] provinceElementIds, int[] provinceElementValues) {
         ObjectIntOrderedMap<String> elementPercentages = new ObjectIntOrderedMap<>();
         World ecsWorld = this.gameContext.getEcsWorld();
+        int amountTotal = 0;
+        for(int elementIndex = 0; elementIndex < provinceElementIds.length && provinceElementValues[elementIndex] != 0; elementIndex++) {
+            amountTotal += provinceElementValues[elementIndex];
+        }
         int total = 0;
         int biggestElementIndex = -1;
         for(int elementIndex = 0; elementIndex < provinceElementIds.length && provinceElementValues[elementIndex] != 0; elementIndex++) {
@@ -179,8 +181,8 @@ public class ProvinceService {
             if(biggestElementIndex == -1 || amount > provinceElementValues[biggestElementIndex]) {
                 biggestElementIndex = elementIndex;
             }
-            if(amountAdults != 0) {
-                int percentage = (int) ((amount / (float) amountAdults) * 100);
+            if(amountTotal != 0) {
+                int percentage = (int) ((amount / (float) amountTotal) * 100);
                 total += percentage;
                 elementPercentages.put(ecsWorld.obtainEntity(elementId).name(), percentage);
             } else {

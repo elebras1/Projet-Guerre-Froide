@@ -198,6 +198,7 @@ public class SimulationRecorder implements AutoCloseable {
     private String lastYearCashHoldingsSource = "";
     private int yearTicks;
     private double yearRealOutput;
+    private double yearPopulation;
     private double yearCpi;
     private final double[] yearStrataLife = new double[STRATA_COUNT];
     private final double[] yearStrataEveryday = new double[STRATA_COUNT];
@@ -640,7 +641,7 @@ public class SimulationRecorder implements AutoCloseable {
         this.writer("world/accounts.csv").header("year", "date", "pop_type", "strata", "population", "employed", "income", "wages", "profit_shares", "taxes",
             "state", "life_spending", "everyday_spending", "luxury_spending", "savings", "deposits", "wage_premium", "vacancies", "uncovered_vacancies", "state_posts", "donations");
         this.writer("world/yearly.csv").header("year", "date",
-            "real_output", "real_output_ratio", "real_output_per_100k_adults", "adults", "cpi",
+            "real_output", "real_output_ratio", "real_output_per_100k_adults", "adults", "population", "cpi",
             "life_poor", "life_middle", "life_rich", "everyday_poor", "everyday_middle", "everyday_rich",
             "luxury_poor", "luxury_middle", "luxury_rich", "worst_country_life_poor", "worst_country",
             "money", "money_drift", "min_balance", "min_balance_source", "goods_out_of_band",
@@ -811,6 +812,7 @@ public class SimulationRecorder implements AutoCloseable {
 
         this.yearTicks++;
         this.yearRealOutput += this.tickRealOutput;
+        this.yearPopulation += this.tickPopulationTotal;
         this.yearCpi += this.tickCpi;
         this.yearMilitarySupply += this.tickMilitarySupplyTotal;
         this.yearMilitaryNeeded += this.tickMilitaryNeededTotal;
@@ -901,6 +903,7 @@ public class SimulationRecorder implements AutoCloseable {
             this.firstRealOutput > 0.0 ? realOutput / this.firstRealOutput : 0.0,
             adults > 0.0 ? realOutput / adults * NEEDS_SCALING_FACTOR : 0.0,
             adults,
+            this.yearPopulation / ticks,
             this.yearCpi / ticks,
             this.yearStrataLife[POOR_STRATA] / ticks, this.yearStrataLife[MIDDLE_STRATA] / ticks, this.yearStrataLife[RICH_STRATA] / ticks,
             this.yearStrataEveryday[POOR_STRATA] / ticks, this.yearStrataEveryday[MIDDLE_STRATA] / ticks, this.yearStrataEveryday[RICH_STRATA] / ticks,
@@ -916,6 +919,7 @@ public class SimulationRecorder implements AutoCloseable {
 
         this.yearTicks = 0;
         this.yearRealOutput = 0.0;
+        this.yearPopulation = 0.0;
         this.yearCpi = 0.0;
         this.yearMilitarySupply = 0.0;
         this.yearMilitaryNeeded = 0.0;
@@ -1088,7 +1092,7 @@ public class SimulationRecorder implements AutoCloseable {
 
             Integer countryIndex = this.countryIndexByEntity.get(countryId);
 
-            this.tickPopulationTotal += cd.totalPopulation();
+            this.tickPopulationTotal += cd.totalChildren() + cd.totalAdults() + cd.totalSeniors();
             this.tickTreasuryTotal += cm.treasury();
             double goodRevenues = 0.0;
             double minGoodRevenue = 0.0;

@@ -100,6 +100,13 @@ public class Constants {
     public static final float WAGE_ADJUSTMENT_RATE = 0.01f;
     public static final float PROMOTION_RATE = 0.01f;
     public static final int DAYS_PER_MONTH = 30;
+    public static final float BIRTH_RATE = 0.106f;
+    public static final float CHILD_DEATH_RATE = 0.022f;
+    public static final float ADULT_DEATH_RATE = 0.009f;
+    public static final float SENIOR_DEATH_RATE = 0.085f;
+    public static final float CHILD_AGING_RATE = 0.055f;
+    public static final float ADULT_AGING_RATE = 0.0094f;
+    public static final float FAMINE_DEATH_RATE = 0.1f;
     public static final int OWNER_COUNT = 3;
     public static final int CAPITALIST_OWNER = 0;
     public static final int STATE_OWNER = 1;
