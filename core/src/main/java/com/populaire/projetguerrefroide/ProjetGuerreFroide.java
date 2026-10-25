@@ -82,6 +82,9 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(GlobalStateConsumption.class);
         this.ecsWorld.component(CountryStateConsumption.class);
         this.ecsWorld.component(CountryPublicWorks.class);
+        this.ecsWorld.component(ArtisanCraft.class);
+        this.ecsWorld.component(GlobalArtisanCrafts.class);
+        this.ecsWorld.component(RegionArtisans.class);
         this.ecsWorld.component(CountryMaintenance.class);
         this.ecsWorld.component(CountryCentralBank.class);
         this.ecsWorld.component(CountryMilitary.class);

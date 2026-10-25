@@ -289,6 +289,9 @@ public final class EconomyLoader {
 
     public void loadBuildings(BuildingsJson buildings, Map<String, ProductionType> productionTypes) {
         try {
+            long[] artisanCraftIds = new long[MAX_ARTISAN_CRAFTS];
+            int artisanCraftCount = 0;
+            int artisanPopTypeIndex = -1;
             for(var economyBuildingEntry : buildings.economyBuilding().entrySet()) {
                 EntityView building = this.ecsWorld.obtainEntityView(this.ecsWorld.entity(economyBuildingEntry.getKey()));
                 building.add(Flecs.Prefab);
@@ -348,7 +351,17 @@ public final class EconomyLoader {
                     productionType.workerPopTypeRatios()[1],
                     productionType.workerPopTypeEffectMultipliers()[1]
                 ));
+                if (buildingJson.artisansType() != null) {
+                    ProductionType artisanProductionType = productionTypes.get(buildingJson.artisansType());
+                    if (artisanProductionType == null || artisanCraftCount >= MAX_ARTISAN_CRAFTS) {
+                        throw new IllegalArgumentException("Invalid artisans type for building " + economyBuildingEntry.getKey());
+                    }
+                    artisanPopTypeIndex = artisanProductionType.workerPopTypeIndexes()[0];
+                    building.set(new ArtisanCraft(artisanProductionType.workforce(), artisanPopTypeIndex));
+                    artisanCraftIds[artisanCraftCount++] = this.ecsWorld.lookup(economyBuildingEntry.getKey());
+                }
             }
+            this.ecsWorld.obtainEntityView(this.ecsWorld.entity("global_artisan_crafts")).set(new GlobalArtisanCrafts(artisanCraftIds, artisanCraftCount, artisanPopTypeIndex));
 
             for(var specialBuildingEntry : buildings.specialBuilding().entrySet()) {
                 EntityView building = this.ecsWorld.obtainEntityView(this.ecsWorld.entity(specialBuildingEntry.getKey()));

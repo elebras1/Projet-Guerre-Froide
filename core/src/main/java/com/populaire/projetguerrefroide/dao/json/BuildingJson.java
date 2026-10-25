@@ -9,6 +9,7 @@ import java.util.Map;
 public record BuildingJson(
     @JsonAttribute(mandatory = true) long time,
     @JsonAttribute(name = "base_type") String baseType,
+    @JsonAttribute(name = "artisans_type") String artisansType,
     @JsonAttribute(name = "max_level") Long maxLevel,
     Boolean onmap,
     @JsonAttribute(name = "goods_cost", mandatory = true) Map<String, Double> goodsCost,

@@ -11,6 +11,7 @@ public class Constants {
     public static final int MAX_ADJACENCIES = 32;
     public static final int MAX_GOODS = 8;
     public static final int MAX_CREW_TYPES = 4;
+    public static final int MAX_ARTISAN_CRAFTS = 16;
     public static final int MAX_POPS = 4;
     public static final int MAX_GOVERNMENT_ASSOCIATED_IDEOLOGIES = 4;
     public static final int MAX_LAW_IDEOLOGIES = 8;
@@ -83,6 +84,9 @@ public class Constants {
     public static final float CENTRAL_BANK_MAX_RATE = 0.1f;
     public static final float PUBLIC_WORKS_RATE = 0.02f;
     public static final float MAINTENANCE_DECAY_YEARS = 2f;
+    public static final float ARTISAN_OUTPUT_SHARE = 0.01f;
+    public static final float ARTISAN_REALLOCATION_RATE = 0.1f;
+    public static final float ARTISAN_TREASURY_BUFFER_DAYS = 15f;
     public static final float DAYS_PER_YEAR = 365f;
     public static final float RURAL_WAGE_SHARE = 0.5f;
     public static final float RGO_TREASURY_BUFFER_DAYS = 15f;

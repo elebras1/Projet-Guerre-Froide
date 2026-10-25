@@ -72,6 +72,9 @@ import com.populaire.projetguerrefroide.component.Province;
 import com.populaire.projetguerrefroide.component.ProvinceView;
 import com.populaire.projetguerrefroide.component.RegionDemographics;
 import com.populaire.projetguerrefroide.component.RegionDemographicsView;
+import com.populaire.projetguerrefroide.component.GlobalArtisanCraftsView;
+import com.populaire.projetguerrefroide.component.RegionArtisans;
+import com.populaire.projetguerrefroide.component.RegionArtisansView;
 import com.populaire.projetguerrefroide.component.RegionInstance;
 import com.populaire.projetguerrefroide.component.RegionInstanceIncome;
 import com.populaire.projetguerrefroide.component.RegionInstanceIncomeView;
@@ -97,6 +100,7 @@ import java.util.TreeMap;
 
 import com.populaire.projetguerrefroide.util.StateBudgetUtils;
 import com.populaire.projetguerrefroide.util.EmploymentUtils;
+import com.populaire.projetguerrefroide.util.ArtisanUtils;
 import static com.populaire.projetguerrefroide.util.Constants.CAPITALIST_OWNER;
 import static com.populaire.projetguerrefroide.util.Constants.GOOD_COUNT;
 import static com.populaire.projetguerrefroide.util.Constants.NEEDS_SCALING_FACTOR;
@@ -228,6 +232,7 @@ public class SimulationRecorder implements AutoCloseable {
     private final Query rgoQuery;
     private final Query buildingQuery;
     private final Query developmentQuery;
+    private final Query artisanQuery;
     private final Query regionIncomeQuery;
     private final Query populationQuery;
 
@@ -277,6 +282,7 @@ public class SimulationRecorder implements AutoCloseable {
 
     private final Map<Long, float[]> countryRgoByGood = new HashMap<>();
     private final Map<Long, float[]> countryBuildingByGood = new HashMap<>();
+    private final Map<Long, float[]> countryArtisanByGood = new HashMap<>();
     private final Map<Long, Float> buildingTypeInputDemand = new TreeMap<>();
     private final Map<Long, float[]> countryRegionIncome = new HashMap<>();
 
@@ -305,6 +311,9 @@ public class SimulationRecorder implements AutoCloseable {
     private final double[] tickFundsTotal = new double[3];
     private double tickConstructionSpendingTotal;
     private double tickRgoTreasuryTotal;
+    private double tickArtisanTreasuryTotal;
+    private double tickArtisanRevenueTotal;
+    private double tickArtisanInputTotal;
     private int tickSitesInProgressTotal;
     private int tickSitesStartedTotal;
     private int tickSitesCompletedTotal;
@@ -359,6 +368,7 @@ public class SimulationRecorder implements AutoCloseable {
             .with(EconomyBuilding.class)
             .with(EconomyBuildingType.class)
             .build();
+        this.artisanQuery = ecsWorld.query().with(RegionArtisans.class).with(RegionInstance.class).build();
         this.developmentQuery = ecsWorld.query()
             .with(Building.class)
             .with(DevelopmentBuilding.class)
@@ -615,7 +625,7 @@ public class SimulationRecorder implements AutoCloseable {
             "political_consciousness", "political_radicalism", "suppression", "social_mobility", "class_rigidity",
             "administrative_efficiency", "religious_conversion_speed", "secularism", "assimilation_rate",
             "migration_push", "maximum_economy_scale_factor");
-        this.writer("country/production.csv").header("tick", "date", "country", "good", "rgo_production", "building_production", "total");
+        this.writer("country/production.csv").header("tick", "date", "country", "good", "rgo_production", "building_production", "artisan_production", "total");
         this.writer("country/building_employment.csv").header("tick", "date", "country", "primary_workers", "secondary_workers");
 
         this.writer("building_types/production.csv").header("tick", "date", "building_type", "production", "primary_workers", "secondary_workers", "profit", "utilization", "count", "unit_margin", "stopped_profitable", "state_production");
@@ -646,6 +656,7 @@ public class SimulationRecorder implements AutoCloseable {
             "state_borrowed", "state_repaid", "state_interest_paid", "state_written_off",
             "private_borrowed", "private_repaid", "private_interest_paid", "private_written_off",
             "capitalist_fund_total", "state_fund_total", "workers_fund_total", "construction_spending_total", "rgo_treasury_total",
+            "artisan_treasury_total", "artisan_revenue_total", "artisan_input_total",
             "sites_in_progress_total", "sites_started_total", "sites_completed_total");
     }
 
@@ -702,6 +713,7 @@ public class SimulationRecorder implements AutoCloseable {
         this.recordCountryMarkets(tick, date);
         this.recordRgo(tick, date);
         this.recordBuildings(tick, date);
+        this.recordArtisans();
         this.recordRegionIncome(tick, date);
         this.recordAccounts(tick, date);
         this.recordEmploymentRatio(tick, date);
@@ -763,7 +775,7 @@ public class SimulationRecorder implements AutoCloseable {
             this.priceOutOfBandMaxStreak[g] = Math.max(this.priceOutOfBandMaxStreak[g], this.priceOutOfBandStreak[g]);
         }
         this.tickMoney += (double) this.tickTreasuryTotal + this.tickSalesRevenueTotal + this.tickBuildingTreasuryTotal + this.tickTradeMoneyTotal + this.tickBankReservesTotal
-            + this.tickFundsTotal[0] + this.tickFundsTotal[1] + this.tickFundsTotal[2] + this.tickRgoTreasuryTotal;
+            + this.tickFundsTotal[0] + this.tickFundsTotal[1] + this.tickFundsTotal[2] + this.tickRgoTreasuryTotal + this.tickArtisanTreasuryTotal;
 
         double adults = 0.0;
         for (double countryAdult : this.countryAdults) {
@@ -956,6 +968,7 @@ public class SimulationRecorder implements AutoCloseable {
         Arrays.fill(this.tickStatePosts, 0.0);
         this.countryRgoByGood.clear();
         this.countryBuildingByGood.clear();
+        this.countryArtisanByGood.clear();
         this.buildingTypeInputDemand.clear();
         this.countryRegionIncome.clear();
 
@@ -980,6 +993,9 @@ public class SimulationRecorder implements AutoCloseable {
         Arrays.fill(this.tickFundsTotal, 0.0);
         this.tickConstructionSpendingTotal = 0.0;
         this.tickRgoTreasuryTotal = 0.0;
+        this.tickArtisanTreasuryTotal = 0.0;
+        this.tickArtisanRevenueTotal = 0.0;
+        this.tickArtisanInputTotal = 0.0;
         this.tickSitesInProgressTotal = 0;
         this.tickSitesStartedTotal = 0;
         this.tickSitesCompletedTotal = 0;
@@ -1345,6 +1361,36 @@ public class SimulationRecorder implements AutoCloseable {
         }
     }
 
+    private void recordArtisans() {
+        GlobalArtisanCraftsView crafts = ArtisanUtils.crafts(this.ecsWorld);
+        int[] outputIndexes = new int[crafts.count()];
+        for (int c = 0; c < crafts.count(); c++) {
+            EconomyBuildingTypeView buildingType = this.ecsWorld.obtainEntityView(crafts.buildingTypeIds(c)).getView(EconomyBuildingType.class);
+            outputIndexes[c] = buildingType.goodOutputIndex();
+        }
+        this.artisanQuery.iter(iter -> {
+            Field<RegionArtisans> regionArtisansField = iter.field(RegionArtisans.class, 0);
+            Field<RegionInstance> regionInstanceField = iter.field(RegionInstance.class, 1);
+            for (int i = 0; i < iter.count(); i++) {
+                RegionArtisansView regionArtisans = regionArtisansField.getMutView(i);
+                RegionInstanceView regionInstance = regionInstanceField.getMutView(i);
+                Integer countryIndex = this.countryIndexByEntity.get(regionInstance.ownerId());
+                if (countryIndex != null) {
+                    for (int c = 0; c < outputIndexes.length; c++) {
+                        float production = regionArtisans.production(c);
+                        if (production > 0f) {
+                            long key = ((long) countryIndex << 16) | outputIndexes[c];
+                            this.countryArtisanByGood.computeIfAbsent(key, k -> new float[1])[0] += production;
+                        }
+                    }
+                }
+                this.tickArtisanTreasuryTotal += regionArtisans.treasury();
+                this.tickArtisanRevenueTotal += regionArtisans.revenueToday();
+                this.tickArtisanInputTotal += regionArtisans.inputCostToday();
+            }
+        });
+    }
+
     private void recordRegionIncome(int tick, String date) {
         this.regionIncomeQuery.iter(iter -> {
             Field<RegionInstance> regionField = iter.field(RegionInstance.class, 0);
@@ -1598,6 +1644,7 @@ public class SimulationRecorder implements AutoCloseable {
             this.tickLoanFlows[0], this.tickLoanFlows[1], this.tickLoanFlows[2], this.tickLoanFlows[3],
             this.tickLoanFlows[4], this.tickLoanFlows[5], this.tickLoanFlows[6], this.tickLoanFlows[7],
             this.tickFundsTotal[0], this.tickFundsTotal[1], this.tickFundsTotal[2], this.tickConstructionSpendingTotal, this.tickRgoTreasuryTotal,
+            this.tickArtisanTreasuryTotal, this.tickArtisanRevenueTotal, this.tickArtisanInputTotal,
             this.tickSitesInProgressTotal, this.tickSitesStartedTotal, this.tickSitesCompletedTotal);
     }
 
@@ -1605,20 +1652,25 @@ public class SimulationRecorder implements AutoCloseable {
         CsvWriter writer = this.detailWriter("country/production.csv");
         Map<Long, float[]> combined = new HashMap<>();
         for (Map.Entry<Long, float[]> entry : this.countryRgoByGood.entrySet()) {
-            float[] agg = combined.computeIfAbsent(entry.getKey(), k -> new float[2]);
+            float[] agg = combined.computeIfAbsent(entry.getKey(), k -> new float[3]);
             agg[0] += entry.getValue()[0];
         }
         for (Map.Entry<Long, float[]> entry : this.countryBuildingByGood.entrySet()) {
-            float[] agg = combined.computeIfAbsent(entry.getKey(), k -> new float[2]);
+            float[] agg = combined.computeIfAbsent(entry.getKey(), k -> new float[3]);
             agg[1] += entry.getValue()[0];
+        }
+        for (Map.Entry<Long, float[]> entry : this.countryArtisanByGood.entrySet()) {
+            float[] agg = combined.computeIfAbsent(entry.getKey(), k -> new float[3]);
+            agg[2] += entry.getValue()[0];
         }
         for (Map.Entry<Long, float[]> entry : combined.entrySet()) {
             int countryIndex = (int) (entry.getKey() >> 16);
             int goodIndex = (int) (entry.getKey() & 0xFFFF);
             float rgo = entry.getValue()[0];
             float building = entry.getValue()[1];
-            this.countryProductionByGood[goodIndex] += rgo + building;
-            writer.row(tick, date, this.countryNames.get(countryIndex), this.goodNames[goodIndex], rgo, building, rgo + building);
+            float artisan = entry.getValue()[2];
+            this.countryProductionByGood[goodIndex] += rgo + building + artisan;
+            writer.row(tick, date, this.countryNames.get(countryIndex), this.goodNames[goodIndex], rgo, building, artisan, rgo + building + artisan);
         }
     }
 
