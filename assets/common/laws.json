@@ -127,7 +127,6 @@
           "requirements": [],
           "modifiers": {
             "education_efficiency": 0.2,
-            "factory_output_modifier": 0.05,
             "administrative_efficiency": 0.1,
             "political_consciousness": -0.05
           },
@@ -524,7 +523,6 @@
         "traditionalism": {
           "requirements": [],
           "modifiers": {
-            "factory_output_modifier": -0.2,
             "capitalist_profit_share": -0.2,
             "aristocrat_profit_share": 0.2,
             "social_mobility": -0.15,
@@ -543,7 +541,6 @@
         "interventionism": {
           "requirements": [],
           "modifiers": {
-            "factory_input_modifier": -0.1,
             "construction_speed": 0.1,
             "social_mobility": 0.05,
             "state_construction": 1,
@@ -560,8 +557,6 @@
         "agrarianism": {
           "requirements": [],
           "modifiers": {
-            "rgo_output_modifier": 0.2,
-            "factory_output_modifier": -0.1,
             "class_rigidity": -0.1,
             "social_mobility": 0.05,
             "state_construction": 1
@@ -593,7 +588,6 @@
           "modifiers": {
             "capitalist_profit_share": 0.3,
             "worker_profit_share": -0.1,
-            "factory_output_modifier": 0.1,
             "social_mobility": 0.1,
             "class_rigidity": -0.15,
             "public_works": -0.5
@@ -611,7 +605,6 @@
           "requirements": [],
           "modifiers": {
             "worker_profit_share": 0.4,
-            "factory_output_modifier": 0.05,
             "construction_speed": 0.1,
             "social_mobility": 0.15,
             "class_rigidity": -0.2
@@ -709,8 +702,7 @@
         "mercantilism": {
           "requirements": [],
           "modifiers": {
-            "tariff_rate": 0.1,
-            "factory_output_modifier": 0.05
+            "tariff_rate": 0.1
           },
           "interest_ideologies": {
             "paternal_auto_idolg": 1,
@@ -792,7 +784,6 @@
         "serfdom": {
           "requirements": [],
           "modifiers": {
-            "rgo_output_modifier": -0.2,
             "aristocrat_profit_share": 0.2,
             "class_rigidity": 0.2,
             "social_mobility": -0.2,
@@ -811,7 +802,6 @@
         "tenant_farming": {
           "requirements": [],
           "modifiers": {
-            "rgo_output_modifier": -0.1,
             "aristocrat_profit_share": 0,
             "class_rigidity": 0.1,
             "social_mobility": -0.1
@@ -827,7 +817,6 @@
         "commercialized_agriculture": {
           "requirements": [],
           "modifiers": {
-            "rgo_output_modifier": 0.2,
             "aristocrat_profit_share": -0.35,
             "social_mobility": 0.1,
             "class_rigidity": -0.1
@@ -843,7 +832,6 @@
         "homesteading": {
           "requirements": [],
           "modifiers": {
-            "rgo_output_modifier": 0.1,
             "aristocrat_profit_share": -0.75,
             "social_mobility": 0.15,
             "class_rigidity": -0.1
@@ -856,7 +844,6 @@
         "collectivized_land": {
           "requirements": [],
           "modifiers": {
-            "rgo_output_modifier": 0.3,
             "aristocrat_profit_share": -0.75,
             "social_mobility": 0.2,
             "class_rigidity": -0.2
@@ -908,8 +895,6 @@
         "colonial_exploitation": {
           "requirements": [],
           "modifiers": {
-            "factory_output_modifier": 0.05,
-            "rgo_output_modifier": 0.05,
             "construction_speed": 0.05,
             "migration_push": 0.05
           },
@@ -1330,7 +1315,6 @@
         "women_in_workforce": {
           "requirements": [],
           "modifiers": {
-            "factory_output_modifier": 0.05,
             "pop_growth_factor": -0.05,
             "social_mobility": 0.1,
             "class_rigidity": -0.05
