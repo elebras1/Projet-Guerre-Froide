@@ -395,10 +395,10 @@ public class EconomySimulationAnalysisTest {
                 String.format("tresor=%.0f vs %d x valeur production/journal=%.0f",
                     recorder.getLastTickWorldTreasury(), HEALTH_TREASURY_MULTIPLIER, recorder.getFinalWorldProductionValue())),
             new HealthCheck("wages_trace_consistent",
-                Math.abs(recorder.getFinalWagesPaid() - (recorder.getFinalRgoWages() + recorder.getFinalBuildingWages()))
+                Math.abs(recorder.getFinalWagesPaid() - (recorder.getFinalRgoWages() + recorder.getFinalBuildingWages() + recorder.getFinalArtisanWages()))
                     <= Math.max(1.0f, 0.01f * recorder.getFinalWagesPaid()),
-                String.format("salaires verses=%.0f (rgo=%.0f + usines=%.0f)",
-                    recorder.getFinalWagesPaid(), recorder.getFinalRgoWages(), recorder.getFinalBuildingWages())),
+                String.format("salaires verses=%.0f (rgo=%.0f + usines=%.0f + artisans=%.0f)",
+                    recorder.getFinalWagesPaid(), recorder.getFinalRgoWages(), recorder.getFinalBuildingWages(), recorder.getFinalArtisanWages())),
             new HealthCheck("money_factor_coverage",
                 surplusRatio >= -0.005f,
                 String.format("surplus min (revenu-salaires-profits)/revenu=%.4f sur le run (intrants>=0)", surplusRatio))

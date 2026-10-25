@@ -263,7 +263,7 @@ public class EconomyService {
         this.populationConsumptionSystem = new PopulationConsumptionSystem(ecsWorld, gameContext.getEcsConstants(), phaseConsumption);
         this.countryPopulationDemandSystem = new CountryPopulationDemandSystem(ecsWorld, phaseConsumption);
         this.economyBuildingConsumptionSystem = new EconomyBuildingConsumptionSystem(ecsWorld, phaseConsumption);
-        this.artisanDemandSystem = new ArtisanDemandSystem(ecsWorld, phaseConsumption);
+        this.artisanDemandSystem = new ArtisanDemandSystem(ecsWorld, gameContext.getEcsConstants(), phaseConsumption);
         this.constructionDemandSystem = new ConstructionDemandSystem(ecsWorld, gameContext.getEcsConstants(), phaseConsumption);
         this.stateConsumptionDemandSystem = new StateConsumptionDemandSystem(ecsWorld, phaseConsumption);
         this.maintenanceDemandSystem = new MaintenanceDemandSystem(ecsWorld, phaseConsumption);
@@ -302,7 +302,7 @@ public class EconomyService {
         this.economyBuildingWorkingCapitalSystem = new EconomyBuildingWorkingCapitalSystem(ecsWorld, gameContext.getEcsConstants(), phaseUtilization);
         this.rgoProfitSharingSystem = new RGOProfitSharingSystem(ecsWorld, gameContext.getEcsConstants(), phaseIncome);
         this.economyBuildingProfitSharingSystem = new EconomyBuildingProfitSharingSystem(ecsWorld, gameContext.getEcsConstants(), phaseIncome);
-        this.artisanIncomeSystem = new ArtisanIncomeSystem(ecsWorld, phaseIncome);
+        this.artisanIncomeSystem = new ArtisanIncomeSystem(ecsWorld, gameContext.getEcsConstants(), phaseIncome);
         this.countryIncomeDistributionSystem = new CountryIncomeDistributionSystem(ecsWorld, phaseIncome);
         this.populationIncomeDistributionSystem = new PopulationIncomeDistributionSystem(ecsWorld, gameContext.getEcsConstants(), phaseIncome);
         this.religiousDonationSystem = new ReligiousDonationSystem(ecsWorld, gameContext.getEcsConstants(), phaseIncome);
@@ -314,7 +314,7 @@ public class EconomyService {
         this.countryCentralBankSystem = new CountryCentralBankSystem(ecsWorld, phaseState);
         this.countryBudgetSystem = new CountryBudgetSystem(ecsWorld, phaseState);
         this.armyDisbandSystem = new ArmyDisbandSystem(ecsWorld, phaseState);
-        this.artisanAllocationSystem = new ArtisanAllocationSystem(ecsWorld, phaseState);
+        this.artisanAllocationSystem = new ArtisanAllocationSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);
         this.bankSystem = new BankSystem(ecsWorld, phaseState);
         this.publicWorksSystem = new PublicWorksSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);
         this.constructionCompletionSystem = new ConstructionCompletionSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);

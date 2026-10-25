@@ -314,6 +314,7 @@ public class SimulationRecorder implements AutoCloseable {
     private double tickArtisanTreasuryTotal;
     private double tickArtisanRevenueTotal;
     private double tickArtisanInputTotal;
+    private double tickArtisanWagesTotal;
     private int tickSitesInProgressTotal;
     private int tickSitesStartedTotal;
     private int tickSitesCompletedTotal;
@@ -656,7 +657,7 @@ public class SimulationRecorder implements AutoCloseable {
             "state_borrowed", "state_repaid", "state_interest_paid", "state_written_off",
             "private_borrowed", "private_repaid", "private_interest_paid", "private_written_off",
             "capitalist_fund_total", "state_fund_total", "workers_fund_total", "construction_spending_total", "rgo_treasury_total",
-            "artisan_treasury_total", "artisan_revenue_total", "artisan_input_total",
+            "artisan_treasury_total", "artisan_revenue_total", "artisan_input_total", "artisan_wages_total",
             "sites_in_progress_total", "sites_started_total", "sites_completed_total");
     }
 
@@ -996,6 +997,7 @@ public class SimulationRecorder implements AutoCloseable {
         this.tickArtisanTreasuryTotal = 0.0;
         this.tickArtisanRevenueTotal = 0.0;
         this.tickArtisanInputTotal = 0.0;
+        this.tickArtisanWagesTotal = 0.0;
         this.tickSitesInProgressTotal = 0;
         this.tickSitesStartedTotal = 0;
         this.tickSitesCompletedTotal = 0;
@@ -1387,6 +1389,7 @@ public class SimulationRecorder implements AutoCloseable {
                 this.tickArtisanTreasuryTotal += regionArtisans.treasury();
                 this.tickArtisanRevenueTotal += regionArtisans.revenueToday();
                 this.tickArtisanInputTotal += regionArtisans.inputCostToday();
+                this.tickArtisanWagesTotal += regionArtisans.wagesToday();
             }
         });
     }
@@ -1644,7 +1647,7 @@ public class SimulationRecorder implements AutoCloseable {
             this.tickLoanFlows[0], this.tickLoanFlows[1], this.tickLoanFlows[2], this.tickLoanFlows[3],
             this.tickLoanFlows[4], this.tickLoanFlows[5], this.tickLoanFlows[6], this.tickLoanFlows[7],
             this.tickFundsTotal[0], this.tickFundsTotal[1], this.tickFundsTotal[2], this.tickConstructionSpendingTotal, this.tickRgoTreasuryTotal,
-            this.tickArtisanTreasuryTotal, this.tickArtisanRevenueTotal, this.tickArtisanInputTotal,
+            this.tickArtisanTreasuryTotal, this.tickArtisanRevenueTotal, this.tickArtisanInputTotal, this.tickArtisanWagesTotal,
             this.tickSitesInProgressTotal, this.tickSitesStartedTotal, this.tickSitesCompletedTotal);
     }
 
@@ -1783,6 +1786,10 @@ public class SimulationRecorder implements AutoCloseable {
 
     public float getFinalRgoWages() {
         return this.tickRgoWagesTotal;
+    }
+
+    public float getFinalArtisanWages() {
+        return (float) this.tickArtisanWagesTotal;
     }
 
     public double getMinRealOutputRatio() {

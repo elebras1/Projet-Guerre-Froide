@@ -6,6 +6,8 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.ArtisanUtils;
+import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.util.MarketUtils;
 import com.populaire.projetguerrefroide.util.PopulationMobilityUtils;
 
 import static com.populaire.projetguerrefroide.util.Constants.ARTISAN_REALLOCATION_RATE;
@@ -13,7 +15,10 @@ import static com.populaire.projetguerrefroide.util.Constants.MAX_ARTISAN_CRAFTS
 
 public class ArtisanAllocationSystem {
 
-    public ArtisanAllocationSystem(World ecsWorld, long phaseId) {
+    private final EcsConstants ecsConstants;
+
+    public ArtisanAllocationSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("ArtisanAllocationSystem")
             .kind(phaseId)
             .with(RegionArtisans.class)
@@ -37,7 +42,13 @@ public class ArtisanAllocationSystem {
             artisanCrafts[c] = buildingType.getView(ArtisanCraft.class);
         }
 
-        float[] margins = new float[MAX_ARTISAN_CRAFTS];
+        GlobalMarketView globalMarket = world.obtainEntityView(world.lookup("global_market")).getView(GlobalMarket.class);
+        float[] gaps = new float[MAX_ARTISAN_CRAFTS];
+        for (int c = 0; c < count; c++) {
+            gaps[c] = MarketUtils.clearingGap(globalMarket, buildingTypes[c].goodOutputIndex());
+        }
+
+        float[] scores = new float[MAX_ARTISAN_CRAFTS];
         float[] weights = new float[MAX_ARTISAN_CRAFTS];
         Field<RegionArtisans> regionArtisansField = iter.field(RegionArtisans.class, 0);
         Field<RegionInstance> regionInstanceField = iter.field(RegionInstance.class, 1);
@@ -48,9 +59,11 @@ public class ArtisanAllocationSystem {
             RegionInstanceView regionInstance = regionInstanceField.getMutView(i);
             if (regionInstance.ownerId() != countryId) {
                 countryId = regionInstance.ownerId();
-                countryMarket = world.obtainEntityView(countryId).getView(CountryMarket.class);
+                EntityView country = world.obtainEntityView(countryId);
+                countryMarket = country.getView(CountryMarket.class);
+                boolean supported = ArtisanUtils.stateSupported(country.getView(CountryProfitDistributionPolicy.class), countryMarket, country.getView(CountryBudget.class), this.ecsConstants);
                 for (int c = 0; c < count; c++) {
-                    margins[c] = ArtisanUtils.marginPerArtisan(buildingTypes[c], artisanCrafts[c], countryMarket);
+                    scores[c] = supported ? gaps[c] : ArtisanUtils.marginPerArtisan(buildingTypes[c], artisanCrafts[c], countryMarket);
                     int outputIndex = buildingTypes[c].goodOutputIndex();
                     weights[c] = countryMarket.goodDemandAmounts(outputIndex) * countryMarket.goodPrices(outputIndex);
                 }
@@ -75,12 +88,12 @@ public class ArtisanAllocationSystem {
             }
             int best = 0;
             for (int c = 1; c < count; c++) {
-                if (margins[c] > margins[best]) {
+                if (scores[c] > scores[best]) {
                     best = c;
                 }
             }
             for (int c = 0; c < count; c++) {
-                if (c == best || margins[c] >= margins[best]) {
+                if (c == best || scores[c] >= scores[best]) {
                     continue;
                 }
                 float moving = ARTISAN_REALLOCATION_RATE * regionArtisans.shares(c);

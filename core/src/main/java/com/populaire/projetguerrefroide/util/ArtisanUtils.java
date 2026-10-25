@@ -11,6 +11,14 @@ public class ArtisanUtils {
         return world.obtainEntityView(world.lookup("global_artisan_crafts")).getView(GlobalArtisanCrafts.class);
     }
 
+    public static boolean stateOwned(CountryProfitDistributionPolicyView policy, EcsConstants ecsConstants) {
+        return OwnerUtils.ownerTag(policy.capitalistProfitShareRate(), policy.workerProfitShareRate(), policy.stateProfitShareRate(), ecsConstants) == ecsConstants.countryTag();
+    }
+
+    public static boolean stateSupported(CountryProfitDistributionPolicyView policy, CountryMarketView countryMarket, CountryBudgetView countryBudget, EcsConstants ecsConstants) {
+        return stateOwned(policy, ecsConstants) && countryMarket.treasury() > countryBudget.targetTreasury();
+    }
+
     public static float levels(RegionArtisansView regionArtisans, int craft, ArtisanCraftView artisanCraft) {
         return artisanCraft.artisansPerLevel() > 0 ? regionArtisans.activeArtisans() * regionArtisans.shares(craft) / artisanCraft.artisansPerLevel() : 0f;
     }

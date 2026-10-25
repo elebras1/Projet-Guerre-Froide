@@ -18,5 +18,6 @@ public record RegionArtisans(
     double treasury,
     double revenueToday,
     double inputCostToday,
-    double plannedInputCost) {
+    double plannedInputCost,
+    double wagesToday) {
 }

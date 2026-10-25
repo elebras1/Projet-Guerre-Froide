@@ -6,13 +6,18 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.ArtisanUtils;
+import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.util.MarketUtils;
 
 import static com.populaire.projetguerrefroide.util.Constants.ARTISAN_OUTPUT_SHARE;
 import static com.populaire.projetguerrefroide.util.Constants.GOOD_COUNT;
 
 public class ArtisanDemandSystem {
 
-    public ArtisanDemandSystem(World ecsWorld, long phaseId) {
+    private final EcsConstants ecsConstants;
+
+    public ArtisanDemandSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("ArtisanDemandSystem")
             .kind(phaseId)
             .with(RegionArtisans.class)
@@ -35,8 +40,14 @@ public class ArtisanDemandSystem {
             artisanCrafts[c] = buildingType.getView(ArtisanCraft.class);
         }
 
+        GlobalMarketView globalMarket = world.obtainEntityView(world.lookup("global_market")).getView(GlobalMarket.class);
+        boolean[] lacking = new boolean[count];
+        for (int c = 0; c < count; c++) {
+            lacking[c] = MarketUtils.clearingGap(globalMarket, buildingTypes[c].goodOutputIndex()) > 0f;
+        }
+
         float[] needs = new float[GOOD_COUNT];
-        boolean[] profitable = new boolean[count];
+        boolean[] active = new boolean[count];
         Field<RegionArtisans> regionArtisansField = iter.field(RegionArtisans.class, 0);
         Field<RegionInstance> regionInstanceField = iter.field(RegionInstance.class, 1);
         long countryId = 0;
@@ -46,9 +57,11 @@ public class ArtisanDemandSystem {
             RegionInstanceView regionInstance = regionInstanceField.getMutView(i);
             if (regionInstance.ownerId() != countryId) {
                 countryId = regionInstance.ownerId();
-                countryMarket = world.obtainEntityView(countryId).getMutView(CountryMarket.class);
+                EntityView country = world.obtainEntityView(countryId);
+                countryMarket = country.getMutView(CountryMarket.class);
+                boolean supported = ArtisanUtils.stateSupported(country.getView(CountryProfitDistributionPolicy.class), countryMarket, country.getView(CountryBudget.class), this.ecsConstants);
                 for (int c = 0; c < count; c++) {
-                    profitable[c] = ArtisanUtils.marginPerArtisan(buildingTypes[c], artisanCrafts[c], countryMarket) > 0f;
+                    active[c] = ArtisanUtils.marginPerArtisan(buildingTypes[c], artisanCrafts[c], countryMarket) > 0f || supported && lacking[c];
                 }
             }
             regionArtisans.revenueToday(0.0);
@@ -61,7 +74,7 @@ public class ArtisanDemandSystem {
             }
             for (int c = 0; c < count; c++) {
                 float potentialLevels = ArtisanUtils.levels(regionArtisans, c, artisanCrafts[c]);
-                float levels = profitable[c] ? potentialLevels : 0f;
+                float levels = active[c] ? potentialLevels : 0f;
                 regionArtisans.levels(c, levels);
                 potentialCost += ArtisanUtils.plannedInputCost(buildingTypes[c], potentialLevels, countryMarket);
                 if (levels <= 0f) {
