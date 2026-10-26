@@ -59,10 +59,13 @@ public class InvestmentDecisionSystem {
         LongObjectMap<LongIntMap> typesByRegion = new LongObjectMap<>();
         LongObjectMap<LongFloatMap> parkUsedLevels = new LongObjectMap<>();
         LongObjectMap<LongFloatMap> parkLevels = new LongObjectMap<>();
-        this.readSites(world, queuedLevels, reservedWorkers, typesByRegion, parkLevels);
+        LongIntMap sitesByType = new LongIntMap();
+        this.readSites(world, queuedLevels, reservedWorkers, typesByRegion, parkLevels, sitesByType);
         LongObjectMap<ObjectList<Candidate>> candidatesByCountry = new LongObjectMap<>();
         LongObjectMap<LongObjectMap<TypeReturn>> typeReturnsByCountry = new LongObjectMap<>();
-        this.collectCandidates(world, queuedLevels, typesByRegion, candidatesByCountry, typeReturnsByCountry, parkUsedLevels, parkLevels);
+        LongFloatMap levelOutputs = new LongFloatMap();
+        this.collectCandidates(world, queuedLevels, typesByRegion, candidatesByCountry, typeReturnsByCountry, parkUsedLevels, parkLevels, levelOutputs);
+        float[] pendingOutputs = pendingOutputs(world, sitesByType, levelOutputs);
         LongObjectMap<LongList> regionsByCountry = this.readRegions(world);
 
         double[] availableFunds = new double[OWNER_COUNT];
@@ -102,6 +105,7 @@ public class InvestmentDecisionSystem {
                             ? finance(countryBank, countryInvestment, countryMarket, availableFunds, candidate.owner(), candidate.levelCost(), candidate.annualReturn())
                             : stateOwnedEconomy && candidate.owner() == STATE_OWNER && availableFunds[STATE_OWNER] >= candidate.levelCost())) {
                         startSite(world, this.ecsConstants, candidate.buildingId(), candidate.buildingTypeId(), candidate.regionInstanceId(), candidate.countryId(), candidate.ownerTagId());
+                        addPendingOutput(world, pendingOutputs, levelOutputs, candidate.buildingTypeId());
                         addLevels(parkLevels, countryId, candidate.buildingTypeId(), 1f);
                         availableFunds[candidate.owner()] -= candidate.levelCost();
                         reservedWorkers.put(candidate.regionInstanceId(), reservedWorkers.get(candidate.regionInstanceId()) + candidate.workersPerLevel());
@@ -115,13 +119,14 @@ public class InvestmentDecisionSystem {
                     continue;
                 }
                 this.buildNewBuildings(world, countryId, countryOwnerTag, stateOwnedEconomy, typeReturns, regions, typesByRegion, reservedWorkers, ruralTypes, availableFunds, parkUsedLevels, parkLevels,
-                    countryBank, countryInvestment, countryMarket);
+                    pendingOutputs, levelOutputs, countryBank, countryInvestment, countryMarket);
                 if (countryOwnerTag != this.ecsConstants.countryTag() && productionPolicy.stateConstruction() > 0f) {
                     this.buildNewBuildings(world, countryId, this.ecsConstants.countryTag(), false, typeReturns, regions, typesByRegion, reservedWorkers, ruralTypes, availableFunds, parkUsedLevels, parkLevels,
-                        countryBank, countryInvestment, countryMarket);
+                        pendingOutputs, levelOutputs, countryBank, countryInvestment, countryMarket);
                 }
                 if (productionPolicy.stateConstruction() > 0f) {
-                    this.buildScarceBuildings(world, countryId, globalMarket, typeReturns, regions, typesByRegion, reservedWorkers, ruralTypes, availableFunds, parkLevels);
+                    this.buildScarceBuildings(world, countryId, globalMarket, typeReturns, regions, typesByRegion, reservedWorkers, ruralTypes, availableFunds, parkUsedLevels, parkLevels,
+                        pendingOutputs, levelOutputs);
                 }
             }
         }
@@ -129,7 +134,7 @@ public class InvestmentDecisionSystem {
 
     private void buildNewBuildings(World world, long countryId, long ownerTagId, boolean stateOwnedEconomy, LongObjectMap<TypeReturn> typeReturns, LongList regions,
                                    LongObjectMap<LongIntMap> typesByRegion, LongFloatMap reservedWorkers, boolean[] ruralTypes, double[] availableFunds,
-                                   LongObjectMap<LongFloatMap> parkUsedLevels, LongObjectMap<LongFloatMap> parkLevels,
+                                   LongObjectMap<LongFloatMap> parkUsedLevels, LongObjectMap<LongFloatMap> parkLevels, float[] pendingOutputs, LongFloatMap levelOutputs,
                                    CountryBankMutView countryBank, CountryInvestmentMutView countryInvestment, CountryMarketMutView countryMarket) {
         int owner = ownerIndex(ownerTagId, this.ecsConstants);
         ObjectList<TypeReturn> types = new ObjectList<>();
@@ -151,17 +156,21 @@ public class InvestmentDecisionSystem {
             if (bestRegion == 0 || !underused && !finance(countryBank, countryInvestment, countryMarket, availableFunds, owner, typeReturn.levelCost(), typeReturn.annualReturn())) {
                 continue;
             }
-            this.startNewBuilding(world, countryId, ownerTagId, owner, typeReturn, bestRegion, typesByRegion, reservedWorkers, availableFunds, parkLevels);
+            this.startNewBuilding(world, countryId, ownerTagId, owner, typeReturn, bestRegion, typesByRegion, reservedWorkers, availableFunds, parkLevels, pendingOutputs, levelOutputs);
         }
     }
 
     private void buildScarceBuildings(World world, long countryId, GlobalMarketView globalMarket, LongObjectMap<TypeReturn> typeReturns, LongList regions,
                                       LongObjectMap<LongIntMap> typesByRegion, LongFloatMap reservedWorkers, boolean[] ruralTypes, double[] availableFunds,
-                                      LongObjectMap<LongFloatMap> parkLevels) {
+                                      LongObjectMap<LongFloatMap> parkUsedLevels, LongObjectMap<LongFloatMap> parkLevels, float[] pendingOutputs, LongFloatMap levelOutputs) {
         ObjectList<TypeReturn> types = new ObjectList<>();
         for (LongObjectMap.Entry<TypeReturn> entry : typeReturns) {
+            if (parkUtilization(parkUsedLevels, parkLevels, countryId, entry.value.buildingTypeId()) < MINIMUM_UTILIZATION_FOR_EXPANSION) {
+                continue;
+            }
             EconomyBuildingTypeView buildingType = world.obtainEntityView(entry.value.buildingTypeId()).getView(EconomyBuildingType.class);
-            if (MarketUtils.clearingGap(globalMarket, buildingType.goodOutputIndex()) > 0f) {
+            int goodIndex = buildingType.goodOutputIndex();
+            if (MarketUtils.clearingProduction(globalMarket, goodIndex) > globalMarket.goodProductionAmounts(goodIndex) + pendingOutputs[goodIndex]) {
                 types.add(entry.value);
             }
         }
@@ -175,7 +184,8 @@ public class InvestmentDecisionSystem {
             if (bestRegion == 0) {
                 continue;
             }
-            this.startNewBuilding(world, countryId, this.ecsConstants.countryTag(), STATE_OWNER, typeReturn, bestRegion, typesByRegion, reservedWorkers, availableFunds, parkLevels);
+            this.startNewBuilding(world, countryId, this.ecsConstants.countryTag(), STATE_OWNER, typeReturn, bestRegion, typesByRegion, reservedWorkers, availableFunds, parkLevels,
+                pendingOutputs, levelOutputs);
         }
     }
 
@@ -198,8 +208,10 @@ public class InvestmentDecisionSystem {
     }
 
     private void startNewBuilding(World world, long countryId, long ownerTagId, int owner, TypeReturn typeReturn, long regionInstanceId,
-                                  LongObjectMap<LongIntMap> typesByRegion, LongFloatMap reservedWorkers, double[] availableFunds, LongObjectMap<LongFloatMap> parkLevels) {
+                                  LongObjectMap<LongIntMap> typesByRegion, LongFloatMap reservedWorkers, double[] availableFunds, LongObjectMap<LongFloatMap> parkLevels,
+                                  float[] pendingOutputs, LongFloatMap levelOutputs) {
         startSite(world, this.ecsConstants, 0, typeReturn.buildingTypeId(), regionInstanceId, countryId, ownerTagId);
+        addPendingOutput(world, pendingOutputs, levelOutputs, typeReturn.buildingTypeId());
         addLevels(parkLevels, countryId, typeReturn.buildingTypeId(), 1f);
         availableFunds[owner] -= typeReturn.levelCost();
         reservedWorkers.put(regionInstanceId, reservedWorkers.get(regionInstanceId) + typeReturn.workersPerLevel());
@@ -274,6 +286,20 @@ public class InvestmentDecisionSystem {
         return (usedLevels != null ? usedLevels.get(buildingTypeId) : 0f) / totalLevels;
     }
 
+    private static float[] pendingOutputs(World world, LongIntMap sitesByType, LongFloatMap levelOutputs) {
+        float[] pendingOutputs = new float[GOOD_COUNT];
+        for (LongIntMap.Entry entry : sitesByType) {
+            EconomyBuildingTypeView buildingType = world.obtainEntityView(entry.key).getView(EconomyBuildingType.class);
+            pendingOutputs[buildingType.goodOutputIndex()] += entry.value * levelOutputs.get(entry.key);
+        }
+        return pendingOutputs;
+    }
+
+    private static void addPendingOutput(World world, float[] pendingOutputs, LongFloatMap levelOutputs, long buildingTypeId) {
+        EconomyBuildingTypeView buildingType = world.obtainEntityView(buildingTypeId).getView(EconomyBuildingType.class);
+        pendingOutputs[buildingType.goodOutputIndex()] += levelOutputs.get(buildingTypeId);
+    }
+
     private static void addLevels(LongObjectMap<LongFloatMap> park, long countryId, long buildingTypeId, float levels) {
         LongFloatMap countryPark = park.get(countryId);
         if (countryPark == null) {
@@ -283,7 +309,8 @@ public class InvestmentDecisionSystem {
         countryPark.put(buildingTypeId, countryPark.get(buildingTypeId) + levels);
     }
 
-    private void readSites(World world, LongIntMap queuedLevels, LongFloatMap reservedWorkers, LongObjectMap<LongIntMap> typesByRegion, LongObjectMap<LongFloatMap> parkLevels) {
+    private void readSites(World world, LongIntMap queuedLevels, LongFloatMap reservedWorkers, LongObjectMap<LongIntMap> typesByRegion, LongObjectMap<LongFloatMap> parkLevels,
+                           LongIntMap sitesByType) {
         this.siteQuery.each((long siteId) -> {
             ConstructionSiteView site = world.obtainEntityView(siteId).getView(ConstructionSite.class);
             long buildingId = site.buildingId();
@@ -301,6 +328,7 @@ public class InvestmentDecisionSystem {
             }
             if (buildingType.has(EconomyBuildingType.class)) {
                 addLevels(parkLevels, site.countryId(), site.buildingTypeId(), 1f);
+                sitesByType.put(site.buildingTypeId(), sitesByType.get(site.buildingTypeId()) + 1);
                 EconomyBuildingTypeView typeData = buildingType.getView(EconomyBuildingType.class);
                 reservedWorkers.put(regionInstanceId, reservedWorkers.get(regionInstanceId) + typeData.workforce() * typeData.primaryWorkerPopTypeRatio());
             }
@@ -308,7 +336,10 @@ public class InvestmentDecisionSystem {
     }
 
     private void collectCandidates(World world, LongIntMap queuedLevels, LongObjectMap<LongIntMap> typesByRegion, LongObjectMap<ObjectList<Candidate>> candidatesByCountry,
-                                   LongObjectMap<LongObjectMap<TypeReturn>> typeReturnsByCountry, LongObjectMap<LongFloatMap> parkUsedLevels, LongObjectMap<LongFloatMap> parkLevels) {
+                                   LongObjectMap<LongObjectMap<TypeReturn>> typeReturnsByCountry, LongObjectMap<LongFloatMap> parkUsedLevels, LongObjectMap<LongFloatMap> parkLevels,
+                                   LongFloatMap levelOutputs) {
+        LongFloatMap outputsByType = new LongFloatMap();
+        LongFloatMap levelsByType = new LongFloatMap();
         this.buildingQuery.iter(buildingIter -> {
             EconomyBuildingTypeView buildingType = buildingIter.field(EconomyBuildingType.class, 2).getView(0);
             long buildingTypeId = buildingIter.src(2);
@@ -342,6 +373,8 @@ public class InvestmentDecisionSystem {
                 regionTypes.put(buildingTypeId, 1);
                 addLevels(parkUsedLevels, countryId, buildingTypeId, economyBuilding.utilization() * building.size());
                 addLevels(parkLevels, countryId, buildingTypeId, building.size());
+                outputsByType.put(buildingTypeId, outputsByType.get(buildingTypeId) + economyBuilding.production());
+                levelsByType.put(buildingTypeId, levelsByType.get(buildingTypeId) + building.size());
                 int freeLevels = maxLevel - building.size() - queuedLevels.get(buildingId);
                 if (freeLevels <= 0 || levelCost <= 0.0) {
                     continue;
@@ -372,6 +405,11 @@ public class InvestmentDecisionSystem {
                     primaryWorkerPopTypeIndex, workersPerLevel, freeLevels, levelCost, annualReturn));
             }
         });
+        for (LongFloatMap.Entry entry : levelsByType) {
+            if (entry.value > 0f) {
+                levelOutputs.put(entry.key, outputsByType.get(entry.key) / entry.value);
+            }
+        }
     }
 
     private float availableWorkers(World world, Candidate candidate, boolean[] ruralTypes) {
