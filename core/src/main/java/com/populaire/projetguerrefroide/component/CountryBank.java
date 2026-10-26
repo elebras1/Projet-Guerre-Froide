@@ -19,7 +19,7 @@ public record CountryBank(
     double creditLimit,
     double losses,
     float lendingRate,
-    float depositRate,
+    double depositRate,
     float depositLossRatio,
     int bankruptcies) {
 }

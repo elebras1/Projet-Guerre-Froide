@@ -54,7 +54,7 @@ public class BankSystem {
             }
 
             double deposits = countryBank.deposits();
-            countryBank.depositRate(deposits > 0.0 ? (float) (countryBank.interestPool() / deposits) : 0f);
+            countryBank.depositRate(deposits > 0.0 ? countryBank.interestPool() / deposits : 0.0);
             countryBank.depositLossRatio(deposits > 0.0 ? (float) Math.min(1.0, countryBank.losses() / deposits) : 0f);
             countryBank.losses(0.0);
 

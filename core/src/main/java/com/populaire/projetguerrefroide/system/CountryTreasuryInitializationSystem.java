@@ -10,6 +10,8 @@ import com.populaire.projetguerrefroide.util.StateConsumptionUtils;
 import static com.populaire.projetguerrefroide.util.Constants.POP_TYPE_COUNT;
 import static com.populaire.projetguerrefroide.util.Constants.TARGET_TREASURY_DAYS;
 import static com.populaire.projetguerrefroide.util.StateBudgetUtils.dailyNeeds;
+import static com.populaire.projetguerrefroide.util.StateBudgetUtils.maintenanceCost;
+import static com.populaire.projetguerrefroide.util.StateBudgetUtils.militarySupplyCost;
 import static com.populaire.projetguerrefroide.util.StateBudgetUtils.readPopulationTypes;
 import static com.populaire.projetguerrefroide.util.StateBudgetUtils.statePostIndex;
 
@@ -23,6 +25,8 @@ public class CountryTreasuryInitializationSystem {
             .with(CountryBudgetPolicy.class)
             .with(CountryEducationPolicy.class)
             .with(CountryPopulationPolicy.class)
+            .with(CountryMilitary.class)
+            .with(CountryMaintenance.class)
             .multiThreaded()
             .iter(this::initialize);
     }
@@ -40,6 +44,8 @@ public class CountryTreasuryInitializationSystem {
         Field<CountryBudgetPolicy> countryBudgetPolicyField = iter.field(CountryBudgetPolicy.class, 2);
         Field<CountryEducationPolicy> countryEducationPolicyField = iter.field(CountryEducationPolicy.class, 3);
         Field<CountryPopulationPolicy> countryPopulationPolicyField = iter.field(CountryPopulationPolicy.class, 4);
+        Field<CountryMilitary> countryMilitaryField = iter.field(CountryMilitary.class, 5);
+        Field<CountryMaintenance> countryMaintenanceField = iter.field(CountryMaintenance.class, 6);
         for (int i = 0; i < iter.count(); i++) {
             CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
             CountryDemographicsView countryDemographics = countryDemographicsField.getMutView(i);
@@ -47,11 +53,15 @@ public class CountryTreasuryInitializationSystem {
             CountryEducationPolicyView countryEducationPolicy = countryEducationPolicyField.getMutView(i);
 
             CountryPopulationPolicyView countryPopulationPolicy = countryPopulationPolicyField.getMutView(i);
+            CountryMilitaryView countryMilitary = countryMilitaryField.getMutView(i);
+            CountryMaintenanceView countryMaintenance = countryMaintenanceField.getMutView(i);
             double needs = dailyNeeds(incomeTypes, assistedTypes, countryMarket, countryDemographics, countryBudgetPolicy, countryEducationPolicy, statePostIndex,
                 baseWorkforceShares, countryPopulationPolicy.workforceShareModifier())
                 + StateConsumptionUtils.dailyCost(stateConsumption, countryMarket,
                     StateConsumptionUtils.administrationUnits(countryDemographics, statePostIndex, countryBudgetPolicy),
-                    StateConsumptionUtils.publicHealthUnits(countryDemographics, countryBudgetPolicy));
+                    StateConsumptionUtils.publicHealthUnits(countryDemographics, countryBudgetPolicy))
+                + militarySupplyCost(countryMilitary, countryMarket)
+                + maintenanceCost(countryMaintenance, countryMarket);
             countryMarket.treasury(TARGET_TREASURY_DAYS * needs);
         }
     }

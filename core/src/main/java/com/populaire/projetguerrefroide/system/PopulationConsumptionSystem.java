@@ -49,7 +49,8 @@ public class PopulationConsumptionSystem {
             float marketLifeShare = 1f - SubsistenceUtils.coveredLifeShare(rural, pop.amount(), pop.employment());
             float neededLife = marketLifeShare * countryMarket.lifeBudgetCostsByPopType(popTypeIndex) * scaledAmount;
             float neededEveryday = countryMarket.everydayBudgetCostsByPopType(popTypeIndex) * scaledAmount;
-            float shortfall = neededLife + neededEveryday - budget;
+            float neededLuxury = countryMarket.luxuryBudgetCostsByPopType(popTypeIndex) * scaledAmount;
+            float shortfall = neededLife + neededEveryday + MAXIMUM_LUXURY_BASKETS * neededLuxury - budget;
             if (shortfall > 0f) {
                 float withdrawal = (float) Math.min(shortfall, Math.min(pop.deposit(), Math.max(0.0, countryBank.reserves())));
                 if (withdrawal > 0f) {
@@ -68,7 +69,6 @@ public class PopulationConsumptionSystem {
             float everydayFraction = neededEveryday > 0f ? everydaySpending / neededEveryday : 1f;
             budget -= everydaySpending;
 
-            float neededLuxury = countryMarket.luxuryBudgetCostsByPopType(popTypeIndex) * scaledAmount;
             float luxurySpending = neededLuxury > 0f ? Math.min(budget, MAXIMUM_LUXURY_BASKETS * neededLuxury) : 0f;
             float luxuryFraction = neededLuxury > 0f ? luxurySpending / neededLuxury : 1f;
             pop.unspentBudget(budget - luxurySpending);

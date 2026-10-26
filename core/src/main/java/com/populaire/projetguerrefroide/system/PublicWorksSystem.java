@@ -170,10 +170,11 @@ public class PublicWorksSystem {
                 if (building.countryId() == 0 || building.size() >= buildingType.maxLevel() || queuedLevels.get(buildingId) > 0) {
                     continue;
                 }
-                float annualReturn = annualReturn(world, factoryValues, building, buildingType, productionModifier);
-                if (annualReturn <= STATE_MINIMUM_RETURN) {
+                double baseValue = baseValue(world, factoryValues, building);
+                if (baseValue <= 0.0) {
                     continue;
                 }
+                float annualReturn = annualReturn(world, building, buildingType, productionModifier, baseValue);
                 ObjectList<Candidate> candidates = candidatesByCountry.get(building.countryId());
                 if (candidates == null) {
                     candidates = new ObjectList<>();
@@ -202,7 +203,7 @@ public class PublicWorksSystem {
         return factoryValues;
     }
 
-    private static float annualReturn(World world, LongFloatMap factoryValues, BuildingView building, DevelopmentBuildingTypeView buildingType, float productionModifier) {
+    private static float annualReturn(World world, BuildingView building, DevelopmentBuildingTypeView buildingType, float productionModifier, double baseValue) {
         CountryMarketView countryMarket = world.obtainEntityView(building.countryId()).getView(CountryMarket.class);
         double levelCost = 0.0;
         for (int k = 0; k < buildingType.goodCostIndexesLength(); k++) {
@@ -223,7 +224,11 @@ public class PublicWorksSystem {
             }
             maintenanceCost += (double) buildingType.maintenanceGoodAmounts(k) * countryMarket.goodBudgetPrices(goodIndex);
         }
+        return (float) ((productionModifier * baseValue * DAYS_PER_YEAR - maintenanceCost) / levelCost);
+    }
 
+    private static double baseValue(World world, LongFloatMap factoryValues, BuildingView building) {
+        CountryMarketView countryMarket = world.obtainEntityView(building.countryId()).getView(CountryMarket.class);
         EntityView province = world.obtainEntityView(building.parentId());
         double baseValue = 0.0;
         if (province.has(ResourceGathering.class) && province.has(ProvinceInfrastructure.class)) {
@@ -239,6 +244,6 @@ public class PublicWorksSystem {
                 baseValue += factoryValues.getOrDefault(regionInstanceId, 0f) / (1f + infrastructureBonus(regionInstance)) / regionInstance.provinceCount();
             }
         }
-        return (float) ((productionModifier * baseValue * DAYS_PER_YEAR - maintenanceCost) / levelCost);
+        return baseValue;
     }
 }

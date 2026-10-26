@@ -13,6 +13,7 @@ import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 import com.populaire.projetguerrefroide.util.EmploymentUtils;
+import com.populaire.projetguerrefroide.util.MarketUtils;
 
 import java.util.Comparator;
 
@@ -65,6 +66,7 @@ public class InvestmentDecisionSystem {
         LongObjectMap<LongList> regionsByCountry = this.readRegions(world);
 
         double[] availableFunds = new double[OWNER_COUNT];
+        GlobalMarketView globalMarket = world.obtainEntityView(world.lookup("global_market")).getMutView(GlobalMarket.class);
         while (iter.next()) {
             Field<CountryInvestment> countryInvestmentField = iter.field(CountryInvestment.class, 0);
             Field<CountryBudget> countryBudgetField = iter.field(CountryBudget.class, 1);
@@ -118,6 +120,9 @@ public class InvestmentDecisionSystem {
                     this.buildNewBuildings(world, countryId, this.ecsConstants.countryTag(), false, typeReturns, regions, typesByRegion, reservedWorkers, ruralTypes, availableFunds, parkUsedLevels, parkLevels,
                         countryBank, countryInvestment, countryMarket);
                 }
+                if (productionPolicy.stateConstruction() > 0f) {
+                    this.buildScarceBuildings(world, countryId, globalMarket, typeReturns, regions, typesByRegion, reservedWorkers, ruralTypes, availableFunds, parkLevels);
+                }
             }
         }
     }
@@ -142,34 +147,68 @@ public class InvestmentDecisionSystem {
             if (underused && !(stateOwnedEconomy && availableFunds[owner] >= typeReturn.levelCost())) {
                 continue;
             }
-            long bestRegion = 0;
-            float bestWorkers = typeReturn.workersPerLevel();
-            for (int r = 0; r < regions.size(); r++) {
-                long regionInstanceId = regions.get(r);
-                LongIntMap regionTypes = typesByRegion.get(regionInstanceId);
-                if (regionTypes != null && regionTypes.containsKey(typeReturn.buildingTypeId())) {
-                    continue;
-                }
-                float workers = this.availableWorkers(world, regionInstanceId, typeReturn.primaryWorkerPopTypeIndex(), ruralTypes) - reservedWorkers.get(regionInstanceId);
-                if (workers >= bestWorkers) {
-                    bestWorkers = workers;
-                    bestRegion = regionInstanceId;
-                }
-            }
+            long bestRegion = this.bestRegion(world, typeReturn, regions, typesByRegion, reservedWorkers, ruralTypes);
             if (bestRegion == 0 || !underused && !finance(countryBank, countryInvestment, countryMarket, availableFunds, owner, typeReturn.levelCost(), typeReturn.annualReturn())) {
                 continue;
             }
-            startSite(world, this.ecsConstants, 0, typeReturn.buildingTypeId(), bestRegion, countryId, ownerTagId);
-            addLevels(parkLevels, countryId, typeReturn.buildingTypeId(), 1f);
-            availableFunds[owner] -= typeReturn.levelCost();
-            reservedWorkers.put(bestRegion, reservedWorkers.get(bestRegion) + typeReturn.workersPerLevel());
-            LongIntMap regionTypes = typesByRegion.get(bestRegion);
-            if (regionTypes == null) {
-                regionTypes = new LongIntMap();
-                typesByRegion.put(bestRegion, regionTypes);
-            }
-            regionTypes.put(typeReturn.buildingTypeId(), 1);
+            this.startNewBuilding(world, countryId, ownerTagId, owner, typeReturn, bestRegion, typesByRegion, reservedWorkers, availableFunds, parkLevels);
         }
+    }
+
+    private void buildScarceBuildings(World world, long countryId, GlobalMarketView globalMarket, LongObjectMap<TypeReturn> typeReturns, LongList regions,
+                                      LongObjectMap<LongIntMap> typesByRegion, LongFloatMap reservedWorkers, boolean[] ruralTypes, double[] availableFunds,
+                                      LongObjectMap<LongFloatMap> parkLevels) {
+        ObjectList<TypeReturn> types = new ObjectList<>();
+        for (LongObjectMap.Entry<TypeReturn> entry : typeReturns) {
+            EconomyBuildingTypeView buildingType = world.obtainEntityView(entry.value.buildingTypeId()).getView(EconomyBuildingType.class);
+            if (MarketUtils.clearingGap(globalMarket, buildingType.goodOutputIndex()) > 0f) {
+                types.add(entry.value);
+            }
+        }
+        types.sort(Comparator.comparingDouble((TypeReturn typeReturn) -> typeReturn.annualReturn()).reversed());
+        for (int t = 0; t < types.size(); t++) {
+            TypeReturn typeReturn = types.get(t);
+            if (availableFunds[STATE_OWNER] < typeReturn.levelCost()) {
+                continue;
+            }
+            long bestRegion = this.bestRegion(world, typeReturn, regions, typesByRegion, reservedWorkers, ruralTypes);
+            if (bestRegion == 0) {
+                continue;
+            }
+            this.startNewBuilding(world, countryId, this.ecsConstants.countryTag(), STATE_OWNER, typeReturn, bestRegion, typesByRegion, reservedWorkers, availableFunds, parkLevels);
+        }
+    }
+
+    private long bestRegion(World world, TypeReturn typeReturn, LongList regions, LongObjectMap<LongIntMap> typesByRegion, LongFloatMap reservedWorkers, boolean[] ruralTypes) {
+        long bestRegion = 0;
+        float bestWorkers = typeReturn.workersPerLevel();
+        for (int r = 0; r < regions.size(); r++) {
+            long regionInstanceId = regions.get(r);
+            LongIntMap regionTypes = typesByRegion.get(regionInstanceId);
+            if (regionTypes != null && regionTypes.containsKey(typeReturn.buildingTypeId())) {
+                continue;
+            }
+            float workers = this.availableWorkers(world, regionInstanceId, typeReturn.primaryWorkerPopTypeIndex(), ruralTypes) - reservedWorkers.get(regionInstanceId);
+            if (workers >= bestWorkers) {
+                bestWorkers = workers;
+                bestRegion = regionInstanceId;
+            }
+        }
+        return bestRegion;
+    }
+
+    private void startNewBuilding(World world, long countryId, long ownerTagId, int owner, TypeReturn typeReturn, long regionInstanceId,
+                                  LongObjectMap<LongIntMap> typesByRegion, LongFloatMap reservedWorkers, double[] availableFunds, LongObjectMap<LongFloatMap> parkLevels) {
+        startSite(world, this.ecsConstants, 0, typeReturn.buildingTypeId(), regionInstanceId, countryId, ownerTagId);
+        addLevels(parkLevels, countryId, typeReturn.buildingTypeId(), 1f);
+        availableFunds[owner] -= typeReturn.levelCost();
+        reservedWorkers.put(regionInstanceId, reservedWorkers.get(regionInstanceId) + typeReturn.workersPerLevel());
+        LongIntMap regionTypes = typesByRegion.get(regionInstanceId);
+        if (regionTypes == null) {
+            regionTypes = new LongIntMap();
+            typesByRegion.put(regionInstanceId, regionTypes);
+        }
+        regionTypes.put(typeReturn.buildingTypeId(), 1);
     }
 
     private static boolean finance(CountryBankMutView countryBank, CountryInvestmentMutView countryInvestment, CountryMarketMutView countryMarket,
