@@ -32,6 +32,7 @@ public class EconomyBuildingWorkingCapitalSystem {
         CountryProductionPolicyView countryProductionPolicy = null;
         CountryInvestmentMutView countryInvestment = null;
         CountryBudgetView countryBudget = null;
+        CountryBankMutView countryBank = null;
 
         long regionId = 0;
         RegionInstanceView regionInstance = null;
@@ -59,6 +60,7 @@ public class EconomyBuildingWorkingCapitalSystem {
                 countryProductionPolicy = country.getMutView(CountryProductionPolicy.class);
                 countryInvestment = country.getMutView(CountryInvestment.class);
                 countryBudget = country.getMutView(CountryBudget.class);
+                countryBank = country.getMutView(CountryBank.class);
             }
 
             int level = building.size();
@@ -72,6 +74,15 @@ public class EconomyBuildingWorkingCapitalSystem {
             }
 
             double need = FACTORY_TREASURY_BUFFER_DAYS * dailyCost - economyBuilding.treasury();
+            if (owner != STATE_OWNER && need > Math.max(0.0, countryInvestment.funds(owner))) {
+                double loan = Math.min(need - Math.max(0.0, countryInvestment.funds(owner)), Math.max(0.0, countryBank.reserves()));
+                if (loan > 0.0) {
+                    countryBank.reserves(countryBank.reserves() - loan);
+                    countryBank.loans(owner, countryBank.loans(owner) + loan);
+                    countryBank.borrowed(owner, countryBank.borrowed(owner) + loan);
+                    countryInvestment.funds(owner, countryInvestment.funds(owner) + loan);
+                }
+            }
             double available = owner == STATE_OWNER
                 ? countryMarket.treasury() - countryBudget.reservedNeeds()
                 : countryInvestment.funds(owner);
