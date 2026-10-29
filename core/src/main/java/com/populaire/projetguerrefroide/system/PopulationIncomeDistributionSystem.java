@@ -45,6 +45,9 @@ public class PopulationIncomeDistributionSystem {
         RegionInstanceIncomeMutView regionInstanceIncome = null;
         RegionDemographicsView regionDemographics = null;
 
+        long provinceId = 0;
+        ProvinceView province = null;
+
         long countryId = 0;
         CountryMarketMutView countryMarket = null;
         CountryTaxPolicyView countryTaxPolicy = null;
@@ -64,6 +67,11 @@ public class PopulationIncomeDistributionSystem {
                 regionInstance = regionEntity.getView(RegionInstance.class);
                 regionInstanceIncome = regionEntity.getMutView(RegionInstanceIncome.class);
                 regionDemographics = regionEntity.getMutView(RegionDemographics.class);
+            }
+
+            if (population.provinceId() != provinceId) {
+                provinceId = population.provinceId();
+                province = iter.world().obtainEntityView(provinceId).getView(Province.class);
             }
 
             if (population.countryId() != countryId) {
@@ -135,7 +143,9 @@ public class PopulationIncomeDistributionSystem {
             float scaledAmount = popAmount / NEEDS_SCALING_FACTOR;
             float scaledUnemployed = Math.max(0f, population.amount() * EmploymentUtils.activeShare(baseWorkforceShare, countryPopulationPolicy.workforceShareModifier()) - population.employment()) / NEEDS_SCALING_FACTOR;
             float scaledWageBase = paidOnPosts ? population.employment() / NEEDS_SCALING_FACTOR : scaledAmount;
-            float stateIncome = scaledWageBase * countryBudget.wageRatesByPopType(typeIdx) + scaledUnemployed * countryBudget.socialRatesByPopType(typeIdx);
+            float scaledSeniors = province.adultsAmount() > 0 ? (float) ((double) province.seniorsAmount() * popAmount / province.adultsAmount() / NEEDS_SCALING_FACTOR) : 0f;
+            float stateIncome = scaledWageBase * countryBudget.wageRatesByPopType(typeIdx) + scaledUnemployed * countryBudget.socialRatesByPopType(typeIdx)
+                + scaledSeniors * countryBudget.pensionRatesByPopType(typeIdx);
             stateIncome = (float) Math.min(stateIncome, Math.max(0.0, countryMarket.treasury()));
             countryMarket.treasury(countryMarket.treasury() - stateIncome);
 

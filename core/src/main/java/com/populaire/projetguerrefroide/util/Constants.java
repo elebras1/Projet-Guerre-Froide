@@ -66,6 +66,7 @@ public class Constants {
     public static final String INDUSTRY_SUBSIDIES = "industry_subsidies";
     public static final String PUBLIC_HEALTH = "public_health";
     public static final String PUBLIC_WORKS = "public_works";
+    public static final String PENSION = "pension";
     public static final String PRODUCTION_MODIFIER = "production_modifier";
 
     public static float NEEDS_SCALING_FACTOR = 100000f;
@@ -107,6 +108,8 @@ public class Constants {
     public static final float CHILD_AGING_RATE = 0.055f;
     public static final float ADULT_AGING_RATE = 0.0094f;
     public static final float FAMINE_DEATH_RATE = 0.1f;
+    public static final float PENSION_MORTALITY_FACTOR = 0.2f;
+    public static final float PENSION_REFERENCE_COVERAGE = 0.23f;
     public static final int OWNER_COUNT = 3;
     public static final int CAPITALIST_OWNER = 0;
     public static final int STATE_OWNER = 1;

@@ -119,12 +119,12 @@ public final class CountryLoader {
             }
             country.set(new Country(capitalId, governmentId, ideologyId, identityId, attitudeId, ministerHeadOfStateEntityId, ministerHeadOfGovernmentEntityId, lawIds));
             country.set(new CountryMarket(new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new double[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new double[POP_TYPE_COUNT], new double[POP_TYPE_COUNT], new double[POP_TYPE_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], 0d, 0f, new double[GOOD_COUNT], 0f, 0f, 0f, 0d, 0d, 0d));
-            country.set(new CountryDemographics(0, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, new long[POP_TYPE_COUNT], new long[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
+            country.set(new CountryDemographics(0, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, new long[POP_TYPE_COUNT], new long[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0, new float[POP_TYPE_COUNT]));
             country.set(new CountryTaxPolicy(0f, 0f, 0f, 0f, 0f));
-            country.set(new CountryBudgetPolicy(0f, 0f, 0f, 0f, 0f, 0f));
+            country.set(new CountryBudgetPolicy(0f, 0f, 0f, 0f, 0f, 0f, 0f));
             country.set(new CountryInvestment(new double[OWNER_COUNT], new double[OWNER_COUNT], new double[OWNER_COUNT], new double[OWNER_COUNT], 0, 0, 0));
             country.set(new CountryBank(0d, 0d, new double[OWNER_COUNT], new double[OWNER_COUNT], new double[OWNER_COUNT], new double[OWNER_COUNT], new double[OWNER_COUNT], new double[OWNER_COUNT], 0d, 0d, 0d, 0f, 0f, 0f, 0));
-            country.set(new CountryBudget(new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0d, 0d, 0d, 0d, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
+            country.set(new CountryBudget(new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0d, 0d, 0d, 0d, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
             country.set(new CountryEducationPolicy(0f, 0f));
             country.set(new CountryStateConsumption(new float[GOOD_COUNT], 0d));
             country.set(new CountryMaintenance(new float[GOOD_COUNT], new float[GOOD_COUNT], 0d, 1f));

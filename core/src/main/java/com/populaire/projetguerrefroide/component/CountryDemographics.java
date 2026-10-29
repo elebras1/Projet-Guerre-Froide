@@ -27,5 +27,6 @@ public record CountryDemographics(
     @FixedArray(length = POP_TYPE_COUNT) float[] luxuryNeedsSatisfactionByPopType,
     long totalChildren,
     long totalAdults,
-    long totalSeniors) {
+    long totalSeniors,
+    @FixedArray(length = POP_TYPE_COUNT) float[] seniorsByPopType) {
 }

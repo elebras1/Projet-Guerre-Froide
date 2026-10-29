@@ -5,6 +5,7 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.PopulationMobilityUtils;
+import com.populaire.projetguerrefroide.util.StateBudgetUtils;
 import com.populaire.projetguerrefroide.util.SubsistenceUtils;
 
 import static com.populaire.projetguerrefroide.util.Constants.*;
@@ -29,10 +30,22 @@ public class ProvinceDemographySystem {
         Field<Province> provinceField = iter.field(Province.class, 0);
         Field<Demographics> demographicsField = iter.field(Demographics.class, 1);
         Field<ProvinceDemography> demographyField = iter.field(ProvinceDemography.class, 2);
+        long ownerId = 0;
+        float pensionMortality = StateBudgetUtils.pensionMortality(0f);
         for (int i = 0; i < iter.count(); i++) {
             ProvinceMutView province = provinceField.getMutView(i);
             DemographicsView demographics = demographicsField.getMutView(i);
             ProvinceDemographyMutView demography = demographyField.getMutView(i);
+
+            if (province.ownerId() != ownerId) {
+                ownerId = province.ownerId();
+                float pensionCoverage = 0f;
+                if (ownerId != 0) {
+                    CountryBudgetView countryBudget = iter.world().obtainEntityView(ownerId).getView(CountryBudget.class);
+                    pensionCoverage = countryBudget.pensionCoverage();
+                }
+                pensionMortality = StateBudgetUtils.pensionMortality(pensionCoverage);
+            }
 
             int adults = demographics.totalPopulation();
             int children = province.childrenAmount();
@@ -42,7 +55,7 @@ public class ProvinceDemographySystem {
             double childAging = adults > 0 ? CHILD_AGING_RATE * children * monthShare : 0.0;
             double childDeaths = (CHILD_DEATH_RATE + famineRate) * children * monthShare;
             double adultAging = ADULT_AGING_RATE * adults * monthShare;
-            double seniorDeaths = (SENIOR_DEATH_RATE + famineRate) * seniors * monthShare;
+            double seniorDeaths = (SENIOR_DEATH_RATE * pensionMortality + famineRate) * seniors * monthShare;
 
             double nextChildren = children + births - childAging - childDeaths + demography.childrenRemainder();
             double nextSeniors = seniors + adultAging - seniorDeaths + demography.seniorsRemainder();

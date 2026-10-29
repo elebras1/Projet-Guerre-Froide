@@ -50,6 +50,7 @@ public class DemographicsRegionInstanceSpreadSystem {
                 countryDemographics.lifeNeedsSatisfactionByPopType(popTypeIndex, countryDemographics.lifeNeedsSatisfactionByPopType(popTypeIndex) + demographics.lifeNeedsSatisfactionByPopType(popTypeIndex));
                 countryDemographics.everydayNeedsSatisfactionByPopType(popTypeIndex, countryDemographics.everydayNeedsSatisfactionByPopType(popTypeIndex) + demographics.everydayNeedsSatisfactionByPopType(popTypeIndex));
                 countryDemographics.luxuryNeedsSatisfactionByPopType(popTypeIndex, countryDemographics.luxuryNeedsSatisfactionByPopType(popTypeIndex) + demographics.luxuryNeedsSatisfactionByPopType(popTypeIndex));
+                countryDemographics.seniorsByPopType(popTypeIndex, countryDemographics.seniorsByPopType(popTypeIndex) + demographics.seniorsByPopType(popTypeIndex));
             }
             countryDemographics.totalChildren(countryDemographics.totalChildren() + demographics.totalChildren());
             countryDemographics.totalAdults(countryDemographics.totalAdults() + demographics.totalAdults());

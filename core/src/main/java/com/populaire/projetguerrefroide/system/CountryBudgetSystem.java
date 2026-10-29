@@ -122,6 +122,7 @@ public class CountryBudgetSystem {
             float socialSlider = slider(countryBudgetPolicy.socialSpendingRate());
             double wagesBudget = 0.0;
             double socialBudget = 0.0;
+            double pensionBudget = 0.0;
             for (int p = 0; p < POP_TYPE_COUNT; p++) {
                 float popTypeWageRate = 0f;
                 float popTypeSocialRate = 0f;
@@ -134,6 +135,9 @@ public class CountryBudgetSystem {
                 }
                 countryBudget.wageRatesByPopType(p, popTypeWageRate);
                 countryBudget.socialRatesByPopType(p, popTypeSocialRate);
+                float popTypePensionRate = spendingRatio * pensionRate(countryMarket, p, countryBudgetPolicy.pensionRate());
+                pensionBudget += (double) countryDemographics.seniorsByPopType(p) / NEEDS_SCALING_FACTOR * popTypePensionRate;
+                countryBudget.pensionRatesByPopType(p, popTypePensionRate);
             }
 
             double investableSurplus = Math.max(0.0, excess - countryInvestment.committed(STATE_OWNER));
@@ -156,6 +160,8 @@ public class CountryBudgetSystem {
             countryBudget.subsidyAllowance((float) (spendingRatio * subsidies));
             countryBudget.wagesBudget((float) wagesBudget);
             countryBudget.socialBudget((float) socialBudget);
+            countryBudget.pensionBudget((float) pensionBudget);
+            countryBudget.pensionCoverage(spendingRatio * countryBudgetPolicy.pensionRate());
             countryBudget.stateConsumptionBudget((float) (spendingRatio * stateConsumptionCost));
             countryBudget.militarySupplyRatio(spendingRatio);
         }

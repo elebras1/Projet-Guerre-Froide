@@ -53,6 +53,10 @@ public class DemographicsProvinceSpreadSystem {
                 regionInstanceDemographics.lifeNeedsSatisfactionByPopType(popTypeIndex, regionInstanceDemographics.lifeNeedsSatisfactionByPopType(popTypeIndex) + demographics.lifeNeedsSatisfactionByPopType(popTypeIndex));
                 regionInstanceDemographics.everydayNeedsSatisfactionByPopType(popTypeIndex, regionInstanceDemographics.everydayNeedsSatisfactionByPopType(popTypeIndex) + demographics.everydayNeedsSatisfactionByPopType(popTypeIndex));
                 regionInstanceDemographics.luxuryNeedsSatisfactionByPopType(popTypeIndex, regionInstanceDemographics.luxuryNeedsSatisfactionByPopType(popTypeIndex) + demographics.luxuryNeedsSatisfactionByPopType(popTypeIndex));
+                if (province.adultsAmount() > 0) {
+                    float seniors = (float) ((double) province.seniorsAmount() * demographics.totalByPopType(popTypeIndex) / province.adultsAmount());
+                    regionInstanceDemographics.seniorsByPopType(popTypeIndex, regionInstanceDemographics.seniorsByPopType(popTypeIndex) + seniors);
+                }
             }
 
             regionInstanceDemographics.totalChildren(regionInstanceDemographics.totalChildren() + demographics.totalChildren());

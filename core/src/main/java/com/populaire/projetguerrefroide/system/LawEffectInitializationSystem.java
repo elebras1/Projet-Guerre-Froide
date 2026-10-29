@@ -115,6 +115,7 @@ public class LawEffectInitializationSystem {
                             case INDUSTRY_SUBSIDIES -> productionPolicy.industrySubsidyRate(productionPolicy.industrySubsidyRate() + modifierValue);
                             case PUBLIC_HEALTH -> budgetPolicy.publicHealthRate(budgetPolicy.publicHealthRate() + modifierValue);
                             case PUBLIC_WORKS -> productionPolicy.publicWorksModifier(productionPolicy.publicWorksModifier() + modifierValue);
+                            case PENSION -> budgetPolicy.pensionRate(budgetPolicy.pensionRate() + modifierValue);
                         }
                     }
                 }
@@ -173,6 +174,7 @@ public class LawEffectInitializationSystem {
                             case INDUSTRY_SUBSIDIES -> productionPolicy.industrySubsidyRate(overrideValue);
                             case PUBLIC_HEALTH -> budgetPolicy.publicHealthRate(overrideValue);
                             case PUBLIC_WORKS -> productionPolicy.publicWorksModifier(overrideValue);
+                            case PENSION -> budgetPolicy.pensionRate(overrideValue);
                         }
                     }
                 }
@@ -193,6 +195,7 @@ public class LawEffectInitializationSystem {
             productionPolicy.industrySubsidyRate(Math.clamp(productionPolicy.industrySubsidyRate(), 0f, 1f));
             budgetPolicy.publicHealthRate(Math.clamp(budgetPolicy.publicHealthRate(), 0f, 1f));
             productionPolicy.publicWorksModifier(Math.max(-1f, productionPolicy.publicWorksModifier()));
+            budgetPolicy.pensionRate(Math.max(0f, budgetPolicy.pensionRate()));
         }
     }
 }

@@ -27,5 +27,6 @@ public record RegionDemographics(
     @FixedArray(length = POP_TYPE_COUNT) float[] luxuryNeedsSatisfactionByPopType,
     int totalChildren,
     int totalAdults,
-    int totalSeniors) {
+    int totalSeniors,
+    @FixedArray(length = POP_TYPE_COUNT) float[] seniorsByPopType) {
 }

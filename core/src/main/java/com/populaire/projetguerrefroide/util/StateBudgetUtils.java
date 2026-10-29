@@ -59,6 +59,14 @@ public class StateBudgetUtils {
         return socialSlider * SOCIAL_LIFE_SHARE * countryMarket.lifeCostsByPopType(popTypeIndex);
     }
 
+    public static float pensionRate(CountryMarketView countryMarket, int popTypeIndex, float pension) {
+        return pension * (countryMarket.lifeCostsByPopType(popTypeIndex) + countryMarket.everydayCostsByPopType(popTypeIndex));
+    }
+
+    public static float pensionMortality(float pensionCoverage) {
+        return (1f + PENSION_MORTALITY_FACTOR) / (1f + PENSION_MORTALITY_FACTOR * pensionCoverage / PENSION_REFERENCE_COVERAGE);
+    }
+
     public static float scaledUnemployed(CountryDemographicsView countryDemographics, int popTypeIndex, float workforceShare) {
         return Math.max(0f, countryDemographics.totalByPopType(popTypeIndex) * workforceShare - countryDemographics.employmentByPopType(popTypeIndex)) / NEEDS_SCALING_FACTOR;
     }
@@ -95,6 +103,7 @@ public class StateBudgetUtils {
             } else {
                 needs += scaledWageBase(countryDemographics, p, statePostIndex, incomeTypes[p]) * wageRate(countryMarket, p, wageSlider(incomeTypes[p], budgetPolicy, educationPolicy));
             }
+            needs += (double) countryDemographics.seniorsByPopType(p) / NEEDS_SCALING_FACTOR * pensionRate(countryMarket, p, budgetPolicy.pensionRate());
         }
         return needs;
     }

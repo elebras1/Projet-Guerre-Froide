@@ -1386,6 +1386,7 @@
           "requirements": [],
           "modifiers": {
             "social_spending": 0.2,
+            "pension": 0.25,
             "min_wage_factor": 0.1,
             "social_mobility": 0.1,
             "political_radicalism": -0.1
@@ -1400,6 +1401,7 @@
           "requirements": [],
           "modifiers": {
             "social_spending": 0.4,
+            "pension": 0.5,
             "min_wage_factor": 0.2,
             "social_mobility": 0.15,
             "political_radicalism": -0.15,
