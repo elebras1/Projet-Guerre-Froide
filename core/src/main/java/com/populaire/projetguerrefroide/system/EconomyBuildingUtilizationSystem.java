@@ -8,20 +8,24 @@ import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 import com.populaire.projetguerrefroide.util.MarketUtils;
 
-import static com.populaire.projetguerrefroide.util.Constants.FACTORY_UTILIZATION_RATE;
+import static com.populaire.projetguerrefroide.util.Constants.*;
 import static com.populaire.projetguerrefroide.util.EconomyBuildingUtils.*;
+import static com.populaire.projetguerrefroide.util.OwnerUtils.ownerIndex;
 
 public class EconomyBuildingUtilizationSystem {
 
+    private final EcsConstants ecsConstants;
     private final long stateOwnerTag;
 
     public EconomyBuildingUtilizationSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         this.stateOwnerTag = ecsConstants.countryTag();
         ecsWorld.system("EconomyBuildingUtilizationSystem")
             .kind(phaseId)
             .with(Building.class)
             .with(EconomyBuilding.class)
             .with(EconomyBuildingType.class)
+            .with(ecsConstants.suspended()).optional()
             .multiThreaded()
             .iter(this::adjust);
     }
@@ -41,6 +45,7 @@ public class EconomyBuildingUtilizationSystem {
         EconomyBuildingTypeView buildingTypeData = iter.field(EconomyBuildingType.class, 2).getView(0);
         GlobalMarketView globalMarket = iter.world().obtainEntityView(iter.world().lookup("global_market")).getView(GlobalMarket.class);
         float demandGap = Math.clamp(MarketUtils.clearingGap(globalMarket, buildingTypeData.goodOutputIndex()), -1f, 1f);
+        boolean ordered = iter.isSet(3);
 
         for (int i = 0; i < iter.count(); i++) {
             BuildingView building = buildingField.getMutView(i);
@@ -68,11 +73,30 @@ public class EconomyBuildingUtilizationSystem {
                     maxWorkers(buildingTypeData, level, buildingTypeData.secondaryWorkerPopTypeRatio()));
             float unitMargin = costs > 0.0 ? (float) ((value - costs) / costs) : (value > 0.0 ? 1f : 0f);
             economyBuilding.unitMargin(unitMargin);
+            float coveredMargin = unitMargin < 0f ? unitMargin * (1f - countryProductionPolicy.industrySubsidyRate()) : unitMargin;
+            economyBuilding.lossDays(coveredMargin < 0f ? economyBuilding.lossDays() + 1 : 0);
+            int owner = ownerIndex(economyBuilding.ownerTagId(), this.ecsConstants);
+            if (owner != STATE_OWNER) {
+                if (economyBuilding.suspended()) {
+                    if (unitMargin > 0f) {
+                        economyBuilding.suspended(false);
+                        economyBuilding.suspendedDays(0);
+                    } else {
+                        economyBuilding.suspendedDays(economyBuilding.suspendedDays() + 1);
+                    }
+                } else if (economyBuilding.lossDays() >= FACTORY_LOSS_SUSPENSION_DAYS && (owner == CAPITALIST_OWNER || economyBuilding.treasury() <= 0.0)) {
+                    economyBuilding.suspended(true);
+                    economyBuilding.suspendedDays(0);
+                }
+            }
+            if (ordered || economyBuilding.suspended()) {
+                economyBuilding.utilization(0f);
+                continue;
+            }
             float signal;
             if (economyBuilding.ownerTagId() == this.stateOwnerTag && countryMarket.treasury() > countryBudget.targetTreasury()) {
                 signal = demandGap;
             } else {
-                float coveredMargin = unitMargin < 0f ? unitMargin * (1f - countryProductionPolicy.industrySubsidyRate()) : unitMargin;
                 signal = Math.clamp(coveredMargin, -1f, 1f);
             }
             float utilization = economyBuilding.utilization() + FACTORY_UTILIZATION_RATE * signal;

@@ -1171,7 +1171,7 @@ public class SimulationRecorder implements AutoCloseable {
                 this.worldStockByGood[g] += cm.goodStocks(g);
                 this.worldStockInflowByGood[g] += cm.goodProducedAmounts(g);
                 this.worldStockFlowByGood[g] += (double) cm.goodProducedAmounts(g) - (cm.goodConsumedAmounts(g) - cm.goodImportedAmounts(g))
-                    - cm.goodExportedAmounts(g) - cm.goodLostAmounts(g);
+                    - cm.goodExportedAmounts(g) - cm.goodLostAmounts(g) + cm.goodReturnedAmounts(g);
                 this.worldImportedByGood[g] += cm.goodImportedAmounts(g);
                 this.worldExportedByGood[g] += cm.goodExportedAmounts(g);
                 market.row(tick, date, name, this.goodNames[g],

@@ -36,6 +36,7 @@ public class CountryMarketResetSystem {
                 countryMarket.goodImportedAmounts(g, 0f);
                 countryMarket.goodExportedAmounts(g, 0f);
                 countryMarket.goodLostAmounts(g, 0f);
+                countryMarket.goodReturnedAmounts(g, 0f);
             }
             countryMarket.tariffRevenue(0f);
             countryMarket.taxRevenue(0.0);

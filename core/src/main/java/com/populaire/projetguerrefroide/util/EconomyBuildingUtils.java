@@ -1,8 +1,17 @@
 package com.populaire.projetguerrefroide.util;
 
+import io.github.elebras1.flecs.EntityView;
+import io.github.elebras1.flecs.World;
+import com.populaire.projetguerrefroide.component.Building;
+import com.populaire.projetguerrefroide.component.BuildingView;
+import com.populaire.projetguerrefroide.component.CountryInvestment;
+import com.populaire.projetguerrefroide.component.CountryInvestmentMutView;
+import com.populaire.projetguerrefroide.component.CountryMarket;
+import com.populaire.projetguerrefroide.component.CountryMarketMutView;
 import com.populaire.projetguerrefroide.component.CountryMarketView;
 import com.populaire.projetguerrefroide.component.CountryProductionPolicyView;
 import com.populaire.projetguerrefroide.component.EconomyBuilding;
+import com.populaire.projetguerrefroide.component.EconomyBuildingMutView;
 import com.populaire.projetguerrefroide.component.EconomyBuildingTypeView;
 import com.populaire.projetguerrefroide.component.EconomyBuildingView;
 import com.populaire.projetguerrefroide.component.RegionInstanceView;
@@ -19,7 +28,32 @@ public class EconomyBuildingUtils {
             activeInputGoodIndexes[g] = advancedRecipe ? buildingType.advancedGoodInputIndexes(g) : buildingType.goodInputIndexes(g);
             activeInputAmounts[g] = advancedRecipe ? buildingType.advancedGoodInputAmounts(g) : buildingType.goodInputAmounts(g);
         }
-        return new EconomyBuilding(ownerTagId, 0f, 1f, 0f, 0f, 0f, 0f, 0f, 0d, 0, 0, 0f, 0f, new float[MAX_GOODS], new float[MAX_GOODS], activeInputGoodIndexes, activeInputAmounts, advancedRecipe);
+        return new EconomyBuilding(ownerTagId, 0f, 1f, 0f, 0f, 0f, 0f, 0f, 0d, 0, 0, 0f, 0f, new float[MAX_GOODS], new float[MAX_GOODS], activeInputGoodIndexes, activeInputAmounts, advancedRecipe, 0, 0, false);
+    }
+
+    public static void releaseAssets(World world, EcsConstants ecsConstants, long buildingId) {
+        EntityView building = world.obtainEntityView(buildingId);
+        if (!building.has(EconomyBuilding.class)) {
+            return;
+        }
+        BuildingView buildingData = building.getView(Building.class);
+        EconomyBuildingMutView economyBuilding = building.getMutView(EconomyBuilding.class);
+        EntityView country = world.obtainEntityView(buildingData.countryId());
+        CountryInvestmentMutView countryInvestment = country.getMutView(CountryInvestment.class);
+        CountryMarketMutView countryMarket = country.getMutView(CountryMarket.class);
+        int owner = OwnerUtils.ownerIndex(economyBuilding.ownerTagId(), ecsConstants);
+        countryInvestment.funds(owner, countryInvestment.funds(owner) + economyBuilding.treasury());
+        economyBuilding.treasury(0d);
+        for (int slot = 0; slot < economyBuilding.activeInputGoodIndexesLength(); slot++) {
+            int goodIndex = economyBuilding.activeInputGoodIndexes(slot);
+            if (goodIndex < 0) {
+                break;
+            }
+            float stock = economyBuilding.inputStocks(slot);
+            countryMarket.goodStocks(goodIndex, countryMarket.goodStocks(goodIndex) + stock);
+            countryMarket.goodReturnedAmounts(goodIndex, countryMarket.goodReturnedAmounts(goodIndex) + stock);
+            economyBuilding.inputStocks(slot, 0f);
+        }
     }
 
     public static float throughput(CountryProductionPolicyView productionPolicy, int level) {

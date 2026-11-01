@@ -111,6 +111,7 @@ public class EconomyService {
     private final ConstructionCompletionSystem constructionCompletionSystem;
     private final ConstructionClosureSystem constructionClosureSystem;
     private final InvestmentDecisionSystem investmentDecisionSystem;
+    private final EconomyBuildingClosureSystem economyBuildingClosureSystem;
 
     private final World ecsWorld;
     private final Pipeline initPipeline;
@@ -323,6 +324,7 @@ public class EconomyService {
         this.publicWorksSystem = new PublicWorksSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);
         this.constructionCompletionSystem = new ConstructionCompletionSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);
         this.constructionClosureSystem = new ConstructionClosureSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);
+        this.economyBuildingClosureSystem = new EconomyBuildingClosureSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);
         this.investmentDecisionSystem = new InvestmentDecisionSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);
         this.economyCalendarSystem = new EconomyCalendarSystem(ecsWorld, phaseCalendar);
     }

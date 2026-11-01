@@ -101,6 +101,8 @@ public class Constants {
     public static final float WAGE_ADJUSTMENT_RATE = 0.01f;
     public static final float PROMOTION_RATE = 0.01f;
     public static final int DAYS_PER_MONTH = 30;
+    public static final int FACTORY_LOSS_SUSPENSION_DAYS = 12 * DAYS_PER_MONTH;
+    public static final int FACTORY_SUSPENDED_LEVEL_DAYS = 12 * DAYS_PER_MONTH;
     public static final float BIRTH_RATE = 0.106f;
     public static final float CHILD_DEATH_RATE = 0.022f;
     public static final float ADULT_DEATH_RATE = 0.009f;

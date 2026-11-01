@@ -9,6 +9,7 @@ import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dto.BuildingDto;
 import com.populaire.projetguerrefroide.dto.BuildingSummaryDto;
 import com.populaire.projetguerrefroide.util.ConstructionUtils;
+import com.populaire.projetguerrefroide.util.EconomyBuildingUtils;
 
 public class BuildingService {
     private final GameContext gameContext;
@@ -50,8 +51,8 @@ public class BuildingService {
         EntityView buildingType = ecsWorld.obtainEntityView(building.target(Flecs.IsA, 0));
         EconomyBuildingTypeView buildingTypeData = buildingType.getMutView(EconomyBuildingType.class);
         int levelsQueued = this.countLevelsQueued(buildingId);
-        boolean isSuspended = building.has(this.gameContext.getEcsConstants().suspended());
         EconomyBuildingView economyBuilding = building.getMutView(EconomyBuilding.class);
+        boolean isSuspended = building.has(this.gameContext.getEcsConstants().suspended()) || economyBuilding.suspended();
         return new BuildingSummaryDto(buildingId, buildingType.name(), buildingData.size(), buildingTypeData.maxLevel(), economyBuilding.primaryWorkerAmount() + economyBuilding.secondaryWorkerAmount(), economyBuilding.production(), levelsQueued, isSuspended);
     }
 
@@ -83,7 +84,7 @@ public class BuildingService {
         String outputGoodNameId = outputGoodEntity.name();
         int amountWorkers = economyBuilding.primaryWorkerAmount() + economyBuilding.secondaryWorkerAmount();
         int maxWorkers = buildingData.size() * buildingTypeData.workforce();
-        return new BuildingDto(buildingId, buildingType.name(), parent.name(), buildingTypeData.maxLevel(), goodCostNameIds, buildingTypeData.goodCostAmounts(), inputGoodNameIds, buildingTypeData.goodInputAmounts(), outputGoodNameId, buildingTypeData.goodOutputAmount(), amountWorkers, maxWorkers, building.has(this.gameContext.getEcsConstants().suspended()),
+        return new BuildingDto(buildingId, buildingType.name(), parent.name(), buildingTypeData.maxLevel(), goodCostNameIds, buildingTypeData.goodCostAmounts(), inputGoodNameIds, buildingTypeData.goodInputAmounts(), outputGoodNameId, buildingTypeData.goodOutputAmount(), amountWorkers, maxWorkers, building.has(this.gameContext.getEcsConstants().suspended()) || economyBuilding.suspended(),
             this.stateControlled(ecsWorld.obtainEntityView(buildingId)));
     }
 
@@ -92,6 +93,7 @@ public class BuildingService {
         if (!this.stateControlled(ecsWorld.obtainEntityView(buildingId))) {
             return;
         }
+        EconomyBuildingUtils.releaseAssets(ecsWorld, this.gameContext.getEcsConstants(), buildingId);
         Entity building = ecsWorld.obtainEntity(buildingId);
         building.destruct();
     }

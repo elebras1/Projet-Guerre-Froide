@@ -24,6 +24,9 @@ public record EconomyBuilding(
     @FixedArray(length = MAX_GOODS) float[] inputStocks,
     @FixedArray(length = MAX_GOODS) int[] activeInputGoodIndexes,
     @FixedArray(length = MAX_GOODS) float[] activeInputAmounts,
-    boolean advancedRecipe) {
+    boolean advancedRecipe,
+    int lossDays,
+    int suspendedDays,
+    boolean suspended) {
 
 }
