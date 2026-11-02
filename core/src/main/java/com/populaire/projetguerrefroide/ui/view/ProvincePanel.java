@@ -1,13 +1,17 @@
 package com.populaire.projetguerrefroide.ui.view;
 
 import com.badlogic.gdx.scenes.scene2d.Group;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.dto.ProvinceDto;
 import com.populaire.projetguerrefroide.dto.DevelopementBuildingLevelDto;
+import com.populaire.projetguerrefroide.dto.SpecialBuildingDto;
+import com.populaire.projetguerrefroide.screen.listener.ProvincePanelListener;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.ui.widget.FlagImage;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
@@ -47,6 +51,8 @@ public class ProvincePanel extends Table {
     private List<Image> antiAircraftGunsLevel;
     private List<Image> colorsBuildings;
     private List<Image> specialBuildings;
+    private final List<SpecialBuildingDto> specialBuildingData;
+    private ProvincePanelListener listener;
 
     public ProvincePanel(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation) {
         this.widgetFactory = widgetFactory;
@@ -61,6 +67,7 @@ public class ProvincePanel extends Table {
         this.antiAircraftGunsLevel = new ObjectList<>();
         this.colorsBuildings = new ObjectList<>();
         this.specialBuildings = new ObjectList<>();
+        this.specialBuildingData = new ObjectList<>();
         Drawable background = skin.getDrawable("bg_province");
         this.setBackground(background);
         this.setSize(background.getMinWidth(), background.getMinHeight());
@@ -173,7 +180,43 @@ public class ProvincePanel extends Table {
     }
 
     private Table addSpecialBuildings(Skin skin, float x, float y, Group parent) {
-        return this.widgetFactory.createImageRow(skin, "empty_spec_building", 8, 60, x, y, this.specialBuildings, parent);
+        Table row = this.widgetFactory.createImageRow(skin, "empty_spec_building", 8, 60, x, y, this.specialBuildings, parent);
+        for (int i = 0; i < this.specialBuildings.size(); i++) {
+            int slot = i;
+            this.specialBuildings.get(i).addListener(new InputListener() {
+                @Override
+                public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor) {
+                    if (listener != null && slot < specialBuildingData.size()) {
+                        listener.updateHoverTooltip(specialBuildingTooltip(specialBuildingData.get(slot)));
+                    }
+                }
+
+                @Override
+                public void exit(InputEvent event, float x, float y, int pointer, Actor toActor) {
+                    if (listener != null) {
+                        listener.hideUiTooltip();
+                    }
+                }
+            });
+        }
+        return row;
+    }
+
+    public void setListener(ProvincePanelListener listener) {
+        this.listener = listener;
+    }
+
+    private String specialBuildingTooltip(SpecialBuildingDto building) {
+        StringBuilder text = new StringBuilder(this.localisation.get(building.nameId()));
+        text.append("\n").append(this.localisation.get("SPECIAL_BUILDING_LEVEL")).append(" : ").append(building.level()).append(" / ").append(building.maxLevel());
+        if (building.staffPosts() > 0) {
+            text.append("\n").append(this.localisation.get("SPECIAL_BUILDING_STAFF")).append(" : ").append(building.staffFilled()).append(" / ").append(building.staffPosts());
+        }
+        text.append("\n").append(this.localisation.get("SPECIAL_BUILDING_EFFECTIVE_LEVEL")).append(" : ").append(String.format("%.2f", building.effectiveLevel()));
+        if (building.storageCapacity() > 0f) {
+            text.append("\n").append(this.localisation.get("SPECIAL_BUILDING_CAPACITY")).append(" : ").append(Math.round(building.storageCapacity()));
+        }
+        return text.toString();
     }
 
     public void setData(ProvinceDto provinceDto) {
@@ -350,11 +393,13 @@ public class ProvincePanel extends Table {
         }
     }
 
-    private void setSpecialBuildings(List<String> specialBuildingsName) {
+    private void setSpecialBuildings(List<SpecialBuildingDto> specialBuildings) {
+        this.specialBuildingData.clear();
+        this.specialBuildingData.addAll(specialBuildings);
         for(int i = 0; i < this.specialBuildings.size(); i++) {
             Image image = this.specialBuildings.get(i);
-            if(i < specialBuildingsName.size()) {
-                String name = specialBuildingsName.get(i);
+            if(i < specialBuildings.size()) {
+                String name = specialBuildings.get(i).nameId();
                 image.setDrawable(this.skin.getDrawable(name + "_building"));
             } else {
                 image.setDrawable(this.skin.getDrawable("empty_spec_building"));

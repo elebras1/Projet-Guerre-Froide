@@ -9,6 +9,7 @@ import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dto.BuildingSummaryDto;
 import com.populaire.projetguerrefroide.dto.RegionDto;
+import com.populaire.projetguerrefroide.dto.SpecialBuildingDto;
 import com.populaire.projetguerrefroide.pojo.MutableInt;
 import com.populaire.projetguerrefroide.pojo.Pair;
 import com.populaire.projetguerrefroide.repository.QueryRepository;
@@ -194,9 +195,19 @@ public class RegionService {
         return industryCount.getValue();
     }
 
-    public List<String> getSpecialBuildingNames(long regionId, long ownerId) {
+    public List<SpecialBuildingDto> getSpecialBuildings(long regionId, long ownerId) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        List<String> specialBuildingNames = new ObjectList<>();
+        List<SpecialBuildingDto> specialBuildings = new ObjectList<>();
+        EntityView globalStorage = ecsWorld.obtainEntityView(ecsWorld.lookup("global_strategic_storage"));
+        long storageTypeId = 0;
+        float capacityPerLevel = 0f;
+        if (globalStorage.has(GlobalStrategicStorage.class)) {
+            GlobalStrategicStorageView strategicStorage = globalStorage.getView(GlobalStrategicStorage.class);
+            storageTypeId = strategicStorage.buildingTypeId();
+            capacityPerLevel = strategicStorage.capacityPerLevel();
+        }
+        long storageBuildingTypeId = storageTypeId;
+        float storageCapacityPerLevel = capacityPerLevel;
 
         this.queryRepository.getBuildings().iter(iter -> {
             Field<Building> buildingField = iter.field(Building.class, 0);
@@ -208,15 +219,28 @@ public class RegionService {
                 }
                 RegionInstanceView regionInstance = parent.getMutView(RegionInstance.class);
                 if(regionInstance.regionId() == regionId && regionInstance.ownerId() == ownerId) {
-                    EntityView buildingTypeView = ecsWorld.obtainEntityView(ecsWorld.obtainEntityView(iter.entity(i)).target(Flecs.IsA, 0));
-                    if(buildingTypeView.has(SpecialBuildingType.class)) {
-                        specialBuildingNames.add(buildingTypeView.name());
+                    EntityView buildingEntity = ecsWorld.obtainEntityView(iter.entity(i));
+                    long buildingTypeId = buildingEntity.target(Flecs.IsA, 0);
+                    EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingTypeId);
+                    if(buildingTypeView.has(SpecialBuildingType.class) && buildingEntity.has(SpecialBuilding.class)) {
+                        SpecialBuildingTypeView buildingType = buildingTypeView.getView(SpecialBuildingType.class);
+                        SpecialBuildingView specialBuilding = buildingEntity.getView(SpecialBuilding.class);
+                        int level = buildingView.size();
+                        int staffPosts = buildingType.staffPopTypeIndex() >= 0 ? (int) (level * buildingType.staffPosts()) : 0;
+                        float staffFill = 0f;
+                        if (staffPosts > 0 && parent.has(RegionSpecialBuildings.class)) {
+                            RegionSpecialBuildingsView regionSpecialBuildings = parent.getView(RegionSpecialBuildings.class);
+                            staffFill = regionSpecialBuildings.staffFill();
+                        }
+                        float storageCapacity = buildingTypeId == storageBuildingTypeId ? specialBuilding.effectiveLevel() * storageCapacityPerLevel : 0f;
+                        specialBuildings.add(new SpecialBuildingDto(buildingTypeView.name(), level, buildingType.maxLevel(), staffPosts, Math.round(staffPosts * staffFill),
+                            specialBuilding.effectiveLevel(), storageCapacity));
                     }
                 }
             }
         });
 
-        return specialBuildingNames;
+        return specialBuildings;
     }
 
     public int getWorkerAmount(long regionId) {

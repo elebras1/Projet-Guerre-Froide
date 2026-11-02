@@ -1,5 +1,11 @@
 package com.populaire.projetguerrefroide.util;
 
+import com.populaire.projetguerrefroide.component.Color;
+import com.populaire.projetguerrefroide.component.DevelopmentBuildingType;
+import com.populaire.projetguerrefroide.component.EconomyBuildingType;
+import com.populaire.projetguerrefroide.component.Modifiers;
+import com.populaire.projetguerrefroide.component.PopulationType;
+import com.populaire.projetguerrefroide.component.SpecialBuildingType;
 import io.github.elebras1.flecs.Flecs;
 import io.github.elebras1.flecs.World;
 
@@ -101,6 +107,21 @@ public class EcsConstants {
         this.seaForceTag = ecsWorld.entity(SEA_FORCE_TAG);
         this.landForceTag = ecsWorld.entity(LAND_FORCE_TAG);
         this.airForceTag = ecsWorld.entity(AIR_FORCE_TAG);
+        this.declareTypeInheritance(ecsWorld);
+    }
+
+    private void declareTypeInheritance(World ecsWorld) {
+        ecsWorld.obtainEntity(ecsWorld.component(PopulationType.class)).add(Flecs.OnInstantiate, Flecs.Inherit);
+        ecsWorld.obtainEntity(ecsWorld.component(Color.class)).add(Flecs.OnInstantiate, Flecs.DontInherit);
+        ecsWorld.obtainEntity(this.capitalistTag).add(Flecs.OnInstantiate, Flecs.Inherit);
+        ecsWorld.obtainEntity(this.aristocratTag).add(Flecs.OnInstantiate, Flecs.Inherit);
+        ecsWorld.obtainEntity(this.ruralTag).add(Flecs.OnInstantiate, Flecs.Inherit);
+        ecsWorld.obtainEntity(this.religiousTag).add(Flecs.OnInstantiate, Flecs.Inherit);
+        ecsWorld.obtainEntity(ecsWorld.component(EconomyBuildingType.class)).add(Flecs.OnInstantiate, Flecs.Inherit);
+        ecsWorld.obtainEntity(ecsWorld.component(SpecialBuildingType.class)).add(Flecs.OnInstantiate, Flecs.Inherit);
+        ecsWorld.obtainEntity(ecsWorld.component(DevelopmentBuildingType.class)).add(Flecs.OnInstantiate, Flecs.Inherit);
+        ecsWorld.obtainEntity(ecsWorld.component(Modifiers.class)).add(Flecs.OnInstantiate, Flecs.Inherit);
+        ecsWorld.obtainEntity(this.onMap).add(Flecs.OnInstantiate, Flecs.Inherit);
     }
 
     public long seaProvinceTag() {

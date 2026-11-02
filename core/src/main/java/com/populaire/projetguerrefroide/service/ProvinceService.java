@@ -11,6 +11,7 @@ import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dto.DevelopementBuildingLevelDto;
 import com.populaire.projetguerrefroide.dto.ProvinceDto;
+import com.populaire.projetguerrefroide.dto.SpecialBuildingDto;
 import com.populaire.projetguerrefroide.pojo.MutableInt;
 import com.populaire.projetguerrefroide.repository.QueryRepository;
 
@@ -52,7 +53,7 @@ public class ProvinceService {
         float resourceProduced = this.getResourceGatheringProduction(provinceNameId);
         List<String> provinceIdsRegion = this.regionService.getProvinceNameIdsOrderByPopulation(region.id());
         DevelopementBuildingLevelDto developmentBuildingLevel = this.getDevelopementBuildingLevel(province.id());
-        List<String> specialBuildings = this.regionService.getSpecialBuildingNames(region.id(), provinceData.ownerId());
+        List<SpecialBuildingDto> specialBuildings = this.regionService.getSpecialBuildings(region.id(), provinceData.ownerId());
         List<String> colorsBuilding = this.regionService.getColorBuildingsOrderByLevel(region.id(), provinceData.ownerId());
 
         return new ProvinceDto(provinceNameId, regionNameId, terrainImage, resourceImage, populationRegion, workersRegion, developmentIndexRegion, incomeRegion, numberIndustryRegion, countryNameId, colonizerId, flagCountriesCore, resourceProduced, 0, 0, populationProvince, 0f, 0f, provinceIdsRegion, developmentBuildingLevel, specialBuildings, colorsBuilding);

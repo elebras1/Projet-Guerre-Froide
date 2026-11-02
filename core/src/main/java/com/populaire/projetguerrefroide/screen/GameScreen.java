@@ -85,7 +85,7 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
 
         this.mainMenuInGamePresenter = new MainMenuInGamePresenter(gameContext, configurationService, this, widgetFactory, assetManager.get("generated-skins/ui/mainmenu_ig/mainmenu_ig.json"), skinUi, skinScrollbars, skinPopup, skinFlags);
         this.topBarPresenter = new TopBarPresenter(this.gameContext, this.worldService, this.timeService, this, widgetFactory, skinTopBar, skinUi, skinFlags);
-        this.provincePanelPresenter = new ProvincePanelPresenter(this.gameContext, this.worldService, widgetFactory, skinProvince, skinUi, skinFlags);
+        this.provincePanelPresenter = new ProvincePanelPresenter(this.gameContext, this.worldService, this, widgetFactory, skinProvince, skinUi, skinFlags);
         this.tooltipPresenter = new TooltipPresenter(this.gameContext, this.worldService, widgetFactory, skinUi, skinFlags);
         this.economyPanelPresenter = new EconomyPanelPresenter(this.gameContext, this.worldService, commandBus, this, widgetFactory, skinEconomy, skinUi, skinScrollbars);
         this.minimapPresenter = new MiniMapPresenter(this.gameContext, this.worldService, this, skinMinimap, skinUi);

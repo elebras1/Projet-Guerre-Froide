@@ -27,20 +27,6 @@ public final class EconomyLoader {
         this.ecsConstants = context.ecsConstants();
     }
 
-    public void declareTypeInheritance() {
-        this.ecsWorld.obtainEntity(this.ecsWorld.component(PopulationType.class)).add(Flecs.OnInstantiate, Flecs.Inherit);
-        this.ecsWorld.obtainEntity(this.ecsWorld.component(Color.class)).add(Flecs.OnInstantiate, Flecs.DontInherit);
-        this.ecsWorld.obtainEntity(this.ecsConstants.capitalistTag()).add(Flecs.OnInstantiate, Flecs.Inherit);
-        this.ecsWorld.obtainEntity(this.ecsConstants.aristocratTag()).add(Flecs.OnInstantiate, Flecs.Inherit);
-        this.ecsWorld.obtainEntity(this.ecsConstants.ruralTag()).add(Flecs.OnInstantiate, Flecs.Inherit);
-        this.ecsWorld.obtainEntity(this.ecsConstants.religiousTag()).add(Flecs.OnInstantiate, Flecs.Inherit);
-        this.ecsWorld.obtainEntity(this.ecsWorld.component(EconomyBuildingType.class)).add(Flecs.OnInstantiate, Flecs.Inherit);
-        this.ecsWorld.obtainEntity(this.ecsWorld.component(SpecialBuildingType.class)).add(Flecs.OnInstantiate, Flecs.Inherit);
-        this.ecsWorld.obtainEntity(this.ecsWorld.component(DevelopmentBuildingType.class)).add(Flecs.OnInstantiate, Flecs.Inherit);
-        this.ecsWorld.obtainEntity(this.ecsWorld.component(Modifiers.class)).add(Flecs.OnInstantiate, Flecs.Inherit);
-        this.ecsWorld.obtainEntity(this.ecsConstants.onMap()).add(Flecs.OnInstantiate, Flecs.Inherit);
-    }
-
     public void createGlobalMarket() {
         long calendarId = this.ecsWorld.entity("economy_calendar");
         this.ecsWorld.obtainEntity(calendarId).set(new EconomyCalendar(0));

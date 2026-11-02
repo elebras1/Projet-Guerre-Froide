@@ -110,6 +110,9 @@ public class BuildingService {
         if (building.has(EconomyBuildingType.class)) {
             EconomyBuildingTypeView typeData = building.getView(EconomyBuildingType.class);
             maxLevel = typeData.maxLevel();
+        } else if (building.has(SpecialBuildingType.class)) {
+            SpecialBuildingTypeView typeData = building.getView(SpecialBuildingType.class);
+            maxLevel = typeData.maxLevel();
         } else {
             DevelopmentBuildingTypeView typeData = building.getView(DevelopmentBuildingType.class);
             maxLevel = typeData.maxLevel();
