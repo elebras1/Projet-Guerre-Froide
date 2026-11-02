@@ -6,5 +6,7 @@ import io.github.elebras1.flecs.annotation.FixedArray;
 import static com.populaire.projetguerrefroide.util.Constants.MAX_GOODS;
 
 @Component
-public record SpecialBuildingType(int time, @FixedArray(length = MAX_GOODS) long[] goodCostIds, @FixedArray(length = MAX_GOODS) float[] goodCostAmounts) {
+public record SpecialBuildingType(int time, @FixedArray(length = MAX_GOODS) int[] goodCostIndexes, @FixedArray(length = MAX_GOODS) long[] goodCostIds, @FixedArray(length = MAX_GOODS) float[] goodCostAmounts,
+                                  @FixedArray(length = MAX_GOODS) int[] maintenanceGoodIndexes, @FixedArray(length = MAX_GOODS) float[] maintenanceGoodAmounts, int maxLevel,
+                                  int staffPopTypeIndex, float staffPosts) {
 }

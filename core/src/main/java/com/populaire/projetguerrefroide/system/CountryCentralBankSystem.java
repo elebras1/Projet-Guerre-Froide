@@ -17,6 +17,7 @@ public class CountryCentralBankSystem {
             .with(CountryDemographics.class)
             .with(CountryBank.class)
             .with(CountryInvestment.class)
+            .with(CountryStrategicStock.class)
             .iter(this::regulate);
     }
 
@@ -35,16 +36,18 @@ public class CountryCentralBankSystem {
         Field<CountryDemographics> countryDemographicsField = iter.field(CountryDemographics.class, 2);
         Field<CountryBank> countryBankField = iter.field(CountryBank.class, 3);
         Field<CountryInvestment> countryInvestmentField = iter.field(CountryInvestment.class, 4);
+        Field<CountryStrategicStock> countryStrategicStockField = iter.field(CountryStrategicStock.class, 5);
         for (int i = 0; i < iter.count(); i++) {
             CountryCentralBankMutView countryCentralBank = countryCentralBankField.getMutView(i);
             CountryMarketView countryMarket = countryMarketField.getMutView(i);
             CountryDemographicsView countryDemographics = countryDemographicsField.getMutView(i);
             CountryBankMutView countryBank = countryBankField.getMutView(i);
             CountryInvestmentView countryInvestment = countryInvestmentField.getMutView(i);
+            CountryStrategicStockView countryStrategicStock = countryStrategicStockField.getMutView(i);
 
             double realOutput = 0.0;
             for (int g = 0; g < baseCosts.length; g++) {
-                realOutput += (double) countryMarket.goodProducedAmounts(g) * baseCosts[g];
+                realOutput += (double) (countryMarket.goodProducedAmounts(g) - countryStrategicStock.releasedAmounts(g)) * baseCosts[g];
             }
 
             if (countryCentralBank.targetPriceIndex() <= 0f) {

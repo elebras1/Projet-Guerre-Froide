@@ -32,10 +32,15 @@ public class ConstructionCompletionSystem {
             }
             if (site.buildingId() == 0) {
                 EntityView building = iter.world().obtainEntityView(iter.world().entity());
-                EconomyBuildingTypeView buildingType = iter.world().obtainEntityView(site.buildingTypeId()).getView(EconomyBuildingType.class);
+                EntityView buildingTypeEntity = iter.world().obtainEntityView(site.buildingTypeId());
                 building.isA(site.buildingTypeId());
                 building.set(new Building(site.regionInstanceId(), site.countryId(), 1));
-                building.set(newEconomyBuilding(buildingType, false, site.ownerTagId()));
+                if (buildingTypeEntity.has(SpecialBuildingType.class)) {
+                    building.set(new SpecialBuilding(0f, 0f));
+                } else {
+                    EconomyBuildingTypeView buildingType = buildingTypeEntity.getView(EconomyBuildingType.class);
+                    building.set(newEconomyBuilding(buildingType, false, site.ownerTagId()));
+                }
                 continue;
             }
             InfrastructureUtils.levelUp(iter.world(), this.ecsConstants, site.buildingId(), site.buildingTypeId());

@@ -86,12 +86,14 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(GlobalArtisanCrafts.class);
         this.ecsWorld.component(RegionArtisans.class);
         this.ecsWorld.component(CountryMaintenance.class);
+        this.ecsWorld.component(CountryStrategicStock.class);
         this.ecsWorld.component(CountryCentralBank.class);
         this.ecsWorld.component(CountryMilitary.class);
         this.ecsWorld.component(ProvinceInfrastructure.class);
         this.ecsWorld.component(Good.class);
         this.ecsWorld.component(EconomyBuildingType.class);
         this.ecsWorld.component(SpecialBuildingType.class);
+        this.ecsWorld.component(GlobalStrategicStorage.class);
         this.ecsWorld.component(DevelopmentBuildingType.class);
         this.ecsWorld.component(Building.class);
         this.ecsWorld.component(EconomyBuilding.class);
@@ -125,6 +127,7 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(CountryCulturePolicy.class);
         this.ecsWorld.component(CountryProfitDistributionPolicy.class);
         this.ecsWorld.component(RegionInstanceIncome.class);
+        this.ecsWorld.component(RegionSpecialBuildings.class);
         this.ecsWorld.component(Unit.class);
         this.ecsWorld.component(Formation.class);
         this.ecsWorld.component(UnitInstance.class);

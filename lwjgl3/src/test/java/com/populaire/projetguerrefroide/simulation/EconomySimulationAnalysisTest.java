@@ -126,12 +126,14 @@ public class EconomySimulationAnalysisTest {
         world.component(GlobalArtisanCrafts.class);
         world.component(RegionArtisans.class);
         world.component(CountryMaintenance.class);
+        world.component(CountryStrategicStock.class);
         world.component(CountryCentralBank.class);
         world.component(CountryMilitary.class);
         world.component(ProvinceInfrastructure.class);
         world.component(Good.class);
         world.component(EconomyBuildingType.class);
         world.component(SpecialBuildingType.class);
+        world.component(GlobalStrategicStorage.class);
         world.component(DevelopmentBuildingType.class);
         world.component(Building.class);
         world.component(EconomyBuilding.class);
@@ -165,6 +167,7 @@ public class EconomySimulationAnalysisTest {
         world.component(CountryCulturePolicy.class);
         world.component(CountryProfitDistributionPolicy.class);
         world.component(RegionInstanceIncome.class);
+        world.component(RegionSpecialBuildings.class);
         world.component(Unit.class);
         world.component(Formation.class);
         world.component(UnitInstance.class);

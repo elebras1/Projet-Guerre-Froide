@@ -3,6 +3,7 @@ package com.populaire.projetguerrefroide.dao.json;
 import com.dslplatform.json.CompiledJson;
 import com.dslplatform.json.JsonAttribute;
 
+import java.util.List;
 import java.util.Map;
 
 @CompiledJson(onUnknown = CompiledJson.Behavior.IGNORE)
@@ -17,5 +18,7 @@ public record BuildingJson(
     @JsonAttribute(name = "input_goods") Map<String, Double> inputGoods,
     @JsonAttribute(name = "advanced_input_goods") Map<String, Double> advancedInputGoods,
     @JsonAttribute(name = "output_goods") Map<String, Double> outputGoods,
+    Map<String, Double> staff,
+    @JsonAttribute(name = "stored_goods") List<String> storedGoods,
     Map<String, Double> modifier) {
 }

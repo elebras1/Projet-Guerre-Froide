@@ -14,6 +14,8 @@ import com.populaire.projetguerrefroide.component.CountryBank;
 import com.populaire.projetguerrefroide.component.CountryCentralBank;
 import com.populaire.projetguerrefroide.component.CountryCentralBankView;
 import com.populaire.projetguerrefroide.component.CountryBankView;
+import com.populaire.projetguerrefroide.component.CountryStrategicStock;
+import com.populaire.projetguerrefroide.component.CountryStrategicStockView;
 import com.populaire.projetguerrefroide.component.CountryBudget;
 import com.populaire.projetguerrefroide.component.CountryInvestment;
 import com.populaire.projetguerrefroide.component.CountryInvestmentView;
@@ -603,6 +605,8 @@ public class SimulationRecorder implements AutoCloseable {
 
         this.writer("country/market.csv").header("tick", "date", "country", "good", "price", "demand", "satisfaction", "stock", "produced", "consumed", "import_need", "imported", "exported", "lost");
         this.writer("country/poor_life.csv").header("year", "date", "country", "adults", "poor_life");
+        this.writer("country/strategic_stock.csv").header("tick", "date", "country", "levels", "capacity", "stock_value", "purchased_value", "released_value", "lost_value",
+            "spent", "earned", "stock_market_value");
         this.writer("country/cash_holdings.csv").header("year", "date", "country", "strata", "savings", "income", "days", "limit");
         this.writer("country/treasury.csv").header("tick", "date", "country", "treasury", "private_investment", "sales_revenue", "production_value", "tariff_revenue",
             "tax_revenue", "target_treasury", "spending_ratio", "bank_reserves", "state_loans", "capitalist_loans", "workers_loans",
@@ -1041,8 +1045,15 @@ public class SimulationRecorder implements AutoCloseable {
         GlobalMarketView data = globalMarket.getMutView(GlobalMarket.class);
 
         CsvWriter writer = this.detailWriter("world/market.csv");
+        float[] released = new float[GOOD_COUNT];
+        this.countryQuery.each((long countryId) -> {
+            CountryStrategicStockView strategicStock = this.ecsWorld.obtainEntityView(countryId).getView(CountryStrategicStock.class);
+            for (int g = 0; g < GOOD_COUNT; g++) {
+                released[g] += strategicStock.releasedAmounts(g);
+            }
+        });
         for (int g = 0; g < GOOD_COUNT; g++) {
-            float production = data.goodProductionAmounts(g);
+            float production = data.goodProductionAmounts(g) - released[g];
             float demand = data.goodDemandAmounts(g);
             float price = data.goodPrices(g);
             this.worldProductionByGood[g] = production;
@@ -1059,6 +1070,7 @@ public class SimulationRecorder implements AutoCloseable {
     private void recordCountryMarkets(int tick, String date) {
         CsvWriter market = this.detailWriter("country/market.csv");
         CsvWriter treasury = this.detailWriter("country/treasury.csv");
+        CsvWriter strategicStockWriter = this.detailWriter("country/strategic_stock.csv");
         CsvWriter demographics = this.detailWriter("country/demographics.csv");
         CsvWriter demographicsTotals = this.detailWriter("country/demographics_totals.csv");
         CsvWriter needsCosts = this.detailWriter("country/needs_costs.csv");
@@ -1112,6 +1124,23 @@ public class SimulationRecorder implements AutoCloseable {
             this.tickPublicWorksSpendingTotal += publicWorks.dailyCommitment();
             CountryMaintenanceView maintenance = country.getView(CountryMaintenance.class);
             this.tickMaintenanceSpendingTotal += maintenance.spentToday();
+            CountryStrategicStockView strategicStock = country.getView(CountryStrategicStock.class);
+            if (strategicStock.levels() > 0f || strategicStock.spentToday() > 0.0 || strategicStock.earnedToday() > 0.0) {
+                double stockValue = 0.0;
+                double stockMarketValue = 0.0;
+                double purchasedValue = 0.0;
+                double releasedValue = 0.0;
+                double lostValue = 0.0;
+                for (int g = 0; g < GOOD_COUNT; g++) {
+                    stockValue += (double) strategicStock.stocks(g) * this.baseCosts[g];
+                    stockMarketValue += (double) strategicStock.stocks(g) * cm.goodPrices(g);
+                    purchasedValue += (double) strategicStock.purchasedAmounts(g) * this.baseCosts[g];
+                    releasedValue += (double) strategicStock.releasedAmounts(g) * this.baseCosts[g];
+                    lostValue += (double) strategicStock.lostAmounts(g) * this.baseCosts[g];
+                }
+                strategicStockWriter.row(tick, date, name, strategicStock.levels(), strategicStock.capacity(), stockValue, purchasedValue, releasedValue,
+                    lostValue, strategicStock.spentToday(), strategicStock.earnedToday(), stockMarketValue);
+            }
             for (int g = 0; g < GOOD_COUNT; g++) {
                 this.tickMaintenanceNeededTotal += (double) maintenance.needs(g) * cm.goodPrices(g);
             }

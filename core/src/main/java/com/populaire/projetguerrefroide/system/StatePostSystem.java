@@ -16,6 +16,7 @@ public class StatePostSystem {
             .with(RegionInstance.class)
             .with(RegionInstanceIncome.class)
             .with(RegionDemographics.class)
+            .with(RegionSpecialBuildings.class)
             .iter(this::post);
     }
 
@@ -41,10 +42,12 @@ public class StatePostSystem {
         Field<RegionInstance> regionInstanceField = iter.field(RegionInstance.class, 0);
         Field<RegionInstanceIncome> regionInstanceIncomeField = iter.field(RegionInstanceIncome.class, 1);
         Field<RegionDemographics> regionDemographicsField = iter.field(RegionDemographics.class, 2);
+        Field<RegionSpecialBuildings> regionSpecialBuildingsField = iter.field(RegionSpecialBuildings.class, 3);
         for (int i = 0; i < iter.count(); i++) {
             RegionInstanceMutView regionInstance = regionInstanceField.getMutView(i);
             RegionInstanceIncomeView regionInstanceIncome = regionInstanceIncomeField.getMutView(i);
             RegionDemographicsView regionDemographics = regionDemographicsField.getMutView(i);
+            RegionSpecialBuildingsMutView regionSpecialBuildings = regionSpecialBuildingsField.getMutView(i);
 
             if (regionInstance.ownerId() != countryId) {
                 countryId = regionInstance.ownerId();
@@ -58,11 +61,14 @@ public class StatePostSystem {
             }
 
             float managementPosts = managementRatio * regionInstanceIncome.stateBuildingWorkers();
-            float posts = managementPosts + administrationRatio * regionDemographics.totalAdults() * administrationSlider;
+            float statePosts = managementPosts + administrationRatio * regionDemographics.totalAdults() * administrationSlider;
+            float buildingPosts = regionSpecialBuildings.staffPosts();
+            float posts = statePosts + buildingPosts;
             int holders = regionDemographics.totalByPopType(postIndex);
             float activeHolders = holders * workforceShare;
             float employed = Math.min(activeHolders, posts);
-            float fill = posts > 0f ? employed / posts : 0f;
+            float fill = statePosts > 0f ? Math.min(activeHolders, statePosts) / statePosts : 0f;
+            regionSpecialBuildings.staffFill(buildingPosts > 0f ? Math.clamp((activeHolders - statePosts) / buildingPosts, 0f, 1f) : 0f);
 
             regionInstance.statePostsByPopType(postIndex, posts);
             regionInstance.workerPopTypeEmploymentRatios(postIndex, holders > 0 ? employed / holders : 0f);

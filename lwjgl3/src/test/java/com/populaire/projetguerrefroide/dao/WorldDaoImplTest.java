@@ -60,7 +60,7 @@ public class WorldDaoImplTest {
 
         BuildingsJson buildings = this.worldDao.readBuildings();
         assertEquals(32, buildings.economyBuilding().size());
-        assertEquals(17, buildings.specialBuilding().size());
+        assertEquals(12, buildings.specialBuilding().size());
         assertEquals(9, buildings.developmentBuilding().size());
     }
 

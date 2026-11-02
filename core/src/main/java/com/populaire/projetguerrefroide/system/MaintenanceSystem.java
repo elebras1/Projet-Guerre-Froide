@@ -1,5 +1,6 @@
 package com.populaire.projetguerrefroide.system;
 
+import io.github.elebras1.flecs.EntityView;
 import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.Query;
@@ -13,6 +14,7 @@ import static com.populaire.projetguerrefroide.util.Constants.MAINTENANCE_DECAY_
 public class MaintenanceSystem {
 
     private final Query developmentQuery;
+    private final Query specialQuery;
 
     public MaintenanceSystem(World ecsWorld, long phaseId) {
         this.developmentQuery = ecsWorld.query()
@@ -20,9 +22,15 @@ public class MaintenanceSystem {
             .with(DevelopmentBuilding.class)
             .with(DevelopmentBuildingType.class)
             .build();
+        this.specialQuery = ecsWorld.query()
+            .with(Building.class)
+            .with(SpecialBuilding.class)
+            .with(SpecialBuildingType.class)
+            .build();
         ecsWorld.system("MaintenanceSystem")
             .kind(phaseId)
             .with(CountryMaintenance.class)
+            .with(CountryStrategicStock.class)
             .run(this::maintain);
     }
 
@@ -30,11 +38,15 @@ public class MaintenanceSystem {
         World world = iter.world();
         while (iter.next()) {
             Field<CountryMaintenance> countryMaintenanceField = iter.field(CountryMaintenance.class, 0);
+            Field<CountryStrategicStock> countryStrategicStockField = iter.field(CountryStrategicStock.class, 1);
             for (int i = 0; i < iter.count(); i++) {
                 CountryMaintenanceMutView countryMaintenance = countryMaintenanceField.getMutView(i);
                 for (int g = 0; g < countryMaintenance.needsLength(); g++) {
                     countryMaintenance.needs(g, 0f);
                 }
+                CountryStrategicStockMutView countryStrategicStock = countryStrategicStockField.getMutView(i);
+                countryStrategicStock.capacity(0.0);
+                countryStrategicStock.levels(0f);
             }
         }
 
@@ -71,6 +83,59 @@ public class MaintenanceSystem {
                     decay -= 1f;
                 }
                 developmentBuilding.maintenanceDecay(decay);
+            }
+        });
+
+        EntityView globalStorage = world.obtainEntityView(world.lookup("global_strategic_storage"));
+        GlobalStrategicStorageView strategicStorage = globalStorage.has(GlobalStrategicStorage.class) ? globalStorage.getView(GlobalStrategicStorage.class) : null;
+        this.specialQuery.iter(specialIter -> {
+            SpecialBuildingTypeView buildingType = specialIter.field(SpecialBuildingType.class, 2).getView(0);
+            long buildingTypeId = specialIter.src(2);
+            boolean storage = strategicStorage != null && strategicStorage.buildingTypeId() == buildingTypeId;
+            boolean staffed = buildingType.staffPopTypeIndex() >= 0 && buildingType.staffPosts() > 0f;
+            boolean maintained = buildingType.maintenanceGoodIndexes(0) >= 0;
+            Field<Building> buildingField = specialIter.field(Building.class, 0);
+            Field<SpecialBuilding> specialBuildingField = specialIter.field(SpecialBuilding.class, 1);
+            long countryId = 0;
+            CountryMaintenanceMutView countryMaintenance = null;
+            CountryStrategicStockMutView countryStrategicStock = null;
+            for (int j = 0; j < specialIter.count(); j++) {
+                BuildingView building = buildingField.getMutView(j);
+                SpecialBuildingMutView specialBuilding = specialBuildingField.getMutView(j);
+                if (building.size() <= 0 || building.countryId() == 0) {
+                    specialBuilding.effectiveLevel(0f);
+                    continue;
+                }
+                if (building.countryId() != countryId) {
+                    countryId = building.countryId();
+                    EntityView country = world.obtainEntityView(countryId);
+                    countryMaintenance = country.getMutView(CountryMaintenance.class);
+                    countryStrategicStock = country.getMutView(CountryStrategicStock.class);
+                }
+                float served = 1f;
+                if (maintained) {
+                    for (int k = 0; k < buildingType.maintenanceGoodIndexesLength(); k++) {
+                        int goodIndex = buildingType.maintenanceGoodIndexes(k);
+                        if (goodIndex < 0) {
+                            break;
+                        }
+                        countryMaintenance.needs(goodIndex, countryMaintenance.needs(goodIndex) + building.size() * buildingType.maintenanceGoodAmounts(k) / DAYS_PER_YEAR);
+                    }
+                    served = countryMaintenance.satisfaction();
+                    float decay = specialBuilding.maintenanceDecay() + (1f - served) / (MAINTENANCE_DECAY_YEARS * DAYS_PER_YEAR);
+                    if (decay >= 1f) {
+                        InfrastructureUtils.levelDown(world, specialIter.entity(j), buildingTypeId);
+                        decay -= 1f;
+                    }
+                    specialBuilding.maintenanceDecay(decay);
+                }
+                float staffFill = staffed ? world.obtainEntityView(building.parentId()).<RegionSpecialBuildingsView>getView(RegionSpecialBuildings.class).staffFill() : 1f;
+                float effectiveLevel = building.size() * staffFill * served;
+                specialBuilding.effectiveLevel(effectiveLevel);
+                if (storage) {
+                    countryStrategicStock.capacity(countryStrategicStock.capacity() + (double) effectiveLevel * strategicStorage.capacityPerLevel());
+                    countryStrategicStock.levels(countryStrategicStock.levels() + building.size());
+                }
             }
         });
     }

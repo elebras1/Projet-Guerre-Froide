@@ -688,16 +688,6 @@
     }
   },
   "special_building": {
-    "administration": {
-      "goods_cost": {
-        "cement": 20,
-        "steel": 20,
-        "machine_parts": 20,
-        "electronic_components": 10,
-        "computers": 5
-      },
-      "time": 365
-    },
     "military_academy": {
       "goods_cost": {
         "cement": 20,
@@ -740,13 +730,24 @@
     },
     "strategical_storage": {
       "goods_cost": {
-        "cement": 20,
-        "steel": 20,
-        "machine_parts": 20,
-        "electronic_components": 10,
-        "computers": 5
+        "cement": 400,
+        "steel": 200,
+        "machine_parts": 50
       },
-      "time": 3
+      "maintenance_goods": {
+        "cement": 4.63,
+        "steel": 4.63,
+        "machine_parts": 2.32
+      },
+      "staff": {
+        "bureaucrats": 200
+      },
+      "stored_goods": ["grain", "canned_food", "oil", "fuel", "coal", "iron", "steel", "aluminium", "rare_metals", "uranium"],
+      "time": 180,
+      "max_level": 10,
+      "modifier": {
+        "storage_capacity": 10000
+      }
     },
     "intelligence_center": {
       "goods_cost": {
@@ -814,58 +815,6 @@
       "modifier": {
           "technology_cost" : -0.1
         }
-    },
-    "agriculture_research_center": {
-      "goods_cost": {
-        "cement": 20,
-        "steel": 20,
-        "machine_parts": 20,
-        "electronic_components": 10,
-        "computers": 5
-      },
-      "time": 3,
-      "modifier": {
-          "technology_cost" : -0.2
-      }
-    },
-    "land_research_center": {
-      "goods_cost": {
-        "cement": 20,
-        "steel": 20,
-        "machine_parts": 20,
-        "electronic_components": 10,
-        "computers": 5
-      },
-      "time": 3,
-      "modifier": {
-        "technology_cost" : -0.1
-      }
-    },
-    "air_research_center": {
-      "goods_cost": {
-        "cement": 20,
-        "steel": 20,
-        "machine_parts": 20,
-        "electronic_components": 10,
-        "computers": 5
-      },
-      "time": 3,
-      "modifier": {
-        "technology_cost" : -0.1
-      }
-    },
-    "naval_research_center": {
-      "goods_cost": {
-        "cement": 20,
-        "steel": 20,
-        "machine_parts": 20,
-        "electronic_components": 10,
-        "computers": 5
-      },
-      "time": 3,
-      "modifier": {
-        "technology_cost" : -0.1
-      }
     },
     "early_warning_site": {
       "goods_cost": {

@@ -367,13 +367,54 @@ public final class EconomyLoader {
                 EntityView building = this.ecsWorld.obtainEntityView(this.ecsWorld.entity(specialBuildingEntry.getKey()));
                 building.add(Flecs.Prefab);
                 BuildingJson buildingJson = specialBuildingEntry.getValue();
+                int[] goodCostIndexes = new int[MAX_GOODS];
+                Arrays.fill(goodCostIndexes, -1);
                 long[] goodCostIds = new long[MAX_GOODS];
                 float[] goodCostAmounts = new float[MAX_GOODS];
-                this.context.fillGoodCosts(buildingJson.goodsCost(), goodCostIds, goodCostAmounts);
+                this.context.fillGoods(buildingJson.goodsCost(), goodCostIndexes, goodCostIds, goodCostAmounts);
+                int[] maintenanceGoodIndexes = new int[MAX_GOODS];
+                Arrays.fill(maintenanceGoodIndexes, -1);
+                float[] maintenanceGoodAmounts = new float[MAX_GOODS];
+                if (buildingJson.maintenanceGoods() != null) {
+                    this.context.fillGoods(buildingJson.maintenanceGoods(), maintenanceGoodIndexes, new long[MAX_GOODS], maintenanceGoodAmounts);
+                }
+                int staffPopTypeIndex = -1;
+                float staffPosts = 0f;
+                if (buildingJson.staff() != null) {
+                    if (buildingJson.staff().size() != 1) {
+                        throw new IllegalArgumentException("Special building " + specialBuildingEntry.getKey() + " must have one staff pop type");
+                    }
+                    var staffEntry = buildingJson.staff().entrySet().iterator().next();
+                    staffPopTypeIndex = this.context.getPopulationTypeIndex(this.ecsWorld.lookup(staffEntry.getKey()));
+                    if (staffPopTypeIndex < 0) {
+                        throw new IllegalArgumentException("Invalid staff pop type for special building " + specialBuildingEntry.getKey());
+                    }
+                    staffPosts = staffEntry.getValue().floatValue();
+                }
                 if (buildingJson.modifier() != null) {
                     building.set(this.createBuildingModifiers(buildingJson.modifier()));
+                    Double storageCapacity = buildingJson.modifier().get(STORAGE_CAPACITY);
+                    if (storageCapacity != null) {
+                        boolean[] storedGoods = new boolean[GOOD_COUNT];
+                        if (buildingJson.storedGoods() != null) {
+                            for (String goodName : buildingJson.storedGoods()) {
+                                int goodIndex = this.context.getGoodIndex(this.ecsWorld.lookup(goodName));
+                                if (goodIndex < 0) {
+                                    throw new IllegalArgumentException("Invalid stored good " + goodName + " for special building " + specialBuildingEntry.getKey());
+                                }
+                                storedGoods[goodIndex] = true;
+                            }
+                        }
+                        EntityView globalStorage = this.ecsWorld.obtainEntityView(this.ecsWorld.entity("global_strategic_storage"));
+                        if (globalStorage.has(GlobalStrategicStorage.class)) {
+                            throw new IllegalArgumentException("Only one special building can have " + STORAGE_CAPACITY);
+                        }
+                        globalStorage.set(new GlobalStrategicStorage(building.id(), storageCapacity.floatValue(), storedGoods));
+                    }
                 }
-                building.set(new SpecialBuildingType((int) buildingJson.time(), goodCostIds, goodCostAmounts));
+                int maxLevel = buildingJson.maxLevel() != null ? buildingJson.maxLevel().intValue() : 1;
+                building.set(new SpecialBuildingType((int) buildingJson.time(), goodCostIndexes, goodCostIds, goodCostAmounts, maintenanceGoodIndexes, maintenanceGoodAmounts,
+                    maxLevel, staffPopTypeIndex, staffPosts));
             }
 
             for(var developmentBuildingEntry : buildings.developmentBuilding().entrySet()) {

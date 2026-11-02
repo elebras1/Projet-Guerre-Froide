@@ -32,6 +32,15 @@ public class ConstructionUtils {
                 }
                 cost += (double) typeData.goodCostAmounts(k) * countryMarket.goodBudgetPrices(goodIndex);
             }
+        } else if (buildingType.has(SpecialBuildingType.class)) {
+            SpecialBuildingTypeView typeData = buildingType.getView(SpecialBuildingType.class);
+            for (int k = 0; k < typeData.goodCostIndexesLength(); k++) {
+                int goodIndex = typeData.goodCostIndexes(k);
+                if (goodIndex < 0) {
+                    break;
+                }
+                cost += (double) typeData.goodCostAmounts(k) * countryMarket.goodBudgetPrices(goodIndex);
+            }
         }
         return cost;
     }
@@ -48,8 +57,15 @@ public class ConstructionUtils {
                 goodIndexes[k] = typeData.goodCostIndexes(k);
                 goodAmounts[k] = typeData.goodCostAmounts(k);
             }
-        } else {
+        } else if (buildingType.has(DevelopmentBuildingType.class)) {
             DevelopmentBuildingTypeView typeData = buildingType.getView(DevelopmentBuildingType.class);
+            time = typeData.time();
+            for (int k = 0; k < MAX_GOODS; k++) {
+                goodIndexes[k] = typeData.goodCostIndexes(k);
+                goodAmounts[k] = typeData.goodCostAmounts(k);
+            }
+        } else {
+            SpecialBuildingTypeView typeData = buildingType.getView(SpecialBuildingType.class);
             time = typeData.time();
             for (int k = 0; k < MAX_GOODS; k++) {
                 goodIndexes[k] = typeData.goodCostIndexes(k);

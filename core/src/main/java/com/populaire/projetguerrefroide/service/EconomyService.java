@@ -39,6 +39,7 @@ public class EconomyService {
     private final EconomyBuildingProductionSystem economyBuildingProductionSystem;
     private final EconomyBuildingSpreadProductionSystem economyBuildingSpreadProductionSystem;
     private final EconomyBuildingUtilizationSystem economyBuildingUtilizationSystem;
+    private final SpecialBuildingPostSystem specialBuildingPostSystem;
     private final StatePostSystem statePostSystem;
     private final MilitaryPostSystem militaryPostSystem;
     private final ArtisanEmploymentSystem artisanEmploymentSystem;
@@ -57,6 +58,10 @@ public class EconomyService {
     private final PublicWorksSystem publicWorksSystem;
     private final CountryCentralBankSystem countryCentralBankSystem;
     private final MaintenanceSystem maintenanceSystem;
+    private final StrategicStockDemandSystem strategicStockDemandSystem;
+    private final StrategicStockPurchaseSystem strategicStockPurchaseSystem;
+    private final StrategicStockReleaseSystem strategicStockReleaseSystem;
+    private final StrategicStockPlanSystem strategicStockPlanSystem;
     private final MaintenanceDemandSystem maintenanceDemandSystem;
     private final MaintenancePurchaseSystem maintenancePurchaseSystem;
     private final MilitarySupplyResetSystem militarySupplyResetSystem;
@@ -242,6 +247,7 @@ public class EconomyService {
         this.rgoEmploymentSystem = new RGOEmploymentSystem(ecsWorld, gameContext.getEcsConstants(), phaseRgoEmployment);
         this.economyBuildingWorkerDemandSystem = new EconomyBuildingWorkerDemandSystem(ecsWorld, phaseEmployment);
         this.economyBuildingEmploymentSystem = new EconomyBuildingEmploymentSystem(ecsWorld, gameContext.getEcsConstants(), phaseEmployment);
+        this.specialBuildingPostSystem = new SpecialBuildingPostSystem(ecsWorld, phaseEmployment);
         this.statePostSystem = new StatePostSystem(ecsWorld, phaseEmployment);
         this.militaryPostSystem = new MilitaryPostSystem(ecsWorld, phaseEmployment);
         this.artisanEmploymentSystem = new ArtisanEmploymentSystem(ecsWorld, phaseEmployment);
@@ -270,6 +276,7 @@ public class EconomyService {
         this.constructionDemandSystem = new ConstructionDemandSystem(ecsWorld, gameContext.getEcsConstants(), phaseConsumption);
         this.stateConsumptionDemandSystem = new StateConsumptionDemandSystem(ecsWorld, phaseConsumption);
         this.maintenanceDemandSystem = new MaintenanceDemandSystem(ecsWorld, phaseConsumption);
+        this.strategicStockDemandSystem = new StrategicStockDemandSystem(ecsWorld, phaseConsumption);
         this.militarySupplyDemandSystem = new MilitarySupplyDemandSystem(ecsWorld, phaseConsumption);
         this.worldMarketTotalsSystem = new WorldMarketTotalsSystem(ecsWorld, phaseMarket);
         this.globalTradeRatioSystem = new GlobalTradeRatioSystem(ecsWorld, phaseMarket);
@@ -282,6 +289,7 @@ public class EconomyService {
         this.constructionPurchaseSystem = new ConstructionPurchaseSystem(ecsWorld, gameContext.getEcsConstants(), phaseSettlement);
         this.stateConsumptionPurchaseSystem = new StateConsumptionPurchaseSystem(ecsWorld, phaseSettlement);
         this.maintenancePurchaseSystem = new MaintenancePurchaseSystem(ecsWorld, phaseSettlement);
+        this.strategicStockPurchaseSystem = new StrategicStockPurchaseSystem(ecsWorld, phaseSettlement);
         this.militarySupplyPurchaseSystem = new MilitarySupplyPurchaseSystem(ecsWorld, phaseSettlement);
         this.countryImportPaymentSystem = new CountryImportPaymentSystem(ecsWorld, phaseSettlement);
         this.countryExportPayoutSystem = new CountryExportPayoutSystem(ecsWorld, phaseSettlement);
@@ -291,6 +299,7 @@ public class EconomyService {
         this.artisanProductionSystem = new ArtisanProductionSystem(ecsWorld, phaseProduction);
         this.rgoSpreadProductionSystem = new RGOSpreadProductionSystem(ecsWorld, phaseToStock);
         this.economyBuildingSpreadProductionSystem = new EconomyBuildingSpreadProductionSystem(ecsWorld, phaseToStock);
+        this.strategicStockReleaseSystem = new StrategicStockReleaseSystem(ecsWorld, phaseToStock);
         this.countryStockSystem = new CountryStockSystem(ecsWorld, phaseToStock);
         this.countryProductionSpreadSystem = new CountryProductionSpreadSystem(ecsWorld, phaseToStock);
         this.goodAvailabilityInitializationSystem = new GoodAvailabilityInitializationSystem(ecsWorld, phaseInitAvailability);
@@ -322,6 +331,7 @@ public class EconomyService {
         this.artisanAllocationSystem = new ArtisanAllocationSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);
         this.bankSystem = new BankSystem(ecsWorld, phaseState);
         this.publicWorksSystem = new PublicWorksSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);
+        this.strategicStockPlanSystem = new StrategicStockPlanSystem(ecsWorld, phaseState);
         this.constructionCompletionSystem = new ConstructionCompletionSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);
         this.constructionClosureSystem = new ConstructionClosureSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);
         this.economyBuildingClosureSystem = new EconomyBuildingClosureSystem(ecsWorld, gameContext.getEcsConstants(), phaseState);

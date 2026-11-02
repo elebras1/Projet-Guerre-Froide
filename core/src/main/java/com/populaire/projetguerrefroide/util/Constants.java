@@ -68,6 +68,7 @@ public class Constants {
     public static final String PUBLIC_WORKS = "public_works";
     public static final String PENSION = "pension";
     public static final String PRODUCTION_MODIFIER = "production_modifier";
+    public static final String STORAGE_CAPACITY = "storage_capacity";
 
     public static float NEEDS_SCALING_FACTOR = 100000f;
     public static final float SHORTAGE_PRICE_PREMIUM = 0.5f;
@@ -125,4 +126,11 @@ public class Constants {
     public static final float MAXIMUM_PRICE_RATIO = 4f;
     public static final float STOCK_TARGET_DAYS = 15f;
     public static final float STOCK_ADJUSTMENT_DAYS = 60f;
+    public static final float STORAGE_BUY_PRICE_RATIO = 0.5f;
+    public static final float STORAGE_SELL_PRICE_RATIO = 1.5f;
+    public static final float STORAGE_BUY_RATE = 0.02f;
+    public static final float STORAGE_RELEASE_DAYS = 30f;
+    public static final float STORAGE_DECAY_FACTOR = 0.1f;
+    public static final float STORAGE_TARGET_DAYS = 90f;
+    public static final float STORAGE_FULL_SHARE = 0.9f;
 }
