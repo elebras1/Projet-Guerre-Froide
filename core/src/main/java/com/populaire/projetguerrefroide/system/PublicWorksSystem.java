@@ -13,6 +13,7 @@ import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 import com.populaire.projetguerrefroide.util.InfrastructureUtils;
+import com.populaire.projetguerrefroide.util.MilitaryUtils;
 import com.populaire.projetguerrefroide.util.PopulationMobilityUtils;
 import com.populaire.projetguerrefroide.util.StateBudgetUtils;
 import com.populaire.projetguerrefroide.util.StateConsumptionUtils;
@@ -31,6 +32,9 @@ public class PublicWorksSystem {
     }
 
     private record StorageBuilding(long buildingId, int size, long regionInstanceId) {
+    }
+
+    private record BaseBuilding(long buildingId, int size, long regionInstanceId, boolean capital) {
     }
 
     private final EcsConstants ecsConstants;
@@ -79,13 +83,31 @@ public class PublicWorksSystem {
         EntityView globalStorage = world.obtainEntityView(world.lookup("global_strategic_storage"));
         long storageTypeId = globalStorage.has(GlobalStrategicStorage.class) ? globalStorage.<GlobalStrategicStorageView>getView(GlobalStrategicStorage.class).buildingTypeId() : 0;
         LongIntMap storageSites = new LongIntMap();
-        this.readSites(world, queuedLevels, dailyCommitments, sitesInProgress, storageTypeId, storageSites);
+        EntityView globalBases = world.obtainEntityView(world.lookup("global_military_facilities"));
+        GlobalMilitaryFacilitiesView militaryBases = globalBases.has(GlobalMilitaryFacilities.class) ? globalBases.getView(GlobalMilitaryFacilities.class) : null;
+        long navalBaseTypeId = militaryBases != null ? militaryBases.navalBaseTypeId() : 0;
+        long airBaseTypeId = militaryBases != null ? militaryBases.airBaseTypeId() : 0;
+        LongIntMap navalBaseSites = new LongIntMap();
+        LongIntMap airBaseSites = new LongIntMap();
+        long academyTypeId = militaryBases != null ? militaryBases.academyTypeId() : 0;
+        int academyStaffIndex = militaryBases != null ? militaryBases.academyStaffPopTypeIndex() : -1;
+        LongIntMap academySites = new LongIntMap();
+        this.readSites(world, queuedLevels, dailyCommitments, sitesInProgress, storageTypeId, storageSites, navalBaseTypeId, airBaseTypeId, navalBaseSites, airBaseSites,
+            academyTypeId, academySites);
         LongObjectMap<ObjectList<Candidate>> candidatesByCountry = new LongObjectMap<>();
         LongObjectMap<ObjectList<StorageBuilding>> storageBuildings = new LongObjectMap<>();
         LongIntMap storageRegions = new LongIntMap();
         LongLongMap largestFreeRegions = new LongLongMap();
+        LongObjectMap<BaseBuilding> navalBases = new LongObjectMap<>();
+        LongObjectMap<BaseBuilding> airBases = new LongObjectMap<>();
+        LongObjectMap<StorageBuilding> academies = new LongObjectMap<>();
+        LongIntMap academyRegions = new LongIntMap();
         if (planningDay) {
             this.collectCandidates(world, queuedLevels, candidatesByCountry);
+            this.collectBases(world, navalBaseTypeId, airBaseTypeId, queuedLevels, navalBases, airBases);
+            if (academyTypeId != 0) {
+                this.collectAcademies(world, academyTypeId, academies, academyRegions);
+            }
             if (storageTypeId != 0) {
                 this.collectStorage(world, storageTypeId, storageBuildings, storageRegions, largestFreeRegions);
             }
@@ -118,6 +140,37 @@ public class PublicWorksSystem {
                     double ownBudget = monthlyShare * ownFunds;
                     double loanBudget = monthlyShare * headroom;
                     float bestReturn = 0f;
+                    CountryMilitaryView countryMilitary = world.obtainEntityView(countryId).getView(CountryMilitary.class);
+                    long[] baseTypeIds = {navalBaseTypeId, airBaseTypeId};
+                    float[] coverages = {MilitaryUtils.coverage(countryMilitary.navalCapacity(), countryMilitary.navalLoad()),
+                        MilitaryUtils.coverage(countryMilitary.airCapacity(), countryMilitary.airLoad())};
+                    BaseBuilding[] bases = {navalBases.get(countryId), airBases.get(countryId)};
+                    int[] baseSitesInProgress = {navalBaseSites.get(countryId), airBaseSites.get(countryId)};
+                    for (int b = 0; b < baseTypeIds.length; b++) {
+                        if (baseTypeIds[b] == 0 || coverages[b] >= 1f || bases[b] == null || baseSitesInProgress[b] > 0) {
+                            continue;
+                        }
+                        double baseCost = this.planBase(world, countryId, baseTypeIds[b], bases[b], countryBudget, countryMarket, ownBudget);
+                        if (baseCost > 0.0) {
+                            DevelopmentBuildingTypeView baseType = world.obtainEntityView(baseTypeIds[b]).getView(DevelopmentBuildingType.class);
+                            int duration = Math.max(1, (int) (baseType.time() * (1f - productionPolicy.constructionSpeed())));
+                            ownBudget -= baseCost;
+                            ownFunds -= baseCost;
+                            dailyCommitment += baseCost / duration;
+                            sites++;
+                        }
+                    }
+                    if (academyTypeId != 0 && academySites.get(countryId) == 0 && MilitaryUtils.trainingCoverage(countryMilitary, academyStaffIndex) < 1f) {
+                        double academyCost = this.planAcademy(world, countryId, academyTypeId, countryBudget, countryMarket, ownBudget, academies.get(countryId), academyRegions);
+                        if (academyCost > 0.0) {
+                            SpecialBuildingTypeView academyType = world.obtainEntityView(academyTypeId).getView(SpecialBuildingType.class);
+                            int duration = Math.max(1, (int) (academyType.time() * (1f - productionPolicy.constructionSpeed())));
+                            ownBudget -= academyCost;
+                            ownFunds -= academyCost;
+                            dailyCommitment += academyCost / duration;
+                            sites++;
+                        }
+                    }
                     if (candidates != null) {
                         candidates.sort(Comparator.comparingDouble((Candidate candidate) -> candidate.annualReturn()).reversed());
                         bestReturn = candidates.get(0).annualReturn();
@@ -167,13 +220,23 @@ public class PublicWorksSystem {
         }
     }
 
-    private void readSites(World world, LongIntMap queuedLevels, LongFloatMap dailyCommitments, LongIntMap sitesInProgress, long storageTypeId, LongIntMap storageSites) {
+    private void readSites(World world, LongIntMap queuedLevels, LongFloatMap dailyCommitments, LongIntMap sitesInProgress, long storageTypeId, LongIntMap storageSites,
+                           long navalBaseTypeId, long airBaseTypeId, LongIntMap navalBaseSites, LongIntMap airBaseSites,
+                           long academyTypeId, LongIntMap academySites) {
         long countryTag = this.ecsConstants.countryTag();
         this.siteQuery.each((long siteId) -> {
             ConstructionSiteView site = world.obtainEntityView(siteId).getView(ConstructionSite.class);
+            if (navalBaseTypeId != 0 && site.buildingTypeId() == navalBaseTypeId) {
+                navalBaseSites.put(site.countryId(), navalBaseSites.get(site.countryId()) + 1);
+            } else if (airBaseTypeId != 0 && site.buildingTypeId() == airBaseTypeId) {
+                airBaseSites.put(site.countryId(), airBaseSites.get(site.countryId()) + 1);
+            }
             boolean storage = storageTypeId != 0 && site.buildingTypeId() == storageTypeId;
+            boolean academy = academyTypeId != 0 && site.buildingTypeId() == academyTypeId;
             if (storage) {
                 storageSites.put(site.countryId(), storageSites.get(site.countryId()) + 1);
+            } else if (academy) {
+                academySites.put(site.countryId(), academySites.get(site.countryId()) + 1);
             } else if (site.buildingId() == 0 || !world.obtainEntityView(site.buildingTypeId()).has(DevelopmentBuildingType.class)) {
                 return;
             } else {
@@ -226,6 +289,122 @@ public class PublicWorksSystem {
                 candidates.add(new Candidate(buildingId, buildingTypeId, province.regionInstanceId(), annualReturn));
             }
         });
+    }
+
+    private void collectBases(World world, long navalBaseTypeId, long airBaseTypeId, LongIntMap queuedLevels,
+                              LongObjectMap<BaseBuilding> navalBases, LongObjectMap<BaseBuilding> airBases) {
+        if (navalBaseTypeId == 0 && airBaseTypeId == 0) {
+            return;
+        }
+        this.developmentQuery.iter(developmentIter -> {
+            long buildingTypeId = developmentIter.src(1);
+            boolean naval = buildingTypeId == navalBaseTypeId;
+            if (!naval && buildingTypeId != airBaseTypeId) {
+                return;
+            }
+            LongObjectMap<BaseBuilding> bases = naval ? navalBases : airBases;
+            DevelopmentBuildingTypeView buildingType = developmentIter.field(DevelopmentBuildingType.class, 1).getView(0);
+            Field<Building> buildingField = developmentIter.field(Building.class, 0);
+            for (int j = 0; j < developmentIter.count(); j++) {
+                BuildingView building = buildingField.getMutView(j);
+                long buildingId = developmentIter.entity(j);
+                if (building.countryId() == 0 || building.size() >= buildingType.maxLevel() || queuedLevels.get(buildingId) > 0) {
+                    continue;
+                }
+                boolean capital = world.obtainEntityView(building.countryId()).<CountryView>getView(Country.class).capitalId() == building.parentId();
+                BaseBuilding best = bases.get(building.countryId());
+                if (best != null && (building.size() < best.size() || building.size() == best.size() && (best.capital() || !capital))) {
+                    continue;
+                }
+                ProvinceView province = world.obtainEntityView(building.parentId()).getView(Province.class);
+                bases.put(building.countryId(), new BaseBuilding(buildingId, building.size(), province.regionInstanceId(), capital));
+            }
+        });
+    }
+
+    private double planBase(World world, long countryId, long baseTypeId, BaseBuilding base, CountryBudgetView countryBudget, CountryMarketView countryMarket, double ownBudget) {
+        double cost = levelCost(world, baseTypeId, countryMarket);
+        if (cost <= 0.0 || cost > ownBudget) {
+            return 0.0;
+        }
+        DevelopmentBuildingTypeView baseType = world.obtainEntityView(baseTypeId).getView(DevelopmentBuildingType.class);
+        double maintenanceCost = 0.0;
+        for (int k = 0; k < baseType.maintenanceGoodIndexesLength(); k++) {
+            int goodIndex = baseType.maintenanceGoodIndexes(k);
+            if (goodIndex < 0) {
+                break;
+            }
+            maintenanceCost += (double) baseType.maintenanceGoodAmounts(k) / DAYS_PER_YEAR * countryMarket.goodBudgetPrices(goodIndex);
+        }
+        if (countryBudget.revenueTrend() - countryBudget.reservedNeeds() < maintenanceCost) {
+            return 0.0;
+        }
+        startSite(world, this.ecsConstants, base.buildingId(), baseTypeId, base.regionInstanceId(), countryId, this.ecsConstants.countryTag());
+        return cost;
+    }
+
+    private void collectAcademies(World world, long academyTypeId, LongObjectMap<StorageBuilding> academies, LongIntMap academyRegions) {
+        SpecialBuildingTypeView academyType = world.obtainEntityView(academyTypeId).getView(SpecialBuildingType.class);
+        int maxLevel = academyType.maxLevel();
+        this.specialQuery.iter(specialIter -> {
+            if (specialIter.src(2) != academyTypeId) {
+                return;
+            }
+            Field<Building> buildingField = specialIter.field(Building.class, 0);
+            for (int j = 0; j < specialIter.count(); j++) {
+                BuildingView building = buildingField.getMutView(j);
+                if (building.countryId() == 0) {
+                    continue;
+                }
+                academyRegions.put(building.parentId(), 1);
+                if (building.size() >= maxLevel) {
+                    continue;
+                }
+                EntityView country = world.obtainEntityView(building.countryId());
+                boolean capital = capitalRegion(world, country, building.countryId()) == building.parentId();
+                StorageBuilding best = academies.get(building.countryId());
+                boolean bestCapital = best != null && capitalRegion(world, country, building.countryId()) == best.regionInstanceId();
+                if (best != null && (building.size() < best.size() || building.size() == best.size() && (bestCapital || !capital))) {
+                    continue;
+                }
+                academies.put(building.countryId(), new StorageBuilding(specialIter.entity(j), building.size(), building.parentId()));
+            }
+        });
+        this.siteQuery.each((long siteId) -> {
+            ConstructionSiteView site = world.obtainEntityView(siteId).getView(ConstructionSite.class);
+            if (site.buildingTypeId() == academyTypeId && site.buildingId() == 0) {
+                academyRegions.put(site.regionInstanceId(), 1);
+            }
+        });
+    }
+
+    private double planAcademy(World world, long countryId, long academyTypeId, CountryBudgetView countryBudget, CountryMarketView countryMarket, double ownBudget,
+                               StorageBuilding academy, LongIntMap academyRegions) {
+        EntityView country = world.obtainEntityView(countryId);
+        long buildingId = 0;
+        long regionInstanceId;
+        if (academy != null) {
+            buildingId = academy.buildingId();
+            regionInstanceId = academy.regionInstanceId();
+        } else {
+            regionInstanceId = capitalRegion(world, country, countryId);
+            if (regionInstanceId == 0 || academyRegions.get(regionInstanceId) > 0) {
+                return 0.0;
+            }
+        }
+        double cost = levelCost(world, academyTypeId, countryMarket);
+        if (cost <= 0.0 || cost > ownBudget) {
+            return 0.0;
+        }
+        SpecialBuildingTypeView academyType = world.obtainEntityView(academyTypeId).getView(SpecialBuildingType.class);
+        if (countryBudget.revenueTrend() - countryBudget.reservedNeeds() < operatingCost(world, country, academyType, countryBudget, countryMarket)) {
+            return 0.0;
+        }
+        if (buildingId == 0) {
+            academyRegions.put(regionInstanceId, 1);
+        }
+        startSite(world, this.ecsConstants, buildingId, academyTypeId, regionInstanceId, countryId, this.ecsConstants.countryTag());
+        return cost;
     }
 
     private void collectStorage(World world, long storageTypeId, LongObjectMap<ObjectList<StorageBuilding>> storageBuildings, LongIntMap storageRegions,
@@ -370,8 +549,11 @@ public class PublicWorksSystem {
             float units = buildingType.staffPosts() / NEEDS_SCALING_FACTOR;
             CountryBudgetPolicyView budgetPolicy = country.getView(CountryBudgetPolicy.class);
             cost += (double) units * countryBudget.wageRatesByPopType(buildingType.staffPopTypeIndex());
-            cost += StateConsumptionUtils.dailyCost(StateConsumptionUtils.globalStateConsumption(world), countryMarket,
-                units * StateBudgetUtils.slider(budgetPolicy.administrationSpendingRate()), 0f);
+            int statePostIndex = world.obtainEntityView(world.lookup("global_population_type")).<GlobalPopulationTypeView>getView(GlobalPopulationType.class).statePostPopTypeIndex();
+            if (buildingType.staffPopTypeIndex() == statePostIndex) {
+                cost += StateConsumptionUtils.dailyCost(StateConsumptionUtils.globalStateConsumption(world), countryMarket,
+                    units * StateBudgetUtils.slider(budgetPolicy.administrationSpendingRate()), 0f);
+            }
         }
         return cost;
     }

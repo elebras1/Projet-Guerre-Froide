@@ -44,6 +44,10 @@ public class BuildingService {
         return economyBuilding.ownerTagId() == this.gameContext.getEcsConstants().countryTag();
     }
 
+    public boolean isEconomyBuilding(long buildingId) {
+        return this.gameContext.getEcsWorld().obtainEntityView(buildingId).has(EconomyBuilding.class);
+    }
+
     public BuildingSummaryDto buildSummary(long buildingId) {
         World ecsWorld = this.gameContext.getEcsWorld();
         EntityView building = ecsWorld.obtainEntityView(buildingId);

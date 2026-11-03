@@ -134,6 +134,7 @@ public class EconomySimulationAnalysisTest {
         world.component(EconomyBuildingType.class);
         world.component(SpecialBuildingType.class);
         world.component(GlobalStrategicStorage.class);
+        world.component(GlobalMilitaryFacilities.class);
         world.component(DevelopmentBuildingType.class);
         world.component(Building.class);
         world.component(EconomyBuilding.class);

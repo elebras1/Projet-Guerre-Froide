@@ -86,6 +86,14 @@ import com.populaire.projetguerrefroide.component.ResourceGatheringType;
 import com.populaire.projetguerrefroide.component.ResourceGatheringTypeView;
 import com.populaire.projetguerrefroide.component.ResourceGatheringView;
 import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.util.MilitaryUtils;
+import com.populaire.projetguerrefroide.component.AirWing;
+import com.populaire.projetguerrefroide.component.GlobalMilitaryFacilities;
+import com.populaire.projetguerrefroide.component.GlobalMilitaryFacilitiesView;
+import com.populaire.projetguerrefroide.component.UnitInstance;
+import com.populaire.projetguerrefroide.component.UnitInstanceView;
+import com.populaire.projetguerrefroide.component.Unit;
+import com.populaire.projetguerrefroide.component.UnitView;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -238,6 +246,7 @@ public class SimulationRecorder implements AutoCloseable {
     private final Query artisanQuery;
     private final Query regionIncomeQuery;
     private final Query populationQuery;
+    private final Query unitQuery;
 
     private final float[] worldProductionByGood = new float[GOOD_COUNT];
     private final float[] worldDemandByGood = new float[GOOD_COUNT];
@@ -363,6 +372,7 @@ public class SimulationRecorder implements AutoCloseable {
         this.clearOutputDirectory(outputDir);
 
         this.countryQuery = ecsWorld.query().with(Country.class).build();
+        this.unitQuery = ecsWorld.query().with(UnitInstance.class).with(AirWing.class).optional().build();
         this.rgoQuery = ecsWorld.query()
             .with(Province.class)
             .with(ResourceGathering.class)
@@ -607,6 +617,8 @@ public class SimulationRecorder implements AutoCloseable {
         this.writer("country/poor_life.csv").header("year", "date", "country", "adults", "poor_life");
         this.writer("country/strategic_stock.csv").header("tick", "date", "country", "levels", "capacity", "stock_value", "purchased_value", "released_value", "lost_value",
             "spent", "earned", "stock_market_value");
+        this.writer("country/military_bases.csv").header("tick", "date", "country", "naval_capacity", "naval_load", "air_capacity", "air_load",
+            "land_organisation", "sea_organisation", "air_organisation", "supply_satisfaction", "academy_posts", "academy_filled", "instructors", "training_coverage");
         this.writer("country/cash_holdings.csv").header("year", "date", "country", "strata", "savings", "income", "days", "limit");
         this.writer("country/treasury.csv").header("tick", "date", "country", "treasury", "private_investment", "sales_revenue", "production_value", "tariff_revenue",
             "tax_revenue", "target_treasury", "spending_ratio", "bank_reserves", "state_loans", "capitalist_loans", "workers_loans",
@@ -717,6 +729,7 @@ public class SimulationRecorder implements AutoCloseable {
         this.sumCountryEmployment();
         this.recordWorldMarket(tick, date);
         this.recordCountryMarkets(tick, date);
+        this.recordMilitaryBases(tick, date);
         this.recordRgo(tick, date);
         this.recordBuildings(tick, date);
         this.recordArtisans();
@@ -1065,6 +1078,48 @@ public class SimulationRecorder implements AutoCloseable {
                 data.goodOfferTotals(g), data.goodNeedTotals(g), data.goodTradeRatios(g));
             this.tickTradeMoneyTotal += data.goodTradeMoney(g);
         }
+    }
+
+    private void recordMilitaryBases(int tick, String date) {
+        if (!this.detail) {
+            return;
+        }
+        CsvWriter writer = this.writer("country/military_bases.csv");
+        long seaForceTag = this.ecsWorld.lookup(EcsConstants.SEA_FORCE_TAG);
+        long airForceTag = this.ecsWorld.lookup(EcsConstants.AIR_FORCE_TAG);
+        EntityView globalFacilities = this.ecsWorld.obtainEntityView(this.ecsWorld.lookup("global_military_facilities"));
+        int academyStaffIndex = globalFacilities.has(GlobalMilitaryFacilities.class)
+            ? globalFacilities.<GlobalMilitaryFacilitiesView>getView(GlobalMilitaryFacilities.class).academyStaffPopTypeIndex() : -1;
+        Map<Long, double[]> organisation = new HashMap<>();
+        this.unitQuery.iter(unitIter -> {
+            boolean airWings = unitIter.isSet(1);
+            Field<UnitInstance> unitInstanceField = unitIter.field(UnitInstance.class, 0);
+            Field<AirWing> airWingField = airWings ? unitIter.field(AirWing.class, 1) : null;
+            for (int j = 0; j < unitIter.count(); j++) {
+                UnitInstanceView unitInstance = unitInstanceField.getMutView(j);
+                long countryId = MilitaryUtils.countryId(this.ecsWorld, unitInstance, airWings ? airWingField.getMutView(j) : null);
+                UnitView unit = this.ecsWorld.obtainEntityView(unitInstance.typeId()).getView(Unit.class);
+                int force = unit.forceTypeTagId() == seaForceTag ? 1 : unit.forceTypeTagId() == airForceTag ? 2 : 0;
+                double[] sums = organisation.computeIfAbsent(countryId, id -> new double[6]);
+                sums[2 * force] += unitInstance.organisation();
+                sums[2 * force + 1] += unit.defaultOrganisation();
+            }
+        });
+        this.countryQuery.each((long countryId) -> {
+            EntityView country = this.ecsWorld.obtainEntityView(countryId);
+            CountryMilitaryView military = country.getView(CountryMilitary.class);
+            double[] sums = organisation.get(countryId);
+            if (sums == null && military.navalCapacity() <= 0f && military.airCapacity() <= 0f) {
+                return;
+            }
+            if (sums == null) {
+                sums = new double[6];
+            }
+            writer.row(tick, date, country.name(), military.navalCapacity(), military.navalLoad(), military.airCapacity(), military.airLoad(),
+                sums[1] > 0.0 ? sums[0] / sums[1] : 0.0, sums[3] > 0.0 ? sums[2] / sums[3] : 0.0, sums[5] > 0.0 ? sums[4] / sums[5] : 0.0,
+                military.supplySatisfaction(), military.academyPosts(), military.academyFilled(), military.instructors(),
+                MilitaryUtils.trainingCoverage(military, academyStaffIndex));
+        });
     }
 
     private void recordCountryMarkets(int tick, String date) {

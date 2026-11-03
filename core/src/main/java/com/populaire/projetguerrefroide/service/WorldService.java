@@ -127,6 +127,10 @@ public class WorldService {
         return this.buildingService.buildDetails(buildingId);
     }
 
+    public boolean isEconomyBuilding(long buildingId) {
+        return this.buildingService.isEconomyBuilding(buildingId);
+    }
+
     public BuildingSummaryDto buildBuildingSummary(long buildingId) {
         return this.buildingService.buildSummary(buildingId);
     }

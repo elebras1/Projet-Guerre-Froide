@@ -14,5 +14,12 @@ public record CountryMilitary(
     float supplySatisfaction,
     @FixedArray(length = POP_TYPE_COUNT) float[] posts,
     @FixedArray(length = POP_TYPE_COUNT) float[] filledPosts,
-    int units) {
+    int units,
+    float navalCapacity,
+    float navalLoad,
+    float airCapacity,
+    float airLoad,
+    float academyPosts,
+    float academyFilled,
+    float instructors) {
 }

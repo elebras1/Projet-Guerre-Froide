@@ -17,6 +17,8 @@ public class MilitaryPostSystem {
 
     private final Query unitQuery;
     private final Query regionQuery;
+    private final Query specialQuery;
+    private final Query countryQuery;
 
     public MilitaryPostSystem(World ecsWorld, long phaseId) {
         this.unitQuery = ecsWorld.query()
@@ -27,6 +29,12 @@ public class MilitaryPostSystem {
             .with(RegionInstance.class)
             .with(RegionDemographics.class)
             .build();
+        this.specialQuery = ecsWorld.query()
+            .with(Building.class)
+            .with(SpecialBuilding.class)
+            .with(SpecialBuildingType.class)
+            .build();
+        this.countryQuery = ecsWorld.query().with(CountryMilitary.class).build();
         ecsWorld.system("MilitaryPostSystem")
             .kind(phaseId)
             .with(CountryMilitary.class)
@@ -44,6 +52,8 @@ public class MilitaryPostSystem {
                     countryMilitary.filledPosts(p, 0f);
                 }
                 countryMilitary.units(0);
+                countryMilitary.academyPosts(0f);
+                countryMilitary.academyFilled(0f);
             }
         }
 
@@ -71,6 +81,36 @@ public class MilitaryPostSystem {
                 countryMilitary.units(countryMilitary.units() + 1);
             }
         });
+
+        EntityView globalFacilities = world.obtainEntityView(world.lookup("global_military_facilities"));
+        long academyTypeId = 0;
+        int academyStaffIndex = -1;
+        if (globalFacilities.has(GlobalMilitaryFacilities.class)) {
+            GlobalMilitaryFacilitiesView facilities = globalFacilities.getView(GlobalMilitaryFacilities.class);
+            academyTypeId = facilities.academyTypeId();
+            academyStaffIndex = facilities.academyStaffPopTypeIndex();
+        }
+        if (academyTypeId != 0 && academyStaffIndex >= 0) {
+            long academyId = academyTypeId;
+            int staffIndex = academyStaffIndex;
+            this.specialQuery.iter(specialIter -> {
+                if (specialIter.src(2) != academyId) {
+                    return;
+                }
+                SpecialBuildingTypeView buildingType = specialIter.field(SpecialBuildingType.class, 2).getView(0);
+                Field<Building> buildingField = specialIter.field(Building.class, 0);
+                for (int j = 0; j < specialIter.count(); j++) {
+                    BuildingView building = buildingField.getMutView(j);
+                    if (building.size() <= 0 || building.countryId() == 0) {
+                        continue;
+                    }
+                    CountryMilitaryMutView countryMilitary = world.obtainEntityView(building.countryId()).getMutView(CountryMilitary.class);
+                    float posts = building.size() * buildingType.staffPosts();
+                    countryMilitary.posts(staffIndex, countryMilitary.posts(staffIndex) + posts);
+                    countryMilitary.academyPosts(countryMilitary.academyPosts() + posts);
+                }
+            });
+        }
 
         float[] baseWorkforceShares = EmploymentUtils.baseWorkforceShares(world);
         int[] incomeTypes = new int[POP_TYPE_COUNT];
@@ -110,6 +150,20 @@ public class MilitaryPostSystem {
                     countryMilitary.filledPosts(p, countryMilitary.filledPosts(p) + employed);
                 }
             }
+        });
+
+        if (academyStaffIndex < 0) {
+            return;
+        }
+        int staffIndex = academyStaffIndex;
+        this.countryQuery.each((long countryId) -> {
+            CountryMilitaryMutView countryMilitary = world.obtainEntityView(countryId).getMutView(CountryMilitary.class);
+            float academyPosts = countryMilitary.academyPosts();
+            if (academyPosts <= 0f) {
+                return;
+            }
+            float unitPosts = countryMilitary.posts(staffIndex) - academyPosts;
+            countryMilitary.academyFilled(Math.clamp(countryMilitary.filledPosts(staffIndex) - unitPosts, 0f, academyPosts));
         });
     }
 }

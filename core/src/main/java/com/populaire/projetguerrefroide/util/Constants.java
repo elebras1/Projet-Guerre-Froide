@@ -69,6 +69,9 @@ public class Constants {
     public static final String PENSION = "pension";
     public static final String PRODUCTION_MODIFIER = "production_modifier";
     public static final String STORAGE_CAPACITY = "storage_capacity";
+    public static final String NAVAL_CAPACITY = "naval_capacity";
+    public static final String AIR_CAPACITY = "air_capacity";
+    public static final String MILITARY_TRAINING = "military_training";
 
     public static float NEEDS_SCALING_FACTOR = 100000f;
     public static final float SHORTAGE_PRICE_PREMIUM = 0.5f;
@@ -133,4 +136,7 @@ public class Constants {
     public static final float STORAGE_DECAY_FACTOR = 0.1f;
     public static final float STORAGE_TARGET_DAYS = 90f;
     public static final float STORAGE_FULL_SHARE = 0.9f;
+    public static final float ORGANISATION_ADJUSTMENT_DAYS = 30f;
+    public static final float INSTRUCTORS_PER_OFFICER = 0.01f;
+    public static final float UNTRAINED_ORGANISATION_SHARE = 0.75f;
 }

@@ -4,13 +4,17 @@ import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 import com.populaire.projetguerrefroide.util.MilitaryUtils;
 
 import static com.populaire.projetguerrefroide.util.Constants.DAYS_PER_YEAR;
 
 public class MilitarySupplyNeedSystem {
 
-    public MilitarySupplyNeedSystem(World ecsWorld, long phaseId) {
+    private final EcsConstants ecsConstants;
+
+    public MilitarySupplyNeedSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("MilitarySupplyNeedSystem")
             .kind(phaseId)
             .with(UnitInstance.class)
@@ -37,7 +41,8 @@ public class MilitarySupplyNeedSystem {
             }
 
             UnitView unit = world.obtainEntityView(unitInstance.typeId()).getView(Unit.class);
-            float scale = unit.supplyConsumption() * unitInstance.strength() * fillRatio;
+            float coverage = MilitaryUtils.baseCoverage(countryMilitary, unit.forceTypeTagId(), this.ecsConstants);
+            float scale = unit.supplyConsumption() * unitInstance.strength() * fillRatio * coverage;
             for (int k = 0; k < unit.supplyCostGoodIndexesLength(); k++) {
                 int goodIndex = unit.supplyCostGoodIndexes(k);
                 if (goodIndex < 0) {

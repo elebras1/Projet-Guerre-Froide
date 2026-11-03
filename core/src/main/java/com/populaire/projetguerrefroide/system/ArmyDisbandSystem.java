@@ -10,6 +10,7 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.Query;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 import com.populaire.projetguerrefroide.util.MilitaryUtils;
 import com.populaire.projetguerrefroide.util.PopulationMobilityUtils;
 import com.populaire.projetguerrefroide.util.StateBudgetUtils;
@@ -25,9 +26,11 @@ public class ArmyDisbandSystem {
     private record UnitCost(long unitId, double cost) {
     }
 
+    private final EcsConstants ecsConstants;
     private final Query unitQuery;
 
-    public ArmyDisbandSystem(World ecsWorld, long phaseId) {
+    public ArmyDisbandSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         this.unitQuery = ecsWorld.query()
             .with(UnitInstance.class)
             .with(AirWing.class).optional()
@@ -75,7 +78,7 @@ public class ArmyDisbandSystem {
                     units = new ObjectList<>();
                     unitsByCountry.put(countryId, units);
                 }
-                units.add(new UnitCost(unitIter.entity(i), dailyCost(world, countryId, unitInstance)));
+                units.add(new UnitCost(unitIter.entity(i), dailyCost(world, this.ecsConstants, countryId, unitInstance)));
             }
         });
 
@@ -95,14 +98,16 @@ public class ArmyDisbandSystem {
         }
     }
 
-    private static double dailyCost(World world, long countryId, UnitInstanceView unitInstance) {
+    private static double dailyCost(World world, EcsConstants ecsConstants, long countryId, UnitInstanceView unitInstance) {
         EntityView country = world.obtainEntityView(countryId);
         CountryMarketView countryMarket = country.getView(CountryMarket.class);
-        float fillRatio = MilitaryUtils.fillRatio(country.getView(CountryMilitary.class));
+        CountryMilitaryView countryMilitary = country.getView(CountryMilitary.class);
+        float fillRatio = MilitaryUtils.fillRatio(countryMilitary);
         UnitView unit = world.obtainEntityView(unitInstance.typeId()).getView(Unit.class);
 
         double cost = 0.0;
-        float scale = unit.supplyConsumption() * unitInstance.strength() * fillRatio / DAYS_PER_YEAR;
+        float coverage = MilitaryUtils.baseCoverage(countryMilitary, unit.forceTypeTagId(), ecsConstants);
+        float scale = unit.supplyConsumption() * unitInstance.strength() * fillRatio * coverage / DAYS_PER_YEAR;
         for (int k = 0; k < unit.supplyCostGoodIndexesLength(); k++) {
             int goodIndex = unit.supplyCostGoodIndexes(k);
             if (goodIndex < 0) {

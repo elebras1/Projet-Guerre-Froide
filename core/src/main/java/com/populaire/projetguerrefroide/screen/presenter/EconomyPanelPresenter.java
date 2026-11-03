@@ -134,10 +134,10 @@ public class EconomyPanelPresenter implements Presenter, EconomyPanelListener {
     }
 
     private void onBuildingLevelUp(BuildingLevelUpCommand command) {
-        if (!this.economyPanel.isVisible()) {
+        long buildingId = command.buildingId();
+        if (!this.economyPanel.isVisible() || !this.worldService.isEconomyBuilding(buildingId)) {
             return;
         }
-        long buildingId = command.buildingId();
         BuildingSummaryDto summaryDto = this.worldService.buildBuildingSummary(buildingId);
         this.economyPanel.updateBuilding(buildingId, summaryDto);
         if (this.economyPanel.getSelectedBuildingId() == buildingId) {

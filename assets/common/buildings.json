@@ -690,13 +690,23 @@
   "special_building": {
     "military_academy": {
       "goods_cost": {
-        "cement": 20,
-        "steel": 20,
-        "machine_parts": 20,
-        "electronic_components": 10,
-        "computers": 5
+        "cement": 200,
+        "steel": 100,
+        "machine_parts": 20
       },
-      "time": 730
+      "maintenance_goods": {
+        "ammunition": 37,
+        "weaponry": 13,
+        "fuel": 10
+      },
+      "staff": {
+        "officers": 300
+      },
+      "time": 730,
+      "max_level": 10,
+      "modifier": {
+        "military_training": 1
+      }
     },
     "nuclear_test_site": {
       "goods_cost": {
@@ -831,11 +841,10 @@
     "air_base": {
       "onmap": true,
       "goods_cost": {
-        "cement": 20,
-        "steel": 20,
+        "cement": 80,
+        "steel": 80,
         "machine_parts": 20,
-        "electronic_components": 10,
-        "computers": 5
+        "electronic_components": 4
       },
       "maintenance_goods": {
         "cement": 0.68,
@@ -853,9 +862,7 @@
       "goods_cost": {
         "cement": 200,
         "steel": 200,
-        "machine_parts": 50,
-        "aeroplanes": 40,
-        "weaponry": 30
+        "machine_parts": 50
       },
       "maintenance_goods": {
         "cement": 6.19,

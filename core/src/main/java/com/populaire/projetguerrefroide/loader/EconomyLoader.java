@@ -349,6 +349,8 @@ public final class EconomyLoader {
             }
             this.ecsWorld.obtainEntityView(this.ecsWorld.entity("global_artisan_crafts")).set(new GlobalArtisanCrafts(artisanCraftIds, artisanCraftCount, artisanPopTypeIndex));
 
+            long academyTypeId = 0;
+            int academyStaffPopTypeIndex = -1;
             for(var specialBuildingEntry : buildings.specialBuilding().entrySet()) {
                 EntityView building = this.ecsWorld.obtainEntityView(this.ecsWorld.entity(specialBuildingEntry.getKey()));
                 building.add(Flecs.Prefab);
@@ -397,12 +399,23 @@ public final class EconomyLoader {
                         }
                         globalStorage.set(new GlobalStrategicStorage(building.id(), storageCapacity.floatValue(), storedGoods));
                     }
+                    if (buildingJson.modifier().get(MILITARY_TRAINING) != null) {
+                        if (academyTypeId != 0 || staffPopTypeIndex < 0) {
+                            throw new IllegalArgumentException("Only one special building with staff can have " + MILITARY_TRAINING);
+                        }
+                        academyTypeId = building.id();
+                        academyStaffPopTypeIndex = staffPopTypeIndex;
+                    }
                 }
                 int maxLevel = buildingJson.maxLevel() != null ? buildingJson.maxLevel().intValue() : 1;
                 building.set(new SpecialBuildingType((int) buildingJson.time(), goodCostIndexes, goodCostIds, goodCostAmounts, maintenanceGoodIndexes, maintenanceGoodAmounts,
                     maxLevel, staffPopTypeIndex, staffPosts));
             }
 
+            long navalBaseTypeId = 0;
+            float navalCapacityPerLevel = 0f;
+            long airBaseTypeId = 0;
+            float airCapacityPerLevel = 0f;
             for(var developmentBuildingEntry : buildings.developmentBuilding().entrySet()) {
                 EntityView building = this.ecsWorld.obtainEntityView(this.ecsWorld.entity(developmentBuildingEntry.getKey()));
                 building.add(Flecs.Prefab);
@@ -423,9 +436,27 @@ public final class EconomyLoader {
                 }
                 if (buildingJson.modifier() != null) {
                     building.set(this.createBuildingModifiers(buildingJson.modifier()));
+                    Double navalCapacity = buildingJson.modifier().get(NAVAL_CAPACITY);
+                    if (navalCapacity != null) {
+                        if (navalBaseTypeId != 0) {
+                            throw new IllegalArgumentException("Only one development building can have " + NAVAL_CAPACITY);
+                        }
+                        navalBaseTypeId = building.id();
+                        navalCapacityPerLevel = navalCapacity.floatValue();
+                    }
+                    Double airCapacity = buildingJson.modifier().get(AIR_CAPACITY);
+                    if (airCapacity != null) {
+                        if (airBaseTypeId != 0) {
+                            throw new IllegalArgumentException("Only one development building can have " + AIR_CAPACITY);
+                        }
+                        airBaseTypeId = building.id();
+                        airCapacityPerLevel = airCapacity.floatValue();
+                    }
                 }
                 building.set(new DevelopmentBuildingType((int) buildingJson.time(), goodCostIndexes, goodCostIds, goodCostAmounts, maintenanceGoodIndexes, maintenanceGoodAmounts, buildingJson.maxLevel().intValue()));
             }
+            this.ecsWorld.obtainEntityView(this.ecsWorld.entity("global_military_facilities"))
+                .set(new GlobalMilitaryFacilities(navalBaseTypeId, navalCapacityPerLevel, airBaseTypeId, airCapacityPerLevel, academyTypeId, academyStaffPopTypeIndex));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }

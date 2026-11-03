@@ -31,6 +31,7 @@ public class MaintenanceSystem {
             .kind(phaseId)
             .with(CountryMaintenance.class)
             .with(CountryStrategicStock.class)
+            .with(CountryMilitary.class)
             .run(this::maintain);
     }
 
@@ -39,7 +40,10 @@ public class MaintenanceSystem {
         while (iter.next()) {
             Field<CountryMaintenance> countryMaintenanceField = iter.field(CountryMaintenance.class, 0);
             Field<CountryStrategicStock> countryStrategicStockField = iter.field(CountryStrategicStock.class, 1);
+            Field<CountryMilitary> countryMilitaryField = iter.field(CountryMilitary.class, 2);
             for (int i = 0; i < iter.count(); i++) {
+                CountryMilitaryMutView countryMilitaryReset = countryMilitaryField.getMutView(i);
+                countryMilitaryReset.instructors(0f);
                 CountryMaintenanceMutView countryMaintenance = countryMaintenanceField.getMutView(i);
                 for (int g = 0; g < countryMaintenance.needsLength(); g++) {
                     countryMaintenance.needs(g, 0f);
@@ -88,10 +92,15 @@ public class MaintenanceSystem {
 
         EntityView globalStorage = world.obtainEntityView(world.lookup("global_strategic_storage"));
         GlobalStrategicStorageView strategicStorage = globalStorage.has(GlobalStrategicStorage.class) ? globalStorage.getView(GlobalStrategicStorage.class) : null;
+        EntityView globalFacilities = world.obtainEntityView(world.lookup("global_military_facilities"));
+        long academyTypeId = globalFacilities.has(GlobalMilitaryFacilities.class) ? globalFacilities.<GlobalMilitaryFacilitiesView>getView(GlobalMilitaryFacilities.class).academyTypeId() : 0;
+        int statePostIndex = world.obtainEntityView(world.lookup("global_population_type")).<GlobalPopulationTypeView>getView(GlobalPopulationType.class).statePostPopTypeIndex();
         this.specialQuery.iter(specialIter -> {
             SpecialBuildingTypeView buildingType = specialIter.field(SpecialBuildingType.class, 2).getView(0);
             long buildingTypeId = specialIter.src(2);
             boolean storage = strategicStorage != null && strategicStorage.buildingTypeId() == buildingTypeId;
+            boolean academy = academyTypeId != 0 && academyTypeId == buildingTypeId;
+            boolean stateStaff = buildingType.staffPopTypeIndex() == statePostIndex;
             boolean staffed = buildingType.staffPopTypeIndex() >= 0 && buildingType.staffPosts() > 0f;
             boolean maintained = buildingType.maintenanceGoodIndexes(0) >= 0;
             Field<Building> buildingField = specialIter.field(Building.class, 0);
@@ -99,6 +108,7 @@ public class MaintenanceSystem {
             long countryId = 0;
             CountryMaintenanceMutView countryMaintenance = null;
             CountryStrategicStockMutView countryStrategicStock = null;
+            CountryMilitaryMutView countryMilitary = null;
             for (int j = 0; j < specialIter.count(); j++) {
                 BuildingView building = buildingField.getMutView(j);
                 SpecialBuildingMutView specialBuilding = specialBuildingField.getMutView(j);
@@ -111,6 +121,7 @@ public class MaintenanceSystem {
                     EntityView country = world.obtainEntityView(countryId);
                     countryMaintenance = country.getMutView(CountryMaintenance.class);
                     countryStrategicStock = country.getMutView(CountryStrategicStock.class);
+                    countryMilitary = country.getMutView(CountryMilitary.class);
                 }
                 float served = 1f;
                 if (maintained) {
@@ -129,9 +140,17 @@ public class MaintenanceSystem {
                     }
                     specialBuilding.maintenanceDecay(decay);
                 }
-                float staffFill = staffed ? world.obtainEntityView(building.parentId()).<RegionSpecialBuildingsView>getView(RegionSpecialBuildings.class).staffFill() : 1f;
+                float staffFill = 1f;
+                if (staffed && stateStaff) {
+                    staffFill = world.obtainEntityView(building.parentId()).<RegionSpecialBuildingsView>getView(RegionSpecialBuildings.class).staffFill();
+                } else if (staffed) {
+                    staffFill = countryMilitary.academyPosts() > 0f ? countryMilitary.academyFilled() / countryMilitary.academyPosts() : 0f;
+                }
                 float effectiveLevel = building.size() * staffFill * served;
                 specialBuilding.effectiveLevel(effectiveLevel);
+                if (academy) {
+                    countryMilitary.instructors(countryMilitary.instructors() + effectiveLevel * buildingType.staffPosts());
+                }
                 if (storage) {
                     countryStrategicStock.capacity(countryStrategicStock.capacity() + (double) effectiveLevel * strategicStorage.capacityPerLevel());
                     countryStrategicStock.levels(countryStrategicStock.levels() + building.size());

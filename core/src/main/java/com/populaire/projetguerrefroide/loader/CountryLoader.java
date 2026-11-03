@@ -132,7 +132,7 @@ public final class CountryLoader {
                 new float[GOOD_COUNT], new float[GOOD_COUNT], 0d, 0d, 0d, 0f));
             country.set(new CountryCentralBank(new float[GOOD_COUNT], new float[GOOD_COUNT], 0f, 0f, 0d, 0d));
             country.set(new CountryPublicWorks(0f, 0, 0d));
-            country.set(new CountryMilitary(new float[GOOD_COUNT], new float[GOOD_COUNT], 0d, 0f, new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0));
+            country.set(new CountryMilitary(new float[GOOD_COUNT], new float[GOOD_COUNT], 0d, 0f, new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
             country.set(new CountryTradePolicy(0f));
             country.set(new CountryProfitDistributionPolicy(0.7f, 0.3f, 0.75f, 0.7f));
             country.set(new CountryLaborPolicy(0f, false));
