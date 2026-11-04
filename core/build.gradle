@@ -1,5 +1,22 @@
+apply plugin: 'io.github.elebras1.gdx-skin-weaver'
+
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 eclipse.project.name = appName + '-core'
+
+def skinResources = layout.buildDirectory.dir('generated/skinWeaver/resources')
+
+skinWeaver {
+  assetsDir.set(rootProject.layout.projectDirectory.dir('assets'))
+  outputDir.set(skinResources.map { it.dir('generated-skins') })
+  excludedDirs.set(['', 'common', 'history', 'localisation', 'map', 'settings', 'shaders'])
+  copyPackedFontPages.set(false)
+  names.packageName.set('com.populaire.projetguerrefroide.ui.skin')
+  names.skinCatalog.set(true)
+  names.skinCatalogPrefix.set('generated-skins')
+}
+
+sourceSets.main.resources.srcDir(skinResources)
+processResources.dependsOn(tasks.named('weaveSkins'))
 
 dependencies {
   api "com.badlogicgames.gdx:gdx:$gdxVersion"

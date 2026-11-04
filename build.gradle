@@ -9,15 +9,8 @@ buildscript {
     maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/' }
   }
   dependencies {
-    classpath 'io.github.elebras1:gdx-skin-weaver:0.2.3'
+    classpath 'io.github.elebras1:gdx-skin-weaver:0.3.4'
   }
-}
-
-apply plugin: 'io.github.elebras1.gdx-skin-weaver'
-
-skinWeaver {
-  outputDir.set(layout.projectDirectory.dir("assets/generated-skins"))
-  excludedDirs.set(['common', 'history', 'localisation', 'map', 'shaders', ''])
 }
 
 allprojects {
@@ -40,26 +33,6 @@ configure(subprojects) {
       languageVersion.set(JavaLanguageVersion.of(25))
     }
   }
-
-  // From https://lyze.dev/2021/04/29/libGDX-Internal-Assets-List/
-  // The article can be helpful when using assets.txt in your project.
-  tasks.register('generateAssetList') {
-    inputs.dir("${project.rootDir}/assets/")
-    // projectFolder/assets
-    File assetsFolder = new File("${project.rootDir}/assets/")
-    // projectFolder/assets/assets.txt
-    File assetsFile = new File(assetsFolder, "assets.txt")
-    // delete that file in case we've already created it
-    assetsFile.delete()
-
-    // iterate through all files inside that folder
-    // convert it to a relative path
-    // and append it to the file assets.txt
-    fileTree(assetsFolder).collect { assetsFolder.relativePath(it) }.each {
-      assetsFile.append(it + "\n")
-    }
-  }
-  processResources.dependsOn 'generateAssetList'
 
   compileJava {
     options.incremental = true

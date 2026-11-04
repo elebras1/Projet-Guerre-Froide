@@ -35,7 +35,7 @@ public class ProvincePanelPresenter implements Presenter, TimeListener, Province
 
     @Override
     public void initialize(Stage stage) {
-        this.provincePanel = new ProvincePanel(this.widgetFactory, this.skinProvince, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
+        this.provincePanel = new ProvincePanel(this.widgetFactory, this.skinProvince, this.skinUi, this.skinFlags, this.gameContext.getSkinFonts(), this.gameContext.getLocalisation());
         this.provincePanel.setListener(this);
         this.provincePanel.setPosition(0, 0);
         this.provincePanel.setVisible(false);

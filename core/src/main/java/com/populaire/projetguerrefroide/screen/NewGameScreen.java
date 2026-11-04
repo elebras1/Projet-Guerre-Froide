@@ -23,6 +23,7 @@ import com.populaire.projetguerrefroide.screen.presenter.*;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.WorldService;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
 import com.populaire.projetguerrefroide.ui.view.MainMenuInGame;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
@@ -60,12 +61,12 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
 
         AssetManager assetManager = gameContext.getAssetManager();
         this.configurationService.loadNewGameLocalisation(this.gameContext);
-        Skin skinUi = assetManager.get("generated-skins/ui/ui.json");
-        Skin skinFlags = assetManager.get("generated-skins/flags/flags.json");
+        Skin skinUi = assetManager.get(Skins.UI);
+        Skin skinFlags = assetManager.get(Skins.FLAGS);
         this.stage = new WgCustomStage(new WgScreenViewport(), skinUi, skinFlags);
         WidgetFactory widgetFactory = new WidgetFactory();
-        this.hudPresenter = new HudPresenter(gameContext, worldService, screenManager, widgetFactory, assetManager.get("generated-skins/ui/newgame/newgame.json"), skinUi, skinFlags, assetManager.get("generated-skins/ui/scrollbars/scrollbars.json"), assetManager.get("generated-skins/portraits/portraits.json"));
-        this.mainMenuInGamePresenter = new MainMenuInGamePresenter(gameContext, configurationService, this, widgetFactory, assetManager.get("generated-skins/ui/mainmenu_ig/mainmenu_ig.json"), skinUi, assetManager.get("generated-skins/ui/scrollbars/scrollbars.json"), assetManager.get("generated-skins/ui/popup/popup.json"), skinFlags);
+        this.hudPresenter = new HudPresenter(gameContext, worldService, screenManager, widgetFactory, assetManager.get(Skins.UI_NEWGAME), skinUi, skinFlags, assetManager.get(Skins.UI_SCROLLBARS), assetManager.get(Skins.PORTRAITS));
+        this.mainMenuInGamePresenter = new MainMenuInGamePresenter(gameContext, configurationService, this, widgetFactory, assetManager.get(Skins.UI_MAINMENU_IG), skinUi, assetManager.get(Skins.UI_SCROLLBARS), assetManager.get(Skins.UI_POPUP), skinFlags);
         this.tooltipPresenter = new TooltipPresenter(gameContext, this.worldService, widgetFactory, skinUi, skinFlags);
         this.initializeDebug();
 

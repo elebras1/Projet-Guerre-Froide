@@ -1,6 +1,7 @@
 package com.populaire.projetguerrefroide.service;
 
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.Disposable;
 import io.github.elebras1.flecs.World;
 import com.github.tommyettinger.ds.ObjectObjectMap;
@@ -17,18 +18,18 @@ public class GameContext implements Disposable {
     private final Bookmark bookmark;
     private final AssetManager assetManager;
     private final CursorManager cursorManager;
-    private final LabelStylePool labelStylePool;
+    private final Skin skinFonts;
     private final ColorDrawablePool colorTexturePool;
     private final Map<String, String> localisation;
     private Settings settings;
 
-    public GameContext(World ecsWorld, Bookmark bookmark, AssetManager assetManager, CursorManager cursorManager, Settings settings, LabelStylePool labelStylePool) {
+    public GameContext(World ecsWorld, Bookmark bookmark, AssetManager assetManager, CursorManager cursorManager, Settings settings, Skin skinFonts) {
         this.ecsWorld = ecsWorld;
         this.ecsConstants = new EcsConstants(this.ecsWorld);
         this.bookmark = bookmark;
         this.assetManager = assetManager;
         this.cursorManager = cursorManager;
-        this.labelStylePool = labelStylePool;
+        this.skinFonts = skinFonts;
         this.colorTexturePool = new ColorDrawablePool();
         this.localisation = new ObjectObjectMap<>();
         this.settings = settings;
@@ -54,8 +55,8 @@ public class GameContext implements Disposable {
         return this.cursorManager;
     }
 
-    public LabelStylePool getLabelStylePool() {
-        return this.labelStylePool;
+    public Skin getSkinFonts() {
+        return this.skinFonts;
     }
 
     public ColorDrawablePool getColorTexturePool() {

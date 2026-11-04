@@ -1,8 +1,6 @@
 package com.populaire.projetguerrefroide;
 
 import com.badlogic.gdx.Game;
-import com.badlogic.gdx.assets.AssetManager;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import io.github.elebras1.flecs.Flecs;
 import io.github.elebras1.flecs.Rest;
 import io.github.elebras1.flecs.World;
@@ -53,7 +51,6 @@ public class ProjetGuerreFroide extends Game {
         TimeService timeService = new TimeService(this.gameContext.getBookmark().date());
         this.registerCommands(commandBus, buildingService);
         this.screenManager = new ScreenManager(this, this.gameContext, this.configurationService, worldService, timeService, economyService, commandBus);
-        this.loadAssets(this.gameContext.getAssetManager());
         this.screenManager.showMainMenuScreen();
         this.ecsDebug(this.gameContext);
 
@@ -140,13 +137,6 @@ public class ProjetGuerreFroide extends Game {
         commandBus.register(SuspendBuildingCommand.class, new SuspendBuildingHandler(buildingService));
         commandBus.register(DemolishBuildingCommand.class, new DemolishBuildingHandler(buildingService));
         commandBus.register(ResumeBuildingCommand.class, new ResumeBuildingHandler(buildingService));
-    }
-
-    private void loadAssets(AssetManager assetManager) {
-        assetManager.load("generated-skins/ui/ui.json", Skin.class);
-        assetManager.load("generated-skins/fonts/fonts.json", Skin.class);
-        assetManager.load("generated-skins/ui/scrollbars/scrollbars.json", Skin.class);
-        assetManager.finishLoading();
     }
 
     private void ecsDebug(GameContext gameContext) {

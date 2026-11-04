@@ -13,7 +13,10 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.DragListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.Align;
-import com.populaire.projetguerrefroide.service.LabelStylePool;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.FlagsSkin;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.FontsSkin;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiPopupSkin;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiSkin;
 import com.populaire.projetguerrefroide.ui.widget.FlagImage;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
@@ -25,22 +28,22 @@ public class Popup extends Table {
     private FlagImage flagRightImage;
     private WidgetFactory widgetFactory;
 
-    public Popup(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation, String title, String description, boolean doubleButton, boolean big, PopupListener listener) {
+    public Popup(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, Skin skinFonts, Map<String, String> localisation, String title, String description, boolean doubleButton, boolean big, PopupListener listener) {
         this.listener = listener;
         this.widgetFactory = widgetFactory;
-        this.setPopup(skin, labelStylePool, localisation, title, description, doubleButton, big, this.getIdButton(doubleButton, big));
-        this.flagLeftImage = createFlagImage(skinUi, skinFlags, "comecon", null);
+        this.setPopup(skin, skinFonts, localisation, title, description, doubleButton, big, this.getIdButton(doubleButton, big));
+        this.flagLeftImage = createFlagImage(skinUi, skinFlags, FlagsSkin.Drawables.COMECON, null);
         this.flagLeftImage.setPosition(9, this.getHeight() - 75);
-        this.flagRightImage = createFlagImage(skinUi, skinFlags, "nato", null);
+        this.flagRightImage = createFlagImage(skinUi, skinFlags, FlagsSkin.Drawables.NATO, null);
         this.flagRightImage.setPosition(this.getWidth() - 72, this.getHeight() - 75);
         this.setTouchable(Touchable.enabled);
         this.addDragListener();
     }
 
-    public Popup(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation, String title, String description, String countryNameId, String colonizerNameId, boolean doubleButton, boolean big, PopupListener listener) {
+    public Popup(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, Skin skinFonts, Map<String, String> localisation, String title, String description, String countryNameId, String colonizerNameId, boolean doubleButton, boolean big, PopupListener listener) {
         this.listener = listener;
         this.widgetFactory = widgetFactory;
-        this.setPopup(skin, labelStylePool, localisation, title, description, doubleButton, big, this.getIdButton(doubleButton, big));
+        this.setPopup(skin, skinFonts, localisation, title, description, doubleButton, big, this.getIdButton(doubleButton, big));
         this.flagLeftImage = createFlagImage(skinUi, skinFlags, countryNameId, colonizerNameId);
         this.flagLeftImage.setPosition(9, this.getHeight() - 75);
         this.flagRightImage = createFlagImage(skinUi, skinFlags, countryNameId, colonizerNameId);
@@ -51,26 +54,26 @@ public class Popup extends Table {
 
     private String getIdButton(boolean doubleButton, boolean big) {
         if (doubleButton && big) {
-            return "popup_bg_big_double_1";
+            return UiPopupSkin.Drawables.POPUP_BG_BIG_DOUBLE_1;
         } else if (doubleButton) {
-            return "popup_bg_standard_flag_double";
+            return UiPopupSkin.Drawables.POPUP_BG_STANDARD_FLAG_DOUBLE;
         } else if (big) {
-            return "popup_bg_big_double_3";
+            return UiPopupSkin.Drawables.POPUP_BG_BIG_DOUBLE_3;
         }
 
-        return "popup_bg_standard_flag";
+        return UiPopupSkin.Drawables.POPUP_BG_STANDARD_FLAG;
     }
 
-    private void setPopup(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation, String title, String description, boolean doubleButton, boolean big, String backgroundName) {
+    private void setPopup(Skin skin, Skin skinFonts, Map<String, String> localisation, String title, String description, boolean doubleButton, boolean big, String backgroundName) {
         Drawable background = skin.getDrawable(backgroundName);
         this.setBackground(background);
         this.setSize(background.getMinWidth(), background.getMinHeight());
 
-        Actor button = configureButton(skin, labelStylePool, localisation, doubleButton, big, background);
+        Actor button = configureButton(skin, skinFonts, localisation, doubleButton, big, background);
 
-        Label titleLabel = createLabel(localisation.get(title), labelStylePool.get("jockey_20_glow_blue"),
+        Label titleLabel = createLabel(localisation.get(title), skinFonts.get(FontsSkin.Styles.Label.JOCKEY_20_GLOW_BLUE, LabelStyle.class),
             background.getMinWidth() / 2, background.getMinHeight() - 42);
-        Label descriptionLabel = createWrappedLabel(localisation.get(description), labelStylePool.get("arial_18"),
+        Label descriptionLabel = createWrappedLabel(localisation.get(description), skinFonts.get(FontsSkin.Styles.Label.ARIAL_18, LabelStyle.class),
             background.getMinWidth(), background.getMinHeight());
 
         this.addActor(titleLabel);
@@ -79,15 +82,15 @@ public class Popup extends Table {
     }
 
     private FlagImage createFlagImage(Skin skinUi, Skin skinFlags, String countryNameId, String colonizerNameId) {
-        FlagImage flagImage = this.widgetFactory.createFlagImage(skinUi, "shield_big", "shield_big_overlay");
+        FlagImage flagImage = this.widgetFactory.createFlagImage(skinUi, UiSkin.Drawables.SHIELD_BIG, UiSkin.Drawables.SHIELD_BIG_OVERLAY);
         flagImage.setFlag(this.widgetFactory.getFlagTextureRegion(skinFlags, countryNameId, colonizerNameId));
         this.addActor(flagImage);
 
         return flagImage;
     }
 
-    private Actor configureButton(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation, boolean doubleButton, boolean big, Drawable background) {
-        Actor button = doubleButton ? getDoubleButton(skin, labelStylePool, localisation) : getSimpleButton(skin, labelStylePool, localisation);
+    private Actor configureButton(Skin skin, Skin skinFonts, Map<String, String> localisation, boolean doubleButton, boolean big, Drawable background) {
+        Actor button = doubleButton ? getDoubleButton(skin, skinFonts, localisation) : getSimpleButton(skin, skinFonts, localisation);
 
         float x = doubleButton ? background.getMinWidth() / 2 : 165;
         float y = doubleButton ? (big ? 35 : 33) : (big ? 15 : 13);
@@ -113,10 +116,10 @@ public class Popup extends Table {
     }
 
 
-    private Actor getSimpleButton(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation) {
-        LabelStyle labelStyleJockey16GlowBlue = labelStylePool.get("jockey_16_glow_blue");
+    private Actor getSimpleButton(Skin skin, Skin skinFonts, Map<String, String> localisation) {
+        LabelStyle labelStyleJockey16GlowBlue = skinFonts.get(FontsSkin.Styles.Label.JOCKEY_16_GLOW_BLUE, LabelStyle.class);
 
-        Button button = new Button(skin, "popup_btn");
+        Button button = new Button(skin, UiPopupSkin.Styles.Button.POPUP_BTN);
         button.add(new Label(localisation.get("OK"), labelStyleJockey16GlowBlue)).padBottom(5);
         button.addListener(new ClickListener() {
             @Override
@@ -128,11 +131,11 @@ public class Popup extends Table {
         return button;
     }
 
-    private Actor getDoubleButton(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation) {
-        LabelStyle labelStyleJockey16GlowRed = labelStylePool.get("jockey_16_glow_red");
-        LabelStyle labelStyleJockey16GlowBlue = labelStylePool.get("jockey_16_glow_blue");
+    private Actor getDoubleButton(Skin skin, Skin skinFonts, Map<String, String> localisation) {
+        LabelStyle labelStyleJockey16GlowRed = skinFonts.get(FontsSkin.Styles.Label.JOCKEY_16_GLOW_RED, LabelStyle.class);
+        LabelStyle labelStyleJockey16GlowBlue = skinFonts.get(FontsSkin.Styles.Label.JOCKEY_16_GLOW_BLUE, LabelStyle.class);
 
-        Button cancelButton = new Button(skin, "popup_red_btn");
+        Button cancelButton = new Button(skin, UiPopupSkin.Styles.Button.POPUP_RED_BTN);
         cancelButton.add(new Label(localisation.get("CANCEL"), labelStyleJockey16GlowRed)).padBottom(5);
         cancelButton.addListener(new ClickListener() {
             @Override
@@ -141,7 +144,7 @@ public class Popup extends Table {
             }
         });
 
-        Button okButton = new Button(skin, "popup_btn");
+        Button okButton = new Button(skin, UiPopupSkin.Styles.Button.POPUP_BTN);
         okButton.add(new Label(localisation.get("OK"), labelStyleJockey16GlowBlue)).padBottom(5);
         okButton.addListener(new ClickListener() {
             @Override

@@ -12,7 +12,9 @@ import com.populaire.projetguerrefroide.dto.ProvinceDto;
 import com.populaire.projetguerrefroide.dto.DevelopementBuildingLevelDto;
 import com.populaire.projetguerrefroide.dto.SpecialBuildingDto;
 import com.populaire.projetguerrefroide.screen.listener.ProvincePanelListener;
-import com.populaire.projetguerrefroide.service.LabelStylePool;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.FontsSkin;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiProvinceSkin;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiSkin;
 import com.populaire.projetguerrefroide.ui.widget.FlagImage;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 import com.populaire.projetguerrefroide.util.LabelUtils;
@@ -54,7 +56,7 @@ public class ProvincePanel extends Table {
     private final List<SpecialBuildingDto> specialBuildingData;
     private ProvincePanelListener listener;
 
-    public ProvincePanel(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation) {
+    public ProvincePanel(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, Skin skinFonts, Map<String, String> localisation) {
         this.widgetFactory = widgetFactory;
         this.skin = skin;
         this.skinUi = skinUi;
@@ -68,23 +70,23 @@ public class ProvincePanel extends Table {
         this.colorsBuildings = new ObjectList<>();
         this.specialBuildings = new ObjectList<>();
         this.specialBuildingData = new ObjectList<>();
-        Drawable background = skin.getDrawable("bg_province");
+        Drawable background = skin.getDrawable(UiProvinceSkin.Drawables.BG_PROVINCE);
         this.setBackground(background);
         this.setSize(background.getMinWidth(), background.getMinHeight());
-        this.setHeader(labelStylePool);
-        this.setDataOverview(labelStylePool);
+        this.setHeader(skinFonts);
+        this.setDataOverview(skinFonts);
         this.setCountriesCoreFlagImages();
     }
 
-    private void setHeader(LabelStylePool labelStylePool) {
+    private void setHeader(Skin skinFonts) {
         this.terrainImage = new Image();
         this.terrainImage.setPosition(26, 315);
         this.addActor(this.terrainImage);
 
-        Image overlay = this.widgetFactory.createImage(this.skin, "prov_overlay", 26, 315);
+        Image overlay = this.widgetFactory.createImage(this.skin, UiProvinceSkin.Drawables.PROV_OVERLAY, 26, 315);
         this.addActor(overlay);
 
-        Button closeButton = new Button(this.skinUi, "close_btn");
+        Button closeButton = new Button(this.skinUi, UiSkin.Styles.Button.CLOSE_BTN);
         closeButton.setPosition(354, 455);
         closeButton.addListener(new ClickListener() {
             @Override
@@ -94,14 +96,14 @@ public class ProvincePanel extends Table {
         });
         this.addActor(closeButton);
 
-        Label.LabelStyle labelStyleJockey24 = labelStylePool.get("jockey_24");
+        Label.LabelStyle labelStyleJockey24 = skinFonts.get(FontsSkin.Styles.Label.JOCKEY_24, Label.LabelStyle.class);
         this.provinceName = new Label("", labelStyleJockey24);
         this.addActor(this.provinceName);
 
-        this.flagImage = this.widgetFactory.createFlagImage(this.skinUi, "shield_big", "shield_big_overlay");
+        this.flagImage = this.widgetFactory.createFlagImage(this.skinUi, UiSkin.Drawables.SHIELD_BIG, UiSkin.Drawables.SHIELD_BIG_OVERLAY);
         this.addActor(this.flagImage);
 
-        Label.LabelStyle labelStyleJockey14 = labelStylePool.get("jockey_14");
+        Label.LabelStyle labelStyleJockey14 = skinFonts.get(FontsSkin.Styles.Label.JOCKEY_14, Label.LabelStyle.class);
         for(int i = 0; i < 8; i++) {
             Label label = new Label("", labelStyleJockey14);
             this.provinceNamesRegion.add(label);
@@ -111,48 +113,48 @@ public class ProvincePanel extends Table {
         this.addSpecialBuildings(this.skin, 26, 25, this);
     }
 
-    private void setDataOverview(LabelStylePool labelStylePool) {
+    private void setDataOverview(Skin skinFonts) {
         Table dataOverview = new Table();
-        Drawable background = this.skin.getDrawable("bg_province_paper");
+        Drawable background = this.skin.getDrawable(UiProvinceSkin.Drawables.BG_PROVINCE_PAPER);
         dataOverview.setBackground(background);
         dataOverview.setSize(background.getMinWidth(), background.getMinHeight());
         dataOverview.setPosition(12, 75);
 
-        Label.LabelStyle labelStyleJockey16Paper = labelStylePool.get("jockey_16_paper");
-        Label.LabelStyle labelStyleDanger14 = labelStylePool.get("danger_14");
-        Label.LabelStyle labelStyleDanger20Dark = labelStylePool.get("danger_20_dark");
-        Label.LabelStyle labelStyleJockey16Blue = labelStylePool.get("jockey_16", "blue");
+        Label.LabelStyle labelStyleJockey16Paper = skinFonts.get(FontsSkin.Styles.Label.JOCKEY_16_PAPER, Label.LabelStyle.class);
+        Label.LabelStyle labelStyleDanger14 = skinFonts.get(FontsSkin.Styles.Label.DANGER_14, Label.LabelStyle.class);
+        Label.LabelStyle labelStyleDanger20Dark = skinFonts.get(FontsSkin.Styles.Label.DANGER_20_DARK, Label.LabelStyle.class);
+        Label.LabelStyle labelStyleJockey16Blue = skinFonts.get(FontsSkin.Styles.Label.JOCKEY_16_BLUE, Label.LabelStyle.class);
 
         this.regionName = this.widgetFactory.createLabel(labelStyleJockey16Paper, dataOverview);
         this.resourceImage = this.widgetFactory.createImage(dataOverview);
         this.resourceProduced = this.widgetFactory.createLabel(labelStyleDanger20Dark, dataOverview);
-        this.widgetFactory.createImage(this.skin, "prov_pop_icon", 22, 67, dataOverview);
+        this.widgetFactory.createImage(this.skin, UiProvinceSkin.Drawables.PROV_POP_ICON, 22, 67, dataOverview);
         this.populationRegion = this.widgetFactory.createLabel(labelStyleDanger14, dataOverview);
-        this.widgetFactory.createImage(this.skin, "icon_workers_small", 22, 44, dataOverview);
+        this.widgetFactory.createImage(this.skin, UiProvinceSkin.Drawables.ICON_WORKERS_SMALL, 22, 44, dataOverview);
         this.workersRegion = this.widgetFactory.createLabel(labelStyleDanger14, dataOverview);
-        this.widgetFactory.createImage(this.skin, "prov_DI", 22, 22, dataOverview);
+        this.widgetFactory.createImage(this.skin, UiProvinceSkin.Drawables.PROV_DI, 22, 22, dataOverview);
         this.developmentIndexRegion = this.widgetFactory.createLabel(labelStyleDanger14, dataOverview);
-        this.widgetFactory.createImage(this.skin, "icon_dollar_big", 145, 38, dataOverview);
+        this.widgetFactory.createImage(this.skin, UiProvinceSkin.Drawables.ICON_DOLLAR_BIG, 145, 38, dataOverview);
         this.incomeRegion = this.widgetFactory.createLabel(labelStyleDanger14, dataOverview);
-        this.widgetFactory.createImage(this.skin, "icon_industry_small", 265, 53, dataOverview);
+        this.widgetFactory.createImage(this.skin, UiProvinceSkin.Drawables.ICON_INDUSTRY_SMALL, 265, 53, dataOverview);
         this.industryRegion = this.widgetFactory.createLabel(labelStyleDanger14, dataOverview);
-        this.widgetFactory.createImage(this.skin, "prov_build_infra", 162, 160, dataOverview);
+        this.widgetFactory.createImage(this.skin, UiProvinceSkin.Drawables.PROV_BUILD_INFRA, 162, 160, dataOverview);
         this.infrastructureValue = this.widgetFactory.createLabel(labelStyleDanger20Dark, dataOverview);
-        this.widgetFactory.createImage(this.skinUi, "icon_manpower_small_blue", 27, 205, dataOverview);
+        this.widgetFactory.createImage(this.skinUi, UiSkin.Drawables.ICON_MANPOWER_SMALL_BLUE, 27, 205, dataOverview);
         this.populationProvince = this.widgetFactory.createLabel(labelStyleJockey16Blue, dataOverview);
-        this.widgetFactory.createImage(this.skinUi, "icon_money_small_blue", 125, 205, dataOverview);
+        this.widgetFactory.createImage(this.skinUi, UiSkin.Drawables.ICON_MONEY_SMALL_BLUE, 125, 205, dataOverview);
         this.incomeProvince = this.widgetFactory.createLabel(labelStyleJockey16Blue, dataOverview);
-        this.widgetFactory.createImage(this.skinUi, "icon_dissent_small_blue", 199, 205, dataOverview);
+        this.widgetFactory.createImage(this.skinUi, UiSkin.Drawables.ICON_DISSENT_SMALL_BLUE, 199, 205, dataOverview);
         this.revoltRisk = this.widgetFactory.createLabel(labelStyleJockey16Blue, dataOverview);
-        this.widgetFactory.createImage(this.skin, "icon_militia_small", 282, 202, dataOverview);
+        this.widgetFactory.createImage(this.skin, UiProvinceSkin.Drawables.ICON_MILITIA_SMALL, 282, 202, dataOverview);
         this.guerillaValue = this.widgetFactory.createLabel(labelStyleDanger20Dark, dataOverview);
-        this.widgetFactory.createImage(this.skin, "prov_build_navalbase", 254, 173, dataOverview);
+        this.widgetFactory.createImage(this.skin, UiProvinceSkin.Drawables.PROV_BUILD_NAVALBASE, 254, 173, dataOverview);
         this.addBuildingLevel(this.skin, this.navalBaseLevel, 285, 175, dataOverview);
-        this.widgetFactory.createImage(this.skin, "prov_build_airfield", 254, 157, dataOverview);
+        this.widgetFactory.createImage(this.skin, UiProvinceSkin.Drawables.PROV_BUILD_AIRFIELD, 254, 157, dataOverview);
         this.addBuildingLevel(this.skin, this.airBaseLevel, 285, 159, dataOverview);
-        this.widgetFactory.createImage(this.skin, "prov_build_aa", 254, 141, dataOverview);
+        this.widgetFactory.createImage(this.skin, UiProvinceSkin.Drawables.PROV_BUILD_AA, 254, 141, dataOverview);
         this.addBuildingLevel(this.skin, this.antiAircraftGunsLevel, 285, 143, dataOverview);
-        this.widgetFactory.createImage(this.skin, "prov_build_radar", 254, 125, dataOverview);
+        this.widgetFactory.createImage(this.skin, UiProvinceSkin.Drawables.PROV_BUILD_RADAR, 254, 125, dataOverview);
         this.addBuildingLevel(this.skin, this.radarStationLevel, 285, 127, dataOverview);
         this.addColorBuildings(this.skin, 269, 29, dataOverview);
 
@@ -164,7 +166,7 @@ public class ProvincePanel extends Table {
         int x = 35;
         int y = 193;
         for(int i = 0; i < 5; i++) {
-            FlagImage flagImage = this.widgetFactory.createFlagImage(this.skinUi, "minimask", "minishield");
+            FlagImage flagImage = this.widgetFactory.createFlagImage(this.skinUi, UiSkin.Drawables.MINIMASK, UiSkin.Drawables.MINISHIELD);
             flagImage.setPosition(x, y);
             this.countriesCoreFlagImages.add(flagImage);
             x += 38;
@@ -172,15 +174,15 @@ public class ProvincePanel extends Table {
     }
 
     private Table addBuildingLevel(Skin skin, List<Image> buildingLevel, float x, float y, Group parent) {
-        return this.widgetFactory.createImageRow(skin, "prov_building_plupp_off", 10, 8, x, y, buildingLevel, parent);
+        return this.widgetFactory.createImageRow(skin, UiProvinceSkin.Drawables.PROV_BUILDING_PLUPP_OFF, 10, 8, x, y, buildingLevel, parent);
     }
 
     private Table addColorBuildings(Skin skin, float x, float y, Group parent) {
-        return this.widgetFactory.createImageRow(skin, "factory_plupp_nofactory", 6, 18, x, y, this.colorsBuildings, parent);
+        return this.widgetFactory.createImageRow(skin, UiProvinceSkin.Drawables.FACTORY_PLUPP_NOFACTORY, 6, 18, x, y, this.colorsBuildings, parent);
     }
 
     private Table addSpecialBuildings(Skin skin, float x, float y, Group parent) {
-        Table row = this.widgetFactory.createImageRow(skin, "empty_spec_building", 8, 60, x, y, this.specialBuildings, parent);
+        Table row = this.widgetFactory.createImageRow(skin, UiProvinceSkin.Drawables.EMPTY_SPEC_BUILDING, 8, 60, x, y, this.specialBuildings, parent);
         for (int i = 0; i < this.specialBuildings.size(); i++) {
             int slot = i;
             this.specialBuildings.get(i).addListener(new InputListener() {
@@ -261,7 +263,7 @@ public class ProvincePanel extends Table {
         if(name != null) {
             resource = this.skinUi.getDrawable("good_" + name + "_small");
         } else {
-            resource = this.skinUi.getDrawable("good_none_small");
+            resource = this.skinUi.getDrawable(UiSkin.Drawables.GOOD_NONE_SMALL);
         }
 
         this.resourceImage.setDrawable(resource);
@@ -374,9 +376,9 @@ public class ProvincePanel extends Table {
         for(int i = 0; i < buildingLevel.size(); i++) {
             Image image = buildingLevel.get(i);
             if(i < level) {
-                image.setDrawable(this.skin.getDrawable("prov_building_plupp_on"));
+                image.setDrawable(this.skin.getDrawable(UiProvinceSkin.Drawables.PROV_BUILDING_PLUPP_ON));
             } else {
-                image.setDrawable(this.skin.getDrawable("prov_building_plupp_off"));
+                image.setDrawable(this.skin.getDrawable(UiProvinceSkin.Drawables.PROV_BUILDING_PLUPP_OFF));
             }
         }
     }
@@ -388,7 +390,7 @@ public class ProvincePanel extends Table {
                 String color = colorsBuildings.get(i);
                 image.setDrawable(this.skin.getDrawable("factory_plupp_" + color));
             } else {
-                image.setDrawable(this.skin.getDrawable("factory_plupp_nofactory"));
+                image.setDrawable(this.skin.getDrawable(UiProvinceSkin.Drawables.FACTORY_PLUPP_NOFACTORY));
             }
         }
     }
@@ -402,7 +404,7 @@ public class ProvincePanel extends Table {
                 String name = specialBuildings.get(i).nameId();
                 image.setDrawable(this.skin.getDrawable(name + "_building"));
             } else {
-                image.setDrawable(this.skin.getDrawable("empty_spec_building"));
+                image.setDrawable(this.skin.getDrawable(UiProvinceSkin.Drawables.EMPTY_SPEC_BUILDING));
             }
         }
     }

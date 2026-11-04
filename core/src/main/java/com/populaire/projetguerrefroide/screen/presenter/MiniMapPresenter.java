@@ -28,7 +28,7 @@ public class MiniMapPresenter implements Presenter, MinimapListener {
 
     @Override
     public void initialize(Stage stage) {
-        this.minimap = new Minimap(this.skinMinimap, this.skinUi, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
+        this.minimap = new Minimap(this.skinMinimap, this.skinUi, this.gameContext.getSkinFonts(), this.gameContext.getLocalisation(), this);
         this.minimap.setPosition(Gdx.graphics.getWidth() - this.minimap.getWidth(), 0);
         stage.addActor(this.minimap);
     }

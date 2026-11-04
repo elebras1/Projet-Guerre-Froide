@@ -12,7 +12,10 @@ import com.populaire.projetguerrefroide.dto.RegionDto;
 import com.populaire.projetguerrefroide.dto.RegionsBuildingsDto;
 import com.populaire.projetguerrefroide.screen.listener.EconomyPanelListener;
 import com.populaire.projetguerrefroide.service.ColorDrawablePool;
-import com.populaire.projetguerrefroide.service.LabelStylePool;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.FontsSkin;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiEconomySkin;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiScrollbarsSkin;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiSkin;
 import com.populaire.projetguerrefroide.ui.widget.ClickableTable;
 import com.populaire.projetguerrefroide.ui.widget.FillBar;
 import com.populaire.projetguerrefroide.ui.widget.HoverScrollPane;
@@ -28,7 +31,7 @@ public class EconomyPanel extends Table {
     private final WidgetFactory widgetFactory;
     private final Skin skin;
     private final Skin skinUi;
-    private final LabelStylePool labelStylePool;
+    private final Skin skinFonts;
     private final ColorDrawablePool colorTexturePool;
     private final Map<String, String> localisation;
     private final EconomyPanelListener listener;
@@ -40,15 +43,15 @@ public class EconomyPanel extends Table {
     private Label productionValueLabel;
     private FillBar workersBar;
 
-    public EconomyPanel(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinScrollbars, LabelStylePool labelStylePool, ColorDrawablePool colorTexturePool, Map<String, String> localisation, EconomyPanelListener listener) {
+    public EconomyPanel(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinScrollbars, Skin skinFonts, ColorDrawablePool colorTexturePool, Map<String, String> localisation, EconomyPanelListener listener) {
         this.widgetFactory = widgetFactory;
         this.skin = skin;
         this.skinUi = skinUi;
-        this.labelStylePool = labelStylePool;
+        this.skinFonts = skinFonts;
         this.colorTexturePool = colorTexturePool;
         this.localisation = localisation;
         this.listener = listener;
-        Drawable background = skin.getDrawable("economy_bg_shadow");
+        Drawable background = skin.getDrawable(UiEconomySkin.Drawables.ECONOMY_BG_SHADOW);
         this.setBackground(background);
         this.setSize(background.getMinWidth(), background.getMinHeight());
         this.setMainContent(widgetFactory, skin, skinUi, skinScrollbars);
@@ -58,26 +61,26 @@ public class EconomyPanel extends Table {
 
     private void setMainContent(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinScrollbars) {
         Table mainTable = new Table();
-        Drawable background = skin.getDrawable("bg_economy_trade");
+        Drawable background = skin.getDrawable(UiEconomySkin.Drawables.BG_ECONOMY_TRADE);
         mainTable.setBackground(background);
         mainTable.setFillParent(true);
         this.add(mainTable);
 
-        Button developpementIndexButton = widgetFactory.createButton(this.skin, "icon_di_btn", 530, 677, mainTable);
+        Button developpementIndexButton = widgetFactory.createButton(this.skin, UiEconomySkin.Styles.Button.ICON_DI_BTN, 530, 677, mainTable);
         developpementIndexButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 listener.onSortRegions(SortType.DEVELOPPEMENT_INDEX);
             }
         });
-        Button populationButton = widgetFactory.createButton(this.skin, "icon_pop_btn", 605, 677, mainTable);
+        Button populationButton = widgetFactory.createButton(this.skin, UiEconomySkin.Styles.Button.ICON_POP_BTN, 605, 677, mainTable);
         populationButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 listener.onSortRegions(SortType.POPULATION);
             }
         });
-        Button worforceButton = widgetFactory.createButton(this.skin, "icon_workforce_btn", 685, 677, mainTable);
+        Button worforceButton = widgetFactory.createButton(this.skin, UiEconomySkin.Styles.Button.ICON_WORKFORCE_BTN, 685, 677, mainTable);
         worforceButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -85,9 +88,9 @@ public class EconomyPanel extends Table {
             }
         });
 
-        Button aiButton = widgetFactory.createButton(skin, "eco_ai_tgl", 83, 685.5f, mainTable);
-        Button regionalButton = widgetFactory.createButton(skin, "eco_regional_tgl", 773, 685.5f, mainTable);
-        Button closeButton = widgetFactory.createButton(skinUi, "close_btn", 1057, 734, mainTable);
+        Button aiButton = widgetFactory.createButton(skin, UiEconomySkin.Styles.Button.ECO_AI_TGL, 83, 685.5f, mainTable);
+        Button regionalButton = widgetFactory.createButton(skin, UiEconomySkin.Styles.Button.ECO_REGIONAL_TGL, 773, 685.5f, mainTable);
+        Button closeButton = widgetFactory.createButton(skinUi, UiSkin.Styles.Button.CLOSE_BTN, 1057, 734, mainTable);
         closeButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -95,7 +98,7 @@ public class EconomyPanel extends Table {
             }
         });
         this.buildingRegionsTable = new Table();
-        HoverScrollPane scrollPane = new HoverScrollPane(this.buildingRegionsTable, skinScrollbars, "default");
+        HoverScrollPane scrollPane = new HoverScrollPane(this.buildingRegionsTable, skinScrollbars, UiScrollbarsSkin.Styles.Scrollpane.DEFAULT);
         scrollPane.setSize(745, 450);
         scrollPane.setPosition(72, 230);
 
@@ -107,7 +110,7 @@ public class EconomyPanel extends Table {
 
     private void setRightContent(Skin skin) {
         Table rightTable = new Table();
-        Drawable background = skin.getDrawable("bg_eco_budget");
+        Drawable background = skin.getDrawable(UiEconomySkin.Drawables.BG_ECO_BUDGET);
         rightTable.setBackground(background);
         rightTable.setSize(background.getMinWidth(), background.getMinHeight());
         rightTable.setPosition(821, 55);
@@ -116,33 +119,33 @@ public class EconomyPanel extends Table {
 
     private void createSelectedBuildingInfoBlock() {
         this.buildingSelectedTable = new Table();
-        Drawable background = this.skin.getDrawable("economy_paper");
+        Drawable background = this.skin.getDrawable(UiEconomySkin.Drawables.ECONOMY_PAPER);
         this.buildingSelectedTable.setBackground(background);
         this.buildingSelectedTable.setSize(background.getMinWidth(), background.getMinHeight());
         this.buildingSelectedTable.setVisible(false);
 
-        Label.LabelStyle jockey16Paper = this.labelStylePool.get("jockey_16_paper");
+        Label.LabelStyle jockey16Paper = this.skinFonts.get(FontsSkin.Styles.Label.JOCKEY_16_PAPER, Label.LabelStyle.class);
         this.widgetFactory.createLabelCentered(this.localisation.get("INPUT"), jockey16Paper, 400, 142, this.buildingSelectedTable);
         int inputIconX = 290;
         int inputIconY = 95;
         for(int i = 0; i < 5; i++) {
-            Table inputBgIcon = this.widgetFactory.createBackgroundTable(this.skin, "eco_box_metal_grey", inputIconX, inputIconY, this.buildingSelectedTable);
+            Table inputBgIcon = this.widgetFactory.createBackgroundTable(this.skin, UiEconomySkin.Drawables.ECO_BOX_METAL_GREY, inputIconX, inputIconY, this.buildingSelectedTable);
             inputBgIcon.setName("img_input_bg_icon_" + i);
-            this.widgetFactory.createImage(this.skinUi, "good_none_small", 8, 11, inputBgIcon);
+            this.widgetFactory.createImage(this.skinUi, UiSkin.Drawables.GOOD_NONE_SMALL, 8, 11, inputBgIcon);
             inputIconX += 43;
         }
         this.widgetFactory.createLabelCentered(this.localisation.get("OUTPUT"), jockey16Paper, 400, 66, this.buildingSelectedTable);
-        Table outputBgIcon = this.widgetFactory.createBackgroundTable(this.skin, "eco_box_metal_blue", 290, 20, this.buildingSelectedTable);
+        Table outputBgIcon = this.widgetFactory.createBackgroundTable(this.skin, UiEconomySkin.Drawables.ECO_BOX_METAL_BLUE, 290, 20, this.buildingSelectedTable);
         outputBgIcon.setName("img_output_bg_icon");
-        this.widgetFactory.createImage(this.skinUi, "good_none_small", 8, 11, outputBgIcon);
+        this.widgetFactory.createImage(this.skinUi, UiSkin.Drawables.GOOD_NONE_SMALL, 8, 11, outputBgIcon);
 
         Label provinceLabel = this.widgetFactory.createLabelCentered(UiConstants.TMP, jockey16Paper, 631, 142, this.buildingSelectedTable);
         provinceLabel.setName("lbl_province");
         Label buildingTypeLabel = this.widgetFactory.createLabelCentered(UiConstants.TMP, jockey16Paper, 631, 122, this.buildingSelectedTable);
         buildingTypeLabel.setName("lbl_building_type");
 
-        Label.LabelStyle jockey16Dark = this.labelStylePool.get("jockey_16_dark");
-        Button expandButton = this.widgetFactory.createButton(this.skin, "eco_folder_yellow_btn", 636, 94, this.buildingSelectedTable);
+        Label.LabelStyle jockey16Dark = this.skinFonts.get(FontsSkin.Styles.Label.JOCKEY_16_DARK, Label.LabelStyle.class);
+        Button expandButton = this.widgetFactory.createButton(this.skin, UiEconomySkin.Styles.Button.ECO_FOLDER_YELLOW_BTN, 636, 94, this.buildingSelectedTable);
         expandButton.setName("btn_expand");
         expandButton.addListener(new ClickListener() {
             @Override
@@ -152,7 +155,7 @@ public class EconomyPanel extends Table {
         });
         this.widgetFactory.createLabel(this.localisation.get("EXPAND"), jockey16Dark, 26, 0, expandButton);
 
-        Button resumeButton = this.widgetFactory.createButton(this.skin, "eco_folder_yellow_btn", 636, 70, this.buildingSelectedTable);
+        Button resumeButton = this.widgetFactory.createButton(this.skin, UiEconomySkin.Styles.Button.ECO_FOLDER_YELLOW_BTN, 636, 70, this.buildingSelectedTable);
         resumeButton.setName("btn_resume");
         resumeButton.addListener(new ClickListener() {
             @Override
@@ -162,7 +165,7 @@ public class EconomyPanel extends Table {
         });
         this.widgetFactory.createLabel(this.localisation.get("RESUME"), jockey16Dark, 23, 0, resumeButton);
 
-        Button suspendButton = this.widgetFactory.createButton(this.skin, "eco_folder_yellow_btn", 636, 70, this.buildingSelectedTable);
+        Button suspendButton = this.widgetFactory.createButton(this.skin, UiEconomySkin.Styles.Button.ECO_FOLDER_YELLOW_BTN, 636, 70, this.buildingSelectedTable);
         suspendButton.setName("btn_suspend");
         suspendButton.addListener(new ClickListener() {
             @Override
@@ -172,7 +175,7 @@ public class EconomyPanel extends Table {
         });
         this.widgetFactory.createLabel(this.localisation.get("SUSPEND"), jockey16Dark, 23, 0, suspendButton);
 
-        Button demolishButton = this.widgetFactory.createButton(this.skin, "eco_folder_red_btn", 636, 22, this.buildingSelectedTable);
+        Button demolishButton = this.widgetFactory.createButton(this.skin, UiEconomySkin.Styles.Button.ECO_FOLDER_RED_BTN, 636, 22, this.buildingSelectedTable);
         demolishButton.setName("btn_demolish");
         demolishButton.addListener(new ClickListener() {
             @Override
@@ -182,13 +185,13 @@ public class EconomyPanel extends Table {
         });
         this.widgetFactory.createLabel(this.localisation.get("DEMOLISH"), jockey16Dark, 23, 0, demolishButton);
 
-        this.widgetFactory.createImage(this.skin, "eco_icon_industry", 520, 87, this.buildingSelectedTable);
+        this.widgetFactory.createImage(this.skin, UiEconomySkin.Drawables.ECO_ICON_INDUSTRY, 520, 87, this.buildingSelectedTable);
         this.industryValueLabel = this.widgetFactory.createLabelAlignRight("0%", jockey16Dark, 625, 88, this.buildingSelectedTable);
 
-        this.widgetFactory.createImage(this.skin, "prod_icon", 520, 56, this.buildingSelectedTable);
+        this.widgetFactory.createImage(this.skin, UiEconomySkin.Drawables.PROD_ICON, 520, 56, this.buildingSelectedTable);
         this.productionValueLabel = this.widgetFactory.createLabelAlignRight("0%", jockey16Dark, 625, 57, this.buildingSelectedTable);
 
-        this.widgetFactory.createImage(this.skin, "eco_icon_workers_2", 513, 22, this.buildingSelectedTable);
+        this.widgetFactory.createImage(this.skin, UiEconomySkin.Drawables.ECO_ICON_WORKERS_2, 513, 22, this.buildingSelectedTable);
         this.workersBar = this.widgetFactory.createFillBar(this.colorTexturePool.get(ColorUtils.GREEN_RGBA), this.colorTexturePool.get(ColorUtils.RED_RGBA), 543, 32, 81, 12, this.buildingSelectedTable);
 
         this.pinnedBuildingImage = this.widgetFactory.createImage(28, 23, this.buildingSelectedTable);
@@ -225,18 +228,18 @@ public class EconomyPanel extends Table {
 
     private Table createRegionHeader(RegionDto region) {
         Table headerTable = new Table();
-        Drawable regionBackground = this.skin.getDrawable("economy_region_plate_small");
+        Drawable regionBackground = this.skin.getDrawable(UiEconomySkin.Drawables.ECONOMY_REGION_PLATE_SMALL);
         headerTable.setBackground(regionBackground);
         headerTable.setSize(regionBackground.getMinWidth(), regionBackground.getMinHeight());
 
-        Label.LabelStyle style = this.labelStylePool.get("jockey_16_glow_blue");
+        Label.LabelStyle style = this.skinFonts.get(FontsSkin.Styles.Label.JOCKEY_16_GLOW_BLUE, Label.LabelStyle.class);
         String regionName = this.localisation.get(region.regionId());
 
         Label nameLabel = this.widgetFactory.createLabel(regionName, style, 8, 7, headerTable);
         nameLabel.setName("lbl_name");
 
-        Button minButton = this.widgetFactory.createButton(this.skin, "eco_plate_min_btn", 684, 9, headerTable);
-        Button maxButton = this.widgetFactory.createButton(this.skin, "eco_plate_max_btn", 684, 9, headerTable);
+        Button minButton = this.widgetFactory.createButton(this.skin, UiEconomySkin.Styles.Button.ECO_PLATE_MIN_BTN, 684, 9, headerTable);
+        Button maxButton = this.widgetFactory.createButton(this.skin, UiEconomySkin.Styles.Button.ECO_PLATE_MAX_BTN, 684, 9, headerTable);
         minButton.setName("btn_min");
         maxButton.setName("btn_max");
         minButton.setVisible(true);
@@ -283,14 +286,14 @@ public class EconomyPanel extends Table {
             }
         });
 
-        Label.LabelStyle labelStyle = this.labelStylePool.get("jockey_16_glow_blue");
-        Label.LabelStyle labelSmall = this.labelStylePool.get("jockey_14_tight");
+        Label.LabelStyle labelStyle = this.skinFonts.get(FontsSkin.Styles.Label.JOCKEY_16_GLOW_BLUE, Label.LabelStyle.class);
+        Label.LabelStyle labelSmall = this.skinFonts.get(FontsSkin.Styles.Label.JOCKEY_14_TIGHT, Label.LabelStyle.class);
 
-        this.widgetFactory.applyBackgroundToTable(this.skin, "building_box_template", buildingTable);
+        this.widgetFactory.applyBackgroundToTable(this.skin, UiEconomySkin.Drawables.BUILDING_BOX_TEMPLATE, buildingTable);
         this.widgetFactory.createImage(this.skin, "building_" + building.nameId(), 10, 55, buildingTable);
         Image suspendedImage = this.widgetFactory.createImage(38, 61, buildingTable);
         if(building.isSuspended()) {
-            Drawable suspendedDrawable = this.skin.getDrawable("econmy_suspended_icon1");
+            Drawable suspendedDrawable = this.skin.getDrawable(UiEconomySkin.Drawables.ECONMY_SUSPENDED_ICON1);
             suspendedImage.setDrawable(suspendedDrawable);
             suspendedImage.setSize(suspendedDrawable.getMinWidth(), suspendedDrawable.getMinHeight());
         }
@@ -318,7 +321,7 @@ public class EconomyPanel extends Table {
 
         for (int i = 0; i < slotsNeeded; i++) {
             Table emptyTable = new Table();
-            this.widgetFactory.applyBackgroundToTable(this.skin, "eco_build", emptyTable);
+            this.widgetFactory.applyBackgroundToTable(this.skin, UiEconomySkin.Drawables.ECO_BUILD, emptyTable);
             buildingsTable.add(emptyTable).padRight(-10);
         }
     }
@@ -390,11 +393,11 @@ public class EconomyPanel extends Table {
             Image inputGoodImage = (Image) inputIcon.getChildren().first();
             String inputGoodNameId = buildingDto.inputGoodNameIds()[i];
             if(inputGoodNameId != null) {
-                inputIcon.setBackground(this.skin.getDrawable("eco_box_metal_green"));
+                inputIcon.setBackground(this.skin.getDrawable(UiEconomySkin.Drawables.ECO_BOX_METAL_GREEN));
                 inputGoodImage.setDrawable(this.skinUi.getDrawable("good_" + inputGoodNameId + "_small"));
             } else {
-                inputIcon.setBackground(this.skin.getDrawable("eco_box_metal_grey"));
-                inputGoodImage.setDrawable(this.skinUi.getDrawable("good_none_small"));
+                inputIcon.setBackground(this.skin.getDrawable(UiEconomySkin.Drawables.ECO_BOX_METAL_GREY));
+                inputGoodImage.setDrawable(this.skinUi.getDrawable(UiSkin.Drawables.GOOD_NONE_SMALL));
             }
         }
         Table outputIcon = this.buildingSelectedTable.findActor("img_output_bg_icon");
@@ -403,7 +406,7 @@ public class EconomyPanel extends Table {
         if(outputGoodNameId != null) {
             outputGoodImage.setDrawable(this.skinUi.getDrawable("good_" + outputGoodNameId + "_small"));
         } else {
-            outputGoodImage.setDrawable(this.skinUi.getDrawable("good_none_small"));
+            outputGoodImage.setDrawable(this.skinUi.getDrawable(UiSkin.Drawables.GOOD_NONE_SMALL));
         }
         this.workersBar.setValue(buildingDto.amountWorkers(), buildingDto.maxWorkers());
 
@@ -443,13 +446,13 @@ public class EconomyPanel extends Table {
 
     private void refreshBuildingCell(Table buildingCell, BuildingSummaryDto buildingSummaryDto) {
         buildingCell.clearChildren();
-        Label.LabelStyle labelStyle = this.labelStylePool.get("jockey_16_glow_blue");
-        Label.LabelStyle labelSmall = this.labelStylePool.get("jockey_14_tight");
-        this.widgetFactory.applyBackgroundToTable(this.skin, "building_box_template", buildingCell);
+        Label.LabelStyle labelStyle = this.skinFonts.get(FontsSkin.Styles.Label.JOCKEY_16_GLOW_BLUE, Label.LabelStyle.class);
+        Label.LabelStyle labelSmall = this.skinFonts.get(FontsSkin.Styles.Label.JOCKEY_14_TIGHT, Label.LabelStyle.class);
+        this.widgetFactory.applyBackgroundToTable(this.skin, UiEconomySkin.Drawables.BUILDING_BOX_TEMPLATE, buildingCell);
         this.widgetFactory.createImage(this.skin, "building_" + buildingSummaryDto.nameId(), 10, 55, buildingCell);
         Image suspendedImage = this.widgetFactory.createImage(38, 61, buildingCell);
         if (buildingSummaryDto.isSuspended()) {
-            Drawable suspendedDrawable = this.skin.getDrawable("econmy_suspended_icon1");
+            Drawable suspendedDrawable = this.skin.getDrawable(UiEconomySkin.Drawables.ECONMY_SUSPENDED_ICON1);
             suspendedImage.setDrawable(suspendedDrawable);
             suspendedImage.setSize(suspendedDrawable.getMinWidth(), suspendedDrawable.getMinHeight());
         }

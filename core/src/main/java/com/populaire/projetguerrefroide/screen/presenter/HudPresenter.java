@@ -43,9 +43,9 @@ public class HudPresenter implements Presenter, LobbyBoxListener {
         topTable.setFillParent(true);
         topTable.top();
 
-        ScenarioSavegameSelector scenarioSelector = new ScenarioSavegameSelector(skin, gameContext.getLabelStylePool(), gameContext.getBookmark(), gameContext.getLocalisation());
-        TitleBar titleBar = new TitleBar(widgetFactory, skin, gameContext.getLabelStylePool(), gameContext.getLocalisation());
-        this.countrySummaryPanel = new CountrySummaryPanel(widgetFactory, skin, skinUi, skinFlags, skinPortraits, gameContext.getLabelStylePool(), gameContext.getLocalisation());
+        ScenarioSavegameSelector scenarioSelector = new ScenarioSavegameSelector(skin, gameContext.getSkinFonts(), gameContext.getBookmark(), gameContext.getLocalisation());
+        TitleBar titleBar = new TitleBar(widgetFactory, skin, gameContext.getSkinFonts(), gameContext.getLocalisation());
+        this.countrySummaryPanel = new CountrySummaryPanel(widgetFactory, skin, skinUi, skinFlags, skinPortraits, gameContext.getSkinFonts(), gameContext.getLocalisation());
 
         topTable.add(scenarioSelector).align(Align.topLeft).expandX();
         topTable.add(titleBar).align(Align.top);
@@ -56,7 +56,7 @@ public class HudPresenter implements Presenter, LobbyBoxListener {
         bottomTable.setFillParent(true);
         bottomTable.bottom();
 
-        this.lobbyBox = new LobbyBox(widgetFactory, skin, skinScrollbars, gameContext.getLabelStylePool(), gameContext.getLocalisation(), this);
+        this.lobbyBox = new LobbyBox(widgetFactory, skin, skinScrollbars, gameContext.getSkinFonts(), gameContext.getLocalisation(), this);
 
         bottomTable.add(lobbyBox).align(Align.bottom);
         bottomTable.pad(5);

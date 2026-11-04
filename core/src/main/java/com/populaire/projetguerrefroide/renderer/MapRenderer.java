@@ -5,7 +5,10 @@ import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.PixmapTextureData;
 import com.badlogic.gdx.math.Vector4;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.Disposable;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.FontsSkin;
 import io.github.elebras1.flecs.*;
 import com.github.tommyettinger.ds.*;
 import com.github.xpenatan.webgpu.*;
@@ -26,7 +29,6 @@ import com.populaire.projetguerrefroide.pojo.RawMeshMulti;
 import com.populaire.projetguerrefroide.repository.QueryRepository;
 import com.populaire.projetguerrefroide.service.CountryService;
 import com.populaire.projetguerrefroide.service.GameContext;
-import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.service.MapLabelService;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 import com.populaire.projetguerrefroide.util.LocalisationUtils;
@@ -98,7 +100,7 @@ public class MapRenderer implements Disposable {
 
         this.mapElementsTextureAtlas = new WgTextureAtlas(Gdx.files.internal("map/elements/map_elements.atlas"));
         this.mapElementsTextureAtlas.getTextures().first().setFilter(Texture.TextureFilter.MipMapLinearLinear, Texture.TextureFilter.MipMapLinearLinear);
-        this.fontMapLabelRegion = gameContext.getLabelStylePool().get("kart_60").font.getRegion();
+        this.fontMapLabelRegion = gameContext.getSkinFonts().get(FontsSkin.Styles.Label.KART_60, Label.LabelStyle.class).font.getRegion();
         this.fontMapLabelRegion.getTexture().setFilter(WgTexture.TextureFilter.MipMapLinearLinear, WgTexture.TextureFilter.MipMapLinearLinear);
         this.selectedProvinceColor = new Vector4();
         this.uniformBufferSizeWorld = (16 + 4 + 4) * Float.BYTES;
@@ -108,7 +110,7 @@ public class MapRenderer implements Disposable {
         this.binderProvinces = this.createBinderProvinces();
         this.pipelineProvinces = this.createPipelineProvinces(vertexAttributesProvinces, WgslUtils.getShaderSource("map.wgsl"));
         VertexAttributes vertexAttributesMapLabels = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, "position"), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "texCoord"));
-        this.meshMapLabels = this.generateMeshMapLabels(vertexAttributesMapLabels, gameContext.getLocalisation(), gameContext.getLabelStylePool(), borders);
+        this.meshMapLabels = this.generateMeshMapLabels(vertexAttributesMapLabels, gameContext.getLocalisation(), gameContext.getSkinFonts(), borders);
         this.binderMapLabels = this.createBinderMapLabels();
         this.pipelineMapLabels = this.createPipelineMapLabels(vertexAttributesMapLabels, WgslUtils.getShaderSource("font.wgsl"));
         VertexAttributes vertexAttributesBuildings = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, "position"), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "texCoord"));
@@ -146,9 +148,9 @@ public class MapRenderer implements Disposable {
         return mesh;
     }
 
-    private WgMesh generateMeshMapLabels(VertexAttributes vertexAttributes, Map<String, String> localisation, LabelStylePool labelStylePool, Borders borders) {
+    private WgMesh generateMeshMapLabels(VertexAttributes vertexAttributes, Map<String, String> localisation, Skin skinFonts, Borders borders) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        MapLabelService mapLabelService = new MapLabelService(labelStylePool.get("kart_60").font);
+        MapLabelService mapLabelService = new MapLabelService(skinFonts.get(FontsSkin.Styles.Label.KART_60, Label.LabelStyle.class).font);
         FloatList vertices = new FloatList();
         ShortList indices = new ShortList();
         Query query = this.queryRepository.getCountries();

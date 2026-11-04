@@ -1,7 +1,11 @@
 package com.populaire.projetguerrefroide.service;
 
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.utils.ObjectMap;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
 import io.github.elebras1.flecs.World;
 import com.monstrous.gdx.webgpu.assets.WgAssetManager;
 import com.populaire.projetguerrefroide.configuration.Settings;
@@ -12,7 +16,13 @@ import com.populaire.projetguerrefroide.dao.impl.LocalisationDaoImpl;
 import com.populaire.projetguerrefroide.pojo.Bookmark;
 import com.populaire.projetguerrefroide.ui.widget.CursorManager;
 
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class ConfigurationService {
+    private static final List<String> LANGUAGES_WITH_OWN_FONTS = List.of("RUSSIAN", "CHINESE", "ARABIC");
+    private static final Pattern FONT_SIZE = Pattern.compile("(_[0-9]{2})");
     private final ConfigurationDao configurationDao;
     private final LocalisationDao localisationDao;
 
@@ -27,29 +37,52 @@ public class ConfigurationService {
         this.loadInitialAssets(assetManager);
         CursorManager cursorManager = new CursorManager();
         Settings settings = this.configurationDao.loadSettings();
-        Skin skinFonts = assetManager.get("generated-skins/fonts/fonts.json");
-        LabelStylePool labelStylePool = new LabelStylePool(skinFonts, settings.getLanguage());
-        return new GameContext(ecsWorld, bookmark, assetManager, cursorManager, settings, labelStylePool);
+        Skin skinFonts = assetManager.get(Skins.FONTS);
+        this.applyLanguageFonts(skinFonts, settings.getLanguage());
+        return new GameContext(ecsWorld, bookmark, assetManager, cursorManager, settings, skinFonts);
+    }
+
+    private void applyLanguageFonts(Skin skinFonts, String language) {
+        if (!LANGUAGES_WITH_OWN_FONTS.contains(language)) {
+            return;
+        }
+
+        for (ObjectMap.Entry<String, LabelStyle> style : skinFonts.getAll(LabelStyle.class)) {
+            String languageFont = this.languageFont(style.key, language);
+            if (skinFonts.has(languageFont, BitmapFont.class)) {
+                style.value.font = skinFonts.getFont(languageFont);
+            }
+        }
+    }
+
+    private String languageFont(String styleName, String language) {
+        String fontSize = "_16";
+        Matcher matcher = FONT_SIZE.matcher(styleName);
+        if (matcher.find()) {
+            fontSize = matcher.group(1);
+        }
+
+        return language.toLowerCase() + fontSize;
     }
 
     public void loadInitialAssets(AssetManager assetManager) {
-        assetManager.load("generated-skins/ui/ui.json", Skin.class);
-        assetManager.load("generated-skins/fonts/fonts.json", Skin.class);
-        assetManager.load("generated-skins/ui/scrollbars/scrollbars.json", Skin.class);
-        assetManager.load("generated-skins/ui/mainmenu/mainmenu.json", Skin.class);
+        assetManager.load(Skins.UI, Skin.class);
+        assetManager.load(Skins.FONTS, Skin.class);
+        assetManager.load(Skins.UI_SCROLLBARS, Skin.class);
+        assetManager.load(Skins.UI_MAINMENU, Skin.class);
         assetManager.finishLoading();
     }
 
     public void loadGameAssets(AssetManager assetManager) {
-        assetManager.load("generated-skins/ui/newgame/newgame.json", Skin.class);
-        assetManager.load("generated-skins/flags/flags.json", Skin.class);
-        assetManager.load("generated-skins/portraits/portraits.json", Skin.class);
-        assetManager.load("generated-skins/ui/mainmenu_ig/mainmenu_ig.json", Skin.class);
-        assetManager.load("generated-skins/ui/popup/popup.json", Skin.class);
-        assetManager.load("generated-skins/ui/topbar/topbar.json", Skin.class);
-        assetManager.load("generated-skins/ui/minimap/minimap.json", Skin.class);
-        assetManager.load("generated-skins/ui/province/province.json", Skin.class);
-        assetManager.load("generated-skins/ui/economy/economy.json", Skin.class);
+        assetManager.load(Skins.UI_NEWGAME, Skin.class);
+        assetManager.load(Skins.FLAGS, Skin.class);
+        assetManager.load(Skins.PORTRAITS, Skin.class);
+        assetManager.load(Skins.UI_MAINMENU_IG, Skin.class);
+        assetManager.load(Skins.UI_POPUP, Skin.class);
+        assetManager.load(Skins.UI_TOPBAR, Skin.class);
+        assetManager.load(Skins.UI_MINIMAP, Skin.class);
+        assetManager.load(Skins.UI_PROVINCE, Skin.class);
+        assetManager.load(Skins.UI_ECONOMY, Skin.class);
     }
 
     public void loadMainMenuLocalisation(GameContext gameContext) {

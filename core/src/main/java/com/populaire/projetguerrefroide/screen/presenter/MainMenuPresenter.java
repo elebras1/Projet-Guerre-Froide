@@ -8,6 +8,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.populaire.projetguerrefroide.screen.ScreenManager;
 import com.populaire.projetguerrefroide.screen.listener.MainMenuListener;
 import com.populaire.projetguerrefroide.service.GameContext;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiMainmenuSkin;
 import com.populaire.projetguerrefroide.ui.view.MainMenu;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
@@ -24,12 +26,12 @@ public class MainMenuPresenter implements Presenter, MainMenuListener {
     @Override
     public void initialize(Stage stage) {
         AssetManager assetManager = gameContext.getAssetManager();
-        Skin skin = assetManager.get("generated-skins/ui/mainmenu/mainmenu.json");
+        Skin skin = assetManager.get(Skins.UI_MAINMENU);
         Table rootTable = new Table();
         rootTable.setFillParent(true);
-        rootTable.setBackground(skin.getDrawable("frontend_main_bg"));
+        rootTable.setBackground(skin.getDrawable(UiMainmenuSkin.Drawables.FRONTEND_MAIN_BG));
         WidgetFactory widgetFactory = new WidgetFactory();
-        this.mainMenu = new MainMenu(widgetFactory, skin, gameContext.getLabelStylePool(), gameContext.getLocalisation(), this);
+        this.mainMenu = new MainMenu(widgetFactory, skin, gameContext.getSkinFonts(), gameContext.getLocalisation(), this);
         rootTable.add(this.mainMenu).center().padLeft(this.mainMenu.getWidth() / 3);
         stage.addActor(rootTable);
     }

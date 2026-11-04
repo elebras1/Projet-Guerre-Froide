@@ -10,6 +10,7 @@ import com.populaire.projetguerrefroide.screen.presenter.LoadingPresenter;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.WorldService;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
 
 import static com.populaire.projetguerrefroide.screen.LoadingStep.*;
 
@@ -31,7 +32,7 @@ public class LoadScreen implements Screen {
         //this.gameContext.getCursorManager().animatedCursor("busy");
 
         AssetManager assetManager = this.gameContext.getAssetManager();
-        assetManager.load("generated-skins/loadingscreens/loadingscreens.json", Skin.class);
+        assetManager.load(Skins.LOADINGSCREENS, Skin.class);
         this.stage = new WgStage();
         Gdx.input.setInputProcessor(this.stage);
         this.loadingStep = LOADING_ASSETS;
@@ -93,8 +94,8 @@ public class LoadScreen implements Screen {
     @Override
     public void dispose() {
         this.stage.dispose();
-        if (this.gameContext.getAssetManager().isLoaded("generated-skins/loadingscreens/loadingscreens.json")) {
-            this.gameContext.getAssetManager().unload("generated-skins/loadingscreens/loadingscreens.json");
+        if (this.gameContext.getAssetManager().isLoaded(Skins.LOADINGSCREENS)) {
+            this.gameContext.getAssetManager().unload(Skins.LOADINGSCREENS);
         }
     }
 }

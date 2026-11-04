@@ -39,7 +39,7 @@ public class TopBarPresenter implements Presenter, TopBarListener, TimeListener 
 
     @Override
     public void initialize(Stage stage) {
-        this.topBar = new TopBar(this.widgetFactory, this.skinTopBar, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this.worldService.getCountryPlayerNameId(), this.worldService.getColonizerNameIdOfSelectedProvince(), this);
+        this.topBar = new TopBar(this.widgetFactory, this.skinTopBar, this.skinUi, this.skinFlags, this.gameContext.getSkinFonts(), this.gameContext.getLocalisation(), this.worldService.getCountryPlayerNameId(), this.worldService.getColonizerNameIdOfSelectedProvince(), this);
         this.topBar.setPosition(0, Gdx.graphics.getHeight() - this.topBar.getHeight());
         this.topBar.setCountryData(this.worldService.buildCountryDetails());
         stage.addActor(this.topBar);

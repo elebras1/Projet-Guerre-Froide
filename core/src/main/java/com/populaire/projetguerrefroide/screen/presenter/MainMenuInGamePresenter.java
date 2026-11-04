@@ -45,7 +45,7 @@ public class MainMenuInGamePresenter implements Presenter, MainMenuInGameListene
     @Override
     public void initialize(Stage stage) {
         this.stage = stage;
-        this.mainMenuInGame = new MainMenuInGame(widgetFactory, skinMenu, skinUi, skinScrollbars, gameContext.getLabelStylePool(), gameContext.getLocalisation(), this);
+        this.mainMenuInGame = new MainMenuInGame(widgetFactory, skinMenu, skinUi, skinScrollbars, gameContext.getSkinFonts(), gameContext.getLocalisation(), this);
         this.mainMenuInGame.setVisible(false);
 
         this.rootTable = new Table();
@@ -83,7 +83,7 @@ public class MainMenuInGamePresenter implements Presenter, MainMenuInGameListene
 
     @Override
     public void onQuitClicked(PopupListener listener) {
-        this.currentPopup = new Popup(widgetFactory, skinPopup, skinUi, skinFlags, gameContext.getLabelStylePool(), gameContext.getLocalisation(), "QUIT_TITLE", "QUIT_DESC", true, false, listener);
+        this.currentPopup = new Popup(widgetFactory, skinPopup, skinUi, skinFlags, gameContext.getSkinFonts(), gameContext.getLocalisation(), "QUIT_TITLE", "QUIT_DESC", true, false, listener);
         Table table = new Table();
         table.setFillParent(true);
         table.add(this.currentPopup).center();

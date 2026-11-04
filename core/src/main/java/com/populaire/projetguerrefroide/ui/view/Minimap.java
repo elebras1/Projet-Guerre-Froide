@@ -10,7 +10,9 @@ import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.populaire.projetguerrefroide.screen.listener.MinimapListener;
-import com.populaire.projetguerrefroide.service.LabelStylePool;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.FontsSkin;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiMinimapSkin;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiSkin;
 import com.populaire.projetguerrefroide.ui.widget.ColorRectangle;
 
 import java.util.Map;
@@ -22,9 +24,9 @@ public class Minimap extends Table {
     private Table informationsMapMode;
     private String currentMapMode;
 
-    public Minimap(Skin skin, Skin skinUi, LabelStylePool labelStylePool, Map<String, String> localisation, MinimapListener listener) {
+    public Minimap(Skin skin, Skin skinUi, Skin skinFonts, Map<String, String> localisation, MinimapListener listener) {
         this.currentMapMode = "mapmode_political";
-        Table minimap = this.getMinimap(skin, skinUi, labelStylePool, localisation, listener);
+        Table minimap = this.getMinimap(skin, skinUi, skinFonts, localisation, listener);
         Table menuBarPanel = this.getMenuBarPanel(skin);
 
         this.setSize(minimap.getWidth() + menuBarPanel.getWidth(), menuBarPanel.getHeight());
@@ -35,14 +37,14 @@ public class Minimap extends Table {
         this.addActor(menuBarPanel);
     }
 
-    private Table getMinimap(Skin skin, Skin skinUi, LabelStylePool labelStylePool, Map<String, String> localisation, MinimapListener listener) {
+    private Table getMinimap(Skin skin, Skin skinUi, Skin skinFonts, Map<String, String> localisation, MinimapListener listener) {
         Table minimap = new Table();
 
-        Drawable background = skin.getDrawable("minimap_bg");
+        Drawable background = skin.getDrawable(UiMinimapSkin.Drawables.MINIMAP_BG);
         minimap.setBackground(background);
         minimap.setSize(background.getMinWidth(), background.getMinHeight());
 
-        Drawable mapDrawable = skin.getDrawable("minimap");
+        Drawable mapDrawable = skin.getDrawable(UiMinimapSkin.Drawables.MINIMAP);
         Image map = new Image(mapDrawable);
         map.addListener(new ClickListener() {
             @Override
@@ -54,7 +56,7 @@ public class Minimap extends Table {
         });
         map.setPosition(11, 11);
 
-        Button zoomInButton = new Button(skin, "map_zoom_in_btn");
+        Button zoomInButton = new Button(skin, UiMinimapSkin.Styles.Button.MAP_ZOOM_IN_BTN);
         zoomInButton.setPosition(332, 103);
         zoomInButton.addListener(new ClickListener() {
             @Override
@@ -63,7 +65,7 @@ public class Minimap extends Table {
             }
         });
 
-        Button zoomOutButton = new Button(skin, "map_zoom_out_btn");
+        Button zoomOutButton = new Button(skin, UiMinimapSkin.Styles.Button.MAP_ZOOM_OUT_BTN);
         zoomOutButton.setPosition(332, 10);
         zoomOutButton.addListener(new ClickListener() {
             @Override
@@ -72,7 +74,7 @@ public class Minimap extends Table {
             }
         });
 
-        this.setMapMode(minimap, skin, skinUi, labelStylePool, localisation, listener);
+        this.setMapMode(minimap, skin, skinUi, skinFonts, localisation, listener);
 
         minimap.addActor(map);
         minimap.addActor(zoomInButton);
@@ -81,30 +83,30 @@ public class Minimap extends Table {
         return minimap;
     }
 
-    private void setMapMode(Table minimap, Skin skin, Skin skinUi, LabelStylePool labelStylePool, Map<String, String> localisation, MinimapListener listener) {
+    private void setMapMode(Table minimap, Skin skin, Skin skinUi, Skin skinFonts, Map<String, String> localisation, MinimapListener listener) {
         int y = 134;
         ButtonGroup<Button> buttonGroup = new ButtonGroup<>();
         buttonGroup.setMaxCheckCount(1);
         buttonGroup.setMinCheckCount(1);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_political", 10, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_terrain", 32, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_terrain_2", 54, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_economical", 76, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_strength", 98, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_diplomatic", 120, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_intel", 142, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_region", 164, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_infra", 186, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_resources", 208, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_revolt", 230, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_supply", 252, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_weather", 274, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_theatre", 296, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_air", 318, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_naval", 340, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, skinFonts, localisation, listener, "mapmode_political", 10, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, skinFonts, localisation, listener, "mapmode_terrain", 32, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, skinFonts, localisation, listener, "mapmode_terrain_2", 54, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, skinFonts, localisation, listener, "mapmode_economical", 76, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, skinFonts, localisation, listener, "mapmode_strength", 98, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, skinFonts, localisation, listener, "mapmode_diplomatic", 120, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, skinFonts, localisation, listener, "mapmode_intel", 142, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, skinFonts, localisation, listener, "mapmode_region", 164, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, skinFonts, localisation, listener, "mapmode_infra", 186, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, skinFonts, localisation, listener, "mapmode_resources", 208, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, skinFonts, localisation, listener, "mapmode_revolt", 230, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, skinFonts, localisation, listener, "mapmode_supply", 252, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, skinFonts, localisation, listener, "mapmode_weather", 274, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, skinFonts, localisation, listener, "mapmode_theatre", 296, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, skinFonts, localisation, listener, "mapmode_air", 318, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, skinFonts, localisation, listener, "mapmode_naval", 340, y);
     }
 
-    private void setButtonMapMode(Table minimap, ButtonGroup<Button> buttonGroup, Skin skin, Skin skinUi, LabelStylePool labelStylePool, Map<String, String> localisation,  MinimapListener listener, String mapMode, int x, int y) {
+    private void setButtonMapMode(Table minimap, ButtonGroup<Button> buttonGroup, Skin skin, Skin skinUi, Skin skinFonts, Map<String, String> localisation,  MinimapListener listener, String mapMode, int x, int y) {
         Button button = new Button(skin, mapMode + "_tgl");
         button.setPosition(x, y);
         button.setChecked(this.currentMapMode.equals(mapMode));
@@ -115,7 +117,7 @@ public class Minimap extends Table {
                 if(button.isChecked() && !currentMapMode.equals(mapMode)) {
                     listener.changeMapMode(mapMode);
                     currentMapMode = mapMode;
-                    setInformationsMapMode(skinUi,  labelStylePool, listener.getInformationsMapMode(mapMode), localisation);
+                    setInformationsMapMode(skinUi,  skinFonts, listener.getInformationsMapMode(mapMode), localisation);
                 }
             }
         });
@@ -138,17 +140,17 @@ public class Minimap extends Table {
     private Table getMenuBarPanel(Skin skin) {
         Table menuBarPanel = new Table();
 
-        Drawable background = skin.getDrawable("menubar_panel_bg");
+        Drawable background = skin.getDrawable(UiMinimapSkin.Drawables.MENUBAR_PANEL_BG);
         menuBarPanel.setBackground(background);
         menuBarPanel.setSize(background.getMinWidth(), background.getMinHeight());
 
         int x = 20;
-        this.setButtonMenuBarPanel(menuBarPanel, skin, "minimap_find_prov_tgl", x, 12);
-        this.setButtonMenuBarPanel(menuBarPanel, skin, "minimap_strategic_tgl", x, 50);
-        this.setButtonMenuBarPanel(menuBarPanel, skin, "minimap_victory_tgl", x, 88);
-        this.setButtonMenuBarPanel(menuBarPanel, skin, "minimap_spy_tgl", x, 126);
-        this.setButtonMenuBarPanel(menuBarPanel, skin, "minimap_nuke_tgl", x, 164);
-        this.setButtonMenuBarPanel(menuBarPanel, skin, "minimap_mission_tgl", x, 202);
+        this.setButtonMenuBarPanel(menuBarPanel, skin, UiMinimapSkin.Styles.Button.MINIMAP_FIND_PROV_TGL, x, 12);
+        this.setButtonMenuBarPanel(menuBarPanel, skin, UiMinimapSkin.Styles.Button.MINIMAP_STRATEGIC_TGL, x, 50);
+        this.setButtonMenuBarPanel(menuBarPanel, skin, UiMinimapSkin.Styles.Button.MINIMAP_VICTORY_TGL, x, 88);
+        this.setButtonMenuBarPanel(menuBarPanel, skin, UiMinimapSkin.Styles.Button.MINIMAP_SPY_TGL, x, 126);
+        this.setButtonMenuBarPanel(menuBarPanel, skin, UiMinimapSkin.Styles.Button.MINIMAP_NUKE_TGL, x, 164);
+        this.setButtonMenuBarPanel(menuBarPanel, skin, UiMinimapSkin.Styles.Button.MINIMAP_MISSION_TGL, x, 202);
 
         return menuBarPanel;
     }
@@ -159,7 +161,7 @@ public class Minimap extends Table {
         menuBarPanel.addActor(button);
     }
 
-    private void setInformationsMapMode(Skin skinUi, LabelStylePool labelStylePool, IntObjectMap<String> informations, Map<String, String> localisation) {
+    private void setInformationsMapMode(Skin skinUi, Skin skinFonts, IntObjectMap<String> informations, Map<String, String> localisation) {
         if(this.informationsMapMode != null) {
             for (Actor child : this.informationsMapMode.getChildren()) {
                 if (child instanceof ColorRectangle colorRectangle) {
@@ -177,11 +179,11 @@ public class Minimap extends Table {
             this.informationsMapMode.setVisible(false);
             return;
         }
-        NinePatch ninePatch = skinUi.getPatch("tiles_dialog");
+        NinePatch ninePatch = skinUi.getPatch(UiSkin.Drawables.TILES_DIALOG);
         NinePatchDrawable ninePatchDrawable = new NinePatchDrawable(ninePatch);
         this.informationsMapMode.setBackground(ninePatchDrawable);
 
-        Label.LabelStyle labelStyleArial14Glow = labelStylePool.get("arial_14_glow");
+        Label.LabelStyle labelStyleArial14Glow = skinFonts.get(FontsSkin.Styles.Label.ARIAL_14_GLOW, Label.LabelStyle.class);
 
         for(IntObjectMap.Entry<String> entry : informations) {
             int color = entry.key;

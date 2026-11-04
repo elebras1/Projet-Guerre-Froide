@@ -5,7 +5,9 @@ import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.Align;
 import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.dto.CountrySummaryDto;
-import com.populaire.projetguerrefroide.service.LabelStylePool;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.FontsSkin;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiNewgameSkin;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiSkin;
 import com.populaire.projetguerrefroide.ui.widget.FlagImage;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 import com.populaire.projetguerrefroide.util.LocalisationUtils;
@@ -26,27 +28,27 @@ public class CountrySummaryPanel extends Table {
     private final List<FlagImage> alliesFlagImages;
     private final WidgetFactory widgetFactory;
 
-    public CountrySummaryPanel(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, Skin skinPortraits, LabelStylePool labelStylePool, Map<String, String> localisation) {
+    public CountrySummaryPanel(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, Skin skinPortraits, Skin skinFonts, Map<String, String> localisation) {
         this.skinFlags = skinFlags;
         this.skinPortraits = skinPortraits;
         this.widgetFactory = widgetFactory;
-        Drawable background = widgetFactory.applyBackgroundToTable(skin, "selected_bg", this);
+        Drawable background = widgetFactory.applyBackgroundToTable(skin, UiNewgameSkin.Drawables.SELECTED_BG, this);
 
-        this.flagImage = widgetFactory.createFlagImage(skinUi, "flag_alpha", "flag_overlay");
+        this.flagImage = widgetFactory.createFlagImage(skinUi, UiSkin.Drawables.FLAG_ALPHA, UiSkin.Drawables.FLAG_OVERLAY);
         this.flagImage.setPosition(6, 85);
         this.addActor(this.flagImage);
 
-        Label.LabelStyle labelStyleJockey24 = labelStylePool.get("jockey_24");
-        Label.LabelStyle labelStyleJockey14Dark = labelStylePool.get("jockey_14_dark");
-        Label.LabelStyle labelStyleJockey14 = labelStylePool.get("jockey_14");
-        Label.LabelStyle labelStyleJockey14Yellow = labelStylePool.get("jockey_14", "yellow");
-        Label.LabelStyle labelStyleJockey14GlowBlue = labelStylePool.get("jockey_14_glow_blue");
+        Label.LabelStyle labelStyleJockey24 = skinFonts.get(FontsSkin.Styles.Label.JOCKEY_24, Label.LabelStyle.class);
+        Label.LabelStyle labelStyleJockey14Dark = skinFonts.get(FontsSkin.Styles.Label.JOCKEY_14_DARK, Label.LabelStyle.class);
+        Label.LabelStyle labelStyleJockey14 = skinFonts.get(FontsSkin.Styles.Label.JOCKEY_14, Label.LabelStyle.class);
+        Label.LabelStyle labelStyleJockey14Yellow = skinFonts.get(FontsSkin.Styles.Label.JOCKEY_14_YELLOW, Label.LabelStyle.class);
+        Label.LabelStyle labelStyleJockey14GlowBlue = skinFonts.get(FontsSkin.Styles.Label.JOCKEY_14_GLOW_BLUE, Label.LabelStyle.class);
 
         this.countryName = widgetFactory.createLabel("", labelStyleJockey24, 0, 168, background.getMinWidth(), 20, Align.center, this);
         this.government = widgetFactory.createLabel("", labelStyleJockey14Dark, 110, 137, 160, 30, Align.right, this);
         widgetFactory.createLabel(localisation.get("POPULATION"), labelStyleJockey14, 110, 109, 156, 20, Align.left, this);
         this.countryPopulation = widgetFactory.createLabel("", labelStyleJockey14Yellow, 110, 109, 156, 20, Align.right, this);
-        this.portrait = widgetFactory.createImageWithOverlay(skin, "tv_overlay", 6, 6, 78, 78, this);
+        this.portrait = widgetFactory.createImageWithOverlay(skin, UiNewgameSkin.Drawables.TV_OVERLAY, 6, 6, 78, 78, this);
         widgetFactory.createLabel(localisation.get("HEAD_OF_STATE"), labelStyleJockey14Dark, 105, 72, 160, 20, Align.center, this);
         this.leaderFullName = widgetFactory.createLabel("", labelStyleJockey14GlowBlue, 105, 48, 160, 20, Align.center, this);
         widgetFactory.createLabel(localisation.get("WARS"), labelStyleJockey14, 105, 29, 160, 20, Align.left, this);
@@ -62,7 +64,7 @@ public class CountrySummaryPanel extends Table {
         int x = 140;
         int y = 9;
         for(int i = 0; i < 7; i++) {
-            FlagImage flagImage = widgetFactory.createFlagImage(skinUi, "small_flag_mask", "small_flag_overlay");
+            FlagImage flagImage = widgetFactory.createFlagImage(skinUi, UiSkin.Drawables.SMALL_FLAG_MASK, UiSkin.Drawables.SMALL_FLAG_OVERLAY);
             flagImage.setPosition(x, y);
             this.alliesFlagImages.add(flagImage);
             x += 18;

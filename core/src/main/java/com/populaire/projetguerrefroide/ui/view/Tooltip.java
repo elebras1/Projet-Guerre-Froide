@@ -8,7 +8,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
 import com.badlogic.gdx.utils.Scaling;
 import com.github.tommyettinger.ds.ObjectIntMap;
-import com.populaire.projetguerrefroide.service.LabelStylePool;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.FontsSkin;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiSkin;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 import com.populaire.projetguerrefroide.util.LocalisationUtils;
 
@@ -25,18 +26,18 @@ public class Tooltip extends Table {
     private final float heightWidth;
     private final StringBuilder text;
 
-    public Tooltip(WidgetFactory widgetFactory, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation) {
+    public Tooltip(WidgetFactory widgetFactory, Skin skinUi, Skin skinFlags, Skin skinFonts, Map<String, String> localisation) {
         this.widgetFactory = widgetFactory;
         this.localisation = localisation;
         this.skinFlags = skinFlags;
-        NinePatch ninePatch = skinUi.getPatch("tiles_dialog");
+        NinePatch ninePatch = skinUi.getPatch(UiSkin.Drawables.TILES_DIALOG);
         this.marginWidth = ninePatch.getLeftWidth() + ninePatch.getRightWidth();
         this.heightWidth = ninePatch.getTopHeight() + ninePatch.getBottomHeight();
         this.text = new StringBuilder();
         NinePatchDrawable ninePatchDrawable = new NinePatchDrawable(ninePatch);
 
-        Label.LabelStyle labelStyleArial14Glow = labelStylePool.get("arial_14_glow");
-        Label.LabelStyle labelStyleArial14GlowYellow = labelStylePool.get("arial_14_glow", "yellow");
+        Label.LabelStyle labelStyleArial14Glow = skinFonts.get(FontsSkin.Styles.Label.ARIAL_14_GLOW, Label.LabelStyle.class);
+        Label.LabelStyle labelStyleArial14GlowYellow = skinFonts.get(FontsSkin.Styles.Label.ARIAL_14_GLOW_YELLOW, Label.LabelStyle.class);
 
         this.mainLabel = new Label("", labelStyleArial14Glow);
         this.subLabel = new Label("", labelStyleArial14GlowYellow);

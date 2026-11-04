@@ -23,6 +23,7 @@ import com.populaire.projetguerrefroide.screen.input.GameInputHandler;
 import com.populaire.projetguerrefroide.screen.listener.*;
 import com.populaire.projetguerrefroide.screen.presenter.*;
 import com.populaire.projetguerrefroide.service.*;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
 import com.populaire.projetguerrefroide.ui.view.*;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
@@ -72,18 +73,18 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
         this.presenters = new ObjectList<>();
 
         AssetManager assetManager = gameContext.getAssetManager();
-        Skin skinUi = assetManager.get("generated-skins/ui/ui.json");
-        Skin skinFlags = assetManager.get("generated-skins/flags/flags.json");
-        Skin skinPopup = assetManager.get("generated-skins/ui/popup/popup.json");
-        Skin skinTopBar = assetManager.get("generated-skins/ui/topbar/topbar.json");
-        Skin skinMinimap = assetManager.get("generated-skins/ui/minimap/minimap.json");
-        Skin skinProvince = assetManager.get("generated-skins/ui/province/province.json");
-        Skin skinScrollbars = assetManager.get("generated-skins/ui/scrollbars/scrollbars.json");
-        Skin skinEconomy = assetManager.get("generated-skins/ui/economy/economy.json");
+        Skin skinUi = assetManager.get(Skins.UI);
+        Skin skinFlags = assetManager.get(Skins.FLAGS);
+        Skin skinPopup = assetManager.get(Skins.UI_POPUP);
+        Skin skinTopBar = assetManager.get(Skins.UI_TOPBAR);
+        Skin skinMinimap = assetManager.get(Skins.UI_MINIMAP);
+        Skin skinProvince = assetManager.get(Skins.UI_PROVINCE);
+        Skin skinScrollbars = assetManager.get(Skins.UI_SCROLLBARS);
+        Skin skinEconomy = assetManager.get(Skins.UI_ECONOMY);
         this.stage = new WgCustomStage(new WgScreenViewport(), skinUi, skinFlags);
         WidgetFactory widgetFactory = new WidgetFactory();
 
-        this.mainMenuInGamePresenter = new MainMenuInGamePresenter(gameContext, configurationService, this, widgetFactory, assetManager.get("generated-skins/ui/mainmenu_ig/mainmenu_ig.json"), skinUi, skinScrollbars, skinPopup, skinFlags);
+        this.mainMenuInGamePresenter = new MainMenuInGamePresenter(gameContext, configurationService, this, widgetFactory, assetManager.get(Skins.UI_MAINMENU_IG), skinUi, skinScrollbars, skinPopup, skinFlags);
         this.topBarPresenter = new TopBarPresenter(this.gameContext, this.worldService, this.timeService, this, widgetFactory, skinTopBar, skinUi, skinFlags);
         this.provincePanelPresenter = new ProvincePanelPresenter(this.gameContext, this.worldService, this, widgetFactory, skinProvince, skinUi, skinFlags);
         this.tooltipPresenter = new TooltipPresenter(this.gameContext, this.worldService, widgetFactory, skinUi, skinFlags);

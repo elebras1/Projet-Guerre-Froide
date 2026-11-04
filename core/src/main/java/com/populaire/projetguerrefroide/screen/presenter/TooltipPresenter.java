@@ -28,7 +28,7 @@ public class TooltipPresenter implements Presenter {
 
     @Override
     public void initialize(Stage stage) {
-        this.tooltip = new Tooltip(widgetFactory, skinUi, skinFlags, gameContext.getLabelStylePool(), gameContext.getLocalisation());
+        this.tooltip = new Tooltip(widgetFactory, skinUi, skinFlags, gameContext.getSkinFonts(), gameContext.getLocalisation());
         this.tooltip.setVisible(false);
         stage.addActor(this.tooltip);
     }

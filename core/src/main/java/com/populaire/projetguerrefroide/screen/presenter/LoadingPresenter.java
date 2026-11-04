@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.populaire.projetguerrefroide.service.GameContext;
 
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
 import java.util.Random;
 
 public class LoadingPresenter implements Presenter {
@@ -20,7 +21,7 @@ public class LoadingPresenter implements Presenter {
     public void initialize(Stage stage) {
         AssetManager assetManager = gameContext.getAssetManager();
         assetManager.finishLoading();
-        Skin skin = assetManager.get("generated-skins/loadingscreens/loadingscreens.json", Skin.class);
+        Skin skin = assetManager.get(Skins.LOADINGSCREENS, Skin.class);
         Table rootTable = new Table();
         rootTable.setFillParent(true);
         Random random = new Random();
