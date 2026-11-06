@@ -163,6 +163,7 @@ public class SimulationRecorder implements AutoCloseable {
     private static final int ACCOUNT_COUNT = 17;
 
     private final World ecsWorld;
+    private final EcsConstants ecsConstants;
     private final LocalDate startDate;
     private final int detailEvery;
     private boolean detail;
@@ -363,8 +364,9 @@ public class SimulationRecorder implements AutoCloseable {
     private final Map<String, CsvWriter> writers = new HashMap<>();
     private final File outputDir;
 
-    public SimulationRecorder(World ecsWorld, File outputDir, LocalDate startDate, int detailEvery) {
+    public SimulationRecorder(World ecsWorld, EcsConstants ecsConstants, File outputDir, LocalDate startDate, int detailEvery) {
         this.ecsWorld = ecsWorld;
+        this.ecsConstants = ecsConstants;
         this.outputDir = outputDir;
         this.startDate = startDate;
         this.detailEvery = Math.max(1, detailEvery);
@@ -1131,11 +1133,10 @@ public class SimulationRecorder implements AutoCloseable {
         CsvWriter needsCosts = this.detailWriter("country/needs_costs.csv");
         CsvWriter effectPolicy = this.detailWriter("country/effect_policy.csv");
         CsvWriter budgetWriter = this.detailWriter("country/budget.csv");
-        int[] incomeTypes = new int[POP_TYPE_COUNT];
-        boolean[] assistedTypes = new boolean[POP_TYPE_COUNT];
-        StateBudgetUtils.readPopulationTypes(this.ecsWorld, incomeTypes, assistedTypes);
-        int statePostIndex = StateBudgetUtils.statePostIndex(this.ecsWorld);
-        float[] baseWorkforceShares = EmploymentUtils.baseWorkforceShares(this.ecsWorld);
+        int[] incomeTypes = this.ecsConstants.incomeTypes();
+        boolean[] assistedTypes = this.ecsConstants.assistedTypes();
+        int statePostIndex = this.ecsConstants.statePostIndex();
+        float[] baseWorkforceShares = this.ecsConstants.baseWorkforceShares();
 
         this.countryQuery.each((long countryId) -> {
             EntityView country = this.ecsWorld.obtainEntityView(countryId);
@@ -1453,7 +1454,7 @@ public class SimulationRecorder implements AutoCloseable {
     }
 
     private void recordArtisans() {
-        GlobalArtisanCraftsView crafts = ArtisanUtils.crafts(this.ecsWorld);
+        GlobalArtisanCraftsView crafts = ArtisanUtils.crafts(this.ecsWorld, this.ecsConstants);
         int[] outputIndexes = new int[crafts.count()];
         for (int c = 0; c < crafts.count(); c++) {
             EconomyBuildingTypeView buildingType = this.ecsWorld.obtainEntityView(crafts.buildingTypeIds(c)).getView(EconomyBuildingType.class);

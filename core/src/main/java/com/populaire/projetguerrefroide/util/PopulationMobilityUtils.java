@@ -9,18 +9,19 @@ import static com.populaire.projetguerrefroide.util.Constants.PROMOTION_RATE;
 
 public class PopulationMobilityUtils {
 
-    public static boolean isMobilityDay(World world) {
-        EconomyCalendarView calendar = world.obtainEntityView(world.lookup("economy_calendar")).getView(EconomyCalendar.class);
+    public static boolean isMobilityDay(World world, EcsConstants ecsConstants) {
+        EconomyCalendarView calendar = world.obtainEntityView(ecsConstants.economyCalendar()).getView(EconomyCalendar.class);
         return (calendar.day() + 1) % DAYS_PER_MONTH == 0;
     }
 
-    public static float[] normalizedWeights(PopulationTypeView populationType, boolean promotion) {
-        float[] weights = new float[POP_TYPE_COUNT];
+    public static float[] normalizedWeights(PopulationTypeView populationType, boolean promotion, float[] weights) {
         float total = 0f;
         for (int p = 0; p < POP_TYPE_COUNT; p++) {
             if (p != populationType.index()) {
                 weights[p] = promotion ? populationType.promotionWeights(p) : populationType.demotionWeights(p);
                 total += weights[p];
+            } else {
+                weights[p] = 0f;
             }
         }
         for (int p = 0; p < POP_TYPE_COUNT; p++) {
@@ -36,15 +37,6 @@ public class PopulationMobilityUtils {
             }
         }
         return false;
-    }
-
-    public static boolean[] popTypesWith(World world, long tagId) {
-        GlobalPopulationTypeView globalPopulationType = world.obtainEntityView(world.lookup("global_population_type")).getView(GlobalPopulationType.class);
-        boolean[] popTypes = new boolean[POP_TYPE_COUNT];
-        for (int p = 0; p < POP_TYPE_COUNT; p++) {
-            popTypes[p] = world.obtainEntityView(globalPopulationType.popTypeIds(p)).has(tagId);
-        }
-        return popTypes;
     }
 
     public static void shares(PopulationView population, float classRigidity, float workforceShare, float[] promotionWeights, float[] demotionWeights,

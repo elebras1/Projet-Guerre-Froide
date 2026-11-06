@@ -268,7 +268,7 @@ public class EconomySimulationAnalysisTest {
             freeze.isEmpty() ? "none" : freeze, this.forcedLaws.isEmpty() ? "none" : this.forcedLaws);
 
         CalibrationReport calibration = null;
-        try (SimulationRecorder recorder = new SimulationRecorder(this.ecsWorld, new File(outputDir), this.startDate, detailEvery)) {
+        try (SimulationRecorder recorder = new SimulationRecorder(this.ecsWorld, this.ecsConstants, new File(outputDir), this.startDate, detailEvery)) {
             long start = System.nanoTime();
             for (int tick = 0; tick < totalTicks; tick++) {
                 long tickStart = System.nanoTime();

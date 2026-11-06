@@ -5,10 +5,13 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.PopulationMobilityUtils;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 public class PopulationArrivalSystem {
+    private final EcsConstants ecsConstants;
 
-    public PopulationArrivalSystem(World ecsWorld, long phaseId) {
+    public PopulationArrivalSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("PopulationArrivalSystem")
             .kind(phaseId)
             .with(Population.class)
@@ -18,7 +21,7 @@ public class PopulationArrivalSystem {
 
     private void arrive(Iter iter) {
         World world = iter.world();
-        if (!PopulationMobilityUtils.isMobilityDay(world)) {
+        if (!PopulationMobilityUtils.isMobilityDay(world, this.ecsConstants)) {
             return;
         }
         int popTypeIndex = iter.field(PopulationType.class, 1).<PopulationTypeView>getView(0).index();

@@ -7,12 +7,15 @@ import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.PopulationMobilityUtils;
 import com.populaire.projetguerrefroide.util.StateBudgetUtils;
 import com.populaire.projetguerrefroide.util.SubsistenceUtils;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 import static com.populaire.projetguerrefroide.util.Constants.*;
 
 public class ProvinceDemographySystem {
+    private final EcsConstants ecsConstants;
 
-    public ProvinceDemographySystem(World ecsWorld, long phaseId) {
+    public ProvinceDemographySystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("ProvinceDemographySystem")
             .kind(phaseId)
             .with(Province.class)
@@ -22,7 +25,7 @@ public class ProvinceDemographySystem {
     }
 
     private void age(Iter iter) {
-        if (!PopulationMobilityUtils.isMobilityDay(iter.world())) {
+        if (!PopulationMobilityUtils.isMobilityDay(iter.world(), this.ecsConstants)) {
             return;
         }
 

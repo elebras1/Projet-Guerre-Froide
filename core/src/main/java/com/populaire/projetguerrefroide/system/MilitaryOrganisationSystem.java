@@ -29,7 +29,7 @@ public class MilitaryOrganisationSystem {
         Field<UnitInstance> unitInstanceField = iter.field(UnitInstance.class, 0);
         Field<AirWing> airWingField = airWings ? iter.field(AirWing.class, 1) : null;
 
-        EntityView globalFacilities = world.obtainEntityView(world.lookup("global_military_facilities"));
+        EntityView globalFacilities = world.obtainEntityView(this.ecsConstants.globalMilitaryFacilities());
         int academyStaffIndex = globalFacilities.has(GlobalMilitaryFacilities.class)
             ? globalFacilities.<GlobalMilitaryFacilitiesView>getView(GlobalMilitaryFacilities.class).academyStaffPopTypeIndex() : -1;
 

@@ -5,14 +5,15 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
-import com.populaire.projetguerrefroide.util.EmploymentUtils;
 
 import static com.populaire.projetguerrefroide.util.EmploymentUtils.activeWorkers;
 import static com.populaire.projetguerrefroide.util.EmploymentUtils.activeShare;
 
 public class RGOEmploymentInitializationSystem {
+    private final EcsConstants ecsConstants;
 
     public RGOEmploymentInitializationSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("RGOEmploymentInitializationSystem")
             .kind(phaseId)
             .with(ResourceGathering.class)
@@ -35,7 +36,7 @@ public class RGOEmploymentInitializationSystem {
         float slavePopTypeRatio = rgoTypeData.slavePopTypeRatio();
         int workerIndex = rgoTypeData.workerPopTypeIndex();
         int slaveIndex = rgoTypeData.slavePopTypeIndex();
-        float workerBaseShare = EmploymentUtils.baseWorkforceShares(iter.world())[workerIndex];
+        float workerBaseShare = this.ecsConstants.baseWorkforceShares()[workerIndex];
         for (int i = 0; i < iter.count(); i++) {
             ResourceGatheringMutView resourceGathering = resourceGatheringField.getMutView(i);
             DemographicsView demographics = demographicsField.getMutView(i);

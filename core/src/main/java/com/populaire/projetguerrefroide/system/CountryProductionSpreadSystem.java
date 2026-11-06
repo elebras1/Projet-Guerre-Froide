@@ -9,10 +9,13 @@ import com.populaire.projetguerrefroide.component.CountryMarketView;
 import com.populaire.projetguerrefroide.component.CountryMarketMutView;
 import com.populaire.projetguerrefroide.component.GlobalMarket;
 import com.populaire.projetguerrefroide.component.GlobalMarketMutView;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 public class CountryProductionSpreadSystem {
+    private final EcsConstants ecsConstants;
 
-    public CountryProductionSpreadSystem(World ecsWorld, long phaseId) {
+    public CountryProductionSpreadSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("CountryProductionSpreadSystem")
             .kind(phaseId)
             .with(CountryMarket.class)
@@ -20,7 +23,7 @@ public class CountryProductionSpreadSystem {
     }
 
     private void spread(Iter iter) {
-        EntityView globalMarket = iter.world().obtainEntityView(iter.world().lookup("global_market"));
+        EntityView globalMarket = iter.world().obtainEntityView(this.ecsConstants.globalMarket());
         GlobalMarketMutView globalMarketData = globalMarket.getMutView(GlobalMarket.class);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);

@@ -3,11 +3,22 @@ package com.populaire.projetguerrefroide.util;
 import com.populaire.projetguerrefroide.component.Color;
 import com.populaire.projetguerrefroide.component.DevelopmentBuildingType;
 import com.populaire.projetguerrefroide.component.EconomyBuildingType;
+import com.populaire.projetguerrefroide.component.GlobalGood;
+import com.populaire.projetguerrefroide.component.GlobalGoodView;
+import com.populaire.projetguerrefroide.component.GlobalPopulationType;
+import com.populaire.projetguerrefroide.component.Good;
+import com.populaire.projetguerrefroide.component.GoodView;
+import com.populaire.projetguerrefroide.component.GlobalPopulationTypeView;
 import com.populaire.projetguerrefroide.component.Modifiers;
 import com.populaire.projetguerrefroide.component.PopulationType;
+import com.populaire.projetguerrefroide.component.PopulationTypeView;
 import com.populaire.projetguerrefroide.component.SpecialBuildingType;
+import io.github.elebras1.flecs.EntityView;
 import io.github.elebras1.flecs.Flecs;
 import io.github.elebras1.flecs.World;
+
+import static com.populaire.projetguerrefroide.util.Constants.GOOD_COUNT;
+import static com.populaire.projetguerrefroide.util.Constants.POP_TYPE_COUNT;
 
 public class EcsConstants {
     private static final String SEA_PROVINCE_TAG = "SeaProvinceTag";
@@ -41,6 +52,14 @@ public class EcsConstants {
     public static final String SEA_FORCE_TAG = "SeaForceTypeTag";
     public static final String LAND_FORCE_TAG = "LandForceTypeTag";
     public static final String AIR_FORCE_TAG = "AirForceTypeTag";
+    private static final String GLOBAL_MARKET = "global_market";
+    private static final String GLOBAL_POPULATION_TYPE = "global_population_type";
+    private static final String GLOBAL_GOOD = "global_good";
+    private static final String GLOBAL_STRATEGIC_STORAGE = "global_strategic_storage";
+    private static final String GLOBAL_MILITARY_FACILITIES = "global_military_facilities";
+    private static final String GLOBAL_STATE_CONSUMPTION = "global_state_consumption";
+    private static final String GLOBAL_ARTISAN_CRAFTS = "global_artisan_crafts";
+    private static final String ECONOMY_CALENDAR = "economy_calendar";
 
     private final long seaProvinceTag;
     private final long regionTag;
@@ -73,6 +92,23 @@ public class EcsConstants {
     private final long seaForceTag;
     private final long landForceTag;
     private final long airForceTag;
+    private final float[] baseWorkforceShares;
+    private final int[] incomeTypes;
+    private final boolean[] assistedTypes;
+    private final boolean[] ruralPopTypes;
+    private final boolean[] employeePopTypes;
+    private final float[] goodCosts;
+    private final float[] goodStockDecays;
+    private long globalMarket;
+    private long globalPopulationType;
+    private long globalGood;
+    private long globalStrategicStorage;
+    private long globalMilitaryFacilities;
+    private long globalStateConsumption;
+    private long globalArtisanCrafts;
+    private long economyCalendar;
+    private int statePostIndex;
+    private boolean globalsResolved;
 
     public EcsConstants(World ecsWorld) {
         this.seaProvinceTag = ecsWorld.entity(SEA_PROVINCE_TAG);
@@ -107,7 +143,129 @@ public class EcsConstants {
         this.seaForceTag = ecsWorld.entity(SEA_FORCE_TAG);
         this.landForceTag = ecsWorld.entity(LAND_FORCE_TAG);
         this.airForceTag = ecsWorld.entity(AIR_FORCE_TAG);
+        this.baseWorkforceShares = new float[POP_TYPE_COUNT];
+        this.incomeTypes = new int[POP_TYPE_COUNT];
+        this.assistedTypes = new boolean[POP_TYPE_COUNT];
+        this.ruralPopTypes = new boolean[POP_TYPE_COUNT];
+        this.employeePopTypes = new boolean[POP_TYPE_COUNT];
+        this.goodCosts = new float[GOOD_COUNT];
+        this.goodStockDecays = new float[GOOD_COUNT];
         this.declareTypeInheritance(ecsWorld);
+    }
+
+    public void resolveGlobals(World ecsWorld) {
+        this.globalMarket = ecsWorld.lookup(GLOBAL_MARKET);
+        this.globalPopulationType = ecsWorld.lookup(GLOBAL_POPULATION_TYPE);
+        this.globalGood = ecsWorld.lookup(GLOBAL_GOOD);
+        this.globalStrategicStorage = ecsWorld.lookup(GLOBAL_STRATEGIC_STORAGE);
+        this.globalMilitaryFacilities = ecsWorld.lookup(GLOBAL_MILITARY_FACILITIES);
+        this.globalStateConsumption = ecsWorld.lookup(GLOBAL_STATE_CONSUMPTION);
+        this.globalArtisanCrafts = ecsWorld.lookup(GLOBAL_ARTISAN_CRAFTS);
+        this.economyCalendar = ecsWorld.lookup(ECONOMY_CALENDAR);
+        GlobalPopulationTypeView globalPopulationTypeData = ecsWorld.obtainEntityView(this.globalPopulationType).getView(GlobalPopulationType.class);
+        this.statePostIndex = globalPopulationTypeData.statePostPopTypeIndex();
+        for (int p = 0; p < POP_TYPE_COUNT; p++) {
+            this.baseWorkforceShares[p] = globalPopulationTypeData.workforceShareByPopType(p);
+            EntityView populationTypeEntity = ecsWorld.obtainEntityView(globalPopulationTypeData.popTypeIds(p));
+            PopulationTypeView populationType = populationTypeEntity.getView(PopulationType.class);
+            this.incomeTypes[p] = populationType.incomeType();
+            this.assistedTypes[p] = StateBudgetUtils.assisted(populationType.strata(), populationType.incomeType());
+            this.ruralPopTypes[p] = populationTypeEntity.has(this.ruralTag);
+            this.employeePopTypes[p] = populationTypeEntity.has(this.employeeTag);
+        }
+        GlobalGoodView globalGoodData = ecsWorld.obtainEntityView(this.globalGood).getView(GlobalGood.class);
+        for (int g = 0; g < GOOD_COUNT; g++) {
+            GoodView good = ecsWorld.obtainEntityView(globalGoodData.goodIds(g)).getView(Good.class);
+            this.goodCosts[g] = good.cost();
+            this.goodStockDecays[g] = good.stockDecay();
+        }
+        this.globalsResolved = true;
+    }
+
+    private void requireGlobals() {
+        if (!this.globalsResolved) {
+            throw new IllegalStateException("Global entities are resolved by EconomyService.initialize()");
+        }
+    }
+
+    public long globalMarket() {
+        this.requireGlobals();
+        return this.globalMarket;
+    }
+
+    public long globalPopulationType() {
+        this.requireGlobals();
+        return this.globalPopulationType;
+    }
+
+    public long globalGood() {
+        this.requireGlobals();
+        return this.globalGood;
+    }
+
+    public long globalStrategicStorage() {
+        this.requireGlobals();
+        return this.globalStrategicStorage;
+    }
+
+    public long globalMilitaryFacilities() {
+        this.requireGlobals();
+        return this.globalMilitaryFacilities;
+    }
+
+    public long globalStateConsumption() {
+        this.requireGlobals();
+        return this.globalStateConsumption;
+    }
+
+    public long globalArtisanCrafts() {
+        this.requireGlobals();
+        return this.globalArtisanCrafts;
+    }
+
+    public long economyCalendar() {
+        this.requireGlobals();
+        return this.economyCalendar;
+    }
+
+    public int statePostIndex() {
+        this.requireGlobals();
+        return this.statePostIndex;
+    }
+
+    public float[] baseWorkforceShares() {
+        this.requireGlobals();
+        return this.baseWorkforceShares;
+    }
+
+    public int[] incomeTypes() {
+        this.requireGlobals();
+        return this.incomeTypes;
+    }
+
+    public boolean[] assistedTypes() {
+        this.requireGlobals();
+        return this.assistedTypes;
+    }
+
+    public boolean[] ruralPopTypes() {
+        this.requireGlobals();
+        return this.ruralPopTypes;
+    }
+
+    public boolean[] employeePopTypes() {
+        this.requireGlobals();
+        return this.employeePopTypes;
+    }
+
+    public float[] goodCosts() {
+        this.requireGlobals();
+        return this.goodCosts;
+    }
+
+    public float[] goodStockDecays() {
+        this.requireGlobals();
+        return this.goodStockDecays;
     }
 
     private void declareTypeInheritance(World ecsWorld) {

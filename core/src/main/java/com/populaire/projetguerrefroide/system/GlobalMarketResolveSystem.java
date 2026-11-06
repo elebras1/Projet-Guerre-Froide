@@ -5,12 +5,15 @@ import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 import static com.populaire.projetguerrefroide.util.Constants.*;
 
 public class GlobalMarketResolveSystem {
+    private final EcsConstants ecsConstants;
 
-    public GlobalMarketResolveSystem(World ecsWorld, long phaseId) {
+    public GlobalMarketResolveSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("GlobalMarketResolveSystem")
             .kind(phaseId)
             .with(GlobalMarket.class)
@@ -19,7 +22,7 @@ public class GlobalMarketResolveSystem {
     }
 
     public void resolve(Iter iter) {
-        EntityView globalGood = iter.world().obtainEntityView(iter.world().lookup("global_good"));
+        EntityView globalGood = iter.world().obtainEntityView(this.ecsConstants.globalGood());
         GlobalGoodView globalGoodData = globalGood.getMutView(GlobalGood.class);
         int serviceGoodStartIndex = globalGoodData.serviceGoodStartIndex();
         int serviceGoodEndIndex = globalGoodData.serviceGoodEndIndex();

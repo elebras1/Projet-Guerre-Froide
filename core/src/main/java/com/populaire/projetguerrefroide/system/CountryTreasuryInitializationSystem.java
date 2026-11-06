@@ -4,20 +4,19 @@ import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
-import com.populaire.projetguerrefroide.util.EmploymentUtils;
 import com.populaire.projetguerrefroide.util.StateConsumptionUtils;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
-import static com.populaire.projetguerrefroide.util.Constants.POP_TYPE_COUNT;
 import static com.populaire.projetguerrefroide.util.Constants.TARGET_TREASURY_DAYS;
 import static com.populaire.projetguerrefroide.util.StateBudgetUtils.dailyNeeds;
 import static com.populaire.projetguerrefroide.util.StateBudgetUtils.maintenanceCost;
 import static com.populaire.projetguerrefroide.util.StateBudgetUtils.militarySupplyCost;
-import static com.populaire.projetguerrefroide.util.StateBudgetUtils.readPopulationTypes;
-import static com.populaire.projetguerrefroide.util.StateBudgetUtils.statePostIndex;
 
 public class CountryTreasuryInitializationSystem {
+    private final EcsConstants ecsConstants;
 
-    public CountryTreasuryInitializationSystem(World ecsWorld, long phaseId) {
+    public CountryTreasuryInitializationSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("CountryTreasuryInitializationSystem")
             .kind(phaseId)
             .with(CountryMarket.class)
@@ -32,12 +31,11 @@ public class CountryTreasuryInitializationSystem {
     }
 
     private void initialize(Iter iter) {
-        int[] incomeTypes = new int[POP_TYPE_COUNT];
-        boolean[] assistedTypes = new boolean[POP_TYPE_COUNT];
-        readPopulationTypes(iter.world(), incomeTypes, assistedTypes);
-        int statePostIndex = statePostIndex(iter.world());
-        float[] baseWorkforceShares = EmploymentUtils.baseWorkforceShares(iter.world());
-        GlobalStateConsumptionView stateConsumption = StateConsumptionUtils.globalStateConsumption(iter.world());
+        int[] incomeTypes = this.ecsConstants.incomeTypes();
+        boolean[] assistedTypes = this.ecsConstants.assistedTypes();
+        int statePostIndex = this.ecsConstants.statePostIndex();
+        float[] baseWorkforceShares = this.ecsConstants.baseWorkforceShares();
+        GlobalStateConsumptionView stateConsumption = StateConsumptionUtils.globalStateConsumption(iter.world(), this.ecsConstants);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         Field<CountryDemographics> countryDemographicsField = iter.field(CountryDemographics.class, 1);

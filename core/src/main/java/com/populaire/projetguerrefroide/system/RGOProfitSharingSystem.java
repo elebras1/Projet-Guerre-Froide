@@ -11,8 +11,10 @@ import com.populaire.projetguerrefroide.component.*;
 import static com.populaire.projetguerrefroide.util.Constants.CAPITALIST_OWNER;
 
 public class RGOProfitSharingSystem {
+    private final EcsConstants ecsConstants;
 
     public RGOProfitSharingSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("RGOProfitSharingSystem")
             .kind(phaseId)
             .with(Province.class)
@@ -22,7 +24,7 @@ public class RGOProfitSharingSystem {
     }
 
     private void process(Iter iter) {
-        EntityView globalPopType = iter.world().obtainEntityView(iter.world().lookup("global_population_type"));
+        EntityView globalPopType = iter.world().obtainEntityView(this.ecsConstants.globalPopulationType());
         GlobalPopulationTypeView globalPopTypeData = globalPopType.getMutView(GlobalPopulationType.class);
         int capitalistPopTypeIndex = globalPopTypeData.capitalistPopTypeIndex();
         int aristocratPopTypeIndex = globalPopTypeData.aristocratPopTypeIndex();

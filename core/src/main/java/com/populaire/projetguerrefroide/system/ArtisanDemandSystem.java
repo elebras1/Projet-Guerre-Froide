@@ -11,10 +11,17 @@ import com.populaire.projetguerrefroide.util.MarketUtils;
 
 import static com.populaire.projetguerrefroide.util.Constants.ARTISAN_OUTPUT_SHARE;
 import static com.populaire.projetguerrefroide.util.Constants.GOOD_COUNT;
+import static com.populaire.projetguerrefroide.util.ArrayUtils.zeroed;
+import static com.populaire.projetguerrefroide.util.Constants.MAX_ARTISAN_CRAFTS;
 
 public class ArtisanDemandSystem {
 
     private final EcsConstants ecsConstants;
+    private final EconomyBuildingTypeView[] buildingTypes = new EconomyBuildingTypeView[MAX_ARTISAN_CRAFTS];
+    private final ArtisanCraftView[] artisanCrafts = new ArtisanCraftView[MAX_ARTISAN_CRAFTS];
+    private final boolean[] lacking = new boolean[MAX_ARTISAN_CRAFTS];
+    private final float[] needs = new float[GOOD_COUNT];
+    private final boolean[] active = new boolean[MAX_ARTISAN_CRAFTS];
 
     public ArtisanDemandSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
         this.ecsConstants = ecsConstants;
@@ -27,27 +34,27 @@ public class ArtisanDemandSystem {
 
     private void demand(Iter iter) {
         World world = iter.world();
-        GlobalArtisanCraftsView crafts = ArtisanUtils.crafts(world);
+        GlobalArtisanCraftsView crafts = ArtisanUtils.crafts(world, this.ecsConstants);
         int count = crafts.count();
         if (count == 0) {
             return;
         }
-        EconomyBuildingTypeView[] buildingTypes = new EconomyBuildingTypeView[count];
-        ArtisanCraftView[] artisanCrafts = new ArtisanCraftView[count];
+        EconomyBuildingTypeView[] buildingTypes = this.buildingTypes;
+        ArtisanCraftView[] artisanCrafts = this.artisanCrafts;
         for (int c = 0; c < count; c++) {
             EntityView buildingType = world.obtainEntityView(crafts.buildingTypeIds(c));
             buildingTypes[c] = buildingType.getView(EconomyBuildingType.class);
             artisanCrafts[c] = buildingType.getView(ArtisanCraft.class);
         }
 
-        GlobalMarketView globalMarket = world.obtainEntityView(world.lookup("global_market")).getView(GlobalMarket.class);
-        boolean[] lacking = new boolean[count];
+        GlobalMarketView globalMarket = world.obtainEntityView(this.ecsConstants.globalMarket()).getView(GlobalMarket.class);
+        boolean[] lacking = zeroed(this.lacking);
         for (int c = 0; c < count; c++) {
             lacking[c] = MarketUtils.clearingGap(globalMarket, buildingTypes[c].goodOutputIndex()) > 0f;
         }
 
-        float[] needs = new float[GOOD_COUNT];
-        boolean[] active = new boolean[count];
+        float[] needs = zeroed(this.needs);
+        boolean[] active = zeroed(this.active);
         Field<RegionArtisans> regionArtisansField = iter.field(RegionArtisans.class, 0);
         Field<RegionInstance> regionInstanceField = iter.field(RegionInstance.class, 1);
         long countryId = 0;

@@ -6,13 +6,15 @@ import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EmploymentUtils;
 import com.populaire.projetguerrefroide.util.StateBudgetUtils;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
-import static com.populaire.projetguerrefroide.util.Constants.POP_TYPE_COUNT;
 import static com.populaire.projetguerrefroide.util.Constants.WAGE_ADJUSTMENT_RATE;
 
 public class LabourMarketSystem {
+    private final EcsConstants ecsConstants;
 
-    public LabourMarketSystem(World ecsWorld, long phaseId) {
+    public LabourMarketSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("LabourMarketSystem")
             .kind(phaseId)
             .with(RegionInstance.class)
@@ -24,14 +26,13 @@ public class LabourMarketSystem {
 
     private void adjust(Iter iter) {
         World world = iter.world();
-        GlobalPopulationTypeView globalPopulationType = world.obtainEntityView(world.lookup("global_population_type")).getView(GlobalPopulationType.class);
+        GlobalPopulationTypeView globalPopulationType = world.obtainEntityView(this.ecsConstants.globalPopulationType()).getView(GlobalPopulationType.class);
         int statePostIndex = globalPopulationType.statePostPopTypeIndex();
-        int[] incomeTypes = new int[POP_TYPE_COUNT];
-        StateBudgetUtils.readPopulationTypes(world, incomeTypes, new boolean[POP_TYPE_COUNT]);
+        int[] incomeTypes = this.ecsConstants.incomeTypes();
         Field<RegionInstance> regionInstanceField = iter.field(RegionInstance.class, 0);
         Field<RegionInstanceIncome> regionInstanceIncomeField = iter.field(RegionInstanceIncome.class, 1);
         Field<RegionDemographics> regionDemographicsField = iter.field(RegionDemographics.class, 2);
-        float[] baseWorkforceShares = EmploymentUtils.baseWorkforceShares(world);
+        float[] baseWorkforceShares = this.ecsConstants.baseWorkforceShares();
         long countryId = 0;
         float workforceShareModifier = 0f;
         for (int i = 0; i < iter.count(); i++) {

@@ -6,7 +6,6 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
-import com.populaire.projetguerrefroide.util.EmploymentUtils;
 
 import static com.populaire.projetguerrefroide.util.EmploymentUtils.activeWorkers;
 import static com.populaire.projetguerrefroide.util.EmploymentUtils.activeShare;
@@ -16,8 +15,10 @@ import static com.populaire.projetguerrefroide.util.EmploymentUtils.workerTarget
 public class EconomyBuildingEmploymentSystem {
 
     private final long stateOwnerTag;
+    private final EcsConstants ecsConstants;
 
     public EconomyBuildingEmploymentSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         this.stateOwnerTag = ecsConstants.countryTag();
         ecsWorld.system("EconomyBuildingEmploymentSystem")
             .kind(phaseId)
@@ -46,7 +47,7 @@ public class EconomyBuildingEmploymentSystem {
         int secondaryWorkerPopTypeIndex = economyBuildingType.secondaryWorkerPopTypeIndex();
         float primaryWorkerPopTypeRatio = economyBuildingType.primaryWorkerPopTypeRatio();
         float secondaryWorkerPopTypeRatio = economyBuildingType.secondaryWorkerPopTypeRatio();
-        float[] baseWorkforceShares = EmploymentUtils.baseWorkforceShares(iter.world());
+        float[] baseWorkforceShares = this.ecsConstants.baseWorkforceShares();
 
         for(int i = 0; i < iter.count(); i++) {
             EconomyBuildingMutView economyBuilding = economyBuildingField.getMutView(i);

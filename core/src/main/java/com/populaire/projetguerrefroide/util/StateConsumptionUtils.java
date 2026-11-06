@@ -7,8 +7,8 @@ import static com.populaire.projetguerrefroide.util.Constants.NEEDS_SCALING_FACT
 
 public class StateConsumptionUtils {
 
-    public static GlobalStateConsumptionView globalStateConsumption(World world) {
-        return world.obtainEntityView(world.lookup("global_state_consumption")).getView(GlobalStateConsumption.class);
+    public static GlobalStateConsumptionView globalStateConsumption(World world, EcsConstants ecsConstants) {
+        return world.obtainEntityView(ecsConstants.globalStateConsumption()).getView(GlobalStateConsumption.class);
     }
 
     public static float administrationUnits(CountryDemographicsView countryDemographics, int statePostIndex, CountryBudgetPolicyView budgetPolicy) {

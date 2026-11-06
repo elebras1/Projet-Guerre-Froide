@@ -5,12 +5,18 @@ import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 import static com.populaire.projetguerrefroide.util.Constants.*;
+import static com.populaire.projetguerrefroide.util.ArrayUtils.zeroed;
 
 public class StrategicStockPlanSystem {
+    private final EcsConstants ecsConstants;
+    private final float[] decays = new float[GOOD_COUNT];
+    private final float[] weights = new float[GOOD_COUNT];
 
-    public StrategicStockPlanSystem(World ecsWorld, long phaseId) {
+    public StrategicStockPlanSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("StrategicStockPlanSystem")
             .kind(phaseId)
             .with(CountryStrategicStock.class)
@@ -21,21 +27,19 @@ public class StrategicStockPlanSystem {
 
     private void plan(Iter iter) {
         World world = iter.world();
-        EntityView globalStorage = world.obtainEntityView(world.lookup("global_strategic_storage"));
+        EntityView globalStorage = world.obtainEntityView(this.ecsConstants.globalStrategicStorage());
         if (!globalStorage.has(GlobalStrategicStorage.class)) {
             return;
         }
         GlobalStrategicStorageView strategicStorage = globalStorage.getView(GlobalStrategicStorage.class);
-        GlobalGoodView globalGood = world.obtainEntityView(world.lookup("global_good")).getView(GlobalGood.class);
-        int goodCount = globalGood.goodIdsLength();
-        float[] costs = new float[goodCount];
-        float[] decays = new float[goodCount];
+        int goodCount = GOOD_COUNT;
+        float[] costs = this.ecsConstants.goodCosts();
+        float[] stockDecays = this.ecsConstants.goodStockDecays();
+        float[] decays = this.decays;
         for (int g = 0; g < goodCount; g++) {
-            GoodView good = world.obtainEntityView(globalGood.goodIds(g)).getView(Good.class);
-            costs[g] = good.cost();
-            decays[g] = good.stockDecay() * STORAGE_DECAY_FACTOR;
+            decays[g] = stockDecays[g] * STORAGE_DECAY_FACTOR;
         }
-        float[] weights = new float[goodCount];
+        float[] weights = zeroed(this.weights);
 
         Field<CountryStrategicStock> countryStrategicStockField = iter.field(CountryStrategicStock.class, 0);
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 1);

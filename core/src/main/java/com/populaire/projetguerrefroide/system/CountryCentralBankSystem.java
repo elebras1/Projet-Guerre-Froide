@@ -4,12 +4,15 @@ import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 import static com.populaire.projetguerrefroide.util.Constants.*;
 
 public class CountryCentralBankSystem {
+    private final EcsConstants ecsConstants;
 
-    public CountryCentralBankSystem(World ecsWorld, long phaseId) {
+    public CountryCentralBankSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("CountryCentralBankSystem")
             .kind(phaseId)
             .with(CountryCentralBank.class)
@@ -23,13 +26,8 @@ public class CountryCentralBankSystem {
 
     private void regulate(Iter iter) {
         World world = iter.world();
-        GlobalGoodView globalGood = world.obtainEntityView(world.lookup("global_good")).getView(GlobalGood.class);
-        float[] baseCosts = new float[globalGood.goodIdsLength()];
-        for (int g = 0; g < baseCosts.length; g++) {
-            GoodView good = world.obtainEntityView(globalGood.goodIds(g)).getView(Good.class);
-            baseCosts[g] = good.cost();
-        }
-        GlobalPopulationTypeView globalPopulationType = world.obtainEntityView(world.lookup("global_population_type")).getView(GlobalPopulationType.class);
+        float[] baseCosts = this.ecsConstants.goodCosts();
+        GlobalPopulationTypeView globalPopulationType = world.obtainEntityView(this.ecsConstants.globalPopulationType()).getView(GlobalPopulationType.class);
 
         Field<CountryCentralBank> countryCentralBankField = iter.field(CountryCentralBank.class, 0);
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 1);

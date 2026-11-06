@@ -6,12 +6,15 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.PopulationMobilityUtils;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 import static com.populaire.projetguerrefroide.util.Constants.*;
 
 public class PopulationGrowthSystem {
+    private final EcsConstants ecsConstants;
 
-    public PopulationGrowthSystem(World ecsWorld, long phaseId) {
+    public PopulationGrowthSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("PopulationGrowthSystem")
             .kind(phaseId)
             .with(Population.class)
@@ -21,7 +24,7 @@ public class PopulationGrowthSystem {
 
     private void grow(Iter iter) {
         World world = iter.world();
-        if (!PopulationMobilityUtils.isMobilityDay(world)) {
+        if (!PopulationMobilityUtils.isMobilityDay(world, this.ecsConstants)) {
             return;
         }
 

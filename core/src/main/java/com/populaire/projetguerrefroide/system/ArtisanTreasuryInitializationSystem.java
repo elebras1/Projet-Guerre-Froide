@@ -6,12 +6,18 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.ArtisanUtils;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 import static com.populaire.projetguerrefroide.util.Constants.ARTISAN_TREASURY_BUFFER_DAYS;
+import static com.populaire.projetguerrefroide.util.Constants.MAX_ARTISAN_CRAFTS;
 
 public class ArtisanTreasuryInitializationSystem {
+    private final EcsConstants ecsConstants;
+    private final EconomyBuildingTypeView[] buildingTypes = new EconomyBuildingTypeView[MAX_ARTISAN_CRAFTS];
+    private final ArtisanCraftView[] artisanCrafts = new ArtisanCraftView[MAX_ARTISAN_CRAFTS];
 
-    public ArtisanTreasuryInitializationSystem(World ecsWorld, long phaseId) {
+    public ArtisanTreasuryInitializationSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("ArtisanTreasuryInitializationSystem")
             .kind(phaseId)
             .with(RegionArtisans.class)
@@ -21,13 +27,13 @@ public class ArtisanTreasuryInitializationSystem {
 
     private void initialize(Iter iter) {
         World world = iter.world();
-        GlobalArtisanCraftsView crafts = ArtisanUtils.crafts(world);
+        GlobalArtisanCraftsView crafts = ArtisanUtils.crafts(world, this.ecsConstants);
         int count = crafts.count();
         if (count == 0) {
             return;
         }
-        EconomyBuildingTypeView[] buildingTypes = new EconomyBuildingTypeView[count];
-        ArtisanCraftView[] artisanCrafts = new ArtisanCraftView[count];
+        EconomyBuildingTypeView[] buildingTypes = this.buildingTypes;
+        ArtisanCraftView[] artisanCrafts = this.artisanCrafts;
         for (int c = 0; c < count; c++) {
             EntityView buildingType = world.obtainEntityView(crafts.buildingTypeIds(c));
             buildingTypes[c] = buildingType.getView(EconomyBuildingType.class);

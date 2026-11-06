@@ -4,12 +4,14 @@ import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
-import com.populaire.projetguerrefroide.util.StateBudgetUtils;
 import com.populaire.projetguerrefroide.util.StateConsumptionUtils;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 public class StateConsumptionDemandSystem {
+    private final EcsConstants ecsConstants;
 
-    public StateConsumptionDemandSystem(World ecsWorld, long phaseId) {
+    public StateConsumptionDemandSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("StateConsumptionDemandSystem")
             .kind(phaseId)
             .with(CountryMarket.class)
@@ -21,8 +23,8 @@ public class StateConsumptionDemandSystem {
     }
 
     private void demand(Iter iter) {
-        GlobalStateConsumptionView stateConsumption = StateConsumptionUtils.globalStateConsumption(iter.world());
-        int statePostIndex = StateBudgetUtils.statePostIndex(iter.world());
+        GlobalStateConsumptionView stateConsumption = StateConsumptionUtils.globalStateConsumption(iter.world(), this.ecsConstants);
+        int statePostIndex = this.ecsConstants.statePostIndex();
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         Field<CountryDemographics> countryDemographicsField = iter.field(CountryDemographics.class, 1);

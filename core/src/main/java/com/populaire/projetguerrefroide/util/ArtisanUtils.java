@@ -7,8 +7,8 @@ import static com.populaire.projetguerrefroide.util.Constants.ARTISAN_OUTPUT_SHA
 
 public class ArtisanUtils {
 
-    public static GlobalArtisanCraftsView crafts(World world) {
-        return world.obtainEntityView(world.lookup("global_artisan_crafts")).getView(GlobalArtisanCrafts.class);
+    public static GlobalArtisanCraftsView crafts(World world, EcsConstants ecsConstants) {
+        return world.obtainEntityView(ecsConstants.globalArtisanCrafts()).getView(GlobalArtisanCrafts.class);
     }
 
     public static boolean stateOwned(CountryProfitDistributionPolicyView policy, EcsConstants ecsConstants) {

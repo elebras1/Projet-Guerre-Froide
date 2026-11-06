@@ -6,13 +6,16 @@ import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EmploymentUtils;
 import com.populaire.projetguerrefroide.util.StateConsumptionUtils;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 import static com.populaire.projetguerrefroide.util.Constants.*;
 import static com.populaire.projetguerrefroide.util.StateBudgetUtils.*;
 
 public class CountryBudgetSystem {
+    private final EcsConstants ecsConstants;
 
-    public CountryBudgetSystem(World ecsWorld, long phaseId) {
+    public CountryBudgetSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("CountryBudgetSystem")
             .kind(phaseId)
             .with(CountryMarket.class)
@@ -31,12 +34,11 @@ public class CountryBudgetSystem {
     }
 
     private void budget(Iter iter) {
-        int[] incomeTypes = new int[POP_TYPE_COUNT];
-        boolean[] assistedTypes = new boolean[POP_TYPE_COUNT];
-        readPopulationTypes(iter.world(), incomeTypes, assistedTypes);
-        int statePostIndex = statePostIndex(iter.world());
-        float[] baseWorkforceShares = EmploymentUtils.baseWorkforceShares(iter.world());
-        GlobalMarketView globalMarket = iter.world().obtainEntityView(iter.world().lookup("global_market")).getMutView(GlobalMarket.class);
+        int[] incomeTypes = this.ecsConstants.incomeTypes();
+        boolean[] assistedTypes = this.ecsConstants.assistedTypes();
+        int statePostIndex = this.ecsConstants.statePostIndex();
+        float[] baseWorkforceShares = this.ecsConstants.baseWorkforceShares();
+        GlobalMarketView globalMarket = iter.world().obtainEntityView(this.ecsConstants.globalMarket()).getMutView(GlobalMarket.class);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         Field<CountryDemographics> countryDemographicsField = iter.field(CountryDemographics.class, 1);
@@ -49,7 +51,7 @@ public class CountryBudgetSystem {
         Field<CountryPopulationPolicy> countryPopulationPolicyField = iter.field(CountryPopulationPolicy.class, 8);
         Field<CountryMilitary> countryMilitaryField = iter.field(CountryMilitary.class, 9);
         Field<CountryMaintenance> countryMaintenanceField = iter.field(CountryMaintenance.class, 10);
-        GlobalStateConsumptionView stateConsumption = StateConsumptionUtils.globalStateConsumption(iter.world());
+        GlobalStateConsumptionView stateConsumption = StateConsumptionUtils.globalStateConsumption(iter.world(), this.ecsConstants);
         for (int i = 0; i < iter.count(); i++) {
             CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
             CountryDemographicsView countryDemographics = countryDemographicsField.getMutView(i);

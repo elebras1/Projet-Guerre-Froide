@@ -11,10 +11,13 @@ import com.populaire.projetguerrefroide.util.EconomyBuildingUtils;
 
 import static com.populaire.projetguerrefroide.util.Constants.ARTISAN_TREASURY_BUFFER_DAYS;
 import static com.populaire.projetguerrefroide.util.Constants.NEEDS_SCALING_FACTOR;
+import static com.populaire.projetguerrefroide.util.ArrayUtils.zeroed;
+import static com.populaire.projetguerrefroide.util.Constants.MAX_ARTISAN_CRAFTS;
 
 public class ArtisanIncomeSystem {
 
     private final EcsConstants ecsConstants;
+    private final int[] artisansPerLevel = new int[MAX_ARTISAN_CRAFTS];
 
     public ArtisanIncomeSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
         this.ecsConstants = ecsConstants;
@@ -28,13 +31,13 @@ public class ArtisanIncomeSystem {
 
     private void pay(Iter iter) {
         World world = iter.world();
-        GlobalArtisanCraftsView crafts = ArtisanUtils.crafts(world);
+        GlobalArtisanCraftsView crafts = ArtisanUtils.crafts(world, this.ecsConstants);
         int artisanIndex = crafts.artisanPopTypeIndex();
         if (artisanIndex < 0) {
             return;
         }
         int count = crafts.count();
-        int[] artisansPerLevel = new int[count];
+        int[] artisansPerLevel = zeroed(this.artisansPerLevel);
         for (int c = 0; c < count; c++) {
             ArtisanCraftView artisanCraft = world.obtainEntityView(crafts.buildingTypeIds(c)).getView(ArtisanCraft.class);
             artisansPerLevel[c] = artisanCraft.artisansPerLevel();

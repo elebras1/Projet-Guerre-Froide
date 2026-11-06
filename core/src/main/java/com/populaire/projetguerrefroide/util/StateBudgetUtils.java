@@ -1,6 +1,5 @@
 package com.populaire.projetguerrefroide.util;
 
-import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 
 import static com.populaire.projetguerrefroide.util.Constants.*;
@@ -15,20 +14,6 @@ public class StateBudgetUtils {
 
     public static boolean assisted(int strata, int incomeType) {
         return strata == POOR_STRATA && incomeType == NO_INCOME_TYPE;
-    }
-
-    public static void readPopulationTypes(World world, int[] incomeTypes, boolean[] assistedTypes) {
-        GlobalPopulationTypeView globalPopulationType = world.obtainEntityView(world.lookup("global_population_type")).getMutView(GlobalPopulationType.class);
-        for (int p = 0; p < globalPopulationType.popTypeIdsLength(); p++) {
-            PopulationTypeView populationType = world.obtainEntityView(globalPopulationType.popTypeIds(p)).getView(PopulationType.class);
-            incomeTypes[p] = populationType.incomeType();
-            assistedTypes[p] = assisted(populationType.strata(), populationType.incomeType());
-        }
-    }
-
-    public static int statePostIndex(World world) {
-        GlobalPopulationTypeView globalPopulationType = world.obtainEntityView(world.lookup("global_population_type")).getView(GlobalPopulationType.class);
-        return globalPopulationType.statePostPopTypeIndex();
     }
 
     public static boolean paidOnPosts(int popTypeIndex, int statePostIndex, int incomeType) {

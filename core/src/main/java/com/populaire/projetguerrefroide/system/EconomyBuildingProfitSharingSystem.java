@@ -27,7 +27,7 @@ public class EconomyBuildingProfitSharingSystem {
     }
 
     private void process(Iter iter) {
-        EntityView globalPopType = iter.world().obtainEntityView(iter.world().lookup("global_population_type"));
+        EntityView globalPopType = iter.world().obtainEntityView(this.ecsConstants.globalPopulationType());
         GlobalPopulationTypeView globalPopTypeData = globalPopType.getMutView(GlobalPopulationType.class);
         int capitalistPopTypeIndex = globalPopTypeData.capitalistPopTypeIndex();
 

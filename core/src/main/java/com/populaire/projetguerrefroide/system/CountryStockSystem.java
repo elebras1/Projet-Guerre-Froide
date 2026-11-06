@@ -8,12 +8,13 @@ import com.populaire.projetguerrefroide.component.CountryMarket;
 import com.populaire.projetguerrefroide.component.CountryMarketMutView;
 import com.populaire.projetguerrefroide.component.GlobalGood;
 import com.populaire.projetguerrefroide.component.GlobalGoodView;
-import com.populaire.projetguerrefroide.component.Good;
-import com.populaire.projetguerrefroide.component.GoodView;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 public class CountryStockSystem {
+    private final EcsConstants ecsConstants;
 
-    public CountryStockSystem(World ecsWorld, long phaseId) {
+    public CountryStockSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("CountryStockSystem")
             .kind(phaseId)
             .with(CountryMarket.class)
@@ -22,15 +23,11 @@ public class CountryStockSystem {
     }
 
     private void store(Iter iter) {
-        EntityView globalGood = iter.world().obtainEntityView(iter.world().lookup("global_good"));
+        EntityView globalGood = iter.world().obtainEntityView(this.ecsConstants.globalGood());
         GlobalGoodView globalGoodData = globalGood.getMutView(GlobalGood.class);
         int serviceGoodStartIndex = globalGoodData.serviceGoodStartIndex();
         int serviceGoodEndIndex = globalGoodData.serviceGoodEndIndex();
-        float[] stockDecays = new float[globalGoodData.goodIdsLength()];
-        for (int g = 0; g < stockDecays.length; g++) {
-            GoodView good = iter.world().obtainEntityView(globalGoodData.goodIds(g)).getView(Good.class);
-            stockDecays[g] = good.stockDecay();
-        }
+        float[] stockDecays = this.ecsConstants.goodStockDecays();
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         for(int i = 0; i < iter.count(); i++) {

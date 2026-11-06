@@ -5,10 +5,13 @@ import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 public class CountryExportPayoutSystem {
+    private final EcsConstants ecsConstants;
 
-    public CountryExportPayoutSystem(World ecsWorld, long phaseId) {
+    public CountryExportPayoutSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("CountryExportPayoutSystem")
             .kind(phaseId)
             .with(CountryMarket.class)
@@ -17,7 +20,7 @@ public class CountryExportPayoutSystem {
     }
 
     private void pay(Iter iter) {
-        EntityView globalMarket = iter.world().obtainEntityView(iter.world().lookup("global_market"));
+        EntityView globalMarket = iter.world().obtainEntityView(this.ecsConstants.globalMarket());
         GlobalMarketView globalMarketData = globalMarket.getMutView(GlobalMarket.class);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);

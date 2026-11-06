@@ -12,10 +12,16 @@ import com.populaire.projetguerrefroide.util.PopulationMobilityUtils;
 
 import static com.populaire.projetguerrefroide.util.Constants.ARTISAN_REALLOCATION_RATE;
 import static com.populaire.projetguerrefroide.util.Constants.MAX_ARTISAN_CRAFTS;
+import static com.populaire.projetguerrefroide.util.ArrayUtils.zeroed;
 
 public class ArtisanAllocationSystem {
 
     private final EcsConstants ecsConstants;
+    private final EconomyBuildingTypeView[] buildingTypes = new EconomyBuildingTypeView[MAX_ARTISAN_CRAFTS];
+    private final ArtisanCraftView[] artisanCrafts = new ArtisanCraftView[MAX_ARTISAN_CRAFTS];
+    private final float[] gaps = new float[MAX_ARTISAN_CRAFTS];
+    private final float[] scores = new float[MAX_ARTISAN_CRAFTS];
+    private final float[] weights = new float[MAX_ARTISAN_CRAFTS];
 
     public ArtisanAllocationSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
         this.ecsConstants = ecsConstants;
@@ -28,28 +34,28 @@ public class ArtisanAllocationSystem {
 
     private void allocate(Iter iter) {
         World world = iter.world();
-        GlobalArtisanCraftsView crafts = ArtisanUtils.crafts(world);
+        GlobalArtisanCraftsView crafts = ArtisanUtils.crafts(world, this.ecsConstants);
         int count = crafts.count();
         if (count == 0) {
             return;
         }
-        boolean reallocationDay = PopulationMobilityUtils.isMobilityDay(world);
-        EconomyBuildingTypeView[] buildingTypes = new EconomyBuildingTypeView[count];
-        ArtisanCraftView[] artisanCrafts = new ArtisanCraftView[count];
+        boolean reallocationDay = PopulationMobilityUtils.isMobilityDay(world, this.ecsConstants);
+        EconomyBuildingTypeView[] buildingTypes = this.buildingTypes;
+        ArtisanCraftView[] artisanCrafts = this.artisanCrafts;
         for (int c = 0; c < count; c++) {
             EntityView buildingType = world.obtainEntityView(crafts.buildingTypeIds(c));
             buildingTypes[c] = buildingType.getView(EconomyBuildingType.class);
             artisanCrafts[c] = buildingType.getView(ArtisanCraft.class);
         }
 
-        GlobalMarketView globalMarket = world.obtainEntityView(world.lookup("global_market")).getView(GlobalMarket.class);
-        float[] gaps = new float[MAX_ARTISAN_CRAFTS];
+        GlobalMarketView globalMarket = world.obtainEntityView(this.ecsConstants.globalMarket()).getView(GlobalMarket.class);
+        float[] gaps = zeroed(this.gaps);
         for (int c = 0; c < count; c++) {
             gaps[c] = MarketUtils.clearingGap(globalMarket, buildingTypes[c].goodOutputIndex());
         }
 
-        float[] scores = new float[MAX_ARTISAN_CRAFTS];
-        float[] weights = new float[MAX_ARTISAN_CRAFTS];
+        float[] scores = zeroed(this.scores);
+        float[] weights = zeroed(this.weights);
         Field<RegionArtisans> regionArtisansField = iter.field(RegionArtisans.class, 0);
         Field<RegionInstance> regionInstanceField = iter.field(RegionInstance.class, 1);
         long countryId = 0;

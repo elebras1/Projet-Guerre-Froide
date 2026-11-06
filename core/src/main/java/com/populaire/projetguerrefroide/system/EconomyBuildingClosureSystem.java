@@ -6,6 +6,8 @@ import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.Query;
 import io.github.elebras1.flecs.World;
+import io.github.elebras1.flecs.callback.EntityCallback;
+import io.github.elebras1.flecs.callback.IterCallback;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 import com.populaire.projetguerrefroide.util.EconomyBuildingUtils;
@@ -16,6 +18,12 @@ import static com.populaire.projetguerrefroide.util.Constants.FACTORY_SUSPENDED_
 public class EconomyBuildingClosureSystem {
 
     private final EcsConstants ecsConstants;
+    private final LongList levelLosses = new LongList();
+    private final LongList buildingTypes = new LongList();
+    private final LongIntMap sites = new LongIntMap();
+    private final EntityCallback readSiteReader = this::readSite;
+    private World world;
+    private final IterCallback readBuildingReader = this::readBuilding;
     private final Query buildingQuery;
     private final Query siteQuery;
 
@@ -31,32 +39,19 @@ public class EconomyBuildingClosureSystem {
 
     private void close(Iter iter) {
         World world = iter.world();
-        LongList levelLosses = new LongList();
-        LongList buildingTypes = new LongList();
-        this.buildingQuery.iter(buildingIter -> {
-            Field<EconomyBuilding> economyBuildingField = buildingIter.field(EconomyBuilding.class, 1);
-            long buildingTypeId = buildingIter.src(2);
-            for (int i = 0; i < buildingIter.count(); i++) {
-                EconomyBuildingMutView economyBuilding = economyBuildingField.getMutView(i);
-                if (!economyBuilding.suspended() || economyBuilding.suspendedDays() < FACTORY_SUSPENDED_LEVEL_DAYS) {
-                    continue;
-                }
-                economyBuilding.suspendedDays(0);
-                levelLosses.add(buildingIter.entity(i));
-                buildingTypes.add(buildingTypeId);
-            }
-        });
+        this.world = world;
+        LongList levelLosses = this.levelLosses;
+        LongList buildingTypes = this.buildingTypes;
+        levelLosses.clear();
+        buildingTypes.clear();
+        this.buildingQuery.iter(this.readBuildingReader);
         if (levelLosses.isEmpty()) {
             return;
         }
 
-        LongIntMap sites = new LongIntMap();
-        this.siteQuery.each((long siteId) -> {
-            ConstructionSiteView site = world.obtainEntityView(siteId).getView(ConstructionSite.class);
-            if (site.buildingId() != 0) {
-                sites.put(site.buildingId(), 1);
-            }
-        });
+        LongIntMap sites = this.sites;
+        sites.clear();
+        this.siteQuery.each(this.readSiteReader);
 
         for (int b = 0; b < levelLosses.size(); b++) {
             long buildingId = levelLosses.get(b);
@@ -67,6 +62,31 @@ public class EconomyBuildingClosureSystem {
                 EconomyBuildingUtils.releaseAssets(world, this.ecsConstants, buildingId);
                 world.obtainEntity(buildingId).destruct();
             }
+        }
+    }
+
+    private void readBuilding(Iter buildingIter) {
+        LongList levelLosses = this.levelLosses;
+        LongList buildingTypes = this.buildingTypes;
+        Field<EconomyBuilding> economyBuildingField = buildingIter.field(EconomyBuilding.class, 1);
+        long buildingTypeId = buildingIter.src(2);
+        for (int i = 0; i < buildingIter.count(); i++) {
+            EconomyBuildingMutView economyBuilding = economyBuildingField.getMutView(i);
+            if (!economyBuilding.suspended() || economyBuilding.suspendedDays() < FACTORY_SUSPENDED_LEVEL_DAYS) {
+                continue;
+            }
+            economyBuilding.suspendedDays(0);
+            levelLosses.add(buildingIter.entity(i));
+            buildingTypes.add(buildingTypeId);
+        }
+    }
+
+    private void readSite(long siteId) {
+        World world = this.world;
+        LongIntMap sites = this.sites;
+        ConstructionSiteView site = world.obtainEntityView(siteId).getView(ConstructionSite.class);
+        if (site.buildingId() != 0) {
+            sites.put(site.buildingId(), 1);
         }
     }
 }

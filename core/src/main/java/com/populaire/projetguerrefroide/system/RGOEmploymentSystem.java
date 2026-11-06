@@ -5,15 +5,16 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
-import com.populaire.projetguerrefroide.util.EmploymentUtils;
 
 import static com.populaire.projetguerrefroide.util.Constants.*;
 import static com.populaire.projetguerrefroide.util.EmploymentUtils.activeWorkers;
 import static com.populaire.projetguerrefroide.util.EmploymentUtils.activeShare;
 
 public class RGOEmploymentSystem {
+    private final EcsConstants ecsConstants;
 
     public RGOEmploymentSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("RGOEmploymentSystem")
             .kind(phaseId)
             .with(ResourceGathering.class)
@@ -40,12 +41,12 @@ public class RGOEmploymentSystem {
 
         ResourceGatheringView firstResourceGathering = resourceGatheringField.getMutView(0);
         int goodIndex = firstResourceGathering.goodIndex();
-        GlobalMarketView globalMarket = iter.world().obtainEntityView(iter.world().lookup("global_market")).getView(GlobalMarket.class);
+        GlobalMarketView globalMarket = iter.world().obtainEntityView(this.ecsConstants.globalMarket()).getView(GlobalMarket.class);
         float worldDemand = globalMarket.goodDemandAmounts(goodIndex);
         float inventory = globalMarket.goodStockAmounts(goodIndex) - globalMarket.goodProductionAmounts(goodIndex);
         boolean stocksAboveTarget = inventory > STOCK_TARGET_DAYS * worldDemand;
 
-        float workerBaseShare = EmploymentUtils.baseWorkforceShares(iter.world())[workerIndex];
+        float workerBaseShare = this.ecsConstants.baseWorkforceShares()[workerIndex];
         long countryId = 0;
         float workforceShare = 0f;
         for (int i = 0; i < iter.count(); i++) {

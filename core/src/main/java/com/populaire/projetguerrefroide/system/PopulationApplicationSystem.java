@@ -10,10 +10,17 @@ import com.populaire.projetguerrefroide.util.EmploymentUtils;
 import com.populaire.projetguerrefroide.util.PopulationMobilityUtils;
 
 import static com.populaire.projetguerrefroide.util.Constants.POP_TYPE_COUNT;
+import static com.populaire.projetguerrefroide.util.ArrayUtils.zeroed;
 
 public class PopulationApplicationSystem {
 
     private final EcsConstants ecsConstants;
+    private final float[] promotionWeights = new float[POP_TYPE_COUNT];
+    private final float[] demotionWeights = new float[POP_TYPE_COUNT];
+    private final float[] vacancyShares = new float[POP_TYPE_COUNT];
+    private final float[] openShares = new float[POP_TYPE_COUNT];
+    private final float[] fallbackSources = new float[POP_TYPE_COUNT];
+    private final float[] fallbackWeights = new float[POP_TYPE_COUNT];
 
     public PopulationApplicationSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
         this.ecsConstants = ecsConstants;
@@ -26,27 +33,27 @@ public class PopulationApplicationSystem {
 
     private void apply(Iter iter) {
         World world = iter.world();
-        if (!PopulationMobilityUtils.isMobilityDay(world)) {
+        if (!PopulationMobilityUtils.isMobilityDay(world, this.ecsConstants)) {
             return;
         }
 
         PopulationTypeView populationType = iter.field(PopulationType.class, 1).getView(0);
-        float[] promotionWeights = PopulationMobilityUtils.normalizedWeights(populationType, true);
-        float[] demotionWeights = PopulationMobilityUtils.normalizedWeights(populationType, false);
+        float[] promotionWeights = PopulationMobilityUtils.normalizedWeights(populationType, true, this.promotionWeights);
+        float[] demotionWeights = PopulationMobilityUtils.normalizedWeights(populationType, false, this.demotionWeights);
         if (!PopulationMobilityUtils.hasWeights(promotionWeights, demotionWeights)) {
             return;
         }
-        boolean[] employeeTypes = PopulationMobilityUtils.popTypesWith(world, this.ecsConstants.employeeTag());
-        boolean[] ruralTypes = PopulationMobilityUtils.popTypesWith(world, this.ecsConstants.ruralTag());
-        float[] vacancyShares = new float[POP_TYPE_COUNT];
-        float[] openShares = new float[POP_TYPE_COUNT];
-        float[] fallbackSources = new float[POP_TYPE_COUNT];
-        float[] fallbackWeights = new float[POP_TYPE_COUNT];
+        boolean[] employeeTypes = this.ecsConstants.employeePopTypes();
+        boolean[] ruralTypes = this.ecsConstants.ruralPopTypes();
+        float[] vacancyShares = zeroed(this.vacancyShares);
+        float[] openShares = zeroed(this.openShares);
+        float[] fallbackSources = zeroed(this.fallbackSources);
+        float[] fallbackWeights = zeroed(this.fallbackWeights);
 
         long countryId = 0;
         float classRigidity = 0f;
         float workforceShare = 0f;
-        float baseWorkforceShare = EmploymentUtils.baseWorkforceShares(world)[populationType.index()];
+        float baseWorkforceShare = this.ecsConstants.baseWorkforceShares()[populationType.index()];
         Field<Population> populationField = iter.field(Population.class, 0);
         for (int i = 0; i < iter.count(); i++) {
             PopulationView population = populationField.getMutView(i);

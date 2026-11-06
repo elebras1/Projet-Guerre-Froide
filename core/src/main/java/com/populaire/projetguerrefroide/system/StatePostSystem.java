@@ -7,10 +7,13 @@ import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.EmploymentUtils;
 import com.populaire.projetguerrefroide.util.StateBudgetUtils;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 public class StatePostSystem {
+    private final EcsConstants ecsConstants;
 
-    public StatePostSystem(World ecsWorld, long phaseId) {
+    public StatePostSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("StatePostSystem")
             .kind(phaseId)
             .with(RegionInstance.class)
@@ -22,7 +25,7 @@ public class StatePostSystem {
 
     private void post(Iter iter) {
         World world = iter.world();
-        GlobalPopulationTypeView globalPopulationType = world.obtainEntityView(world.lookup("global_population_type")).getView(GlobalPopulationType.class);
+        GlobalPopulationTypeView globalPopulationType = world.obtainEntityView(this.ecsConstants.globalPopulationType()).getView(GlobalPopulationType.class);
         int postIndex = globalPopulationType.statePostPopTypeIndex();
         if (postIndex < 0) {
             return;

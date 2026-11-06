@@ -5,10 +5,13 @@ import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 public class CountryMarketResolveSystem {
+    private final EcsConstants ecsConstants;
 
-    public CountryMarketResolveSystem(World ecsWorld, long phaseId) {
+    public CountryMarketResolveSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("CountryMarketResolveSystem")
             .kind(phaseId)
             .with(CountryMarket.class)
@@ -16,7 +19,7 @@ public class CountryMarketResolveSystem {
     }
 
     private void resolve(Iter iter) {
-        EntityView globalMarket = iter.world().obtainEntityView(iter.world().lookup("global_market"));
+        EntityView globalMarket = iter.world().obtainEntityView(this.ecsConstants.globalMarket());
         GlobalMarketMutView globalMarketData = globalMarket.getMutView(GlobalMarket.class);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);

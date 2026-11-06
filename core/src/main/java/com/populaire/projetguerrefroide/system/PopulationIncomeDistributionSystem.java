@@ -14,8 +14,10 @@ import static com.populaire.projetguerrefroide.util.Constants.*;
 import static com.populaire.projetguerrefroide.util.StrataUtils.*;
 
 public class PopulationIncomeDistributionSystem {
+    private final EcsConstants ecsConstants;
 
     public PopulationIncomeDistributionSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("PopulationIncomeDistributionSystem")
             .with(Population.class)
             .with(PopulationType.class)
@@ -34,8 +36,8 @@ public class PopulationIncomeDistributionSystem {
         boolean capitalist = iter.isSet(2);
         boolean aristocrat = iter.isSet(3);
         boolean rural = iter.isSet(4);
-        boolean paidOnPosts = StateBudgetUtils.paidOnPosts(typeIdx, StateBudgetUtils.statePostIndex(iter.world()), populationTypeData.incomeType());
-        GlobalPopulationTypeView globalPopulationType = iter.world().obtainEntityView(iter.world().lookup("global_population_type")).getView(GlobalPopulationType.class);
+        boolean paidOnPosts = StateBudgetUtils.paidOnPosts(typeIdx, this.ecsConstants.statePostIndex(), populationTypeData.incomeType());
+        GlobalPopulationTypeView globalPopulationType = iter.world().obtainEntityView(this.ecsConstants.globalPopulationType()).getView(GlobalPopulationType.class);
         int religiousIndex = globalPopulationType.religiousPopTypeIndex();
         boolean donor = religiousIndex >= 0 && typeIdx != religiousIndex;
         float baseWorkforceShare = globalPopulationType.workforceShareByPopType(typeIdx);

@@ -5,12 +5,17 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.ArtisanUtils;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 import static com.populaire.projetguerrefroide.util.Constants.ARTISAN_OUTPUT_SHARE;
+import static com.populaire.projetguerrefroide.util.Constants.MAX_ARTISAN_CRAFTS;
 
 public class ArtisanProductionSystem {
+    private final EcsConstants ecsConstants;
+    private final EconomyBuildingTypeView[] buildingTypes = new EconomyBuildingTypeView[MAX_ARTISAN_CRAFTS];
 
-    public ArtisanProductionSystem(World ecsWorld, long phaseId) {
+    public ArtisanProductionSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("ArtisanProductionSystem")
             .kind(phaseId)
             .with(RegionArtisans.class)
@@ -20,12 +25,12 @@ public class ArtisanProductionSystem {
 
     private void produce(Iter iter) {
         World world = iter.world();
-        GlobalArtisanCraftsView crafts = ArtisanUtils.crafts(world);
+        GlobalArtisanCraftsView crafts = ArtisanUtils.crafts(world, this.ecsConstants);
         int count = crafts.count();
         if (count == 0) {
             return;
         }
-        EconomyBuildingTypeView[] buildingTypes = new EconomyBuildingTypeView[count];
+        EconomyBuildingTypeView[] buildingTypes = this.buildingTypes;
         for (int c = 0; c < count; c++) {
             buildingTypes[c] = world.obtainEntityView(crafts.buildingTypeIds(c)).getView(EconomyBuildingType.class);
         }

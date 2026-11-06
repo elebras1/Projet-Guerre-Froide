@@ -5,12 +5,15 @@ import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 import static com.populaire.projetguerrefroide.util.Constants.SHORTAGE_PRICE_PREMIUM;
 
 public class CountryBudgetPriceSystem {
+    private final EcsConstants ecsConstants;
 
-    public CountryBudgetPriceSystem(World ecsWorld, long phaseId) {
+    public CountryBudgetPriceSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("CountryBudgetPriceSystem")
             .kind(phaseId)
             .with(CountryMarket.class)
@@ -20,7 +23,7 @@ public class CountryBudgetPriceSystem {
     }
 
     private void price(Iter iter) {
-        EntityView globalMarket = iter.world().obtainEntityView(iter.world().lookup("global_market"));
+        EntityView globalMarket = iter.world().obtainEntityView(this.ecsConstants.globalMarket());
         GlobalMarketView globalMarketData = globalMarket.getMutView(GlobalMarket.class);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
