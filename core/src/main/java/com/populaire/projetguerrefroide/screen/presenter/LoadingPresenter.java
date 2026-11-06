@@ -5,21 +5,21 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
-import com.populaire.projetguerrefroide.service.GameContext;
+import com.populaire.projetguerrefroide.ui.UiContext;
 
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
 import java.util.Random;
 
 public class LoadingPresenter implements Presenter {
-    private final GameContext gameContext;
+    private final UiContext uiContext;
 
-    public LoadingPresenter(GameContext gameContext) {
-        this.gameContext = gameContext;
+    public LoadingPresenter(UiContext uiContext) {
+        this.uiContext = uiContext;
     }
 
     @Override
     public void initialize(Stage stage) {
-        AssetManager assetManager = gameContext.getAssetManager();
+        AssetManager assetManager = uiContext.getAssetManager();
         assetManager.finishLoading();
         Skin skin = assetManager.get(Skins.LOADINGSCREENS, Skin.class);
         Table rootTable = new Table();
@@ -30,10 +30,6 @@ public class LoadingPresenter implements Presenter {
         stage.addActor(rootTable);
     }
 
-    @Override
-    public void refresh() {
-
-    }
 
     @Override
     public void update(float delta) {

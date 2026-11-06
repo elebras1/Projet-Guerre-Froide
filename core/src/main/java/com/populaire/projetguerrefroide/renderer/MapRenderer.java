@@ -3,13 +3,11 @@ package com.populaire.projetguerrefroide.renderer;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.graphics.glutils.PixmapTextureData;
 import com.badlogic.gdx.math.Vector4;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.Disposable;
-import com.populaire.projetguerrefroide.ui.skin.SkinNames.FontsSkin;
-import io.github.elebras1.flecs.*;
+import com.populaire.projetguerrefroide.adapter.graphics.WgMeshMulti;
 import com.github.tommyettinger.ds.*;
 import com.github.xpenatan.webgpu.*;
 import com.monstrous.gdx.webgpu.graphics.Binder;
@@ -18,36 +16,29 @@ import com.monstrous.gdx.webgpu.graphics.WgTexture;
 import com.monstrous.gdx.webgpu.graphics.WgTextureArray;
 import com.monstrous.gdx.webgpu.graphics.g2d.WgTextureAtlas;
 import com.monstrous.gdx.webgpu.wrappers.*;
-import com.populaire.projetguerrefroide.adapter.graphics.WgMeshMulti;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
-import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dao.MapDao;
-import com.populaire.projetguerrefroide.pojo.Borders;
 import com.populaire.projetguerrefroide.pojo.MapMode;
 import com.populaire.projetguerrefroide.pojo.MapTextures;
 import com.populaire.projetguerrefroide.pojo.RawMeshMulti;
-import com.populaire.projetguerrefroide.repository.QueryRepository;
-import com.populaire.projetguerrefroide.service.CountryService;
-import com.populaire.projetguerrefroide.service.GameContext;
-import com.populaire.projetguerrefroide.service.MapLabelService;
-import com.populaire.projetguerrefroide.util.EcsConstants;
-import com.populaire.projetguerrefroide.util.LocalisationUtils;
-import com.populaire.projetguerrefroide.pojo.MutableInt;
+import com.populaire.projetguerrefroide.protocol.catalog.Catalog;
+import com.populaire.projetguerrefroide.protocol.catalog.ProvinceTable;
+import com.populaire.projetguerrefroide.protocol.response.MapBuildings;
+import com.populaire.projetguerrefroide.protocol.response.PoliticalMap;
+import com.populaire.projetguerrefroide.ui.UiContext;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.FontsSkin;
 import com.populaire.projetguerrefroide.util.WgslUtils;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.nio.ByteBuffer;
+import java.util.function.IntFunction;
 
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
 public class MapRenderer implements Disposable {
-    private final CountryService countryService;
-    private final GameContext gameContext;
+    private final Catalog catalog;
     private final MapDao mapDao;
-    private final QueryRepository queryRepository;
+    private final MapLabelService mapLabelService;
     private WgTexture mapModeTexture;
     private WgTexture provincesTexture;
     private final WgTexture waterTexture;
@@ -62,8 +53,8 @@ public class MapRenderer implements Disposable {
     private final WgTextureAtlas mapElementsTextureAtlas;
     private final TextureRegion fontMapLabelRegion;
     private final WgMesh meshProvinces;
-    private final WgMesh meshMapLabels;
-    private final WgMesh meshBuildings;
+    private WgMesh meshMapLabels;
+    private WgMesh meshBuildings;
     private final WgMesh meshResources;
     private final WgMeshMulti meshRivers;
     private final WebGPUUniformBuffer uniformBufferWorld;
@@ -79,12 +70,13 @@ public class MapRenderer implements Disposable {
     private final WebGPUPipeline pipelineRivers;
     private final int uniformBufferSizeWorld;
     private final Vector4 selectedProvinceColor;
+    private final VertexAttributes vertexAttributesMapLabels;
+    private final VertexAttributes vertexAttributesBuildings;
 
-    public MapRenderer(CountryService countryService, GameContext gameContext, MapDao mapDao, QueryRepository queryRepository, MapTextures mapTextures, Borders borders) {
-        this.countryService = countryService;
-        this.gameContext = gameContext;
+    public MapRenderer(Catalog catalog, UiContext uiContext, MapDao mapDao, MapTextures mapTextures, PoliticalMap politicalMap, MapBuildings mapBuildings, IntFunction<String> countryNames) {
+        this.catalog = catalog;
         this.mapDao = mapDao;
-        this.queryRepository = queryRepository;
+        this.mapLabelService = new MapLabelService(uiContext.getSkinFonts().get(FontsSkin.Styles.Label.KART_60, Label.LabelStyle.class).font);
 
         this.mapModeTexture = mapTextures.mapModeTexture();
         this.provincesStripesTexture = mapTextures.provincesStripesTexture();
@@ -100,7 +92,7 @@ public class MapRenderer implements Disposable {
 
         this.mapElementsTextureAtlas = new WgTextureAtlas(Gdx.files.internal("map/elements/map_elements.atlas"));
         this.mapElementsTextureAtlas.getTextures().first().setFilter(Texture.TextureFilter.MipMapLinearLinear, Texture.TextureFilter.MipMapLinearLinear);
-        this.fontMapLabelRegion = gameContext.getSkinFonts().get(FontsSkin.Styles.Label.KART_60, Label.LabelStyle.class).font.getRegion();
+        this.fontMapLabelRegion = uiContext.getSkinFonts().get(FontsSkin.Styles.Label.KART_60, Label.LabelStyle.class).font.getRegion();
         this.fontMapLabelRegion.getTexture().setFilter(WgTexture.TextureFilter.MipMapLinearLinear, WgTexture.TextureFilter.MipMapLinearLinear);
         this.selectedProvinceColor = new Vector4();
         this.uniformBufferSizeWorld = (16 + 4 + 4) * Float.BYTES;
@@ -109,14 +101,14 @@ public class MapRenderer implements Disposable {
         this.meshProvinces = this.generateMeshProvinces(vertexAttributesProvinces);
         this.binderProvinces = this.createBinderProvinces();
         this.pipelineProvinces = this.createPipelineProvinces(vertexAttributesProvinces, WgslUtils.getShaderSource("map.wgsl"));
-        VertexAttributes vertexAttributesMapLabels = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, "position"), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "texCoord"));
-        this.meshMapLabels = this.generateMeshMapLabels(vertexAttributesMapLabels, gameContext.getLocalisation(), gameContext.getSkinFonts(), borders);
+        this.vertexAttributesMapLabels = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, "position"), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "texCoord"));
+        this.meshMapLabels = this.generateMeshMapLabels(this.vertexAttributesMapLabels, politicalMap, countryNames);
         this.binderMapLabels = this.createBinderMapLabels();
-        this.pipelineMapLabels = this.createPipelineMapLabels(vertexAttributesMapLabels, WgslUtils.getShaderSource("font.wgsl"));
-        VertexAttributes vertexAttributesBuildings = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, "position"), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "texCoord"));
-        this.meshBuildings = this.generateMeshBuildings(vertexAttributesBuildings);
+        this.pipelineMapLabels = this.createPipelineMapLabels(this.vertexAttributesMapLabels, WgslUtils.getShaderSource("font.wgsl"));
+        this.vertexAttributesBuildings = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, "position"), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "texCoord"));
+        this.meshBuildings = this.generateMeshBuildings(this.vertexAttributesBuildings, politicalMap, mapBuildings);
         this.binderBuildings = this.createBinderBuildings();
-        this.pipelineBuildings = this.createPipelineBuildings(vertexAttributesBuildings, WgslUtils.getShaderSource("element.wgsl"));
+        this.pipelineBuildings = this.createPipelineBuildings(this.vertexAttributesBuildings, WgslUtils.getShaderSource("element.wgsl"));
         VertexAttributes vertexAttributesResources = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, "position"), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "texCoord"), new VertexAttribute(VertexAttributes.Usage.Generic, 2, "center"));
         this.meshResources = this.generateMeshResources(vertexAttributesResources);
         this.binderResources = this.createBinderResources();
@@ -148,228 +140,144 @@ public class MapRenderer implements Disposable {
         return mesh;
     }
 
-    private WgMesh generateMeshMapLabels(VertexAttributes vertexAttributes, Map<String, String> localisation, Skin skinFonts, Borders borders) {
-        World ecsWorld = this.gameContext.getEcsWorld();
-        MapLabelService mapLabelService = new MapLabelService(skinFonts.get(FontsSkin.Styles.Label.KART_60, Label.LabelStyle.class).font);
+    private WgMesh generateMeshMapLabels(VertexAttributes vertexAttributes, PoliticalMap politicalMap, IntFunction<String> countryNames) {
+        ProvinceTable provinces = this.catalog.provinces();
+        int provinceCount = provinces.size();
+        int[] borderPixels = this.catalog.borderPixels();
         FloatList vertices = new FloatList();
         ShortList indices = new ShortList();
-        Query query = this.queryRepository.getCountries();
-        query.each(countryId -> {
-            EntityView country = ecsWorld.obtainEntityView(countryId);
-            String countryNameId = country.name();
-            this.getLabelsData(
-                ecsWorld,
-                countryId,
-                LocalisationUtils.getCountryNameLocalisation(localisation, countryNameId, this.countryService.getColonizerNameId(country.id())),
-                mapLabelService,
-                vertices,
-                indices,
-                borders
-            );
-        });
+        IntList ownedProvinces = new IntList();
+        IntList connectedProvinces = new IntList();
+        IntList toProcess = new IntList();
+        IntList positionsProvinces = new IntList();
+        IntList pixelsBorderProvinces = new IntList();
+        boolean[] visited = new boolean[provinceCount];
+        for (int countryIndex = 0; countryIndex < this.catalog.countries().size(); countryIndex++) {
+            if (!politicalMap.hasProvinces(countryIndex)) {
+                continue;
+            }
+            ownedProvinces.clear();
+            for (int provinceIndex = 0; provinceIndex < provinceCount; provinceIndex++) {
+                if (politicalMap.owner(provinceIndex) == countryIndex) {
+                    ownedProvinces.add(provinceIndex);
+                }
+            }
+            String countryName = countryNames.apply(countryIndex);
+            for (int i = 0; i < ownedProvinces.size(); i++) {
+                int provinceIndex = ownedProvinces.get(i);
+                if (visited[provinceIndex]) {
+                    continue;
+                }
+                connectedProvinces.clear();
+                this.collectConnectedProvinces(politicalMap, countryIndex, provinceIndex, visited, connectedProvinces, toProcess);
+                if (connectedProvinces.size() > 5 || (connectedProvinces.size() == ownedProvinces.size() && !connectedProvinces.isEmpty())) {
+                    positionsProvinces.clear();
+                    pixelsBorderProvinces.clear();
+                    for (int j = 0; j < connectedProvinces.size(); j++) {
+                        int connectedProvince = connectedProvinces.get(j);
+                        positionsProvinces.add(provinces.positionX(connectedProvince));
+                        positionsProvinces.add(provinces.positionY(connectedProvince));
+                        for (int pixel = provinces.borderStart(connectedProvince); pixel < provinces.borderEnd(connectedProvince); pixel++) {
+                            pixelsBorderProvinces.add(borderPixels[pixel]);
+                        }
+                    }
+                    this.mapLabelService.generateData(countryName, pixelsBorderProvinces, positionsProvinces, vertices, indices);
+                }
+            }
+        }
 
-        WgMesh mesh = new WgMesh(false, vertices.size() / 4, indices.size(), vertexAttributes);
+        WgMesh mesh = new WgMesh(false, Math.max(vertices.size() / 4, 4), Math.max(indices.size(), 6), vertexAttributes);
         mesh.setVertices(vertices.toArray());
         mesh.setIndices(indices.toArray());
 
         return mesh;
     }
 
-    private void getLabelsData(World ecsWorld, long countryId, String countryName, MapLabelService mapLabelService, FloatList vertices, ShortList indices, Borders borders) {
-        LongSet visitedProvinces = new LongSet();
-        LongList provinceIds = getLongList(countryId);
-
-        for (int i = 0; i < provinceIds.size(); i++) {
-            long provinceId = provinceIds.get(i);
-            if (!visitedProvinces.contains(provinceId)) {
-                LongList connectedProvinces = new LongList();
-                this.getConnectedProvinces(ecsWorld, countryId, provinceId, visitedProvinces, connectedProvinces);
-                if(connectedProvinces.size() > 5 || (connectedProvinces.size() == provinceIds.size() && !connectedProvinces.isEmpty())) {
-                    IntList positionsProvinces = new IntList();
-                    IntList pixelsBorderProvinces = new IntList();
-                    for(int j = 0; j < connectedProvinces.size(); j++) {
-                        long connectedProvinceId = connectedProvinces.get(j);
-                        Entity connectedProvince = ecsWorld.obtainEntity(connectedProvinceId);
-                        BorderView border = connectedProvince.getMutView(Border.class);
-                        long positionEntityId = ecsWorld.lookup("province_" + connectedProvince.name() + "_pos_default");
-                        Entity positionEntity = ecsWorld.obtainEntity(positionEntityId);
-                        PositionView position = positionEntity.getMutView(Position.class);
-                        positionsProvinces.add(position.x());
-                        positionsProvinces.add(position.y());
-                        pixelsBorderProvinces.addAll(Arrays.copyOfRange(borders.pixels(), border.startIndex(), border.endIndex()));
-                    }
-                    mapLabelService.generateData(countryName, pixelsBorderProvinces, positionsProvinces, vertices, indices);
-                }
-            }
-        }
-    }
-
-    private LongList getLongList(long countryId) {
-        LongList provinceIds = new LongList();
-
-        Query query = this.queryRepository.getProvinces();
-        query.iter(iter -> {
-            Field<Province> provinceField = iter.field(Province.class, 0);
-            for(int i = 0; i < iter.count(); i++) {
-                ProvinceView provinceView = provinceField.getMutView(i);
-                if(provinceView.ownerId() == countryId) {
-                    long provinceEntityId = iter.entity(i);
-                    provinceIds.add(provinceEntityId);
-                }
-            }
-        });
-        return provinceIds;
-    }
-
-    private void getConnectedProvinces(World ecsWorld, long countryId, long startProvinceId, LongSet visitedProvinceIds, LongList connectedProvinceIds) {
-        LongList toProcess = new LongList();
-        toProcess.add(startProvinceId);
-
-        visitedProvinceIds.add(startProvinceId);
-        connectedProvinceIds.add(startProvinceId);
+    private void collectConnectedProvinces(PoliticalMap politicalMap, int countryIndex, int startProvince, boolean[] visited, IntList connectedProvinces, IntList toProcess) {
+        ProvinceTable provinces = this.catalog.provinces();
+        toProcess.clear();
+        toProcess.add(startProvince);
+        visited[startProvince] = true;
+        connectedProvinces.add(startProvince);
 
         while (!toProcess.isEmpty()) {
-            long currentId = toProcess.pop();
-            Entity currentEntity = ecsWorld.obtainEntity(currentId);
-            AdjacenciesView adjacencies = currentEntity.getMutView(Adjacencies.class);
-
-            if (adjacencies == null || adjacencies.provinceIdsLength() == 0) {
-                continue;
-            }
-
-            for (int i = 0; i < adjacencies.provinceIdsLength(); i++) {
-                long neighborId = adjacencies.provinceIds(i);
-                if (neighborId == 0 || visitedProvinceIds.contains(neighborId)) {
+            int current = toProcess.pop();
+            for (int position = provinces.adjacencyStart(current); position < provinces.adjacencyEnd(current); position++) {
+                int neighbor = provinces.adjacency(position);
+                if (visited[neighbor] || politicalMap.owner(neighbor) != countryIndex) {
                     continue;
                 }
-                Entity neighborEntity = ecsWorld.obtainEntity(neighborId);
-                if (!neighborEntity.has(Province.class)) {
-                    continue;
-                }
-                ProvinceView neighborProvinceData = neighborEntity.getMutView(Province.class);
-                long ownerEntityId = neighborProvinceData.ownerId();
-                if (ownerEntityId != 0 && ownerEntityId == countryId) {
-                    visitedProvinceIds.add(neighborId);
-                    connectedProvinceIds.add(neighborId);
-                    toProcess.add(neighborId);
-                }
+                visited[neighbor] = true;
+                connectedProvinces.add(neighbor);
+                toProcess.add(neighbor);
             }
         }
     }
 
-    private WgMesh generateMeshBuildings(VertexAttributes vertexAttributes) {
-        World ecsWorld = this.gameContext.getEcsWorld();
-        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
-
-        MutableInt numBuildings = new MutableInt(0);
-
-        Set<Long> countriesWithProvinces = new HashSet<>();
-        LongObjectMap<LongList> buildingsByProvince = new LongObjectMap<>();
-
-        Query provinceQuery = this.queryRepository.getProvinces();
-        provinceQuery.each(provinceEntityId -> {
-            EntityView provinceView = ecsWorld.obtainEntityView(provinceEntityId);
-            ProvinceView provinceDataView = provinceView.getMutView(Province.class);
-            countriesWithProvinces.add(provinceDataView.ownerId());
-            buildingsByProvince.put(provinceEntityId, new LongList());
-        });
-
-        Query buildingQuery = this.queryRepository.getBuildings();
-        buildingQuery.iter(iter -> {
-            Field<Building> buildingField = iter.field(Building.class, 0);
-            for (int i = 0; i < iter.count(); i++) {
-                BuildingView buildingView = buildingField.getMutView(i);
-                long buildingEntityId = iter.entity(i);
-                if (ecsWorld.obtainEntityView(buildingEntityId).has(ecsConstants.onMap())) {
-                    LongList buildings = buildingsByProvince.get(buildingView.parentId());
-                    if (buildings != null) {
-                        buildings.add(buildingEntityId);
-                        numBuildings.increment();
-                    }
-                }
+    private WgMesh generateMeshBuildings(VertexAttributes vertexAttributes, PoliticalMap politicalMap, MapBuildings mapBuildings) {
+        ProvinceTable provinces = this.catalog.provinces();
+        int markers = 0;
+        for (int i = 0; i < mapBuildings.count(); i++) {
+            if (provinces.buildingPosition(mapBuildings.province(i), mapBuildings.buildingType(i)) != ProvinceTable.NO_POSITION) {
+                markers++;
             }
-        });
-
-        Query countryQuery = this.queryRepository.getCountries();
-        countryQuery.each(countryEntityId -> {
-            EntityView countryView = ecsWorld.obtainEntityView(countryEntityId);
-            CountryView countryDataView = countryView.getMutView(Country.class);
-
-            if (countryDataView.capitalId() != 0 && countriesWithProvinces.contains(countryEntityId)) {
-                numBuildings.increment();
+        }
+        for (int countryIndex = 0; countryIndex < this.catalog.countries().size(); countryIndex++) {
+            if (politicalMap.capital(countryIndex) >= 0 && politicalMap.hasProvinces(countryIndex)) {
+                markers++;
             }
-        });
+        }
 
-        int nb = numBuildings.getValue();
-        float[] vertices = new float[nb * 4 * 4];
-        short[] indices = new short[nb * 6];
-
-        final MutableInt vertexIndex = new MutableInt(0);
-        final MutableInt indexIndex = new MutableInt(0);
-        final MutableInt vertexOffset = new MutableInt(0);
-
+        float[] vertices = new float[Math.max(markers, 1) * 4 * 4];
+        short[] indices = new short[Math.max(markers, 1) * 6];
+        int vertexIndex = 0;
+        int indexIndex = 0;
+        short vertexOffset = 0;
         int width = 6;
         int height = 6;
 
+        for (int i = 0; i < mapBuildings.count(); i++) {
+            long position = provinces.buildingPosition(mapBuildings.province(i), mapBuildings.buildingType(i));
+            if (position == ProvinceTable.NO_POSITION) {
+                continue;
+            }
+            String buildingName = this.catalog.buildingTypes().nameId(mapBuildings.buildingType(i));
+            TextureRegion buildingRegion = this.mapElementsTextureAtlas.findRegion("building_" + buildingName + "_empty");
+            this.addVerticesIndicesBuilding(vertices, indices, vertexIndex, indexIndex, vertexOffset, ProvinceTable.unpackX(position), ProvinceTable.unpackY(position), width, height, buildingRegion);
+            vertexIndex += 16;
+            indexIndex += 6;
+            vertexOffset += 4;
+        }
+
         TextureRegion capitalRegion = this.mapElementsTextureAtlas.findRegion("building_capital");
-
-        Query provinceBuildingQuery = this.queryRepository.getProvinces();
-        provinceBuildingQuery.each(provinceEntityId -> {
-            Entity province = ecsWorld.obtainEntity(provinceEntityId);
-            String provinceNameId = province.name();
-            LongList buildings = buildingsByProvince.get(provinceEntityId);
-            if (buildings == null) {
-                return;
+        for (int countryIndex = 0; countryIndex < this.catalog.countries().size(); countryIndex++) {
+            int capital = politicalMap.capital(countryIndex);
+            if (capital < 0 || !politicalMap.hasProvinces(countryIndex)) {
+                continue;
             }
-
-            for (int bi = 0; bi < buildings.size(); bi++) {
-                long buildingEntityId = buildings.get(bi);
-                Entity building = ecsWorld.obtainEntity(buildingEntityId);
-                Entity buildingType = ecsWorld.obtainEntity(building.target(Flecs.IsA, 0));
-                String buildingName = buildingType.name();
-
-                TextureRegion buildingRegion = this.mapElementsTextureAtlas.findRegion("building_" + buildingName + "_empty");
-
-                long buildingPositionEntityId = ecsWorld.lookup("province_" + provinceNameId + "_pos_" + buildingName);
-                Entity buildingPositionEntity = ecsWorld.obtainEntity(buildingPositionEntityId);
-                Position pos = buildingPositionEntity.get(Position.class);
-                int bx = pos.x();
-                int by = pos.y();
-
-                this.addVerticesIndicesBuilding(vertices, indices, vertexIndex.getValue(), indexIndex.getValue(), (short) vertexOffset.getValue(), bx, by, width, height, buildingRegion);
-
-                vertexIndex.increment(16);
-                indexIndex.increment(6);
-                vertexOffset.increment(4);
-            }
-        });
-
-        Query countryCapitalQuery = this.queryRepository.getCountries();
-        countryCapitalQuery.each(countryEntityId -> {
-            Entity countryEntity = ecsWorld.obtainEntity(countryEntityId);
-            Country countryData = countryEntity.get(Country.class);
-
-            if (countryData.capitalId() != 0 && countriesWithProvinces.contains(countryEntityId)) {
-                Entity capitalProvinceEntity = ecsWorld.obtainEntity(countryData.capitalId());
-                long positionEntityId = ecsWorld.lookup("province_" + capitalProvinceEntity.name() + "_pos_default");
-                Entity positionEntity = ecsWorld.obtainEntity(positionEntityId);
-                Position position = positionEntity.get(Position.class);
-                int cx = position.x();
-                int cy = position.y();
-
-                this.addVerticesIndicesBuilding(vertices, indices, vertexIndex.getValue(), indexIndex.getValue(), (short) vertexOffset.getValue(), cx, cy, width, height, capitalRegion);
-
-                vertexIndex.increment(16);
-                indexIndex.increment(6);
-                vertexOffset.increment(4);
-            }
-        });
+            this.addVerticesIndicesBuilding(vertices, indices, vertexIndex, indexIndex, vertexOffset, provinces.positionX(capital), provinces.positionY(capital), width, height, capitalRegion);
+            vertexIndex += 16;
+            indexIndex += 6;
+            vertexOffset += 4;
+        }
 
         WgMesh mesh = new WgMesh(true, vertices.length / 4, indices.length, vertexAttributes);
         mesh.setVertices(vertices);
         mesh.setIndices(indices);
 
         return mesh;
+    }
+
+    public void rebuildLabels(PoliticalMap politicalMap, IntFunction<String> countryNames) {
+        WgMesh previous = this.meshMapLabels;
+        this.meshMapLabels = this.generateMeshMapLabels(this.vertexAttributesMapLabels, politicalMap, countryNames);
+        previous.dispose();
+    }
+
+    public void rebuildBuildings(PoliticalMap politicalMap, MapBuildings mapBuildings) {
+        WgMesh previous = this.meshBuildings;
+        this.meshBuildings = this.generateMeshBuildings(this.vertexAttributesBuildings, politicalMap, mapBuildings);
+        previous.dispose();
     }
 
     private void addVerticesIndicesBuilding(float[] vertices, short[] indices, int vertexIndex, int indexIndex, short vertexOffset, int x, int y, int width, int height, TextureRegion region) {
@@ -412,100 +320,74 @@ public class MapRenderer implements Disposable {
     }
 
     private WgMesh generateMeshResources(VertexAttributes vertexAttributes) {
-        World ecsWorld = this.gameContext.getEcsWorld();
-        MutableInt numProvinces = new MutableInt(0);
-        Query queryCount = this.queryRepository.getProvincesWithResourceGathering();
-        queryCount.iter(iter -> {
-            for(int i = 0; i < iter.count(); i++) {
-                long provinceEntityId = iter.entity(i);
-                Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
-                ResourceGathering resourceGathering = provinceEntity.get(ResourceGathering.class);
-                if(resourceGathering.goodId() != -1) {
-                    numProvinces.increment();
-                }
+        ProvinceTable provinces = this.catalog.provinces();
+        int resourceProvinces = 0;
+        for (int provinceIndex = 0; provinceIndex < provinces.size(); provinceIndex++) {
+            if (provinces.resourceGoodIndex(provinceIndex) >= 0) {
+                resourceProvinces++;
             }
-        });
+        }
 
-        float[] vertices = new float[numProvinces.getValue() * 4 * 6];
-        short[] indices = new short[numProvinces.getValue() * 6];
-
-        final MutableInt vertexIndex = new MutableInt(0);
-        final MutableInt indexIndex = new MutableInt(0);
-        final MutableInt vertexOffset = new MutableInt(0);
-
+        float[] vertices = new float[Math.max(resourceProvinces, 1) * 4 * 6];
+        short[] indices = new short[Math.max(resourceProvinces, 1) * 6];
+        int vIdx = 0;
+        int iIdx = 0;
+        short vOff = 0;
         int width = 13;
         int height = 10;
 
-        Query query = this.queryRepository.getProvincesWithResourceGathering();
-        query.iter(iter -> {
-            for(int i = 0; i < iter.count(); i++) {
-                long provinceEntityId = iter.entity(i);
-                Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
-                ResourceGathering resourceGathering = provinceEntity.get(ResourceGathering.class);
-                long provinceResourceGoodId = resourceGathering.goodId();
-                if(provinceResourceGoodId == -1) {
-                    continue;
-                }
-                TextureRegion resourceRegion = this.mapElementsTextureAtlas.findRegion("resource_" + ecsWorld.obtainEntity(provinceResourceGoodId).name());
-
-                long positionEntityId = ecsWorld.lookup("province_" + provinceEntity.name() + "_pos_default");
-                Entity positionEntity = ecsWorld.obtainEntity(positionEntityId);
-                Position position = positionEntity.get(Position.class);
-                int cx = position.x();
-                int cy = position.y();
-
-                int x = cx - (width / 2);
-                int y = cy - (height / 2);
-
-                float u1 = resourceRegion.getU();
-                float v1 = resourceRegion.getV2();
-                float u2 = resourceRegion.getU2();
-                float v2 = resourceRegion.getV();
-
-                int vIdx = vertexIndex.getValue();
-                vertices[vIdx++] = x;
-                vertices[vIdx++] = y;
-                vertices[vIdx++] = u1;
-                vertices[vIdx++] = v1;
-                vertices[vIdx++] = cx;
-                vertices[vIdx++] = cy;
-
-                vertices[vIdx++] = x + width;
-                vertices[vIdx++] = y;
-                vertices[vIdx++] = u2;
-                vertices[vIdx++] = v1;
-                vertices[vIdx++] = cx;
-                vertices[vIdx++] = cy;
-
-                vertices[vIdx++] = x + width;
-                vertices[vIdx++] = y + height;
-                vertices[vIdx++] = u2;
-                vertices[vIdx++] = v2;
-                vertices[vIdx++] = cx;
-                vertices[vIdx++] = cy;
-
-                vertices[vIdx++] = x;
-                vertices[vIdx++] = y + height;
-                vertices[vIdx++] = u1;
-                vertices[vIdx++] = v2;
-                vertices[vIdx++] = cx;
-                vertices[vIdx++] = cy;
-                vertexIndex.setValue(vIdx);
-
-                int iIdx = indexIndex.getValue();
-                short vOff = (short) vertexOffset.getValue();
-                indices[iIdx++] = vOff;
-                indices[iIdx++] = (short) (vOff + 1);
-                indices[iIdx++] = (short) (vOff + 2);
-
-                indices[iIdx++] = (short) (vOff + 2);
-                indices[iIdx++] = (short) (vOff + 3);
-                indices[iIdx++] = vOff;
-                indexIndex.setValue(iIdx);
-
-                vertexOffset.increment(4);
+        for (int provinceIndex = 0; provinceIndex < provinces.size(); provinceIndex++) {
+            int goodIndex = provinces.resourceGoodIndex(provinceIndex);
+            if (goodIndex < 0) {
+                continue;
             }
-        });
+            TextureRegion resourceRegion = this.mapElementsTextureAtlas.findRegion("resource_" + this.catalog.goods().nameId(goodIndex));
+            int cx = provinces.positionX(provinceIndex);
+            int cy = provinces.positionY(provinceIndex);
+            int x = cx - (width / 2);
+            int y = cy - (height / 2);
+
+            float u1 = resourceRegion.getU();
+            float v1 = resourceRegion.getV2();
+            float u2 = resourceRegion.getU2();
+            float v2 = resourceRegion.getV();
+
+            vertices[vIdx++] = x;
+            vertices[vIdx++] = y;
+            vertices[vIdx++] = u1;
+            vertices[vIdx++] = v1;
+            vertices[vIdx++] = cx;
+            vertices[vIdx++] = cy;
+
+            vertices[vIdx++] = x + width;
+            vertices[vIdx++] = y;
+            vertices[vIdx++] = u2;
+            vertices[vIdx++] = v1;
+            vertices[vIdx++] = cx;
+            vertices[vIdx++] = cy;
+
+            vertices[vIdx++] = x + width;
+            vertices[vIdx++] = y + height;
+            vertices[vIdx++] = u2;
+            vertices[vIdx++] = v2;
+            vertices[vIdx++] = cx;
+            vertices[vIdx++] = cy;
+
+            vertices[vIdx++] = x;
+            vertices[vIdx++] = y + height;
+            vertices[vIdx++] = u1;
+            vertices[vIdx++] = v2;
+            vertices[vIdx++] = cx;
+            vertices[vIdx++] = cy;
+
+            indices[iIdx++] = vOff;
+            indices[iIdx++] = (short) (vOff + 1);
+            indices[iIdx++] = (short) (vOff + 2);
+            indices[iIdx++] = (short) (vOff + 2);
+            indices[iIdx++] = (short) (vOff + 3);
+            indices[iIdx++] = vOff;
+            vOff += 4;
+        }
 
         WgMesh mesh = new WgMesh(true, vertices.length / 6, indices.length, false, vertexAttributes);
 
@@ -843,23 +725,24 @@ public class MapRenderer implements Disposable {
     }
 
     public void updateMapMode(MapMode mapMode, Pixmap mapModePixmap) {
-        this.mapModeTexture.dispose();
-        PixmapTextureData mapModeTextureData = new PixmapTextureData(mapModePixmap, Pixmap.Format.RGBA8888, false, false);
-        this.mapModeTexture = new WgTexture(mapModeTextureData, "mapModeTexture", false);
-        this.mapModeTexture.setFilter(WgTexture.TextureFilter.Nearest, WgTexture.TextureFilter.Nearest);
-        this.binderProvinces.setTexture("textureMapMode", this.mapModeTexture.getTextureView());
-        this.binderProvinces.setSampler("textureMapModeSampler", this.mapModeTexture.getSampler());
+        this.uploadPixmap(this.mapModeTexture, mapModePixmap);
         this.binderProvinces.setUniform("showTerrain", mapMode == MapMode.TERRAIN ? 1 : 0);
         this.uniformBufferWorld.flush();
     }
 
     public void updateProvincesTexture(Pixmap provincesPixmap) {
-        this.provincesTexture.dispose();
-        PixmapTextureData provincesTextureData = new PixmapTextureData(provincesPixmap, Pixmap.Format.RGBA8888, false, false);
-        this.provincesTexture = new WgTexture(provincesTextureData, "provincesTexture", false);
-        this.provincesTexture.setFilter(WgTexture.TextureFilter.Nearest, WgTexture.TextureFilter.Nearest);
-        this.binderProvinces.setTexture("textureProvinces", this.provincesTexture.getTextureView());
-        this.binderProvinces.setSampler("textureProvincesSampler", this.provincesTexture.getSampler());
+        this.uploadPixmap(this.provincesTexture, provincesPixmap);
+    }
+
+    public void updateProvincesStripesTexture(Pixmap provincesStripesPixmap) {
+        this.uploadPixmap(this.provincesStripesTexture, provincesStripesPixmap);
+    }
+
+    private void uploadPixmap(WgTexture texture, Pixmap pixmap) {
+        ByteBuffer pixels = pixmap.getPixels();
+        pixels.position(0);
+        texture.load(pixels, 4, pixmap.getWidth(), pixmap.getHeight());
+        pixels.position(0);
     }
 
     public void render(WgProjection projection, OrthographicCamera cam, float time, MapMode mapMode) {
@@ -954,6 +837,7 @@ public class MapRenderer implements Disposable {
         this.meshMapLabels.dispose();
         this.meshBuildings.dispose();
         this.meshResources.dispose();
+        this.meshRivers.dispose();
         this.binderProvinces.dispose();
         this.binderMapLabels.dispose();
         this.binderBuildings.dispose();

@@ -6,7 +6,7 @@ import com.populaire.projetguerrefroide.dao.json.CountryHistoryJson;
 import com.populaire.projetguerrefroide.pojo.Borders;
 import com.populaire.projetguerrefroide.pojo.ProductionType;
 import com.populaire.projetguerrefroide.pojo.WorldData;
-import com.populaire.projetguerrefroide.service.GameContext;
+import com.populaire.projetguerrefroide.simulation.SimulationContext;
 
 import java.util.Map;
 
@@ -17,8 +17,8 @@ public final class WorldLoader {
         this.worldDao = worldDao;
     }
 
-    public WorldData createWorld(GameContext gameContext) {
-        WorldLoadingContext context = new WorldLoadingContext(gameContext.getEcsWorld(), gameContext.getEcsConstants());
+    public WorldData createWorld(SimulationContext simulationContext) {
+        WorldLoadingContext context = new WorldLoadingContext(simulationContext.getEcsWorld(), simulationContext.getEcsConstants());
         PoliticsLoader politics = new PoliticsLoader(context);
         EconomyLoader economy = new EconomyLoader(context);
         MilitaryLoader military = new MilitaryLoader(context);

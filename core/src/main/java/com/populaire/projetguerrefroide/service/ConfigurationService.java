@@ -5,15 +5,15 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.ObjectMap;
-import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
-import io.github.elebras1.flecs.World;
-import com.monstrous.gdx.webgpu.assets.WgAssetManager;
 import com.populaire.projetguerrefroide.configuration.Settings;
+import com.monstrous.gdx.webgpu.assets.WgAssetManager;
 import com.populaire.projetguerrefroide.dao.ConfigurationDao;
 import com.populaire.projetguerrefroide.dao.LocalisationDao;
 import com.populaire.projetguerrefroide.dao.impl.ConfigurationDaoImpl;
 import com.populaire.projetguerrefroide.dao.impl.LocalisationDaoImpl;
 import com.populaire.projetguerrefroide.pojo.Bookmark;
+import com.populaire.projetguerrefroide.ui.UiContext;
+import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
 import com.populaire.projetguerrefroide.ui.widget.CursorManager;
 
 import java.util.List;
@@ -31,7 +31,7 @@ public class ConfigurationService {
         this.localisationDao = new LocalisationDaoImpl();
     }
 
-    public GameContext getGameContext(World ecsWorld) {
+    public UiContext getUiContext() {
         Bookmark bookmark = this.configurationDao.loadBookmark();
         AssetManager assetManager = new WgAssetManager();
         this.loadInitialAssets(assetManager);
@@ -39,7 +39,7 @@ public class ConfigurationService {
         Settings settings = this.configurationDao.loadSettings();
         Skin skinFonts = assetManager.get(Skins.FONTS);
         this.applyLanguageFonts(skinFonts, settings.getLanguage());
-        return new GameContext(ecsWorld, bookmark, assetManager, cursorManager, settings, skinFonts);
+        return new UiContext(bookmark, assetManager, cursorManager, settings, skinFonts);
     }
 
     private void applyLanguageFonts(Skin skinFonts, String language) {
@@ -85,39 +85,39 @@ public class ConfigurationService {
         assetManager.load(Skins.UI_ECONOMY, Skin.class);
     }
 
-    public void loadMainMenuLocalisation(GameContext gameContext) {
-        this.setLanguage(gameContext);
-        gameContext.putAllLocalisation(this.localisationDao.readMainMenu());
-        gameContext.putAllLocalisation(this.localisationDao.readCountries());
+    public void loadMainMenuLocalisation(UiContext uiContext) {
+        this.setLanguage(uiContext);
+        uiContext.putAllLocalisation(this.localisationDao.readMainMenu());
+        uiContext.putAllLocalisation(this.localisationDao.readCountries());
 
     }
 
-    public void loadNewGameLocalisation(GameContext gameContext) {
-        this.setLanguage(gameContext);
-        gameContext.putAllLocalisation(this.localisationDao.readNewgame());
-        gameContext.putAllLocalisation(this.localisationDao.readBookmark());
-        gameContext.putAllLocalisation(this.localisationDao.readPolitics());
-        gameContext.putAllLocalisation(this.localisationDao.readMainMenuInGame());
-        gameContext.putAllLocalisation(this.localisationDao.readPopup());
-        gameContext.putAllLocalisation(this.localisationDao.readProvinces());
-        gameContext.putAllLocalisation(this.localisationDao.readLanguage());
+    public void loadNewGameLocalisation(UiContext uiContext) {
+        this.setLanguage(uiContext);
+        uiContext.putAllLocalisation(this.localisationDao.readNewgame());
+        uiContext.putAllLocalisation(this.localisationDao.readBookmark());
+        uiContext.putAllLocalisation(this.localisationDao.readPolitics());
+        uiContext.putAllLocalisation(this.localisationDao.readMainMenuInGame());
+        uiContext.putAllLocalisation(this.localisationDao.readPopup());
+        uiContext.putAllLocalisation(this.localisationDao.readProvinces());
+        uiContext.putAllLocalisation(this.localisationDao.readLanguage());
     }
 
-    public void loadGameLocalisation(GameContext gameContext) {
-        this.setLanguage(gameContext);
-        gameContext.putAllLocalisation(this.localisationDao.readPolitics());
-        gameContext.putAllLocalisation(this.localisationDao.readMainMenuInGame());
-        gameContext.putAllLocalisation(this.localisationDao.readPopup());
-        gameContext.putAllLocalisation(this.localisationDao.readProvinces());
-        gameContext.putAllLocalisation(this.localisationDao.readRegions());
-        gameContext.putAllLocalisation(this.localisationDao.readUnits());
-        gameContext.putAllLocalisation(this.localisationDao.readLanguage());
-        gameContext.putAllLocalisation(this.localisationDao.readInterface());
-        gameContext.putAllLocalisation(this.localisationDao.readEconomy());
+    public void loadGameLocalisation(UiContext uiContext) {
+        this.setLanguage(uiContext);
+        uiContext.putAllLocalisation(this.localisationDao.readPolitics());
+        uiContext.putAllLocalisation(this.localisationDao.readMainMenuInGame());
+        uiContext.putAllLocalisation(this.localisationDao.readPopup());
+        uiContext.putAllLocalisation(this.localisationDao.readProvinces());
+        uiContext.putAllLocalisation(this.localisationDao.readRegions());
+        uiContext.putAllLocalisation(this.localisationDao.readUnits());
+        uiContext.putAllLocalisation(this.localisationDao.readLanguage());
+        uiContext.putAllLocalisation(this.localisationDao.readInterface());
+        uiContext.putAllLocalisation(this.localisationDao.readEconomy());
     }
 
-    private void setLanguage(GameContext gameContext) {
-        this.localisationDao.setLanguage(gameContext.getSettings().getLanguage());
+    private void setLanguage(UiContext uiContext) {
+        this.localisationDao.setLanguage(uiContext.getSettings().getLanguage());
     }
 
     public void saveSettings(Settings settings) {

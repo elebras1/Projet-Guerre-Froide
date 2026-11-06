@@ -4,150 +4,127 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.populaire.projetguerrefroide.command.CommandBus;
-import com.populaire.projetguerrefroide.command.request.BuildingLevelUpCommand;
-import com.populaire.projetguerrefroide.command.request.DemolishBuildingCommand;
-import com.populaire.projetguerrefroide.command.request.ExpandBuildingCommand;
-import com.populaire.projetguerrefroide.command.request.ResumeBuildingCommand;
-import com.populaire.projetguerrefroide.command.request.SuspendBuildingCommand;
-import com.populaire.projetguerrefroide.dto.BuildingDto;
-import com.populaire.projetguerrefroide.dto.BuildingSummaryDto;
-import com.populaire.projetguerrefroide.dto.RegionDto;
-import com.populaire.projetguerrefroide.dto.RegionsBuildingsDto;
-import com.populaire.projetguerrefroide.screen.GameFlowHandler;
+import com.populaire.projetguerrefroide.protocol.command.DemolishBuildingCommand;
+import com.populaire.projetguerrefroide.protocol.command.ExpandBuildingCommand;
+import com.populaire.projetguerrefroide.protocol.command.ResumeBuildingCommand;
+import com.populaire.projetguerrefroide.protocol.command.SuspendBuildingCommand;
+import com.populaire.projetguerrefroide.protocol.request.RequestKind;
+import com.populaire.projetguerrefroide.protocol.request.SortType;
+import com.populaire.projetguerrefroide.protocol.response.BuildingDetails;
+import com.populaire.projetguerrefroide.protocol.response.RegionsBuildings;
+import com.populaire.projetguerrefroide.screen.GameSession;
 import com.populaire.projetguerrefroide.screen.listener.EconomyPanelListener;
-import com.populaire.projetguerrefroide.service.GameContext;
-import com.populaire.projetguerrefroide.service.WorldService;
+import com.populaire.projetguerrefroide.ui.UiContext;
+import com.populaire.projetguerrefroide.ui.UiState;
+import com.populaire.projetguerrefroide.ui.format.TextFormat;
+import com.populaire.projetguerrefroide.ui.request.RequestWatch;
 import com.populaire.projetguerrefroide.ui.view.EconomyPanel;
-import com.populaire.projetguerrefroide.ui.view.SortType;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
-public class EconomyPanelPresenter implements Presenter, EconomyPanelListener {
-    private final GameContext gameContext;
-    private final WorldService worldService;
-    private final CommandBus commandBus;
-    private final GameFlowHandler gameFlowHandler;
+public class EconomyPanelPresenter extends RequestingPresenter implements EconomyPanelListener {
+    private final UiContext uiContext;
     private final WidgetFactory widgetFactory;
     private final Skin skinEconomy;
     private final Skin skinUi;
     private final Skin skinScrollbars;
+    private final TextFormat textFormat;
     private EconomyPanel economyPanel;
-    private long pendingDemolishedRegionId;
+    private RequestWatch<RegionsBuildings> regionsWatch;
+    private boolean opening;
 
-    public EconomyPanelPresenter(GameContext gameContext, WorldService worldService, CommandBus commandBus, GameFlowHandler gameFlowHandler, WidgetFactory widgetFactory, Skin skinEconomy, Skin skinUi, Skin skinScrollbars) {
-        this.gameContext = gameContext;
-        this.worldService = worldService;
-        this.commandBus = commandBus;
-        this.gameFlowHandler = gameFlowHandler;
+    public EconomyPanelPresenter(GameSession session, UiContext uiContext, WidgetFactory widgetFactory, Skin skinEconomy, Skin skinUi, Skin skinScrollbars, TextFormat textFormat) {
+        super(session);
+        this.uiContext = uiContext;
         this.widgetFactory = widgetFactory;
         this.skinEconomy = skinEconomy;
         this.skinUi = skinUi;
         this.skinScrollbars = skinScrollbars;
+        this.textFormat = textFormat;
     }
 
     @Override
     public void initialize(Stage stage) {
         Table centerTable = new Table();
         centerTable.setFillParent(true);
-        this.economyPanel = new EconomyPanel(this.widgetFactory, this.skinEconomy, this.skinUi, this.skinScrollbars, this.gameContext.getSkinFonts(), this.gameContext.getColorTexturePool(), this.gameContext.getLocalisation(), this);
+        this.economyPanel = new EconomyPanel(this.widgetFactory, this.skinEconomy, this.skinUi, this.skinScrollbars, this.uiContext.getSkinFonts(), this.uiContext.getColorTexturePool(), this.uiContext.getLocalisation(), this.session.uiCatalog(), this.textFormat, this);
         this.economyPanel.setVisible(false);
         centerTable.add(this.economyPanel).center();
         stage.addActor(centerTable);
-
-        this.commandBus.registerPostHandler(SuspendBuildingCommand.class, this::refreshSelectedBuilding);
-        this.commandBus.registerPostHandler(ResumeBuildingCommand.class, this::refreshSelectedBuilding);
-        this.commandBus.registerPostHandler(ExpandBuildingCommand.class, this::refreshSelectedBuilding);
-        this.commandBus.registerPostHandler(DemolishBuildingCommand.class, this::onBuildingDemolished);
-        this.commandBus.registerPostHandler(BuildingLevelUpCommand.class, this::onBuildingLevelUp);
+        UiState uiState = this.session.uiState();
+        this.regionsWatch = this.watch(RequestKind.REGIONS_BUILDINGS, new RegionsBuildings(), new RegionsBuildings(),
+            uiState::economyPanelOpen, params -> params.option(uiState.regionSort().ordinal()), RequestWatch.Staleness.EVERY_REVISION, this::applyRegions);
+        this.watch(RequestKind.BUILDING_DETAILS, new BuildingDetails(), new BuildingDetails(),
+            () -> uiState.economyPanelOpen() && uiState.selectedBuilding() != 0, params -> params.id(uiState.selectedBuilding()), RequestWatch.Staleness.EVERY_REVISION, this::applyBuilding);
     }
 
-    private void refreshSelectedBuilding() {
-        long selectedId = this.economyPanel.getSelectedBuildingId();
-        if (selectedId == 0) {
+    public void open() {
+        UiState uiState = this.session.uiState();
+        uiState.regionSort(SortType.DEFAULT);
+        uiState.economyPanelOpen(true);
+        this.opening = true;
+        this.regionsWatch.invalidate();
+    }
+
+    private void applyRegions(RegionsBuildings regions) {
+        if (!regions.found()) {
             return;
         }
-        BuildingDto buildingDto = this.worldService.buildBuildingDetails(selectedId);
-        this.economyPanel.updateSelectedBuildingInfoBlock(buildingDto);
-        BuildingSummaryDto summaryDto = this.worldService.buildBuildingSummary(selectedId);
-        this.economyPanel.updateBuilding(selectedId, summaryDto);
+        this.economyPanel.setData(regions);
+        if (this.opening) {
+            this.opening = false;
+            this.economyPanel.setTouchable(Touchable.enabled);
+            this.economyPanel.setVisible(true);
+        }
     }
 
-    private void onBuildingDemolished() {
-        this.economyPanel.clearSelectedBuildingInfoBlock();
-        if (this.pendingDemolishedRegionId != 0) {
-            RegionDto regionDto = this.worldService.buildRegionDto(this.pendingDemolishedRegionId);
-            this.economyPanel.updateRegion(regionDto);
-            this.pendingDemolishedRegionId = 0;
+    private void applyBuilding(BuildingDetails building) {
+        if (!building.found()) {
+            this.session.uiState().selectBuilding(0);
+            this.economyPanel.clearSelectedBuildingInfoBlock();
+            return;
         }
+        this.economyPanel.updateSelectedBuildingInfoBlock(building);
     }
 
     @Override
     public void onCloseEconomyPanelClicked() {
+        this.session.uiState().economyPanelOpen(false);
+        this.opening = false;
         this.economyPanel.setTouchable(Touchable.disabled);
         this.economyPanel.setVisible(false);
     }
 
     @Override
     public void onSortRegions(SortType sortType) {
-        RegionsBuildingsDto regionsBuildingsDto = this.worldService.buildRegionsBuildingsDto(sortType);
-        this.economyPanel.setData(regionsBuildingsDto);
+        this.session.uiState().regionSort(sortType);
     }
 
     @Override
     public void onBuildingClicked(long buildingId) {
-        BuildingDto buildingDto = this.worldService.buildBuildingDetails(buildingId);
-        this.economyPanel.updateSelectedBuildingInfoBlock(buildingDto);
+        this.session.uiState().selectBuilding(buildingId);
     }
 
     @Override
     public void onExpandBuildingClicked(long buildingId) {
-        this.commandBus.dispatch(new ExpandBuildingCommand(buildingId));
+        this.session.channel().send(new ExpandBuildingCommand(buildingId));
     }
 
     @Override
     public void onSuspendBuildingClicked(long buildingId) {
-        this.commandBus.dispatch(new SuspendBuildingCommand(buildingId));
+        this.session.channel().send(new SuspendBuildingCommand(buildingId));
     }
 
     @Override
     public void onResumeBuildingClicked(long buildingId) {
-        this.commandBus.dispatch(new ResumeBuildingCommand(buildingId));
+        this.session.channel().send(new ResumeBuildingCommand(buildingId));
     }
 
     @Override
     public void onDemolishBuildingClicked(long buildingId) {
-        this.pendingDemolishedRegionId = this.worldService.getRegionIdByBuildingId(buildingId);
-        this.commandBus.dispatch(new DemolishBuildingCommand(buildingId));
-    }
-
-    @Override
-    public void refresh() {
-        this.economyPanel.setTouchable(Touchable.enabled);
-        this.economyPanel.setVisible(true);
-        RegionsBuildingsDto regionsBuildingsDto = this.worldService.buildRegionsBuildingsDto(SortType.DEFAULT);
-        this.economyPanel.setData(regionsBuildingsDto);
-    }
-
-    @Override
-    public void update(float delta) {
-
-    }
-
-    private void onBuildingLevelUp(BuildingLevelUpCommand command) {
-        long buildingId = command.buildingId();
-        if (!this.economyPanel.isVisible() || !this.worldService.isEconomyBuilding(buildingId)) {
-            return;
-        }
-        BuildingSummaryDto summaryDto = this.worldService.buildBuildingSummary(buildingId);
-        this.economyPanel.updateBuilding(buildingId, summaryDto);
-        if (this.economyPanel.getSelectedBuildingId() == buildingId) {
-            BuildingDto buildingDto = this.worldService.buildBuildingDetails(buildingId);
-            this.economyPanel.updateSelectedBuildingInfoBlock(buildingDto);
-        }
+        this.session.channel().send(new DemolishBuildingCommand(buildingId));
     }
 
     @Override
     public void dispose() {
-
     }
 }

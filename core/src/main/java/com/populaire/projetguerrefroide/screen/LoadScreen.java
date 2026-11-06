@@ -8,8 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.monstrous.gdx.webgpu.scene2d.WgStage;
 import com.populaire.projetguerrefroide.screen.presenter.LoadingPresenter;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
-import com.populaire.projetguerrefroide.service.GameContext;
-import com.populaire.projetguerrefroide.service.WorldService;
+import com.populaire.projetguerrefroide.ui.UiContext;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
 
 import static com.populaire.projetguerrefroide.screen.LoadingStep.*;
@@ -17,21 +16,20 @@ import static com.populaire.projetguerrefroide.screen.LoadingStep.*;
 public class LoadScreen implements Screen {
     private final Stage stage;
     private final ScreenManager screenManager;
-    private final GameContext gameContext;
-    private final WorldService worldService;
+    private final UiContext uiContext;
     private final ConfigurationService configurationService;
+    private final GameSession session;
     private final LoadingPresenter loadingPresenter;
     private LoadingStep loadingStep;
 
-    public LoadScreen(ScreenManager screenManager, GameContext gameContext, ConfigurationService configurationService, WorldService worldService) {
+    public LoadScreen(ScreenManager screenManager, UiContext uiContext, ConfigurationService configurationService, GameSession session) {
         this.screenManager = screenManager;
-        this.gameContext = gameContext;
+        this.uiContext = uiContext;
         this.configurationService = configurationService;
-        this.worldService = worldService;
-        this.loadingPresenter = new LoadingPresenter(this.gameContext);
-        //this.gameContext.getCursorManager().animatedCursor("busy");
+        this.session = session;
+        this.loadingPresenter = new LoadingPresenter(this.uiContext);
 
-        AssetManager assetManager = this.gameContext.getAssetManager();
+        AssetManager assetManager = this.uiContext.getAssetManager();
         assetManager.load(Skins.LOADINGSCREENS, Skin.class);
         this.stage = new WgStage();
         Gdx.input.setInputProcessor(this.stage);
@@ -40,35 +38,36 @@ public class LoadScreen implements Screen {
 
     @Override
     public void show() {
-        AssetManager assetManager = this.gameContext.getAssetManager();
+        AssetManager assetManager = this.uiContext.getAssetManager();
         this.loadingPresenter.initialize(this.stage);
         assetManager.finishLoading();
-
+        this.session.channel().start();
         this.configurationService.loadGameAssets(assetManager);
     }
 
     @Override
     public void render(float delta) {
+        this.uiContext.getCursorManager().update(delta);
         switch (this.loadingStep) {
             case LOADING_ASSETS -> {
-                this.stage.act();
-                this.stage.draw();
-                this.gameContext.getCursorManager().update(delta);
-                if (this.gameContext.getAssetManager().update()) {
+                if (this.uiContext.getAssetManager().update()) {
                     this.loadingStep = CREATING_WORLD;
                 }
             }
             case CREATING_WORLD -> {
-                this.worldService.createWorld();
-                this.loadingStep = FINISHED;
+                if (this.session.prepare()) {
+                    this.loadingStep = FINISHED;
+                }
             }
             case FINISHED -> {
-                this.gameContext.getCursorManager().update(delta);
-                this.gameContext.getSettings().applyGraphicsSettings();
-                this.gameContext.getAssetManager().finishLoading();
+                this.uiContext.getSettings().applyGraphicsSettings();
+                this.uiContext.getAssetManager().finishLoading();
                 this.screenManager.showNewGameScreen();
+                return;
             }
         }
+        this.stage.act();
+        this.stage.draw();
     }
 
     @Override
@@ -94,8 +93,8 @@ public class LoadScreen implements Screen {
     @Override
     public void dispose() {
         this.stage.dispose();
-        if (this.gameContext.getAssetManager().isLoaded(Skins.LOADINGSCREENS)) {
-            this.gameContext.getAssetManager().unload(Skins.LOADINGSCREENS);
+        if (this.uiContext.getAssetManager().isLoaded(Skins.LOADINGSCREENS)) {
+            this.uiContext.getAssetManager().unload(Skins.LOADINGSCREENS);
         }
     }
 }

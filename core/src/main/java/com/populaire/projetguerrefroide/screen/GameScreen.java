@@ -17,29 +17,26 @@ import com.monstrous.gdx.webgpu.graphics.utils.WgScreenUtils;
 import com.populaire.projetguerrefroide.adapter.graphics.WgCustomStage;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.adapter.graphics.WgScreenViewport;
-import com.populaire.projetguerrefroide.command.CommandBus;
-import com.populaire.projetguerrefroide.component.Position;
+import com.populaire.projetguerrefroide.protocol.catalog.ProvinceTable;
 import com.populaire.projetguerrefroide.screen.input.GameInputHandler;
 import com.populaire.projetguerrefroide.screen.listener.*;
 import com.populaire.projetguerrefroide.screen.presenter.*;
-import com.populaire.projetguerrefroide.service.*;
+import com.populaire.projetguerrefroide.service.ConfigurationService;
+import com.populaire.projetguerrefroide.ui.UiContext;
+import com.populaire.projetguerrefroide.ui.format.TextFormat;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
 import com.populaire.projetguerrefroide.ui.view.*;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
-public class GameScreen implements Screen, GameInputListener, TimeListener, GameFlowHandler {
-    private final GameContext gameContext;
-    private final WorldService worldService;
+public class GameScreen implements Screen, GameInputListener, GameFlowHandler {
+    private final UiContext uiContext;
+    private final GameSession session;
     private final ConfigurationService configurationService;
-    private final EconomyService economyService;
-    private final CommandBus commandBus;
-    private final TimeService timeService;
     private final OrthographicCamera cam;
     private final WgProjection projection;
     private final InputMultiplexer multiplexer;
@@ -55,24 +52,24 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
     private float time;
     private boolean paused;
 
-    public GameScreen(ScreenManager screenManager, GameContext gameContext, WorldService worldService, TimeService timeService, ConfigurationService configurationService, EconomyService economyService, CommandBus commandBus) {
-        this.gameContext = gameContext;
-        this.worldService = worldService;
+    public GameScreen(ScreenManager screenManager, UiContext uiContext, GameSession session, ConfigurationService configurationService) {
+        this.uiContext = uiContext;
+        this.session = session;
         this.configurationService = configurationService;
-        this.timeService = timeService;
-        this.economyService = economyService;
-        this.commandBus = commandBus;
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         this.projection = new WgProjection();
-        Position capitalPosition = this.worldService.getCapitalPositionOfSelectedCountry();
-        this.cam.position.set(capitalPosition.x(), capitalPosition.y(), 0);
+        int capital = session.mapView().capitalOf(session.uiState().playerCountry());
+        if (capital >= 0) {
+            ProvinceTable provinces = session.uiCatalog().catalog().provinces();
+            this.cam.position.set(provinces.positionX(capital), provinces.positionY(capital), 0);
+        }
         this.cam.update();
         this.multiplexer = new InputMultiplexer();
         this.inputHandler = new GameInputHandler(this.cam, this);
-        this.configurationService.loadGameLocalisation(this.gameContext);
+        this.configurationService.loadGameLocalisation(this.uiContext);
         this.presenters = new ObjectList<>();
 
-        AssetManager assetManager = gameContext.getAssetManager();
+        AssetManager assetManager = uiContext.getAssetManager();
         Skin skinUi = assetManager.get(Skins.UI);
         Skin skinFlags = assetManager.get(Skins.FLAGS);
         Skin skinPopup = assetManager.get(Skins.UI_POPUP);
@@ -83,13 +80,14 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
         Skin skinEconomy = assetManager.get(Skins.UI_ECONOMY);
         this.stage = new WgCustomStage(new WgScreenViewport(), skinUi, skinFlags);
         WidgetFactory widgetFactory = new WidgetFactory();
+        TextFormat textFormat = new TextFormat(uiContext.getLocalisation());
 
-        this.mainMenuInGamePresenter = new MainMenuInGamePresenter(gameContext, configurationService, this, widgetFactory, assetManager.get(Skins.UI_MAINMENU_IG), skinUi, skinScrollbars, skinPopup, skinFlags);
-        this.topBarPresenter = new TopBarPresenter(this.gameContext, this.worldService, this.timeService, this, widgetFactory, skinTopBar, skinUi, skinFlags);
-        this.provincePanelPresenter = new ProvincePanelPresenter(this.gameContext, this.worldService, this, widgetFactory, skinProvince, skinUi, skinFlags);
-        this.tooltipPresenter = new TooltipPresenter(this.gameContext, this.worldService, widgetFactory, skinUi, skinFlags);
-        this.economyPanelPresenter = new EconomyPanelPresenter(this.gameContext, this.worldService, commandBus, this, widgetFactory, skinEconomy, skinUi, skinScrollbars);
-        this.minimapPresenter = new MiniMapPresenter(this.gameContext, this.worldService, this, skinMinimap, skinUi);
+        this.mainMenuInGamePresenter = new MainMenuInGamePresenter(uiContext, configurationService, this, widgetFactory, assetManager.get(Skins.UI_MAINMENU_IG), skinUi, skinScrollbars, skinPopup, skinFlags);
+        this.topBarPresenter = new TopBarPresenter(session, this.uiContext, this, widgetFactory, skinTopBar, skinUi, skinFlags, textFormat);
+        this.provincePanelPresenter = new ProvincePanelPresenter(session, this.uiContext, this, widgetFactory, skinProvince, skinUi, skinFlags, textFormat);
+        this.tooltipPresenter = new TooltipPresenter(session, this.uiContext, widgetFactory, skinUi, skinFlags);
+        this.economyPanelPresenter = new EconomyPanelPresenter(session, this.uiContext, widgetFactory, skinEconomy, skinUi, skinScrollbars, textFormat);
+        this.minimapPresenter = new MiniMapPresenter(session, this.uiContext, this, skinMinimap, skinUi);
         this.initializeDebug();
 
         this.mainMenuInGamePresenter.initialize(this.stage);
@@ -98,20 +96,20 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
         this.tooltipPresenter.initialize(this.stage);
         this.economyPanelPresenter.initialize(this.stage);
         this.minimapPresenter.initialize(this.stage);
+        this.presenters.add(this.topBarPresenter);
+        this.presenters.add(this.provincePanelPresenter);
+        this.presenters.add(this.tooltipPresenter);
+        this.presenters.add(this.economyPanelPresenter);
+        this.presenters.add(this.minimapPresenter);
         this.multiplexer.addProcessor(this.stage);
         this.multiplexer.addProcessor(this.inputHandler);
         Gdx.input.setInputProcessor(this.multiplexer);
-        this.timeService.addListener(this);
-        this.timeService.addListener(this.topBarPresenter);
-        this.timeService.addListener(this.provincePanelPresenter);
-        this.economyService.initialize();
-        this.timeService.initialize();
         this.paused = false;
     }
 
     private void initializeDebug() {
-        if(this.gameContext.getSettings().isDebugMode()) {
-            DebugPresenter debugPresenter = new DebugPresenter(gameContext, worldService);
+        if(this.uiContext.getSettings().isDebugMode()) {
+            DebugPresenter debugPresenter = new DebugPresenter(uiContext, this.session);
             debugPresenter.initialize(this.stage);
             this.presenters.add(debugPresenter);
         }
@@ -119,23 +117,20 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
 
     @Override
     public void onClick(int x, int y) {
-        this.worldService.selectProvince(x, y);
-        this.provincePanelPresenter.refresh();
+        int provinceIndex = this.session.mapView().provinceIndexAt(x, y);
+        this.session.uiState().selectProvince(provinceIndex);
+        this.session.mapView().highlightProvince(provinceIndex);
+        this.provincePanelPresenter.open(provinceIndex);
     }
 
     @Override
     public void onHover(int x, int y) {
-        if(this.worldService.hoverLandProvince(x, y) && !this.isMouseOverUI()) {
-            this.tooltipPresenter.updateMapTooltip(x, y);
+        int provinceIndex = this.session.mapView().provinceIndexAt(x, y);
+        if (provinceIndex >= 0 && !this.isMouseOverUI()) {
+            this.tooltipPresenter.updateMapTooltip(provinceIndex);
         } else {
             this.tooltipPresenter.hideMapTooltip();
         }
-    }
-
-    @Override
-    public void onNewDay(LocalDate date) {
-        this.gameContext.getEcsWorld().runPipeline(this.economyService.getMainPipeline().id(), 1f);
-        this.gameContext.getEcsWorld().progress(1f);
     }
 
     @Override
@@ -181,11 +176,12 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
 
     @Override
     public void show() {
-        this.gameContext.getCursorManager().defaultCursor();
+        this.uiContext.getCursorManager().defaultCursor();
     }
 
     @Override
     public void render(float delta) {
+        this.session.beginFrame();
         this.time += delta;
 
         this.cam.update();
@@ -196,9 +192,8 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
 
         WgScreenUtils.clear(1, 1, 1, 1);
 
-        this.worldService.renderWorld(this.projection, this.cam, this.time);
-
-        this.timeService.update(delta);
+        this.session.mapView().update();
+        this.session.mapView().render(this.projection, this.cam, this.time);
 
         if(!this.paused) {
             this.inputHandler.setDelta(delta);
@@ -206,14 +201,13 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
             this.inputHandler.updateCamera();
         }
 
-        this.commandBus.process();
-
-        for(Presenter presenter : this.presenters) {
-            presenter.update(delta);
+        for (int i = 0; i < this.presenters.size(); i++) {
+            this.presenters.get(i).update(delta);
         }
 
         this.stage.act();
         this.stage.draw();
+        this.session.endFrame();
     }
 
     @Override
@@ -254,7 +248,7 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
 
     @Override
     public void toggleEconomyPanel() {
-        this.economyPanelPresenter.refresh();
+        this.economyPanelPresenter.open();
     }
 
     private void setAllStageTouchable(boolean touchable) {

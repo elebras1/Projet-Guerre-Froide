@@ -6,25 +6,25 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.monstrous.gdx.webgpu.graphics.utils.WgScreenUtils;
 import com.monstrous.gdx.webgpu.scene2d.WgStage;
 import com.populaire.projetguerrefroide.adapter.graphics.WgScreenViewport;
-import com.populaire.projetguerrefroide.screen.presenter.Presenter;
 import com.populaire.projetguerrefroide.screen.presenter.MainMenuPresenter;
+import com.populaire.projetguerrefroide.screen.presenter.Presenter;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
-import com.populaire.projetguerrefroide.service.GameContext;
+import com.populaire.projetguerrefroide.ui.UiContext;
 
 public class MainMenuScreen implements Screen {
     private final Stage stage;
     private final ScreenManager screenManager;
-    private final GameContext gameContext;
+    private final UiContext uiContext;
     private final Presenter mainMenuPresenter;
 
-    public MainMenuScreen(ScreenManager screenManager, GameContext gameContext, ConfigurationService configurationService) {
+    public MainMenuScreen(ScreenManager screenManager, UiContext uiContext, ConfigurationService configurationService) {
         this.stage = new WgStage(new WgScreenViewport());
         this.screenManager = screenManager;
-        this.gameContext = gameContext;
-        configurationService.loadMainMenuLocalisation(gameContext);
-        gameContext.getSettings().applyGraphicsSettings();
+        this.uiContext = uiContext;
+        configurationService.loadMainMenuLocalisation(uiContext);
+        uiContext.getSettings().applyGraphicsSettings();
         Gdx.input.setInputProcessor(this.stage);
-        this.mainMenuPresenter = new MainMenuPresenter(this.screenManager, this.gameContext);
+        this.mainMenuPresenter = new MainMenuPresenter(this.screenManager, this.uiContext);
     }
 
     @Override

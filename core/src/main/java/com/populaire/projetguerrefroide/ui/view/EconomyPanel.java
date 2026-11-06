@@ -1,17 +1,20 @@
 package com.populaire.projetguerrefroide.ui.view;
 
-import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
-import com.populaire.projetguerrefroide.dto.BuildingDto;
-import com.populaire.projetguerrefroide.dto.BuildingSummaryDto;
-import com.populaire.projetguerrefroide.dto.RegionDto;
-import com.populaire.projetguerrefroide.dto.RegionsBuildingsDto;
+import com.badlogic.gdx.utils.CharArray;
+import com.github.tommyettinger.ds.ObjectList;
+import com.populaire.projetguerrefroide.protocol.catalog.Catalog;
+import com.populaire.projetguerrefroide.protocol.request.SortType;
+import com.populaire.projetguerrefroide.protocol.response.BuildingDetails;
+import com.populaire.projetguerrefroide.protocol.response.RegionsBuildings;
 import com.populaire.projetguerrefroide.screen.listener.EconomyPanelListener;
 import com.populaire.projetguerrefroide.service.ColorDrawablePool;
+import com.populaire.projetguerrefroide.ui.UiCatalog;
+import com.populaire.projetguerrefroide.ui.format.TextFormat;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.FontsSkin;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiEconomySkin;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiScrollbarsSkin;
@@ -19,15 +22,17 @@ import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiSkin;
 import com.populaire.projetguerrefroide.ui.widget.ClickableTable;
 import com.populaire.projetguerrefroide.ui.widget.FillBar;
 import com.populaire.projetguerrefroide.ui.widget.HoverScrollPane;
+import com.populaire.projetguerrefroide.ui.widget.SkinDrawables;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 import com.populaire.projetguerrefroide.util.ColorUtils;
 import com.populaire.projetguerrefroide.util.UiConstants;
-import com.populaire.projetguerrefroide.util.ValueFormatter;
 
 import java.util.List;
 import java.util.Map;
 
 public class EconomyPanel extends Table {
+    private static final int BUILDINGS_PER_ROW = 6;
+    private static final int INPUT_SLOTS = 5;
     private final WidgetFactory widgetFactory;
     private final Skin skin;
     private final Skin skinUi;
@@ -35,6 +40,22 @@ public class EconomyPanel extends Table {
     private final ColorDrawablePool colorTexturePool;
     private final Map<String, String> localisation;
     private final EconomyPanelListener listener;
+    private final UiCatalog uiCatalog;
+    private final TextFormat textFormat;
+    private final CharArray text;
+    private final Drawable[] buildingDrawables;
+    private final Drawable[] pinnedDrawables;
+    private final Drawable[] goodDrawables;
+    private final Drawable noGoodDrawable;
+    private final Drawable suspendedDrawable;
+    private final Drawable inputActiveBackground;
+    private final Drawable inputEmptyBackground;
+    private final Label.LabelStyle regionStyle;
+    private final Label.LabelStyle buildingStyle;
+    private final Label.LabelStyle levelStyle;
+    private final List<RegionBlock> regionBlocks;
+    private final boolean[] collapsedRegions;
+    private int shownRegionCount;
     private Table buildingRegionsTable;
     private Table buildingSelectedTable;
     private long selectedBuildingId;
@@ -42,8 +63,17 @@ public class EconomyPanel extends Table {
     private Label industryValueLabel;
     private Label productionValueLabel;
     private FillBar workersBar;
+    private Button expandButton;
+    private Button resumeButton;
+    private Button suspendButton;
+    private Button demolishButton;
+    private Label provinceLabel;
+    private Label buildingTypeLabel;
+    private final Table[] inputIcons;
+    private final Image[] inputGoodImages;
+    private Image outputGoodImage;
 
-    public EconomyPanel(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinScrollbars, Skin skinFonts, ColorDrawablePool colorTexturePool, Map<String, String> localisation, EconomyPanelListener listener) {
+    public EconomyPanel(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinScrollbars, Skin skinFonts, ColorDrawablePool colorTexturePool, Map<String, String> localisation, UiCatalog uiCatalog, TextFormat textFormat, EconomyPanelListener listener) {
         this.widgetFactory = widgetFactory;
         this.skin = skin;
         this.skinUi = skinUi;
@@ -51,6 +81,32 @@ public class EconomyPanel extends Table {
         this.colorTexturePool = colorTexturePool;
         this.localisation = localisation;
         this.listener = listener;
+        this.uiCatalog = uiCatalog;
+        this.textFormat = textFormat;
+        this.text = new CharArray(32);
+        Catalog catalog = uiCatalog.catalog();
+        this.noGoodDrawable = skinUi.getDrawable(UiSkin.Drawables.GOOD_NONE_SMALL);
+        this.buildingDrawables = new Drawable[catalog.buildingTypes().size()];
+        this.pinnedDrawables = new Drawable[catalog.buildingTypes().size()];
+        for (int i = 0; i < this.buildingDrawables.length; i++) {
+            String name = catalog.buildingTypes().nameId(i);
+            this.buildingDrawables[i] = SkinDrawables.optional(skin, "building_" + name, null);
+            this.pinnedDrawables[i] = SkinDrawables.optional(skin, "pinned_" + name, null);
+        }
+        this.goodDrawables = new Drawable[catalog.goods().size()];
+        for (int i = 0; i < this.goodDrawables.length; i++) {
+            this.goodDrawables[i] = SkinDrawables.optional(skinUi, "good_" + catalog.goods().nameId(i) + "_small", this.noGoodDrawable);
+        }
+        this.suspendedDrawable = skin.getDrawable(UiEconomySkin.Drawables.ECONMY_SUSPENDED_ICON1);
+        this.inputActiveBackground = skin.getDrawable(UiEconomySkin.Drawables.ECO_BOX_METAL_GREEN);
+        this.inputEmptyBackground = skin.getDrawable(UiEconomySkin.Drawables.ECO_BOX_METAL_GREY);
+        this.regionStyle = skinFonts.get(FontsSkin.Styles.Label.JOCKEY_16_GLOW_BLUE, Label.LabelStyle.class);
+        this.buildingStyle = skinFonts.get(FontsSkin.Styles.Label.JOCKEY_16_GLOW_BLUE, Label.LabelStyle.class);
+        this.levelStyle = skinFonts.get(FontsSkin.Styles.Label.JOCKEY_14_TIGHT, Label.LabelStyle.class);
+        this.regionBlocks = new ObjectList<>();
+        this.collapsedRegions = new boolean[catalog.regions().size()];
+        this.inputIcons = new Table[INPUT_SLOTS];
+        this.inputGoodImages = new Image[INPUT_SLOTS];
         Drawable background = skin.getDrawable(UiEconomySkin.Drawables.ECONOMY_BG_SHADOW);
         this.setBackground(background);
         this.setSize(background.getMinWidth(), background.getMinHeight());
@@ -88,8 +144,8 @@ public class EconomyPanel extends Table {
             }
         });
 
-        Button aiButton = widgetFactory.createButton(skin, UiEconomySkin.Styles.Button.ECO_AI_TGL, 83, 685.5f, mainTable);
-        Button regionalButton = widgetFactory.createButton(skin, UiEconomySkin.Styles.Button.ECO_REGIONAL_TGL, 773, 685.5f, mainTable);
+        widgetFactory.createButton(skin, UiEconomySkin.Styles.Button.ECO_AI_TGL, 83, 685.5f, mainTable);
+        widgetFactory.createButton(skin, UiEconomySkin.Styles.Button.ECO_REGIONAL_TGL, 773, 685.5f, mainTable);
         Button closeButton = widgetFactory.createButton(skinUi, UiSkin.Styles.Button.CLOSE_BTN, 1057, 734, mainTable);
         closeButton.addListener(new ClickListener() {
             @Override
@@ -128,62 +184,55 @@ public class EconomyPanel extends Table {
         this.widgetFactory.createLabelCentered(this.localisation.get("INPUT"), jockey16Paper, 400, 142, this.buildingSelectedTable);
         int inputIconX = 290;
         int inputIconY = 95;
-        for(int i = 0; i < 5; i++) {
+        for (int i = 0; i < INPUT_SLOTS; i++) {
             Table inputBgIcon = this.widgetFactory.createBackgroundTable(this.skin, UiEconomySkin.Drawables.ECO_BOX_METAL_GREY, inputIconX, inputIconY, this.buildingSelectedTable);
-            inputBgIcon.setName("img_input_bg_icon_" + i);
-            this.widgetFactory.createImage(this.skinUi, UiSkin.Drawables.GOOD_NONE_SMALL, 8, 11, inputBgIcon);
+            this.inputIcons[i] = inputBgIcon;
+            this.inputGoodImages[i] = this.widgetFactory.createImage(this.skinUi, UiSkin.Drawables.GOOD_NONE_SMALL, 8, 11, inputBgIcon);
             inputIconX += 43;
         }
         this.widgetFactory.createLabelCentered(this.localisation.get("OUTPUT"), jockey16Paper, 400, 66, this.buildingSelectedTable);
         Table outputBgIcon = this.widgetFactory.createBackgroundTable(this.skin, UiEconomySkin.Drawables.ECO_BOX_METAL_BLUE, 290, 20, this.buildingSelectedTable);
-        outputBgIcon.setName("img_output_bg_icon");
-        this.widgetFactory.createImage(this.skinUi, UiSkin.Drawables.GOOD_NONE_SMALL, 8, 11, outputBgIcon);
+        this.outputGoodImage = this.widgetFactory.createImage(this.skinUi, UiSkin.Drawables.GOOD_NONE_SMALL, 8, 11, outputBgIcon);
 
-        Label provinceLabel = this.widgetFactory.createLabelCentered(UiConstants.TMP, jockey16Paper, 631, 142, this.buildingSelectedTable);
-        provinceLabel.setName("lbl_province");
-        Label buildingTypeLabel = this.widgetFactory.createLabelCentered(UiConstants.TMP, jockey16Paper, 631, 122, this.buildingSelectedTable);
-        buildingTypeLabel.setName("lbl_building_type");
+        this.provinceLabel = this.widgetFactory.createLabelCentered(UiConstants.TMP, jockey16Paper, 631, 142, this.buildingSelectedTable);
+        this.buildingTypeLabel = this.widgetFactory.createLabelCentered(UiConstants.TMP, jockey16Paper, 631, 122, this.buildingSelectedTable);
 
         Label.LabelStyle jockey16Dark = this.skinFonts.get(FontsSkin.Styles.Label.JOCKEY_16_DARK, Label.LabelStyle.class);
-        Button expandButton = this.widgetFactory.createButton(this.skin, UiEconomySkin.Styles.Button.ECO_FOLDER_YELLOW_BTN, 636, 94, this.buildingSelectedTable);
-        expandButton.setName("btn_expand");
-        expandButton.addListener(new ClickListener() {
+        this.expandButton = this.widgetFactory.createButton(this.skin, UiEconomySkin.Styles.Button.ECO_FOLDER_YELLOW_BTN, 636, 94, this.buildingSelectedTable);
+        this.expandButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 listener.onExpandBuildingClicked(selectedBuildingId);
             }
         });
-        this.widgetFactory.createLabel(this.localisation.get("EXPAND"), jockey16Dark, 26, 0, expandButton);
+        this.widgetFactory.createLabel(this.localisation.get("EXPAND"), jockey16Dark, 26, 0, this.expandButton);
 
-        Button resumeButton = this.widgetFactory.createButton(this.skin, UiEconomySkin.Styles.Button.ECO_FOLDER_YELLOW_BTN, 636, 70, this.buildingSelectedTable);
-        resumeButton.setName("btn_resume");
-        resumeButton.addListener(new ClickListener() {
+        this.resumeButton = this.widgetFactory.createButton(this.skin, UiEconomySkin.Styles.Button.ECO_FOLDER_YELLOW_BTN, 636, 70, this.buildingSelectedTable);
+        this.resumeButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 listener.onResumeBuildingClicked(selectedBuildingId);
             }
         });
-        this.widgetFactory.createLabel(this.localisation.get("RESUME"), jockey16Dark, 23, 0, resumeButton);
+        this.widgetFactory.createLabel(this.localisation.get("RESUME"), jockey16Dark, 23, 0, this.resumeButton);
 
-        Button suspendButton = this.widgetFactory.createButton(this.skin, UiEconomySkin.Styles.Button.ECO_FOLDER_YELLOW_BTN, 636, 70, this.buildingSelectedTable);
-        suspendButton.setName("btn_suspend");
-        suspendButton.addListener(new ClickListener() {
+        this.suspendButton = this.widgetFactory.createButton(this.skin, UiEconomySkin.Styles.Button.ECO_FOLDER_YELLOW_BTN, 636, 70, this.buildingSelectedTable);
+        this.suspendButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 listener.onSuspendBuildingClicked(selectedBuildingId);
             }
         });
-        this.widgetFactory.createLabel(this.localisation.get("SUSPEND"), jockey16Dark, 23, 0, suspendButton);
+        this.widgetFactory.createLabel(this.localisation.get("SUSPEND"), jockey16Dark, 23, 0, this.suspendButton);
 
-        Button demolishButton = this.widgetFactory.createButton(this.skin, UiEconomySkin.Styles.Button.ECO_FOLDER_RED_BTN, 636, 22, this.buildingSelectedTable);
-        demolishButton.setName("btn_demolish");
-        demolishButton.addListener(new ClickListener() {
+        this.demolishButton = this.widgetFactory.createButton(this.skin, UiEconomySkin.Styles.Button.ECO_FOLDER_RED_BTN, 636, 22, this.buildingSelectedTable);
+        this.demolishButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 listener.onDemolishBuildingClicked(selectedBuildingId);
             }
         });
-        this.widgetFactory.createLabel(this.localisation.get("DEMOLISH"), jockey16Dark, 23, 0, demolishButton);
+        this.widgetFactory.createLabel(this.localisation.get("DEMOLISH"), jockey16Dark, 23, 0, this.demolishButton);
 
         this.widgetFactory.createImage(this.skin, UiEconomySkin.Drawables.ECO_ICON_INDUSTRY, 520, 87, this.buildingSelectedTable);
         this.industryValueLabel = this.widgetFactory.createLabelAlignRight("0%", jockey16Dark, 625, 88, this.buildingSelectedTable);
@@ -197,220 +246,72 @@ public class EconomyPanel extends Table {
         this.pinnedBuildingImage = this.widgetFactory.createImage(28, 23, this.buildingSelectedTable);
     }
 
-    public void setData(RegionsBuildingsDto dto) {
-        this.buildingRegionsTable.clearChildren();
-
-        for (RegionDto region : dto.regions()) {
-            Table newRegionBlock = this.createRegionBlock(region);
-            this.buildingRegionsTable.add(newRegionBlock).row();
+    public void setData(RegionsBuildings regions) {
+        int regionCount = regions.regionCount();
+        boolean structureChanged = regionCount != this.shownRegionCount;
+        while (this.regionBlocks.size() < regionCount) {
+            this.regionBlocks.add(new RegionBlock());
         }
-    }
-
-    private Table createRegionBlock(RegionDto region) {
-        Table regionBlock = new Table();
-        regionBlock.setName("region_" + region.regionId());
-
-        Table headerTable = this.createRegionHeader(region);
-        Button minButton = headerTable.findActor("btn_min");
-        Button maxButton = headerTable.findActor("btn_max");
-
-        Table buildingsGrid = this.createBuildingsGrid(region.buildings());
-
-        regionBlock.add(headerTable).row();
-        Cell<Table> gridCell = regionBlock.add(buildingsGrid).padLeft(-6);
-
-        regionBlock.setUserObject(buildingsGrid);
-
-        this.setupCollapseListeners(minButton, maxButton, gridCell, buildingsGrid);
-
-        return regionBlock;
-    }
-
-    private Table createRegionHeader(RegionDto region) {
-        Table headerTable = new Table();
-        Drawable regionBackground = this.skin.getDrawable(UiEconomySkin.Drawables.ECONOMY_REGION_PLATE_SMALL);
-        headerTable.setBackground(regionBackground);
-        headerTable.setSize(regionBackground.getMinWidth(), regionBackground.getMinHeight());
-
-        Label.LabelStyle style = this.skinFonts.get(FontsSkin.Styles.Label.JOCKEY_16_GLOW_BLUE, Label.LabelStyle.class);
-        String regionName = this.localisation.get(region.regionId());
-
-        Label nameLabel = this.widgetFactory.createLabel(regionName, style, 8, 7, headerTable);
-        nameLabel.setName("lbl_name");
-
-        Button minButton = this.widgetFactory.createButton(this.skin, UiEconomySkin.Styles.Button.ECO_PLATE_MIN_BTN, 684, 9, headerTable);
-        Button maxButton = this.widgetFactory.createButton(this.skin, UiEconomySkin.Styles.Button.ECO_PLATE_MAX_BTN, 684, 9, headerTable);
-        minButton.setName("btn_min");
-        maxButton.setName("btn_max");
-        minButton.setVisible(true);
-        maxButton.setVisible(false);
-
-        Label devIndexLabel = this.widgetFactory.createLabelCentered(region.developpementIndexValue() + "%", style, 477, 7, headerTable);
-        devIndexLabel.setName("lbl_dev_index");
-
-        Label popLabel = this.widgetFactory.createLabelCentered(ValueFormatter.format(region.populationAmount(), this.localisation), style, 545, 7, headerTable);
-        popLabel.setName("lbl_pop");
-
-        Label workLabel = this.widgetFactory.createLabelCentered(region.buildingWorkerAmount() + " (" + region.buildingWorkerRatio() + "%)", style, 638, 7, headerTable);
-        workLabel.setName("lbl_work");
-
-        return headerTable;
-    }
-
-    private Table createBuildingsGrid(List<BuildingSummaryDto> buildings) {
-        Table buildingsTable = new Table();
-
-        int count = 0;
-        for (BuildingSummaryDto building : buildings) {
-            Table buildingCell = this.createBuildingItem(building);
-            buildingsTable.add(buildingCell).padRight(-10);
-
-            count++;
-            if (count % 6 == 0) {
-                buildingsTable.row();
+        for (int position = 0; position < regionCount; position++) {
+            RegionBlock block = this.regionBlocks.get(position);
+            int regionIndex = regions.regionIndex(position);
+            if (block.regionIndex != regionIndex) {
+                structureChanged = true;
+                block.assignRegion(regionIndex);
             }
+            block.updateHeader(regions, position);
+            block.updateBuildings(regions, position);
         }
-
-        this.fillEmptySlots(buildingsTable, count);
-        return buildingsTable;
-    }
-
-    private Table createBuildingItem(BuildingSummaryDto building) {
-        Table buildingTable = new ClickableTable();
-        buildingTable.setUserObject(building.id());
-        buildingTable.setName("building_" + building.id());
-        buildingTable.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                listener.onBuildingClicked(building.id());
+        if (structureChanged) {
+            this.buildingRegionsTable.clearChildren();
+            for (int position = 0; position < regionCount; position++) {
+                this.buildingRegionsTable.add(this.regionBlocks.get(position).root).row();
             }
-        });
-
-        Label.LabelStyle labelStyle = this.skinFonts.get(FontsSkin.Styles.Label.JOCKEY_16_GLOW_BLUE, Label.LabelStyle.class);
-        Label.LabelStyle labelSmall = this.skinFonts.get(FontsSkin.Styles.Label.JOCKEY_14_TIGHT, Label.LabelStyle.class);
-
-        this.widgetFactory.applyBackgroundToTable(this.skin, UiEconomySkin.Drawables.BUILDING_BOX_TEMPLATE, buildingTable);
-        this.widgetFactory.createImage(this.skin, "building_" + building.nameId(), 10, 55, buildingTable);
-        Image suspendedImage = this.widgetFactory.createImage(38, 61, buildingTable);
-        if(building.isSuspended()) {
-            Drawable suspendedDrawable = this.skin.getDrawable(UiEconomySkin.Drawables.ECONMY_SUSPENDED_ICON1);
-            suspendedImage.setDrawable(suspendedDrawable);
-            suspendedImage.setSize(suspendedDrawable.getMinWidth(), suspendedDrawable.getMinHeight());
-        }
-
-        this.widgetFactory.createLabelCentered(ValueFormatter.format(building.productionAmount()), labelStyle, buildingTable.getWidth() / 2, 21, buildingTable);
-
-        String levelsQueuedText = building.levelsQueued() > 0 ? " (" + building.levelsQueued() + ")" : "";
-        String levelText = building.size() + levelsQueuedText + "/" + building.maxLevel();
-        this.widgetFactory.createLabelCentered(levelText, labelSmall, buildingTable.getWidth() / 2, 2, buildingTable);
-
-        return buildingTable;
-    }
-
-    private void fillEmptySlots(Table buildingsTable, int currentCount) {
-        int slotsNeeded = 0;
-
-        if (currentCount == 0) {
-            slotsNeeded = 6;
-        } else {
-            int remainder = currentCount % 6;
-            if (remainder != 0) {
-                slotsNeeded = 6 - remainder;
-            }
-        }
-
-        for (int i = 0; i < slotsNeeded; i++) {
-            Table emptyTable = new Table();
-            this.widgetFactory.applyBackgroundToTable(this.skin, UiEconomySkin.Drawables.ECO_BUILD, emptyTable);
-            buildingsTable.add(emptyTable).padRight(-10);
+            this.shownRegionCount = regionCount;
         }
     }
 
-    private void setupCollapseListeners(Button minButton, Button maxButton, Cell<Table> gridCell, Table gridTable) {
-        minButton.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                gridCell.clearActor();
-                minButton.setVisible(false);
-                maxButton.setVisible(true);
-            }
-        });
+    public void updateSelectedBuildingInfoBlock(BuildingDetails building) {
+        this.selectedBuildingId = building.buildingId();
+        this.suspendButton.setVisible(!building.suspended());
+        this.resumeButton.setVisible(building.suspended());
+        this.setActionEnabled(this.expandButton, building.stateControlled());
+        this.setActionEnabled(this.suspendButton, building.stateControlled());
+        this.setActionEnabled(this.resumeButton, building.stateControlled());
+        this.setActionEnabled(this.demolishButton, building.stateControlled());
 
-        maxButton.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                gridCell.setActor(gridTable);
-                minButton.setVisible(true);
-                maxButton.setVisible(false);
-            }
-        });
-    }
+        this.provinceLabel.setText(this.uiCatalog.regionName(building.regionIndex()));
+        this.buildingTypeLabel.setText(this.uiCatalog.buildingTypeName(building.buildingTypeIndex()));
 
-    @SuppressWarnings("unchecked")
-    public void updateRegion(RegionDto regionDto) {
-        for (int i = 0; i < this.buildingRegionsTable.getChildren().size; i++) {
-            Cell<Table> cell = this.buildingRegionsTable.getCells().get(i);
-            Actor actor = cell.getActor();
-            if (actor != null && actor.getName() != null && actor.getName().equals("region_" + regionDto.regionId())) {
-                Table newRegionBlock = this.createRegionBlock(regionDto);
-                cell.setActor(newRegionBlock);
-                this.buildingRegionsTable.invalidateHierarchy();
-                break;
-            }
-        }
-    }
-
-    public void updateSelectedBuildingInfoBlock(BuildingDto buildingDto) {
-        this.selectedBuildingId = buildingDto.buildingId();
-
-        Button suspendButton = this.buildingSelectedTable.findActor("btn_suspend");
-        Button resumeButton = this.buildingSelectedTable.findActor("btn_resume");
-        if(buildingDto.isSuspended()) {
-            suspendButton.setVisible(false);
-            resumeButton.setVisible(true);
-        } else {
-            suspendButton.setVisible(true);
-            resumeButton.setVisible(false);
-        }
-        String[] stateActionButtonNames = {"btn_expand", "btn_suspend", "btn_resume", "btn_demolish"};
-        for (String buttonName : stateActionButtonNames) {
-            Button button = this.buildingSelectedTable.findActor(buttonName);
-            button.setDisabled(!buildingDto.stateControlled());
-            button.setTouchable(buildingDto.stateControlled() ? Touchable.enabled : Touchable.disabled);
+        int typeIndex = building.buildingTypeIndex();
+        Drawable pinned = typeIndex >= 0 ? this.pinnedDrawables[typeIndex] : null;
+        if (this.pinnedBuildingImage.getDrawable() != pinned) {
+            this.pinnedBuildingImage.setDrawable(pinned);
+            this.pinnedBuildingImage.pack();
         }
 
-        Label provinceLabel = this.buildingSelectedTable.findActor("lbl_province");
-        provinceLabel.setText(this.localisation.get(buildingDto.parentNameId()));
-
-        Label buildingTypeLabel = this.buildingSelectedTable.findActor("lbl_building_type");
-        buildingTypeLabel.setText(this.localisation.get(buildingDto.buildingTypeNameId()));
-
-        this.pinnedBuildingImage.setDrawable(this.skin.getDrawable("pinned_" + buildingDto.buildingTypeNameId()));
-        this.pinnedBuildingImage.pack();
-
-        for(int i = 0; i < 5; i++) {
-            Table inputIcon = this.buildingSelectedTable.findActor("img_input_bg_icon_" + i);
-            Image inputGoodImage = (Image) inputIcon.getChildren().first();
-            String inputGoodNameId = buildingDto.inputGoodNameIds()[i];
-            if(inputGoodNameId != null) {
-                inputIcon.setBackground(this.skin.getDrawable(UiEconomySkin.Drawables.ECO_BOX_METAL_GREEN));
-                inputGoodImage.setDrawable(this.skinUi.getDrawable("good_" + inputGoodNameId + "_small"));
+        for (int i = 0; i < INPUT_SLOTS; i++) {
+            if (i < building.inputGoodCount()) {
+                this.inputIcons[i].setBackground(this.inputActiveBackground);
+                this.inputGoodImages[i].setDrawable(this.goodDrawable(building.inputGood(i)));
             } else {
-                inputIcon.setBackground(this.skin.getDrawable(UiEconomySkin.Drawables.ECO_BOX_METAL_GREY));
-                inputGoodImage.setDrawable(this.skinUi.getDrawable(UiSkin.Drawables.GOOD_NONE_SMALL));
+                this.inputIcons[i].setBackground(this.inputEmptyBackground);
+                this.inputGoodImages[i].setDrawable(this.noGoodDrawable);
             }
         }
-        Table outputIcon = this.buildingSelectedTable.findActor("img_output_bg_icon");
-        Image outputGoodImage = (Image) outputIcon.getChildren().first();
-        String outputGoodNameId = buildingDto.outputGoodNameId();
-        if(outputGoodNameId != null) {
-            outputGoodImage.setDrawable(this.skinUi.getDrawable("good_" + outputGoodNameId + "_small"));
-        } else {
-            outputGoodImage.setDrawable(this.skinUi.getDrawable(UiSkin.Drawables.GOOD_NONE_SMALL));
-        }
-        this.workersBar.setValue(buildingDto.amountWorkers(), buildingDto.maxWorkers());
+        this.outputGoodImage.setDrawable(this.goodDrawable(building.outputGoodIndex()));
+        this.workersBar.setValue(building.workers(), building.maxWorkers());
 
         this.buildingSelectedTable.setVisible(true);
+    }
+
+    private Drawable goodDrawable(int goodIndex) {
+        return goodIndex >= 0 ? this.goodDrawables[goodIndex] : this.noGoodDrawable;
+    }
+
+    private void setActionEnabled(Button button, boolean enabled) {
+        button.setDisabled(!enabled);
+        button.setTouchable(enabled ? Touchable.enabled : Touchable.disabled);
     }
 
     public long getSelectedBuildingId() {
@@ -422,43 +323,169 @@ public class EconomyPanel extends Table {
         this.buildingSelectedTable.setVisible(false);
     }
 
-    public void updateBuilding(long buildingId, BuildingSummaryDto dto) {
-        for (Actor regionActor : this.buildingRegionsTable.getChildren()) {
-            if (!(regionActor instanceof Table regionBlock)) {
-                continue;
-            }
-            Object userObj = regionBlock.getUserObject();
-            if (!(userObj instanceof Table buildingsGrid)) {
-                continue;
-            }
-            for (Actor actor : buildingsGrid.getChildren()) {
-                if (!(actor instanceof Table buildingCell)) {
-                    continue;
+    private final class RegionBlock {
+        private final Table root;
+        private final Table grid;
+        private final Cell<Table> gridCell;
+        private final Label nameLabel;
+        private final Label developmentIndexLabel;
+        private final Label populationLabel;
+        private final Label workLabel;
+        private final Button minButton;
+        private final Button maxButton;
+        private final List<BuildingCell> cells;
+        private final List<Table> emptySlots;
+        private int regionIndex;
+        private int shownBuildings;
+
+        private RegionBlock() {
+            this.regionIndex = -1;
+            this.shownBuildings = -1;
+            this.cells = new ObjectList<>();
+            this.emptySlots = new ObjectList<>();
+            this.root = new Table();
+            Table header = new Table();
+            Drawable regionBackground = skin.getDrawable(UiEconomySkin.Drawables.ECONOMY_REGION_PLATE_SMALL);
+            header.setBackground(regionBackground);
+            header.setSize(regionBackground.getMinWidth(), regionBackground.getMinHeight());
+            this.nameLabel = widgetFactory.createLabel("", regionStyle, 8, 7, header);
+            this.minButton = widgetFactory.createButton(skin, UiEconomySkin.Styles.Button.ECO_PLATE_MIN_BTN, 684, 9, header);
+            this.maxButton = widgetFactory.createButton(skin, UiEconomySkin.Styles.Button.ECO_PLATE_MAX_BTN, 684, 9, header);
+            this.developmentIndexLabel = widgetFactory.createLabelCentered("", regionStyle, 477, 7, header);
+            this.populationLabel = widgetFactory.createLabelCentered("", regionStyle, 545, 7, header);
+            this.workLabel = widgetFactory.createLabelCentered("", regionStyle, 638, 7, header);
+            this.grid = new Table();
+            this.root.add(header).row();
+            this.gridCell = this.root.add(this.grid).padLeft(-6);
+            this.minButton.addListener(new ClickListener() {
+                @Override
+                public void clicked(InputEvent event, float x, float y) {
+                    setCollapsed(true);
                 }
-                if (!(buildingCell.getUserObject() instanceof Long id) || id != buildingId) {
-                    continue;
+            });
+            this.maxButton.addListener(new ClickListener() {
+                @Override
+                public void clicked(InputEvent event, float x, float y) {
+                    setCollapsed(false);
                 }
-                this.refreshBuildingCell(buildingCell, dto);
-                return;
+            });
+        }
+
+        private void assignRegion(int regionIndex) {
+            this.regionIndex = regionIndex;
+            this.nameLabel.setText(uiCatalog.regionName(regionIndex));
+            this.applyCollapsed(regionIndex >= 0 && collapsedRegions[regionIndex]);
+        }
+
+        private void setCollapsed(boolean collapsed) {
+            if (this.regionIndex >= 0) {
+                collapsedRegions[this.regionIndex] = collapsed;
             }
+            this.applyCollapsed(collapsed);
+        }
+
+        private void applyCollapsed(boolean collapsed) {
+            if (collapsed) {
+                this.gridCell.clearActor();
+            } else if (this.gridCell.getActor() != this.grid) {
+                this.gridCell.setActor(this.grid);
+            }
+            this.minButton.setVisible(!collapsed);
+            this.maxButton.setVisible(collapsed);
+        }
+
+        private void updateHeader(RegionsBuildings regions, int position) {
+            text.clear();
+            this.developmentIndexLabel.setText(text.append(regions.regionDevelopmentIndex(position)).append('%'));
+            this.populationLabel.setText(textFormat.compact(text, regions.regionPopulation(position)));
+            text.clear();
+            this.workLabel.setText(text.append(regions.regionWorkers(position)).append(" (").append(regions.regionWorkerRatio(position)).append("%)"));
+        }
+
+        private void updateBuildings(RegionsBuildings regions, int position) {
+            int count = regions.regionBuildingCount(position);
+            while (this.cells.size() < count) {
+                this.cells.add(new BuildingCell());
+            }
+            if (count != this.shownBuildings) {
+                this.rebuildGrid(count);
+            }
+            int first = regions.regionBuildingStart(position);
+            for (int i = 0; i < count; i++) {
+                this.cells.get(i).update(regions, first + i);
+            }
+        }
+
+        private void rebuildGrid(int count) {
+            this.grid.clearChildren();
+            for (int i = 0; i < count; i++) {
+                this.grid.add(this.cells.get(i).table).padRight(-10);
+                if ((i + 1) % BUILDINGS_PER_ROW == 0) {
+                    this.grid.row();
+                }
+            }
+            int emptyNeeded = count == 0 ? BUILDINGS_PER_ROW : (BUILDINGS_PER_ROW - count % BUILDINGS_PER_ROW) % BUILDINGS_PER_ROW;
+            while (this.emptySlots.size() < emptyNeeded) {
+                Table emptyTable = new Table();
+                widgetFactory.applyBackgroundToTable(skin, UiEconomySkin.Drawables.ECO_BUILD, emptyTable);
+                this.emptySlots.add(emptyTable);
+            }
+            for (int i = 0; i < emptyNeeded; i++) {
+                this.grid.add(this.emptySlots.get(i)).padRight(-10);
+            }
+            this.shownBuildings = count;
         }
     }
 
-    private void refreshBuildingCell(Table buildingCell, BuildingSummaryDto buildingSummaryDto) {
-        buildingCell.clearChildren();
-        Label.LabelStyle labelStyle = this.skinFonts.get(FontsSkin.Styles.Label.JOCKEY_16_GLOW_BLUE, Label.LabelStyle.class);
-        Label.LabelStyle labelSmall = this.skinFonts.get(FontsSkin.Styles.Label.JOCKEY_14_TIGHT, Label.LabelStyle.class);
-        this.widgetFactory.applyBackgroundToTable(this.skin, UiEconomySkin.Drawables.BUILDING_BOX_TEMPLATE, buildingCell);
-        this.widgetFactory.createImage(this.skin, "building_" + buildingSummaryDto.nameId(), 10, 55, buildingCell);
-        Image suspendedImage = this.widgetFactory.createImage(38, 61, buildingCell);
-        if (buildingSummaryDto.isSuspended()) {
-            Drawable suspendedDrawable = this.skin.getDrawable(UiEconomySkin.Drawables.ECONMY_SUSPENDED_ICON1);
-            suspendedImage.setDrawable(suspendedDrawable);
-            suspendedImage.setSize(suspendedDrawable.getMinWidth(), suspendedDrawable.getMinHeight());
+    private final class BuildingCell {
+        private final ClickableTable table;
+        private final Image buildingImage;
+        private final Image suspendedImage;
+        private final Label productionLabel;
+        private final Label levelLabel;
+        private long buildingId;
+
+        private BuildingCell() {
+            this.table = new ClickableTable();
+            widgetFactory.applyBackgroundToTable(skin, UiEconomySkin.Drawables.BUILDING_BOX_TEMPLATE, this.table);
+            this.buildingImage = widgetFactory.createImage(10, 55, this.table);
+            this.suspendedImage = widgetFactory.createImage(38, 61, this.table);
+            this.productionLabel = widgetFactory.createLabelCentered("", buildingStyle, this.table.getWidth() / 2, 21, this.table);
+            this.levelLabel = widgetFactory.createLabelCentered("", levelStyle, this.table.getWidth() / 2, 2, this.table);
+            this.table.addListener(new ClickListener() {
+                @Override
+                public void clicked(InputEvent event, float x, float y) {
+                    listener.onBuildingClicked(buildingId);
+                }
+            });
         }
-        this.widgetFactory.createLabelCentered(ValueFormatter.format(buildingSummaryDto.productionAmount()), labelStyle, buildingCell.getWidth() / 2, 21, buildingCell);
-        String levelsQueuedText = buildingSummaryDto.levelsQueued() > 0 ? " (" + buildingSummaryDto.levelsQueued() + ")" : "";
-        String levelText = buildingSummaryDto.size() + levelsQueuedText + "/" + buildingSummaryDto.maxLevel();
-        this.widgetFactory.createLabelCentered(levelText, labelSmall, buildingCell.getWidth() / 2, 2, buildingCell);
+
+        private void update(RegionsBuildings regions, int building) {
+            this.buildingId = regions.buildingId(building);
+            int typeIndex = regions.buildingType(building);
+            Drawable buildingDrawable = typeIndex >= 0 ? buildingDrawables[typeIndex] : null;
+            if (this.buildingImage.getDrawable() != buildingDrawable) {
+                this.buildingImage.setDrawable(buildingDrawable);
+                if (buildingDrawable != null) {
+                    this.buildingImage.setSize(buildingDrawable.getMinWidth(), buildingDrawable.getMinHeight());
+                }
+            }
+            Drawable suspended = regions.buildingSuspended(building) ? suspendedDrawable : null;
+            if (this.suspendedImage.getDrawable() != suspended) {
+                this.suspendedImage.setDrawable(suspended);
+                if (suspended != null) {
+                    this.suspendedImage.setSize(suspended.getMinWidth(), suspended.getMinHeight());
+                }
+            }
+            this.productionLabel.setText(textFormat.fixed(text, regions.buildingProduction(building), 4));
+            text.clear();
+            text.append(regions.buildingSize(building));
+            int levelsQueued = regions.buildingLevelsQueued(building);
+            if (levelsQueued > 0) {
+                text.append(" (").append(levelsQueued).append(')');
+            }
+            text.append('/').append(regions.buildingMaxLevel(building));
+            this.levelLabel.setText(text);
+        }
     }
 }

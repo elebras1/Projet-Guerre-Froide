@@ -7,19 +7,23 @@ import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.badlogic.gdx.utils.CharArray;
 import com.github.tommyettinger.ds.ObjectList;
-import com.populaire.projetguerrefroide.dto.ProvinceDto;
-import com.populaire.projetguerrefroide.dto.DevelopementBuildingLevelDto;
-import com.populaire.projetguerrefroide.dto.SpecialBuildingDto;
+import com.populaire.projetguerrefroide.protocol.catalog.Catalog;
+import com.populaire.projetguerrefroide.protocol.response.ProvinceDetails;
 import com.populaire.projetguerrefroide.screen.listener.ProvincePanelListener;
+import com.populaire.projetguerrefroide.ui.UiCatalog;
+import com.populaire.projetguerrefroide.ui.format.TextFormat;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.FontsSkin;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiProvinceSkin;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiSkin;
 import com.populaire.projetguerrefroide.ui.widget.FlagImage;
+import com.populaire.projetguerrefroide.ui.widget.SkinDrawables;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
+import com.populaire.projetguerrefroide.util.BuildingUtils;
 import com.populaire.projetguerrefroide.util.LabelUtils;
-import com.populaire.projetguerrefroide.util.ValueFormatter;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -53,15 +57,71 @@ public class ProvincePanel extends Table {
     private List<Image> antiAircraftGunsLevel;
     private List<Image> colorsBuildings;
     private List<Image> specialBuildings;
-    private final List<SpecialBuildingDto> specialBuildingData;
+    private final UiCatalog uiCatalog;
+    private final TextFormat textFormat;
+    private final CharArray text;
+    private final Drawable[] terrainDrawables;
+    private final Drawable[] resourceDrawables;
+    private final Drawable[] factoryColorDrawables;
+    private final Drawable[] specialBuildingDrawables;
+    private final Drawable noResourceDrawable;
+    private final Drawable levelOnDrawable;
+    private final Drawable levelOffDrawable;
+    private final Drawable noFactoryDrawable;
+    private final Drawable emptySpecialBuildingDrawable;
+    private final int[] specialTypes;
+    private final int[] specialLevels;
+    private final int[] specialMaxLevels;
+    private final int[] specialStaffPosts;
+    private final int[] specialStaffFilled;
+    private final float[] specialEffectiveLevels;
+    private final float[] specialStorageCapacities;
+    private int specialCount;
+    private final int[] regionProvincesShown;
     private ProvincePanelListener listener;
 
-    public ProvincePanel(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, Skin skinFonts, Map<String, String> localisation) {
+    public ProvincePanel(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, Skin skinFonts, Map<String, String> localisation, UiCatalog uiCatalog, TextFormat textFormat) {
         this.widgetFactory = widgetFactory;
         this.skin = skin;
         this.skinUi = skinUi;
         this.skinFlags = skinFlags;
         this.localisation = localisation;
+        this.uiCatalog = uiCatalog;
+        this.textFormat = textFormat;
+        this.text = new CharArray(32);
+        Catalog catalog = uiCatalog.catalog();
+        this.terrainDrawables = new Drawable[catalog.terrains().size()];
+        for (int i = 0; i < this.terrainDrawables.length; i++) {
+            String name = "prov_terrain_" + catalog.terrains().nameId(i);
+            this.terrainDrawables[i] = SkinDrawables.optional(skin, name, null);
+        }
+        this.noResourceDrawable = skinUi.getDrawable(UiSkin.Drawables.GOOD_NONE_SMALL);
+        this.resourceDrawables = new Drawable[catalog.goods().size()];
+        for (int i = 0; i < this.resourceDrawables.length; i++) {
+            String name = "good_" + catalog.goods().nameId(i) + "_small";
+            this.resourceDrawables[i] = SkinDrawables.optional(skinUi, name, this.noResourceDrawable);
+        }
+        this.factoryColorDrawables = new Drawable[catalog.buildingTypes().size()];
+        this.specialBuildingDrawables = new Drawable[catalog.buildingTypes().size()];
+        for (int i = 0; i < this.factoryColorDrawables.length; i++) {
+            String color = BuildingUtils.getColor(catalog.buildingTypes().nameId(i));
+            this.factoryColorDrawables[i] = color != null ? SkinDrawables.optional(skin, "factory_plupp_" + color, null) : null;
+            String specialName = catalog.buildingTypes().nameId(i) + "_building";
+            this.specialBuildingDrawables[i] = SkinDrawables.optional(skin, specialName, null);
+        }
+        this.levelOnDrawable = skin.getDrawable(UiProvinceSkin.Drawables.PROV_BUILDING_PLUPP_ON);
+        this.levelOffDrawable = skin.getDrawable(UiProvinceSkin.Drawables.PROV_BUILDING_PLUPP_OFF);
+        this.noFactoryDrawable = skin.getDrawable(UiProvinceSkin.Drawables.FACTORY_PLUPP_NOFACTORY);
+        this.emptySpecialBuildingDrawable = skin.getDrawable(UiProvinceSkin.Drawables.EMPTY_SPEC_BUILDING);
+        this.specialTypes = new int[8];
+        this.specialLevels = new int[8];
+        this.specialMaxLevels = new int[8];
+        this.specialStaffPosts = new int[8];
+        this.specialStaffFilled = new int[8];
+        this.specialEffectiveLevels = new float[8];
+        this.specialStorageCapacities = new float[8];
+        this.regionProvincesShown = new int[8];
+        Arrays.fill(this.regionProvincesShown, -2);
         this.provinceNamesRegion = new ObjectList<>();
         this.navalBaseLevel = new ObjectList<>();
         this.airBaseLevel = new ObjectList<>();
@@ -69,7 +129,6 @@ public class ProvincePanel extends Table {
         this.antiAircraftGunsLevel = new ObjectList<>();
         this.colorsBuildings = new ObjectList<>();
         this.specialBuildings = new ObjectList<>();
-        this.specialBuildingData = new ObjectList<>();
         Drawable background = skin.getDrawable(UiProvinceSkin.Drawables.BG_PROVINCE);
         this.setBackground(background);
         this.setSize(background.getMinWidth(), background.getMinHeight());
@@ -188,8 +247,8 @@ public class ProvincePanel extends Table {
             this.specialBuildings.get(i).addListener(new InputListener() {
                 @Override
                 public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor) {
-                    if (listener != null && slot < specialBuildingData.size()) {
-                        listener.updateHoverTooltip(specialBuildingTooltip(specialBuildingData.get(slot)));
+                    if (listener != null && slot < specialCount) {
+                        listener.updateHoverTooltip(specialBuildingTooltip(slot));
                     }
                 }
 
@@ -208,204 +267,165 @@ public class ProvincePanel extends Table {
         this.listener = listener;
     }
 
-    private String specialBuildingTooltip(SpecialBuildingDto building) {
-        StringBuilder text = new StringBuilder(this.localisation.get(building.nameId()));
-        text.append("\n").append(this.localisation.get("SPECIAL_BUILDING_LEVEL")).append(" : ").append(building.level()).append(" / ").append(building.maxLevel());
-        if (building.staffPosts() > 0) {
-            text.append("\n").append(this.localisation.get("SPECIAL_BUILDING_STAFF")).append(" : ").append(building.staffFilled()).append(" / ").append(building.staffPosts());
+    private String specialBuildingTooltip(int slot) {
+        StringBuilder tooltip = new StringBuilder(this.uiCatalog.buildingTypeName(this.specialTypes[slot]));
+        tooltip.append("\n").append(this.localisation.get("SPECIAL_BUILDING_LEVEL")).append(" : ").append(this.specialLevels[slot]).append(" / ").append(this.specialMaxLevels[slot]);
+        if (this.specialStaffPosts[slot] > 0) {
+            tooltip.append("\n").append(this.localisation.get("SPECIAL_BUILDING_STAFF")).append(" : ").append(this.specialStaffFilled[slot]).append(" / ").append(this.specialStaffPosts[slot]);
         }
-        text.append("\n").append(this.localisation.get("SPECIAL_BUILDING_EFFECTIVE_LEVEL")).append(" : ").append(String.format("%.2f", building.effectiveLevel()));
-        if (building.storageCapacity() > 0f) {
-            text.append("\n").append(this.localisation.get("SPECIAL_BUILDING_CAPACITY")).append(" : ").append(Math.round(building.storageCapacity()));
+        tooltip.append("\n").append(this.localisation.get("SPECIAL_BUILDING_EFFECTIVE_LEVEL")).append(" : ").append(String.format("%.2f", this.specialEffectiveLevels[slot]));
+        if (this.specialStorageCapacities[slot] > 0f) {
+            tooltip.append("\n").append(this.localisation.get("SPECIAL_BUILDING_CAPACITY")).append(" : ").append(Math.round(this.specialStorageCapacities[slot]));
         }
-        return text.toString();
+        return tooltip.toString();
     }
 
-    public void setData(ProvinceDto provinceDto) {
-        this.setProvinceName(provinceDto.provinceNameId());
-        this.setRegionName(provinceDto.regionNameId());
-        this.setTerrainImage(provinceDto.terrainImage());
-        this.setResourceImage(provinceDto.resourceImage());
-        this.setPopulationRegion(ValueFormatter.format(provinceDto.populationRegion(), this.localisation));
-        this.setWorkersRegion(ValueFormatter.format(provinceDto.workersRegion(), this.localisation));
-        this.setDevelopmentIndexRegion(provinceDto.developmentIndexRegion());
-        this.setIncomeRegion(provinceDto.incomeRegion());
-        this.setIndustryRegion(provinceDto.industryRegion());
-        this.setFlagImage(provinceDto.countryNameId(), provinceDto.colonizerNameId());
-        this.setFlagCountriesCore(provinceDto.flagCountriesCore());
-        this.setResourceProduced(provinceDto.resourceProduced());
-        this.setInfrastructureValue(provinceDto.infrastructureValue());
-        this.setGuerillaValue(provinceDto.guerillaValue());
-        this.setPopulationProvince(ValueFormatter.format(provinceDto.populationProvince(), this.localisation));
-        this.setIncomeProvince(provinceDto.incomeProvince());
-        this.setRevoltRisk(provinceDto.revoltRisk());
-        this.setProvinceNamesRegion(provinceDto.provinceIdsRegion());
-        DevelopementBuildingLevelDto developementBuildingLevelDto = provinceDto.developmentBuildingLevel();
-        this.setBuildingLevel(this.navalBaseLevel, developementBuildingLevelDto.navalBaseLevel());
-        this.setBuildingLevel(this.airBaseLevel, developementBuildingLevelDto.airBaseLevel());
-        this.setBuildingLevel(this.radarStationLevel, developementBuildingLevelDto.radarStationLevel());
-        this.setBuildingLevel(this.antiAircraftGunsLevel, developementBuildingLevelDto.antiAircraftGunsLevel());
-        this.setColorBuildings(provinceDto.colorBuildings());
-        this.setSpecialBuildings(provinceDto.specialBuildings());
-    }
-
-    public void setResourceProduced(float resourceProduced) {
-        if(resourceProduced == -1f) {
-            this.resourceProduced.setText("-");
+    public void setData(ProvinceDetails province) {
+        this.setProvinceName(this.uiCatalog.provinceName(province.provinceIndex()));
+        this.setRegionName(this.uiCatalog.regionName(province.regionIndex()));
+        this.setTerrainImage(province.terrainIndex());
+        this.setResourceImage(province.resourceGoodIndex());
+        this.setRightAligned(this.populationRegion, this.textFormat.compact(this.text, province.populationRegion()), 135, 83);
+        this.setRightAligned(this.workersRegion, this.textFormat.compact(this.text, province.workersRegion()), 135, 61);
+        this.setRightAligned(this.developmentIndexRegion, TextFormat.integer(this.text, province.developmentIndexRegion()), 125, 38);
+        this.setRightAligned(this.incomeRegion, TextFormat.integer(this.text, province.incomeRegion()), 248, 60);
+        this.setRightAligned(this.industryRegion, TextFormat.integer(this.text, province.industryRegion()), 360, 75);
+        this.flagImage.setFlag(this.uiCatalog.flag(province.ownerIndex()));
+        this.flagImage.setPosition(36, 430);
+        this.setFlagCountriesCore(province);
+        this.setResourceProduced(province.resourceProduced());
+        this.text.clear();
+        this.setRightAligned(this.infrastructureValue, this.text.append(province.infrastructureValue()).append('%'), 245, 178);
+        this.text.clear();
+        if (province.guerillaValue() != 0) {
+            this.text.append(province.guerillaValue());
         } else {
-            this.resourceProduced.setText(ValueFormatter.format(resourceProduced));
+            this.text.append('-');
         }
-        this.resourceProduced.setPosition(136 - this.resourceProduced.getMinWidth(), 178);
+        this.setRightAligned(this.guerillaValue, this.text, 355, 223);
+        this.setRightAligned(this.populationProvince, this.textFormat.compact(this.text, province.populationProvince()), 115, 222);
+        this.text.clear();
+        this.setRightAligned(this.incomeProvince, TextFormat.appendDecimal(this.text, province.incomeProvince(), 1, '.'), 185, 222);
+        this.text.clear();
+        this.setRightAligned(this.revoltRisk, TextFormat.appendDecimal(this.text, province.revoltRisk(), 1, '.').append('%'), 275, 222);
+        this.setProvinceNamesRegion(province);
+        this.setBuildingLevel(this.navalBaseLevel, province.navalBaseLevel());
+        this.setBuildingLevel(this.airBaseLevel, province.airBaseLevel());
+        this.setBuildingLevel(this.radarStationLevel, province.radarStationLevel());
+        this.setBuildingLevel(this.antiAircraftGunsLevel, province.antiAircraftGunsLevel());
+        this.setColorBuildings(province);
+        this.setSpecialBuildings(province);
     }
 
-    private void setResourceImage(String name) {
-        Drawable resource;
-        if(name != null) {
-            resource = this.skinUi.getDrawable("good_" + name + "_small");
-        } else {
-            resource = this.skinUi.getDrawable(UiSkin.Drawables.GOOD_NONE_SMALL);
+    private void setRightAligned(Label label, CharArray value, float right, float y) {
+        if (!label.textEquals(value)) {
+            label.setText(value);
         }
+        label.setPosition(right - label.getMinWidth(), y);
+    }
 
+    private void setResourceProduced(float resourceProduced) {
+        if (resourceProduced == -1f) {
+            this.text.clear();
+            this.text.append('-');
+        } else {
+            this.textFormat.fixed(this.text, resourceProduced, 4);
+        }
+        this.setRightAligned(this.resourceProduced, this.text, 136, 178);
+    }
+
+    private void setResourceImage(int goodIndex) {
+        Drawable resource = goodIndex >= 0 ? this.resourceDrawables[goodIndex] : this.noResourceDrawable;
         this.resourceImage.setDrawable(resource);
         this.resourceImage.setSize(resource.getMinWidth(), resource.getMinHeight());
         this.resourceImage.setPosition(22, 160);
     }
 
-    private void setProvinceName(String nameId) {
-        this.provinceName.setText(this.localisation.get(nameId));
+    private void setProvinceName(String name) {
+        this.provinceName.setText(name);
         this.provinceName.setPosition(this.getWidth() / 2 - this.provinceName.getMinWidth() / 2, 471);
     }
 
-    private void setRegionName(String nameId) {
-        this.regionName.setText(this.localisation.get(nameId));
+    private void setRegionName(String name) {
+        this.regionName.setText(name);
         this.regionName.setPosition(this.regionName.getParent().getWidth() / 2 - this.regionName.getMinWidth() / 2, 104);
     }
 
-    private void setTerrainImage(String name) {
-        Drawable terrain = this.skin.getDrawable("prov_terrain_" + name);
+    private void setTerrainImage(int terrainIndex) {
+        Drawable terrain = terrainIndex >= 0 ? this.terrainDrawables[terrainIndex] : null;
         this.terrainImage.setDrawable(terrain);
-        this.terrainImage.setSize(terrain.getMinWidth(), terrain.getMinHeight());
+        if (terrain != null) {
+            this.terrainImage.setSize(terrain.getMinWidth(), terrain.getMinHeight());
+        }
     }
 
-    private void setPopulationRegion(String population) {
-        this.populationRegion.setText(population);
-        this.populationRegion.setPosition(135 - this.populationRegion.getMinWidth(), 83);
-    }
-
-    private void setWorkersRegion(String workers) {
-        this.workersRegion.setText(workers);
-        this.workersRegion.setPosition(135 - this.workersRegion.getMinWidth(), 61);
-    }
-
-    private void setDevelopmentIndexRegion(int developmentIndex) {
-        this.developmentIndexRegion.setText(developmentIndex);
-        this.developmentIndexRegion.setPosition(125 - this.developmentIndexRegion.getMinWidth(), 38);
-    }
-
-    private void setIncomeRegion(int income) {
-        this.incomeRegion.setText(income);
-        this.incomeRegion.setPosition(248 - this.incomeRegion.getMinWidth(), 60);
-    }
-
-    private void setIndustryRegion(int industry) {
-        this.industryRegion.setText(industry);
-        this.industryRegion.setPosition(360 - this.industryRegion.getMinWidth(), 75);
-    }
-
-    private void setFlagImage(String countryNameId, String colonizerNameId) {
-        this.flagImage.setFlag(this.widgetFactory.getFlagTextureRegion(this.skinFlags, countryNameId, colonizerNameId));
-        this.flagImage.setPosition(36, 430);
-    }
-
-    private void setFlagCountriesCore(List<String> countriesCore) {
-        for(int i = 0; i < this.countriesCoreFlagImages.size(); i++) {
-            if(i < countriesCore.size()) {
-                this.countriesCoreFlagImages.get(i).setFlag(this.skinFlags.getRegion(countriesCore.get(i)));
-                this.addActor(this.countriesCoreFlagImages.get(i));
-            } else {
-                this.countriesCoreFlagImages.get(i).remove();
+    private void setFlagCountriesCore(ProvinceDetails province) {
+        for (int i = 0; i < this.countriesCoreFlagImages.size(); i++) {
+            FlagImage coreFlag = this.countriesCoreFlagImages.get(i);
+            if (i < province.coreCount()) {
+                coreFlag.setFlag(this.uiCatalog.plainFlag(province.core(i)));
+                if (coreFlag.getParent() != this) {
+                    this.addActor(coreFlag);
+                }
+            } else if (coreFlag.getParent() != null) {
+                coreFlag.remove();
             }
         }
     }
 
-    private void setInfrastructureValue(int infrastructureValue) {
-        this.infrastructureValue.setText(infrastructureValue + "%");
-        this.infrastructureValue.setPosition(245 - this.infrastructureValue.getMinWidth(), 178);
-    }
-
-    private void setGuerillaValue(float guerillaValue) {
-        String text = "-";
-        if(guerillaValue != 0f) {
-            text = String.valueOf(guerillaValue);
-        }
-        this.guerillaValue.setText(text);
-        this.guerillaValue.setPosition(355 - this.guerillaValue.getMinWidth(), 223);
-    }
-
-    private void setPopulationProvince(String populationProvince) {
-        this.populationProvince.setText(populationProvince);
-        this.populationProvince.setPosition(115 - this.populationProvince.getMinWidth(), 222);
-    }
-
-    private void setIncomeProvince(float incomeProvince) {
-        this.incomeProvince.setText(String.valueOf(incomeProvince));
-        this.incomeProvince.setPosition(185 - this.incomeProvince.getMinWidth(), 222);
-    }
-
-    private void setRevoltRisk(float revoltRisk) {
-        this.revoltRisk.setText(revoltRisk + "%");
-        this.revoltRisk.setPosition(275 - this.revoltRisk.getMinWidth(), 222);
-    }
-
-    private void setProvinceNamesRegion(List<String> provincesRegion) {
+    private void setProvinceNamesRegion(ProvinceDetails province) {
         float y = this.getHeight() - 77;
-        for(int i = 0; i < this.provinceNamesRegion.size(); i++) {
+        for (int i = 0; i < this.provinceNamesRegion.size(); i++) {
             Label label = this.provinceNamesRegion.get(i);
-            if(i < provincesRegion.size()) {
-                label.setText(this.localisation.get(provincesRegion.get(i)));
-                LabelUtils.truncateLabel(label, 85);
-            } else {
-                label.setText("");
+            int provinceIndex = i < province.regionProvinceCount() ? province.regionProvince(i) : -1;
+            if (this.regionProvincesShown[i] != provinceIndex) {
+                this.regionProvincesShown[i] = provinceIndex;
+                if (provinceIndex >= 0) {
+                    label.setText(this.uiCatalog.provinceName(provinceIndex));
+                    LabelUtils.truncateLabel(label, 85);
+                } else {
+                    label.setText("");
+                }
             }
             label.setPosition(295, y);
             y -= 17;
         }
     }
 
-    private void setBuildingLevel(List<Image> buildingLevel, byte level) {
-        for(int i = 0; i < buildingLevel.size(); i++) {
-            Image image = buildingLevel.get(i);
-            if(i < level) {
-                image.setDrawable(this.skin.getDrawable(UiProvinceSkin.Drawables.PROV_BUILDING_PLUPP_ON));
-            } else {
-                image.setDrawable(this.skin.getDrawable(UiProvinceSkin.Drawables.PROV_BUILDING_PLUPP_OFF));
-            }
+    private void setBuildingLevel(List<Image> buildingLevel, int level) {
+        for (int i = 0; i < buildingLevel.size(); i++) {
+            buildingLevel.get(i).setDrawable(i < level ? this.levelOnDrawable : this.levelOffDrawable);
         }
     }
 
-    private void setColorBuildings(List<String> colorsBuildings) {
-        for (int i = 0; i < this.colorsBuildings.size(); i++) {
-            Image image = this.colorsBuildings.get(i);
-            if (i < colorsBuildings.size()) {
-                String color = colorsBuildings.get(i);
-                image.setDrawable(this.skin.getDrawable("factory_plupp_" + color));
-            } else {
-                image.setDrawable(this.skin.getDrawable(UiProvinceSkin.Drawables.FACTORY_PLUPP_NOFACTORY));
+    private void setColorBuildings(ProvinceDetails province) {
+        int shown = 0;
+        for (int i = 0; i < province.economyBuildingCount() && shown < this.colorsBuildings.size(); i++) {
+            Drawable color = this.factoryColorDrawables[province.economyBuildingType(i)];
+            if (color != null) {
+                this.colorsBuildings.get(shown++).setDrawable(color);
             }
+        }
+        for (int i = shown; i < this.colorsBuildings.size(); i++) {
+            this.colorsBuildings.get(i).setDrawable(this.noFactoryDrawable);
         }
     }
 
-    private void setSpecialBuildings(List<SpecialBuildingDto> specialBuildings) {
-        this.specialBuildingData.clear();
-        this.specialBuildingData.addAll(specialBuildings);
-        for(int i = 0; i < this.specialBuildings.size(); i++) {
+    private void setSpecialBuildings(ProvinceDetails province) {
+        this.specialCount = Math.min(province.specialCount(), this.specialTypes.length);
+        for (int i = 0; i < this.specialCount; i++) {
+            this.specialTypes[i] = province.specialType(i);
+            this.specialLevels[i] = province.specialLevel(i);
+            this.specialMaxLevels[i] = province.specialMaxLevel(i);
+            this.specialStaffPosts[i] = province.specialStaffPosts(i);
+            this.specialStaffFilled[i] = province.specialStaffFilled(i);
+            this.specialEffectiveLevels[i] = province.specialEffectiveLevel(i);
+            this.specialStorageCapacities[i] = province.specialStorageCapacity(i);
+        }
+        for (int i = 0; i < this.specialBuildings.size(); i++) {
             Image image = this.specialBuildings.get(i);
-            if(i < specialBuildings.size()) {
-                String name = specialBuildings.get(i).nameId();
-                image.setDrawable(this.skin.getDrawable(name + "_building"));
-            } else {
-                image.setDrawable(this.skin.getDrawable(UiProvinceSkin.Drawables.EMPTY_SPEC_BUILDING));
-            }
+            Drawable drawable = i < this.specialCount ? this.specialBuildingDrawables[this.specialTypes[i]] : null;
+            image.setDrawable(drawable != null ? drawable : this.emptySpecialBuildingDrawable);
         }
     }
 }

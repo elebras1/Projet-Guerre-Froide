@@ -3,42 +3,43 @@ package com.populaire.projetguerrefroide.screen;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.utils.Disposable;
-import com.populaire.projetguerrefroide.command.CommandBus;
-import com.populaire.projetguerrefroide.service.*;
+import com.populaire.projetguerrefroide.protocol.SimulationChannel;
+import com.populaire.projetguerrefroide.protocol.SimulationFactory;
+import com.populaire.projetguerrefroide.service.ConfigurationService;
+import com.populaire.projetguerrefroide.ui.UiContext;
 
 public class ScreenManager implements Disposable {
     private final Game game;
-    private final GameContext gameContext;
+    private final UiContext uiContext;
     private final ConfigurationService configurationService;
-    private final WorldService worldService;
-    private final TimeService timeService;
-    private final EconomyService economyService;
-    private final CommandBus commandBus;
+    private final SimulationFactory simulationFactory;
+    private GameSession session;
 
-    public ScreenManager(Game game, GameContext gameContext, ConfigurationService configurationService, WorldService worldService, TimeService timeService, EconomyService economyService, CommandBus commandBus) {
+    public ScreenManager(Game game, UiContext uiContext, ConfigurationService configurationService, SimulationFactory simulationFactory) {
         this.game = game;
-        this.gameContext = gameContext;
+        this.uiContext = uiContext;
         this.configurationService = configurationService;
-        this.worldService = worldService;
-        this.timeService = timeService;
-        this.economyService = economyService;
-        this.commandBus = commandBus;
+        this.simulationFactory = simulationFactory;
     }
 
     public void showMainMenuScreen() {
-        this.showScreen(new MainMenuScreen(this, this.gameContext, this.configurationService));
+        this.showScreen(new MainMenuScreen(this, this.uiContext, this.configurationService));
+        this.closeSession();
     }
 
     public void showLoadScreen() {
-        this.showScreen(new LoadScreen(this, this.gameContext, this.configurationService, this.worldService));
+        this.closeSession();
+        SimulationChannel channel = this.simulationFactory.create(this.uiContext.getBookmark().date(), this.uiContext.getSettings().isDebugMode());
+        this.session = new GameSession(channel, this.uiContext);
+        this.showScreen(new LoadScreen(this, this.uiContext, this.configurationService, this.session));
     }
 
     public void showNewGameScreen() {
-        this.showScreen(new NewGameScreen(this, this.gameContext, this.worldService, this.configurationService));
+        this.showScreen(new NewGameScreen(this, this.uiContext, this.session, this.configurationService));
     }
 
     public void showGameScreen() {
-        this.showScreen(new GameScreen(this, this.gameContext, this.worldService, this.timeService, this.configurationService, this.economyService, this.commandBus));
+        this.showScreen(new GameScreen(this, this.uiContext, this.session, this.configurationService));
     }
 
     public void showScreen(Screen newScreen) {
@@ -49,7 +50,15 @@ public class ScreenManager implements Disposable {
         }
     }
 
+    private void closeSession() {
+        if (this.session != null) {
+            this.session.dispose();
+            this.session = null;
+        }
+    }
+
     @Override
     public void dispose() {
+        this.closeSession();
     }
 }

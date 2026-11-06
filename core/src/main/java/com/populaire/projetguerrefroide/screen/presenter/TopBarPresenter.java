@@ -3,71 +3,99 @@ package com.populaire.projetguerrefroide.screen.presenter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.utils.CharArray;
+import com.populaire.projetguerrefroide.protocol.SimulationHeader;
+import com.populaire.projetguerrefroide.protocol.request.RequestKind;
+import com.populaire.projetguerrefroide.protocol.response.CountryOverview;
 import com.populaire.projetguerrefroide.screen.GameFlowHandler;
-import com.populaire.projetguerrefroide.screen.listener.TimeListener;
+import com.populaire.projetguerrefroide.screen.GameSession;
 import com.populaire.projetguerrefroide.screen.listener.TopBarListener;
-import com.populaire.projetguerrefroide.service.GameContext;
-import com.populaire.projetguerrefroide.service.TimeService;
-import com.populaire.projetguerrefroide.service.WorldService;
+import com.populaire.projetguerrefroide.ui.UiContext;
+import com.populaire.projetguerrefroide.ui.UiState;
+import com.populaire.projetguerrefroide.ui.format.DateText;
+import com.populaire.projetguerrefroide.ui.format.TextFormat;
+import com.populaire.projetguerrefroide.ui.request.RequestWatch;
 import com.populaire.projetguerrefroide.ui.view.TopBar;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
-import com.populaire.projetguerrefroide.util.DateUtils;
+import com.populaire.projetguerrefroide.util.LocaleUtils;
 
-import java.time.LocalDate;
-
-public class TopBarPresenter implements Presenter, TopBarListener, TimeListener {
-    private final GameContext gameContext;
-    private final WorldService worldService;
-    private final TimeService timeService;
+public class TopBarPresenter extends RequestingPresenter implements TopBarListener {
+    private final UiContext uiContext;
     private final GameFlowHandler gameFlowHandler;
     private final WidgetFactory widgetFactory;
     private final Skin skinTopBar;
     private final Skin skinUi;
     private final Skin skinFlags;
+    private final TextFormat textFormat;
+    private final DateText dateText;
+    private final CharArray dateChars;
     private TopBar topBar;
+    private long shownEpochDay;
 
-    public TopBarPresenter(GameContext gameContext, WorldService worldService, TimeService timeService, GameFlowHandler gameFlowHandler, WidgetFactory widgetFactory, Skin skinTopBar, Skin skinUi, Skin skinFlags) {
-        this.gameContext = gameContext;
-        this.worldService = worldService;
-        this.timeService = timeService;
+    public TopBarPresenter(GameSession session, UiContext uiContext, GameFlowHandler gameFlowHandler, WidgetFactory widgetFactory, Skin skinTopBar, Skin skinUi, Skin skinFlags, TextFormat textFormat) {
+        super(session);
+        this.uiContext = uiContext;
         this.gameFlowHandler = gameFlowHandler;
         this.widgetFactory = widgetFactory;
         this.skinTopBar = skinTopBar;
         this.skinUi = skinUi;
         this.skinFlags = skinFlags;
+        this.textFormat = textFormat;
+        String language = uiContext.getSettings().getLanguage();
+        this.dateText = new DateText(uiContext.getLocalisation().get("DATE_FORMAT"), LocaleUtils.getLocale(language));
+        this.dateChars = new CharArray(32);
+        this.shownEpochDay = Long.MIN_VALUE;
     }
 
     @Override
     public void initialize(Stage stage) {
-        this.topBar = new TopBar(this.widgetFactory, this.skinTopBar, this.skinUi, this.skinFlags, this.gameContext.getSkinFonts(), this.gameContext.getLocalisation(), this.worldService.getCountryPlayerNameId(), this.worldService.getColonizerNameIdOfSelectedProvince(), this);
+        UiState uiState = this.session.uiState();
+        this.topBar = new TopBar(this.widgetFactory, this.skinTopBar, this.skinUi, this.skinFlags, this.uiContext.getSkinFonts(), this.uiContext.getLocalisation(), this.session.uiCatalog().flag(uiState.playerCountry()), this);
         this.topBar.setPosition(0, Gdx.graphics.getHeight() - this.topBar.getHeight());
-        this.topBar.setCountryData(this.worldService.buildCountryDetails());
+        this.topBar.setDateState(uiState.displaySpeed());
         stage.addActor(this.topBar);
+        this.watch(RequestKind.COUNTRY_OVERVIEW, new CountryOverview(), new CountryOverview(),
+            () -> true, params -> params.index(this.session.uiState().playerCountry()), RequestWatch.Staleness.EVERY_REVISION, this::applyCountry);
+    }
+
+    private void applyCountry(CountryOverview country) {
+        if (country.found()) {
+            this.topBar.setCountryData(country, this.textFormat);
+        }
     }
 
     @Override
-    public void refresh() {
-
-    }
-
-    @Override
-    public void update(float delta) {
-
+    protected void afterRequests(float delta) {
+        SimulationHeader header = this.session.header();
+        long epochDay = header.epochDay();
+        if (epochDay != this.shownEpochDay) {
+            this.shownEpochDay = epochDay;
+            this.topBar.setDate(this.dateText.format(this.dateChars, epochDay));
+        }
     }
 
     @Override
     public int onSpeedUp() {
-        return this.timeService.upSpeed();
+        UiState uiState = this.session.uiState();
+        uiState.requestedSpeed(Math.min(SimulationHeader.MAX_SPEED, uiState.requestedSpeed() + 1));
+        this.session.channel().requestSpeed(uiState.requestedSpeed());
+        return uiState.displaySpeed();
     }
 
     @Override
     public int onSpeedDown() {
-        return this.timeService.downSpeed();
+        UiState uiState = this.session.uiState();
+        uiState.requestedSpeed(Math.max(SimulationHeader.MIN_SPEED, uiState.requestedSpeed() - 1));
+        this.session.channel().requestSpeed(uiState.requestedSpeed());
+        return uiState.displaySpeed();
     }
 
     @Override
     public int onTogglePause() {
-        return this.timeService.togglePause();
+        UiState uiState = this.session.uiState();
+        uiState.requestedPaused(!uiState.requestedPaused());
+        this.session.channel().requestPaused(uiState.requestedPaused());
+        return uiState.displaySpeed();
     }
 
     @Override
@@ -76,12 +104,6 @@ public class TopBarPresenter implements Presenter, TopBarListener, TimeListener 
     }
 
     @Override
-    public void onNewDay(LocalDate date) {
-        this.topBar.setDate(DateUtils.formatDate(date, this.gameContext.getLocalisation(), this.gameContext.getSettings().getLanguage()));
-    }
-
-    @Override
     public void dispose() {
-
     }
 }

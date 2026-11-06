@@ -4,18 +4,22 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Align;
-import com.populaire.projetguerrefroide.dto.CountrySummaryDto;
+import com.populaire.projetguerrefroide.protocol.command.ChoosePlayerCountryCommand;
+import com.populaire.projetguerrefroide.protocol.request.RequestKind;
+import com.populaire.projetguerrefroide.protocol.response.CountrySummary;
+import com.populaire.projetguerrefroide.screen.GameSession;
 import com.populaire.projetguerrefroide.screen.ScreenManager;
 import com.populaire.projetguerrefroide.screen.listener.LobbyBoxListener;
-import com.populaire.projetguerrefroide.service.GameContext;
-import com.populaire.projetguerrefroide.service.WorldService;
+import com.populaire.projetguerrefroide.ui.UiContext;
+import com.populaire.projetguerrefroide.ui.format.TextFormat;
+import com.populaire.projetguerrefroide.ui.request.RequestWatch;
 import com.populaire.projetguerrefroide.ui.view.*;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
-public class HudPresenter implements Presenter, LobbyBoxListener {
-    private final GameContext gameContext;
-    private final WorldService worldService;
+public class HudPresenter extends RequestingPresenter implements LobbyBoxListener {
+    private final UiContext uiContext;
     private final ScreenManager screenManager;
+    private final TextFormat textFormat;
     private final WidgetFactory widgetFactory;
     private final Skin skin;
     private final Skin skinUi;
@@ -25,10 +29,11 @@ public class HudPresenter implements Presenter, LobbyBoxListener {
     private CountrySummaryPanel countrySummaryPanel;
     private LobbyBox lobbyBox;
 
-    public HudPresenter(GameContext context, WorldService worldService, ScreenManager screenManager, WidgetFactory factory, Skin skin, Skin skinUi, Skin skinFlags, Skin skinScrollbars, Skin skinPortraits) {
-        this.gameContext = context;
-        this.worldService = worldService;
+    public HudPresenter(GameSession session, UiContext context, ScreenManager screenManager, WidgetFactory factory, Skin skin, Skin skinUi, Skin skinFlags, Skin skinScrollbars, Skin skinPortraits, TextFormat textFormat) {
+        super(session);
+        this.uiContext = context;
         this.screenManager = screenManager;
+        this.textFormat = textFormat;
         this.widgetFactory = factory;
         this.skin = skin;
         this.skinUi = skinUi;
@@ -43,9 +48,9 @@ public class HudPresenter implements Presenter, LobbyBoxListener {
         topTable.setFillParent(true);
         topTable.top();
 
-        ScenarioSavegameSelector scenarioSelector = new ScenarioSavegameSelector(skin, gameContext.getSkinFonts(), gameContext.getBookmark(), gameContext.getLocalisation());
-        TitleBar titleBar = new TitleBar(widgetFactory, skin, gameContext.getSkinFonts(), gameContext.getLocalisation());
-        this.countrySummaryPanel = new CountrySummaryPanel(widgetFactory, skin, skinUi, skinFlags, skinPortraits, gameContext.getSkinFonts(), gameContext.getLocalisation());
+        ScenarioSavegameSelector scenarioSelector = new ScenarioSavegameSelector(skin, uiContext.getSkinFonts(), uiContext.getBookmark(), uiContext.getLocalisation());
+        TitleBar titleBar = new TitleBar(widgetFactory, skin, uiContext.getSkinFonts(), uiContext.getLocalisation());
+        this.countrySummaryPanel = new CountrySummaryPanel(widgetFactory, skin, skinUi, skinFlags, skinPortraits, uiContext.getSkinFonts(), uiContext.getLocalisation(), this.session.uiCatalog(), this.textFormat);
 
         topTable.add(scenarioSelector).align(Align.topLeft).expandX();
         topTable.add(titleBar).align(Align.top);
@@ -56,42 +61,47 @@ public class HudPresenter implements Presenter, LobbyBoxListener {
         bottomTable.setFillParent(true);
         bottomTable.bottom();
 
-        this.lobbyBox = new LobbyBox(widgetFactory, skin, skinScrollbars, gameContext.getSkinFonts(), gameContext.getLocalisation(), this);
+        this.lobbyBox = new LobbyBox(widgetFactory, skin, skinScrollbars, uiContext.getSkinFonts(), uiContext.getLocalisation(), this);
 
         bottomTable.add(lobbyBox).align(Align.bottom);
         bottomTable.pad(5);
 
         stage.addActor(topTable);
         stage.addActor(bottomTable);
+        this.watch(RequestKind.COUNTRY_SUMMARY, new CountrySummary(), new CountrySummary(),
+            () -> this.selectedCountry() >= 0, params -> params.index(this.selectedCountry()), RequestWatch.Staleness.EVERY_REVISION, this::applySummary);
+    }
+
+    private int selectedCountry() {
+        return this.session.mapView().ownerOf(this.session.uiState().selectedProvince());
+    }
+
+    private void applySummary(CountrySummary summary) {
+        if (summary.found()) {
+            this.countrySummaryPanel.update(summary);
+        }
     }
 
     @Override
-    public void refresh() {
-        boolean isSelected = this.worldService.isProvinceSelected();
-        CountrySummaryDto summary = this.worldService.buildCountrySummary();
-        if (isSelected && summary != null) {
-            this.countrySummaryPanel.update(summary, gameContext.getLocalisation());
-            this.countrySummaryPanel.setVisible(true);
-        } else {
+    protected void afterRequests(float delta) {
+        if (this.selectedCountry() < 0 && this.countrySummaryPanel.isVisible()) {
             this.countrySummaryPanel.hide();
         }
     }
 
     @Override
-    public void update(float delta) {
-
-    }
-
-    @Override
     public void onPlayClicked() {
-        if(this.worldService.setCountryPlayer()) {
-            this.screenManager.showGameScreen();
+        int countryIndex = this.selectedCountry();
+        if (countryIndex < 0) {
+            return;
         }
+        this.session.uiState().playerCountry(countryIndex);
+        this.session.channel().send(new ChoosePlayerCountryCommand(this.session.uiCatalog().catalog().countries().entityId(countryIndex)));
+        this.screenManager.showGameScreen();
     }
 
     @Override
     public void onBackClicked() {
-        this.worldService.dispose();
         this.screenManager.showMainMenuScreen();
     }
 

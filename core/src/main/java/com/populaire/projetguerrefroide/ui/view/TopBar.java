@@ -1,18 +1,20 @@
 package com.populaire.projetguerrefroide.ui.view;
 
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
-import com.populaire.projetguerrefroide.dto.CountryDto;
+import com.badlogic.gdx.utils.CharArray;
+import com.populaire.projetguerrefroide.protocol.response.CountryOverview;
 import com.populaire.projetguerrefroide.screen.listener.TopBarListener;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.FontsSkin;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiSkin;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiTopbarSkin;
 import com.populaire.projetguerrefroide.ui.widget.FlagImage;
+import com.populaire.projetguerrefroide.ui.format.TextFormat;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
-import com.populaire.projetguerrefroide.util.ValueFormatter;
 
 import java.util.Map;
 
@@ -36,13 +38,20 @@ public class TopBar extends Table {
     private Image defcon;
     private Image dateState;
     private Label date;
+    private final Drawable[] speedStates;
+    private final CharArray text;
 
-    public TopBar(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, Skin skinFonts, Map<String, String> localisation, String countryNameId, String colonizerNameId, TopBarListener listener) {
+    public TopBar(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, Skin skinFonts, Map<String, String> localisation, TextureRegion flag, TopBarListener listener) {
         this.widgetFactory = widgetFactory;
         this.skin = skin;
         this.skinUi = skinUi;
         this.skinFlags = skinFlags;
         this.localisation = localisation;
+        this.text = new CharArray(32);
+        this.speedStates = new Drawable[6];
+        for (int state = 0; state < this.speedStates.length; state++) {
+            this.speedStates[state] = skin.getDrawable("speed_indicator_slice_" + state);
+        }
         Drawable background = skin.getDrawable(UiTopbarSkin.Drawables.NAKED_TOPBAR);
         this.setBackground(background);
         this.setSize(background.getMinWidth(), background.getMinHeight());
@@ -50,7 +59,7 @@ public class TopBar extends Table {
         this.setCountryData(skinFonts);
         this.setTabButtons(skinFonts, listener);
         this.setDateSection(skinFonts, listener);
-        this.addActor(this.createFlagSection(countryNameId, colonizerNameId));
+        this.addActor(this.createFlagSection(flag));
         this.addActor(this.createPrestigeSection(skinFonts));
     }
 
@@ -110,12 +119,12 @@ public class TopBar extends Table {
         this.addActor(plusSpeed);
     }
 
-    private Actor createFlagSection(String countryNameId, String colonizeNameId) {
+    private Actor createFlagSection(TextureRegion flag) {
         Table flagSection = this.widgetFactory.createBackgroundTable(this.skin, UiTopbarSkin.Drawables.SMALL_NAKED_BAR, 37, 40);
         FlagImage flagImage = this.widgetFactory.createFlagImage(this.skinUi, UiSkin.Drawables.FLAG_ALPHA, UiSkin.Drawables.FLAG_OVERLAY);
         flagImage.setPosition(-10, -21);
         flagSection.addActor(flagImage);
-        flagImage.setFlag(this.widgetFactory.getFlagTextureRegion(this.skinFlags, countryNameId, colonizeNameId));
+        flagImage.setFlag(flag);
         this.widgetFactory.createFlatButton(this.skin, UiTopbarSkin.Drawables.STATS_BTN, 96, 13, flagSection);
         this.widgetFactory.createFlatButton(this.skin, UiTopbarSkin.Drawables.MENU_BTN, 126, 13, flagSection);
         this.defcon = this.widgetFactory.createImage(this.skin, UiTopbarSkin.Drawables.DEFCON_BUTTONS_0, 156, 4, flagSection);
@@ -157,30 +166,34 @@ public class TopBar extends Table {
         this.widgetFactory.createLabel(this.localisation.get("INTEL"), labelStyleJockey16Dark, 10, 20, intelButton);
     }
 
-    public void setCountryData(CountryDto countryDto) {
-        this.population.setText(ValueFormatter.format(countryDto.population(), this.localisation));
-        this.manpower.setText(String.valueOf(countryDto.manpower()));
-        this.grossDomesticProduct.setText(ValueFormatter.format(countryDto.grossDomesticProduct(), this.localisation));
-        this.money.setText(String.valueOf(countryDto.money()));
-        this.supplies.setText(String.valueOf(countryDto.supplies()));
-        this.fuel.setText(String.valueOf(countryDto.fuel()));
-        this.diplomaticInfluence.setText(String.valueOf(countryDto.diplomaticInfluence()));
-        this.uranium.setText(String.valueOf(countryDto.uranium()));
-        this.dissent.setText(ValueFormatter.format(countryDto.dissent(), this.localisation));
-        this.nationalUnity.setText(ValueFormatter.format(countryDto.nationalUnity(), this.localisation));
-        this.ranking.setText(String.valueOf(countryDto.ranking()));
-        ((Table) this.ranking.getParent()).pack();
+    public void setCountryData(CountryOverview country, TextFormat format) {
+        this.population.setText(format.compact(this.text, country.population()));
+        this.manpower.setText(TextFormat.integer(this.text, country.manpower()));
+        this.grossDomesticProduct.setText(format.compact(this.text, country.grossDomesticProduct()));
+        this.money.setText(TextFormat.integer(this.text, country.money()));
+        this.supplies.setText(TextFormat.integer(this.text, country.supplies()));
+        this.fuel.setText(TextFormat.integer(this.text, country.fuel()));
+        this.text.clear();
+        this.diplomaticInfluence.setText(TextFormat.appendDecimal(this.text, country.diplomaticInfluence(), 1, '.'));
+        this.uranium.setText(TextFormat.integer(this.text, country.uranium()));
+        this.dissent.setText(format.compact(this.text, country.dissent()));
+        this.nationalUnity.setText(format.compact(this.text, country.nationalUnity()));
+        TextFormat.integer(this.text, country.ranking());
+        if (!this.ranking.textEquals(this.text)) {
+            this.ranking.setText(this.text);
+            ((Table) this.ranking.getParent()).pack();
+        }
     }
 
     public void setDefcon(int defcon) {
         this.defcon.setDrawable(this.skin, "defcon_buttons_" + defcon);
     }
 
-    public void setDate(String date) {
+    public void setDate(CharSequence date) {
         this.date.setText(date);
     }
 
-    private void setDateState(int state) {
-        this.dateState.setDrawable(this.skin, "speed_indicator_slice_" + state);
+    public void setDateState(int state) {
+        this.dateState.setDrawable(this.speedStates[state]);
     }
 }

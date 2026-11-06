@@ -10,7 +10,7 @@ import com.populaire.projetguerrefroide.dao.impl.WorldDaoImpl;
 import com.populaire.projetguerrefroide.loader.WorldLoader;
 import com.populaire.projetguerrefroide.pojo.Bookmark;
 import com.populaire.projetguerrefroide.service.EconomyService;
-import com.populaire.projetguerrefroide.service.GameContext;
+import com.populaire.projetguerrefroide.simulation.SimulationContext;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -19,7 +19,6 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestMethodOrder;
-import org.mockito.Mockito;
 
 import java.io.File;
 import java.time.LocalDate;
@@ -75,17 +74,15 @@ public class EconomySimulationAnalysisTest {
         }
         this.registerComponents(this.ecsWorld);
 
-        this.ecsConstants = new EcsConstants(this.ecsWorld);
-        GameContext gameContext = Mockito.mock(GameContext.class);
-        Mockito.when(gameContext.getEcsWorld()).thenReturn(this.ecsWorld);
-        Mockito.when(gameContext.getEcsConstants()).thenReturn(this.ecsConstants);
+        SimulationContext simulationContext = new SimulationContext(this.ecsWorld);
+        this.ecsConstants = simulationContext.getEcsConstants();
 
         this.startDate = this.loadStartDate();
 
         long loadStart = System.nanoTime();
-        new WorldLoader(new WorldDaoImpl()).createWorld(gameContext);
+        new WorldLoader(new WorldDaoImpl()).createWorld(simulationContext);
         System.out.printf("World loaded in %.0f ms%n", (System.nanoTime() - loadStart) / 1_000_000.0);
-        this.economyService = new EconomyService(gameContext);
+        this.economyService = new EconomyService(simulationContext);
 
         this.forcedLaws = this.listProperty("simulation.laws");
         for (String lawName : this.forcedLaws) {

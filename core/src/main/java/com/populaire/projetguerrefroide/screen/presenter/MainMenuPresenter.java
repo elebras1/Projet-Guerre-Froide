@@ -7,7 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.populaire.projetguerrefroide.screen.ScreenManager;
 import com.populaire.projetguerrefroide.screen.listener.MainMenuListener;
-import com.populaire.projetguerrefroide.service.GameContext;
+import com.populaire.projetguerrefroide.ui.UiContext;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiMainmenuSkin;
 import com.populaire.projetguerrefroide.ui.view.MainMenu;
@@ -15,31 +15,27 @@ import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
 public class MainMenuPresenter implements Presenter, MainMenuListener {
     private final ScreenManager screenManager;
-    private final GameContext gameContext;
+    private final UiContext uiContext;
     private MainMenu mainMenu;
 
-    public MainMenuPresenter(ScreenManager screenManager, GameContext gameContext) {
+    public MainMenuPresenter(ScreenManager screenManager, UiContext uiContext) {
         this.screenManager = screenManager;
-        this.gameContext = gameContext;
+        this.uiContext = uiContext;
     }
 
     @Override
     public void initialize(Stage stage) {
-        AssetManager assetManager = gameContext.getAssetManager();
+        AssetManager assetManager = uiContext.getAssetManager();
         Skin skin = assetManager.get(Skins.UI_MAINMENU);
         Table rootTable = new Table();
         rootTable.setFillParent(true);
         rootTable.setBackground(skin.getDrawable(UiMainmenuSkin.Drawables.FRONTEND_MAIN_BG));
         WidgetFactory widgetFactory = new WidgetFactory();
-        this.mainMenu = new MainMenu(widgetFactory, skin, gameContext.getSkinFonts(), gameContext.getLocalisation(), this);
+        this.mainMenu = new MainMenu(widgetFactory, skin, uiContext.getSkinFonts(), uiContext.getLocalisation(), this);
         rootTable.add(this.mainMenu).center().padLeft(this.mainMenu.getWidth() / 3);
         stage.addActor(rootTable);
     }
 
-    @Override
-    public void refresh() {
-
-    }
 
     @Override
     public void update(float delta) {

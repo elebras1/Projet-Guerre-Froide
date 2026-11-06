@@ -3,17 +3,17 @@ package com.populaire.projetguerrefroide.system;
 import io.github.elebras1.flecs.Flecs;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
-import com.populaire.projetguerrefroide.command.CommandBus;
-import com.populaire.projetguerrefroide.command.request.BuildingLevelUpCommand;
+import com.populaire.projetguerrefroide.protocol.event.EventKind;
+import com.populaire.projetguerrefroide.protocol.event.EventRing;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 
 public class BuildingLevelUpNotificationSystem {
 
-    private final CommandBus commandBus;
+    private final EventRing events;
     private final long leveledUpTag;
 
-    public BuildingLevelUpNotificationSystem(World ecsWorld, EcsConstants ecsConstants, CommandBus commandBus) {
-        this.commandBus = commandBus;
+    public BuildingLevelUpNotificationSystem(World ecsWorld, EcsConstants ecsConstants, EventRing events) {
+        this.events = events;
         this.leveledUpTag = ecsConstants.leveledUp();
         ecsWorld.system("BuildingLevelUpNotificationSystem")
             .kind(Flecs.OnUpdate)
@@ -24,7 +24,7 @@ public class BuildingLevelUpNotificationSystem {
     private void notify(Iter iter) {
         for (int i = 0; i < iter.count(); i++) {
             long buildingId = iter.entity(i);
-            this.commandBus.dispatch(new BuildingLevelUpCommand(buildingId));
+            this.events.publish(EventKind.BUILDING_LEVEL_UP, buildingId, 0L, 0.0);
             iter.world().obtainEntityView(buildingId).remove(this.leveledUpTag);
         }
     }

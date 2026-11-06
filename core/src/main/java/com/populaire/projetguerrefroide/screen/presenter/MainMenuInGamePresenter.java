@@ -9,14 +9,14 @@ import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.screen.GameFlowHandler;
 import com.populaire.projetguerrefroide.screen.listener.MainMenuInGameListener;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
-import com.populaire.projetguerrefroide.service.GameContext;
+import com.populaire.projetguerrefroide.ui.UiContext;
 import com.populaire.projetguerrefroide.ui.view.MainMenuInGame;
 import com.populaire.projetguerrefroide.ui.view.Popup;
 import com.populaire.projetguerrefroide.ui.view.PopupListener;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
 public class MainMenuInGamePresenter implements Presenter, MainMenuInGameListener {
-    private final GameContext gameContext;
+    private final UiContext uiContext;
     private final ConfigurationService configurationService;
     private final GameFlowHandler gameFlowHandler;
     private final WidgetFactory widgetFactory;
@@ -30,8 +30,8 @@ public class MainMenuInGamePresenter implements Presenter, MainMenuInGameListene
     private Popup currentPopup;
     private Stage stage;
 
-    public MainMenuInGamePresenter(GameContext gameContext, ConfigurationService configurationService, GameFlowHandler gameFlowHandler, WidgetFactory widgetFactory, Skin skinMenu, Skin skinUi, Skin skinScrollbars, Skin skinPopup, Skin skinFlags) {
-        this.gameContext = gameContext;
+    public MainMenuInGamePresenter(UiContext uiContext, ConfigurationService configurationService, GameFlowHandler gameFlowHandler, WidgetFactory widgetFactory, Skin skinMenu, Skin skinUi, Skin skinScrollbars, Skin skinPopup, Skin skinFlags) {
+        this.uiContext = uiContext;
         this.configurationService = configurationService;
         this.gameFlowHandler = gameFlowHandler;
         this.widgetFactory = widgetFactory;
@@ -45,7 +45,7 @@ public class MainMenuInGamePresenter implements Presenter, MainMenuInGameListene
     @Override
     public void initialize(Stage stage) {
         this.stage = stage;
-        this.mainMenuInGame = new MainMenuInGame(widgetFactory, skinMenu, skinUi, skinScrollbars, gameContext.getSkinFonts(), gameContext.getLocalisation(), this);
+        this.mainMenuInGame = new MainMenuInGame(widgetFactory, skinMenu, skinUi, skinScrollbars, uiContext.getSkinFonts(), uiContext.getLocalisation(), this);
         this.mainMenuInGame.setVisible(false);
 
         this.rootTable = new Table();
@@ -54,10 +54,6 @@ public class MainMenuInGamePresenter implements Presenter, MainMenuInGameListene
         stage.addActor(this.rootTable);
     }
 
-    @Override
-    public void refresh() {
-
-    }
 
     @Override
     public void update(float delta) {
@@ -83,7 +79,7 @@ public class MainMenuInGamePresenter implements Presenter, MainMenuInGameListene
 
     @Override
     public void onQuitClicked(PopupListener listener) {
-        this.currentPopup = new Popup(widgetFactory, skinPopup, skinUi, skinFlags, gameContext.getSkinFonts(), gameContext.getLocalisation(), "QUIT_TITLE", "QUIT_DESC", true, false, listener);
+        this.currentPopup = new Popup(widgetFactory, skinPopup, skinUi, skinFlags, uiContext.getSkinFonts(), uiContext.getLocalisation(), "QUIT_TITLE", "QUIT_DESC", true, false, listener);
         Table table = new Table();
         table.setFillParent(true);
         table.add(this.currentPopup).center();
@@ -104,11 +100,11 @@ public class MainMenuInGamePresenter implements Presenter, MainMenuInGameListene
     }
 
     @Override public Settings onShowSettingsClicked() {
-        return gameContext.getSettings().clone();
+        return uiContext.getSettings().clone();
     }
 
     @Override public void onApplySettingsClicked(Settings settings) {
-        this.gameContext.setSettings(settings);
+        this.uiContext.setSettings(settings);
         this.configurationService.saveSettings(settings);
     }
 

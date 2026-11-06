@@ -3,15 +3,18 @@ package com.populaire.projetguerrefroide.ui.view;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.Align;
+import com.badlogic.gdx.utils.CharArray;
 import com.github.tommyettinger.ds.ObjectList;
-import com.populaire.projetguerrefroide.dto.CountrySummaryDto;
+import com.populaire.projetguerrefroide.protocol.catalog.Catalog;
+import com.populaire.projetguerrefroide.protocol.response.CountrySummary;
+import com.populaire.projetguerrefroide.ui.UiCatalog;
+import com.populaire.projetguerrefroide.ui.format.TextFormat;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.FontsSkin;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiNewgameSkin;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiSkin;
 import com.populaire.projetguerrefroide.ui.widget.FlagImage;
+import com.populaire.projetguerrefroide.ui.widget.SkinDrawables;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
-import com.populaire.projetguerrefroide.util.LocalisationUtils;
-import com.populaire.projetguerrefroide.util.ValueFormatter;
 
 import java.util.List;
 import java.util.Map;
@@ -27,11 +30,26 @@ public class CountrySummaryPanel extends Table {
     private final Skin skinPortraits;
     private final List<FlagImage> alliesFlagImages;
     private final WidgetFactory widgetFactory;
+    private final UiCatalog uiCatalog;
+    private final TextFormat textFormat;
+    private final CharArray text;
+    private final Drawable[] portraits;
+    private final Drawable defaultPortrait;
 
-    public CountrySummaryPanel(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, Skin skinPortraits, Skin skinFonts, Map<String, String> localisation) {
+    public CountrySummaryPanel(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, Skin skinPortraits, Skin skinFonts, Map<String, String> localisation, UiCatalog uiCatalog, TextFormat textFormat) {
         this.skinFlags = skinFlags;
         this.skinPortraits = skinPortraits;
         this.widgetFactory = widgetFactory;
+        this.uiCatalog = uiCatalog;
+        this.textFormat = textFormat;
+        this.text = new CharArray(16);
+        Catalog catalog = uiCatalog.catalog();
+        this.defaultPortrait = SkinDrawables.optional(skinPortraits, "admin_type", null);
+        this.portraits = new Drawable[catalog.ministers().size()];
+        for (int i = 0; i < this.portraits.length; i++) {
+            String image = catalog.ministerImage(i);
+            this.portraits[i] = image != null ? SkinDrawables.optional(skinPortraits, image, this.defaultPortrait) : this.defaultPortrait;
+        }
         Drawable background = widgetFactory.applyBackgroundToTable(skin, UiNewgameSkin.Drawables.SELECTED_BG, this);
 
         this.flagImage = widgetFactory.createFlagImage(skinUi, UiSkin.Drawables.FLAG_ALPHA, UiSkin.Drawables.FLAG_OVERLAY);
@@ -71,20 +89,25 @@ public class CountrySummaryPanel extends Table {
         }
     }
 
-    public void update(CountrySummaryDto countrySummaryDto, Map<String, String> localisation) {
-        this.countryName.setText(LocalisationUtils.getCountryNameLocalisation(localisation, countrySummaryDto.countryNameId(), countrySummaryDto.colonizerId()));
-        this.flagImage.setFlag(widgetFactory.getFlagTextureRegion(this.skinFlags, countrySummaryDto.countryNameId(), countrySummaryDto.colonizerId()));
-        this.government.setText(localisation.get(countrySummaryDto.government()));
-        this.countryPopulation.setText(ValueFormatter.format(countrySummaryDto.population(), localisation));
-        this.portrait.setDrawable(this.skinPortraits.getDrawable(countrySummaryDto.portrait()));
-        this.leaderFullName.setText(countrySummaryDto.leaderFullName());
-        List<String> allies = countrySummaryDto.allies();
+    public void update(CountrySummary summary) {
+        int countryIndex = summary.countryIndex();
+        this.countryName.setText(this.uiCatalog.countryName(countryIndex));
+        this.flagImage.setFlag(this.uiCatalog.flag(countryIndex));
+        int governmentIndex = summary.governmentIndex();
+        this.government.setText(governmentIndex >= 0 ? this.uiCatalog.localized(this.uiCatalog.catalog().governments().nameId(governmentIndex)) : null);
+        this.countryPopulation.setText(this.textFormat.compact(this.text, summary.population()));
+        int headOfState = summary.headOfStateIndex();
+        this.portrait.setDrawable(headOfState >= 0 ? this.portraits[headOfState] : this.defaultPortrait);
+        this.leaderFullName.setText(headOfState >= 0 ? this.uiCatalog.catalog().ministers().nameId(headOfState) : null);
         for (int i = this.alliesFlagImages.size() - 1; i >= 0; i--) {
-            if (i < allies.size()) {
-                this.alliesFlagImages.get(i).setFlag(widgetFactory.getFlagTextureRegion(this.skinFlags, allies.get(i), null));
-                this.addActor(this.alliesFlagImages.get(i));
-            } else {
-                this.alliesFlagImages.get(i).remove();
+            FlagImage allyFlag = this.alliesFlagImages.get(i);
+            if (i < summary.allyCount()) {
+                allyFlag.setFlag(this.uiCatalog.plainFlag(summary.ally(i)));
+                if (allyFlag.getParent() != this) {
+                    this.addActor(allyFlag);
+                }
+            } else if (allyFlag.getParent() != null) {
+                allyFlag.remove();
             }
         }
 

@@ -1,17 +1,20 @@
 package com.populaire.projetguerrefroide.ui.view;
 
 import com.badlogic.gdx.graphics.g2d.NinePatch;
+import com.badlogic.gdx.scenes.scene2d.ui.Cell;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
+import com.badlogic.gdx.utils.CharArray;
 import com.badlogic.gdx.utils.Scaling;
-import com.github.tommyettinger.ds.ObjectIntMap;
+import com.populaire.projetguerrefroide.protocol.catalog.NamedTable;
+import com.populaire.projetguerrefroide.protocol.response.ProvinceHover;
+import com.populaire.projetguerrefroide.ui.UiCatalog;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.FontsSkin;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiSkin;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
-import com.populaire.projetguerrefroide.util.LocalisationUtils;
 
 import java.util.Map;
 
@@ -24,7 +27,9 @@ public class Tooltip extends Table {
     private final Image image;
     private final float marginWidth;
     private final float heightWidth;
-    private final StringBuilder text;
+    private final CharArray text;
+    private final CharArray subText;
+    private final Cell<Label> subCell;
 
     public Tooltip(WidgetFactory widgetFactory, Skin skinUi, Skin skinFlags, Skin skinFonts, Map<String, String> localisation) {
         this.widgetFactory = widgetFactory;
@@ -33,7 +38,8 @@ public class Tooltip extends Table {
         NinePatch ninePatch = skinUi.getPatch(UiSkin.Drawables.TILES_DIALOG);
         this.marginWidth = ninePatch.getLeftWidth() + ninePatch.getRightWidth();
         this.heightWidth = ninePatch.getTopHeight() + ninePatch.getBottomHeight();
-        this.text = new StringBuilder();
+        this.text = new CharArray(64);
+        this.subText = new CharArray(128);
         NinePatchDrawable ninePatchDrawable = new NinePatchDrawable(ninePatch);
 
         Label.LabelStyle labelStyleArial14Glow = skinFonts.get(FontsSkin.Styles.Label.ARIAL_14_GLOW, Label.LabelStyle.class);
@@ -50,50 +56,52 @@ public class Tooltip extends Table {
 
         this.setBackground(ninePatchDrawable);
         this.add(mainTable).left().row();
-        this.add(this.subLabel).expandX().top().left();
+        this.subCell = this.add(this.subLabel).expandX().top().left();
     }
 
-    public void update(String provinceNameId, String countryNameId, String colonizerNameId) {
-        String mainText = this.localisation.get(provinceNameId) + " (" + LocalisationUtils.getCountryNameLocalisation(localisation, countryNameId, colonizerNameId) + ")";
-        if(!mainText.equals(this.mainLabel.getText().toString())) {
-            this.mainLabel.setText(mainText);
-            this.image.setDrawable(this.widgetFactory.getFlagDrawable(this.skinFlags, countryNameId, colonizerNameId));
-            this.subLabel.remove();
-            this.resize();
-        }
-    }
-
-    public void update(String provinceNameId, String countryNameId, String colonizerNameId, ObjectIntMap<String> elements) {
-        this.text.setLength(0);
-        this.text.append(this.localisation.get(provinceNameId)).append(" (").append(LocalisationUtils.getCountryNameLocalisation(localisation, countryNameId, colonizerNameId)).append(")");
-        if (!this.text.toString().equals(this.mainLabel.getText().toString())) {
-            this.mainLabel.setText(this.text.toString());
-            this.image.setDrawable(this.widgetFactory.getFlagDrawable(this.skinFlags, countryNameId, colonizerNameId));
-
-            this.text.setLength(0);
-            int i = 0, size = elements.size();
-            for (ObjectIntMap.Entry<String> entry : elements) {
-                this.text.append(this.localisation.get(entry.getKey())).append(" (").append(entry.getValue()).append("%)");
-                if (++i < size) {
-                    this.text.append("\n");
+    public void updateProvince(UiCatalog uiCatalog, int provinceIndex, int ownerIndex, ProvinceHover hover, boolean cultures) {
+        this.text.clear();
+        this.text.append(uiCatalog.provinceName(provinceIndex)).append(" (").append(uiCatalog.countryName(ownerIndex)).append(")");
+        boolean withElements = hover != null;
+        if (withElements) {
+            this.subText.clear();
+            NamedTable elements = cultures ? uiCatalog.catalog().cultures() : uiCatalog.catalog().religions();
+            int count = cultures ? hover.cultureCount() : hover.religionCount();
+            for (int i = 0; i < count; i++) {
+                int element = cultures ? hover.culture(i) : hover.religion(i);
+                int percent = cultures ? hover.culturePercent(i) : hover.religionPercent(i);
+                this.subText.append(element >= 0 ? uiCatalog.localized(elements.nameId(element)) : null).append(" (").append(percent).append("%)");
+                if (i + 1 < count) {
+                    this.subText.append('\n');
                 }
             }
-
-            this.subLabel.setText(this.text.toString());
-
-            if (!this.getChildren().contains(this.subLabel, true)) {
-                this.row().top();
-                this.add(this.subLabel).expandX().top().left();
-            }
-            this.resize();
         }
+        boolean subShown = this.getChildren().contains(this.subLabel, true);
+        boolean mainChanged = !this.mainLabel.textEquals(this.text);
+        boolean subChanged = withElements != subShown || (withElements && !this.subLabel.textEquals(this.subText));
+        if (!mainChanged && !subChanged) {
+            return;
+        }
+        if (mainChanged) {
+            this.mainLabel.setText(this.text);
+            this.image.setDrawable(uiCatalog.flagDrawable(ownerIndex));
+        }
+        if (withElements) {
+            this.subLabel.setText(this.subText);
+            if (!subShown) {
+                this.subCell.setActor(this.subLabel);
+            }
+        } else if (subShown) {
+            this.subCell.clearActor();
+        }
+        this.resize();
     }
 
     public void update(String text) {
-        if(!this.mainLabel.getText().toString().equals(text)) {
+        if (!this.mainLabel.textEquals(text)) {
             this.mainLabel.setText(text);
             this.image.setDrawable(null);
-            this.subLabel.remove();
+            this.subCell.clearActor();
             this.resize();
         }
     }

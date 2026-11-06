@@ -1,6 +1,6 @@
 package com.populaire.projetguerrefroide.screen.listener;
 
-import com.populaire.projetguerrefroide.ui.view.SortType;
+import com.populaire.projetguerrefroide.protocol.request.SortType;
 
 public interface EconomyPanelListener {
     void onCloseEconomyPanelClicked();

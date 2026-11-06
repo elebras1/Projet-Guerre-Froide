@@ -21,8 +21,8 @@ import com.populaire.projetguerrefroide.screen.input.GameInputHandler;
 import com.populaire.projetguerrefroide.screen.listener.GameInputListener;
 import com.populaire.projetguerrefroide.screen.presenter.*;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
-import com.populaire.projetguerrefroide.service.GameContext;
-import com.populaire.projetguerrefroide.service.WorldService;
+import com.populaire.projetguerrefroide.ui.UiContext;
+import com.populaire.projetguerrefroide.ui.format.TextFormat;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
 import com.populaire.projetguerrefroide.ui.view.MainMenuInGame;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
@@ -34,8 +34,8 @@ import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
 public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler {
     private final ScreenManager screenManager;
-    private final GameContext gameContext;
-    private final WorldService worldService;
+    private final UiContext uiContext;
+    private final GameSession session;
     private final ConfigurationService configurationService;
     private final OrthographicCamera cam;
     private final WgProjection projection;
@@ -49,30 +49,33 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
     private float time;
     private boolean paused;
 
-    public NewGameScreen(ScreenManager screenManager, GameContext gameContext, WorldService worldService, ConfigurationService configurationService) {
+    public NewGameScreen(ScreenManager screenManager, UiContext uiContext, GameSession session, ConfigurationService configurationService) {
         this.screenManager = screenManager;
-        this.gameContext = gameContext;
-        this.worldService = worldService;
+        this.uiContext = uiContext;
+        this.session = session;
         this.configurationService = configurationService;
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         this.cam.position.set(WORLD_WIDTH / 2f, WORLD_HEIGHT / 1.4f, 0);
         this.projection = new WgProjection();
         this.presenters = new ObjectList<>();
 
-        AssetManager assetManager = gameContext.getAssetManager();
-        this.configurationService.loadNewGameLocalisation(this.gameContext);
+        AssetManager assetManager = uiContext.getAssetManager();
+        this.configurationService.loadNewGameLocalisation(this.uiContext);
         Skin skinUi = assetManager.get(Skins.UI);
         Skin skinFlags = assetManager.get(Skins.FLAGS);
         this.stage = new WgCustomStage(new WgScreenViewport(), skinUi, skinFlags);
         WidgetFactory widgetFactory = new WidgetFactory();
-        this.hudPresenter = new HudPresenter(gameContext, worldService, screenManager, widgetFactory, assetManager.get(Skins.UI_NEWGAME), skinUi, skinFlags, assetManager.get(Skins.UI_SCROLLBARS), assetManager.get(Skins.PORTRAITS));
-        this.mainMenuInGamePresenter = new MainMenuInGamePresenter(gameContext, configurationService, this, widgetFactory, assetManager.get(Skins.UI_MAINMENU_IG), skinUi, assetManager.get(Skins.UI_SCROLLBARS), assetManager.get(Skins.UI_POPUP), skinFlags);
-        this.tooltipPresenter = new TooltipPresenter(gameContext, this.worldService, widgetFactory, skinUi, skinFlags);
+        TextFormat textFormat = new TextFormat(uiContext.getLocalisation());
+        this.hudPresenter = new HudPresenter(session, uiContext, screenManager, widgetFactory, assetManager.get(Skins.UI_NEWGAME), skinUi, skinFlags, assetManager.get(Skins.UI_SCROLLBARS), assetManager.get(Skins.PORTRAITS), textFormat);
+        this.mainMenuInGamePresenter = new MainMenuInGamePresenter(uiContext, configurationService, this, widgetFactory, assetManager.get(Skins.UI_MAINMENU_IG), skinUi, assetManager.get(Skins.UI_SCROLLBARS), assetManager.get(Skins.UI_POPUP), skinFlags);
+        this.tooltipPresenter = new TooltipPresenter(session, uiContext, widgetFactory, skinUi, skinFlags);
         this.initializeDebug();
 
         this.hudPresenter.initialize(this.stage);
         this.tooltipPresenter.initialize(this.stage);
         this.mainMenuInGamePresenter.initialize(this.stage);
+        this.presenters.add(this.hudPresenter);
+        this.presenters.add(this.tooltipPresenter);
         this.inputHandler = new GameInputHandler(this.cam, this);
         this.multiplexer = new InputMultiplexer();
         this.multiplexer.addProcessor(this.stage);
@@ -83,8 +86,8 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
     }
 
     private void initializeDebug() {
-        if(this.gameContext.getSettings().isDebugMode()) {
-            DebugPresenter debugPresenter = new DebugPresenter(gameContext, worldService);
+        if(this.uiContext.getSettings().isDebugMode()) {
+            DebugPresenter debugPresenter = new DebugPresenter(uiContext, session);
             debugPresenter.initialize(this.stage);
             this.presenters.add(debugPresenter);
         }
@@ -143,14 +146,16 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
 
     @Override
     public void onClick(int x, int y) {
-        this.worldService.selectProvince(x, y);
-        this.hudPresenter.refresh();
+        int provinceIndex = this.session.mapView().provinceIndexAt(x, y);
+        this.session.uiState().selectProvince(provinceIndex);
+        this.session.mapView().highlightProvince(provinceIndex);
     }
 
     @Override
     public void onHover(int x, int y) {
-        if(this.worldService.hoverLandProvince(x, y) && !this.isMouseOverUI()) {
-            this.tooltipPresenter.updateMapTooltip(x, y);
+        int provinceIndex = this.session.mapView().provinceIndexAt(x, y);
+        if (provinceIndex >= 0 && !this.isMouseOverUI()) {
+            this.tooltipPresenter.updateMapTooltip(provinceIndex);
         } else {
             this.tooltipPresenter.hideMapTooltip();
         }
@@ -168,13 +173,15 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
 
     @Override
     public void render(float delta) {
+        this.session.beginFrame();
         this.time += delta;
         this.cam.update();
         this.cam.position.x = (this.cam.position.x + WORLD_WIDTH) % WORLD_WIDTH;
         this.projection.setProjectionMatrix(this.cam.combined);
 
         WgScreenUtils.clear(1, 1, 1, 1);
-        this.worldService.renderWorld(this.projection, this.cam, time);
+        this.session.mapView().update();
+        this.session.mapView().render(this.projection, this.cam, this.time);
 
         if(!this.paused) {
             this.inputHandler.setDelta(delta);
@@ -182,12 +189,13 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
             this.inputHandler.updateCamera();
         }
 
-        for(Presenter presenter : this.presenters) {
-            presenter.update(delta);
+        for (int i = 0; i < this.presenters.size(); i++) {
+            this.presenters.get(i).update(delta);
         }
 
         this.stage.act();
         this.stage.draw();
+        this.session.endFrame();
     }
 
     private void setAllStageTouchable(boolean touchable) {
@@ -231,7 +239,7 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
     }
 
     @Override public void show() {
-        gameContext.getCursorManager().defaultCursor();
+        uiContext.getCursorManager().defaultCursor();
     }
 
     @Override public void hide() {

@@ -1,24 +1,10 @@
 package com.populaire.projetguerrefroide;
 
 import com.badlogic.gdx.Game;
-import io.github.elebras1.flecs.Flecs;
-import io.github.elebras1.flecs.Rest;
-import io.github.elebras1.flecs.World;
-import com.populaire.projetguerrefroide.command.CommandBus;
-import com.populaire.projetguerrefroide.command.handler.DemolishBuildingHandler;
-import com.populaire.projetguerrefroide.command.handler.ExpandBuildingHandler;
-import com.populaire.projetguerrefroide.command.handler.ResumeBuildingHandler;
-import com.populaire.projetguerrefroide.command.handler.SuspendBuildingHandler;
-import com.populaire.projetguerrefroide.command.request.DemolishBuildingCommand;
-import com.populaire.projetguerrefroide.command.request.ExpandBuildingCommand;
-import com.populaire.projetguerrefroide.command.request.ResumeBuildingCommand;
-import com.populaire.projetguerrefroide.command.request.SuspendBuildingCommand;
-import com.populaire.projetguerrefroide.component.*;
-import com.populaire.projetguerrefroide.configuration.Settings;
-import com.populaire.projetguerrefroide.repository.QueryRepository;
 import com.populaire.projetguerrefroide.screen.ScreenManager;
-import com.populaire.projetguerrefroide.service.*;
-import com.populaire.projetguerrefroide.system.*;
+import com.populaire.projetguerrefroide.service.ConfigurationService;
+import com.populaire.projetguerrefroide.simulation.SimulationRuntime;
+import com.populaire.projetguerrefroide.ui.UiContext;
 
 /** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
 public class ProjetGuerreFroide extends Game {
@@ -26,136 +12,23 @@ public class ProjetGuerreFroide extends Game {
     public static final int WORLD_HEIGHT = 2160;
     private final ConfigurationService configurationService;
     private ScreenManager screenManager;
-    private GameContext gameContext;
-    private final World ecsWorld;
+    private UiContext uiContext;
 
     public ProjetGuerreFroide() {
         this.configurationService = new ConfigurationService();
-        this.ecsWorld = new World();
     }
 
     @Override
     public void create() {
-        this.ecsWorld.setThreads(4);
-        this.registerComponents();
-        this.gameContext = this.configurationService.getGameContext(this.ecsWorld);
-        CommandBus commandBus = new CommandBus();
-        new BuildingLevelUpNotificationSystem(this.ecsWorld, this.gameContext.getEcsConstants(), commandBus);
-        QueryRepository queryRepository = new QueryRepository(this.gameContext.getEcsWorld());
-        BuildingService buildingService = new BuildingService(this.gameContext);
-        EconomyService economyService = new EconomyService(this.gameContext);
-        RegionService regionService = new RegionService(this.gameContext, buildingService, queryRepository);
-        CountryService countryService = new CountryService(this.gameContext, queryRepository, regionService);
-        ProvinceService provinceService = new ProvinceService(this.gameContext, queryRepository, countryService, regionService);
-        WorldService worldService = new WorldService(this.gameContext, queryRepository, buildingService, regionService, countryService, provinceService);
-        TimeService timeService = new TimeService(this.gameContext.getBookmark().date());
-        this.registerCommands(commandBus, buildingService);
-        this.screenManager = new ScreenManager(this, this.gameContext, this.configurationService, worldService, timeService, economyService, commandBus);
+        this.uiContext = this.configurationService.getUiContext();
+        this.screenManager = new ScreenManager(this, this.uiContext, this.configurationService, SimulationRuntime::threaded);
         this.screenManager.showMainMenuScreen();
-        this.ecsDebug(this.gameContext);
-
-    }
-
-    private void registerComponents() {
-        this.ecsWorld.component(Modifiers.class);
-        this.ecsWorld.component(Overrides.class);
-        this.ecsWorld.component(Minister.class);
-        this.ecsWorld.component(Ideology.class);
-        this.ecsWorld.component(Terrain.class);
-        this.ecsWorld.component(ElectoralMechanism.class);
-        this.ecsWorld.component(Leader.class);
-        this.ecsWorld.component(Color.class);
-        this.ecsWorld.component(Position.class);
-        this.ecsWorld.component(Border.class);
-        this.ecsWorld.component(DiplomaticRelation.class);
-        this.ecsWorld.component(Adjacencies.class);
-        this.ecsWorld.component(Country.class);
-        this.ecsWorld.component(Province.class);
-        this.ecsWorld.component(Law.class);
-        this.ecsWorld.component(LawGroup.class);
-        this.ecsWorld.component(GovernmentPolicy.class);
-        this.ecsWorld.component(PopulationType.class);
-        this.ecsWorld.component(StatePostType.class);
-        this.ecsWorld.component(GlobalStateConsumption.class);
-        this.ecsWorld.component(CountryStateConsumption.class);
-        this.ecsWorld.component(CountryPublicWorks.class);
-        this.ecsWorld.component(ArtisanCraft.class);
-        this.ecsWorld.component(GlobalArtisanCrafts.class);
-        this.ecsWorld.component(RegionArtisans.class);
-        this.ecsWorld.component(CountryMaintenance.class);
-        this.ecsWorld.component(CountryStrategicStock.class);
-        this.ecsWorld.component(CountryCentralBank.class);
-        this.ecsWorld.component(CountryMilitary.class);
-        this.ecsWorld.component(ProvinceInfrastructure.class);
-        this.ecsWorld.component(Good.class);
-        this.ecsWorld.component(EconomyBuildingType.class);
-        this.ecsWorld.component(SpecialBuildingType.class);
-        this.ecsWorld.component(GlobalStrategicStorage.class);
-        this.ecsWorld.component(GlobalMilitaryFacilities.class);
-        this.ecsWorld.component(DevelopmentBuildingType.class);
-        this.ecsWorld.component(Building.class);
-        this.ecsWorld.component(EconomyBuilding.class);
-        this.ecsWorld.component(SpecialBuilding.class);
-        this.ecsWorld.component(DevelopmentBuilding.class);
-        this.ecsWorld.component(ResourceGathering.class);
-        this.ecsWorld.component(ConstructionSite.class);
-        this.ecsWorld.component(CountryInvestment.class);
-        this.ecsWorld.component(RegionInstance.class);
-        this.ecsWorld.component(Population.class);
-        this.ecsWorld.component(PopulationTransfer.class);
-        this.ecsWorld.component(EconomyCalendar.class);
-        this.ecsWorld.component(CountryBudget.class);
-        this.ecsWorld.component(CountryBank.class);
-        this.ecsWorld.component(ResourceGatheringType.class);
-        this.ecsWorld.component(Demographics.class);
-        this.ecsWorld.component(RegionDemographics.class);
-        this.ecsWorld.component(CountryDemographics.class);
-        this.ecsWorld.component(CountryMarket.class);
-        this.ecsWorld.component(GlobalPopulationType.class);
-        this.ecsWorld.component(GlobalGood.class);
-        this.ecsWorld.component(GlobalMarket.class);
-        this.ecsWorld.component(CountryTaxPolicy.class);
-        this.ecsWorld.component(CountryBudgetPolicy.class);
-        this.ecsWorld.component(CountryEducationPolicy.class);
-        this.ecsWorld.component(CountryTradePolicy.class);
-        this.ecsWorld.component(CountryProductionPolicy.class);
-        this.ecsWorld.component(CountryLaborPolicy.class);
-        this.ecsWorld.component(CountryPopulationPolicy.class);
-        this.ecsWorld.component(CountryPoliticalPolicy.class);
-        this.ecsWorld.component(CountryCulturePolicy.class);
-        this.ecsWorld.component(CountryProfitDistributionPolicy.class);
-        this.ecsWorld.component(RegionInstanceIncome.class);
-        this.ecsWorld.component(RegionSpecialBuildings.class);
-        this.ecsWorld.component(Unit.class);
-        this.ecsWorld.component(Formation.class);
-        this.ecsWorld.component(UnitInstance.class);
-        this.ecsWorld.component(AirWing.class);
-    }
-
-    public void registerCommands(CommandBus commandBus, BuildingService buildingService) {
-        commandBus.register(ExpandBuildingCommand.class, new ExpandBuildingHandler(buildingService));
-        commandBus.register(SuspendBuildingCommand.class, new SuspendBuildingHandler(buildingService));
-        commandBus.register(DemolishBuildingCommand.class, new DemolishBuildingHandler(buildingService));
-        commandBus.register(ResumeBuildingCommand.class, new ResumeBuildingHandler(buildingService));
-    }
-
-    private void ecsDebug(GameContext gameContext) {
-        Settings settings = gameContext.getSettings();
-        if(settings.isDebugMode()) {
-            this.ecsWorld.set(new Rest().port(27750));
-            this.ecsWorld.importModule(Flecs.Doc);
-            this.ecsWorld.importModule(Flecs.Alerts);
-            this.ecsWorld.importModule(Flecs.Stats);
-            this.ecsWorld.importModule(Flecs.Metrics);
-        }
     }
 
     @Override
     public void dispose() {
-        this.ecsWorld.removeAll(Rest.class);
-        this.ecsWorld.close();
         this.screenManager.dispose();
-        this.gameContext.dispose();
+        this.uiContext.dispose();
         super.dispose();
     }
 }

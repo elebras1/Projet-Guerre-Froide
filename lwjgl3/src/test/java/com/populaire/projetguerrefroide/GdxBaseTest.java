@@ -9,10 +9,9 @@ import com.badlogic.gdx.graphics.GL30;
 import com.badlogic.gdx.graphics.GL31;
 import com.badlogic.gdx.graphics.GL32;
 import com.badlogic.gdx.utils.GdxNativesLoader;
-import io.github.elebras1.flecs.World;
-import com.populaire.projetguerrefroide.service.ConfigurationService;
-import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.adapter.graphics.WgMeshMulti;
+import com.populaire.projetguerrefroide.service.ConfigurationService;
+import com.populaire.projetguerrefroide.ui.UiContext;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.TestInstance;
@@ -26,7 +25,7 @@ import static org.mockito.Mockito.mockConstruction;
 public abstract class GdxBaseTest {
     private MockedConstruction<WgMeshMulti> mockedMeshMultiDrawIndirect;
     protected AssetManager assetManager;
-    protected GameContext gameContext;
+    protected UiContext uiContext;
 
     @BeforeAll
     public void beforeAll() {
@@ -47,10 +46,9 @@ public abstract class GdxBaseTest {
         mockedMeshMultiDrawIndirect = mockConstruction(WgMeshMulti.class);
 
         ConfigurationService configurationService = new ConfigurationService();
-        World ecsWorld = new World();
-        this.gameContext = configurationService.getGameContext(ecsWorld);
-        configurationService.loadMainMenuLocalisation(this.gameContext);
-        configurationService.loadGameLocalisation(this.gameContext);
+        this.uiContext = configurationService.getUiContext();
+        configurationService.loadMainMenuLocalisation(this.uiContext);
+        configurationService.loadGameLocalisation(this.uiContext);
     }
 
     @AfterAll
@@ -60,7 +58,6 @@ public abstract class GdxBaseTest {
             this.assetManager = null;
         }
         this.mockedMeshMultiDrawIndirect.close();
-        this.gameContext.getEcsWorld().close();
         Gdx.app.exit();
     }
 }
