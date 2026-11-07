@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.ui.view;
+package com.populaire.projetguerrefroide.ui.view.economy;
 
 import com.populaire.projetguerrefroide.protocol.request.SortType;
 

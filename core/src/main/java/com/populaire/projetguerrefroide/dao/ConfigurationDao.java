@@ -9,7 +9,6 @@ import java.util.List;
 public interface ConfigurationDao {
     Bookmark loadBookmark();
     List<TutorialCategory> loadTutorials();
-    List<String> loadCredits();
     Settings loadSettings();
     void saveSettings(Settings settings);
 }

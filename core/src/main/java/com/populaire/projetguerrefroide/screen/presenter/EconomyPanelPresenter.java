@@ -2,8 +2,6 @@ package com.populaire.projetguerrefroide.screen.presenter;
 
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.populaire.projetguerrefroide.protocol.command.DemolishBuildingCommand;
 import com.populaire.projetguerrefroide.protocol.command.ExpandBuildingCommand;
 import com.populaire.projetguerrefroide.protocol.command.ResumeBuildingCommand;
@@ -13,43 +11,37 @@ import com.populaire.projetguerrefroide.protocol.request.SortType;
 import com.populaire.projetguerrefroide.protocol.response.BuildingDetails;
 import com.populaire.projetguerrefroide.protocol.response.RegionsBuildings;
 import com.populaire.projetguerrefroide.screen.GameSession;
-import com.populaire.projetguerrefroide.ui.view.EconomyPanelListener;
 import com.populaire.projetguerrefroide.ui.UiContext;
 import com.populaire.projetguerrefroide.ui.UiState;
 import com.populaire.projetguerrefroide.ui.format.TextFormat;
 import com.populaire.projetguerrefroide.ui.request.RequestWatch;
-import com.populaire.projetguerrefroide.ui.view.EconomyPanel;
-import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
+import com.populaire.projetguerrefroide.ui.view.economy.EconomyPanel;
+import com.populaire.projetguerrefroide.ui.view.economy.EconomyPanelListener;
+import com.populaire.projetguerrefroide.ui.widget.UiAnchor;
+import com.populaire.projetguerrefroide.ui.widget.UiBuilder;
+import com.populaire.projetguerrefroide.ui.widget.UiWindow;
 
 public class EconomyPanelPresenter extends RequestingPresenter implements EconomyPanelListener {
     private final UiContext uiContext;
-    private final WidgetFactory widgetFactory;
-    private final Skin skinEconomy;
-    private final Skin skinUi;
-    private final Skin skinScrollbars;
     private final TextFormat textFormat;
     private EconomyPanel economyPanel;
     private RequestWatch<RegionsBuildings> regionsWatch;
     private boolean opening;
 
-    public EconomyPanelPresenter(GameSession session, UiContext uiContext, WidgetFactory widgetFactory, Skin skinEconomy, Skin skinUi, Skin skinScrollbars, TextFormat textFormat) {
+    public EconomyPanelPresenter(GameSession session, UiContext uiContext, TextFormat textFormat) {
         super(session);
         this.uiContext = uiContext;
-        this.widgetFactory = widgetFactory;
-        this.skinEconomy = skinEconomy;
-        this.skinUi = skinUi;
-        this.skinScrollbars = skinScrollbars;
         this.textFormat = textFormat;
     }
 
     @Override
     public void initialize(Stage stage) {
-        Table centerTable = new Table();
-        centerTable.setFillParent(true);
-        this.economyPanel = new EconomyPanel(this.widgetFactory, this.skinEconomy, this.skinUi, this.skinScrollbars, this.uiContext.getSkinFonts(), this.uiContext.getColorTexturePool(), this.uiContext.getLocalisation(), this.session.uiCatalog(), this.textFormat, this);
+        UiBuilder ui = new UiBuilder(this.uiContext);
+        UiWindow layer = new UiWindow(ui);
+        layer.setSize(stage.getWidth(), stage.getHeight());
+        this.economyPanel = ui.add(layer, new EconomyPanel(ui, this.session.uiCatalog(), this.textFormat, this), -555f, -340f, UiAnchor.CENTER);
         this.economyPanel.setVisible(false);
-        centerTable.add(this.economyPanel).center();
-        stage.addActor(centerTable);
+        stage.addActor(layer);
         UiState uiState = this.session.uiState();
         this.regionsWatch = this.watch(RequestKind.REGIONS_BUILDINGS, new RegionsBuildings(), new RegionsBuildings(),
             uiState::economyPanelOpen, params -> params.option(uiState.regionSort().ordinal()), RequestWatch.Staleness.EVERY_REVISION, this::applyRegions);

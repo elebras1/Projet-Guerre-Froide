@@ -91,6 +91,7 @@ public class UiResources {
         uiContext.putAllLocalisation(this.localisationDao.readMainMenuInGame());
         uiContext.putAllLocalisation(this.localisationDao.readLanguage());
         uiContext.putAllLocalisation(this.localisationDao.readCountries());
+        uiContext.putAllLocalisation(this.localisationDao.readCredits());
     }
 
     public void loadNewGameLocalisation(UiContext uiContext) {
@@ -123,10 +124,6 @@ public class UiResources {
 
     public List<TutorialCategory> loadTutorials() {
         return this.configurationDao.loadTutorials();
-    }
-
-    public List<String> loadCredits() {
-        return this.configurationDao.loadCredits();
     }
 
     public void saveSettings(Settings settings) {

@@ -15,16 +15,17 @@ import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiSkin;
 import com.populaire.projetguerrefroide.ui.widget.UiAnchor;
 import com.populaire.projetguerrefroide.ui.widget.UiBuilder;
 import com.populaire.projetguerrefroide.ui.widget.UiWindow;
-import java.util.List;
+import java.util.Map;
 
 public class CreditsWindow extends UiWindow {
     private static final String HEADING = "§";
+    private static final String LINE_KEY = "CREDITS_%03d";
     private static final float SCROLL_SPEED = 30f;
     private final Button backButton;
     private final ScrollPane scroll;
     private final Table lines;
 
-    public CreditsWindow(UiBuilder ui, List<String> credits, Runnable onBack) {
+    public CreditsWindow(UiBuilder ui, Runnable onBack) {
         super(ui, 420f, 500f);
         Skin mainMenuSkin = ui.skin(Skins.UI_MAINMENU);
         Skin uiSkin = ui.skin(Skins.UI);
@@ -33,7 +34,9 @@ public class CreditsWindow extends UiWindow {
         this.lines.top();
         Label.LabelStyle text = ui.font(FontsSkin.Styles.Label.ARIAL12);
         Label.LabelStyle heading = ui.font(FontsSkin.Styles.Label.ARIAL12_BOLD_YELLOW);
-        for (String line : credits) {
+        Map<String, String> localisation = ui.context().getLocalisation();
+        for (int index = 1; localisation.containsKey(String.format(LINE_KEY, index)); index++) {
+            String line = localisation.get(String.format(LINE_KEY, index));
             boolean isHeading = line.startsWith(HEADING);
             Label label = new Label(isHeading ? line.substring(HEADING.length()) : line, isHeading ? heading : text);
             label.setAlignment(Align.center);

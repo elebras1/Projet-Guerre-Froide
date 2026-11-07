@@ -14,12 +14,10 @@ import com.populaire.projetguerrefroide.protocol.response.ProvinceHover;
 import com.populaire.projetguerrefroide.ui.UiCatalog;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.FontsSkin;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiSkin;
-import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
 import java.util.Map;
 
 public class Tooltip extends Table {
-    private final WidgetFactory widgetFactory;
     private final Map<String, String> localisation;
     private final Skin skinFlags;
     private final Label mainLabel;
@@ -31,8 +29,7 @@ public class Tooltip extends Table {
     private final CharArray subText;
     private final Cell<Label> subCell;
 
-    public Tooltip(WidgetFactory widgetFactory, Skin skinUi, Skin skinFlags, Skin skinFonts, Map<String, String> localisation) {
-        this.widgetFactory = widgetFactory;
+    public Tooltip(Skin skinUi, Skin skinFlags, Skin skinFonts, Map<String, String> localisation) {
         this.localisation = localisation;
         this.skinFlags = skinFlags;
         NinePatch ninePatch = skinUi.getPatch(UiSkin.Drawables.TILES_DIALOG);

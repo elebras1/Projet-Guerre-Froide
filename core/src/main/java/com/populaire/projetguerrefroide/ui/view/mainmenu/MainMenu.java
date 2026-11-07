@@ -28,7 +28,7 @@ public class MainMenu extends UiWindow {
     private final MainMenuListener listener;
     private UiWindow current;
 
-    public MainMenu(UiBuilder ui, MainMenuListener listener, List<TutorialCategory> tutorials, List<String> credits) {
+    public MainMenu(UiBuilder ui, MainMenuListener listener, List<TutorialCategory> tutorials) {
         super(ui);
         this.listener = listener;
         Skin mainMenuSkin = ui.skin(Skins.UI_MAINMENU);
@@ -45,7 +45,7 @@ public class MainMenu extends UiWindow {
         this.versionLabel.setText(ProjetGuerreFroide.VERSION);
         this.settingsWindow = ui.add(this, new SettingsWindow(ui, this::applySettings, this::showPanel), -185f, -299f, UiAnchor.CENTER);
         this.settingsWindow.setVisible(false);
-        this.creditsWindow = ui.add(this, new CreditsWindow(ui, credits, this::showPanel), -71f, -202f, UiAnchor.CENTER);
+        this.creditsWindow = ui.add(this, new CreditsWindow(ui, this::showPanel), -71f, -202f, UiAnchor.CENTER);
         this.creditsWindow.setVisible(false);
         this.namingWindow = ui.add(this, new NamingWindow(ui), -45f, -100f, UiAnchor.CENTER);
         this.namingWindow.setVisible(false);

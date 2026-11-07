@@ -10,11 +10,9 @@ import com.populaire.projetguerrefroide.screen.GameSession;
 import com.populaire.projetguerrefroide.ui.UiContext;
 import com.populaire.projetguerrefroide.ui.request.RequestWatch;
 import com.populaire.projetguerrefroide.ui.view.Tooltip;
-import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
 public class TooltipPresenter extends RequestingPresenter {
     private final UiContext uiContext;
-    private final WidgetFactory widgetFactory;
     private final Skin skinUi;
     private final Skin skinFlags;
     private Tooltip tooltip;
@@ -22,10 +20,9 @@ public class TooltipPresenter extends RequestingPresenter {
     private boolean lockedByUi;
     private boolean mapTooltipShown;
 
-    public TooltipPresenter(GameSession session, UiContext context, WidgetFactory factory, Skin skinUi, Skin skinFlags) {
+    public TooltipPresenter(GameSession session, UiContext context, Skin skinUi, Skin skinFlags) {
         super(session);
         this.uiContext = context;
-        this.widgetFactory = factory;
         this.skinUi = skinUi;
         this.skinFlags = skinFlags;
         this.lockedByUi = false;
@@ -33,7 +30,7 @@ public class TooltipPresenter extends RequestingPresenter {
 
     @Override
     public void initialize(Stage stage) {
-        this.tooltip = new Tooltip(this.widgetFactory, this.skinUi, this.skinFlags, this.uiContext.getSkinFonts(), this.uiContext.getLocalisation());
+        this.tooltip = new Tooltip(this.skinUi, this.skinFlags, this.uiContext.getSkinFonts(), this.uiContext.getLocalisation());
         this.tooltip.setVisible(false);
         stage.addActor(this.tooltip);
         this.hoverWatch = this.watch(RequestKind.PROVINCE_HOVER, new ProvinceHover(), new ProvinceHover(),

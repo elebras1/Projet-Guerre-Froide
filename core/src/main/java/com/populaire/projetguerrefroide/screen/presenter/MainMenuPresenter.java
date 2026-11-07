@@ -26,7 +26,7 @@ public class MainMenuPresenter implements Presenter, MainMenuListener {
     @Override
     public void initialize(Stage stage) {
         UiBuilder ui = new UiBuilder(this.uiContext);
-        this.mainMenu = new MainMenu(ui, this, this.uiResources.loadTutorials(), this.uiResources.loadCredits());
+        this.mainMenu = new MainMenu(ui, this, this.uiResources.loadTutorials());
         stage.addActor(this.mainMenu);
     }
 

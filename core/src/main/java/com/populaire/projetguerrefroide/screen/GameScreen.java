@@ -25,7 +25,6 @@ import com.populaire.projetguerrefroide.ui.UiContext;
 import com.populaire.projetguerrefroide.ui.format.TextFormat;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
 import com.populaire.projetguerrefroide.ui.view.menubar.InGameMenu;
-import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 import com.populaire.projetguerrefroide.screen.input.GameInputListener;
 
 import java.util.List;
@@ -74,16 +73,14 @@ public class GameScreen implements Screen, GameInputListener, GameFlowHandler {
         AssetManager assetManager = uiContext.getAssetManager();
         Skin skinUi = assetManager.get(Skins.UI);
         Skin skinFlags = assetManager.get(Skins.FLAGS);
-        Skin skinEconomy = assetManager.get(Skins.UI_ECONOMY);
         this.stage = new WgCustomStage(new WgScreenViewport(), skinUi, skinFlags);
-        WidgetFactory widgetFactory = new WidgetFactory();
         TextFormat textFormat = new TextFormat(uiContext.getLocalisation());
 
         this.mainMenuInGamePresenter = new MainMenuInGamePresenter(uiContext, uiResources, this, screenManager);
         this.topBarPresenter = new TopBarPresenter(session, this.uiContext, this, textFormat);
         this.provincePanelPresenter = new ProvincePanelPresenter(session, this.uiContext, this, textFormat);
-        this.tooltipPresenter = new TooltipPresenter(session, this.uiContext, widgetFactory, skinUi, skinFlags);
-        this.economyPanelPresenter = new EconomyPanelPresenter(session, this.uiContext, widgetFactory, skinEconomy, skinUi, assetManager.get(Skins.UI_SCROLLBARS), textFormat);
+        this.tooltipPresenter = new TooltipPresenter(session, this.uiContext, skinUi, skinFlags);
+        this.economyPanelPresenter = new EconomyPanelPresenter(session, this.uiContext, textFormat);
         this.minimapPresenter = new MiniMapPresenter(session, this.uiContext, this);
         this.initializeDebug();
 

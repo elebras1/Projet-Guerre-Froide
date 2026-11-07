@@ -25,7 +25,6 @@ import com.populaire.projetguerrefroide.ui.UiContext;
 import com.populaire.projetguerrefroide.ui.format.TextFormat;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
 import com.populaire.projetguerrefroide.ui.view.menubar.InGameMenu;
-import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
 import java.util.List;
 
@@ -64,11 +63,10 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
         Skin skinUi = assetManager.get(Skins.UI);
         Skin skinFlags = assetManager.get(Skins.FLAGS);
         this.stage = new WgCustomStage(new WgScreenViewport(), skinUi, skinFlags);
-        WidgetFactory widgetFactory = new WidgetFactory();
         TextFormat textFormat = new TextFormat(uiContext.getLocalisation());
         this.hudPresenter = new HudPresenter(session, uiContext, screenManager, textFormat, lobbySetup);
         this.mainMenuInGamePresenter = new MainMenuInGamePresenter(uiContext, uiResources, this, screenManager);
-        this.tooltipPresenter = new TooltipPresenter(session, uiContext, widgetFactory, skinUi, skinFlags);
+        this.tooltipPresenter = new TooltipPresenter(session, uiContext, skinUi, skinFlags);
         this.initializeDebug();
 
         this.hudPresenter.initialize(this.stage);

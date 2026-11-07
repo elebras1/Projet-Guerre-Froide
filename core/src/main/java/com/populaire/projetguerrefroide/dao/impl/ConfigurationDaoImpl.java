@@ -27,7 +27,6 @@ public class ConfigurationDaoImpl implements ConfigurationDao {
     private final String settingsPath = "settings/";
     private final String bookmarkJsonFile = this.commonPath + "bookmark.json";
     private final String tutorialsJsonFile = this.commonPath + "tutorials.json";
-    private final String creditsFile = this.commonPath + "credits.txt";
     private final String settingsJsonFile = this.settingsPath + "settings.json";
 
     public ConfigurationDaoImpl() {
@@ -85,14 +84,6 @@ public class ConfigurationDaoImpl implements ConfigurationDao {
         return categories;
     }
 
-    @Override
-    public List<String> loadCredits() {
-        List<String> lines = new ObjectList<>();
-        for (String line : Gdx.files.internal(this.creditsFile).readString("UTF-8").split("\\R", -1)) {
-            lines.add(line);
-        }
-        return lines;
-    }
 
     @Override
     public Settings loadSettings() {
