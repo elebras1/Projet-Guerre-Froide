@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.screen.listener;
+package com.populaire.projetguerrefroide.ui.view;
 
 import com.populaire.projetguerrefroide.protocol.request.SortType;
 

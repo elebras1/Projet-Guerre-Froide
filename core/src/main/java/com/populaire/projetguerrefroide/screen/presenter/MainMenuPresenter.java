@@ -6,7 +6,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.populaire.projetguerrefroide.screen.ScreenManager;
-import com.populaire.projetguerrefroide.screen.listener.MainMenuListener;
+import com.populaire.projetguerrefroide.ui.view.MainMenuListener;
 import com.populaire.projetguerrefroide.ui.UiContext;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiMainmenuSkin;

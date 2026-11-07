@@ -11,7 +11,6 @@ import com.populaire.projetguerrefroide.protocol.catalog.Catalog;
 import com.populaire.projetguerrefroide.protocol.request.SortType;
 import com.populaire.projetguerrefroide.protocol.response.BuildingDetails;
 import com.populaire.projetguerrefroide.protocol.response.RegionsBuildings;
-import com.populaire.projetguerrefroide.screen.listener.EconomyPanelListener;
 import com.populaire.projetguerrefroide.ui.widget.ColorDrawablePool;
 import com.populaire.projetguerrefroide.ui.UiCatalog;
 import com.populaire.projetguerrefroide.ui.format.TextFormat;

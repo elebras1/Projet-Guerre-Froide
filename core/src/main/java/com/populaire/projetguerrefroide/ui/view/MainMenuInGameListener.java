@@ -1,7 +1,6 @@
-package com.populaire.projetguerrefroide.screen.listener;
+package com.populaire.projetguerrefroide.ui.view;
 
 import com.populaire.projetguerrefroide.configuration.Settings;
-import com.populaire.projetguerrefroide.ui.view.PopupListener;
 
 public interface MainMenuInGameListener {
     Settings onShowSettingsClicked();

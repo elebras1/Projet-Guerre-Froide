@@ -7,7 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.screen.GameFlowHandler;
-import com.populaire.projetguerrefroide.screen.listener.MainMenuInGameListener;
+import com.populaire.projetguerrefroide.ui.view.MainMenuInGameListener;
 import com.populaire.projetguerrefroide.ui.UiResources;
 import com.populaire.projetguerrefroide.ui.UiContext;
 import com.populaire.projetguerrefroide.ui.view.MainMenuInGame;

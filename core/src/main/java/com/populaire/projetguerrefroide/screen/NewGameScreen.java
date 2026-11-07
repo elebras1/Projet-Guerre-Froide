@@ -18,7 +18,7 @@ import com.populaire.projetguerrefroide.adapter.graphics.WgCustomStage;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.adapter.graphics.WgScreenViewport;
 import com.populaire.projetguerrefroide.screen.input.GameInputHandler;
-import com.populaire.projetguerrefroide.screen.listener.GameInputListener;
+import com.populaire.projetguerrefroide.screen.input.GameInputListener;
 import com.populaire.projetguerrefroide.screen.presenter.*;
 import com.populaire.projetguerrefroide.ui.UiResources;
 import com.populaire.projetguerrefroide.ui.UiContext;

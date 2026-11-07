@@ -13,7 +13,7 @@ import com.populaire.projetguerrefroide.protocol.request.SortType;
 import com.populaire.projetguerrefroide.protocol.response.BuildingDetails;
 import com.populaire.projetguerrefroide.protocol.response.RegionsBuildings;
 import com.populaire.projetguerrefroide.screen.GameSession;
-import com.populaire.projetguerrefroide.screen.listener.EconomyPanelListener;
+import com.populaire.projetguerrefroide.ui.view.EconomyPanelListener;
 import com.populaire.projetguerrefroide.ui.UiContext;
 import com.populaire.projetguerrefroide.ui.UiState;
 import com.populaire.projetguerrefroide.ui.format.TextFormat;

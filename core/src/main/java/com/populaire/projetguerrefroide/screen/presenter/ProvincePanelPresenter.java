@@ -6,7 +6,7 @@ import com.populaire.projetguerrefroide.protocol.request.RequestKind;
 import com.populaire.projetguerrefroide.protocol.response.ProvinceDetails;
 import com.populaire.projetguerrefroide.screen.GameFlowHandler;
 import com.populaire.projetguerrefroide.screen.GameSession;
-import com.populaire.projetguerrefroide.screen.listener.ProvincePanelListener;
+import com.populaire.projetguerrefroide.ui.view.ProvincePanelListener;
 import com.populaire.projetguerrefroide.ui.UiContext;
 import com.populaire.projetguerrefroide.ui.format.TextFormat;
 import com.populaire.projetguerrefroide.ui.request.RequestWatch;

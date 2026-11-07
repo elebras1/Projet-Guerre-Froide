@@ -19,7 +19,6 @@ import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.adapter.graphics.WgScreenViewport;
 import com.populaire.projetguerrefroide.protocol.catalog.ProvinceTable;
 import com.populaire.projetguerrefroide.screen.input.GameInputHandler;
-import com.populaire.projetguerrefroide.screen.listener.*;
 import com.populaire.projetguerrefroide.screen.presenter.*;
 import com.populaire.projetguerrefroide.ui.UiResources;
 import com.populaire.projetguerrefroide.ui.UiContext;
@@ -27,6 +26,7 @@ import com.populaire.projetguerrefroide.ui.format.TextFormat;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
 import com.populaire.projetguerrefroide.ui.view.*;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
+import com.populaire.projetguerrefroide.screen.input.GameInputListener;
 
 import java.util.List;
 

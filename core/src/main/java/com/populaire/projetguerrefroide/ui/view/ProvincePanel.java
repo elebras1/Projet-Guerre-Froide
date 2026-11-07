@@ -11,7 +11,6 @@ import com.badlogic.gdx.utils.CharArray;
 import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.protocol.catalog.Catalog;
 import com.populaire.projetguerrefroide.protocol.response.ProvinceDetails;
-import com.populaire.projetguerrefroide.screen.listener.ProvincePanelListener;
 import com.populaire.projetguerrefroide.ui.UiCatalog;
 import com.populaire.projetguerrefroide.ui.format.TextFormat;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.FontsSkin;

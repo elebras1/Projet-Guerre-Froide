@@ -9,7 +9,7 @@ import com.populaire.projetguerrefroide.protocol.request.RequestKind;
 import com.populaire.projetguerrefroide.protocol.response.CountryOverview;
 import com.populaire.projetguerrefroide.screen.GameFlowHandler;
 import com.populaire.projetguerrefroide.screen.GameSession;
-import com.populaire.projetguerrefroide.screen.listener.TopBarListener;
+import com.populaire.projetguerrefroide.ui.view.TopBarListener;
 import com.populaire.projetguerrefroide.ui.UiContext;
 import com.populaire.projetguerrefroide.ui.UiState;
 import com.populaire.projetguerrefroide.ui.format.DateText;

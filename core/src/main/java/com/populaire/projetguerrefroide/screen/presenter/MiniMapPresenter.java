@@ -7,7 +7,7 @@ import com.github.tommyettinger.ds.IntObjectMap;
 import com.populaire.projetguerrefroide.protocol.request.MapMode;
 import com.populaire.projetguerrefroide.screen.GameFlowHandler;
 import com.populaire.projetguerrefroide.screen.GameSession;
-import com.populaire.projetguerrefroide.screen.listener.MinimapListener;
+import com.populaire.projetguerrefroide.ui.view.MinimapListener;
 import com.populaire.projetguerrefroide.ui.UiContext;
 import com.populaire.projetguerrefroide.ui.view.Minimap;
 
