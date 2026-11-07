@@ -24,7 +24,7 @@ import com.populaire.projetguerrefroide.ui.UiResources;
 import com.populaire.projetguerrefroide.ui.UiContext;
 import com.populaire.projetguerrefroide.ui.format.TextFormat;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
-import com.populaire.projetguerrefroide.ui.view.MainMenuInGame;
+import com.populaire.projetguerrefroide.ui.view.menubar.InGameMenu;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
 import java.util.List;
@@ -49,7 +49,7 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
     private float time;
     private boolean paused;
 
-    public NewGameScreen(ScreenManager screenManager, UiContext uiContext, GameSession session, UiResources uiResources) {
+    public NewGameScreen(ScreenManager screenManager, UiContext uiContext, GameSession session, UiResources uiResources, LobbySetup lobbySetup) {
         this.screenManager = screenManager;
         this.uiContext = uiContext;
         this.session = session;
@@ -66,8 +66,8 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
         this.stage = new WgCustomStage(new WgScreenViewport(), skinUi, skinFlags);
         WidgetFactory widgetFactory = new WidgetFactory();
         TextFormat textFormat = new TextFormat(uiContext.getLocalisation());
-        this.hudPresenter = new HudPresenter(session, uiContext, screenManager, widgetFactory, assetManager.get(Skins.UI_NEWGAME), skinUi, skinFlags, assetManager.get(Skins.UI_SCROLLBARS), assetManager.get(Skins.PORTRAITS), textFormat);
-        this.mainMenuInGamePresenter = new MainMenuInGamePresenter(uiContext, uiResources, this, widgetFactory, assetManager.get(Skins.UI_MAINMENU_IG), skinUi, assetManager.get(Skins.UI_SCROLLBARS), assetManager.get(Skins.UI_POPUP), skinFlags);
+        this.hudPresenter = new HudPresenter(session, uiContext, screenManager, textFormat, lobbySetup);
+        this.mainMenuInGamePresenter = new MainMenuInGamePresenter(uiContext, uiResources, this, screenManager);
         this.tooltipPresenter = new TooltipPresenter(session, uiContext, widgetFactory, skinUi, skinFlags);
         this.initializeDebug();
 
@@ -167,8 +167,14 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
             this.pause();
             this.mainMenuInGamePresenter.show();
         } else {
-            this.mainMenuInGamePresenter.onCloseMainMenuInGameClicked();
+            this.mainMenuInGamePresenter.close();
         }
+    }
+
+    @Override
+    public void openInGameMenu() {
+        this.pause();
+        this.mainMenuInGamePresenter.show();
     }
 
     @Override
@@ -208,7 +214,7 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
     }
 
     private boolean isMenuContainer(Actor actor) {
-        if (actor instanceof MainMenuInGame) {
+        if (actor instanceof InGameMenu) {
             return true;
         }
 

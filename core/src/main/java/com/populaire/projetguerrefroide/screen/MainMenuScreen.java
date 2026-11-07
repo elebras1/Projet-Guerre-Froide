@@ -24,7 +24,7 @@ public class MainMenuScreen implements Screen {
         uiResources.loadMainMenuLocalisation(uiContext);
         uiContext.getSettings().applyGraphicsSettings();
         Gdx.input.setInputProcessor(this.stage);
-        this.mainMenuPresenter = new MainMenuPresenter(this.screenManager, this.uiContext);
+        this.mainMenuPresenter = new MainMenuPresenter(this.screenManager, this.uiContext, uiResources);
     }
 
     @Override

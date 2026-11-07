@@ -5,6 +5,8 @@ import com.dslplatform.json.CompiledJson;
 
 @CompiledJson
 public class Settings implements Cloneable{
+    public static final String[] LANGUAGES = {"ENGLISH", "FRENCH", "GERMAN", "POLSKI", "SPANISH", "ITALIAN", "SWEDISH", "CZECH", "HUNGARIAN", "DUTCH", "PORTUGUESE", "RUSSIAN", "FINNISH", "CHINESE"};
+    public static final short[] FRAMERATES = {30, 60, 120, 144, 240, 300, 360, 420, 480, 540, 600};
     private String language;
     private short masterVolume;
     private short musicVolume;

@@ -1,0 +1,26 @@
+{
+  "categories": [
+    {
+      "title": "TUT_PART_1_TITLE",
+      "shortTitle": "TUT_PART_1_SHORT",
+      "desc": "TUT_PART_1_DESC",
+      "chapters": [
+        { "title": "TUT_BAS_CHAPTER01_TITLE", "desc": "TUT_BAS_CHAPTER01_DESC", "buttonText": "TUT_BAS_CHAPTER01_BUTTON" },
+        { "title": "TUT_BAS_CHAPTER02_TITLE", "desc": "TUT_BAS_CHAPTER02_DESC", "buttonText": "TUT_BAS_CHAPTER02_BUTTON" },
+        { "title": "TUT_BAS_CHAPTER03_TITLE", "desc": "TUT_BAS_CHAPTER03_DESC", "buttonText": "TUT_BAS_CHAPTER03_BUTTON" }
+      ]
+    },
+    {
+      "title": "TUT_PART_2_TITLE",
+      "shortTitle": "TUT_PART_2_SHORT",
+      "desc": "TUT_PART_2_DESC",
+      "chapters": []
+    },
+    {
+      "title": "TUT_PART_3_TITLE",
+      "shortTitle": "TUT_PART_3_SHORT",
+      "desc": "TUT_PART_3_DESC",
+      "chapters": []
+    }
+  ]
+}

@@ -1,37 +1,31 @@
 package com.populaire.projetguerrefroide.screen.presenter;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.github.tommyettinger.ds.IntObjectMap;
 import com.populaire.projetguerrefroide.protocol.request.MapMode;
 import com.populaire.projetguerrefroide.screen.GameFlowHandler;
 import com.populaire.projetguerrefroide.screen.GameSession;
-import com.populaire.projetguerrefroide.ui.view.MinimapListener;
 import com.populaire.projetguerrefroide.ui.UiContext;
-import com.populaire.projetguerrefroide.ui.view.Minimap;
+import com.populaire.projetguerrefroide.ui.view.menubar.MenuBar;
+import com.populaire.projetguerrefroide.ui.view.menubar.MenuBarListener;
+import com.populaire.projetguerrefroide.ui.widget.UiBuilder;
 
-public class MiniMapPresenter implements Presenter, MinimapListener {
+public class MiniMapPresenter implements Presenter, MenuBarListener {
     private final UiContext uiContext;
     private final GameSession session;
     private final GameFlowHandler gameFlowHandler;
-    private final Skin skinMinimap;
-    private final Skin skinUi;
-    private Minimap minimap;
+    private MenuBar menuBar;
 
-    public MiniMapPresenter(GameSession session, UiContext uiContext, GameFlowHandler gameFlowHandler, Skin skinMinimap, Skin skinUi) {
+    public MiniMapPresenter(GameSession session, UiContext uiContext, GameFlowHandler gameFlowHandler) {
         this.uiContext = uiContext;
         this.session = session;
         this.gameFlowHandler = gameFlowHandler;
-        this.skinMinimap = skinMinimap;
-        this.skinUi = skinUi;
     }
 
     @Override
     public void initialize(Stage stage) {
-        this.minimap = new Minimap(this.skinMinimap, this.skinUi, this.uiContext.getSkinFonts(), this.uiContext.getLocalisation(), this);
-        this.minimap.setPosition(Gdx.graphics.getWidth() - this.minimap.getWidth(), 0);
-        stage.addActor(this.minimap);
+        UiBuilder ui = new UiBuilder(this.uiContext);
+        this.menuBar = new MenuBar(ui, this);
+        stage.addActor(this.menuBar);
     }
 
     @Override
@@ -72,11 +66,6 @@ public class MiniMapPresenter implements Presenter, MinimapListener {
         if (mode != null) {
             this.session.uiState().mapMode(mode);
         }
-    }
-
-    @Override
-    public IntObjectMap<String> getInformationsMapMode(String mapMode) {
-        return null;
     }
 
     @Override

@@ -8,8 +8,13 @@ import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.dao.ConfigurationDao;
 import com.populaire.projetguerrefroide.dao.json.BookmarkFileJson;
 import com.populaire.projetguerrefroide.dao.json.BookmarkJson;
+import com.populaire.projetguerrefroide.dao.json.TutorialCategoryJson;
+import com.populaire.projetguerrefroide.dao.json.TutorialChapterJson;
+import com.populaire.projetguerrefroide.dao.json.TutorialFileJson;
 import com.populaire.projetguerrefroide.configuration.Bookmark;
 import com.populaire.projetguerrefroide.configuration.Settings;
+import com.populaire.projetguerrefroide.configuration.TutorialCategory;
+import com.populaire.projetguerrefroide.configuration.TutorialChapter;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -21,6 +26,8 @@ public class ConfigurationDaoImpl implements ConfigurationDao {
     private final String commonPath = "common/";
     private final String settingsPath = "settings/";
     private final String bookmarkJsonFile = this.commonPath + "bookmark.json";
+    private final String tutorialsJsonFile = this.commonPath + "tutorials.json";
+    private final String creditsFile = this.commonPath + "credits.txt";
     private final String settingsJsonFile = this.settingsPath + "settings.json";
 
     public ConfigurationDaoImpl() {
@@ -56,6 +63,35 @@ public class ConfigurationDaoImpl implements ConfigurationDao {
             exception.printStackTrace();
         }
         return bookmark;
+    }
+
+    @Override
+    public List<TutorialCategory> loadTutorials() {
+        List<TutorialCategory> categories = new ObjectList<>();
+        try {
+            TutorialFileJson file = this.readJson(Gdx.files.internal(this.tutorialsJsonFile), TutorialFileJson.class);
+            for (TutorialCategoryJson categoryJson : file.categories()) {
+                List<TutorialChapter> chapters = new ObjectList<>();
+                if (categoryJson.chapters() != null) {
+                    for (TutorialChapterJson chapterJson : categoryJson.chapters()) {
+                        chapters.add(new TutorialChapter(chapterJson.title(), chapterJson.desc(), chapterJson.buttonText()));
+                    }
+                }
+                categories.add(new TutorialCategory(categoryJson.title(), categoryJson.shortTitle(), categoryJson.desc(), chapters));
+            }
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+        return categories;
+    }
+
+    @Override
+    public List<String> loadCredits() {
+        List<String> lines = new ObjectList<>();
+        for (String line : Gdx.files.internal(this.creditsFile).readString("UTF-8").split("\\R", -1)) {
+            lines.add(line);
+        }
+        return lines;
     }
 
     @Override

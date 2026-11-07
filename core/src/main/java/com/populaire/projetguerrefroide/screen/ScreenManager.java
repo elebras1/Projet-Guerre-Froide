@@ -14,6 +14,7 @@ public class ScreenManager implements Disposable {
     private final UiResources uiResources;
     private final SimulationFactory simulationFactory;
     private GameSession session;
+    private LobbySetup lobbySetup;
 
     public ScreenManager(Game game, UiContext uiContext, UiResources uiResources, SimulationFactory simulationFactory) {
         this.game = game;
@@ -27,7 +28,8 @@ public class ScreenManager implements Disposable {
         this.closeSession();
     }
 
-    public void showLoadScreen() {
+    public void showLoadScreen(LobbySetup lobbySetup) {
+        this.lobbySetup = lobbySetup;
         this.closeSession();
         SimulationChannel channel = this.simulationFactory.create(this.uiContext.getBookmark().date(), this.uiContext.getSettings().isDebugMode());
         this.session = new GameSession(channel, this.uiContext);
@@ -35,7 +37,7 @@ public class ScreenManager implements Disposable {
     }
 
     public void showNewGameScreen() {
-        this.showScreen(new NewGameScreen(this, this.uiContext, this.session, this.uiResources));
+        this.showScreen(new NewGameScreen(this, this.uiContext, this.session, this.uiResources, this.lobbySetup));
     }
 
     public void showGameScreen() {

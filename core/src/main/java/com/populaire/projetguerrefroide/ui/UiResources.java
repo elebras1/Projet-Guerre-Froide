@@ -12,6 +12,7 @@ import com.populaire.projetguerrefroide.dao.LocalisationDao;
 import com.populaire.projetguerrefroide.dao.impl.ConfigurationDaoImpl;
 import com.populaire.projetguerrefroide.dao.impl.LocalisationDaoImpl;
 import com.populaire.projetguerrefroide.configuration.Bookmark;
+import com.populaire.projetguerrefroide.configuration.TutorialCategory;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
 import com.populaire.projetguerrefroide.ui.widget.CursorManager;
 
@@ -69,11 +70,11 @@ public class UiResources {
         assetManager.load(Skins.FONTS, Skin.class);
         assetManager.load(Skins.UI_SCROLLBARS, Skin.class);
         assetManager.load(Skins.UI_MAINMENU, Skin.class);
+        assetManager.load(Skins.UI_NEWGAME, Skin.class);
         assetManager.finishLoading();
     }
 
     public void loadGameAssets(AssetManager assetManager) {
-        assetManager.load(Skins.UI_NEWGAME, Skin.class);
         assetManager.load(Skins.FLAGS, Skin.class);
         assetManager.load(Skins.PORTRAITS, Skin.class);
         assetManager.load(Skins.UI_MAINMENU_IG, Skin.class);
@@ -87,8 +88,9 @@ public class UiResources {
     public void loadMainMenuLocalisation(UiContext uiContext) {
         this.setLanguage(uiContext);
         uiContext.putAllLocalisation(this.localisationDao.readMainMenu());
+        uiContext.putAllLocalisation(this.localisationDao.readMainMenuInGame());
+        uiContext.putAllLocalisation(this.localisationDao.readLanguage());
         uiContext.putAllLocalisation(this.localisationDao.readCountries());
-
     }
 
     public void loadNewGameLocalisation(UiContext uiContext) {
@@ -117,6 +119,14 @@ public class UiResources {
 
     private void setLanguage(UiContext uiContext) {
         this.localisationDao.setLanguage(uiContext.getSettings().getLanguage());
+    }
+
+    public List<TutorialCategory> loadTutorials() {
+        return this.configurationDao.loadTutorials();
+    }
+
+    public List<String> loadCredits() {
+        return this.configurationDao.loadCredits();
     }
 
     public void saveSettings(Settings settings) {

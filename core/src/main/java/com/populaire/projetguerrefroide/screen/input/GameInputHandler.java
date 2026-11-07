@@ -102,10 +102,6 @@ public class GameInputHandler implements InputProcessor {
             }
         }
 
-        if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
-            this.gameInputListener.onEscape();
-        }
-
         int position = this.getWorldPositions(screenX, screenY);
         this.gameInputListener.onHover(position >> 16, position & 0xFFFF);
     }
@@ -151,6 +147,10 @@ public class GameInputHandler implements InputProcessor {
 
     @Override
     public boolean keyDown (int keycode) {
+        if (keycode == Input.Keys.ESCAPE) {
+            this.gameInputListener.onEscape();
+            return true;
+        }
         return false;
     }
 

@@ -10,4 +10,5 @@ public interface GameFlowHandler {
     void moveCameraTo(int x, int y);
     void zoomIn();
     void zoomOut();
+    void openInGameMenu();
 }

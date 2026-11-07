@@ -1,73 +1,46 @@
 package com.populaire.projetguerrefroide.screen.presenter;
 
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.utils.Align;
 import com.populaire.projetguerrefroide.protocol.command.ChoosePlayerCountryCommand;
 import com.populaire.projetguerrefroide.protocol.request.RequestKind;
 import com.populaire.projetguerrefroide.protocol.response.CountrySummary;
 import com.populaire.projetguerrefroide.screen.GameSession;
+import com.populaire.projetguerrefroide.screen.LobbySetup;
 import com.populaire.projetguerrefroide.screen.ScreenManager;
-import com.populaire.projetguerrefroide.ui.view.LobbyBoxListener;
 import com.populaire.projetguerrefroide.ui.UiContext;
 import com.populaire.projetguerrefroide.ui.format.TextFormat;
 import com.populaire.projetguerrefroide.ui.request.RequestWatch;
-import com.populaire.projetguerrefroide.ui.view.*;
-import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
+import com.populaire.projetguerrefroide.ui.view.lobby.Lobby;
+import com.populaire.projetguerrefroide.ui.view.lobby.LobbyListener;
+import com.populaire.projetguerrefroide.ui.widget.UiBuilder;
 
-public class HudPresenter extends RequestingPresenter implements LobbyBoxListener {
+public class HudPresenter extends RequestingPresenter implements LobbyListener {
     private final UiContext uiContext;
     private final ScreenManager screenManager;
     private final TextFormat textFormat;
-    private final WidgetFactory widgetFactory;
-    private final Skin skin;
-    private final Skin skinUi;
-    private final Skin skinFlags;
-    private final Skin skinScrollbars;
-    private final Skin skinPortraits;
-    private CountrySummaryPanel countrySummaryPanel;
-    private LobbyBox lobbyBox;
+    private final LobbySetup lobbySetup;
+    private Lobby lobby;
 
-    public HudPresenter(GameSession session, UiContext context, ScreenManager screenManager, WidgetFactory factory, Skin skin, Skin skinUi, Skin skinFlags, Skin skinScrollbars, Skin skinPortraits, TextFormat textFormat) {
+    public HudPresenter(GameSession session, UiContext context, ScreenManager screenManager, TextFormat textFormat, LobbySetup lobbySetup) {
         super(session);
         this.uiContext = context;
         this.screenManager = screenManager;
         this.textFormat = textFormat;
-        this.widgetFactory = factory;
-        this.skin = skin;
-        this.skinUi = skinUi;
-        this.skinFlags = skinFlags;
-        this.skinScrollbars = skinScrollbars;
-        this.skinPortraits = skinPortraits;
+        this.lobbySetup = lobbySetup;
     }
 
     @Override
     public void initialize(Stage stage) {
-        Table topTable = new Table();
-        topTable.setFillParent(true);
-        topTable.top();
-
-        ScenarioSavegameSelector scenarioSelector = new ScenarioSavegameSelector(skin, uiContext.getSkinFonts(), uiContext.getBookmark(), uiContext.getLocalisation());
-        TitleBar titleBar = new TitleBar(widgetFactory, skin, uiContext.getSkinFonts(), uiContext.getLocalisation());
-        this.countrySummaryPanel = new CountrySummaryPanel(widgetFactory, skin, skinUi, skinFlags, skinPortraits, uiContext.getSkinFonts(), uiContext.getLocalisation(), this.session.uiCatalog(), this.textFormat);
-
-        topTable.add(scenarioSelector).align(Align.topLeft).expandX();
-        topTable.add(titleBar).align(Align.top);
-        topTable.add(countrySummaryPanel).align(Align.topRight).expandX();
-        topTable.pad(5);
-
-        Table bottomTable = new Table();
-        bottomTable.setFillParent(true);
-        bottomTable.bottom();
-
-        this.lobbyBox = new LobbyBox(widgetFactory, skin, skinScrollbars, uiContext.getSkinFonts(), uiContext.getLocalisation(), this);
-
-        bottomTable.add(lobbyBox).align(Align.bottom);
-        bottomTable.pad(5);
-
-        stage.addActor(topTable);
-        stage.addActor(bottomTable);
+        UiBuilder ui = new UiBuilder(this.uiContext);
+        this.lobby = new Lobby(ui, this, this.session.uiCatalog(), this.textFormat, this.uiContext.getBookmark(), this.lobbySetup.multiplayer());
+        stage.addActor(this.lobby);
+        if (this.lobbySetup.multiplayer()) {
+            this.lobby.setHost(this.lobbySetup.playerName());
+            this.lobby.addChatLine(this.lobbySetup.gameName());
+            this.lobby.addChatLine(ui.localise("FE_NETWORK_UNAVAILABLE"));
+        } else {
+            this.lobby.addChatLine(ui.localise("INTRODUCTION"));
+        }
         this.watch(RequestKind.COUNTRY_SUMMARY, new CountrySummary(), new CountrySummary(),
             () -> this.selectedCountry() >= 0, params -> params.index(this.selectedCountry()), RequestWatch.Staleness.EVERY_REVISION, this::applySummary);
     }
@@ -78,14 +51,14 @@ public class HudPresenter extends RequestingPresenter implements LobbyBoxListene
 
     private void applySummary(CountrySummary summary) {
         if (summary.found()) {
-            this.countrySummaryPanel.update(summary);
+            this.lobby.showCountry(summary);
         }
     }
 
     @Override
     protected void afterRequests(float delta) {
-        if (this.selectedCountry() < 0 && this.countrySummaryPanel.isVisible()) {
-            this.countrySummaryPanel.hide();
+        if (this.selectedCountry() < 0 && this.lobby.isCountryShown()) {
+            this.lobby.hideCountry();
         }
     }
 
@@ -105,7 +78,13 @@ public class HudPresenter extends RequestingPresenter implements LobbyBoxListene
         this.screenManager.showMainMenuScreen();
     }
 
-    @Override public void dispose() {
+    @Override
+    public void onChatMessage(String message) {
+        this.lobby.addChatLine(this.lobbySetup.playerName() + " : " + message);
+    }
+
+    @Override
+    public void dispose() {
 
     }
 }

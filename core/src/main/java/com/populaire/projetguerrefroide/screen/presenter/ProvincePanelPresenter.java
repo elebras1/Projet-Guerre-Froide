@@ -1,47 +1,38 @@
 package com.populaire.projetguerrefroide.screen.presenter;
 
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.populaire.projetguerrefroide.protocol.request.RequestKind;
 import com.populaire.projetguerrefroide.protocol.response.ProvinceDetails;
 import com.populaire.projetguerrefroide.screen.GameFlowHandler;
 import com.populaire.projetguerrefroide.screen.GameSession;
-import com.populaire.projetguerrefroide.ui.view.ProvincePanelListener;
 import com.populaire.projetguerrefroide.ui.UiContext;
 import com.populaire.projetguerrefroide.ui.format.TextFormat;
 import com.populaire.projetguerrefroide.ui.request.RequestWatch;
-import com.populaire.projetguerrefroide.ui.view.ProvincePanel;
-import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
+import com.populaire.projetguerrefroide.ui.view.province.ProvincePanel;
+import com.populaire.projetguerrefroide.ui.view.province.ProvincePanelListener;
+import com.populaire.projetguerrefroide.ui.widget.UiBuilder;
 
 public class ProvincePanelPresenter extends RequestingPresenter implements ProvincePanelListener {
     private final UiContext uiContext;
     private final GameFlowHandler gameFlowHandler;
-    private final WidgetFactory widgetFactory;
-    private final Skin skinProvince;
-    private final Skin skinUi;
-    private final Skin skinFlags;
     private final TextFormat textFormat;
     private ProvincePanel provincePanel;
     private RequestWatch<ProvinceDetails> provinceWatch;
     private int panelProvince;
     private boolean opening;
 
-    public ProvincePanelPresenter(GameSession session, UiContext uiContext, GameFlowHandler gameFlowHandler, WidgetFactory widgetFactory, Skin skinProvince, Skin skinUi, Skin skinFlags, TextFormat textFormat) {
+    public ProvincePanelPresenter(GameSession session, UiContext uiContext, GameFlowHandler gameFlowHandler, TextFormat textFormat) {
         super(session);
         this.uiContext = uiContext;
         this.gameFlowHandler = gameFlowHandler;
-        this.widgetFactory = widgetFactory;
-        this.skinProvince = skinProvince;
-        this.skinUi = skinUi;
-        this.skinFlags = skinFlags;
         this.textFormat = textFormat;
         this.panelProvince = -1;
     }
 
     @Override
     public void initialize(Stage stage) {
-        this.provincePanel = new ProvincePanel(this.widgetFactory, this.skinProvince, this.skinUi, this.skinFlags, this.uiContext.getSkinFonts(), this.uiContext.getLocalisation(), this.session.uiCatalog(), this.textFormat);
-        this.provincePanel.setListener(this);
+        UiBuilder ui = new UiBuilder(this.uiContext);
+        this.provincePanel = new ProvincePanel(ui, this.session.uiCatalog(), this.textFormat, this);
         this.provincePanel.setPosition(0, 0);
         this.provincePanel.setVisible(false);
         stage.addActor(this.provincePanel);
