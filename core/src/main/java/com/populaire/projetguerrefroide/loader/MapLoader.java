@@ -6,7 +6,6 @@ import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.component.Demographics;
 import com.populaire.projetguerrefroide.dao.csv.ProvinceDefinitionCsv;
 import com.populaire.projetguerrefroide.dao.json.*;
-import com.populaire.projetguerrefroide.pojo.*;
 import com.populaire.projetguerrefroide.system.building.EconomyBuildingUtils;
 import com.populaire.projetguerrefroide.simulation.EcsConstants;
 import io.github.elebras1.flecs.Entity;

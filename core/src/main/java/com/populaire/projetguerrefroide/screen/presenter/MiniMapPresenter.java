@@ -4,7 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.github.tommyettinger.ds.IntObjectMap;
-import com.populaire.projetguerrefroide.pojo.MapMode;
+import com.populaire.projetguerrefroide.protocol.request.MapMode;
 import com.populaire.projetguerrefroide.screen.GameFlowHandler;
 import com.populaire.projetguerrefroide.screen.GameSession;
 import com.populaire.projetguerrefroide.screen.listener.MinimapListener;

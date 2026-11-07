@@ -1,7 +1,7 @@
 package com.populaire.projetguerrefroide.simulation.request;
 
 import com.populaire.projetguerrefroide.component.*;
-import com.populaire.projetguerrefroide.pojo.MapMode;
+import com.populaire.projetguerrefroide.protocol.request.MapMode;
 import com.populaire.projetguerrefroide.protocol.SimulationHeader;
 import com.populaire.projetguerrefroide.protocol.request.RequestParams;
 import com.populaire.projetguerrefroide.protocol.response.MapModeColors;

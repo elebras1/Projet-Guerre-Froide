@@ -4,7 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.dslplatform.json.DslJson;
 import com.populaire.projetguerrefroide.dao.MapDao;
 import com.populaire.projetguerrefroide.dao.json.RiversMeshJson;
-import com.populaire.projetguerrefroide.pojo.RawMeshMulti;
+import com.populaire.projetguerrefroide.dao.RawMeshMulti;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;

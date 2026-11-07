@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.pojo;
+package com.populaire.projetguerrefroide.protocol.request;
 
 public enum MapMode {
     POLITICAL,

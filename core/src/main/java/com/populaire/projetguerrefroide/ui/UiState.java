@@ -1,6 +1,6 @@
 package com.populaire.projetguerrefroide.ui;
 
-import com.populaire.projetguerrefroide.pojo.MapMode;
+import com.populaire.projetguerrefroide.protocol.request.MapMode;
 import com.populaire.projetguerrefroide.protocol.request.SortType;
 
 public final class UiState {

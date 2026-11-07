@@ -3,7 +3,7 @@ package com.populaire.projetguerrefroide.screen.presenter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.populaire.projetguerrefroide.pojo.MapMode;
+import com.populaire.projetguerrefroide.protocol.request.MapMode;
 import com.populaire.projetguerrefroide.protocol.request.RequestKind;
 import com.populaire.projetguerrefroide.protocol.response.ProvinceHover;
 import com.populaire.projetguerrefroide.screen.GameSession;

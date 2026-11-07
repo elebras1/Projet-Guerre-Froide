@@ -6,7 +6,7 @@ import com.github.tommyettinger.ds.LongIntMap;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.component.*;
-import com.populaire.projetguerrefroide.pojo.WorldData;
+import com.populaire.projetguerrefroide.loader.WorldData;
 import com.populaire.projetguerrefroide.protocol.catalog.Catalog;
 import com.populaire.projetguerrefroide.protocol.catalog.NamedTable;
 import com.populaire.projetguerrefroide.protocol.catalog.ProvinceTable;

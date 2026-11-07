@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.pojo;
+package com.populaire.projetguerrefroide.renderer;
 
 import com.badlogic.gdx.files.FileHandle;
 import com.monstrous.gdx.webgpu.graphics.WgTexture;

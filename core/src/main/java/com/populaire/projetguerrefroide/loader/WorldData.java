@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.pojo;
+package com.populaire.projetguerrefroide.loader;
 
 import com.github.tommyettinger.ds.IntLongMap;
 

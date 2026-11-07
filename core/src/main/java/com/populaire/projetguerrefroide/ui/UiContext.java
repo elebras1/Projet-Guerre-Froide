@@ -5,7 +5,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.Disposable;
 import com.github.tommyettinger.ds.ObjectObjectMap;
 import com.populaire.projetguerrefroide.configuration.Settings;
-import com.populaire.projetguerrefroide.pojo.Bookmark;
+import com.populaire.projetguerrefroide.configuration.Bookmark;
 import com.populaire.projetguerrefroide.ui.widget.ColorDrawablePool;
 import com.populaire.projetguerrefroide.ui.widget.CursorManager;
 

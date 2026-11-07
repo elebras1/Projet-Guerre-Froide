@@ -3,7 +3,6 @@ package com.populaire.projetguerrefroide.loader;
 import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dao.json.*;
-import com.populaire.projetguerrefroide.pojo.*;
 import com.populaire.projetguerrefroide.simulation.EcsConstants;
 import com.populaire.projetguerrefroide.system.state.IncomeTypeUtils;
 import com.populaire.projetguerrefroide.system.population.StrataUtils;

@@ -2,7 +2,7 @@ package com.populaire.projetguerrefroide.simulation;
 
 import com.populaire.projetguerrefroide.dao.impl.WorldDaoImpl;
 import com.populaire.projetguerrefroide.loader.WorldLoader;
-import com.populaire.projetguerrefroide.pojo.WorldData;
+import com.populaire.projetguerrefroide.loader.WorldData;
 import com.populaire.projetguerrefroide.protocol.LoadingStage;
 import com.populaire.projetguerrefroide.protocol.SimulationChannel;
 import com.populaire.projetguerrefroide.protocol.SimulationHeader;

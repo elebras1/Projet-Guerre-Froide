@@ -11,7 +11,7 @@ import com.populaire.projetguerrefroide.dao.ConfigurationDao;
 import com.populaire.projetguerrefroide.dao.LocalisationDao;
 import com.populaire.projetguerrefroide.dao.impl.ConfigurationDaoImpl;
 import com.populaire.projetguerrefroide.dao.impl.LocalisationDaoImpl;
-import com.populaire.projetguerrefroide.pojo.Bookmark;
+import com.populaire.projetguerrefroide.configuration.Bookmark;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
 import com.populaire.projetguerrefroide.ui.widget.CursorManager;
 

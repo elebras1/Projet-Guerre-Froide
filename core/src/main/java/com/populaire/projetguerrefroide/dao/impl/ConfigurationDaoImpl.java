@@ -8,7 +8,7 @@ import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.dao.ConfigurationDao;
 import com.populaire.projetguerrefroide.dao.json.BookmarkFileJson;
 import com.populaire.projetguerrefroide.dao.json.BookmarkJson;
-import com.populaire.projetguerrefroide.pojo.Bookmark;
+import com.populaire.projetguerrefroide.configuration.Bookmark;
 import com.populaire.projetguerrefroide.configuration.Settings;
 
 import java.io.FileOutputStream;

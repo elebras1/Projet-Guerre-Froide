@@ -3,9 +3,6 @@ package com.populaire.projetguerrefroide.loader;
 import com.github.tommyettinger.ds.IntLongMap;
 import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.dao.json.CountryHistoryJson;
-import com.populaire.projetguerrefroide.pojo.Borders;
-import com.populaire.projetguerrefroide.pojo.ProductionType;
-import com.populaire.projetguerrefroide.pojo.WorldData;
 import com.populaire.projetguerrefroide.simulation.SimulationContext;
 
 import java.util.Map;
