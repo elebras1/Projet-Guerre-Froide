@@ -8,7 +8,7 @@ import com.monstrous.gdx.webgpu.scene2d.WgStage;
 import com.populaire.projetguerrefroide.adapter.graphics.WgScreenViewport;
 import com.populaire.projetguerrefroide.screen.presenter.MainMenuPresenter;
 import com.populaire.projetguerrefroide.screen.presenter.Presenter;
-import com.populaire.projetguerrefroide.service.ConfigurationService;
+import com.populaire.projetguerrefroide.ui.UiResources;
 import com.populaire.projetguerrefroide.ui.UiContext;
 
 public class MainMenuScreen implements Screen {
@@ -17,11 +17,11 @@ public class MainMenuScreen implements Screen {
     private final UiContext uiContext;
     private final Presenter mainMenuPresenter;
 
-    public MainMenuScreen(ScreenManager screenManager, UiContext uiContext, ConfigurationService configurationService) {
+    public MainMenuScreen(ScreenManager screenManager, UiContext uiContext, UiResources uiResources) {
         this.stage = new WgStage(new WgScreenViewport());
         this.screenManager = screenManager;
         this.uiContext = uiContext;
-        configurationService.loadMainMenuLocalisation(uiContext);
+        uiResources.loadMainMenuLocalisation(uiContext);
         uiContext.getSettings().applyGraphicsSettings();
         Gdx.input.setInputProcessor(this.stage);
         this.mainMenuPresenter = new MainMenuPresenter(this.screenManager, this.uiContext);

@@ -1,15 +1,14 @@
-package com.populaire.projetguerrefroide.service;
+package com.populaire.projetguerrefroide.system;
 
 import io.github.elebras1.flecs.Flecs;
 import io.github.elebras1.flecs.Pipeline;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.simulation.SimulationContext;
-import com.populaire.projetguerrefroide.system.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 
 import static com.populaire.projetguerrefroide.util.Constants.INITIAL_SAVINGS_PASSES;
 
-public class EconomyService {
+public class EconomyPipelines {
     private final DemographicsResetSystem demographicsResetSystem;
     private final CountryDemographicsResetSystem countryDemographicsResetSystem;
     private final PopulationInitializationSystem populationInitializationSystem;
@@ -130,7 +129,7 @@ public class EconomyService {
     private final Pipeline initTreasuryPipeline;
     private final Pipeline mainPipeline;
 
-    public EconomyService(SimulationContext simulationContext) {
+    public EconomyPipelines(SimulationContext simulationContext) {
         World ecsWorld = simulationContext.getEcsWorld();
         this.ecsWorld = ecsWorld;
         this.ecsConstants = simulationContext.getEcsConstants();

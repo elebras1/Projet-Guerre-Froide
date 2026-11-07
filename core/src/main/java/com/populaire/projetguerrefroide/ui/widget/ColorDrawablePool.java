@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.service;
+package com.populaire.projetguerrefroide.ui.widget;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;

@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.service;
+package com.populaire.projetguerrefroide.ui;
 
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -12,7 +12,6 @@ import com.populaire.projetguerrefroide.dao.LocalisationDao;
 import com.populaire.projetguerrefroide.dao.impl.ConfigurationDaoImpl;
 import com.populaire.projetguerrefroide.dao.impl.LocalisationDaoImpl;
 import com.populaire.projetguerrefroide.pojo.Bookmark;
-import com.populaire.projetguerrefroide.ui.UiContext;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
 import com.populaire.projetguerrefroide.ui.widget.CursorManager;
 
@@ -20,13 +19,13 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ConfigurationService {
+public class UiResources {
     private static final List<String> LANGUAGES_WITH_OWN_FONTS = List.of("RUSSIAN", "CHINESE", "ARABIC");
     private static final Pattern FONT_SIZE = Pattern.compile("(_[0-9]{2})");
     private final ConfigurationDao configurationDao;
     private final LocalisationDao localisationDao;
 
-    public ConfigurationService() {
+    public UiResources() {
         this.configurationDao = new ConfigurationDaoImpl();
         this.localisationDao = new LocalisationDaoImpl();
     }

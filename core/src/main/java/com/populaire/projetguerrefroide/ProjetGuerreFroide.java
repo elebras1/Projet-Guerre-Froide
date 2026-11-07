@@ -2,7 +2,7 @@ package com.populaire.projetguerrefroide;
 
 import com.badlogic.gdx.Game;
 import com.populaire.projetguerrefroide.screen.ScreenManager;
-import com.populaire.projetguerrefroide.service.ConfigurationService;
+import com.populaire.projetguerrefroide.ui.UiResources;
 import com.populaire.projetguerrefroide.simulation.SimulationRuntime;
 import com.populaire.projetguerrefroide.ui.UiContext;
 
@@ -10,18 +10,18 @@ import com.populaire.projetguerrefroide.ui.UiContext;
 public class ProjetGuerreFroide extends Game {
     public static final int WORLD_WIDTH = 5616;
     public static final int WORLD_HEIGHT = 2160;
-    private final ConfigurationService configurationService;
+    private final UiResources uiResources;
     private ScreenManager screenManager;
     private UiContext uiContext;
 
     public ProjetGuerreFroide() {
-        this.configurationService = new ConfigurationService();
+        this.uiResources = new UiResources();
     }
 
     @Override
     public void create() {
-        this.uiContext = this.configurationService.getUiContext();
-        this.screenManager = new ScreenManager(this, this.uiContext, this.configurationService, SimulationRuntime::threaded);
+        this.uiContext = this.uiResources.getUiContext();
+        this.screenManager = new ScreenManager(this, this.uiContext, this.uiResources, SimulationRuntime::threaded);
         this.screenManager.showMainMenuScreen();
     }
 

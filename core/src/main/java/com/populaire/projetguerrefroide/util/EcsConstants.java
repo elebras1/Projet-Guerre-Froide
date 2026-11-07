@@ -184,7 +184,7 @@ public class EcsConstants {
 
     private void requireGlobals() {
         if (!this.globalsResolved) {
-            throw new IllegalStateException("Global entities are resolved by EconomyService.initialize()");
+            throw new IllegalStateException("Global entities are resolved by EconomyPipelines.initialize()");
         }
     }
 

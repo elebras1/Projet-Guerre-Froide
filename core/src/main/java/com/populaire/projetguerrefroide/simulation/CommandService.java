@@ -2,7 +2,7 @@ package com.populaire.projetguerrefroide.simulation;
 
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.protocol.command.*;
-import com.populaire.projetguerrefroide.service.EconomyService;
+import com.populaire.projetguerrefroide.system.EconomyPipelines;
 import com.populaire.projetguerrefroide.util.ConstructionUtils;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 import com.populaire.projetguerrefroide.util.EconomyBuildingUtils;
@@ -16,15 +16,15 @@ import io.github.elebras1.flecs.World;
 public final class CommandService {
     private final World ecsWorld;
     private final EcsConstants ecsConstants;
-    private final EconomyService economyService;
+    private final EconomyPipelines economyPipelines;
     private final SimulationState state;
     private final Query constructionSiteQuery;
     private int levelsQueued;
 
-    public CommandService(SimulationContext simulationContext, EconomyService economyService, SimulationState state) {
+    public CommandService(SimulationContext simulationContext, EconomyPipelines economyPipelines, SimulationState state) {
         this.ecsWorld = simulationContext.getEcsWorld();
         this.ecsConstants = simulationContext.getEcsConstants();
-        this.economyService = economyService;
+        this.economyPipelines = economyPipelines;
         this.state = state;
         this.constructionSiteQuery = this.ecsWorld.query().with(ConstructionSite.class).build();
     }
@@ -45,7 +45,7 @@ public final class CommandService {
         }
         this.state.playerCountryId(countryId);
         if (!this.state.economyInitialized()) {
-            this.economyService.initialize();
+            this.economyPipelines.initialize();
             this.state.markEconomyInitialized();
         }
         return true;

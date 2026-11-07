@@ -8,7 +8,7 @@ import com.github.tommyettinger.ds.ShortList;
 
 import java.util.List;
 
-public class MapLabelService {
+public class MapLabelMeshBuilder {
     private final BitmapFont font;
     private static class CurvePoint {
         int center;
@@ -16,7 +16,7 @@ public class MapLabelService {
         float angle;
     }
 
-    public MapLabelService(BitmapFont font) {
+    public MapLabelMeshBuilder(BitmapFont font) {
         this.font = font;
     }
 

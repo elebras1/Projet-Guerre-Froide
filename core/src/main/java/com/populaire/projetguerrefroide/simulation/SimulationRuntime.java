@@ -11,7 +11,7 @@ import com.populaire.projetguerrefroide.protocol.command.GameCommand;
 import com.populaire.projetguerrefroide.protocol.event.EventKind;
 import com.populaire.projetguerrefroide.protocol.event.EventRing;
 import com.populaire.projetguerrefroide.protocol.request.RequestBoard;
-import com.populaire.projetguerrefroide.service.EconomyService;
+import com.populaire.projetguerrefroide.system.EconomyPipelines;
 import com.populaire.projetguerrefroide.simulation.request.RequestService;
 import com.populaire.projetguerrefroide.system.BuildingLevelUpNotificationSystem;
 import io.github.elebras1.flecs.Flecs;
@@ -48,7 +48,7 @@ public final class SimulationRuntime implements SimulationChannel {
     private volatile Thread owner;
     private Thread thread;
     private World ecsWorld;
-    private EconomyService economyService;
+    private EconomyPipelines economyPipelines;
     private RequestService requestService;
     private CommandService commandService;
     private SimulationState state;
@@ -212,10 +212,10 @@ public final class SimulationRuntime implements SimulationChannel {
         ComponentRegistry.register(this.ecsWorld);
         SimulationContext simulationContext = new SimulationContext(this.ecsWorld);
         new BuildingLevelUpNotificationSystem(this.ecsWorld, simulationContext.getEcsConstants(), this.events);
-        this.economyService = new EconomyService(simulationContext);
+        this.economyPipelines = new EconomyPipelines(simulationContext);
         this.state = new SimulationState();
         this.requestService = new RequestService(simulationContext, this.state, this.header);
-        this.commandService = new CommandService(simulationContext, this.economyService, this.state);
+        this.commandService = new CommandService(simulationContext, this.economyPipelines, this.state);
         this.clock = new SimulationClock();
         if (this.debugMode) {
             this.startRest();
@@ -252,7 +252,7 @@ public final class SimulationRuntime implements SimulationChannel {
         this.applyCommands();
         this.requestService.serve(this.board, publishedBatch);
         if (this.state.economyInitialized() && this.clock.tickDue(now)) {
-            this.economyService.advanceDay();
+            this.economyPipelines.advanceDay();
             this.clock.ticked(now, this.nanoTime.getAsLong());
             this.header.publishTick(this.clock.tick());
         }

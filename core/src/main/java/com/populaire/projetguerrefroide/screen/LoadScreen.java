@@ -7,7 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.monstrous.gdx.webgpu.scene2d.WgStage;
 import com.populaire.projetguerrefroide.screen.presenter.LoadingPresenter;
-import com.populaire.projetguerrefroide.service.ConfigurationService;
+import com.populaire.projetguerrefroide.ui.UiResources;
 import com.populaire.projetguerrefroide.ui.UiContext;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
 
@@ -17,15 +17,15 @@ public class LoadScreen implements Screen {
     private final Stage stage;
     private final ScreenManager screenManager;
     private final UiContext uiContext;
-    private final ConfigurationService configurationService;
+    private final UiResources uiResources;
     private final GameSession session;
     private final LoadingPresenter loadingPresenter;
     private LoadingStep loadingStep;
 
-    public LoadScreen(ScreenManager screenManager, UiContext uiContext, ConfigurationService configurationService, GameSession session) {
+    public LoadScreen(ScreenManager screenManager, UiContext uiContext, UiResources uiResources, GameSession session) {
         this.screenManager = screenManager;
         this.uiContext = uiContext;
-        this.configurationService = configurationService;
+        this.uiResources = uiResources;
         this.session = session;
         this.loadingPresenter = new LoadingPresenter(this.uiContext);
 
@@ -42,7 +42,7 @@ public class LoadScreen implements Screen {
         this.loadingPresenter.initialize(this.stage);
         assetManager.finishLoading();
         this.session.channel().start();
-        this.configurationService.loadGameAssets(assetManager);
+        this.uiResources.loadGameAssets(assetManager);
     }
 
     @Override

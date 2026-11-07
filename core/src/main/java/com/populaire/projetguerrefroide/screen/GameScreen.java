@@ -21,7 +21,7 @@ import com.populaire.projetguerrefroide.protocol.catalog.ProvinceTable;
 import com.populaire.projetguerrefroide.screen.input.GameInputHandler;
 import com.populaire.projetguerrefroide.screen.listener.*;
 import com.populaire.projetguerrefroide.screen.presenter.*;
-import com.populaire.projetguerrefroide.service.ConfigurationService;
+import com.populaire.projetguerrefroide.ui.UiResources;
 import com.populaire.projetguerrefroide.ui.UiContext;
 import com.populaire.projetguerrefroide.ui.format.TextFormat;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
@@ -36,7 +36,7 @@ import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 public class GameScreen implements Screen, GameInputListener, GameFlowHandler {
     private final UiContext uiContext;
     private final GameSession session;
-    private final ConfigurationService configurationService;
+    private final UiResources uiResources;
     private final OrthographicCamera cam;
     private final WgProjection projection;
     private final InputMultiplexer multiplexer;
@@ -52,10 +52,10 @@ public class GameScreen implements Screen, GameInputListener, GameFlowHandler {
     private float time;
     private boolean paused;
 
-    public GameScreen(ScreenManager screenManager, UiContext uiContext, GameSession session, ConfigurationService configurationService) {
+    public GameScreen(ScreenManager screenManager, UiContext uiContext, GameSession session, UiResources uiResources) {
         this.uiContext = uiContext;
         this.session = session;
-        this.configurationService = configurationService;
+        this.uiResources = uiResources;
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         this.projection = new WgProjection();
         int capital = session.mapView().capitalOf(session.uiState().playerCountry());
@@ -66,7 +66,7 @@ public class GameScreen implements Screen, GameInputListener, GameFlowHandler {
         this.cam.update();
         this.multiplexer = new InputMultiplexer();
         this.inputHandler = new GameInputHandler(this.cam, this);
-        this.configurationService.loadGameLocalisation(this.uiContext);
+        this.uiResources.loadGameLocalisation(this.uiContext);
         this.presenters = new ObjectList<>();
 
         AssetManager assetManager = uiContext.getAssetManager();
@@ -82,7 +82,7 @@ public class GameScreen implements Screen, GameInputListener, GameFlowHandler {
         WidgetFactory widgetFactory = new WidgetFactory();
         TextFormat textFormat = new TextFormat(uiContext.getLocalisation());
 
-        this.mainMenuInGamePresenter = new MainMenuInGamePresenter(uiContext, configurationService, this, widgetFactory, assetManager.get(Skins.UI_MAINMENU_IG), skinUi, skinScrollbars, skinPopup, skinFlags);
+        this.mainMenuInGamePresenter = new MainMenuInGamePresenter(uiContext, uiResources, this, widgetFactory, assetManager.get(Skins.UI_MAINMENU_IG), skinUi, skinScrollbars, skinPopup, skinFlags);
         this.topBarPresenter = new TopBarPresenter(session, this.uiContext, this, widgetFactory, skinTopBar, skinUi, skinFlags, textFormat);
         this.provincePanelPresenter = new ProvincePanelPresenter(session, this.uiContext, this, widgetFactory, skinProvince, skinUi, skinFlags, textFormat);
         this.tooltipPresenter = new TooltipPresenter(session, this.uiContext, widgetFactory, skinUi, skinFlags);

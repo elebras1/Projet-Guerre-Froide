@@ -8,7 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.screen.GameFlowHandler;
 import com.populaire.projetguerrefroide.screen.listener.MainMenuInGameListener;
-import com.populaire.projetguerrefroide.service.ConfigurationService;
+import com.populaire.projetguerrefroide.ui.UiResources;
 import com.populaire.projetguerrefroide.ui.UiContext;
 import com.populaire.projetguerrefroide.ui.view.MainMenuInGame;
 import com.populaire.projetguerrefroide.ui.view.Popup;
@@ -17,7 +17,7 @@ import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
 public class MainMenuInGamePresenter implements Presenter, MainMenuInGameListener {
     private final UiContext uiContext;
-    private final ConfigurationService configurationService;
+    private final UiResources uiResources;
     private final GameFlowHandler gameFlowHandler;
     private final WidgetFactory widgetFactory;
     private final Skin skinMenu;
@@ -30,9 +30,9 @@ public class MainMenuInGamePresenter implements Presenter, MainMenuInGameListene
     private Popup currentPopup;
     private Stage stage;
 
-    public MainMenuInGamePresenter(UiContext uiContext, ConfigurationService configurationService, GameFlowHandler gameFlowHandler, WidgetFactory widgetFactory, Skin skinMenu, Skin skinUi, Skin skinScrollbars, Skin skinPopup, Skin skinFlags) {
+    public MainMenuInGamePresenter(UiContext uiContext, UiResources uiResources, GameFlowHandler gameFlowHandler, WidgetFactory widgetFactory, Skin skinMenu, Skin skinUi, Skin skinScrollbars, Skin skinPopup, Skin skinFlags) {
         this.uiContext = uiContext;
-        this.configurationService = configurationService;
+        this.uiResources = uiResources;
         this.gameFlowHandler = gameFlowHandler;
         this.widgetFactory = widgetFactory;
         this.skinMenu = skinMenu;
@@ -105,7 +105,7 @@ public class MainMenuInGamePresenter implements Presenter, MainMenuInGameListene
 
     @Override public void onApplySettingsClicked(Settings settings) {
         this.uiContext.setSettings(settings);
-        this.configurationService.saveSettings(settings);
+        this.uiResources.saveSettings(settings);
     }
 
     @Override public void dispose() {

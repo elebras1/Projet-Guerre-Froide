@@ -20,7 +20,7 @@ import com.populaire.projetguerrefroide.adapter.graphics.WgScreenViewport;
 import com.populaire.projetguerrefroide.screen.input.GameInputHandler;
 import com.populaire.projetguerrefroide.screen.listener.GameInputListener;
 import com.populaire.projetguerrefroide.screen.presenter.*;
-import com.populaire.projetguerrefroide.service.ConfigurationService;
+import com.populaire.projetguerrefroide.ui.UiResources;
 import com.populaire.projetguerrefroide.ui.UiContext;
 import com.populaire.projetguerrefroide.ui.format.TextFormat;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
@@ -36,7 +36,7 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
     private final ScreenManager screenManager;
     private final UiContext uiContext;
     private final GameSession session;
-    private final ConfigurationService configurationService;
+    private final UiResources uiResources;
     private final OrthographicCamera cam;
     private final WgProjection projection;
     private final Stage stage;
@@ -49,25 +49,25 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
     private float time;
     private boolean paused;
 
-    public NewGameScreen(ScreenManager screenManager, UiContext uiContext, GameSession session, ConfigurationService configurationService) {
+    public NewGameScreen(ScreenManager screenManager, UiContext uiContext, GameSession session, UiResources uiResources) {
         this.screenManager = screenManager;
         this.uiContext = uiContext;
         this.session = session;
-        this.configurationService = configurationService;
+        this.uiResources = uiResources;
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         this.cam.position.set(WORLD_WIDTH / 2f, WORLD_HEIGHT / 1.4f, 0);
         this.projection = new WgProjection();
         this.presenters = new ObjectList<>();
 
         AssetManager assetManager = uiContext.getAssetManager();
-        this.configurationService.loadNewGameLocalisation(this.uiContext);
+        this.uiResources.loadNewGameLocalisation(this.uiContext);
         Skin skinUi = assetManager.get(Skins.UI);
         Skin skinFlags = assetManager.get(Skins.FLAGS);
         this.stage = new WgCustomStage(new WgScreenViewport(), skinUi, skinFlags);
         WidgetFactory widgetFactory = new WidgetFactory();
         TextFormat textFormat = new TextFormat(uiContext.getLocalisation());
         this.hudPresenter = new HudPresenter(session, uiContext, screenManager, widgetFactory, assetManager.get(Skins.UI_NEWGAME), skinUi, skinFlags, assetManager.get(Skins.UI_SCROLLBARS), assetManager.get(Skins.PORTRAITS), textFormat);
-        this.mainMenuInGamePresenter = new MainMenuInGamePresenter(uiContext, configurationService, this, widgetFactory, assetManager.get(Skins.UI_MAINMENU_IG), skinUi, assetManager.get(Skins.UI_SCROLLBARS), assetManager.get(Skins.UI_POPUP), skinFlags);
+        this.mainMenuInGamePresenter = new MainMenuInGamePresenter(uiContext, uiResources, this, widgetFactory, assetManager.get(Skins.UI_MAINMENU_IG), skinUi, assetManager.get(Skins.UI_SCROLLBARS), assetManager.get(Skins.UI_POPUP), skinFlags);
         this.tooltipPresenter = new TooltipPresenter(session, uiContext, widgetFactory, skinUi, skinFlags);
         this.initializeDebug();
 

@@ -38,7 +38,7 @@ import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 public class MapRenderer implements Disposable {
     private final Catalog catalog;
     private final MapDao mapDao;
-    private final MapLabelService mapLabelService;
+    private final MapLabelMeshBuilder mapLabelMeshBuilder;
     private WgTexture mapModeTexture;
     private WgTexture provincesTexture;
     private final WgTexture waterTexture;
@@ -76,7 +76,7 @@ public class MapRenderer implements Disposable {
     public MapRenderer(Catalog catalog, UiContext uiContext, MapDao mapDao, MapTextures mapTextures, PoliticalMap politicalMap, MapBuildings mapBuildings, IntFunction<String> countryNames) {
         this.catalog = catalog;
         this.mapDao = mapDao;
-        this.mapLabelService = new MapLabelService(uiContext.getSkinFonts().get(FontsSkin.Styles.Label.KART_60, Label.LabelStyle.class).font);
+        this.mapLabelMeshBuilder = new MapLabelMeshBuilder(uiContext.getSkinFonts().get(FontsSkin.Styles.Label.KART_60, Label.LabelStyle.class).font);
 
         this.mapModeTexture = mapTextures.mapModeTexture();
         this.provincesStripesTexture = mapTextures.provincesStripesTexture();
@@ -181,7 +181,7 @@ public class MapRenderer implements Disposable {
                             pixelsBorderProvinces.add(borderPixels[pixel]);
                         }
                     }
-                    this.mapLabelService.generateData(countryName, pixelsBorderProvinces, positionsProvinces, vertices, indices);
+                    this.mapLabelMeshBuilder.generateData(countryName, pixelsBorderProvinces, positionsProvinces, vertices, indices);
                 }
             }
         }
