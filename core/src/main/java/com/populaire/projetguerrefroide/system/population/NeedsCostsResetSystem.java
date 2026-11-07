@@ -1,0 +1,36 @@
+package com.populaire.projetguerrefroide.system.population;
+
+import io.github.elebras1.flecs.Field;
+import io.github.elebras1.flecs.Iter;
+import io.github.elebras1.flecs.World;
+import com.populaire.projetguerrefroide.component.CountryMarket;
+import com.populaire.projetguerrefroide.component.CountryMarketMutView;
+
+public class NeedsCostsResetSystem {
+
+    public NeedsCostsResetSystem(World ecsWorld, long phaseId) {
+        ecsWorld.system("NeedsCostsResetSystem")
+            .kind(phaseId)
+            .with(CountryMarket.class)
+            .multiThreaded()
+            .iter(this::reset);
+    }
+
+    private void reset(Iter iter) {
+        Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
+        for(int i = 0; i < iter.count(); i++) {
+            CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
+            for(int p = 0; p < countryMarket.lifeCostsByPopTypeLength(); p++) {
+                countryMarket.lifeCostsByPopType(p, 0f);
+                countryMarket.everydayCostsByPopType(p, 0f);
+                countryMarket.luxuryCostsByPopType(p, 0f);
+                countryMarket.lifeBudgetCostsByPopType(p, 0f);
+                countryMarket.everydayBudgetCostsByPopType(p, 0f);
+                countryMarket.luxuryBudgetCostsByPopType(p, 0f);
+                countryMarket.lifeDemandUnitsByPopType(p, 0.0);
+                countryMarket.everydayDemandUnitsByPopType(p, 0.0);
+                countryMarket.luxuryDemandUnitsByPopType(p, 0.0);
+            }
+        }
+    }
+}

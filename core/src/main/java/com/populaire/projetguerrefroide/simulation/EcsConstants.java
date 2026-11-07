@@ -13,7 +13,7 @@ import com.populaire.projetguerrefroide.component.Modifiers;
 import com.populaire.projetguerrefroide.component.PopulationType;
 import com.populaire.projetguerrefroide.component.PopulationTypeView;
 import com.populaire.projetguerrefroide.component.SpecialBuildingType;
-import com.populaire.projetguerrefroide.util.StateBudgetUtils;
+import com.populaire.projetguerrefroide.system.state.StateBudgetUtils;
 import io.github.elebras1.flecs.EntityView;
 import io.github.elebras1.flecs.Flecs;
 import io.github.elebras1.flecs.World;

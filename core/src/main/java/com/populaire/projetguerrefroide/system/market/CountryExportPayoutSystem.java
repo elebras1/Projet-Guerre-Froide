@@ -1,0 +1,40 @@
+package com.populaire.projetguerrefroide.system.market;
+
+import io.github.elebras1.flecs.EntityView;
+import io.github.elebras1.flecs.Field;
+import io.github.elebras1.flecs.Iter;
+import io.github.elebras1.flecs.World;
+import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
+
+public class CountryExportPayoutSystem {
+    private final EcsConstants ecsConstants;
+
+    public CountryExportPayoutSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
+        ecsWorld.system("CountryExportPayoutSystem")
+            .kind(phaseId)
+            .with(CountryMarket.class)
+            .with(CountryBudgetPolicy.class)
+            .iter(this::pay);
+    }
+
+    private void pay(Iter iter) {
+        EntityView globalMarket = iter.world().obtainEntityView(this.ecsConstants.globalMarket());
+        GlobalMarketView globalMarketData = globalMarket.getMutView(GlobalMarket.class);
+
+        Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
+        for (int i = 0; i < iter.count(); i++) {
+            CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
+
+            for (int g = 0; g < countryMarket.goodExportOffersLength(); g++) {
+                float offers = countryMarket.goodExportOffers(g);
+                float offerTotals = globalMarketData.goodOfferTotals(g);
+                if (offers <= 0f || offerTotals <= 0f) {
+                    continue;
+                }
+                countryMarket.goodRevenues(g, countryMarket.goodRevenues(g) + globalMarketData.goodTradeMoney(g) * offers / offerTotals);
+            }
+        }
+    }
+}

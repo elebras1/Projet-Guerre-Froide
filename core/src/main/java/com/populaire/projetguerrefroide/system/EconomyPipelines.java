@@ -5,6 +5,15 @@ import io.github.elebras1.flecs.Pipeline;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.simulation.SimulationContext;
 import com.populaire.projetguerrefroide.simulation.EcsConstants;
+import com.populaire.projetguerrefroide.system.artisan.*;
+import com.populaire.projetguerrefroide.system.building.*;
+import com.populaire.projetguerrefroide.system.construction.*;
+import com.populaire.projetguerrefroide.system.market.*;
+import com.populaire.projetguerrefroide.system.military.*;
+import com.populaire.projetguerrefroide.system.population.*;
+import com.populaire.projetguerrefroide.system.region.*;
+import com.populaire.projetguerrefroide.system.rgo.*;
+import com.populaire.projetguerrefroide.system.state.*;
 
 import static com.populaire.projetguerrefroide.simulation.Constants.INITIAL_SAVINGS_PASSES;
 
