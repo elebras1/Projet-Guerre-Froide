@@ -20,8 +20,7 @@ import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiSkin;
 import com.populaire.projetguerrefroide.ui.widget.FlagImage;
 import com.populaire.projetguerrefroide.ui.widget.SkinDrawables;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
-import com.populaire.projetguerrefroide.util.BuildingUtils;
-import com.populaire.projetguerrefroide.util.LabelUtils;
+import com.populaire.projetguerrefroide.ui.widget.LabelUtils;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.util;
+package com.populaire.projetguerrefroide.ui.format;
 
 import java.util.Map;
 

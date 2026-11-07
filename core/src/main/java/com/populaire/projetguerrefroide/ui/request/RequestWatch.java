@@ -5,7 +5,7 @@ import com.populaire.projetguerrefroide.protocol.request.Request;
 import com.populaire.projetguerrefroide.protocol.request.RequestBoard;
 import com.populaire.projetguerrefroide.protocol.request.RequestParams;
 import com.populaire.projetguerrefroide.protocol.request.Response;
-import com.populaire.projetguerrefroide.util.CalendarUtils;
+import com.populaire.projetguerrefroide.ui.format.CalendarUtils;
 
 public final class RequestWatch<R extends Response> {
     private final Request<R> request;

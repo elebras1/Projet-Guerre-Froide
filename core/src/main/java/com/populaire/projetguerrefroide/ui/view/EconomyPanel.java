@@ -25,7 +25,6 @@ import com.populaire.projetguerrefroide.ui.widget.HoverScrollPane;
 import com.populaire.projetguerrefroide.ui.widget.SkinDrawables;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 import com.populaire.projetguerrefroide.util.ColorUtils;
-import com.populaire.projetguerrefroide.util.UiConstants;
 
 import java.util.List;
 import java.util.Map;

@@ -7,7 +7,7 @@ import com.monstrous.gdx.webgpu.application.WebGPUContext;
 import com.monstrous.gdx.webgpu.application.WgGraphics;
 import com.monstrous.gdx.webgpu.graphics.WgShaderProgram;
 import com.monstrous.gdx.webgpu.wrappers.*;
-import com.populaire.projetguerrefroide.util.WgslUtils;
+import com.populaire.projetguerrefroide.adapter.graphics.WgslUtils;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

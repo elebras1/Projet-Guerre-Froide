@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.util;
+package com.populaire.projetguerrefroide.adapter.graphics;
 
 import com.badlogic.gdx.Gdx;
 import com.monstrous.gdx.webgpu.graphics.WgShaderProgram;

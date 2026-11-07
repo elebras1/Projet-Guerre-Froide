@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.util;
+package com.populaire.projetguerrefroide.ui.view;
 
 public class BuildingUtils {
     public static String getColor(String building) {

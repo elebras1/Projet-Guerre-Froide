@@ -10,8 +10,7 @@ import com.monstrous.gdx.webgpu.graphics.Binder;
 import com.monstrous.gdx.webgpu.graphics.WgMesh;
 import com.monstrous.gdx.webgpu.graphics.WgTexture;
 import com.monstrous.gdx.webgpu.wrappers.*;
-import com.populaire.projetguerrefroide.util.IndexedPoint;
-import com.populaire.projetguerrefroide.util.WgslUtils;
+import com.populaire.projetguerrefroide.adapter.graphics.WgslUtils;
 
 public class FlagImageRenderer implements Disposable {
     private static final int NUMBER_MAX_FLAGS = 250;

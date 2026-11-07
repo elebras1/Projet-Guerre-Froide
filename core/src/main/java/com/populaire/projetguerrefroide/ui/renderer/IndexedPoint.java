@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.util;
+package com.populaire.projetguerrefroide.ui.renderer;
 
 public class IndexedPoint {
     private int index;

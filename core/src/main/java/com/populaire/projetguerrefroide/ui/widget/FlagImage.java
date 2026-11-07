@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.populaire.projetguerrefroide.adapter.graphics.WgCustomStage;
 import com.populaire.projetguerrefroide.ui.renderer.FlagImageRenderer;
-import com.populaire.projetguerrefroide.util.IndexedPoint;
+import com.populaire.projetguerrefroide.ui.renderer.IndexedPoint;
 
 public class FlagImage extends Actor {
     private final TextureRegion overlayTexture;

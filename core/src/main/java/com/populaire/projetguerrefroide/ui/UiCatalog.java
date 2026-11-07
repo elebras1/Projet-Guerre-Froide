@@ -7,7 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.populaire.projetguerrefroide.protocol.catalog.Catalog;
 import com.populaire.projetguerrefroide.protocol.catalog.NamedTable;
 import com.populaire.projetguerrefroide.protocol.response.PoliticalMap;
-import com.populaire.projetguerrefroide.util.LocalisationUtils;
+import com.populaire.projetguerrefroide.ui.format.LocalisationUtils;
 
 import java.util.Arrays;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.util;
+package com.populaire.projetguerrefroide.ui.format;
 
 public final class CalendarUtils {
     private CalendarUtils() {

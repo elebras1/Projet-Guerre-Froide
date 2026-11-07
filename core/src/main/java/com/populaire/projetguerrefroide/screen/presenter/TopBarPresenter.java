@@ -17,7 +17,7 @@ import com.populaire.projetguerrefroide.ui.format.TextFormat;
 import com.populaire.projetguerrefroide.ui.request.RequestWatch;
 import com.populaire.projetguerrefroide.ui.view.TopBar;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
-import com.populaire.projetguerrefroide.util.LocaleUtils;
+import com.populaire.projetguerrefroide.ui.format.LocaleUtils;
 
 public class TopBarPresenter extends RequestingPresenter implements TopBarListener {
     private final UiContext uiContext;

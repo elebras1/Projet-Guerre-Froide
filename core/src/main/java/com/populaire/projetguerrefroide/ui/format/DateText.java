@@ -3,7 +3,6 @@ package com.populaire.projetguerrefroide.ui.format;
 import com.badlogic.gdx.utils.CharArray;
 import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.ObjectList;
-import com.populaire.projetguerrefroide.util.CalendarUtils;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

@@ -27,7 +27,7 @@ import com.populaire.projetguerrefroide.protocol.response.MapBuildings;
 import com.populaire.projetguerrefroide.protocol.response.PoliticalMap;
 import com.populaire.projetguerrefroide.ui.UiContext;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.FontsSkin;
-import com.populaire.projetguerrefroide.util.WgslUtils;
+import com.populaire.projetguerrefroide.adapter.graphics.WgslUtils;
 
 import java.nio.ByteBuffer;
 import java.util.function.IntFunction;
