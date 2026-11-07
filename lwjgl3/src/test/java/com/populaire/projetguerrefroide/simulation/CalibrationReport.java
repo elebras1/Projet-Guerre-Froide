@@ -29,7 +29,7 @@ import com.populaire.projetguerrefroide.component.Unit;
 import com.populaire.projetguerrefroide.component.UnitInstance;
 import com.populaire.projetguerrefroide.component.UnitInstanceView;
 import com.populaire.projetguerrefroide.component.UnitView;
-import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -44,10 +44,10 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.TreeMap;
 
-import static com.populaire.projetguerrefroide.util.Constants.DAYS_PER_YEAR;
-import static com.populaire.projetguerrefroide.util.Constants.GOOD_COUNT;
-import static com.populaire.projetguerrefroide.util.Constants.NEEDS_SCALING_FACTOR;
-import static com.populaire.projetguerrefroide.util.Constants.POP_TYPE_COUNT;
+import static com.populaire.projetguerrefroide.simulation.Constants.DAYS_PER_YEAR;
+import static com.populaire.projetguerrefroide.simulation.Constants.GOOD_COUNT;
+import static com.populaire.projetguerrefroide.simulation.Constants.NEEDS_SCALING_FACTOR;
+import static com.populaire.projetguerrefroide.simulation.Constants.POP_TYPE_COUNT;
 
 public final class CalibrationReport {
 

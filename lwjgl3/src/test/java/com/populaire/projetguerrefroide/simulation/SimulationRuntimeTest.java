@@ -1,7 +1,7 @@
 package com.populaire.projetguerrefroide.simulation;
 
 import com.populaire.projetguerrefroide.TestGdxFiles;
-import com.populaire.projetguerrefroide.pojo.MapMode;
+import com.populaire.projetguerrefroide.protocol.request.MapMode;
 import com.populaire.projetguerrefroide.protocol.LoadingStage;
 import com.populaire.projetguerrefroide.protocol.catalog.Catalog;
 import com.populaire.projetguerrefroide.protocol.command.ChoosePlayerCountryCommand;
@@ -13,6 +13,7 @@ import com.populaire.projetguerrefroide.protocol.request.RequestKind;
 import com.populaire.projetguerrefroide.protocol.request.Response;
 import com.populaire.projetguerrefroide.protocol.request.SortType;
 import com.populaire.projetguerrefroide.protocol.response.*;
+import com.populaire.projetguerrefroide.simulation.command.CommandJournal;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;

@@ -8,6 +8,9 @@ import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dao.impl.ConfigurationDaoImpl;
 import com.populaire.projetguerrefroide.dao.impl.WorldDaoImpl;
 import com.populaire.projetguerrefroide.loader.WorldLoader;
+import com.populaire.projetguerrefroide.configuration.Bookmark;
+import com.populaire.projetguerrefroide.system.EconomyPipelines;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.MethodOrderer;
@@ -55,7 +58,7 @@ public class EconomySimulationAnalysisTest {
 
     private World ecsWorld;
     private EcsConstants ecsConstants;
-    private EconomyService economyService;
+    private EconomyPipelines economyPipelines;
     private LocalDate startDate;
     private Set<String> forcedLaws;
 
@@ -78,14 +81,14 @@ public class EconomySimulationAnalysisTest {
         long loadStart = System.nanoTime();
         new WorldLoader(new WorldDaoImpl()).createWorld(simulationContext);
         System.out.printf("World loaded in %.0f ms%n", (System.nanoTime() - loadStart) / 1_000_000.0);
-        this.economyService = new EconomyService(simulationContext);
+        this.economyPipelines = new EconomyPipelines(simulationContext);
 
         this.forcedLaws = this.listProperty("simulation.laws");
         for (String lawName : this.forcedLaws) {
             this.forceLaw(lawName);
         }
 
-        this.economyService.initialize();
+        this.economyPipelines.initialize();
     }
 
     private void setupGdxFiles() {
@@ -268,7 +271,7 @@ public class EconomySimulationAnalysisTest {
             long start = System.nanoTime();
             for (int tick = 0; tick < totalTicks; tick++) {
                 long tickStart = System.nanoTime();
-                this.ecsWorld.runPipeline(this.economyService.getMainPipeline().id(), 1f);
+                this.ecsWorld.runPipeline(this.economyPipelines.getMainPipeline().id(), 1f);
                 long tickNanos = System.nanoTime() - tickStart;
                 if (tick == 0) {
                     calibration = CalibrationReport.measure(this.ecsWorld);
