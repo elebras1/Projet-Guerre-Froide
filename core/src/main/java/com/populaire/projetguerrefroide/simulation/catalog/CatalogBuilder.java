@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.simulation;
+package com.populaire.projetguerrefroide.simulation.catalog;
 
 import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.IntLongMap;
@@ -11,7 +11,8 @@ import com.populaire.projetguerrefroide.protocol.catalog.Catalog;
 import com.populaire.projetguerrefroide.protocol.catalog.NamedTable;
 import com.populaire.projetguerrefroide.protocol.catalog.ProvinceTable;
 import com.populaire.projetguerrefroide.util.ColorUtils;
-import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.SimulationContext;
 import io.github.elebras1.flecs.EntityView;
 import io.github.elebras1.flecs.Flecs;
 import io.github.elebras1.flecs.Query;

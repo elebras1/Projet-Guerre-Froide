@@ -1,11 +1,11 @@
-package com.populaire.projetguerrefroide.system;
+package com.populaire.projetguerrefroide.simulation.event;
 
 import io.github.elebras1.flecs.Flecs;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.protocol.event.EventKind;
 import com.populaire.projetguerrefroide.protocol.event.EventRing;
-import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 
 public class BuildingLevelUpNotificationSystem {
 

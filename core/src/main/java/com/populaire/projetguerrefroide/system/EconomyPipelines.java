@@ -4,9 +4,9 @@ import io.github.elebras1.flecs.Flecs;
 import io.github.elebras1.flecs.Pipeline;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.simulation.SimulationContext;
-import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 
-import static com.populaire.projetguerrefroide.util.Constants.INITIAL_SAVINGS_PASSES;
+import static com.populaire.projetguerrefroide.simulation.Constants.INITIAL_SAVINGS_PASSES;
 
 public class EconomyPipelines {
     private final DemographicsResetSystem demographicsResetSystem;

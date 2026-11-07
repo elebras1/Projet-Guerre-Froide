@@ -2,10 +2,10 @@ package com.populaire.projetguerrefroide.system;
 
 import io.github.elebras1.flecs.*;
 import com.populaire.projetguerrefroide.component.*;
-import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 import com.populaire.projetguerrefroide.util.SubsistenceUtils;
 
-import static com.populaire.projetguerrefroide.util.Constants.*;
+import static com.populaire.projetguerrefroide.simulation.Constants.*;
 
 public class PopulationConsumptionSystem {
 

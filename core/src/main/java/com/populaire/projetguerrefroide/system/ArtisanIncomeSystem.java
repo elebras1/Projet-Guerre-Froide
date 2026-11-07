@@ -6,13 +6,13 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.ArtisanUtils;
-import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 import com.populaire.projetguerrefroide.util.EconomyBuildingUtils;
 
-import static com.populaire.projetguerrefroide.util.Constants.ARTISAN_TREASURY_BUFFER_DAYS;
-import static com.populaire.projetguerrefroide.util.Constants.NEEDS_SCALING_FACTOR;
+import static com.populaire.projetguerrefroide.simulation.Constants.ARTISAN_TREASURY_BUFFER_DAYS;
+import static com.populaire.projetguerrefroide.simulation.Constants.NEEDS_SCALING_FACTOR;
 import static com.populaire.projetguerrefroide.util.ArrayUtils.zeroed;
-import static com.populaire.projetguerrefroide.util.Constants.MAX_ARTISAN_CRAFTS;
+import static com.populaire.projetguerrefroide.simulation.Constants.MAX_ARTISAN_CRAFTS;
 
 public class ArtisanIncomeSystem {
 

@@ -3,7 +3,7 @@ package com.populaire.projetguerrefroide.component;
 import io.github.elebras1.flecs.annotation.Component;
 import io.github.elebras1.flecs.annotation.FixedArray;
 
-import static com.populaire.projetguerrefroide.util.Constants.*;
+import static com.populaire.projetguerrefroide.simulation.Constants.*;
 
 @Component
 public record Demographics(

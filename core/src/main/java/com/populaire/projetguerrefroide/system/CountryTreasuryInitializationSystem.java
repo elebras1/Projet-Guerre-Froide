@@ -5,9 +5,9 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.StateConsumptionUtils;
-import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 
-import static com.populaire.projetguerrefroide.util.Constants.TARGET_TREASURY_DAYS;
+import static com.populaire.projetguerrefroide.simulation.Constants.TARGET_TREASURY_DAYS;
 import static com.populaire.projetguerrefroide.util.StateBudgetUtils.dailyNeeds;
 import static com.populaire.projetguerrefroide.util.StateBudgetUtils.maintenanceCost;
 import static com.populaire.projetguerrefroide.util.StateBudgetUtils.militarySupplyCost;

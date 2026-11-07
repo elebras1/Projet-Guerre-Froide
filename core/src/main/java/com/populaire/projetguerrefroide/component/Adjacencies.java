@@ -3,7 +3,7 @@ package com.populaire.projetguerrefroide.component;
 import io.github.elebras1.flecs.annotation.Component;
 import io.github.elebras1.flecs.annotation.FixedArray;
 
-import static com.populaire.projetguerrefroide.util.Constants.MAX_ADJACENCIES;
+import static com.populaire.projetguerrefroide.simulation.Constants.MAX_ADJACENCIES;
 
 @Component
 public record Adjacencies(@FixedArray(length = MAX_ADJACENCIES) long[] provinceIds) {

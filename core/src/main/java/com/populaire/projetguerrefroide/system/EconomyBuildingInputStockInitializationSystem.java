@@ -5,7 +5,7 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 
-import static com.populaire.projetguerrefroide.util.Constants.INPUT_STOCK_DAYS;
+import static com.populaire.projetguerrefroide.simulation.Constants.INPUT_STOCK_DAYS;
 import static com.populaire.projetguerrefroide.util.EconomyBuildingUtils.*;
 
 public class EconomyBuildingInputStockInitializationSystem {

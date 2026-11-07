@@ -5,9 +5,9 @@ import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
-import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 
-import static com.populaire.projetguerrefroide.util.Constants.SHORTAGE_PRICE_PREMIUM;
+import static com.populaire.projetguerrefroide.simulation.Constants.SHORTAGE_PRICE_PREMIUM;
 
 public class CountryBudgetPriceSystem {
     private final EcsConstants ecsConstants;

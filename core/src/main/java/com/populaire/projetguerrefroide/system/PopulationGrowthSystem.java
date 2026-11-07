@@ -6,9 +6,9 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.PopulationMobilityUtils;
-import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 
-import static com.populaire.projetguerrefroide.util.Constants.*;
+import static com.populaire.projetguerrefroide.simulation.Constants.*;
 
 public class PopulationGrowthSystem {
     private final EcsConstants ecsConstants;

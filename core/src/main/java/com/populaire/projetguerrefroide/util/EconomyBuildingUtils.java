@@ -15,9 +15,10 @@ import com.populaire.projetguerrefroide.component.EconomyBuildingMutView;
 import com.populaire.projetguerrefroide.component.EconomyBuildingTypeView;
 import com.populaire.projetguerrefroide.component.EconomyBuildingView;
 import com.populaire.projetguerrefroide.component.RegionInstanceView;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 
-import static com.populaire.projetguerrefroide.util.Constants.MAX_GOODS;
-import static com.populaire.projetguerrefroide.util.Constants.NEEDS_SCALING_FACTOR;
+import static com.populaire.projetguerrefroide.simulation.Constants.MAX_GOODS;
+import static com.populaire.projetguerrefroide.simulation.Constants.NEEDS_SCALING_FACTOR;
 
 public class EconomyBuildingUtils {
 

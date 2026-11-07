@@ -7,7 +7,7 @@ import io.github.elebras1.flecs.Query;
 import io.github.elebras1.flecs.World;
 import io.github.elebras1.flecs.callback.IterCallback;
 import com.populaire.projetguerrefroide.component.*;
-import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 import com.populaire.projetguerrefroide.util.MilitaryUtils;
 
 public class MilitaryBaseCapacitySystem {

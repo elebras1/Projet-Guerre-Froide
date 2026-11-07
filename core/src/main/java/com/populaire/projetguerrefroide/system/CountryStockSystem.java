@@ -8,7 +8,7 @@ import com.populaire.projetguerrefroide.component.CountryMarket;
 import com.populaire.projetguerrefroide.component.CountryMarketMutView;
 import com.populaire.projetguerrefroide.component.GlobalGood;
 import com.populaire.projetguerrefroide.component.GlobalGoodView;
-import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 
 public class CountryStockSystem {
     private final EcsConstants ecsConstants;

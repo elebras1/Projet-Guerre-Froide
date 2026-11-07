@@ -7,9 +7,9 @@ import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.PopulationMobilityUtils;
 import com.populaire.projetguerrefroide.util.StateBudgetUtils;
 import com.populaire.projetguerrefroide.util.SubsistenceUtils;
-import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 
-import static com.populaire.projetguerrefroide.util.Constants.*;
+import static com.populaire.projetguerrefroide.simulation.Constants.*;
 
 public class ProvinceDemographySystem {
     private final EcsConstants ecsConstants;

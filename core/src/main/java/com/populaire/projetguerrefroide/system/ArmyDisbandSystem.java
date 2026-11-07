@@ -10,7 +10,7 @@ import io.github.elebras1.flecs.Query;
 import io.github.elebras1.flecs.World;
 import io.github.elebras1.flecs.callback.IterCallback;
 import com.populaire.projetguerrefroide.component.*;
-import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 import com.populaire.projetguerrefroide.util.MilitaryUtils;
 import com.populaire.projetguerrefroide.util.PopulationMobilityUtils;
 import com.populaire.projetguerrefroide.util.StateBudgetUtils;
@@ -19,8 +19,8 @@ import com.populaire.projetguerrefroide.util.collection.ObjectPool;
 
 import java.util.Comparator;
 
-import static com.populaire.projetguerrefroide.util.Constants.DAYS_PER_YEAR;
-import static com.populaire.projetguerrefroide.util.Constants.NEEDS_SCALING_FACTOR;
+import static com.populaire.projetguerrefroide.simulation.Constants.DAYS_PER_YEAR;
+import static com.populaire.projetguerrefroide.simulation.Constants.NEEDS_SCALING_FACTOR;
 import static com.populaire.projetguerrefroide.util.IncomeTypeUtils.MILITARY_INCOME_TYPE;
 
 public class ArmyDisbandSystem {

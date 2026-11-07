@@ -4,7 +4,7 @@ import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dao.json.*;
 import com.populaire.projetguerrefroide.pojo.*;
-import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 import com.populaire.projetguerrefroide.util.IncomeTypeUtils;
 import com.populaire.projetguerrefroide.util.StrataUtils;
 import io.github.elebras1.flecs.Entity;
@@ -14,7 +14,7 @@ import io.github.elebras1.flecs.World;
 import java.util.Arrays;
 import java.util.Map;
 
-import static com.populaire.projetguerrefroide.util.Constants.*;
+import static com.populaire.projetguerrefroide.simulation.Constants.*;
 
 public final class EconomyLoader {
     private final WorldLoadingContext context;

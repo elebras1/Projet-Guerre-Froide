@@ -17,14 +17,14 @@ import io.github.elebras1.flecs.World;
 import io.github.elebras1.flecs.callback.EntityCallback;
 import io.github.elebras1.flecs.callback.IterCallback;
 import com.populaire.projetguerrefroide.component.*;
-import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 import com.populaire.projetguerrefroide.util.EmploymentUtils;
 import com.populaire.projetguerrefroide.util.MarketUtils;
 
 import java.util.Comparator;
 
 import static com.populaire.projetguerrefroide.util.ArrayUtils.zeroed;
-import static com.populaire.projetguerrefroide.util.Constants.*;
+import static com.populaire.projetguerrefroide.simulation.Constants.*;
 import static com.populaire.projetguerrefroide.util.ConstructionUtils.levelCost;
 import static com.populaire.projetguerrefroide.util.ConstructionUtils.startSite;
 import static com.populaire.projetguerrefroide.util.OwnerUtils.ownerIndex;

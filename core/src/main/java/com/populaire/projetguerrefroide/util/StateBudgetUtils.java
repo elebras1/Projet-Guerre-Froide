@@ -2,7 +2,7 @@ package com.populaire.projetguerrefroide.util;
 
 import com.populaire.projetguerrefroide.component.*;
 
-import static com.populaire.projetguerrefroide.util.Constants.*;
+import static com.populaire.projetguerrefroide.simulation.Constants.*;
 import static com.populaire.projetguerrefroide.util.IncomeTypeUtils.*;
 import static com.populaire.projetguerrefroide.util.StrataUtils.POOR_STRATA;
 

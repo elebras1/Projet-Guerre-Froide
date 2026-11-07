@@ -1,12 +1,12 @@
 package com.populaire.projetguerrefroide.loader;
 
-import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 import io.github.elebras1.flecs.World;
 
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
 
-import static com.populaire.projetguerrefroide.util.Constants.*;
+import static com.populaire.projetguerrefroide.simulation.Constants.*;
 
 public final class WorldLoadingContext {
     private final World ecsWorld;

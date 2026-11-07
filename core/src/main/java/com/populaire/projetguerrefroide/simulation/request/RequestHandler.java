@@ -7,7 +7,7 @@ import com.populaire.projetguerrefroide.protocol.request.RequestParams;
 import com.populaire.projetguerrefroide.protocol.request.Response;
 import com.populaire.projetguerrefroide.simulation.SimulationContext;
 import com.populaire.projetguerrefroide.simulation.SimulationState;
-import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 import io.github.elebras1.flecs.World;
 
 public abstract class RequestHandler<R extends Response> {

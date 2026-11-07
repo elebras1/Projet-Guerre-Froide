@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.util;
+package com.populaire.projetguerrefroide.simulation;
 
 public class Constants {
     public static final int GOOD_COUNT = 41;

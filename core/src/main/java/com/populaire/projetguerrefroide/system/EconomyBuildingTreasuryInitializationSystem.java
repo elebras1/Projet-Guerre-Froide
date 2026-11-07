@@ -6,8 +6,8 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 
-import static com.populaire.projetguerrefroide.util.Constants.DIVIDEND_RATE;
-import static com.populaire.projetguerrefroide.util.Constants.FACTORY_TREASURY_BUFFER_DAYS;
+import static com.populaire.projetguerrefroide.simulation.Constants.DIVIDEND_RATE;
+import static com.populaire.projetguerrefroide.simulation.Constants.FACTORY_TREASURY_BUFFER_DAYS;
 import static com.populaire.projetguerrefroide.util.EconomyBuildingUtils.*;
 
 public class EconomyBuildingTreasuryInitializationSystem {

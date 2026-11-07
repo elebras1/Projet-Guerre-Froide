@@ -1,6 +1,5 @@
 package com.populaire.projetguerrefroide.simulation;
 
-import com.populaire.projetguerrefroide.util.EcsConstants;
 import io.github.elebras1.flecs.World;
 
 public class SimulationContext {

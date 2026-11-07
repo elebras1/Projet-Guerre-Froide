@@ -2,7 +2,7 @@ package com.populaire.projetguerrefroide.system;
 
 import io.github.elebras1.flecs.*;
 import com.populaire.projetguerrefroide.component.*;
-import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 
 import static com.populaire.projetguerrefroide.util.EconomyBuildingUtils.*;
 

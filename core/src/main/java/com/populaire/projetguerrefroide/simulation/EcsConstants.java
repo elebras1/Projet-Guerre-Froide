@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.util;
+package com.populaire.projetguerrefroide.simulation;
 
 import com.populaire.projetguerrefroide.component.Color;
 import com.populaire.projetguerrefroide.component.DevelopmentBuildingType;
@@ -13,12 +13,13 @@ import com.populaire.projetguerrefroide.component.Modifiers;
 import com.populaire.projetguerrefroide.component.PopulationType;
 import com.populaire.projetguerrefroide.component.PopulationTypeView;
 import com.populaire.projetguerrefroide.component.SpecialBuildingType;
+import com.populaire.projetguerrefroide.util.StateBudgetUtils;
 import io.github.elebras1.flecs.EntityView;
 import io.github.elebras1.flecs.Flecs;
 import io.github.elebras1.flecs.World;
 
-import static com.populaire.projetguerrefroide.util.Constants.GOOD_COUNT;
-import static com.populaire.projetguerrefroide.util.Constants.POP_TYPE_COUNT;
+import static com.populaire.projetguerrefroide.simulation.Constants.GOOD_COUNT;
+import static com.populaire.projetguerrefroide.simulation.Constants.POP_TYPE_COUNT;
 
 public class EcsConstants {
     private static final String SEA_PROVINCE_TAG = "SeaProvinceTag";

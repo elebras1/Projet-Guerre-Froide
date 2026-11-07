@@ -1,6 +1,7 @@
 package com.populaire.projetguerrefroide.util;
 
-import static com.populaire.projetguerrefroide.util.Constants.*;
+import static com.populaire.projetguerrefroide.simulation.Constants.*;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 
 public class OwnerUtils {
 

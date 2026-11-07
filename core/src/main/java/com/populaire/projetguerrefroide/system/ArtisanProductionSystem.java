@@ -5,10 +5,10 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.ArtisanUtils;
-import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 
-import static com.populaire.projetguerrefroide.util.Constants.ARTISAN_OUTPUT_SHARE;
-import static com.populaire.projetguerrefroide.util.Constants.MAX_ARTISAN_CRAFTS;
+import static com.populaire.projetguerrefroide.simulation.Constants.ARTISAN_OUTPUT_SHARE;
+import static com.populaire.projetguerrefroide.simulation.Constants.MAX_ARTISAN_CRAFTS;
 
 public class ArtisanProductionSystem {
     private final EcsConstants ecsConstants;

@@ -2,8 +2,8 @@ package com.populaire.projetguerrefroide.util;
 
 import com.populaire.projetguerrefroide.component.CountryMarketView;
 
-import static com.populaire.projetguerrefroide.util.Constants.NEEDS_SCALING_FACTOR;
-import static com.populaire.projetguerrefroide.util.Constants.RURAL_WAGE_SHARE;
+import static com.populaire.projetguerrefroide.simulation.Constants.NEEDS_SCALING_FACTOR;
+import static com.populaire.projetguerrefroide.simulation.Constants.RURAL_WAGE_SHARE;
 
 public class RgoUtils {
 

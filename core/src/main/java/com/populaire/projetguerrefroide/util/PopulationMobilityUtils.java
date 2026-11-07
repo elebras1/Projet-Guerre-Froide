@@ -2,10 +2,11 @@ package com.populaire.projetguerrefroide.util;
 
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 
-import static com.populaire.projetguerrefroide.util.Constants.DAYS_PER_MONTH;
-import static com.populaire.projetguerrefroide.util.Constants.POP_TYPE_COUNT;
-import static com.populaire.projetguerrefroide.util.Constants.PROMOTION_RATE;
+import static com.populaire.projetguerrefroide.simulation.Constants.DAYS_PER_MONTH;
+import static com.populaire.projetguerrefroide.simulation.Constants.POP_TYPE_COUNT;
+import static com.populaire.projetguerrefroide.simulation.Constants.PROMOTION_RATE;
 
 public class PopulationMobilityUtils {
 

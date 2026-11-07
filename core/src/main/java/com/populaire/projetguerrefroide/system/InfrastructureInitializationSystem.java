@@ -7,7 +7,7 @@ import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.ModifierUtils;
 
-import static com.populaire.projetguerrefroide.util.Constants.PRODUCTION_MODIFIER;
+import static com.populaire.projetguerrefroide.simulation.Constants.PRODUCTION_MODIFIER;
 
 public class InfrastructureInitializationSystem {
 

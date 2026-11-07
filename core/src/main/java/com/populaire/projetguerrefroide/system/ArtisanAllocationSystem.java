@@ -6,12 +6,12 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.ArtisanUtils;
-import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 import com.populaire.projetguerrefroide.util.MarketUtils;
 import com.populaire.projetguerrefroide.util.PopulationMobilityUtils;
 
-import static com.populaire.projetguerrefroide.util.Constants.ARTISAN_REALLOCATION_RATE;
-import static com.populaire.projetguerrefroide.util.Constants.MAX_ARTISAN_CRAFTS;
+import static com.populaire.projetguerrefroide.simulation.Constants.ARTISAN_REALLOCATION_RATE;
+import static com.populaire.projetguerrefroide.simulation.Constants.MAX_ARTISAN_CRAFTS;
 import static com.populaire.projetguerrefroide.util.ArrayUtils.zeroed;
 
 public class ArtisanAllocationSystem {

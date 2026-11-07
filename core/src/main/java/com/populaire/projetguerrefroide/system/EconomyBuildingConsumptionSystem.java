@@ -3,7 +3,7 @@ package com.populaire.projetguerrefroide.system;
 import io.github.elebras1.flecs.*;
 import com.populaire.projetguerrefroide.component.*;
 
-import static com.populaire.projetguerrefroide.util.Constants.INPUT_STOCK_DAYS;
+import static com.populaire.projetguerrefroide.simulation.Constants.INPUT_STOCK_DAYS;
 import static com.populaire.projetguerrefroide.util.EconomyBuildingUtils.*;
 
 public class EconomyBuildingConsumptionSystem {

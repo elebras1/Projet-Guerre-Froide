@@ -1,11 +1,13 @@
-package com.populaire.projetguerrefroide.simulation;
+package com.populaire.projetguerrefroide.simulation.command;
 
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.protocol.command.*;
 import com.populaire.projetguerrefroide.system.EconomyPipelines;
 import com.populaire.projetguerrefroide.util.ConstructionUtils;
-import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 import com.populaire.projetguerrefroide.util.EconomyBuildingUtils;
+import com.populaire.projetguerrefroide.simulation.SimulationContext;
+import com.populaire.projetguerrefroide.simulation.SimulationState;
 import io.github.elebras1.flecs.Entity;
 import io.github.elebras1.flecs.EntityView;
 import io.github.elebras1.flecs.Field;

@@ -6,7 +6,7 @@ import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.CountryInvestment;
 import com.populaire.projetguerrefroide.component.CountryInvestmentMutView;
 
-import static com.populaire.projetguerrefroide.util.Constants.OWNER_COUNT;
+import static com.populaire.projetguerrefroide.simulation.Constants.OWNER_COUNT;
 
 public class CountryInvestmentResetSystem {
 

@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.simulation;
+package com.populaire.projetguerrefroide.simulation.command;
 
 import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.protocol.command.GameCommand;

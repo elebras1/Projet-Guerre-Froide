@@ -8,14 +8,14 @@ import com.populaire.projetguerrefroide.dao.csv.ProvinceDefinitionCsv;
 import com.populaire.projetguerrefroide.dao.json.*;
 import com.populaire.projetguerrefroide.pojo.*;
 import com.populaire.projetguerrefroide.util.EconomyBuildingUtils;
-import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 import io.github.elebras1.flecs.Entity;
 import io.github.elebras1.flecs.EntityView;
 import io.github.elebras1.flecs.World;
 import java.util.List;
 import java.util.Map;
 
-import static com.populaire.projetguerrefroide.util.Constants.*;
+import static com.populaire.projetguerrefroide.simulation.Constants.*;
 
 public final class MapLoader {
     private final WorldLoadingContext context;

@@ -6,7 +6,7 @@ import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.util.ArtisanUtils;
 import com.populaire.projetguerrefroide.util.EmploymentUtils;
-import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 
 public class ArtisanEmploymentSystem {
     private final EcsConstants ecsConstants;

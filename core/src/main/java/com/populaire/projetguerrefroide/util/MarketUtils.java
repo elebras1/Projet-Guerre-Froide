@@ -2,8 +2,8 @@ package com.populaire.projetguerrefroide.util;
 
 import com.populaire.projetguerrefroide.component.GlobalMarketView;
 
-import static com.populaire.projetguerrefroide.util.Constants.RGO_STOCK_ADJUSTMENT_DAYS;
-import static com.populaire.projetguerrefroide.util.Constants.STOCK_TARGET_DAYS;
+import static com.populaire.projetguerrefroide.simulation.Constants.RGO_STOCK_ADJUSTMENT_DAYS;
+import static com.populaire.projetguerrefroide.simulation.Constants.STOCK_TARGET_DAYS;
 
 public class MarketUtils {
 

@@ -5,9 +5,9 @@ import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
-import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 
-import static com.populaire.projetguerrefroide.util.Constants.RGO_TREASURY_BUFFER_DAYS;
+import static com.populaire.projetguerrefroide.simulation.Constants.RGO_TREASURY_BUFFER_DAYS;
 import static com.populaire.projetguerrefroide.util.RgoUtils.wageBill;
 
 public class RGOTreasuryInitializationSystem {

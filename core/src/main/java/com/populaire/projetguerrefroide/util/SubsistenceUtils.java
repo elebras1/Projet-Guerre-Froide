@@ -1,7 +1,7 @@
 package com.populaire.projetguerrefroide.util;
 
-import static com.populaire.projetguerrefroide.util.Constants.FAMINE_DEATH_RATE;
-import static com.populaire.projetguerrefroide.util.Constants.SUBSISTENCE_LIFE_SHARE;
+import static com.populaire.projetguerrefroide.simulation.Constants.FAMINE_DEATH_RATE;
+import static com.populaire.projetguerrefroide.simulation.Constants.SUBSISTENCE_LIFE_SHARE;
 
 public class SubsistenceUtils {
 
