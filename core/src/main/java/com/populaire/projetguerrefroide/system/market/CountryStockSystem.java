@@ -23,7 +23,7 @@ public class CountryStockSystem {
     }
 
     private void store(Iter iter) {
-        EntityView globalGood = iter.world().obtainEntityView(this.ecsConstants.globalGood());
+        EntityView globalGood = iter.stage().obtainEntityView(this.ecsConstants.globalGood());
         GlobalGoodView globalGoodData = globalGood.getMutView(GlobalGood.class);
         int serviceGoodStartIndex = globalGoodData.serviceGoodStartIndex();
         int serviceGoodEndIndex = globalGoodData.serviceGoodEndIndex();

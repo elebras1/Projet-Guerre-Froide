@@ -19,7 +19,7 @@ public class PopulationArrivalSystem {
     }
 
     private void arrive(Iter iter) {
-        World world = iter.world();
+        World world = iter.stage();
         if (!PopulationMobilityUtils.isMobilityDay(world, this.ecsConstants)) {
             return;
         }

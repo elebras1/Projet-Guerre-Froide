@@ -35,7 +35,7 @@ public class RGOTreasuryInitializationSystem {
             ResourceGatheringMutView resourceGathering = resourceGatheringField.getMutView(i);
             if (province.ownerId() != countryId) {
                 countryId = province.ownerId();
-                EntityView country = iter.world().obtainEntityView(countryId);
+                EntityView country = iter.stage().obtainEntityView(countryId);
                 countryMarket = country.getView(CountryMarket.class);
                 countryLaborPolicy = country.getView(CountryLaborPolicy.class);
             }

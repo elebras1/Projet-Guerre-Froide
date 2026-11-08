@@ -24,7 +24,7 @@ public class PopulationRegionInitializationSystem {
             PopulationMutView population = populationField.getMutView(i);
             if (population.provinceId() != provinceId) {
                 provinceId = population.provinceId();
-                ProvinceView province = iter.world().obtainEntityView(provinceId).getMutView(Province.class);
+                ProvinceView province = iter.stage().obtainEntityView(provinceId).getMutView(Province.class);
                 regionInstanceId = province.regionInstanceId();
             }
             population.regionInstanceId(regionInstanceId);

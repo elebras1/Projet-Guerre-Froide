@@ -35,7 +35,7 @@ public class PopulationIncomeDistributionSystem {
         boolean aristocrat = iter.isSet(3);
         boolean rural = iter.isSet(4);
         boolean paidOnPosts = StateBudgetUtils.paidOnPosts(typeIdx, this.ecsConstants.statePostIndex(), populationTypeData.incomeType());
-        GlobalPopulationTypeView globalPopulationType = iter.world().obtainEntityView(this.ecsConstants.globalPopulationType()).getView(GlobalPopulationType.class);
+        GlobalPopulationTypeView globalPopulationType = iter.stage().obtainEntityView(this.ecsConstants.globalPopulationType()).getView(GlobalPopulationType.class);
         int religiousIndex = globalPopulationType.religiousPopTypeIndex();
         boolean donor = religiousIndex >= 0 && typeIdx != religiousIndex;
         float baseWorkforceShare = globalPopulationType.workforceShareByPopType(typeIdx);
@@ -63,7 +63,7 @@ public class PopulationIncomeDistributionSystem {
 
             if (population.regionInstanceId() != regionInstanceId) {
                 regionInstanceId = population.regionInstanceId();
-                EntityView regionEntity = iter.world().obtainEntityView(regionInstanceId);
+                EntityView regionEntity = iter.stage().obtainEntityView(regionInstanceId);
                 regionInstance = regionEntity.getView(RegionInstance.class);
                 regionInstanceIncome = regionEntity.getMutView(RegionInstanceIncome.class);
                 regionDemographics = regionEntity.getMutView(RegionDemographics.class);
@@ -71,12 +71,12 @@ public class PopulationIncomeDistributionSystem {
 
             if (population.provinceId() != provinceId) {
                 provinceId = population.provinceId();
-                province = iter.world().obtainEntityView(provinceId).getView(Province.class);
+                province = iter.stage().obtainEntityView(provinceId).getView(Province.class);
             }
 
             if (population.countryId() != countryId) {
                 countryId = population.countryId();
-                EntityView country = iter.world().obtainEntityView(countryId);
+                EntityView country = iter.stage().obtainEntityView(countryId);
                 countryMarket = country.getMutView(CountryMarket.class);
                 countryTaxPolicy = country.getMutView(CountryTaxPolicy.class);
                 countryCulturePolicy = country.getView(CountryCulturePolicy.class);

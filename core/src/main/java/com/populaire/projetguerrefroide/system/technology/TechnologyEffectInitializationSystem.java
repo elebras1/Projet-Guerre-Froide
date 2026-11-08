@@ -72,7 +72,7 @@ public class TechnologyEffectInitializationSystem {
                 if (technologyId == 0) {
                     continue;
                 }
-                EntityView technology = iter.world().obtainEntityView(technologyId);
+                EntityView technology = iter.stage().obtainEntityView(technologyId);
                 if (!technology.has(Modifiers.class)) {
                     continue;
                 }
@@ -83,7 +83,7 @@ public class TechnologyEffectInitializationSystem {
                         break;
                     }
                     float modifierValue = technologyModifiers.values(m);
-                    EntityView modifier = iter.world().obtainEntityView(modifierId);
+                    EntityView modifier = iter.stage().obtainEntityView(modifierId);
                     String modifierName = modifier.name();
 
                     switch (modifierName) {

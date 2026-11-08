@@ -22,11 +22,11 @@ public class CountryStockInitializationSystem {
     }
 
     private void initialize(Iter iter) {
-        EntityView globalGood = iter.world().obtainEntityView(this.ecsConstants.globalGood());
+        EntityView globalGood = iter.stage().obtainEntityView(this.ecsConstants.globalGood());
         GlobalGoodView globalGoodData = globalGood.getMutView(GlobalGood.class);
         int serviceGoodStartIndex = globalGoodData.serviceGoodStartIndex();
         int serviceGoodEndIndex = globalGoodData.serviceGoodEndIndex();
-        EntityView globalMarket = iter.world().obtainEntityView(this.ecsConstants.globalMarket());
+        EntityView globalMarket = iter.stage().obtainEntityView(this.ecsConstants.globalMarket());
         GlobalMarketView globalMarketData = globalMarket.getMutView(GlobalMarket.class);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);

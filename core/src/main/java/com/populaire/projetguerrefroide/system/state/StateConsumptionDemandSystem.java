@@ -22,7 +22,7 @@ public class StateConsumptionDemandSystem {
     }
 
     private void demand(Iter iter) {
-        GlobalStateConsumptionView stateConsumption = StateConsumptionUtils.globalStateConsumption(iter.world(), this.ecsConstants);
+        GlobalStateConsumptionView stateConsumption = StateConsumptionUtils.globalStateConsumption(iter.stage(), this.ecsConstants);
         int statePostIndex = this.ecsConstants.statePostIndex();
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);

@@ -22,7 +22,7 @@ public class GlobalMarketResolveSystem {
     }
 
     public void resolve(Iter iter) {
-        EntityView globalGood = iter.world().obtainEntityView(this.ecsConstants.globalGood());
+        EntityView globalGood = iter.stage().obtainEntityView(this.ecsConstants.globalGood());
         GlobalGoodView globalGoodData = globalGood.getMutView(GlobalGood.class);
         int serviceGoodStartIndex = globalGoodData.serviceGoodStartIndex();
         int serviceGoodEndIndex = globalGoodData.serviceGoodEndIndex();
@@ -43,7 +43,7 @@ public class GlobalMarketResolveSystem {
                 float scale = Math.max(demand, offer);
                 float excessDemand = scale > 0f ? Math.clamp((demand - offer) / scale, -1f, 1f) : 0f;
 
-                EntityView good = iter.world().obtainEntityView(globalGoodData.goodIds(g));
+                EntityView good = iter.stage().obtainEntityView(globalGoodData.goodIds(g));
                 GoodView goodData = good.getMutView(Good.class);
                 float cost = goodData.cost();
                 float price = gm.goodPrices(g) * (1f + PRICE_ADJUSTMENT_RATE * excessDemand);

@@ -33,7 +33,7 @@ public class EconomyBuildingInputStockInitializationSystem {
 
             if (building.countryId() != countryId) {
                 countryId = building.countryId();
-                countryProductionPolicy = iter.world().obtainEntityView(countryId).getMutView(CountryProductionPolicy.class);
+                countryProductionPolicy = iter.stage().obtainEntityView(countryId).getMutView(CountryProductionPolicy.class);
             }
 
             int level = building.size();

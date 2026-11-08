@@ -19,7 +19,7 @@ public class InfrastructureInitializationSystem {
     }
 
     private void initialize(Iter iter) {
-        World world = iter.world();
+        World world = iter.stage();
         float productionModifier = ModifierUtils.value(world.obtainEntityView(iter.src(1)), world.lookup(PRODUCTION_MODIFIER));
         if (productionModifier <= 0f) {
             return;

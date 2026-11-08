@@ -23,7 +23,7 @@ public class ArtisanRevenueSystem {
     }
 
     private void collect(Iter iter) {
-        World world = iter.world();
+        World world = iter.stage();
         GlobalArtisanCraftsView crafts = ArtisanUtils.crafts(world, this.ecsConstants);
         int count = crafts.count();
         if (count == 0) {

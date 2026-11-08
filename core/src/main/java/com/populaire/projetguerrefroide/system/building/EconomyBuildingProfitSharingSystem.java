@@ -27,7 +27,7 @@ public class EconomyBuildingProfitSharingSystem {
     }
 
     private void process(Iter iter) {
-        EntityView globalPopType = iter.world().obtainEntityView(this.ecsConstants.globalPopulationType());
+        EntityView globalPopType = iter.stage().obtainEntityView(this.ecsConstants.globalPopulationType());
         GlobalPopulationTypeView globalPopTypeData = globalPopType.getMutView(GlobalPopulationType.class);
         int capitalistPopTypeIndex = globalPopTypeData.capitalistPopTypeIndex();
 
@@ -52,7 +52,7 @@ public class EconomyBuildingProfitSharingSystem {
 
             if(building.parentId() != regionId) {
                 regionId = building.parentId();
-                EntityView region = iter.world().obtainEntityView(regionId);
+                EntityView region = iter.stage().obtainEntityView(regionId);
                 regionInstance = region.getView(RegionInstance.class);
                 regionIncome = region.getMutView(RegionInstanceIncome.class);
                 regionDemographics = region.getMutView(RegionDemographics.class);
@@ -60,7 +60,7 @@ public class EconomyBuildingProfitSharingSystem {
 
             if(building.countryId() != countryId) {
                 countryId = building.countryId();
-                EntityView country = iter.world().obtainEntityView(countryId);
+                EntityView country = iter.stage().obtainEntityView(countryId);
                 countryProfitDistributionPolicy = country.getMutView(CountryProfitDistributionPolicy.class);
                 countryInvestment = country.getMutView(CountryInvestment.class);
                 countryTaxPolicy = country.getView(CountryTaxPolicy.class);

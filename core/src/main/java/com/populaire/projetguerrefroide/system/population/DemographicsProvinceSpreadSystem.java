@@ -30,7 +30,7 @@ public class DemographicsProvinceSpreadSystem {
 
             if(province.regionInstanceId() != ownerId) {
                 ownerId = province.regionInstanceId();
-                regionInstanceDemographics = iter.world().obtainEntityView(ownerId).getMutView(RegionDemographics.class);
+                regionInstanceDemographics = iter.stage().obtainEntityView(ownerId).getMutView(RegionDemographics.class);
             }
 
             regionInstanceDemographics.totalPopulation(regionInstanceDemographics.totalPopulation() + demographics.totalPopulation());

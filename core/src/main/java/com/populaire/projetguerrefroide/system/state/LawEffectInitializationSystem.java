@@ -60,7 +60,7 @@ public class LawEffectInitializationSystem {
                     continue;
                 }
 
-                EntityView law = iter.world().obtainEntityView(lawId);
+                EntityView law = iter.stage().obtainEntityView(lawId);
 
                 ModifiersView lawModifiers = law.getMutView(Modifiers.class);
                 if (lawModifiers != null) {
@@ -71,7 +71,7 @@ public class LawEffectInitializationSystem {
                         }
 
                         float modifierValue = lawModifiers.values(m);
-                        EntityView modifier = iter.world().obtainEntityView(modifierId);
+                        EntityView modifier = iter.stage().obtainEntityView(modifierId);
                         String modifierName = modifier.name();
 
                         switch (modifierName) {
@@ -129,7 +129,7 @@ public class LawEffectInitializationSystem {
                         }
 
                         float overrideValue = lawOverrides.values(m);
-                        EntityView override = iter.world().obtainEntityView(overrideId);
+                        EntityView override = iter.stage().obtainEntityView(overrideId);
                         String overrideName = override.name();
 
                         switch (overrideName) {

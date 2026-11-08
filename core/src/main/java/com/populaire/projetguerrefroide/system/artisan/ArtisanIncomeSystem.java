@@ -29,7 +29,7 @@ public class ArtisanIncomeSystem {
     }
 
     private void pay(Iter iter) {
-        World world = iter.world();
+        World world = iter.stage();
         GlobalArtisanCraftsView crafts = ArtisanUtils.crafts(world, this.ecsConstants);
         int artisanIndex = crafts.artisanPopTypeIndex();
         if (artisanIndex < 0) {

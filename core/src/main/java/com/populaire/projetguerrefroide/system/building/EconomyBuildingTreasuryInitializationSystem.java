@@ -37,13 +37,13 @@ public class EconomyBuildingTreasuryInitializationSystem {
             BuildingView building = buildingField.getMutView(i);
             if (building.parentId() != regionId) {
                 regionId = building.parentId();
-                regionInstance = iter.world().obtainEntityView(regionId).getView(RegionInstance.class);
+                regionInstance = iter.stage().obtainEntityView(regionId).getView(RegionInstance.class);
             }
             EconomyBuildingMutView economyBuilding = economyBuildingField.getMutView(i);
 
             if (building.countryId() != countryId) {
                 countryId = building.countryId();
-                EntityView country = iter.world().obtainEntityView(countryId);
+                EntityView country = iter.stage().obtainEntityView(countryId);
                 countryMarket = country.getMutView(CountryMarket.class);
                 countryLaborPolicy = country.getMutView(CountryLaborPolicy.class);
                 countryProductionPolicy = country.getMutView(CountryProductionPolicy.class);

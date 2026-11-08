@@ -38,7 +38,7 @@ public class EconomyBuildingWorkerDemandSystem {
 
             if(building.parentId() != regionInstanceId) {
                 regionInstanceId = building.parentId();
-                regionInstanceIncome = iter.world().obtainEntityView(regionInstanceId).getMutView(RegionInstanceIncome.class);
+                regionInstanceIncome = iter.stage().obtainEntityView(regionInstanceId).getMutView(RegionInstanceIncome.class);
             }
 
             int primaryTarget = workerTarget(workforce, building.size(), primaryWorkerPopTypeRatio, economyBuilding.utilization());

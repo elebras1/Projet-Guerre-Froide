@@ -41,7 +41,7 @@ public class RGOEmploymentSystem {
 
         ResourceGatheringView firstResourceGathering = resourceGatheringField.getMutView(0);
         int goodIndex = firstResourceGathering.goodIndex();
-        GlobalMarketView globalMarket = iter.world().obtainEntityView(this.ecsConstants.globalMarket()).getView(GlobalMarket.class);
+        GlobalMarketView globalMarket = iter.stage().obtainEntityView(this.ecsConstants.globalMarket()).getView(GlobalMarket.class);
         float worldDemand = globalMarket.goodDemandAmounts(goodIndex);
         float inventory = globalMarket.goodStockAmounts(goodIndex) - globalMarket.goodProductionAmounts(goodIndex);
         boolean stocksAboveTarget = inventory > STOCK_TARGET_DAYS * worldDemand;
@@ -55,7 +55,7 @@ public class RGOEmploymentSystem {
             ProvinceView province = provinceField.getMutView(i);
             if (province.ownerId() != countryId) {
                 countryId = province.ownerId();
-                CountryPopulationPolicyView populationPolicy = iter.world().obtainEntityView(countryId).getView(CountryPopulationPolicy.class);
+                CountryPopulationPolicyView populationPolicy = iter.stage().obtainEntityView(countryId).getView(CountryPopulationPolicy.class);
                 workforceShare = activeShare(workerBaseShare, populationPolicy.workforceShareModifier());
             }
             int activeWorkerAmount = activeWorkers(demographics.totalByPopType(workerIndex), workforceShare);

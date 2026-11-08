@@ -25,7 +25,7 @@ public class CountryCentralBankSystem {
     }
 
     private void regulate(Iter iter) {
-        World world = iter.world();
+        World world = iter.stage();
         float[] baseCosts = this.ecsConstants.goodCosts();
         GlobalPopulationTypeView globalPopulationType = world.obtainEntityView(this.ecsConstants.globalPopulationType()).getView(GlobalPopulationType.class);
 

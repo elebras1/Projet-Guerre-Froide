@@ -21,7 +21,7 @@ public class CountryMarketInitializationSystem {
 
     private void initialize(Iter iter) {
         long globalGoodId = this.ecsConstants.globalGood();
-        EntityView globalGood = iter.world().obtainEntityView(globalGoodId);
+        EntityView globalGood = iter.stage().obtainEntityView(globalGoodId);
         GlobalGoodView globalGoodData = globalGood.getMutView(GlobalGood.class);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
@@ -29,7 +29,7 @@ public class CountryMarketInitializationSystem {
             CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
 
             for(int g = 0; g < globalGoodData.goodIdsLength(); g++) {
-                EntityView good = iter.world().obtainEntityView(globalGoodData.goodIds(g));
+                EntityView good = iter.stage().obtainEntityView(globalGoodData.goodIds(g));
                 GoodView goodData = good.getMutView(Good.class);
                 countryMarket.goodPrices(g, goodData.cost());
                 countryMarket.goodDemandSatisfactionRatios(g, 1f);

@@ -40,7 +40,7 @@ public class MilitaryBaseCapacitySystem {
     }
 
     private void measure(Iter iter) {
-        World world = iter.world();
+        World world = iter.stage();
         this.world = world;
         while (iter.next()) {
             Field<CountryMilitary> countryMilitaryField = iter.field(CountryMilitary.class, 0);

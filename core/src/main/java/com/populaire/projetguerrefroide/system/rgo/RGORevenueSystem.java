@@ -36,7 +36,7 @@ public class RGORevenueSystem {
 
             if(province.ownerId() != countryId) {
                 countryId = province.ownerId();
-                EntityView country = iter.world().obtainEntityView(countryId);
+                EntityView country = iter.stage().obtainEntityView(countryId);
                 countryMarket = country.getMutView(CountryMarket.class);
                 countryLaborPolicy = country.getMutView(CountryLaborPolicy.class);
             }

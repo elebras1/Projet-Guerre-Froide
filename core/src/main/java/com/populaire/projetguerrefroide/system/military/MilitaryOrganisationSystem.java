@@ -23,7 +23,7 @@ public class MilitaryOrganisationSystem {
     }
 
     private void adjust(Iter iter) {
-        World world = iter.world();
+        World world = iter.stage();
         boolean airWings = iter.isSet(1);
         Field<UnitInstance> unitInstanceField = iter.field(UnitInstance.class, 0);
         Field<AirWing> airWingField = airWings ? iter.field(AirWing.class, 1) : null;

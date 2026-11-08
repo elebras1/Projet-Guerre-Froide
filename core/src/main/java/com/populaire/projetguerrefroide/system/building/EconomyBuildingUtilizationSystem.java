@@ -43,7 +43,7 @@ public class EconomyBuildingUtilizationSystem {
         Field<Building> buildingField = iter.field(Building.class, 0);
         Field<EconomyBuilding> economyBuildingField = iter.field(EconomyBuilding.class, 1);
         EconomyBuildingTypeView buildingTypeData = iter.field(EconomyBuildingType.class, 2).getView(0);
-        GlobalMarketView globalMarket = iter.world().obtainEntityView(this.ecsConstants.globalMarket()).getView(GlobalMarket.class);
+        GlobalMarketView globalMarket = iter.stage().obtainEntityView(this.ecsConstants.globalMarket()).getView(GlobalMarket.class);
         float demandGap = Math.clamp(MarketUtils.clearingGap(globalMarket, buildingTypeData.goodOutputIndex()), -1f, 1f);
         boolean ordered = iter.isSet(3);
 
@@ -51,13 +51,13 @@ public class EconomyBuildingUtilizationSystem {
             BuildingView building = buildingField.getMutView(i);
             if (building.parentId() != regionId) {
                 regionId = building.parentId();
-                regionInstance = iter.world().obtainEntityView(regionId).getView(RegionInstance.class);
+                regionInstance = iter.stage().obtainEntityView(regionId).getView(RegionInstance.class);
             }
             EconomyBuildingMutView economyBuilding = economyBuildingField.getMutView(i);
 
             if (building.countryId() != countryId) {
                 countryId = building.countryId();
-                EntityView country = iter.world().obtainEntityView(countryId);
+                EntityView country = iter.stage().obtainEntityView(countryId);
                 countryMarket = country.getMutView(CountryMarket.class);
                 countryLaborPolicy = country.getMutView(CountryLaborPolicy.class);
                 countryProductionPolicy = country.getMutView(CountryProductionPolicy.class);

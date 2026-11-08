@@ -34,7 +34,7 @@ public class RGOProductionSystem {
         }
         ResourceGatheringView firstResourceGathering = resourceGatheringField.getMutView(0);
         long goodId = firstResourceGathering.goodId();
-        float goodValue = iter.world().obtainEntityView(goodId).<GoodView>getView(Good.class).value();
+        float goodValue = iter.stage().obtainEntityView(goodId).<GoodView>getView(Good.class).value();
 
         long countryId = 0;
         float rgoOutputModifier = 0f;
@@ -43,7 +43,7 @@ public class RGOProductionSystem {
             ProvinceView province = provinceField.getMutView(i);
             if (province.ownerId() != countryId) {
                 countryId = province.ownerId();
-                rgoOutputModifier = iter.world().obtainEntityView(countryId).<CountryProductionPolicyView>getView(CountryProductionPolicy.class).rgoOutputModifier();
+                rgoOutputModifier = iter.stage().obtainEntityView(countryId).<CountryProductionPolicyView>getView(CountryProductionPolicy.class).rgoOutputModifier();
             }
 
             int maxCapacity = resourceGathering.size() * workforce;

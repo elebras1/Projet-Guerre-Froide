@@ -35,7 +35,7 @@ public class PopulationConsumptionSystem {
 
             if(countryId != pop.countryId()) {
                 countryId = pop.countryId();
-                EntityView country = iter.world().obtainEntityView(countryId);
+                EntityView country = iter.stage().obtainEntityView(countryId);
                 countryMarket = country.getMutView(CountryMarket.class);
                 countryBudgetPolicy = country.getMutView(CountryBudgetPolicy.class);
                 countryBank = country.getMutView(CountryBank.class);

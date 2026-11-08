@@ -30,13 +30,13 @@ public class ConstructionClosureSystem {
                 continue;
             }
 
-            EntityView country = iter.world().obtainEntityView(site.countryId());
+            EntityView country = iter.stage().obtainEntityView(site.countryId());
             CountryInvestmentMutView countryInvestment = country.getMutView(CountryInvestment.class);
             int owner = ownerIndex(site.ownerTagId(), this.ecsConstants);
             countryInvestment.committed(owner, Math.max(0.0, countryInvestment.committed(owner) - site.committedCost()));
             countryInvestment.sitesInProgress(countryInvestment.sitesInProgress() - 1);
             countryInvestment.sitesCompleted(countryInvestment.sitesCompleted() + 1);
-            iter.world().obtainEntityView(iter.entity(i)).destruct();
+            iter.stage().obtainEntityView(iter.entity(i)).destruct();
         }
     }
 }

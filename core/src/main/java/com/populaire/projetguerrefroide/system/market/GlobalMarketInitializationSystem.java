@@ -20,7 +20,7 @@ public class GlobalMarketInitializationSystem {
     }
 
     private void initialize(Iter iter) {
-        EntityView globalGood = iter.world().obtainEntityView(this.ecsConstants.globalGood());
+        EntityView globalGood = iter.stage().obtainEntityView(this.ecsConstants.globalGood());
         GlobalGoodView globalGoodData = globalGood.getMutView(GlobalGood.class);
 
         Field<GlobalMarket> globalMarketField = iter.field(GlobalMarket.class, 0);
@@ -28,7 +28,7 @@ public class GlobalMarketInitializationSystem {
             GlobalMarketMutView globalMarket = globalMarketField.getMutView(i);
 
             for(int g = 0; g < globalMarket.goodPricesLength(); g++) {
-                EntityView good = iter.world().obtainEntityView(globalGoodData.goodIds(g));
+                EntityView good = iter.stage().obtainEntityView(globalGoodData.goodIds(g));
                 GoodView goodData = good.getMutView(Good.class);
                 globalMarket.goodPrices(g, goodData.cost());
                 globalMarket.goodAvailabilities(g, true);

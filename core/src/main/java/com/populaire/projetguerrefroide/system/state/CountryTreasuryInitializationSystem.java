@@ -34,7 +34,7 @@ public class CountryTreasuryInitializationSystem {
         boolean[] assistedTypes = this.ecsConstants.assistedTypes();
         int statePostIndex = this.ecsConstants.statePostIndex();
         float[] baseWorkforceShares = this.ecsConstants.baseWorkforceShares();
-        GlobalStateConsumptionView stateConsumption = StateConsumptionUtils.globalStateConsumption(iter.world(), this.ecsConstants);
+        GlobalStateConsumptionView stateConsumption = StateConsumptionUtils.globalStateConsumption(iter.stage(), this.ecsConstants);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         Field<CountryDemographics> countryDemographicsField = iter.field(CountryDemographics.class, 1);

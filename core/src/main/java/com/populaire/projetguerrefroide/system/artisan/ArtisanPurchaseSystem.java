@@ -18,7 +18,7 @@ public class ArtisanPurchaseSystem {
     }
 
     private void purchase(Iter iter) {
-        World world = iter.world();
+        World world = iter.stage();
         Field<RegionArtisans> regionArtisansField = iter.field(RegionArtisans.class, 0);
         Field<RegionInstance> regionInstanceField = iter.field(RegionInstance.class, 1);
         long countryId = 0;

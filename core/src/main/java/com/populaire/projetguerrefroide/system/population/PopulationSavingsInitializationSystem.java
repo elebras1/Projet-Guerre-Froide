@@ -30,7 +30,7 @@ public class PopulationSavingsInitializationSystem {
             PopulationMutView population = populationField.getMutView(i);
             if (population.countryId() != countryId) {
                 countryId = population.countryId();
-                EntityView country = iter.world().obtainEntityView(countryId);
+                EntityView country = iter.stage().obtainEntityView(countryId);
                 CountryBudgetPolicyView countryBudgetPolicy = country.getView(CountryBudgetPolicy.class);
                 spendingRate = strataSpendingRate * (1f + countryBudgetPolicy.popSpending());
             }

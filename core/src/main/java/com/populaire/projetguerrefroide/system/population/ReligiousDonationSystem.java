@@ -30,7 +30,7 @@ public class ReligiousDonationSystem {
             PopulationMutView population = populationField.getMutView(i);
             if (population.regionInstanceId() != regionInstanceId) {
                 regionInstanceId = population.regionInstanceId();
-                EntityView regionEntity = iter.world().obtainEntityView(regionInstanceId);
+                EntityView regionEntity = iter.stage().obtainEntityView(regionInstanceId);
                 regionInstanceIncome = regionEntity.getMutView(RegionInstanceIncome.class);
                 regionDemographics = regionEntity.getView(RegionDemographics.class);
             }

@@ -35,7 +35,7 @@ public class EconomyBuildingOwnerInitializationSystem {
 
             if (building.countryId() != countryId) {
                 countryId = building.countryId();
-                EntityView country = iter.world().obtainEntityView(countryId);
+                EntityView country = iter.stage().obtainEntityView(countryId);
                 countryProfitDistributionPolicy = country.getMutView(CountryProfitDistributionPolicy.class);
             }
 

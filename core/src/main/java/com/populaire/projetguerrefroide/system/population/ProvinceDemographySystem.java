@@ -23,7 +23,7 @@ public class ProvinceDemographySystem {
     }
 
     private void age(Iter iter) {
-        if (!PopulationMobilityUtils.isMobilityDay(iter.world(), this.ecsConstants)) {
+        if (!PopulationMobilityUtils.isMobilityDay(iter.stage(), this.ecsConstants)) {
             return;
         }
 
@@ -42,7 +42,7 @@ public class ProvinceDemographySystem {
                 ownerId = province.ownerId();
                 float pensionCoverage = 0f;
                 if (ownerId != 0) {
-                    CountryBudgetView countryBudget = iter.world().obtainEntityView(ownerId).getView(CountryBudget.class);
+                    CountryBudgetView countryBudget = iter.stage().obtainEntityView(ownerId).getView(CountryBudget.class);
                     pensionCoverage = countryBudget.pensionCoverage();
                 }
                 pensionMortality = StateBudgetUtils.pensionMortality(pensionCoverage);

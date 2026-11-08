@@ -23,7 +23,7 @@ public class StatePostSystem {
     }
 
     private void post(Iter iter) {
-        World world = iter.world();
+        World world = iter.stage();
         GlobalPopulationTypeView globalPopulationType = world.obtainEntityView(this.ecsConstants.globalPopulationType()).getView(GlobalPopulationType.class);
         int postIndex = globalPopulationType.statePostPopTypeIndex();
         if (postIndex < 0) {

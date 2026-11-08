@@ -55,7 +55,7 @@ public class EconomyBuildingEmploymentSystem {
 
             if(building.parentId() != regionInstanceId) {
                 regionInstanceId = building.parentId();
-                EntityView regionInstance = iter.world().obtainEntityView(regionInstanceId);
+                EntityView regionInstance = iter.stage().obtainEntityView(regionInstanceId);
                 regionInstanceData = regionInstance.getMutView(RegionInstance.class);
                 regionInstanceIncome = regionInstance.getMutView(RegionInstanceIncome.class);
                 demographics = regionInstance.getMutView(RegionDemographics.class);
@@ -63,7 +63,7 @@ public class EconomyBuildingEmploymentSystem {
 
             if (building.countryId() != countryId) {
                 countryId = building.countryId();
-                CountryPopulationPolicyView populationPolicy = iter.world().obtainEntityView(countryId).getView(CountryPopulationPolicy.class);
+                CountryPopulationPolicyView populationPolicy = iter.stage().obtainEntityView(countryId).getView(CountryPopulationPolicy.class);
                 primaryWorkforceShare = activeShare(baseWorkforceShares[primaryWorkerPopTypeIndex], populationPolicy.workforceShareModifier());
                 secondaryWorkforceShare = activeShare(baseWorkforceShares[secondaryWorkerPopTypeIndex], populationPolicy.workforceShareModifier());
             }

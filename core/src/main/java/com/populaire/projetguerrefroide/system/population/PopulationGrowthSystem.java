@@ -22,7 +22,7 @@ public class PopulationGrowthSystem {
     }
 
     private void grow(Iter iter) {
-        World world = iter.world();
+        World world = iter.stage();
         if (!PopulationMobilityUtils.isMobilityDay(world, this.ecsConstants)) {
             return;
         }

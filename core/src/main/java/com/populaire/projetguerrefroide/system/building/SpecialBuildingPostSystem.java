@@ -30,7 +30,7 @@ public class SpecialBuildingPostSystem {
     }
 
     private void count(Iter iter) {
-        World world = iter.world();
+        World world = iter.stage();
         this.world = world;
         GlobalPopulationTypeView globalPopulationType = world.obtainEntityView(this.ecsConstants.globalPopulationType()).getView(GlobalPopulationType.class);
         int postIndex = globalPopulationType.statePostPopTypeIndex();

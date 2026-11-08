@@ -20,7 +20,7 @@ public class CountryExportPayoutSystem {
     }
 
     private void pay(Iter iter) {
-        EntityView globalMarket = iter.world().obtainEntityView(this.ecsConstants.globalMarket());
+        EntityView globalMarket = iter.stage().obtainEntityView(this.ecsConstants.globalMarket());
         GlobalMarketView globalMarketData = globalMarket.getMutView(GlobalMarket.class);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);

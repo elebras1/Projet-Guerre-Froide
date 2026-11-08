@@ -249,7 +249,7 @@ public final class CalibrationReport {
             Field<Demographics> demographicsField = iter.field(Demographics.class, 0);
             for (int i = 0; i < iter.count(); i++) {
                 DemographicsView demographics = demographicsField.getMutView(i);
-                EntityView province = iter.world().obtainEntityView(iter.entity(i));
+                EntityView province = iter.stage().obtainEntityView(iter.entity(i));
                 if (!province.has(ResourceGathering.class)) {
                     this.ruralsWithoutRgo[0] += demographics.totalByPopType(farmerIndex);
                     this.ruralsWithoutRgo[1] += demographics.totalByPopType(labourerIndex);

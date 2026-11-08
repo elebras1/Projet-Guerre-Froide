@@ -38,11 +38,11 @@ public class EconomyBuildingProductionSystem {
 
             if (building.countryId() != countryId) {
                 countryId = building.countryId();
-                countryProductionPolicy = iter.world().obtainEntityView(countryId).getMutView(CountryProductionPolicy.class);
+                countryProductionPolicy = iter.stage().obtainEntityView(countryId).getMutView(CountryProductionPolicy.class);
             }
             if (building.parentId() != regionId) {
                 regionId = building.parentId();
-                regionInstance = iter.world().obtainEntityView(regionId).getView(RegionInstance.class);
+                regionInstance = iter.stage().obtainEntityView(regionId).getView(RegionInstance.class);
             }
 
             int level = building.size();

@@ -45,13 +45,13 @@ public class PopulationEmploymentSynchronizationSystem {
             PopulationMutView population = populationField.getMutView(i);
             if(rural && population.provinceId() != provinceId) {
                 provinceId = population.provinceId();
-                EntityView province = iter.world().obtainEntityView(provinceId);
+                EntityView province = iter.stage().obtainEntityView(provinceId);
                 hasResourceGathering = province.has(ResourceGathering.class);
                 if(hasResourceGathering) {
                     ResourceGatheringView resourceGathering = province.getMutView(ResourceGathering.class);
                     rgoWorkerAmount = resourceGathering.workerAmount();
                     rgoSlaveAmount = resourceGathering.slaveAmount();
-                    ResourceGatheringTypeView resourceGatheringType = iter.world().obtainEntityView(province.target(this.rgoType, 0)).getView(ResourceGatheringType.class);
+                    ResourceGatheringTypeView resourceGatheringType = iter.stage().obtainEntityView(province.target(this.rgoType, 0)).getView(ResourceGatheringType.class);
                     rgoWorkerPopTypeId = resourceGatheringType.workerPopTypeId();
                     rgoSlavePopTypeId = resourceGatheringType.slavePopTypeId();
                 }
@@ -60,7 +60,7 @@ public class PopulationEmploymentSynchronizationSystem {
             long currentRegionInstanceId = population.regionInstanceId();
             if(currentRegionInstanceId != regionInstanceId) {
                 regionInstanceId = currentRegionInstanceId;
-                EntityView regionInstance = iter.world().obtainEntityView(currentRegionInstanceId);
+                EntityView regionInstance = iter.stage().obtainEntityView(currentRegionInstanceId);
                 regionInstanceData = regionInstance.getMutView(RegionInstance.class);
             }
 

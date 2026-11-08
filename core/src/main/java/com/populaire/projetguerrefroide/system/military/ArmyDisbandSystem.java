@@ -69,7 +69,7 @@ public class ArmyDisbandSystem {
     }
 
     private void disband(Iter iter) {
-        World world = iter.world();
+        World world = iter.stage();
         boolean decisionDay = PopulationMobilityUtils.isMobilityDay(world, this.ecsConstants);
         LongFloatMap gaps = this.gaps;
         gaps.clear();

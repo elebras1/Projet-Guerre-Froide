@@ -28,7 +28,7 @@ public class RGOSpreadProductionSystem {
 
             if(countryId != province.ownerId()) {
                 countryId = province.ownerId();
-                EntityView country = iter.world().obtainEntityView(countryId);
+                EntityView country = iter.stage().obtainEntityView(countryId);
                 countryMarket = country.getMutView(CountryMarket.class);
             }
 

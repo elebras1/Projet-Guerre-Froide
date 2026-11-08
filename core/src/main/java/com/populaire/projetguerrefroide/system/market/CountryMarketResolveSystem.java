@@ -19,7 +19,7 @@ public class CountryMarketResolveSystem {
     }
 
     private void resolve(Iter iter) {
-        EntityView globalMarket = iter.world().obtainEntityView(this.ecsConstants.globalMarket());
+        EntityView globalMarket = iter.stage().obtainEntityView(this.ecsConstants.globalMarket());
         GlobalMarketMutView globalMarketData = globalMarket.getMutView(GlobalMarket.class);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);

@@ -34,7 +34,7 @@ public class ConstructionDemandSystem {
 
             if (site.countryId() != countryId) {
                 countryId = site.countryId();
-                EntityView country = iter.world().obtainEntityView(countryId);
+                EntityView country = iter.stage().obtainEntityView(countryId);
                 countryMarket = country.getMutView(CountryMarket.class);
                 countryInvestment = country.getMutView(CountryInvestment.class);
                 countryBudget = country.getMutView(CountryBudget.class);

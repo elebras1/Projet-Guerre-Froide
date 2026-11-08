@@ -22,7 +22,7 @@ public class RegionProvinceCountSystem {
             if (province.regionInstanceId() == 0) {
                 continue;
             }
-            RegionInstanceMutView regionInstance = iter.world().obtainEntityView(province.regionInstanceId()).getMutView(RegionInstance.class);
+            RegionInstanceMutView regionInstance = iter.stage().obtainEntityView(province.regionInstanceId()).getMutView(RegionInstance.class);
             regionInstance.provinceCount(regionInstance.provinceCount() + 1);
         }
     }

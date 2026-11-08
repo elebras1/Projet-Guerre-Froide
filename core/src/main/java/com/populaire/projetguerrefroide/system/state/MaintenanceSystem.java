@@ -46,7 +46,7 @@ public class MaintenanceSystem {
     }
 
     private void maintain(Iter iter) {
-        World world = iter.world();
+        World world = iter.stage();
         this.world = world;
         while (iter.next()) {
             Field<CountryMaintenance> countryMaintenanceField = iter.field(CountryMaintenance.class, 0);

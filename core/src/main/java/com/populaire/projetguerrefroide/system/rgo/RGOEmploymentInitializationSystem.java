@@ -43,7 +43,7 @@ public class RGOEmploymentInitializationSystem {
             ProvinceView province = provinceField.getMutView(i);
             if (province.ownerId() != countryId) {
                 countryId = province.ownerId();
-                CountryPopulationPolicyView populationPolicy = iter.world().obtainEntityView(countryId).getView(CountryPopulationPolicy.class);
+                CountryPopulationPolicyView populationPolicy = iter.stage().obtainEntityView(countryId).getView(CountryPopulationPolicy.class);
                 workforceShare = activeShare(workerBaseShare, populationPolicy.workforceShareModifier());
             }
             int maxCapacity = resourceGathering.size() * workforce;

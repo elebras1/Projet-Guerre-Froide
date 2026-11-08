@@ -32,7 +32,7 @@ public class EconomyBuildingConsumptionSystem {
 
             if (building.countryId() != countryId) {
                 countryId = building.countryId();
-                EntityView country = iter.world().obtainEntityView(countryId);
+                EntityView country = iter.stage().obtainEntityView(countryId);
                 countryMarket = country.getMutView(CountryMarket.class);
                 countryProductionPolicy = country.getMutView(CountryProductionPolicy.class);
             }

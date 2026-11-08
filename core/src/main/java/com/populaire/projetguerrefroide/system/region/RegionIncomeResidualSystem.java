@@ -40,7 +40,7 @@ public class RegionIncomeResidualSystem {
 
             if (regionInstance.ownerId() != countryId) {
                 countryId = regionInstance.ownerId();
-                EntityView country = iter.world().obtainEntityView(countryId);
+                EntityView country = iter.stage().obtainEntityView(countryId);
                 countryMarket = country.getMutView(CountryMarket.class);
             }
             countryMarket.treasury(countryMarket.treasury() + residual);

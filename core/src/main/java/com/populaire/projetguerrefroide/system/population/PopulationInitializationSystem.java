@@ -22,7 +22,7 @@ public class PopulationInitializationSystem {
     public void initialize(Iter iter) {
         Field<PopulationType> populationTypeField = iter.field(PopulationType.class, 1);
         PopulationTypeView populationTypeData = populationTypeField.getView(0);
-        float baseSavings = this.calculateBaseSavings(iter.world(), populationTypeData);
+        float baseSavings = this.calculateBaseSavings(iter.stage(), populationTypeData);
         float spendingRate = SPENDING_RATES_BY_STRATA[populationTypeData.strata()];
 
         Field<Population> populationField = iter.field(Population.class, 0);

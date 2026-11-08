@@ -20,9 +20,9 @@ public class NeedsCostsCalculationSystem {
     }
 
     private void calculate(Iter iter) {
-        EntityView globalPopType = iter.world().obtainEntityView(this.ecsConstants.globalPopulationType());
+        EntityView globalPopType = iter.stage().obtainEntityView(this.ecsConstants.globalPopulationType());
         GlobalPopulationTypeView globalPopTypeData = globalPopType.getMutView(GlobalPopulationType.class);
-        EntityView globalMarket = iter.world().obtainEntityView(this.ecsConstants.globalMarket());
+        EntityView globalMarket = iter.stage().obtainEntityView(this.ecsConstants.globalMarket());
         GlobalMarketView globalMarketData = globalMarket.getMutView(GlobalMarket.class);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
@@ -32,7 +32,7 @@ public class NeedsCostsCalculationSystem {
             for (int ptIndex = 0; ptIndex < globalPopTypeData.popTypeIdsLength(); ptIndex++) {
                 long typeId = globalPopTypeData.popTypeIds(ptIndex);
 
-                EntityView popType = iter.world().obtainEntityView(typeId);
+                EntityView popType = iter.stage().obtainEntityView(typeId);
                 PopulationTypeView popTypeData = popType.getMutView(PopulationType.class);
 
                 for (int j = 0; j < popTypeData.lifeNeedsGoodAmountsLength(); j++) {

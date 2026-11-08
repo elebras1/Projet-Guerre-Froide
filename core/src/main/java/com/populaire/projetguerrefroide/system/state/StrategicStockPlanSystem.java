@@ -26,7 +26,7 @@ public class StrategicStockPlanSystem {
     }
 
     private void plan(Iter iter) {
-        World world = iter.world();
+        World world = iter.stage();
         EntityView globalStorage = world.obtainEntityView(this.ecsConstants.globalStrategicStorage());
         if (!globalStorage.has(GlobalStrategicStorage.class)) {
             return;

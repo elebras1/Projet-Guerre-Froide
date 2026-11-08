@@ -197,7 +197,7 @@ public class InvestmentDecisionSystem {
     }
 
     private void decide(Iter iter) {
-        World world = iter.world();
+        World world = iter.stage();
         this.world = world;
         this.reset();
         boolean[] ruralTypes = this.ecsConstants.ruralPopTypes();

@@ -25,7 +25,7 @@ public class LabourMarketSystem {
     }
 
     private void adjust(Iter iter) {
-        World world = iter.world();
+        World world = iter.stage();
         GlobalPopulationTypeView globalPopulationType = world.obtainEntityView(this.ecsConstants.globalPopulationType()).getView(GlobalPopulationType.class);
         int statePostIndex = globalPopulationType.statePostPopTypeIndex();
         int[] incomeTypes = this.ecsConstants.incomeTypes();

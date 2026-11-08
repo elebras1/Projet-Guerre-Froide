@@ -37,7 +37,7 @@ public class CountryBudgetSystem {
         boolean[] assistedTypes = this.ecsConstants.assistedTypes();
         int statePostIndex = this.ecsConstants.statePostIndex();
         float[] baseWorkforceShares = this.ecsConstants.baseWorkforceShares();
-        GlobalMarketView globalMarket = iter.world().obtainEntityView(this.ecsConstants.globalMarket()).getMutView(GlobalMarket.class);
+        GlobalMarketView globalMarket = iter.stage().obtainEntityView(this.ecsConstants.globalMarket()).getMutView(GlobalMarket.class);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         Field<CountryDemographics> countryDemographicsField = iter.field(CountryDemographics.class, 1);
@@ -50,7 +50,7 @@ public class CountryBudgetSystem {
         Field<CountryPopulationPolicy> countryPopulationPolicyField = iter.field(CountryPopulationPolicy.class, 8);
         Field<CountryMilitary> countryMilitaryField = iter.field(CountryMilitary.class, 9);
         Field<CountryMaintenance> countryMaintenanceField = iter.field(CountryMaintenance.class, 10);
-        GlobalStateConsumptionView stateConsumption = StateConsumptionUtils.globalStateConsumption(iter.world(), this.ecsConstants);
+        GlobalStateConsumptionView stateConsumption = StateConsumptionUtils.globalStateConsumption(iter.stage(), this.ecsConstants);
         for (int i = 0; i < iter.count(); i++) {
             CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
             CountryDemographicsView countryDemographics = countryDemographicsField.getMutView(i);

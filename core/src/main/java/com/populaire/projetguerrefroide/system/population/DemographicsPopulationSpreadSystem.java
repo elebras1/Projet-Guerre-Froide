@@ -28,7 +28,7 @@ public class DemographicsPopulationSpreadSystem {
             PopulationView population = populationField.getMutView(i);
             if (population.provinceId() != provinceId) {
                 provinceId = population.provinceId();
-                provinceDemographics = iter.world().obtainEntityView(provinceId).getMutView(Demographics.class);
+                provinceDemographics = iter.stage().obtainEntityView(provinceId).getMutView(Demographics.class);
             }
 
             provinceDemographics.totalPopulation(provinceDemographics.totalPopulation() + population.amount());
