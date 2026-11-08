@@ -1,0 +1,959 @@
+{
+  "small_arms": {
+    "tree": "military",
+    "era": 1,
+    "year": 1946,
+    "time": 300,
+    "requires": [],
+    "effects": {
+      "unit_modifiers": {
+        "light_infantry": {
+          "attack": 0.05
+        },
+        "heavy_infantry": {
+          "attack": 0.05
+        }
+      }
+    }
+  },
+  "explosives": {
+    "tree": "military",
+    "era": 1,
+    "year": 1946,
+    "time": 300,
+    "requires": [
+      "small_arms"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "artillery": {
+          "attack": 0.05
+        },
+        "combat_support": {
+          "attack": 0.05
+        }
+      }
+    }
+  },
+  "field_artillery": {
+    "tree": "military",
+    "era": 1,
+    "year": 1946,
+    "time": 360,
+    "requires": [
+      "explosives"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "artillery": {
+          "attack": 0.1
+        }
+      }
+    }
+  },
+  "anti_tank": {
+    "tree": "military",
+    "era": 1,
+    "year": 1946,
+    "time": 360,
+    "requires": [
+      "small_arms",
+      "explosives"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "combat_support": {
+          "attack": 0.1
+        }
+      }
+    }
+  },
+  "light_armor": {
+    "tree": "military",
+    "era": 1,
+    "year": 1946,
+    "time": 420,
+    "requires": [
+      "industrial_mechanization"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "tank": {
+          "attack": 0.05,
+          "defence": 0.05
+        }
+      }
+    }
+  },
+  "main_battle_tank": {
+    "tree": "military",
+    "era": 1,
+    "year": 1955,
+    "time": 540,
+    "requires": [
+      "light_armor",
+      "assembly_line"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "tank": {
+          "attack": 0.1,
+          "defence": 0.1
+        }
+      }
+    }
+  },
+  "composite_armor": {
+    "tree": "military",
+    "era": 3,
+    "year": 1975,
+    "time": 600,
+    "requires": [
+      "main_battle_tank",
+      "composite_materials"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "tank": {
+          "defence": 0.15
+        }
+      }
+    }
+  },
+  "mechanized_infantry": {
+    "tree": "military",
+    "era": 1,
+    "year": 1950,
+    "time": 480,
+    "requires": [
+      "light_armor",
+      "assembly_line"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "mechanised_infantry": {
+          "attack": 0.1,
+          "defence": 0.1
+        }
+      }
+    }
+  },
+  "special_operations": {
+    "tree": "military",
+    "era": 1,
+    "year": 1950,
+    "time": 420,
+    "requires": [
+      "small_arms"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "special_forces": {
+          "attack": 0.1,
+          "defence": 0.1
+        }
+      }
+    }
+  },
+  "night_vision": {
+    "tree": "military",
+    "era": 2,
+    "year": 1960,
+    "time": 480,
+    "requires": [
+      "electronics"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "light_infantry": {
+          "attack": 0.05
+        },
+        "special_forces": {
+          "attack": 0.05
+        },
+        "tank": {
+          "attack": 0.05
+        }
+      }
+    }
+  },
+  "helicopter_gunships": {
+    "tree": "military",
+    "era": 2,
+    "year": 1965,
+    "time": 540,
+    "requires": [
+      "mechanized_infantry",
+      "aerodynamics"
+    ],
+    "effects": {
+      "unlock_units": [
+        "attack_helicopters"
+      ],
+      "unit_modifiers": {
+        "attack_helicopters": {
+          "attack": 0.1
+        }
+      }
+    }
+  },
+  "mass_firepower": {
+    "tree": "military",
+    "era": 1,
+    "year": 1946,
+    "time": 300,
+    "requires": [
+      "field_artillery"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "artillery": {
+          "attack": 0.1
+        },
+        "light_infantry": {
+          "attack": 0.05
+        }
+      }
+    }
+  },
+  "maneuver_warfare": {
+    "tree": "military",
+    "era": 1,
+    "year": 1946,
+    "time": 360,
+    "requires": [
+      "light_armor"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "tank": {
+          "attack": 0.1
+        },
+        "mechanised_infantry": {
+          "attack": 0.05
+        }
+      }
+    }
+  },
+  "mechanized_warfare": {
+    "tree": "military",
+    "era": 1,
+    "year": 1955,
+    "time": 480,
+    "requires": [
+      "maneuver_warfare",
+      "mechanized_infantry"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "mechanised_infantry": {
+          "attack": 0.1,
+          "defence": 0.1
+        },
+        "tank": {
+          "attack": 0.05
+        }
+      }
+    }
+  },
+  "counterinsurgency": {
+    "tree": "military",
+    "era": 2,
+    "year": 1960,
+    "time": 480,
+    "requires": [
+      "special_operations",
+      "night_vision"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "light_infantry": {
+          "attack": 0.1
+        },
+        "special_forces": {
+          "attack": 0.1
+        }
+      }
+    }
+  },
+  "airland_battle": {
+    "tree": "military",
+    "era": 4,
+    "year": 1980,
+    "time": 600,
+    "requires": [
+      "mechanized_warfare",
+      "helicopter_gunships",
+      "precision_munitions"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "tank": {
+          "attack": 0.1
+        },
+        "attack_helicopters": {
+          "attack": 0.1
+        }
+      }
+    }
+  },
+  "network_centric_warfare": {
+    "tree": "military",
+    "era": 5,
+    "year": 2000,
+    "time": 780,
+    "requires": [
+      "airland_battle",
+      "awacs",
+      "computer_science"
+    ],
+    "effects": {
+      "modifiers": {
+        "military_training": 0.05,
+        "air_capacity": 0.05
+      }
+    }
+  },
+  "aerodynamics": {
+    "tree": "military",
+    "era": 1,
+    "year": 1946,
+    "time": 360,
+    "requires": [],
+    "effects": {
+      "unit_modifiers": {
+        "interceptor_fighter": {
+          "attack": 0.05
+        },
+        "bomber": {
+          "attack": 0.05
+        }
+      }
+    }
+  },
+  "turbojet_engines": {
+    "tree": "military",
+    "era": 1,
+    "year": 1946,
+    "time": 420,
+    "requires": [
+      "aerodynamics"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "interceptor_fighter": {
+          "attack": 0.1
+        },
+        "bomber": {
+          "attack": 0.05
+        }
+      }
+    }
+  },
+  "swept_wings": {
+    "tree": "military",
+    "era": 1,
+    "year": 1950,
+    "time": 480,
+    "requires": [
+      "turbojet_engines"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "interceptor_fighter": {
+          "attack": 0.1,
+          "defence": 0.05
+        }
+      }
+    }
+  },
+  "supersonic_flight": {
+    "tree": "military",
+    "era": 1,
+    "year": 1955,
+    "time": 540,
+    "requires": [
+      "swept_wings"
+    ],
+    "effects": {
+      "unlock_units": [
+        "multirole_fighter"
+      ],
+      "unit_modifiers": {
+        "interceptor_fighter": {
+          "attack": 0.1
+        },
+        "multirole_fighter": {
+          "attack": 0.1
+        }
+      }
+    }
+  },
+  "air_to_air_missiles": {
+    "tree": "military",
+    "era": 1,
+    "year": 1955,
+    "time": 480,
+    "requires": [
+      "electronics"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "interceptor_fighter": {
+          "attack": 0.1
+        },
+        "multirole_fighter": {
+          "attack": 0.1
+        }
+      }
+    }
+  },
+  "air_to_ground_missiles": {
+    "tree": "military",
+    "era": 2,
+    "year": 1965,
+    "time": 540,
+    "requires": [
+      "air_to_air_missiles"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "bomber": {
+          "attack": 0.1
+        },
+        "multirole_fighter": {
+          "attack": 0.1
+        }
+      }
+    }
+  },
+  "precision_munitions": {
+    "tree": "military",
+    "era": 3,
+    "year": 1975,
+    "time": 540,
+    "requires": [
+      "air_to_ground_missiles",
+      "electronics"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "bomber": {
+          "attack": 0.15
+        },
+        "multirole_fighter": {
+          "attack": 0.1
+        }
+      }
+    }
+  },
+  "awacs": {
+    "tree": "military",
+    "era": 3,
+    "year": 1975,
+    "time": 540,
+    "requires": [
+      "radar",
+      "telecommunications"
+    ],
+    "effects": {
+      "modifiers": {
+        "air_capacity": 0.05
+      },
+      "unit_modifiers": {
+        "interceptor_fighter": {
+          "attack": 0.05
+        }
+      }
+    }
+  },
+  "stealth_aircraft": {
+    "tree": "military",
+    "era": 4,
+    "year": 1985,
+    "time": 600,
+    "requires": [
+      "supersonic_flight",
+      "composite_materials"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "multirole_fighter": {
+          "defence": 0.15
+        },
+        "bomber": {
+          "defence": 0.15
+        }
+      }
+    }
+  },
+  "unmanned_aerial_vehicles": {
+    "tree": "military",
+    "era": 5,
+    "year": 1995,
+    "time": 720,
+    "requires": [
+      "supersonic_flight",
+      "computer_science"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "bomber": {
+          "attack": 0.05
+        },
+        "multirole_fighter": {
+          "attack": 0.05
+        }
+      }
+    }
+  },
+  "naval_architecture": {
+    "tree": "military",
+    "era": 1,
+    "year": 1946,
+    "time": 360,
+    "requires": [],
+    "effects": {
+      "unit_modifiers": {
+        "destroyer": {
+          "defence": 0.05
+        },
+        "cruiser": {
+          "defence": 0.05
+        },
+        "aircraft_carrier": {
+          "defence": 0.05
+        }
+      }
+    }
+  },
+  "carrier_aviation": {
+    "tree": "military",
+    "era": 1,
+    "year": 1946,
+    "time": 420,
+    "requires": [
+      "naval_architecture",
+      "aerodynamics"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "aircraft_carrier": {
+          "attack": 0.1
+        }
+      }
+    }
+  },
+  "nuclear_submarines": {
+    "tree": "military",
+    "era": 1,
+    "year": 1955,
+    "time": 540,
+    "requires": [
+      "nuclear_power",
+      "naval_architecture"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "submarine": {
+          "attack": 0.15,
+          "defence": 0.1
+        }
+      }
+    }
+  },
+  "ballistic_missile_submarines": {
+    "tree": "military",
+    "era": 2,
+    "year": 1965,
+    "time": 600,
+    "requires": [
+      "icbm",
+      "nuclear_submarines"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "submarine": {
+          "attack": 0.1
+        }
+      },
+      "modifiers": {
+        "naval_capacity": 0.05
+      }
+    }
+  },
+  "naval_missiles": {
+    "tree": "military",
+    "era": 1,
+    "year": 1955,
+    "time": 480,
+    "requires": [
+      "explosives",
+      "radar"
+    ],
+    "effects": {
+      "unlock_units": [
+        "fast_attack_craft"
+      ],
+      "unit_modifiers": {
+        "destroyer": {
+          "attack": 0.1
+        },
+        "frigate": {
+          "attack": 0.1
+        },
+        "fast_attack_craft": {
+          "attack": 0.1
+        }
+      }
+    }
+  },
+  "missile_frigates": {
+    "tree": "military",
+    "era": 2,
+    "year": 1960,
+    "time": 480,
+    "requires": [
+      "naval_missiles"
+    ],
+    "effects": {
+      "unlock_units": [
+        "frigate"
+      ],
+      "unit_modifiers": {
+        "frigate": {
+          "attack": 0.1
+        }
+      }
+    }
+  },
+  "aegis_combat_system": {
+    "tree": "military",
+    "era": 4,
+    "year": 1980,
+    "time": 600,
+    "requires": [
+      "naval_missiles",
+      "radar",
+      "computer_science"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "destroyer": {
+          "defence": 0.15
+        },
+        "cruiser": {
+          "defence": 0.15
+        }
+      }
+    }
+  },
+  "supercarriers": {
+    "tree": "military",
+    "era": 2,
+    "year": 1960,
+    "time": 540,
+    "requires": [
+      "carrier_aviation",
+      "nuclear_power"
+    ],
+    "effects": {
+      "unlock_units": [
+        "nuclear_aircraft_carrier"
+      ],
+      "unit_modifiers": {
+        "nuclear_aircraft_carrier": {
+          "attack": 0.1
+        }
+      }
+    }
+  },
+  "sonar": {
+    "tree": "military",
+    "era": 1,
+    "year": 1946,
+    "time": 360,
+    "requires": [
+      "naval_architecture"
+    ],
+    "effects": {
+      "unit_modifiers": {
+        "destroyer": {
+          "attack": 0.05
+        },
+        "frigate": {
+          "attack": 0.05
+        },
+        "submarine": {
+          "defence": 0.05
+        }
+      }
+    }
+  },
+  "atomic_theory": {
+    "tree": "military",
+    "era": 1,
+    "year": 1946,
+    "time": 480,
+    "requires": [
+      "physics"
+    ],
+    "effects": {
+      "modifiers": {
+        "research_efficiency": 0.02
+      }
+    }
+  },
+  "uranium_enrichment": {
+    "tree": "military",
+    "era": 1,
+    "year": 1946,
+    "time": 540,
+    "requires": [
+      "atomic_theory",
+      "chemistry"
+    ],
+    "effects": {
+      "unlock_goods": [
+        "refined_uranium"
+      ],
+      "unlock_buildings": [
+        "centrifuges"
+      ]
+    }
+  },
+  "reactor_technology": {
+    "tree": "military",
+    "era": 1,
+    "year": 1946,
+    "time": 480,
+    "requires": [
+      "atomic_theory"
+    ],
+    "effects": {
+      "unlock_buildings": [
+        "nuclear_reactor",
+        "nuclear_test_site"
+      ]
+    }
+  },
+  "atomic_bomb": {
+    "tree": "military",
+    "era": 1,
+    "year": 1946,
+    "time": 600,
+    "requires": [
+      "uranium_enrichment",
+      "reactor_technology"
+    ],
+    "effects": {
+      "nuclear_program": "atomic"
+    }
+  },
+  "thermonuclear_bomb": {
+    "tree": "military",
+    "era": 1,
+    "year": 1952,
+    "time": 660,
+    "requires": [
+      "atomic_bomb"
+    ],
+    "effects": {
+      "nuclear_program": "thermonuclear"
+    }
+  },
+  "icbm": {
+    "tree": "military",
+    "era": 2,
+    "year": 1957,
+    "time": 660,
+    "requires": [
+      "thermonuclear_bomb",
+      "aerodynamics"
+    ],
+    "effects": {
+      "nuclear_program": "icbm",
+      "unlock_buildings": [
+        "nuclear_silo",
+        "rocket_test",
+        "rocket_test_site"
+      ]
+    }
+  },
+  "sdi": {
+    "tree": "military",
+    "era": 4,
+    "year": 1983,
+    "time": 720,
+    "requires": [
+      "icbm",
+      "computer_science",
+      "space_satellite_development"
+    ],
+    "effects": {
+      "nuclear_program": "sdi",
+      "unlock_buildings": [
+        "sdi_site"
+      ]
+    }
+  },
+  "space_research_mission": {
+    "tree": "military",
+    "era": 1,
+    "year": 1946,
+    "time": 540,
+    "requires": [
+      "aerodynamics",
+      "physics"
+    ],
+    "effects": {
+      "space_program": "suborbital",
+      "unlock_buildings": [
+        "spaceport"
+      ]
+    }
+  },
+  "space_satellite_development": {
+    "tree": "military",
+    "era": 2,
+    "year": 1957,
+    "time": 600,
+    "requires": [
+      "space_research_mission",
+      "electronics"
+    ],
+    "effects": {
+      "space_program": "satellite",
+      "unlock_buildings": [
+        "military_satellites_factory"
+      ],
+      "unlock_goods": [
+        "military_satellites"
+      ]
+    }
+  },
+  "manned_orbit": {
+    "tree": "military",
+    "era": 2,
+    "year": 1961,
+    "time": 660,
+    "requires": [
+      "space_satellite_development"
+    ],
+    "effects": {
+      "space_program": "manned_orbit",
+      "modifiers": {
+        "research_efficiency": 0.03
+      }
+    }
+  },
+  "moon_landing": {
+    "tree": "military",
+    "era": 3,
+    "year": 1969,
+    "time": 720,
+    "requires": [
+      "manned_orbit",
+      "icbm"
+    ],
+    "effects": {
+      "space_program": "moon_landing",
+      "modifiers": {
+        "research_efficiency": 0.03
+      }
+    }
+  },
+  "space_station": {
+    "tree": "military",
+    "era": 3,
+    "year": 1971,
+    "time": 720,
+    "requires": [
+      "moon_landing",
+      "space_satellite_development"
+    ],
+    "effects": {
+      "space_program": "space_station",
+      "modifiers": {
+        "research_efficiency": 0.03
+      }
+    }
+  },
+  "espionage": {
+    "tree": "military",
+    "era": 1,
+    "year": 1946,
+    "time": 360,
+    "requires": [],
+    "effects": {
+      "modifiers": {
+        "espionage_bonus": 0.1
+      }
+    }
+  },
+  "signals_intelligence": {
+    "tree": "military",
+    "era": 1,
+    "year": 1950,
+    "time": 480,
+    "requires": [
+      "espionage",
+      "electronics"
+    ],
+    "effects": {
+      "modifiers": {
+        "espionage_bonus": 0.1
+      }
+    }
+  },
+  "intelligence_academies": {
+    "tree": "military",
+    "era": 1,
+    "year": 1946,
+    "time": 420,
+    "requires": [
+      "espionage"
+    ],
+    "effects": {
+      "unlock_buildings": [
+        "intelligence_center"
+      ],
+      "modifiers": {
+        "espionage_bonus": 0.05
+      }
+    }
+  },
+  "radar": {
+    "tree": "military",
+    "era": 1,
+    "year": 1946,
+    "time": 420,
+    "requires": [
+      "electronics"
+    ],
+    "effects": {
+      "unlock_buildings": [
+        "early_warning_site"
+      ],
+      "modifiers": {
+        "air_capacity": 0.05,
+        "naval_capacity": 0.05
+      }
+    }
+  },
+  "satellite_reconnaissance": {
+    "tree": "military",
+    "era": 2,
+    "year": 1960,
+    "time": 540,
+    "requires": [
+      "space_satellite_development",
+      "espionage"
+    ],
+    "effects": {
+      "modifiers": {
+        "espionage_bonus": 0.1
+      }
+    }
+  }
+}

@@ -1,0 +1,1193 @@
+{
+  "modern_science": {
+    "tree": "production",
+    "era": 1,
+    "year": 1946,
+    "time": 360,
+    "requires": [],
+    "effects": {
+      "modifiers": {
+        "research_efficiency": 0.02
+      }
+    }
+  },
+  "mathematics": {
+    "tree": "production",
+    "era": 1,
+    "year": 1946,
+    "time": 300,
+    "requires": [],
+    "effects": {
+      "modifiers": {
+        "research_efficiency": 0.02
+      }
+    }
+  },
+  "physics": {
+    "tree": "production",
+    "era": 1,
+    "year": 1946,
+    "time": 360,
+    "requires": [
+      "mathematics"
+    ],
+    "effects": {
+      "modifiers": {
+        "research_efficiency": 0.02
+      }
+    }
+  },
+  "chemistry": {
+    "tree": "production",
+    "era": 1,
+    "year": 1946,
+    "time": 360,
+    "requires": [
+      "mathematics"
+    ],
+    "effects": {
+      "factory_productivity": {
+        "inorganic_chemicals_factory": 0.05,
+        "pharmaceuticals_factory": 0.05
+      }
+    }
+  },
+  "biology": {
+    "tree": "production",
+    "era": 1,
+    "year": 1946,
+    "time": 360,
+    "requires": [
+      "chemistry"
+    ],
+    "effects": {
+      "rgo_productivity": {
+        "fish": 0.05,
+        "meat": 0.05
+      },
+      "factory_productivity": {
+        "pharmaceuticals_factory": 0.05
+      }
+    }
+  },
+  "medicine": {
+    "tree": "production",
+    "era": 1,
+    "year": 1946,
+    "time": 420,
+    "requires": [
+      "biology"
+    ],
+    "effects": {
+      "modifiers": {
+        "public_health": 0.05
+      }
+    }
+  },
+  "electronics": {
+    "tree": "production",
+    "era": 1,
+    "year": 1946,
+    "time": 360,
+    "requires": [
+      "physics"
+    ],
+    "effects": {
+      "factory_productivity": {
+        "electronic_components_factory": 0.05
+      }
+    }
+  },
+  "computer_science": {
+    "tree": "production",
+    "era": 1,
+    "year": 1950,
+    "time": 420,
+    "requires": [
+      "mathematics",
+      "electronics"
+    ],
+    "effects": {
+      "unlock_goods": [
+        "computers"
+      ],
+      "unlock_buildings": [
+        "computers_factory"
+      ],
+      "modifiers": {
+        "research_efficiency": 0.02
+      }
+    }
+  },
+  "materials_science": {
+    "tree": "production",
+    "era": 1,
+    "year": 1955,
+    "time": 420,
+    "requires": [
+      "physics",
+      "chemistry"
+    ],
+    "effects": {
+      "factory_productivity": {
+        "steel_factory": 0.05,
+        "aluminium_factory": 0.05,
+        "glass_factory": 0.05
+      }
+    }
+  },
+  "genetics": {
+    "tree": "production",
+    "era": 2,
+    "year": 1960,
+    "time": 480,
+    "requires": [
+      "biology",
+      "chemistry"
+    ],
+    "effects": {
+      "rgo_productivity": {
+        "grain": 0.05,
+        "vegetables": 0.05
+      },
+      "modifiers": {
+        "public_health": 0.02
+      }
+    }
+  },
+  "biotechnology": {
+    "tree": "production",
+    "era": 4,
+    "year": 1980,
+    "time": 600,
+    "requires": [
+      "genetics"
+    ],
+    "effects": {
+      "rgo_productivity": {
+        "grain": 0.1,
+        "vegetables": 0.1,
+        "fruits": 0.1
+      },
+      "factory_productivity": {
+        "pharmaceuticals_factory": 0.1
+      }
+    }
+  },
+  "software_engineering": {
+    "tree": "production",
+    "era": 2,
+    "year": 1965,
+    "time": 480,
+    "requires": [
+      "computer_science"
+    ],
+    "effects": {
+      "factory_productivity": {
+        "computers_factory": 0.1
+      },
+      "modifiers": {
+        "research_efficiency": 0.03
+      }
+    }
+  },
+  "internet": {
+    "tree": "production",
+    "era": 4,
+    "year": 1990,
+    "time": 660,
+    "requires": [
+      "software_engineering",
+      "telecommunications"
+    ],
+    "effects": {
+      "modifiers": {
+        "research_efficiency": 0.05,
+        "administrative_efficiency": 0.05
+      },
+      "factory_productivity": {
+        "communication_factory": 0.1
+      }
+    }
+  },
+  "nanotechnology": {
+    "tree": "production",
+    "era": 5,
+    "year": 1995,
+    "time": 720,
+    "requires": [
+      "materials_science",
+      "computer_science"
+    ],
+    "effects": {
+      "factory_productivity": {
+        "integrated_circuits_factory": 0.1,
+        "machine_parts_factory": 0.1
+      },
+      "modifiers": {
+        "research_efficiency": 0.02
+      }
+    }
+  },
+  "mining_mechanization": {
+    "tree": "production",
+    "era": 1,
+    "year": 1946,
+    "time": 300,
+    "requires": [],
+    "effects": {
+      "rgo_mechanization_cap": {
+        "coal": 1,
+        "iron": 1,
+        "precious_metals": 1
+      },
+      "rgo_productivity": {
+        "coal": 0.05,
+        "iron": 0.05
+      }
+    }
+  },
+  "coal_mining": {
+    "tree": "production",
+    "era": 1,
+    "year": 1950,
+    "time": 360,
+    "requires": [
+      "mining_mechanization"
+    ],
+    "effects": {
+      "rgo_mechanization_cap": {
+        "coal": 1
+      },
+      "rgo_productivity": {
+        "coal": 0.1
+      }
+    }
+  },
+  "open_pit_mining": {
+    "tree": "production",
+    "era": 2,
+    "year": 1960,
+    "time": 480,
+    "requires": [
+      "coal_mining",
+      "materials_science"
+    ],
+    "effects": {
+      "rgo_mechanization_cap": {
+        "iron": 1,
+        "rare_metals": 1,
+        "precious_metals": 1
+      },
+      "rgo_productivity": {
+        "iron": 0.1,
+        "rare_metals": 0.1
+      }
+    }
+  },
+  "uranium_mining": {
+    "tree": "production",
+    "era": 1,
+    "year": 1946,
+    "time": 360,
+    "requires": [
+      "mining_mechanization"
+    ],
+    "effects": {
+      "rgo_mechanization_cap": {
+        "uranium": 1
+      },
+      "rgo_productivity": {
+        "uranium": 0.1
+      }
+    }
+  },
+  "rare_earth_extraction": {
+    "tree": "production",
+    "era": 2,
+    "year": 1960,
+    "time": 480,
+    "requires": [
+      "mining_mechanization",
+      "chemistry"
+    ],
+    "effects": {
+      "rgo_mechanization_cap": {
+        "rare_metals": 1
+      },
+      "rgo_productivity": {
+        "rare_metals": 0.15,
+        "precious_metals": 0.1
+      }
+    }
+  },
+  "rotary_drilling": {
+    "tree": "production",
+    "era": 1,
+    "year": 1946,
+    "time": 300,
+    "requires": [],
+    "effects": {
+      "rgo_mechanization_cap": {
+        "oil": 1
+      },
+      "rgo_productivity": {
+        "oil": 0.1
+      }
+    }
+  },
+  "deep_drilling": {
+    "tree": "production",
+    "era": 1,
+    "year": 1950,
+    "time": 360,
+    "requires": [
+      "rotary_drilling"
+    ],
+    "effects": {
+      "extraction_malus_reduction": {
+        "deep": 0.6
+      },
+      "rgo_mechanization_cap": {
+        "oil": 1,
+        "gas": 1
+      },
+      "rgo_productivity": {
+        "oil": 0.05,
+        "gas": 0.05
+      }
+    }
+  },
+  "offshore_drilling": {
+    "tree": "production",
+    "era": 2,
+    "year": 1960,
+    "time": 480,
+    "requires": [
+      "deep_drilling"
+    ],
+    "effects": {
+      "extraction_malus_reduction": {
+        "offshore": 0.5
+      },
+      "rgo_mechanization_cap": {
+        "oil": 1,
+        "gas": 1
+      },
+      "rgo_productivity": {
+        "oil": 0.05,
+        "gas": 0.05
+      }
+    }
+  },
+  "deepwater_drilling": {
+    "tree": "production",
+    "era": 4,
+    "year": 1985,
+    "time": 600,
+    "requires": [
+      "offshore_drilling"
+    ],
+    "effects": {
+      "extraction_malus_reduction": {
+        "offshore": 0.5
+      },
+      "rgo_mechanization_cap": {
+        "oil": 1,
+        "gas": 1
+      },
+      "rgo_productivity": {
+        "oil": 0.1,
+        "gas": 0.1
+      }
+    }
+  },
+  "enhanced_oil_recovery": {
+    "tree": "production",
+    "era": 3,
+    "year": 1970,
+    "time": 480,
+    "requires": [
+      "deep_drilling"
+    ],
+    "effects": {
+      "extraction_malus_reduction": {
+        "deep": 0.4
+      },
+      "rgo_mechanization_cap": {
+        "oil": 1
+      },
+      "rgo_productivity": {
+        "oil": 0.1
+      }
+    }
+  },
+  "remote_extraction_logistics": {
+    "tree": "production",
+    "era": 1,
+    "year": 1955,
+    "time": 420,
+    "requires": [
+      "mining_mechanization"
+    ],
+    "effects": {
+      "extraction_malus_reduction": {
+        "remote": 0.5
+      },
+      "rgo_productivity": {
+        "oil": 0.05,
+        "gas": 0.05,
+        "iron": 0.05
+      }
+    }
+  },
+  "arctic_extraction": {
+    "tree": "production",
+    "era": 3,
+    "year": 1975,
+    "time": 540,
+    "requires": [
+      "remote_extraction_logistics",
+      "deep_drilling"
+    ],
+    "effects": {
+      "extraction_malus_reduction": {
+        "remote": 0.5
+      },
+      "rgo_productivity": {
+        "oil": 0.1,
+        "gas": 0.1
+      }
+    }
+  },
+  "unconventional_extraction": {
+    "tree": "production",
+    "era": 4,
+    "year": 1990,
+    "time": 660,
+    "requires": [
+      "deepwater_drilling",
+      "enhanced_oil_recovery"
+    ],
+    "effects": {
+      "extraction_malus_reduction": {
+        "unconventional": 0.5
+      },
+      "rgo_mechanization_cap": {
+        "oil": 1,
+        "gas": 1
+      },
+      "rgo_productivity": {
+        "oil": 0.1,
+        "gas": 0.1
+      }
+    }
+  },
+  "hydraulic_fracturing": {
+    "tree": "production",
+    "era": 5,
+    "year": 2000,
+    "time": 780,
+    "requires": [
+      "unconventional_extraction"
+    ],
+    "effects": {
+      "extraction_malus_reduction": {
+        "unconventional": 0.5
+      },
+      "rgo_productivity": {
+        "oil": 0.15,
+        "gas": 0.15
+      }
+    }
+  },
+  "gas_extraction": {
+    "tree": "production",
+    "era": 1,
+    "year": 1955,
+    "time": 420,
+    "requires": [
+      "rotary_drilling"
+    ],
+    "effects": {
+      "rgo_mechanization_cap": {
+        "gas": 1
+      },
+      "rgo_productivity": {
+        "gas": 0.15
+      }
+    }
+  },
+  "forestry_mechanization": {
+    "tree": "production",
+    "era": 1,
+    "year": 1950,
+    "time": 360,
+    "requires": [
+      "mining_mechanization"
+    ],
+    "effects": {
+      "rgo_mechanization_cap": {
+        "wood": 2
+      },
+      "rgo_productivity": {
+        "wood": 0.15
+      }
+    }
+  },
+  "agricultural_mechanization": {
+    "tree": "production",
+    "era": 1,
+    "year": 1946,
+    "time": 300,
+    "requires": [],
+    "effects": {
+      "rgo_mechanization_cap": {
+        "grain": 1,
+        "vegetables": 1,
+        "fruits": 1,
+        "meat": 1
+      },
+      "rgo_productivity": {
+        "grain": 0.05,
+        "vegetables": 0.05
+      }
+    }
+  },
+  "fertilizers": {
+    "tree": "production",
+    "era": 1,
+    "year": 1950,
+    "time": 360,
+    "requires": [
+      "chemistry"
+    ],
+    "effects": {
+      "rgo_mechanization_cap": {
+        "grain": 1,
+        "vegetables": 1,
+        "fruits": 1
+      },
+      "rgo_productivity": {
+        "grain": 0.1,
+        "vegetables": 0.1,
+        "fruits": 0.1
+      }
+    }
+  },
+  "pesticides": {
+    "tree": "production",
+    "era": 1,
+    "year": 1955,
+    "time": 420,
+    "requires": [
+      "chemistry"
+    ],
+    "effects": {
+      "rgo_mechanization_cap": {
+        "grain": 1,
+        "vegetables": 1,
+        "fruits": 1
+      },
+      "rgo_productivity": {
+        "grain": 0.1,
+        "fruits": 0.1,
+        "vegetables": 0.1
+      }
+    }
+  },
+  "green_revolution": {
+    "tree": "production",
+    "era": 2,
+    "year": 1965,
+    "time": 540,
+    "requires": [
+      "fertilizers",
+      "pesticides",
+      "genetics"
+    ],
+    "effects": {
+      "rgo_mechanization_cap": {
+        "grain": 2,
+        "vegetables": 2,
+        "fruits": 2
+      },
+      "rgo_productivity": {
+        "grain": 0.15,
+        "vegetables": 0.15,
+        "fruits": 0.1
+      }
+    }
+  },
+  "food_processing": {
+    "tree": "production",
+    "era": 1,
+    "year": 1946,
+    "time": 300,
+    "requires": [],
+    "effects": {
+      "factory_productivity": {
+        "canned_fish_factory": 0.1,
+        "canned_meat_factory": 0.1,
+        "canned_fruits_factory": 0.1,
+        "canned_vegetables_factory": 0.1
+      }
+    }
+  },
+  "cold_chain": {
+    "tree": "production",
+    "era": 1,
+    "year": 1955,
+    "time": 420,
+    "requires": [
+      "food_processing"
+    ],
+    "effects": {
+      "rgo_mechanization_cap": {
+        "fish": 1,
+        "meat": 1,
+        "fruits": 1,
+        "vegetables": 1
+      },
+      "rgo_productivity": {
+        "fish": 0.1,
+        "meat": 0.1,
+        "fruits": 0.1,
+        "vegetables": 0.1
+      },
+      "factory_productivity": {
+        "canned_fish_factory": 0.1,
+        "canned_meat_factory": 0.1
+      }
+    }
+  },
+  "precision_agriculture": {
+    "tree": "production",
+    "era": 5,
+    "year": 1995,
+    "time": 720,
+    "requires": [
+      "green_revolution",
+      "computer_science"
+    ],
+    "effects": {
+      "rgo_mechanization_cap": {
+        "grain": 1,
+        "vegetables": 1,
+        "fruits": 1
+      },
+      "rgo_productivity": {
+        "grain": 0.1,
+        "vegetables": 0.1,
+        "fruits": 0.1
+      }
+    }
+  },
+  "industrial_mechanization": {
+    "tree": "production",
+    "era": 1,
+    "year": 1946,
+    "time": 300,
+    "requires": [],
+    "effects": {
+      "factory_productivity": {
+        "machine_parts_factory": 0.05,
+        "steel_factory": 0.05
+      }
+    }
+  },
+  "assembly_line": {
+    "tree": "production",
+    "era": 1,
+    "year": 1946,
+    "time": 300,
+    "requires": [
+      "industrial_mechanization"
+    ],
+    "effects": {
+      "factory_productivity": {
+        "automobiles_factory": 0.1,
+        "machine_parts_factory": 0.05
+      }
+    }
+  },
+  "automation": {
+    "tree": "production",
+    "era": 2,
+    "year": 1960,
+    "time": 480,
+    "requires": [
+      "assembly_line",
+      "electronics"
+    ],
+    "effects": {
+      "factory_productivity": {
+        "steel_factory": 0.1,
+        "machine_parts_factory": 0.1,
+        "automobiles_factory": 0.1
+      }
+    }
+  },
+  "robotics": {
+    "tree": "production",
+    "era": 3,
+    "year": 1975,
+    "time": 540,
+    "requires": [
+      "automation",
+      "computer_science"
+    ],
+    "effects": {
+      "factory_productivity": {
+        "machine_parts_factory": 0.1,
+        "automobiles_factory": 0.1,
+        "electronic_components_factory": 0.1
+      }
+    }
+  },
+  "computer_integrated_manufacturing": {
+    "tree": "production",
+    "era": 4,
+    "year": 1985,
+    "time": 600,
+    "requires": [
+      "robotics",
+      "software_engineering"
+    ],
+    "effects": {
+      "factory_productivity": {
+        "integrated_circuits_factory": 0.1,
+        "computers_factory": 0.1,
+        "machine_parts_factory": 0.1
+      }
+    }
+  },
+  "synthetic_polymers": {
+    "tree": "production",
+    "era": 1,
+    "year": 1950,
+    "time": 360,
+    "requires": [
+      "chemistry"
+    ],
+    "effects": {
+      "unlock_goods": [
+        "plastics"
+      ],
+      "unlock_buildings": [
+        "plastics_factory"
+      ],
+      "factory_productivity": {
+        "inorganic_chemicals_factory": 0.05
+      }
+    }
+  },
+  "petrochemicals": {
+    "tree": "production",
+    "era": 1,
+    "year": 1955,
+    "time": 420,
+    "requires": [
+      "synthetic_polymers",
+      "oil_refining"
+    ],
+    "effects": {
+      "factory_productivity": {
+        "plastics_factory": 0.1,
+        "inorganic_chemicals_factory": 0.1
+      }
+    }
+  },
+  "aluminium_smelting": {
+    "tree": "production",
+    "era": 1,
+    "year": 1946,
+    "time": 300,
+    "requires": [],
+    "effects": {
+      "factory_productivity": {
+        "aluminium_factory": 0.1
+      },
+      "production_methods": [
+        "aluminium_factory"
+      ]
+    }
+  },
+  "prefabricated_construction": {
+    "tree": "production",
+    "era": 1,
+    "year": 1955,
+    "time": 420,
+    "requires": [
+      "industrial_mechanization"
+    ],
+    "effects": {
+      "modifiers": {
+        "construction_speed": 0.1
+      }
+    }
+  },
+  "industrial_electronics": {
+    "tree": "production",
+    "era": 1,
+    "year": 1955,
+    "time": 420,
+    "requires": [
+      "electronics"
+    ],
+    "effects": {
+      "factory_productivity": {
+        "electronic_components_factory": 0.1,
+        "communication_factory": 0.05
+      }
+    }
+  },
+  "microelectronics": {
+    "tree": "production",
+    "era": 2,
+    "year": 1965,
+    "time": 540,
+    "requires": [
+      "industrial_electronics",
+      "materials_science"
+    ],
+    "effects": {
+      "unlock_goods": [
+        "integrated_circuits"
+      ],
+      "unlock_buildings": [
+        "integrated_circuits_factory"
+      ],
+      "factory_productivity": {
+        "electronic_components_factory": 0.1
+      }
+    }
+  },
+  "microprocessors": {
+    "tree": "production",
+    "era": 3,
+    "year": 1975,
+    "time": 540,
+    "requires": [
+      "microelectronics",
+      "computer_science"
+    ],
+    "effects": {
+      "factory_productivity": {
+        "computers_factory": 0.15,
+        "integrated_circuits_factory": 0.1
+      }
+    }
+  },
+  "telecommunications": {
+    "tree": "production",
+    "era": 1,
+    "year": 1955,
+    "time": 420,
+    "requires": [
+      "electronics"
+    ],
+    "effects": {
+      "factory_productivity": {
+        "communication_factory": 0.1
+      }
+    }
+  },
+  "containerization": {
+    "tree": "production",
+    "era": 2,
+    "year": 1960,
+    "time": 480,
+    "requires": [
+      "industrial_mechanization"
+    ],
+    "effects": {
+      "factory_productivity": {
+        "multimodal_transport": 0.15
+      }
+    }
+  },
+  "composite_materials": {
+    "tree": "production",
+    "era": 3,
+    "year": 1975,
+    "time": 540,
+    "requires": [
+      "materials_science",
+      "petrochemicals"
+    ],
+    "effects": {
+      "factory_productivity": {
+        "aluminium_factory": 0.1,
+        "plastics_factory": 0.1
+      }
+    }
+  },
+  "coal_power": {
+    "tree": "production",
+    "era": 1,
+    "year": 1946,
+    "time": 300,
+    "requires": [],
+    "effects": {
+      "factory_productivity": {
+        "coal_powerplant": 0.1
+      }
+    }
+  },
+  "hydroelectric_power": {
+    "tree": "production",
+    "era": 1,
+    "year": 1946,
+    "time": 360,
+    "requires": [],
+    "effects": {
+      "factory_productivity": {
+        "renewable_powerplant": 0.05
+      }
+    }
+  },
+  "electricity_grid": {
+    "tree": "production",
+    "era": 1,
+    "year": 1946,
+    "time": 300,
+    "requires": [],
+    "effects": {
+      "factory_productivity": {
+        "coal_powerplant": 0.05
+      },
+      "modifiers": {
+        "construction_speed": 0.05
+      }
+    }
+  },
+  "high_voltage_transmission": {
+    "tree": "production",
+    "era": 1,
+    "year": 1955,
+    "time": 420,
+    "requires": [
+      "electricity_grid"
+    ],
+    "effects": {
+      "factory_productivity": {
+        "coal_powerplant": 0.1,
+        "renewable_powerplant": 0.1
+      }
+    }
+  },
+  "nuclear_power": {
+    "tree": "production",
+    "era": 1,
+    "year": 1955,
+    "time": 480,
+    "requires": [
+      "physics",
+      "electricity_grid"
+    ],
+    "effects": {
+      "unlock_buildings": [
+        "nuclear_powerplant"
+      ],
+      "factory_productivity": {
+        "nuclear_powerplant": 0.05
+      }
+    }
+  },
+  "nuclear_fuel_reprocessing": {
+    "tree": "production",
+    "era": 2,
+    "year": 1965,
+    "time": 540,
+    "requires": [
+      "nuclear_power",
+      "chemistry"
+    ],
+    "effects": {
+      "factory_productivity": {
+        "nuclear_powerplant": 0.1
+      },
+      "modifiers": {
+        "research_efficiency": 0.02
+      }
+    }
+  },
+  "renewable_power": {
+    "tree": "production",
+    "era": 3,
+    "year": 1975,
+    "time": 540,
+    "requires": [
+      "high_voltage_transmission"
+    ],
+    "effects": {
+      "unlock_buildings": [
+        "renewable_powerplant"
+      ],
+      "factory_productivity": {
+        "renewable_powerplant": 0.1
+      },
+      "rgo_mechanization_cap": {
+        "renewable_energy": 1
+      }
+    }
+  },
+  "energy_efficiency": {
+    "tree": "production",
+    "era": 3,
+    "year": 1975,
+    "time": 540,
+    "requires": [
+      "high_voltage_transmission"
+    ],
+    "effects": {
+      "modifiers": {
+        "factory_input_modifier": -0.05
+      }
+    }
+  },
+  "fuel_cells": {
+    "tree": "production",
+    "era": 5,
+    "year": 2000,
+    "time": 780,
+    "requires": [
+      "renewable_power",
+      "chemistry"
+    ],
+    "effects": {
+      "factory_productivity": {
+        "renewable_powerplant": 0.1
+      },
+      "modifiers": {
+        "factory_input_modifier": -0.03
+      }
+    }
+  },
+  "oil_refining": {
+    "tree": "production",
+    "era": 1,
+    "year": 1946,
+    "time": 300,
+    "requires": [],
+    "effects": {
+      "factory_productivity": {
+        "refinery": 0.1
+      }
+    }
+  },
+  "catalytic_cracking": {
+    "tree": "production",
+    "era": 1,
+    "year": 1950,
+    "time": 360,
+    "requires": [
+      "oil_refining",
+      "chemistry"
+    ],
+    "effects": {
+      "factory_productivity": {
+        "refinery": 0.15
+      }
+    }
+  },
+  "petrochemical_industry": {
+    "tree": "production",
+    "era": 2,
+    "year": 1960,
+    "time": 480,
+    "requires": [
+      "catalytic_cracking",
+      "petrochemicals"
+    ],
+    "effects": {
+      "factory_productivity": {
+        "refinery": 0.1,
+        "plastics_factory": 0.1,
+        "inorganic_chemicals_factory": 0.1
+      }
+    }
+  },
+  "advanced_refining": {
+    "tree": "production",
+    "era": 3,
+    "year": 1975,
+    "time": 540,
+    "requires": [
+      "petrochemical_industry"
+    ],
+    "effects": {
+      "factory_productivity": {
+        "refinery": 0.15
+      }
+    }
+  },
+  "industrial_electrification": {
+    "tree": "production",
+    "era": 1,
+    "year": 1950,
+    "time": 360,
+    "requires": [
+      "electricity_grid"
+    ],
+    "effects": {
+      "production_methods": [
+        "cement_factory",
+        "steel_factory",
+        "glass_factory",
+        "inorganic_chemicals_factory"
+      ]
+    }
+  },
+  "electrified_manufacturing": {
+    "tree": "production",
+    "era": 2,
+    "year": 1960,
+    "time": 480,
+    "requires": [
+      "industrial_electrification",
+      "industrial_electronics"
+    ],
+    "effects": {
+      "production_methods": [
+        "fabric_factory",
+        "paper_factory",
+        "machine_parts_factory",
+        "clothes_factory"
+      ]
+    }
+  },
+  "electrified_armaments": {
+    "tree": "production",
+    "era": 2,
+    "year": 1960,
+    "time": 480,
+    "requires": [
+      "industrial_electrification",
+      "explosives"
+    ],
+    "effects": {
+      "production_methods": [
+        "ammunition_factory",
+        "weaponry_factory"
+      ]
+    }
+  },
+  "electrified_transport": {
+    "tree": "production",
+    "era": 3,
+    "year": 1970,
+    "time": 540,
+    "requires": [
+      "electrified_manufacturing",
+      "containerization"
+    ],
+    "effects": {
+      "production_methods": [
+        "automobiles_factory",
+        "multimodal_transport"
+      ]
+    }
+  }
+}

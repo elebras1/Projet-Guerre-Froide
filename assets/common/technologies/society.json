@@ -1,0 +1,727 @@
+{
+  "sociology": {
+    "tree": "society",
+    "era": 1,
+    "year": 1946,
+    "time": 360,
+    "requires": [],
+    "effects": {
+      "modifiers": {
+        "political_consciousness": 0.03,
+        "social_mobility": 0.02
+      }
+    }
+  },
+  "psychology": {
+    "tree": "society",
+    "era": 1,
+    "year": 1946,
+    "time": 360,
+    "requires": [],
+    "effects": {
+      "modifiers": {
+        "public_health": 0.02,
+        "education_efficiency": 0.02
+      }
+    }
+  },
+  "political_science": {
+    "tree": "society",
+    "era": 1,
+    "year": 1946,
+    "time": 360,
+    "requires": [],
+    "effects": {
+      "modifiers": {
+        "administrative_efficiency": 0.02,
+        "political_consciousness": 0.02
+      }
+    }
+  },
+  "public_education": {
+    "tree": "society",
+    "era": 1,
+    "year": 1946,
+    "time": 360,
+    "requires": [],
+    "effects": {
+      "laws": [
+        "public_schools",
+        "mixed_education",
+        "compulsory_education"
+      ],
+      "modifiers": {
+        "education_efficiency": 0.05
+      }
+    }
+  },
+  "mass_literacy": {
+    "tree": "society",
+    "era": 1,
+    "year": 1950,
+    "time": 420,
+    "requires": [
+      "public_education"
+    ],
+    "effects": {
+      "modifiers": {
+        "education_efficiency": 0.1
+      }
+    }
+  },
+  "technical_education": {
+    "tree": "society",
+    "era": 1,
+    "year": 1950,
+    "time": 480,
+    "requires": [
+      "public_education",
+      "industrial_mechanization"
+    ],
+    "effects": {
+      "modifiers": {
+        "education_efficiency": 0.05
+      },
+      "factory_productivity": {
+        "machine_parts_factory": 0.05
+      }
+    }
+  },
+  "higher_education": {
+    "tree": "society",
+    "era": 1,
+    "year": 1946,
+    "time": 420,
+    "requires": [
+      "public_education"
+    ],
+    "effects": {
+      "modifiers": {
+        "research_efficiency": 0.03
+      }
+    }
+  },
+  "research_universities": {
+    "tree": "society",
+    "era": 1,
+    "year": 1955,
+    "time": 480,
+    "requires": [
+      "higher_education",
+      "modern_science"
+    ],
+    "effects": {
+      "modifiers": {
+        "research_efficiency": 0.05
+      }
+    }
+  },
+  "computer_literacy": {
+    "tree": "society",
+    "era": 4,
+    "year": 1985,
+    "time": 600,
+    "requires": [
+      "mass_literacy",
+      "microprocessors"
+    ],
+    "effects": {
+      "modifiers": {
+        "education_efficiency": 0.1,
+        "research_efficiency": 0.02
+      }
+    }
+  },
+  "lifelong_learning": {
+    "tree": "society",
+    "era": 5,
+    "year": 1995,
+    "time": 720,
+    "requires": [
+      "computer_literacy"
+    ],
+    "effects": {
+      "modifiers": {
+        "education_efficiency": 0.1
+      }
+    }
+  },
+  "internet_education": {
+    "tree": "society",
+    "era": 5,
+    "year": 2000,
+    "time": 780,
+    "requires": [
+      "lifelong_learning",
+      "internet"
+    ],
+    "effects": {
+      "modifiers": {
+        "education_efficiency": 0.1,
+        "research_efficiency": 0.02
+      }
+    }
+  },
+  "public_health": {
+    "tree": "society",
+    "era": 1,
+    "year": 1946,
+    "time": 360,
+    "requires": [],
+    "effects": {
+      "laws": [
+        "public_healthcare",
+        "mixed_healthcare"
+      ],
+      "modifiers": {
+        "public_health": 0.05
+      }
+    }
+  },
+  "antibiotics": {
+    "tree": "society",
+    "era": 1,
+    "year": 1946,
+    "time": 420,
+    "requires": [
+      "medicine"
+    ],
+    "effects": {
+      "modifiers": {
+        "public_health": 0.1
+      }
+    }
+  },
+  "vaccination_programs": {
+    "tree": "society",
+    "era": 1,
+    "year": 1950,
+    "time": 480,
+    "requires": [
+      "antibiotics"
+    ],
+    "effects": {
+      "modifiers": {
+        "public_health": 0.1
+      }
+    }
+  },
+  "medical_imaging": {
+    "tree": "society",
+    "era": 3,
+    "year": 1970,
+    "time": 540,
+    "requires": [
+      "antibiotics",
+      "electronics"
+    ],
+    "effects": {
+      "modifiers": {
+        "public_health": 0.05
+      }
+    }
+  },
+  "organ_transplants": {
+    "tree": "society",
+    "era": 3,
+    "year": 1970,
+    "time": 600,
+    "requires": [
+      "medical_imaging"
+    ],
+    "effects": {
+      "modifiers": {
+        "public_health": 0.05
+      }
+    }
+  },
+  "cancer_treatment": {
+    "tree": "society",
+    "era": 4,
+    "year": 1980,
+    "time": 660,
+    "requires": [
+      "medical_imaging",
+      "biotechnology"
+    ],
+    "effects": {
+      "modifiers": {
+        "public_health": 0.1
+      }
+    }
+  },
+  "hiv_treatment": {
+    "tree": "society",
+    "era": 5,
+    "year": 1995,
+    "time": 720,
+    "requires": [
+      "cancer_treatment",
+      "biotechnology"
+    ],
+    "effects": {
+      "modifiers": {
+        "public_health": 0.1
+      }
+    }
+  },
+  "civil_service": {
+    "tree": "society",
+    "era": 1,
+    "year": 1946,
+    "time": 360,
+    "requires": [],
+    "effects": {
+      "laws": [
+        "elected_bureaucrats"
+      ],
+      "modifiers": {
+        "administrative_efficiency": 0.05
+      }
+    }
+  },
+  "statistics_office": {
+    "tree": "society",
+    "era": 1,
+    "year": 1946,
+    "time": 360,
+    "requires": [],
+    "effects": {
+      "modifiers": {
+        "administrative_efficiency": 0.05,
+        "research_efficiency": 0.02
+      }
+    }
+  },
+  "social_security": {
+    "tree": "society",
+    "era": 1,
+    "year": 1946,
+    "time": 420,
+    "requires": [
+      "civil_service"
+    ],
+    "effects": {
+      "laws": [
+        "universal_social_security"
+      ],
+      "modifiers": {
+        "public_health": 0.05,
+        "administrative_efficiency": 0.05
+      }
+    }
+  },
+  "pension_systems": {
+    "tree": "society",
+    "era": 1,
+    "year": 1955,
+    "time": 480,
+    "requires": [
+      "social_security"
+    ],
+    "effects": {
+      "modifiers": {
+        "pension": 0.05
+      }
+    }
+  },
+  "urban_planning": {
+    "tree": "society",
+    "era": 1,
+    "year": 1955,
+    "time": 480,
+    "requires": [
+      "civil_service",
+      "prefabricated_construction"
+    ],
+    "effects": {
+      "modifiers": {
+        "construction_speed": 0.05,
+        "public_health": 0.02
+      }
+    }
+  },
+  "e_government": {
+    "tree": "society",
+    "era": 5,
+    "year": 1995,
+    "time": 660,
+    "requires": [
+      "statistics_office",
+      "internet"
+    ],
+    "effects": {
+      "modifiers": {
+        "administrative_efficiency": 0.1
+      }
+    }
+  },
+  "radio_broadcasting": {
+    "tree": "society",
+    "era": 1,
+    "year": 1946,
+    "time": 360,
+    "requires": [],
+    "effects": {
+      "modifiers": {
+        "political_consciousness": 0.05,
+        "administrative_efficiency": 0.02
+      }
+    }
+  },
+  "television": {
+    "tree": "society",
+    "era": 1,
+    "year": 1950,
+    "time": 480,
+    "requires": [
+      "radio_broadcasting",
+      "electronics"
+    ],
+    "effects": {
+      "modifiers": {
+        "political_consciousness": 0.05
+      }
+    }
+  },
+  "mass_media": {
+    "tree": "society",
+    "era": 1,
+    "year": 1955,
+    "time": 480,
+    "requires": [
+      "radio_broadcasting"
+    ],
+    "effects": {
+      "modifiers": {
+        "political_consciousness": 0.05
+      }
+    }
+  },
+  "color_television": {
+    "tree": "society",
+    "era": 2,
+    "year": 1965,
+    "time": 540,
+    "requires": [
+      "television"
+    ],
+    "effects": {
+      "modifiers": {
+        "political_consciousness": 0.03
+      }
+    }
+  },
+  "mobile_phones": {
+    "tree": "society",
+    "era": 4,
+    "year": 1990,
+    "time": 660,
+    "requires": [
+      "telecommunications",
+      "computer_science"
+    ],
+    "effects": {
+      "modifiers": {
+        "administrative_efficiency": 0.05
+      }
+    }
+  },
+  "keynesian_economics": {
+    "tree": "society",
+    "era": 1,
+    "year": 1946,
+    "time": 420,
+    "requires": [],
+    "effects": {
+      "modifiers": {
+        "state_construction": 0.05,
+        "public_works": 0.05
+      }
+    }
+  },
+  "welfare_state": {
+    "tree": "society",
+    "era": 1,
+    "year": 1950,
+    "time": 480,
+    "requires": [
+      "keynesian_economics",
+      "social_security"
+    ],
+    "effects": {
+      "modifiers": {
+        "public_health": 0.05,
+        "pension": 0.05
+      }
+    }
+  },
+  "developmentalism": {
+    "tree": "society",
+    "era": 1,
+    "year": 1955,
+    "time": 480,
+    "requires": [
+      "keynesian_economics"
+    ],
+    "effects": {
+      "modifiers": {
+        "state_construction": 0.05,
+        "industry_subsidies": 0.05
+      }
+    }
+  },
+  "monetarism": {
+    "tree": "society",
+    "era": 3,
+    "year": 1970,
+    "time": 540,
+    "requires": [
+      "keynesian_economics"
+    ],
+    "effects": {
+      "modifiers": {
+        "administrative_efficiency": 0.05
+      }
+    }
+  },
+  "supply_side_economics": {
+    "tree": "society",
+    "era": 4,
+    "year": 1980,
+    "time": 600,
+    "requires": [
+      "monetarism"
+    ],
+    "effects": {
+      "modifiers": {
+        "profit_tax": -0.02,
+        "industry_subsidies": 0.05
+      }
+    }
+  },
+  "environmentalism": {
+    "tree": "society",
+    "era": 3,
+    "year": 1975,
+    "time": 540,
+    "requires": [
+      "public_health",
+      "mass_media"
+    ],
+    "effects": {
+      "modifiers": {
+        "public_health": 0.05
+      }
+    }
+  },
+  "feminism": {
+    "tree": "society",
+    "era": 1,
+    "year": 1946,
+    "time": 540,
+    "requires": [
+      "civil_service"
+    ],
+    "effects": {
+      "laws": [
+        "women_civic_rights"
+      ],
+      "modifiers": {
+        "workforce_share": 0.05,
+        "social_mobility": 0.05
+      }
+    }
+  },
+  "technocratic_administration": {
+    "tree": "society",
+    "era": 1,
+    "year": 1950,
+    "time": 480,
+    "requires": [
+      "statistics_office",
+      "civil_service"
+    ],
+    "effects": {
+      "laws": [
+        "technocracy"
+      ],
+      "modifiers": {
+        "administrative_efficiency": 0.05,
+        "research_efficiency": 0.02
+      }
+    }
+  },
+  "neoliberalism": {
+    "tree": "society",
+    "era": 4,
+    "year": 1980,
+    "time": 600,
+    "requires": [
+      "monetarism",
+      "supply_side_economics"
+    ],
+    "effects": {
+      "laws": [
+        "laissez_faire"
+      ],
+      "modifiers": {
+        "tariff_rate": -0.02,
+        "administrative_efficiency": 0.05
+      }
+    }
+  },
+  "central_planning": {
+    "tree": "society",
+    "era": 1,
+    "year": 1946,
+    "time": 480,
+    "requires": [],
+    "effects": {
+      "laws": [
+        "planned_economy",
+        "collectivized_land"
+      ],
+      "modifiers": {
+        "state_construction": 0.1,
+        "public_works": 0.05
+      }
+    }
+  },
+  "cooperative_movement": {
+    "tree": "society",
+    "era": 1,
+    "year": 1946,
+    "time": 480,
+    "requires": [],
+    "effects": {
+      "laws": [
+        "cooperative_ownership"
+      ],
+      "modifiers": {
+        "worker_profit_share": 0.05,
+        "social_mobility": 0.05
+      }
+    }
+  },
+  "agrarian_reform": {
+    "tree": "society",
+    "era": 1,
+    "year": 1946,
+    "time": 480,
+    "requires": [],
+    "effects": {
+      "laws": [
+        "agrarianism",
+        "homesteading"
+      ],
+      "modifiers": {
+        "social_mobility": 0.05
+      },
+      "rgo_productivity": {
+        "grain": 0.05,
+        "vegetables": 0.05
+      }
+    }
+  },
+  "laicism": {
+    "tree": "society",
+    "era": 1,
+    "year": 1946,
+    "time": 480,
+    "requires": [
+      "public_education"
+    ],
+    "effects": {
+      "laws": [
+        "secularism"
+      ],
+      "modifiers": {
+        "secularism": 0.05,
+        "education_efficiency": 0.02
+      }
+    }
+  },
+  "labor_movement": {
+    "tree": "society",
+    "era": 1,
+    "year": 1946,
+    "time": 420,
+    "requires": [],
+    "effects": {
+      "laws": [
+        "workers_protection"
+      ],
+      "modifiers": {
+        "min_wage_factor": 0.05,
+        "social_mobility": 0.05,
+        "political_radicalism": -0.02
+      }
+    }
+  },
+  "industrial_relations": {
+    "tree": "society",
+    "era": 1,
+    "year": 1950,
+    "time": 480,
+    "requires": [
+      "labor_movement"
+    ],
+    "effects": {
+      "modifiers": {
+        "min_wage_factor": 0.05,
+        "worker_profit_share": 0.05
+      }
+    }
+  },
+  "occupational_safety": {
+    "tree": "society",
+    "era": 2,
+    "year": 1960,
+    "time": 540,
+    "requires": [
+      "industrial_relations",
+      "public_health"
+    ],
+    "effects": {
+      "modifiers": {
+        "public_health": 0.05,
+        "social_mobility": 0.02
+      }
+    }
+  },
+  "mass_conscription": {
+    "tree": "society",
+    "era": 1,
+    "year": 1946,
+    "time": 420,
+    "requires": [
+      "small_arms"
+    ],
+    "effects": {
+      "laws": [
+        "mass_conscript_army"
+      ],
+      "modifiers": {
+        "military_training": 0.03
+      }
+    }
+  },
+  "citizen_militia": {
+    "tree": "society",
+    "era": 1,
+    "year": 1946,
+    "time": 420,
+    "requires": [
+      "small_arms"
+    ],
+    "effects": {
+      "laws": [
+        "national_militia"
+      ],
+      "modifiers": {
+        "military_training": 0.02
+      }
+    }
+  }
+}

@@ -124,7 +124,7 @@
           }
         },
         "technocracy": {
-          "requirements": [],
+          "requirements": ["technocratic_administration"],
           "modifiers": {
             "education_efficiency": 0.2,
             "administrative_efficiency": 0.1,
@@ -385,7 +385,7 @@
           }
         },
         "secularism": {
-          "requirements": [],
+          "requirements": ["laicism"],
           "modifiers": {
             "education_efficiency": 0.1,
             "secularism": 0.15,
@@ -451,7 +451,7 @@
           }
         },
         "elected_bureaucrats": {
-          "requirements": [],
+          "requirements": ["civil_service"],
           "modifiers": {
             "administration_spending": 0.2,
             "administrative_efficiency": 0.1,
@@ -494,7 +494,7 @@
           }
         },
         "national_militia": {
-          "requirements": [],
+          "requirements": ["citizen_militia"],
           "modifiers": {
             "military_spending": 0.1,
             "construction_speed": 0.05
@@ -506,7 +506,7 @@
           }
         },
         "mass_conscript_army": {
-          "requirements": [],
+          "requirements": ["mass_conscription"],
           "modifiers": {
             "military_spending": 0.5,
             "tax_poor": 0.1
@@ -555,7 +555,7 @@
           }
         },
         "agrarianism": {
-          "requirements": [],
+          "requirements": ["agrarian_reform"],
           "modifiers": {
             "class_rigidity": -0.1,
             "social_mobility": 0.05,
@@ -584,7 +584,7 @@
           }
         },
         "laissez_faire": {
-          "requirements": [],
+          "requirements": ["neoliberalism"],
           "modifiers": {
             "capitalist_profit_share": 0.3,
             "worker_profit_share": -0.1,
@@ -602,7 +602,7 @@
           }
         },
         "cooperative_ownership": {
-          "requirements": [],
+          "requirements": ["cooperative_movement"],
           "modifiers": {
             "worker_profit_share": 0.4,
             "construction_speed": 0.1,
@@ -626,7 +626,7 @@
           }
         },
         "planned_economy": {
-          "requirements": [],
+          "requirements": ["central_planning"],
           "modifiers": {
             "worker_profit_share": 0.2,
             "construction_speed": 0.2,
@@ -830,7 +830,7 @@
           }
         },
         "homesteading": {
-          "requirements": [],
+          "requirements": ["agrarian_reform"],
           "modifiers": {
             "aristocrat_profit_share": -0.75,
             "social_mobility": 0.15,
@@ -842,7 +842,7 @@
           }
         },
         "collectivized_land": {
-          "requirements": [],
+          "requirements": ["central_planning"],
           "modifiers": {
             "aristocrat_profit_share": -0.75,
             "social_mobility": 0.2,
@@ -1016,7 +1016,7 @@
           }
         },
         "mixed_education": {
-          "requirements": [],
+          "requirements": ["public_education"],
           "modifiers": {
             "education_efficiency": 0.25,
             "education_spending": 0.15,
@@ -1028,7 +1028,7 @@
           }
         },
         "public_schools": {
-          "requirements": [],
+          "requirements": ["public_education"],
           "modifiers": {
             "education_efficiency": 0.3,
             "education_spending": 0.3,
@@ -1091,7 +1091,7 @@
           }
         },
         "mixed_healthcare":{
-          "requirements": [],
+          "requirements": ["public_health"],
           "modifiers": {
             "pop_growth_factor": 0.12,
             "pop_spending": 0.07,
@@ -1103,7 +1103,7 @@
           }
         },
         "public_healthcare": {
-          "requirements": [],
+          "requirements": ["public_health"],
           "modifiers": {
             "pop_growth_factor": 0.15,
             "social_spending": 0.2,
@@ -1221,7 +1221,7 @@
           }
         },
         "workers_protection": {
-          "requirements": [],
+          "requirements": ["labor_movement"],
           "modifiers": {
             "min_wage_factor": 0.3,
             "worker_profit_share": 0.1,
@@ -1275,7 +1275,7 @@
           }
         },
         "compulsory_education": {
-          "requirements": [],
+          "requirements": ["public_education"],
           "modifiers": {
             "pop_growth_factor": -0.1,
             "education_efficiency": 0.1,
@@ -1331,7 +1331,7 @@
           }
         },
         "women_civic_rights": {
-          "requirements": [],
+          "requirements": ["feminism"],
           "modifiers": {
             "political_consciousness": 0.1,
             "social_mobility": 0.05,
@@ -1398,7 +1398,7 @@
           }
         },
         "universal_social_security": {
-          "requirements": [],
+          "requirements": ["social_security"],
           "modifiers": {
             "social_spending": 0.4,
             "pension": 0.5,
