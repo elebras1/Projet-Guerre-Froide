@@ -156,7 +156,6 @@ public class UiBuilder {
         window.shortcut(owner, keycode, action);
     }
 
-    /** Raccourci EvW ({@code shortcut = "..."}) : la touche déclenche les actions {@link #onClick} du bouton. */
     public void shortcut(UiWindow window, Actor owner, int keycode) {
         window.shortcut(owner, keycode, () -> {
             for (EventListener listener : owner.getListeners()) {

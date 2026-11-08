@@ -3,7 +3,7 @@ package com.populaire.projetguerrefroide.ui.widget;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Align;
-import com.badlogic.gdx.utils.Array;
+import com.github.tommyettinger.ds.ObjectList;
 
 public class UiList<T extends UiWindow> extends HoverScrollPane {
     public interface RowFactory<T extends UiWindow> {
@@ -13,7 +13,7 @@ public class UiList<T extends UiWindow> extends HoverScrollPane {
     private final UiBuilder ui;
     private final RowFactory<T> rowFactory;
     private final Table content;
-    private final Array<T> rows;
+    private final ObjectList<T> rows;
     private final float spacing;
     private int rowCount;
     private UiWindow header;
@@ -23,7 +23,7 @@ public class UiList<T extends UiWindow> extends HoverScrollPane {
         this.ui = ui;
         this.rowFactory = rowFactory;
         this.spacing = spacing;
-        this.rows = new Array<>();
+        this.rows = new ObjectList<>();
         this.content = (Table) this.getActor();
         this.content.top().left();
         this.content.pad(borderHeight, borderWidth, borderHeight, borderWidth);
@@ -43,7 +43,7 @@ public class UiList<T extends UiWindow> extends HoverScrollPane {
     }
 
     public void setRowCount(int count) {
-        while (this.rows.size < count) {
+        while (this.rows.size() < count) {
             this.rows.add(this.rowFactory.create(this.ui));
         }
         if (count == this.rowCount) {

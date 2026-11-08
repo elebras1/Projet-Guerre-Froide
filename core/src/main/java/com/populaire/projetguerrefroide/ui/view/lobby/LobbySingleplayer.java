@@ -6,8 +6,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.Align;
-import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.CharArray;
+import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.protocol.catalog.Catalog;
 import com.populaire.projetguerrefroide.protocol.response.CountrySummary;
 import com.populaire.projetguerrefroide.ui.UiCatalog;
@@ -44,7 +44,7 @@ public class LobbySingleplayer extends UiWindow {
     private final UiCatalog uiCatalog;
     private final TextFormat textFormat;
     private final CharArray text;
-    private final Array<SmallFlag> allyFlags;
+    private final ObjectList<SmallFlag> allyFlags;
     private final Drawable[] portraits;
     private final Drawable defaultPortrait;
 
@@ -53,7 +53,7 @@ public class LobbySingleplayer extends UiWindow {
         this.uiCatalog = uiCatalog;
         this.textFormat = textFormat;
         this.text = new CharArray(16);
-        this.allyFlags = new Array<>();
+        this.allyFlags = new ObjectList<>();
         Skin newGameSkin = ui.skin(Skins.UI_NEWGAME);
         Skin uiSkin = ui.skin(Skins.UI);
         this.frontendSelectedBg = ui.image(this, newGameSkin, UiNewgameSkin.Drawables.SELECTED_BG, 15f, 10f, UiAnchor.UPPER_LEFT);
@@ -98,7 +98,7 @@ public class LobbySingleplayer extends UiWindow {
         int headOfStateIndex = summary.headOfStateIndex();
         this.photoHeadOfState.setDrawable(headOfStateIndex >= 0 ? this.portraits[headOfStateIndex] : this.defaultPortrait);
         this.headOfState.setText(headOfStateIndex >= 0 ? this.uiCatalog.catalog().ministers().nameId(headOfStateIndex) : null);
-        while (this.allyFlags.size < summary.allyCount()) {
+        while (this.allyFlags.size() < summary.allyCount()) {
             this.allyFlags.add(new SmallFlag(this.ui));
         }
         this.alliesBox.clearChildren();

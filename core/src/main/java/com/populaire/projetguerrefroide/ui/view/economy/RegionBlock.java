@@ -1,7 +1,7 @@
 package com.populaire.projetguerrefroide.ui.view.economy;
 
-import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.CharArray;
+import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.protocol.response.RegionsBuildings;
 import com.populaire.projetguerrefroide.ui.UiCatalog;
 import com.populaire.projetguerrefroide.ui.format.TextFormat;
@@ -26,8 +26,8 @@ public class RegionBlock extends UiWindow {
     private final boolean[] collapsedRegions;
     private final CharArray text;
     private final RegionEntryTitle title;
-    private final Array<RegionEntryFactories> rows;
-    private final Array<FactoryEntry> entries;
+    private final ObjectList<RegionEntryFactories> rows;
+    private final ObjectList<FactoryEntry> entries;
     private int regionIndex;
     private int shownSlots;
     private boolean collapsed;
@@ -40,8 +40,8 @@ public class RegionBlock extends UiWindow {
         this.listener = listener;
         this.collapsedRegions = collapsedRegions;
         this.text = new CharArray(32);
-        this.rows = new Array<>();
-        this.entries = new Array<>();
+        this.rows = new ObjectList<>();
+        this.entries = new ObjectList<>();
         this.regionIndex = -1;
         this.shownSlots = -1;
         this.title = ui.add(this, new RegionEntryTitle(ui), 0f, 0f, UiAnchor.UPPER_LEFT);
@@ -59,7 +59,7 @@ public class RegionBlock extends UiWindow {
         this.title.bind(regions, position, this.textFormat, this.text);
         int count = regions.regionBuildingCount(position);
         int slots = count == 0 ? FACTORIES_PER_ROW : (count + FACTORIES_PER_ROW - 1) / FACTORIES_PER_ROW * FACTORIES_PER_ROW;
-        while (this.entries.size < slots) {
+        while (this.entries.size() < slots) {
             this.entries.add(new FactoryEntry(this.ui, this.textFormat, this.drawables, this.listener));
         }
         int first = regions.regionBuildingStart(position);
@@ -85,10 +85,10 @@ public class RegionBlock extends UiWindow {
 
     private void layoutRows() {
         int rowCount = this.collapsed ? 0 : this.shownSlots / FACTORIES_PER_ROW;
-        while (this.rows.size < rowCount) {
-            this.rows.add(this.ui.add(this, new RegionEntryFactories(this.ui), 0f, TITLE_HEIGHT + this.rows.size * ROW_PITCH, UiAnchor.UPPER_LEFT));
+        while (this.rows.size() < rowCount) {
+            this.rows.add(this.ui.add(this, new RegionEntryFactories(this.ui), 0f, TITLE_HEIGHT + this.rows.size() * ROW_PITCH, UiAnchor.UPPER_LEFT));
         }
-        for (int r = 0; r < this.rows.size; r++) {
+        for (int r = 0; r < this.rows.size(); r++) {
             RegionEntryFactories row = this.rows.get(r);
             boolean visible = r < rowCount;
             row.setVisible(visible);
