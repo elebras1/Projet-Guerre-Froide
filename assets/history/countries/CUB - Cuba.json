@@ -19,12 +19,6 @@
         "maoist_idolg": 0,
         "communist_idolg": 15
     },
-    "mass_firepower": 1,
-    "small_arms": 1,
-    "light_engine": 1,
-    "industry_heavy_mechanical_parts": 1,
-    "industry_heavy_mechanical_engineering": 1,
-    "centralized_command_and_control": 1,
     "laws": {
         "governance_principles": "presidential_republic",
         "distribution_of_power": "universal_suffrage",
@@ -171,5 +165,6 @@
         }
     ],
     "navies": [],
-    "air_wings": []
+    "air_wings": [],
+    "technologies": []
 }

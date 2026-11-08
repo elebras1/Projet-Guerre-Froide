@@ -19,22 +19,6 @@
     },
     "head_of_state": "Gaspar_Dutra_1",
     "head_of_government": "Gaspar_Dutra_1",
-    "mass_firepower": 1,
-    "unit_destroyer": 1,
-    "conventionalnavalgun": 1,
-    "radarsystem_airsearch": 1,
-    "battlegroup_closeescort": 1,
-    "battlegroup_optimalcoveragepositioning": 1,
-    "industry_mathematics": 1,
-    "industry_physics": 3,
-    "industry_modern_science": 1,
-    "escort_submarinehunting": 1,
-    "escort_swiftpatrolswarm": 1,
-    "industry_electronics": 4,
-    "communication_and_intelligence": 1,
-    "radar_general": 3,
-    "escort_responsereadygroup": 1,
-    "centralized_command_and_control": 1,
     "laws": {
         "governance_principles": "presidential_republic",
         "distribution_of_power": "universal_suffrage",
@@ -341,5 +325,6 @@
             "experience": 0.0,
             "name_id": "BRA_U25"
         }
-    ]
+    ],
+    "technologies": []
 }

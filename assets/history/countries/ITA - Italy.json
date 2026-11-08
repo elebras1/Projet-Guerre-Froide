@@ -20,35 +20,6 @@
     "head_of_state": "Vittorio_Emanuele_III_1",
     "head_of_government": "Alcide_De_Gasperi_1",
     "set_country_flag": "colonial_army_tech",
-    "mass_firepower": 1,
-    "specialist_tactics": 1,
-    "small_arms": 1,
-    "crew_served_weapons": 1,
-    "mountain_capability": 1,
-    "light_artillery": 1,
-    "unit_cruiser": 1,
-    "unit_destroyer": [
-        1,
-        2
-    ],
-    "conventionalnavalgun": 1,
-    "radarsystem_airsearch": 1,
-    "radarsystem_surfacesearch": 1,
-    "battlegroup_closeescort": 1,
-    "battlegroup_optimalcoveragepositioning": 1,
-    "industry_mathematics": 1,
-    "industry_physics": 3,
-    "industry_modern_science": 1,
-    "escort_submarinehunting": 1,
-    "linear_fire_and_movement": 1,
-    "shock_attacks": 1,
-    "escort_swiftpatrolswarm": 1,
-    "industry_electronics": 4,
-    "communication_and_intelligence": 1,
-    "radar_general": 3,
-    "escort_responsereadygroup": 1,
-    "infiltration_tactics": 1,
-    "centralized_command_and_control": 1,
     "laws": {
         "governance_principles": "monarchy",
         "distribution_of_power": "census_suffrage",
@@ -350,5 +321,21 @@
             "experience": 0.0,
             "name_id": "ITA_U10"
         }
+    ],
+    "technologies": [
+        "aluminium_smelting",
+        "chemistry",
+        "electricity_grid",
+        "electrified_armaments",
+        "electrified_manufacturing",
+        "electronics",
+        "explosives",
+        "hydroelectric_power",
+        "industrial_electrification",
+        "industrial_electronics",
+        "mathematics",
+        "physics",
+        "small_arms",
+        "synthetic_polymers"
     ]
 }

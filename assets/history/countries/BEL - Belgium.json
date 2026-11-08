@@ -19,9 +19,6 @@
     },
     "head_of_state": "Prince_Charles_1",
     "head_of_government": "Achille_H_Van_Acker_1",
-    "mass_firepower": 1,
-    "attrition_warfare": 1,
-    "centralized_command_and_control": 1,
     "laws": {
         "governance_principles": "monarchy",
         "distribution_of_power": "census_suffrage",
@@ -176,5 +173,16 @@
             "experience": 0.0,
             "name_id": "BEL_U7"
         }
+    ],
+    "technologies": [
+        "chemistry",
+        "electricity_grid",
+        "electrified_manufacturing",
+        "electronics",
+        "industrial_electrification",
+        "industrial_electronics",
+        "mathematics",
+        "physics",
+        "synthetic_polymers"
     ]
 }

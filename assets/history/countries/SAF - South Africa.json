@@ -19,8 +19,6 @@
     },
     "head_of_state": "George_VI_1",
     "head_of_government": "Jan_Christiaan_Smuts_1",
-    "mass_firepower": 1,
-    "centralized_command_and_control": 1,
     "laws": {
         "governance_principles": "monarchy",
         "distribution_of_power": "census_suffrage",
@@ -158,5 +156,10 @@
             "experience": 0.0,
             "name_id": "SAF_U8"
         }
+    ],
+    "technologies": [
+        "chemistry",
+        "mathematics",
+        "synthetic_polymers"
     ]
 }

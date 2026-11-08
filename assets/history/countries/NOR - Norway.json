@@ -20,16 +20,6 @@
     "head_of_state": "Haakon_VII_1",
     "head_of_government": "Oscar_Torp_1",
     "leader_organisation": "XUN",
-    "mass_firepower": 1,
-    "specialist_tactics": 1,
-    "small_arms": 1,
-    "crew_served_weapons": 1,
-    "mountain_capability": 1,
-    "light_artillery": 1,
-    "linear_fire_and_movement": 1,
-    "shock_attacks": 1,
-    "infiltration_tactics": 1,
-    "centralized_command_and_control": 1,
     "laws": {
         "governance_principles": "monarchy",
         "distribution_of_power": "census_suffrage",
@@ -138,5 +128,12 @@
             "experience": 0.0,
             "name_id": "NOR_U6"
         }
+    ],
+    "technologies": [
+        "electricity_grid",
+        "electrified_armaments",
+        "explosives",
+        "industrial_electrification",
+        "small_arms"
     ]
 }

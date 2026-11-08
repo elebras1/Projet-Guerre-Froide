@@ -19,8 +19,6 @@
     },
     "head_of_state": "Manuel_Ávila_Camacho_1",
     "head_of_government": "Manuel_Ávila_Camacho_1",
-    "mass_firepower": 1,
-    "centralized_command_and_control": 1,
     "laws": {
         "governance_principles": "presidential_republic",
         "distribution_of_power": "universal_suffrage",
@@ -223,5 +221,11 @@
             "experience": 0.0,
             "name_id": "MEX_U17"
         }
+    ],
+    "technologies": [
+        "chemistry",
+        "hydroelectric_power",
+        "mathematics",
+        "synthetic_polymers"
     ]
 }

@@ -19,20 +19,6 @@
     },
     "head_of_state": "Edelmiro_Farrell_1",
     "head_of_government": "Edelmiro_Farrell_1",
-    "mass_firepower": 1,
-    "aircommand_offensiveprinciple": 1,
-    "aircommand_maneuverprinciple": 1,
-    "launcher_torpedotubes_533_650": 0,
-    "closedefense": 0,
-    "conventionalnavalgun": 0,
-    "antishipmissile_shortrange": 0,
-    "sonarsystem": 1,
-    "aircraftweapons_guns": 1,
-    "industry_physics": 1,
-    "industry_modern_science": 1,
-    "aircommand_economyofforceprinciple": 1,
-    "industry_electronics": 2,
-    "centralized_command_and_control": 1,
     "laws": {
         "governance_principles": "presidential_republic",
         "distribution_of_power": "oligarchy",
@@ -395,5 +381,8 @@
             "experience": 0.0,
             "name_id": "ARG_U23"
         }
+    ],
+    "technologies": [
+        "hydroelectric_power"
     ]
 }

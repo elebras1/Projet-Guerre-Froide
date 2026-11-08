@@ -19,8 +19,6 @@
     },
     "head_of_state": "Juan_Jose_de_Amezaga_1",
     "head_of_government": "Juan_Jose_de_Amezaga_1",
-    "mass_firepower": 1,
-    "centralized_command_and_control": 1,
     "laws": {
         "governance_principles": "presidential_republic",
         "distribution_of_power": "universal_suffrage",
@@ -89,5 +87,10 @@
         }
     ],
     "navies": [],
-    "air_wings": []
+    "air_wings": [],
+    "technologies": [
+        "chemistry",
+        "mathematics",
+        "synthetic_polymers"
+    ]
 }

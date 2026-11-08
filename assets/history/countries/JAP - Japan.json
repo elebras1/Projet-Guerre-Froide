@@ -19,8 +19,6 @@
     },
     "head_of_state": "Hirohito_1",
     "head_of_government": "Kijuro_Shidehara_1",
-    "mass_firepower": 1,
-    "centralized_command_and_control": 1,
     "laws": {
         "governance_principles": "monarchy",
         "distribution_of_power": "census_suffrage",
@@ -143,5 +141,24 @@
         }
     ],
     "navies": [],
-    "air_wings": []
+    "air_wings": [],
+    "technologies": [
+        "chemistry",
+        "containerization",
+        "electricity_grid",
+        "electrified_armaments",
+        "electrified_manufacturing",
+        "electrified_transport",
+        "electronics",
+        "explosives",
+        "hydroelectric_power",
+        "industrial_electrification",
+        "industrial_electronics",
+        "industrial_mechanization",
+        "mathematics",
+        "physics",
+        "public_education",
+        "small_arms",
+        "synthetic_polymers"
+    ]
 }

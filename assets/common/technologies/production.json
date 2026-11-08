@@ -942,6 +942,9 @@
     "time": 360,
     "requires": [],
     "effects": {
+      "unlock_buildings": [
+        "renewable_powerplant"
+      ],
       "factory_productivity": {
         "renewable_powerplant": 0.05
       }
@@ -1022,9 +1025,6 @@
       "high_voltage_transmission"
     ],
     "effects": {
-      "unlock_buildings": [
-        "renewable_powerplant"
-      ],
       "factory_productivity": {
         "renewable_powerplant": 0.1
       },
