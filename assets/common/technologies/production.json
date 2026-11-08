@@ -345,9 +345,6 @@
       "rotary_drilling"
     ],
     "effects": {
-      "extraction_malus_reduction": {
-        "deep": 0.6
-      },
       "rgo_mechanization_cap": {
         "oil": 1,
         "gas": 1
@@ -367,9 +364,6 @@
       "deep_drilling"
     ],
     "effects": {
-      "extraction_malus_reduction": {
-        "offshore": 0.5
-      },
       "rgo_mechanization_cap": {
         "oil": 1,
         "gas": 1
@@ -389,9 +383,6 @@
       "offshore_drilling"
     ],
     "effects": {
-      "extraction_malus_reduction": {
-        "offshore": 0.5
-      },
       "rgo_mechanization_cap": {
         "oil": 1,
         "gas": 1
@@ -411,9 +402,6 @@
       "deep_drilling"
     ],
     "effects": {
-      "extraction_malus_reduction": {
-        "deep": 0.4
-      },
       "rgo_mechanization_cap": {
         "oil": 1
       },
@@ -431,9 +419,6 @@
       "mining_mechanization"
     ],
     "effects": {
-      "extraction_malus_reduction": {
-        "remote": 0.5
-      },
       "rgo_productivity": {
         "oil": 0.05,
         "gas": 0.05,
@@ -451,9 +436,6 @@
       "deep_drilling"
     ],
     "effects": {
-      "extraction_malus_reduction": {
-        "remote": 0.5
-      },
       "rgo_productivity": {
         "oil": 0.1,
         "gas": 0.1
@@ -470,9 +452,6 @@
       "enhanced_oil_recovery"
     ],
     "effects": {
-      "extraction_malus_reduction": {
-        "unconventional": 0.5
-      },
       "rgo_mechanization_cap": {
         "oil": 1,
         "gas": 1
@@ -492,9 +471,6 @@
       "unconventional_extraction"
     ],
     "effects": {
-      "extraction_malus_reduction": {
-        "unconventional": 0.5
-      },
       "rgo_productivity": {
         "oil": 0.15,
         "gas": 0.15
