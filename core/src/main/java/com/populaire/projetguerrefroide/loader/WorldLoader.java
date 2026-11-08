@@ -19,6 +19,7 @@ public final class WorldLoader {
         PoliticsLoader politics = new PoliticsLoader(context);
         EconomyLoader economy = new EconomyLoader(context);
         MilitaryLoader military = new MilitaryLoader(context);
+        TechnologyLoader technology = new TechnologyLoader(context);
         CountryLoader country = new CountryLoader(context);
         MapLoader map = new MapLoader(context);
 
@@ -46,6 +47,7 @@ public final class WorldLoader {
         IntLongMap provinces = map.loadProvinceDefinitions(this.worldDao.readProvinceDefinitions());
         Borders borders = map.loadBorders(this.worldDao.readProvincesBitmap(), provinces);
         Map<String, CountryHistoryJson> countriesHistory = this.worldDao.readCountriesHistory();
+        technology.loadTechnologies(this.worldDao.readTechnologies());
         country.loadCountriesHistory(countriesHistory);
         map.loadContinents(this.worldDao.readContinents());
         map.loadAdjacencies(this.worldDao.readAdjacencies());

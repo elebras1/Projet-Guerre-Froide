@@ -14,6 +14,7 @@ import com.populaire.projetguerrefroide.system.population.*;
 import com.populaire.projetguerrefroide.system.region.*;
 import com.populaire.projetguerrefroide.system.rgo.*;
 import com.populaire.projetguerrefroide.system.state.*;
+import com.populaire.projetguerrefroide.system.technology.*;
 
 import static com.populaire.projetguerrefroide.simulation.Constants.INITIAL_SAVINGS_PASSES;
 
@@ -27,6 +28,7 @@ public class EconomyPipelines {
     private final DemographicsRegionInstanceSpreadSystem demographicsRegionInstanceSpreadSystem;
     private final RGOSizeSystem rgoSizeSystem;
     private final LawEffectInitializationSystem lawEffectInitializationSystem;
+    private final TechnologyEffectInitializationSystem technologyEffectInitializationSystem;
     private final EconomyBuildingOwnerInitializationSystem economyBuildingOwnerInitializationSystem;
     private final CountryMarketInitializationSystem countryMarketInitializationSystem;
     private final GlobalMarketInitializationSystem globalMarketInitializationSystem;
@@ -251,6 +253,7 @@ public class EconomyPipelines {
         this.demographicsProvinceSpreadSystem = new DemographicsProvinceSpreadSystem(ecsWorld, phaseSpread);
         this.demographicsRegionInstanceSpreadSystem = new DemographicsRegionInstanceSpreadSystem(ecsWorld, phaseSpread);
         this.lawEffectInitializationSystem = new LawEffectInitializationSystem(ecsWorld, phaseInit);
+        this.technologyEffectInitializationSystem = new TechnologyEffectInitializationSystem(ecsWorld, phaseInit);
         this.economyBuildingOwnerInitializationSystem = new EconomyBuildingOwnerInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInit);
         this.rgoSizeSystem = new RGOSizeSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInit);
         this.infrastructureInitializationSystem = new InfrastructureInitializationSystem(ecsWorld, phaseInit);

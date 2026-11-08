@@ -3,6 +3,5 @@ package com.populaire.projetguerrefroide.component;
 import io.github.elebras1.flecs.annotation.Component;
 
 @Component
-public record CountryEducationPolicy(float educationSpendingRate, float educationEfficiency) {
+public record CountryEducationPolicy(float educationSpendingRate, float educationEfficiency, float researchEfficiency) {
 }
-

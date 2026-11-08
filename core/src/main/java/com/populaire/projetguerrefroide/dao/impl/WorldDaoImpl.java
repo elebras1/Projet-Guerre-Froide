@@ -50,9 +50,11 @@ public class WorldDaoImpl implements WorldDao {
     private final String traitsJsonFile = this.commonPath + "traits.json";
     private final String stateConsumptionJsonFile = this.commonPath + "state_consumption.json";
     private final String unitsJsonFile = this.commonPath + "units.json";
+    private final String technologiesJsonFile = this.commonPath + "technologies.json";
     private final DslJson<Object> dslJson = new DslJson<>(Settings.withRuntime().includeServiceLoader());
     private final Type pathsType = new TypeDefinition<Map<String, String>>() {}.type;
     private final Type pathListType = new TypeDefinition<List<String>>() {}.type;
+    private final Type technologiesType = new TypeDefinition<Map<String, TechnologyJson>>() {}.type;
     private final Type modifiersType = new TypeDefinition<Map<String, Map<String, Double>>>() {}.type;
     private final Type governmentsType = new TypeDefinition<Map<String, GovernmentJson>>() {}.type;
     private final Type ideologiesType = new TypeDefinition<Map<String, IdeologyJson>>() {}.type;
@@ -125,6 +127,16 @@ public class WorldDaoImpl implements WorldDao {
     @Override
     public Map<String, UnitJson> readUnits() {
         return this.readIndexedJson(this.unitsJsonFile, this.commonPath, UnitJson.class);
+    }
+
+    @Override
+    public Map<String, TechnologyJson> readTechnologies() {
+        Map<String, String> paths = this.readJson(this.technologiesJsonFile, this.pathsType);
+        Map<String, TechnologyJson> technologies = new LinkedHashMap<>();
+        for (Map.Entry<String, String> path : paths.entrySet()) {
+            technologies.putAll(this.readJson(this.commonPath + path.getValue(), this.technologiesType));
+        }
+        return technologies;
     }
 
     @Override

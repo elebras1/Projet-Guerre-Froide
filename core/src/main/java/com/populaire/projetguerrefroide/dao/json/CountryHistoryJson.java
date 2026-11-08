@@ -19,5 +19,6 @@ public record CountryHistoryJson(
     @JsonAttribute(name = "workforce_share") Double workforceShare,
     List<ArmyJson> armies,
     List<NavyJson> navies,
-    @JsonAttribute(name = "air_wings") List<AirWingJson> airWings) {
+    @JsonAttribute(name = "air_wings") List<AirWingJson> airWings,
+    List<String> technologies) {
 }

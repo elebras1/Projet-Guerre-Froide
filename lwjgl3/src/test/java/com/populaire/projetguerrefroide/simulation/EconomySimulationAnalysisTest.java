@@ -28,6 +28,7 @@ import java.util.Map;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
@@ -109,6 +110,8 @@ public class EconomySimulationAnalysisTest {
         world.component(DiplomaticRelation.class);
         world.component(Adjacencies.class);
         world.component(Country.class);
+        world.component(Technology.class);
+        world.component(CountryTechnology.class);
         world.component(Province.class);
         world.component(Law.class);
         world.component(LawGroup.class);
@@ -186,6 +189,56 @@ public class EconomySimulationAnalysisTest {
 
     @Test
     @Order(1)
+    public void loadsTechnologiesOf1946() {
+        int[] technologyCount = new int[1];
+        Query technologyQuery = this.ecsWorld.query().with(Technology.class).build();
+        technologyQuery.iter(iter -> {
+            Field<Technology> technologyField = iter.field(Technology.class, 0);
+            for (int i = 0; i < iter.count(); i++) {
+                TechnologyView technology = technologyField.getMutView(i);
+                assertTrue(technology.year() >= 1946);
+                assertTrue(technology.time() > 0);
+            }
+            technologyCount[0] += iter.count();
+        });
+        assertEquals(169, technologyCount[0]);
+
+        long electrifiedTransportId = this.ecsWorld.lookup("electrified_transport");
+        TechnologyView electrifiedTransport = this.ecsWorld.obtainEntityView(electrifiedTransportId).getView(Technology.class);
+        assertTrue(electrifiedTransport.prerequisiteIds(0) != 0);
+        assertTrue(electrifiedTransport.prerequisiteIds(1) != 0);
+
+        long modernScienceId = this.ecsWorld.lookup("modern_science");
+        ModifiersView modernScienceModifiers = this.ecsWorld.obtainEntityView(modernScienceId).getView(Modifiers.class);
+        assertNotNull(modernScienceModifiers);
+        assertEquals(0.02f, modernScienceModifiers.values(0), 1e-6f);
+        assertEquals("research_efficiency", this.ecsWorld.obtainEntityView(modernScienceModifiers.tagIds(0)).name());
+
+        long usaId = this.ecsWorld.lookup("USA");
+        CountryTechnologyView usaTechnology = this.ecsWorld.obtainEntityView(usaId).getView(CountryTechnology.class);
+        assertNotNull(usaTechnology);
+        int acquired = 0;
+        for (int i = 0; i < usaTechnology.acquiredLength(); i++) {
+            if (usaTechnology.acquired(i)) {
+                acquired++;
+            }
+        }
+        assertEquals(21, acquired);
+
+        long westBerlinId = this.ecsWorld.lookup("WBR");
+        CountryTechnologyView westBerlinTechnology = this.ecsWorld.obtainEntityView(westBerlinId).getView(CountryTechnology.class);
+        assertNotNull(westBerlinTechnology);
+        int westBerlinAcquired = 0;
+        for (int i = 0; i < westBerlinTechnology.acquiredLength(); i++) {
+            if (westBerlinTechnology.acquired(i)) {
+                westBerlinAcquired++;
+            }
+        }
+        assertEquals(0, westBerlinAcquired);
+    }
+
+    @Test
+    @Order(2)
     public void loadsForcesOf1946() {
         long landForceTag = this.ecsConstants.landForceTag();
         long seaForceTag = this.ecsConstants.seaForceTag();
@@ -250,7 +303,7 @@ public class EconomySimulationAnalysisTest {
     }
 
     @Test
-    @Order(2)
+    @Order(3)
     public void simulateAndAnalyseEconomy() throws Exception {
         String outputDir = System.getProperty("simulation.outputDir");
         assertTrue(outputDir != null && !outputDir.isBlank(),

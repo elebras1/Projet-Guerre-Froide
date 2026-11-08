@@ -34,6 +34,8 @@ public interface WorldDao {
 
     Map<String, UnitJson> readUnits();
 
+    Map<String, TechnologyJson> readTechnologies();
+
     Map<String, CountryJson> readCountries();
 
     RelationsJson readRelations();

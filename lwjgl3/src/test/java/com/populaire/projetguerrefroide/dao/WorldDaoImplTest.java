@@ -62,6 +62,16 @@ public class WorldDaoImplTest {
         assertEquals(32, buildings.economyBuilding().size());
         assertEquals(12, buildings.specialBuilding().size());
         assertEquals(9, buildings.developmentBuilding().size());
+
+        Map<String, TechnologyJson> technologies = this.worldDao.readTechnologies();
+        assertEquals(169, technologies.size());
+        TechnologyJson modernScience = technologies.get("modern_science");
+        assertEquals("production", modernScience.tree());
+        assertEquals(1, modernScience.era());
+        assertEquals(1946, modernScience.year());
+        assertEquals(360, modernScience.time());
+        assertTrue(modernScience.requires().isEmpty());
+        assertEquals(List.of("electrified_manufacturing", "containerization"), technologies.get("electrified_transport").requires());
     }
 
     @Test
@@ -80,6 +90,9 @@ public class WorldDaoImplTest {
         Map<String, CountryHistoryJson> countriesHistory = this.worldDao.readCountriesHistory();
         assertEquals(267, countriesHistory.size());
         assertEquals(4629, countriesHistory.get("RIF").capital());
+        assertTrue(countriesHistory.get("USA").technologies().contains("mathematics"));
+        assertNull(countriesHistory.get("BGL").technologies());
+        assertTrue(countriesHistory.get("WBR").technologies().isEmpty());
         assertEquals(255, this.worldDao.readLeaders().size());
         assertFalse(this.worldDao.readRelations().relation().isEmpty());
         assertFalse(this.worldDao.readAlliances().alliances().isEmpty());

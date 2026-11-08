@@ -21,6 +21,11 @@ public class Constants {
     public static final int MAX_LUXURY_DEMAND_GOODS = 8;
     public static final int MAX_MODIFIERS = 8;
     public static final int MAX_OVERRIDES = 8;
+    public static final int MAX_TECHNOLOGIES = 256;
+    public static final int MAX_TECHNOLOGY_PREREQUISITES = 8;
+    public static final int TECHNOLOGY_TREE_PRODUCTION = 0;
+    public static final int TECHNOLOGY_TREE_MILITARY = 1;
+    public static final int TECHNOLOGY_TREE_SOCIETY = 2;
     public static final int MAX_CULTURES = 32;
     public static final int MAX_RELIGIONS = 8;
     public static final int MAX_PROVINCE_CORES = 8;
@@ -47,6 +52,7 @@ public class Constants {
     public static final String STATE_CONSTRUCTION = "state_construction";
     public static final String POP_GROWTH_FACTOR = "pop_growth_factor";
     public static final String EDUCATION_EFFICIENCY = "education_efficiency";
+    public static final String RESEARCH_EFFICIENCY = "research_efficiency";
     public static final String MIGRATION_PULL = "migration_pull";
     public static final String POP_SPENDING = "pop_spending";
     public static final String SLAVERY_ALLOWED = "slavery_allowed";
