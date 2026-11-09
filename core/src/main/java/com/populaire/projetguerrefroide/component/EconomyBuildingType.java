@@ -7,6 +7,7 @@ import static com.populaire.projetguerrefroide.simulation.Constants.MAX_GOODS;
 
 @Component
 public record EconomyBuildingType(
+    int typeIndex,
     int time,
     int maxLevel,
     @FixedArray(length = MAX_GOODS) int[] goodCostIndexes,

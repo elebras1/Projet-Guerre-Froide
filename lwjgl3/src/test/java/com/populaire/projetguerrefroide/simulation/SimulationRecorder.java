@@ -666,6 +666,7 @@ public class SimulationRecorder implements AutoCloseable {
         this.writer("country/development.csv").header("year", "date", "country", "output_ratio", "output_position", "literacy", "index", "research_factor",
             "research_efficiency", "acquired_production", "acquired_military", "acquired_society");
         this.writer("country/technology_acquired.csv").header("year", "date", "country", "technology");
+        this.writer("building_types/recipes.csv").header("year", "date", "building_type", "buildings", "advanced");
         this.writer("country/strategic_stock.csv").header("tick", "date", "country", "levels", "capacity", "stock_value", "purchased_value", "released_value", "lost_value",
             "spent", "earned", "stock_market_value");
         this.writer("country/military_bases.csv").header("tick", "date", "country", "naval_capacity", "naval_load", "air_capacity", "air_load",
@@ -904,6 +905,7 @@ public class SimulationRecorder implements AutoCloseable {
     private void recordYear(int tick, String date) {
         int year = (tick + 1) / DAYS_PER_YEAR;
         this.recordTechnology(year, date);
+        this.recordRecipes(year, date);
         double ticks = Math.max(1, this.yearTicks);
 
         double worstCountryLife = Double.MAX_VALUE;
@@ -1428,6 +1430,28 @@ public class SimulationRecorder implements AutoCloseable {
             float[] agg = entry.getValue();
             writer.row(tick, date, this.countryNames.get(countryIndex), this.goodNames[goodIndex],
                 agg[0], agg[1], agg[2], agg[3], agg[4]);
+        }
+    }
+
+    private void recordRecipes(int year, String date) {
+        int[] buildings = new int[this.buildingTypeNames.size()];
+        int[] advanced = new int[this.buildingTypeNames.size()];
+        this.buildingQuery.iter(iter -> {
+            Field<EconomyBuilding> economyBuildingField = iter.field(EconomyBuilding.class, 1);
+            Integer typeIndex = this.buildingTypeIndexByEntity.get(iter.src(2));
+            if (typeIndex == null) {
+                return;
+            }
+            for (int i = 0; i < iter.count(); i++) {
+                buildings[typeIndex]++;
+                EconomyBuildingView economyBuilding = economyBuildingField.getMutView(i);
+                if (economyBuilding.advancedRecipe()) {
+                    advanced[typeIndex]++;
+                }
+            }
+        });
+        for (int t = 0; t < buildings.length; t++) {
+            this.writer("building_types/recipes.csv").row(year, date, this.buildingTypeNames.get(t), buildings[t], advanced[t]);
         }
     }
 

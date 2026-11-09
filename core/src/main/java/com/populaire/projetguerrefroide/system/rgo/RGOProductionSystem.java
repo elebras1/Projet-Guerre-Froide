@@ -1,6 +1,7 @@
 package com.populaire.projetguerrefroide.system.rgo;
 
 import com.populaire.projetguerrefroide.simulation.EcsConstants;
+import io.github.elebras1.flecs.EntityView;
 import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
@@ -34,20 +35,24 @@ public class RGOProductionSystem {
         }
         ResourceGatheringView firstResourceGathering = resourceGatheringField.getMutView(0);
         long goodId = firstResourceGathering.goodId();
+        int goodIndex = firstResourceGathering.goodIndex();
         float goodValue = iter.stage().obtainEntityView(goodId).<GoodView>getView(Good.class).value();
 
         long countryId = 0;
         float rgoOutputModifier = 0f;
+        float rgoProductivity = 0f;
         for(int i = 0; i < iter.count(); i++) {
             ResourceGatheringMutView resourceGathering = resourceGatheringField.getMutView(i);
             ProvinceView province = provinceField.getMutView(i);
             if (province.ownerId() != countryId) {
                 countryId = province.ownerId();
-                rgoOutputModifier = iter.stage().obtainEntityView(countryId).<CountryProductionPolicyView>getView(CountryProductionPolicy.class).rgoOutputModifier();
+                EntityView country = iter.stage().obtainEntityView(countryId);
+                rgoOutputModifier = country.<CountryProductionPolicyView>getView(CountryProductionPolicy.class).rgoOutputModifier();
+                rgoProductivity = country.<CountryProductionTechnologyView>getView(CountryProductionTechnology.class).rgoProductivities(goodIndex);
             }
 
             int maxCapacity = resourceGathering.size() * workforce;
-            float baseProduction = resourceGathering.size() * goodValue * resourceGathering.efficiency() * (1f + rgoOutputModifier);
+            float baseProduction = resourceGathering.size() * goodValue * resourceGathering.efficiency() * (1f + rgoOutputModifier + rgoProductivity);
 
             int targetWorkers = (int) (maxCapacity * workerPopTypeRatio);
             int targetSlaves = (int) (maxCapacity * slavePopTypeRatio);

@@ -15,17 +15,23 @@ import com.populaire.projetguerrefroide.component.PopulationType;
 import com.populaire.projetguerrefroide.component.PopulationTypeView;
 import com.populaire.projetguerrefroide.component.SpecialBuildingType;
 import com.populaire.projetguerrefroide.component.Technology;
+import com.populaire.projetguerrefroide.component.TechnologyProduction;
+import com.populaire.projetguerrefroide.component.TechnologyProductionView;
 import com.populaire.projetguerrefroide.component.TechnologyView;
 import com.populaire.projetguerrefroide.system.state.StateBudgetUtils;
+import com.populaire.projetguerrefroide.system.technology.PolicyModifier;
 import io.github.elebras1.flecs.EntityView;
 import io.github.elebras1.flecs.Flecs;
 import io.github.elebras1.flecs.Query;
 import io.github.elebras1.flecs.World;
 
+import java.util.Arrays;
+
 import static com.populaire.projetguerrefroide.simulation.Constants.GOOD_COUNT;
+import static com.populaire.projetguerrefroide.simulation.Constants.MAX_MODIFIERS;
 import static com.populaire.projetguerrefroide.simulation.Constants.MAX_TECHNOLOGIES;
+import static com.populaire.projetguerrefroide.simulation.Constants.MAX_TECHNOLOGY_EFFECTS;
 import static com.populaire.projetguerrefroide.simulation.Constants.POP_TYPE_COUNT;
-import static com.populaire.projetguerrefroide.simulation.Constants.RESEARCH_EFFICIENCY;
 
 public class EcsConstants {
     private static final String SEA_PROVINCE_TAG = "SeaProvinceTag";
@@ -111,7 +117,13 @@ public class EcsConstants {
     private final int[] technologyTimes;
     private final int[] technologyTrees;
     private final int[][] technologyPrerequisites;
-    private final float[] technologyResearchEfficiencies;
+    private final int[][] technologyModifiers;
+    private final float[][] technologyModifierValues;
+    private final int[][] technologyRgoGoods;
+    private final float[][] technologyRgoProductivities;
+    private final int[][] technologyFactoryTypes;
+    private final float[][] technologyFactoryProductivities;
+    private final int[][] technologyRecipeTypes;
     private int technologyCount;
     private final float[] goodStockDecays;
     private long globalMarket;
@@ -170,7 +182,13 @@ public class EcsConstants {
         this.technologyTimes = new int[MAX_TECHNOLOGIES];
         this.technologyTrees = new int[MAX_TECHNOLOGIES];
         this.technologyPrerequisites = new int[MAX_TECHNOLOGIES][];
-        this.technologyResearchEfficiencies = new float[MAX_TECHNOLOGIES];
+        this.technologyModifiers = new int[MAX_TECHNOLOGIES][0];
+        this.technologyModifierValues = new float[MAX_TECHNOLOGIES][0];
+        this.technologyRgoGoods = new int[MAX_TECHNOLOGIES][0];
+        this.technologyRgoProductivities = new float[MAX_TECHNOLOGIES][0];
+        this.technologyFactoryTypes = new int[MAX_TECHNOLOGIES][0];
+        this.technologyFactoryProductivities = new float[MAX_TECHNOLOGIES][0];
+        this.technologyRecipeTypes = new int[MAX_TECHNOLOGIES][0];
         this.goodStockDecays = new float[GOOD_COUNT];
         this.declareTypeInheritance(ecsWorld);
     }
@@ -208,7 +226,6 @@ public class EcsConstants {
     }
 
     private void resolveTechnologies(World ecsWorld) {
-        long researchEfficiencyTag = ecsWorld.lookup(RESEARCH_EFFICIENCY);
         Query technologyQuery = ecsWorld.query().with(Technology.class).build();
         technologyQuery.each(technologyId -> {
             TechnologyView technology = ecsWorld.obtainEntityView(technologyId).getView(Technology.class);
@@ -233,11 +250,55 @@ public class EcsConstants {
             EntityView technologyEntity = ecsWorld.obtainEntityView(technologyId);
             if (technologyEntity.has(Modifiers.class)) {
                 ModifiersView modifiers = technologyEntity.getView(Modifiers.class);
+                int[] kinds = new int[MAX_MODIFIERS];
+                float[] values = new float[MAX_MODIFIERS];
+                int count = 0;
                 for (int m = 0; m < modifiers.tagIdsLength(); m++) {
-                    if (modifiers.tagIds(m) == researchEfficiencyTag) {
-                        this.technologyResearchEfficiencies[index] = modifiers.values(m);
+                    long tagId = modifiers.tagIds(m);
+                    if (tagId <= 0) {
+                        break;
+                    }
+                    PolicyModifier modifier = PolicyModifier.forTechnology(ecsWorld.obtainEntityView(tagId).name());
+                    if (modifier != null) {
+                        kinds[count] = modifier.ordinal();
+                        values[count] = modifiers.values(m);
+                        count++;
                     }
                 }
+                this.technologyModifiers[index] = Arrays.copyOf(kinds, count);
+                this.technologyModifierValues[index] = Arrays.copyOf(values, count);
+            }
+            if (technologyEntity.has(TechnologyProduction.class)) {
+                TechnologyProductionView production = technologyEntity.getView(TechnologyProduction.class);
+                int rgoCount = 0;
+                int factoryCount = 0;
+                int recipeCount = 0;
+                int[] rgoGoods = new int[MAX_TECHNOLOGY_EFFECTS];
+                float[] rgoProductivities = new float[MAX_TECHNOLOGY_EFFECTS];
+                int[] factoryTypes = new int[MAX_TECHNOLOGY_EFFECTS];
+                float[] factoryProductivities = new float[MAX_TECHNOLOGY_EFFECTS];
+                int[] recipeTypes = new int[MAX_TECHNOLOGY_EFFECTS];
+                for (int e = 0; e < MAX_TECHNOLOGY_EFFECTS; e++) {
+                    if (production.rgoGoodIndexes(e) >= 0) {
+                        rgoGoods[rgoCount] = production.rgoGoodIndexes(e);
+                        rgoProductivities[rgoCount] = production.rgoProductivities(e);
+                        rgoCount++;
+                    }
+                    if (production.factoryTypeIndexes(e) >= 0) {
+                        factoryTypes[factoryCount] = production.factoryTypeIndexes(e);
+                        factoryProductivities[factoryCount] = production.factoryProductivities(e);
+                        factoryCount++;
+                    }
+                    if (production.recipeTypeIndexes(e) >= 0) {
+                        recipeTypes[recipeCount] = production.recipeTypeIndexes(e);
+                        recipeCount++;
+                    }
+                }
+                this.technologyRgoGoods[index] = Arrays.copyOf(rgoGoods, rgoCount);
+                this.technologyRgoProductivities[index] = Arrays.copyOf(rgoProductivities, rgoCount);
+                this.technologyFactoryTypes[index] = Arrays.copyOf(factoryTypes, factoryCount);
+                this.technologyFactoryProductivities[index] = Arrays.copyOf(factoryProductivities, factoryCount);
+                this.technologyRecipeTypes[index] = Arrays.copyOf(recipeTypes, recipeCount);
             }
         });
         technologyQuery.destruct();
@@ -354,9 +415,39 @@ public class EcsConstants {
         return this.technologyPrerequisites;
     }
 
-    public float[] technologyResearchEfficiencies() {
+    public int[][] technologyModifiers() {
         this.requireGlobals();
-        return this.technologyResearchEfficiencies;
+        return this.technologyModifiers;
+    }
+
+    public float[][] technologyModifierValues() {
+        this.requireGlobals();
+        return this.technologyModifierValues;
+    }
+
+    public int[][] technologyRgoGoods() {
+        this.requireGlobals();
+        return this.technologyRgoGoods;
+    }
+
+    public float[][] technologyRgoProductivities() {
+        this.requireGlobals();
+        return this.technologyRgoProductivities;
+    }
+
+    public int[][] technologyFactoryTypes() {
+        this.requireGlobals();
+        return this.technologyFactoryTypes;
+    }
+
+    public float[][] technologyFactoryProductivities() {
+        this.requireGlobals();
+        return this.technologyFactoryProductivities;
+    }
+
+    public int[][] technologyRecipeTypes() {
+        this.requireGlobals();
+        return this.technologyRecipeTypes;
     }
 
     public float[] goodCosts() {

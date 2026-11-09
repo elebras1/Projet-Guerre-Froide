@@ -3,6 +3,7 @@ package com.populaire.projetguerrefroide.system.technology;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.simulation.EcsConstants;
 import com.populaire.projetguerrefroide.system.population.PopulationMobilityUtils;
+import io.github.elebras1.flecs.EntityView;
 import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
@@ -32,7 +33,6 @@ public class ResearchSystem {
         float year = calendar.startYear() + calendar.day() / DAYS_PER_YEAR;
         int[] technologyYears = this.ecsConstants.technologyYears();
         int[] technologyTimes = this.ecsConstants.technologyTimes();
-        float[] technologyResearchEfficiencies = this.ecsConstants.technologyResearchEfficiencies();
 
         Field<CountryTechnology> countryTechnologyField = iter.field(CountryTechnology.class, 0);
         Field<CountryDevelopment> countryDevelopmentField = iter.field(CountryDevelopment.class, 1);
@@ -63,7 +63,9 @@ public class ResearchSystem {
                     countryTechnology.progress(current, 1f);
                     countryTechnology.acquired(current, true);
                     countryTechnology.currentTechnologyIndexes(tree, -1);
-                    educationPolicy.researchEfficiency(researchEfficiency + technologyResearchEfficiencies[current]);
+                    EntityView country = world.obtainEntityView(iter.entity(i));
+                    TechnologyEffectUtils.applyTechnology(this.ecsConstants, country, current);
+                    TechnologyEffectUtils.clampPolicies(country);
                 } else {
                     countryTechnology.progress(current, progress);
                 }

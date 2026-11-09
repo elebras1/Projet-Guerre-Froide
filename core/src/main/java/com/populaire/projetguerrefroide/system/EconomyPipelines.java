@@ -31,6 +31,7 @@ public class EconomyPipelines {
     private final TechnologyEffectInitializationSystem technologyEffectInitializationSystem;
     private final DevelopmentIndexSystem developmentIndexSystem;
     private final ResearchSystem researchSystem;
+    private final EconomyBuildingRecipeSystem economyBuildingRecipeSystem;
     private final EconomyBuildingOwnerInitializationSystem economyBuildingOwnerInitializationSystem;
     private final CountryMarketInitializationSystem countryMarketInitializationSystem;
     private final GlobalMarketInitializationSystem globalMarketInitializationSystem;
@@ -359,6 +360,7 @@ public class EconomyPipelines {
         this.investmentDecisionSystem = new InvestmentDecisionSystem(ecsWorld, simulationContext.getEcsConstants(), phaseState);
         this.developmentIndexSystem = new DevelopmentIndexSystem(ecsWorld, simulationContext.getEcsConstants(), phaseState);
         this.researchSystem = new ResearchSystem(ecsWorld, simulationContext.getEcsConstants(), phaseState);
+        this.economyBuildingRecipeSystem = new EconomyBuildingRecipeSystem(ecsWorld, simulationContext.getEcsConstants(), phaseState);
         this.economyCalendarSystem = new EconomyCalendarSystem(ecsWorld, phaseCalendar);
     }
 

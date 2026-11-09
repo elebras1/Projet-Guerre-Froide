@@ -24,6 +24,7 @@ public class EconomyBuildingProductionSystem {
     private void produce(Iter iter) {
         long countryId = 0;
         CountryProductionPolicyView countryProductionPolicy = null;
+        float factoryProductivity = 0f;
 
         long regionId = 0;
         RegionInstanceView regionInstance = null;
@@ -38,7 +39,9 @@ public class EconomyBuildingProductionSystem {
 
             if (building.countryId() != countryId) {
                 countryId = building.countryId();
-                countryProductionPolicy = iter.stage().obtainEntityView(countryId).getMutView(CountryProductionPolicy.class);
+                EntityView country = iter.stage().obtainEntityView(countryId);
+                countryProductionPolicy = country.getMutView(CountryProductionPolicy.class);
+                factoryProductivity = country.<CountryProductionTechnologyView>getView(CountryProductionTechnology.class).factoryProductivities(economyBuildingTypeData.typeIndex());
             }
             if (building.parentId() != regionId) {
                 regionId = building.parentId();
@@ -69,7 +72,7 @@ public class EconomyBuildingProductionSystem {
             }
 
             float secondaryFill = secondaryFill(economyBuilding, economyBuildingTypeData, level, effectiveScale);
-            float outputScale = outputScale(countryProductionPolicy, economyBuildingTypeData, level, secondaryFill, effectiveScale) * (1f + managementBonus(economyBuilding, regionInstance, this.stateOwnerTag)) * (1f + infrastructureBonus(regionInstance));
+            float outputScale = outputScale(countryProductionPolicy, factoryProductivity, economyBuildingTypeData, level, secondaryFill, effectiveScale) * (1f + managementBonus(economyBuilding, regionInstance, this.stateOwnerTag)) * (1f + infrastructureBonus(regionInstance));
             economyBuilding.production(economyBuildingTypeData.goodOutputAmount() * outputScale * stockRatio);
         }
     }

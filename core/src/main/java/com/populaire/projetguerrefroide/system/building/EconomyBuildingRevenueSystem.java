@@ -29,6 +29,7 @@ public class EconomyBuildingRevenueSystem {
         CountryMarketMutView countryMarket = null;
         CountryLaborPolicyView countryLaborPolicy = null;
         CountryProductionPolicyView countryProductionPolicy = null;
+        float factoryProductivity = 0f;
         CountryBudgetView countryBudget = null;
 
         long regionId = 0;
@@ -53,6 +54,7 @@ public class EconomyBuildingRevenueSystem {
                 countryMarket = country.getMutView(CountryMarket.class);
                 countryLaborPolicy = country.getMutView(CountryLaborPolicy.class);
                 countryProductionPolicy = country.getMutView(CountryProductionPolicy.class);
+                factoryProductivity = country.<CountryProductionTechnologyView>getView(CountryProductionTechnology.class).factoryProductivities(buildingTypeData.typeIndex());
                 countryBudget = country.getView(CountryBudget.class);
             }
 
@@ -76,7 +78,7 @@ public class EconomyBuildingRevenueSystem {
             float effectiveScale = effectiveScale(economyBuilding, buildingTypeData, level);
             float inputScale = inputScale(countryProductionPolicy, level, effectiveScale);
             double dailyInputCost = inputCost(economyBuilding, countryMarket, inputScale);
-            float fullOutput = buildingTypeData.goodOutputAmount() * outputScale(countryProductionPolicy, buildingTypeData, level, secondaryFill(economyBuilding, buildingTypeData, level, effectiveScale), effectiveScale)
+            float fullOutput = buildingTypeData.goodOutputAmount() * outputScale(countryProductionPolicy, factoryProductivity, buildingTypeData, level, secondaryFill(economyBuilding, buildingTypeData, level, effectiveScale), effectiveScale)
                 * (1f + managementBonus(economyBuilding, regionInstance, this.stateOwnerTag)) * (1f + infrastructureBonus(regionInstance));
             float stockRatio = fullOutput > 0f ? economyBuilding.production() / fullOutput : 0f;
             float profit = (float) (revenue - wages - dailyInputCost * stockRatio);

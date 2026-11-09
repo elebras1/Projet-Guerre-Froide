@@ -23,6 +23,8 @@ public class Constants {
     public static final int MAX_OVERRIDES = 8;
     public static final int MAX_TECHNOLOGIES = 256;
     public static final int MAX_TECHNOLOGY_PREREQUISITES = 8;
+    public static final int MAX_TECHNOLOGY_EFFECTS = 8;
+    public static final int MAX_ECONOMY_BUILDING_TYPES = 64;
     public static final int TECHNOLOGY_TREE_PRODUCTION = 0;
     public static final int TECHNOLOGY_TREE_MILITARY = 1;
     public static final int TECHNOLOGY_TREE_SOCIETY = 2;
@@ -85,9 +87,11 @@ public class Constants {
     public static final String NAVAL_CAPACITY = "naval_capacity";
     public static final String AIR_CAPACITY = "air_capacity";
     public static final String MILITARY_TRAINING = "military_training";
+    public static final String ESPIONAGE_BONUS = "espionage_bonus";
 
     public static float NEEDS_SCALING_FACTOR = 100000f;
     public static final float SHORTAGE_PRICE_PREMIUM = 0.5f;
+    public static final float RECIPE_SWITCH_MARGIN = 0.1f;
     public static final float[] SPENDING_RATES_BY_STRATA = {0.10f, 0.06f, 0.03f};
     public static final float MAXIMUM_LUXURY_BASKETS = 4f;
     public static final float SUBSISTENCE_LIFE_SHARE = 0.75f;

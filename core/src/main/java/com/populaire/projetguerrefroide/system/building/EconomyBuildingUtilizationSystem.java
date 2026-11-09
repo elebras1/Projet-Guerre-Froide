@@ -35,6 +35,7 @@ public class EconomyBuildingUtilizationSystem {
         CountryMarketView countryMarket = null;
         CountryLaborPolicyView countryLaborPolicy = null;
         CountryProductionPolicyView countryProductionPolicy = null;
+        float factoryProductivity = 0f;
         CountryBudgetView countryBudget = null;
 
         long regionId = 0;
@@ -61,11 +62,12 @@ public class EconomyBuildingUtilizationSystem {
                 countryMarket = country.getMutView(CountryMarket.class);
                 countryLaborPolicy = country.getMutView(CountryLaborPolicy.class);
                 countryProductionPolicy = country.getMutView(CountryProductionPolicy.class);
+                factoryProductivity = country.<CountryProductionTechnologyView>getView(CountryProductionTechnology.class).factoryProductivities(buildingTypeData.typeIndex());
                 countryBudget = country.getView(CountryBudget.class);
             }
 
             int level = building.size();
-            double value = (double) economyBuilding.unitRevenue() * buildingTypeData.goodOutputAmount() * outputScale(countryProductionPolicy, buildingTypeData, level, 1f, level)
+            double value = (double) economyBuilding.unitRevenue() * buildingTypeData.goodOutputAmount() * outputScale(countryProductionPolicy, factoryProductivity, buildingTypeData, level, 1f, level)
                 * (1f + managementBonus(economyBuilding, regionInstance, this.stateOwnerTag)) * (1f + infrastructureBonus(regionInstance));
             double costs = inputCost(economyBuilding, countryMarket, inputScale(countryProductionPolicy, level, level))
                 + wageBill(countryMarket, regionInstance, buildingTypeData, countryLaborPolicy.minWageFactor(),

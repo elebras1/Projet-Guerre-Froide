@@ -9,6 +9,7 @@ import com.populaire.projetguerrefroide.simulation.EcsConstants;
 import com.populaire.projetguerrefroide.system.building.InfrastructureUtils;
 
 import static com.populaire.projetguerrefroide.system.construction.ConstructionUtils.finished;
+import static com.populaire.projetguerrefroide.system.building.EconomyBuildingUtils.chooseAdvancedRecipe;
 import static com.populaire.projetguerrefroide.system.building.EconomyBuildingUtils.newEconomyBuilding;
 
 public class ConstructionCompletionSystem {
@@ -39,7 +40,9 @@ public class ConstructionCompletionSystem {
                     building.set(new SpecialBuilding(0f, 0f));
                 } else {
                     EconomyBuildingTypeView buildingType = buildingTypeEntity.getView(EconomyBuildingType.class);
-                    building.set(newEconomyBuilding(buildingType, false, site.ownerTagId()));
+                    EntityView country = iter.stage().obtainEntityView(site.countryId());
+                    boolean advancedRecipe = chooseAdvancedRecipe(buildingType, country.getView(CountryProductionTechnology.class), country.getView(CountryMarket.class));
+                    building.set(newEconomyBuilding(buildingType, advancedRecipe, site.ownerTagId()));
                 }
                 continue;
             }

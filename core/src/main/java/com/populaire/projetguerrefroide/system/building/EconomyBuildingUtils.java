@@ -10,6 +10,7 @@ import com.populaire.projetguerrefroide.component.CountryMarket;
 import com.populaire.projetguerrefroide.component.CountryMarketMutView;
 import com.populaire.projetguerrefroide.component.CountryMarketView;
 import com.populaire.projetguerrefroide.component.CountryProductionPolicyView;
+import com.populaire.projetguerrefroide.component.CountryProductionTechnologyView;
 import com.populaire.projetguerrefroide.component.EconomyBuilding;
 import com.populaire.projetguerrefroide.component.EconomyBuildingMutView;
 import com.populaire.projetguerrefroide.component.EconomyBuildingTypeView;
@@ -87,8 +88,8 @@ public class EconomyBuildingUtils {
         return 1f + (buildingType.secondaryWorkerEffectMultiplier() - 1f) * (2f * secondaryFill - 1f);
     }
 
-    public static float outputScale(CountryProductionPolicyView productionPolicy, EconomyBuildingTypeView buildingType, int level, float secondaryFill, float effectiveScale) {
-        return throughput(productionPolicy, level) * (1f + productionPolicy.factoryOutputModifier()) * staffingFactor(buildingType, secondaryFill) * effectiveScale;
+    public static float outputScale(CountryProductionPolicyView productionPolicy, float productivity, EconomyBuildingTypeView buildingType, int level, float secondaryFill, float effectiveScale) {
+        return throughput(productionPolicy, level) * (1f + productionPolicy.factoryOutputModifier() + productivity) * staffingFactor(buildingType, secondaryFill) * effectiveScale;
     }
 
     public static float infrastructureBonus(RegionInstanceView regionInstance) {
@@ -109,6 +110,26 @@ public class EconomyBuildingUtils {
             cost += (double) inputScale * economyBuilding.activeInputAmounts(g) * countryMarket.goodBudgetPrices(goodIndex);
         }
         return cost;
+    }
+
+    public static double recipeCost(EconomyBuildingTypeView buildingType, boolean advanced, CountryMarketView countryMarket) {
+        double cost = 0.0;
+        for (int g = 0; g < MAX_GOODS; g++) {
+            int goodIndex = advanced ? buildingType.advancedGoodInputIndexes(g) : buildingType.goodInputIndexes(g);
+            if (goodIndex < 0) {
+                break;
+            }
+            float amount = advanced ? buildingType.advancedGoodInputAmounts(g) : buildingType.goodInputAmounts(g);
+            cost += (double) amount * countryMarket.goodBudgetPrices(goodIndex);
+        }
+        return cost;
+    }
+
+    /** Recipe of a new building: the advanced one when the country has its technology and it costs less. */
+    public static boolean chooseAdvancedRecipe(EconomyBuildingTypeView buildingType, CountryProductionTechnologyView production, CountryMarketView countryMarket) {
+        return buildingType.advancedGoodInputIndexes(0) >= 0
+            && production.advancedRecipes(buildingType.typeIndex())
+            && recipeCost(buildingType, true, countryMarket) < recipeCost(buildingType, false, countryMarket);
     }
 
     public static float wagePerUnit(CountryMarketView countryMarket, RegionInstanceView regionInstance, int popTypeIndex, float minWageFactor) {

@@ -279,6 +279,7 @@ public final class EconomyLoader {
             long[] artisanCraftIds = new long[MAX_ARTISAN_CRAFTS];
             int artisanCraftCount = 0;
             int artisanPopTypeIndex = -1;
+            int economyBuildingTypeCount = 0;
             for(var economyBuildingEntry : buildings.economyBuilding().entrySet()) {
                 EntityView building = this.ecsWorld.obtainEntityView(this.ecsWorld.entity(economyBuildingEntry.getKey()));
                 building.add(Flecs.Prefab);
@@ -313,7 +314,11 @@ public final class EconomyLoader {
                     outputGoodAmount = outputGood.getValue().floatValue();
                 }
                 ProductionType productionType = productionTypes.get(buildingJson.baseType());
+                if (economyBuildingTypeCount >= MAX_ECONOMY_BUILDING_TYPES) {
+                    throw new IllegalStateException("Too many economy building types: " + buildings.economyBuilding().size());
+                }
                 building.set(new EconomyBuildingType(
+                    economyBuildingTypeCount++,
                     time,
                     maxLevel,
                     goodCostIndexes,
