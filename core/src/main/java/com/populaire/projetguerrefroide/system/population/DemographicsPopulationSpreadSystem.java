@@ -35,7 +35,7 @@ public class DemographicsPopulationSpreadSystem {
             provinceDemographics.totalEmployment(provinceDemographics.totalEmployment() + population.employment());
             provinceDemographics.consciousness(provinceDemographics.consciousness() + population.consciousness());
             provinceDemographics.militancy(provinceDemographics.militancy() + population.militancy());
-            provinceDemographics.literacy(provinceDemographics.literacy() + population.literacy());
+            provinceDemographics.literacy(provinceDemographics.literacy() + population.literacy() * population.amount());
             provinceDemographics.lifeNeedsSatisfaction(provinceDemographics.lifeNeedsSatisfaction() + population.lifeNeedsSatisfaction());
             provinceDemographics.everydayNeedsSatisfaction(provinceDemographics.everydayNeedsSatisfaction() + population.everydayNeedsSatisfaction());
             provinceDemographics.luxuryNeedsSatisfaction(provinceDemographics.luxuryNeedsSatisfaction() + population.luxuryNeedsSatisfaction());
@@ -45,7 +45,7 @@ public class DemographicsPopulationSpreadSystem {
             provinceDemographics.employmentByPopType(popTypeIndex, provinceDemographics.employmentByPopType(popTypeIndex) + population.employment());
             provinceDemographics.consciousnessByPopType(popTypeIndex, provinceDemographics.consciousnessByPopType(popTypeIndex) + population.consciousness());
             provinceDemographics.militancyByPopType(popTypeIndex, provinceDemographics.militancyByPopType(popTypeIndex) + population.militancy());
-            provinceDemographics.literacyByPopType(popTypeIndex, provinceDemographics.literacyByPopType(popTypeIndex) + population.literacy());
+            provinceDemographics.literacyByPopType(popTypeIndex, provinceDemographics.literacyByPopType(popTypeIndex) + population.literacy() * population.amount());
             provinceDemographics.savingsByPopType(popTypeIndex, provinceDemographics.savingsByPopType(popTypeIndex) + population.savings());
             provinceDemographics.lifeNeedsSatisfactionByPopType(popTypeIndex, provinceDemographics.lifeNeedsSatisfactionByPopType(popTypeIndex) + population.lifeNeedsSatisfaction());
             provinceDemographics.everydayNeedsSatisfactionByPopType(popTypeIndex, provinceDemographics.everydayNeedsSatisfactionByPopType(popTypeIndex) + population.everydayNeedsSatisfaction());

@@ -26,9 +26,16 @@ public class PopulationInitializationSystem {
         float spendingRate = SPENDING_RATES_BY_STRATA[populationTypeData.strata()];
 
         Field<Population> populationField = iter.field(Population.class, 0);
+        long countryId = 0;
+        float literacy = 0f;
         for(int i = 0; i < iter.count(); i++) {
             PopulationMutView population = populationField.getMutView(i);
 
+            if (population.countryId() != countryId) {
+                countryId = population.countryId();
+                literacy = countryId != 0 ? iter.stage().obtainEntityView(countryId).<CountryDevelopmentView>getView(CountryDevelopment.class).literacy() : 0f;
+            }
+            population.literacy(literacy);
             population.savings(baseSavings / spendingRate * population.amount() / NEEDS_SCALING_FACTOR);
             population.lifeNeedsSatisfaction(1f);
             population.everydayNeedsSatisfaction(0.5f);

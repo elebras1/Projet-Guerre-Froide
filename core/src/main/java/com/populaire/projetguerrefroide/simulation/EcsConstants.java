@@ -10,16 +10,22 @@ import com.populaire.projetguerrefroide.component.Good;
 import com.populaire.projetguerrefroide.component.GoodView;
 import com.populaire.projetguerrefroide.component.GlobalPopulationTypeView;
 import com.populaire.projetguerrefroide.component.Modifiers;
+import com.populaire.projetguerrefroide.component.ModifiersView;
 import com.populaire.projetguerrefroide.component.PopulationType;
 import com.populaire.projetguerrefroide.component.PopulationTypeView;
 import com.populaire.projetguerrefroide.component.SpecialBuildingType;
+import com.populaire.projetguerrefroide.component.Technology;
+import com.populaire.projetguerrefroide.component.TechnologyView;
 import com.populaire.projetguerrefroide.system.state.StateBudgetUtils;
 import io.github.elebras1.flecs.EntityView;
 import io.github.elebras1.flecs.Flecs;
+import io.github.elebras1.flecs.Query;
 import io.github.elebras1.flecs.World;
 
 import static com.populaire.projetguerrefroide.simulation.Constants.GOOD_COUNT;
+import static com.populaire.projetguerrefroide.simulation.Constants.MAX_TECHNOLOGIES;
 import static com.populaire.projetguerrefroide.simulation.Constants.POP_TYPE_COUNT;
+import static com.populaire.projetguerrefroide.simulation.Constants.RESEARCH_EFFICIENCY;
 
 public class EcsConstants {
     private static final String SEA_PROVINCE_TAG = "SeaProvinceTag";
@@ -99,6 +105,14 @@ public class EcsConstants {
     private final boolean[] ruralPopTypes;
     private final boolean[] employeePopTypes;
     private final float[] goodCosts;
+    private final float[] civilianGoodCosts;
+    private final long[] technologyIds;
+    private final int[] technologyYears;
+    private final int[] technologyTimes;
+    private final int[] technologyTrees;
+    private final int[][] technologyPrerequisites;
+    private final float[] technologyResearchEfficiencies;
+    private int technologyCount;
     private final float[] goodStockDecays;
     private long globalMarket;
     private long globalPopulationType;
@@ -150,6 +164,13 @@ public class EcsConstants {
         this.ruralPopTypes = new boolean[POP_TYPE_COUNT];
         this.employeePopTypes = new boolean[POP_TYPE_COUNT];
         this.goodCosts = new float[GOOD_COUNT];
+        this.civilianGoodCosts = new float[GOOD_COUNT];
+        this.technologyIds = new long[MAX_TECHNOLOGIES];
+        this.technologyYears = new int[MAX_TECHNOLOGIES];
+        this.technologyTimes = new int[MAX_TECHNOLOGIES];
+        this.technologyTrees = new int[MAX_TECHNOLOGIES];
+        this.technologyPrerequisites = new int[MAX_TECHNOLOGIES][];
+        this.technologyResearchEfficiencies = new float[MAX_TECHNOLOGIES];
         this.goodStockDecays = new float[GOOD_COUNT];
         this.declareTypeInheritance(ecsWorld);
     }
@@ -176,11 +197,50 @@ public class EcsConstants {
         }
         GlobalGoodView globalGoodData = ecsWorld.obtainEntityView(this.globalGood).getView(GlobalGood.class);
         for (int g = 0; g < GOOD_COUNT; g++) {
-            GoodView good = ecsWorld.obtainEntityView(globalGoodData.goodIds(g)).getView(Good.class);
+            EntityView goodEntity = ecsWorld.obtainEntityView(globalGoodData.goodIds(g));
+            GoodView good = goodEntity.getView(Good.class);
             this.goodCosts[g] = good.cost();
             this.goodStockDecays[g] = good.stockDecay();
+            this.civilianGoodCosts[g] = goodEntity.has(this.militaryGoodTag) ? 0f : good.cost();
         }
+        this.resolveTechnologies(ecsWorld);
         this.globalsResolved = true;
+    }
+
+    private void resolveTechnologies(World ecsWorld) {
+        long researchEfficiencyTag = ecsWorld.lookup(RESEARCH_EFFICIENCY);
+        Query technologyQuery = ecsWorld.query().with(Technology.class).build();
+        technologyQuery.each(technologyId -> {
+            TechnologyView technology = ecsWorld.obtainEntityView(technologyId).getView(Technology.class);
+            int index = technology.index();
+            this.technologyIds[index] = technologyId;
+            this.technologyYears[index] = technology.year();
+            this.technologyTimes[index] = technology.time();
+            this.technologyTrees[index] = technology.tree();
+            this.technologyCount = Math.max(this.technologyCount, index + 1);
+            long[] prerequisiteIds = new long[technology.prerequisiteIdsLength()];
+            int prerequisiteCount = 0;
+            for (int p = 0; p < prerequisiteIds.length; p++) {
+                if (technology.prerequisiteIds(p) != 0) {
+                    prerequisiteIds[prerequisiteCount++] = technology.prerequisiteIds(p);
+                }
+            }
+            int[] prerequisites = new int[prerequisiteCount];
+            for (int p = 0; p < prerequisiteCount; p++) {
+                prerequisites[p] = ecsWorld.obtainEntityView(prerequisiteIds[p]).<TechnologyView>getView(Technology.class).index();
+            }
+            this.technologyPrerequisites[index] = prerequisites;
+            EntityView technologyEntity = ecsWorld.obtainEntityView(technologyId);
+            if (technologyEntity.has(Modifiers.class)) {
+                ModifiersView modifiers = technologyEntity.getView(Modifiers.class);
+                for (int m = 0; m < modifiers.tagIdsLength(); m++) {
+                    if (modifiers.tagIds(m) == researchEfficiencyTag) {
+                        this.technologyResearchEfficiencies[index] = modifiers.values(m);
+                    }
+                }
+            }
+        });
+        technologyQuery.destruct();
     }
 
     private void requireGlobals() {
@@ -257,6 +317,46 @@ public class EcsConstants {
     public boolean[] employeePopTypes() {
         this.requireGlobals();
         return this.employeePopTypes;
+    }
+
+    public float[] civilianGoodCosts() {
+        this.requireGlobals();
+        return this.civilianGoodCosts;
+    }
+
+    public int technologyCount() {
+        this.requireGlobals();
+        return this.technologyCount;
+    }
+
+    public long[] technologyIds() {
+        this.requireGlobals();
+        return this.technologyIds;
+    }
+
+    public int[] technologyYears() {
+        this.requireGlobals();
+        return this.technologyYears;
+    }
+
+    public int[] technologyTimes() {
+        this.requireGlobals();
+        return this.technologyTimes;
+    }
+
+    public int[] technologyTrees() {
+        this.requireGlobals();
+        return this.technologyTrees;
+    }
+
+    public int[][] technologyPrerequisites() {
+        this.requireGlobals();
+        return this.technologyPrerequisites;
+    }
+
+    public float[] technologyResearchEfficiencies() {
+        this.requireGlobals();
+        return this.technologyResearchEfficiencies;
     }
 
     public float[] goodCosts() {

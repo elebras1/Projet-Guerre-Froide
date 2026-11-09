@@ -29,6 +29,8 @@ public class EconomyPipelines {
     private final RGOSizeSystem rgoSizeSystem;
     private final LawEffectInitializationSystem lawEffectInitializationSystem;
     private final TechnologyEffectInitializationSystem technologyEffectInitializationSystem;
+    private final DevelopmentIndexSystem developmentIndexSystem;
+    private final ResearchSystem researchSystem;
     private final EconomyBuildingOwnerInitializationSystem economyBuildingOwnerInitializationSystem;
     private final CountryMarketInitializationSystem countryMarketInitializationSystem;
     private final GlobalMarketInitializationSystem globalMarketInitializationSystem;
@@ -253,7 +255,7 @@ public class EconomyPipelines {
         this.demographicsProvinceSpreadSystem = new DemographicsProvinceSpreadSystem(ecsWorld, phaseSpread);
         this.demographicsRegionInstanceSpreadSystem = new DemographicsRegionInstanceSpreadSystem(ecsWorld, phaseSpread);
         this.lawEffectInitializationSystem = new LawEffectInitializationSystem(ecsWorld, phaseInit);
-        this.technologyEffectInitializationSystem = new TechnologyEffectInitializationSystem(ecsWorld, phaseInit);
+        this.technologyEffectInitializationSystem = new TechnologyEffectInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInit);
         this.economyBuildingOwnerInitializationSystem = new EconomyBuildingOwnerInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInit);
         this.rgoSizeSystem = new RGOSizeSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInit);
         this.infrastructureInitializationSystem = new InfrastructureInitializationSystem(ecsWorld, phaseInit);
@@ -355,6 +357,8 @@ public class EconomyPipelines {
         this.constructionClosureSystem = new ConstructionClosureSystem(ecsWorld, simulationContext.getEcsConstants(), phaseState);
         this.economyBuildingClosureSystem = new EconomyBuildingClosureSystem(ecsWorld, simulationContext.getEcsConstants(), phaseState);
         this.investmentDecisionSystem = new InvestmentDecisionSystem(ecsWorld, simulationContext.getEcsConstants(), phaseState);
+        this.developmentIndexSystem = new DevelopmentIndexSystem(ecsWorld, simulationContext.getEcsConstants(), phaseState);
+        this.researchSystem = new ResearchSystem(ecsWorld, simulationContext.getEcsConstants(), phaseState);
         this.economyCalendarSystem = new EconomyCalendarSystem(ecsWorld, phaseCalendar);
     }
 

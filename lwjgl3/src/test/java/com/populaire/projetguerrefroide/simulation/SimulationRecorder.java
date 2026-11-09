@@ -26,6 +26,10 @@ import com.populaire.projetguerrefroide.component.CountryCulturePolicy;
 import com.populaire.projetguerrefroide.component.CountryCulturePolicyView;
 import com.populaire.projetguerrefroide.component.CountryDemographics;
 import com.populaire.projetguerrefroide.component.CountryDemographicsView;
+import com.populaire.projetguerrefroide.component.CountryDevelopment;
+import com.populaire.projetguerrefroide.component.CountryDevelopmentView;
+import com.populaire.projetguerrefroide.component.CountryTechnology;
+import com.populaire.projetguerrefroide.component.CountryTechnologyView;
 import com.populaire.projetguerrefroide.component.CountryEducationPolicy;
 import com.populaire.projetguerrefroide.component.CountryEducationPolicyView;
 import com.populaire.projetguerrefroide.component.CountryLaborPolicy;
@@ -125,6 +129,11 @@ import static com.populaire.projetguerrefroide.system.state.IncomeTypeUtils.RELI
 import static com.populaire.projetguerrefroide.system.population.StrataUtils.MIDDLE_STRATA;
 import static com.populaire.projetguerrefroide.system.population.StrataUtils.POOR_STRATA;
 import static com.populaire.projetguerrefroide.system.population.StrataUtils.RICH_STRATA;
+import static com.populaire.projetguerrefroide.simulation.Constants.MAX_TECHNOLOGIES;
+import static com.populaire.projetguerrefroide.simulation.Constants.TECHNOLOGY_TREE_COUNT;
+import static com.populaire.projetguerrefroide.simulation.Constants.TECHNOLOGY_TREE_MILITARY;
+import static com.populaire.projetguerrefroide.simulation.Constants.TECHNOLOGY_TREE_PRODUCTION;
+import static com.populaire.projetguerrefroide.simulation.Constants.TECHNOLOGY_TREE_SOCIETY;
 
 public class SimulationRecorder implements AutoCloseable {
 
@@ -229,6 +238,7 @@ public class SimulationRecorder implements AutoCloseable {
 
     private final String[] goodNames = new String[GOOD_COUNT];
     private final List<String> countryNames = new ArrayList<>();
+    private boolean[][] knownTechnologies;
     private final Map<Long, Integer> countryIndexByEntity = new HashMap<>();
 
     private final String[] popTypeNames = new String[POP_TYPE_COUNT];
@@ -401,6 +411,7 @@ public class SimulationRecorder implements AutoCloseable {
         this.readGoodNames();
         this.readPopTypeNames();
         this.readCountries();
+        this.readTechnologyStock();
         this.readBuildingTypes();
         this.readRgoTypes();
 
@@ -562,6 +573,41 @@ public class SimulationRecorder implements AutoCloseable {
         }
     }
 
+    private void readTechnologyStock() {
+        this.knownTechnologies = new boolean[this.countryNames.size()][MAX_TECHNOLOGIES];
+        for (int c = 0; c < this.countryNames.size(); c++) {
+            CountryTechnologyView technology = this.ecsWorld.obtainEntityView(this.ecsWorld.lookup(this.countryNames.get(c))).getView(CountryTechnology.class);
+            for (int t = 0; t < MAX_TECHNOLOGIES; t++) {
+                this.knownTechnologies[c][t] = technology.acquired(t);
+            }
+        }
+    }
+
+    private void recordTechnology(int year, String date) {
+        int[] technologyTrees = this.ecsConstants.technologyTrees();
+        long[] technologyIds = this.ecsConstants.technologyIds();
+        for (int c = 0; c < this.countryNames.size(); c++) {
+            String country = this.countryNames.get(c);
+            long countryId = this.ecsWorld.lookup(country);
+            CountryTechnologyView technology = this.ecsWorld.obtainEntityView(countryId).getView(CountryTechnology.class);
+            int[] acquiredByTree = new int[TECHNOLOGY_TREE_COUNT];
+            for (int t = 0; t < this.ecsConstants.technologyCount(); t++) {
+                if (technology.acquired(t)) {
+                    acquiredByTree[technologyTrees[t]]++;
+                    if (!this.knownTechnologies[c][t]) {
+                        this.knownTechnologies[c][t] = true;
+                        this.writer("country/technology_acquired.csv").row(year, date, country, this.ecsWorld.obtainEntity(technologyIds[t]).name());
+                    }
+                }
+            }
+            CountryDevelopmentView development = this.ecsWorld.obtainEntityView(countryId).getView(CountryDevelopment.class);
+            CountryEducationPolicyView educationPolicy = this.ecsWorld.obtainEntityView(countryId).getView(CountryEducationPolicy.class);
+            this.writer("country/development.csv").row(year, date, country, development.outputRatio(), development.outputPosition(), development.literacy(),
+                development.index(), development.researchFactor(), educationPolicy.researchEfficiency(),
+                acquiredByTree[TECHNOLOGY_TREE_PRODUCTION], acquiredByTree[TECHNOLOGY_TREE_MILITARY], acquiredByTree[TECHNOLOGY_TREE_SOCIETY]);
+        }
+    }
+
     private void readBuildingTypes() {
         Query query = this.ecsWorld.query().with(EconomyBuildingType.class).self().with(Flecs.Prefab).build();
         List<Long> ids = new ArrayList<>();
@@ -617,6 +663,9 @@ public class SimulationRecorder implements AutoCloseable {
 
         this.writer("country/market.csv").header("tick", "date", "country", "good", "price", "demand", "satisfaction", "stock", "produced", "consumed", "import_need", "imported", "exported", "lost");
         this.writer("country/poor_life.csv").header("year", "date", "country", "adults", "poor_life");
+        this.writer("country/development.csv").header("year", "date", "country", "output_ratio", "output_position", "literacy", "index", "research_factor",
+            "research_efficiency", "acquired_production", "acquired_military", "acquired_society");
+        this.writer("country/technology_acquired.csv").header("year", "date", "country", "technology");
         this.writer("country/strategic_stock.csv").header("tick", "date", "country", "levels", "capacity", "stock_value", "purchased_value", "released_value", "lost_value",
             "spent", "earned", "stock_market_value");
         this.writer("country/military_bases.csv").header("tick", "date", "country", "naval_capacity", "naval_load", "air_capacity", "air_load",
@@ -854,6 +903,7 @@ public class SimulationRecorder implements AutoCloseable {
 
     private void recordYear(int tick, String date) {
         int year = (tick + 1) / DAYS_PER_YEAR;
+        this.recordTechnology(year, date);
         double ticks = Math.max(1, this.yearTicks);
 
         double worstCountryLife = Double.MAX_VALUE;

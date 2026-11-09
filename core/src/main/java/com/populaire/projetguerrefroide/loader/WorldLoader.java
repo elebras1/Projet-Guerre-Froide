@@ -23,7 +23,7 @@ public final class WorldLoader {
         CountryLoader country = new CountryLoader(context);
         MapLoader map = new MapLoader(context);
 
-        economy.createGlobalMarket();
+        economy.createGlobalMarket(this.worldDao.readStartDate());
         politics.loadIdeologies(this.worldDao.readIdeologies());
         politics.loadLaws(this.worldDao.readLaws());
         politics.loadGovernments(this.worldDao.readGovernments());

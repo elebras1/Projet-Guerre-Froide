@@ -112,6 +112,7 @@ public class EconomySimulationAnalysisTest {
         world.component(Country.class);
         world.component(Technology.class);
         world.component(CountryTechnology.class);
+        world.component(CountryDevelopment.class);
         world.component(Province.class);
         world.component(Law.class);
         world.component(LawGroup.class);
@@ -224,6 +225,7 @@ public class EconomySimulationAnalysisTest {
             }
         }
         assertEquals(21, acquired);
+        assertEquals(0.97f, this.ecsWorld.obtainEntityView(usaId).<CountryDevelopmentView>getView(CountryDevelopment.class).literacy(), 1e-6f);
 
         long westBerlinId = this.ecsWorld.lookup("WBR");
         CountryTechnologyView westBerlinTechnology = this.ecsWorld.obtainEntityView(westBerlinId).getView(CountryTechnology.class);
@@ -300,6 +302,46 @@ public class EconomySimulationAnalysisTest {
                 assertTrue(forceTypeTagId == landForceTag || forceTypeTagId == seaForceTag || forceTypeTagId == airForceTag);
             }
         });
+    }
+
+    @Test
+    @Order(4)
+    public void researchFollowsPrerequisitesAfterSimulation() {
+        int[][] prerequisites = this.ecsConstants.technologyPrerequisites();
+        int technologyCount = this.ecsConstants.technologyCount();
+        assertEquals(169, technologyCount);
+        Query countryQuery = this.ecsWorld.query().with(CountryTechnology.class).with(CountryDevelopment.class).with(CountryDemographics.class).build();
+        countryQuery.iter(iter -> {
+            Field<CountryTechnology> technologyField = iter.field(CountryTechnology.class, 0);
+            Field<CountryDevelopment> developmentField = iter.field(CountryDevelopment.class, 1);
+            Field<CountryDemographics> demographicsField = iter.field(CountryDemographics.class, 2);
+            for (int i = 0; i < iter.count(); i++) {
+                CountryTechnologyView technology = technologyField.getMutView(i);
+                for (int t = 0; t < technologyCount; t++) {
+                    if (technology.acquired(t)) {
+                        for (int prerequisite : prerequisites[t]) {
+                            assertTrue(technology.acquired(prerequisite), "Prerequisite missing for technology " + t);
+                        }
+                    }
+                }
+                CountryDemographicsView demographics = demographicsField.getMutView(i);
+                if (demographics.totalAdults() > 0L) {
+                    CountryDevelopmentView development = developmentField.getMutView(i);
+                    assertTrue(development.index() >= 0f && development.index() <= 1f);
+                    assertTrue(development.researchFactor() >= 0.5f - 1e-5f && development.researchFactor() <= 3f + 1e-5f);
+                    assertEquals(development.literacy(), demographics.literacy() / demographics.totalAdults(), 1e-3f);
+                }
+            }
+        });
+        countryQuery.destruct();
+        CountryTechnologyView usaTechnology = this.ecsWorld.obtainEntityView(this.ecsWorld.lookup("USA")).getView(CountryTechnology.class);
+        int acquired = 0;
+        for (int t = 0; t < technologyCount; t++) {
+            if (usaTechnology.acquired(t)) {
+                acquired++;
+            }
+        }
+        assertTrue(acquired > 21, "The USA should have researched technologies, got " + acquired);
     }
 
     @Test

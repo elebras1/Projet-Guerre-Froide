@@ -20,5 +20,6 @@ public record CountryHistoryJson(
     List<ArmyJson> armies,
     List<NavyJson> navies,
     @JsonAttribute(name = "air_wings") List<AirWingJson> airWings,
+    Double literacy,
     List<String> technologies) {
 }

@@ -26,6 +26,13 @@ public class Constants {
     public static final int TECHNOLOGY_TREE_PRODUCTION = 0;
     public static final int TECHNOLOGY_TREE_MILITARY = 1;
     public static final int TECHNOLOGY_TREE_SOCIETY = 2;
+    public static final int TECHNOLOGY_TREE_COUNT = 3;
+    public static final float TECHNOLOGY_DATE_DOUBLING_YEARS = 3f;
+    public static final float TECHNOLOGY_DATE_FLOOR = 0.5f;
+    public static final float DEVELOPMENT_OUTPUT_RATIO_LOW = 0.25f;
+    public static final float DEVELOPMENT_OUTPUT_RATIO_HIGH = 4f;
+    public static final float DEVELOPMENT_FACTOR_LOWEST_INDEX = 3f;
+    public static final float DEVELOPMENT_FACTOR_HIGHEST_INDEX = 0.5f;
     public static final int MAX_CULTURES = 32;
     public static final int MAX_RELIGIONS = 8;
     public static final int MAX_PROVINCE_CORES = 8;

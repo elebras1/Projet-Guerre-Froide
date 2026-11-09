@@ -23,6 +23,7 @@ public final class ComponentRegistry {
         ecsWorld.component(Country.class);
         ecsWorld.component(Technology.class);
         ecsWorld.component(CountryTechnology.class);
+        ecsWorld.component(CountryDevelopment.class);
         ecsWorld.component(Province.class);
         ecsWorld.component(Law.class);
         ecsWorld.component(LawGroup.class);

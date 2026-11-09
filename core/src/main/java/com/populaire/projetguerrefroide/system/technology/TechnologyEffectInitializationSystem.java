@@ -1,25 +1,19 @@
 package com.populaire.projetguerrefroide.system.technology;
 
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 import io.github.elebras1.flecs.EntityView;
 import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
-import io.github.elebras1.flecs.Query;
 import io.github.elebras1.flecs.World;
 
 import static com.populaire.projetguerrefroide.simulation.Constants.*;
 
 public class TechnologyEffectInitializationSystem {
+    private final EcsConstants ecsConstants;
 
-    public TechnologyEffectInitializationSystem(World ecsWorld, long phaseId) {
-        long[] technologyIds = new long[MAX_TECHNOLOGIES];
-        Query technologyQuery = ecsWorld.query().with(Technology.class).build();
-        technologyQuery.each(entityId -> {
-            TechnologyView technology = ecsWorld.obtainEntityView(entityId).getView(Technology.class);
-            technologyIds[technology.index()] = entityId;
-        });
-        technologyQuery.destruct();
-
+    public TechnologyEffectInitializationSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("TechnologyEffectInitializationSystem")
             .kind(phaseId)
             .with(Country.class)
@@ -35,10 +29,11 @@ public class TechnologyEffectInitializationSystem {
             .with(CountryCulturePolicy.class)
             .with(CountryProfitDistributionPolicy.class)
             .multiThreaded()
-            .iter(iter -> this.initialize(iter, technologyIds));
+            .iter(this::initialize);
     }
 
-    private void initialize(Iter iter, long[] technologyIds) {
+    private void initialize(Iter iter) {
+        long[] technologyIds = this.ecsConstants.technologyIds();
         Field<CountryTechnology> countryTechnologyField = iter.field(CountryTechnology.class, 1);
         Field<CountryTaxPolicy> taxPolicyField = iter.field(CountryTaxPolicy.class, 2);
         Field<CountryBudgetPolicy> budgetPolicyField = iter.field(CountryBudgetPolicy.class, 3);

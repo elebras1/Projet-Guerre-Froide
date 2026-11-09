@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.populaire.projetguerrefroide.dao.csv.ProvinceDefinitionCsv;
 import com.populaire.projetguerrefroide.dao.json.*;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
@@ -35,6 +36,8 @@ public interface WorldDao {
     Map<String, UnitJson> readUnits();
 
     Map<String, TechnologyJson> readTechnologies();
+
+    LocalDate readStartDate();
 
     Map<String, CountryJson> readCountries();
 

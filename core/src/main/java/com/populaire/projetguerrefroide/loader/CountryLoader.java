@@ -6,6 +6,7 @@ import com.populaire.projetguerrefroide.simulation.EcsConstants;
 import io.github.elebras1.flecs.EntityView;
 import io.github.elebras1.flecs.World;
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.Map;
 
 import static com.populaire.projetguerrefroide.simulation.Constants.*;
@@ -126,7 +127,11 @@ public final class CountryLoader {
                     acquiredTechnologies[technology.index()] = true;
                 }
             }
-            country.set(new CountryTechnology(acquiredTechnologies, -1, 0f));
+            int[] currentTechnologyIndexes = new int[TECHNOLOGY_TREE_COUNT];
+            Arrays.fill(currentTechnologyIndexes, -1);
+            country.set(new CountryTechnology(acquiredTechnologies, currentTechnologyIndexes, new float[MAX_TECHNOLOGIES]));
+            float literacy = countryHistory.literacy() != null ? countryHistory.literacy().floatValue() : 0f;
+            country.set(new CountryDevelopment(literacy, 0f, 0f, 0f, 0f));
             country.set(new CountryMarket(new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new double[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new double[POP_TYPE_COUNT], new double[POP_TYPE_COUNT], new double[POP_TYPE_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], 0d, 0f, new double[GOOD_COUNT], 0f, 0f, 0f, 0d, 0d, 0d, new float[GOOD_COUNT]));
             country.set(new CountryDemographics(0, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, new long[POP_TYPE_COUNT], new long[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0, new float[POP_TYPE_COUNT]));
             country.set(new CountryTaxPolicy(0f, 0f, 0f, 0f, 0f));

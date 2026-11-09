@@ -13,6 +13,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.StringReader;
 import java.lang.reflect.Type;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -51,6 +52,7 @@ public class WorldDaoImpl implements WorldDao {
     private final String stateConsumptionJsonFile = this.commonPath + "state_consumption.json";
     private final String unitsJsonFile = this.commonPath + "units.json";
     private final String technologiesJsonFile = this.commonPath + "technologies.json";
+    private final String bookmarkJsonFile = this.commonPath + "bookmark.json";
     private final DslJson<Object> dslJson = new DslJson<>(Settings.withRuntime().includeServiceLoader());
     private final Type pathsType = new TypeDefinition<Map<String, String>>() {}.type;
     private final Type pathListType = new TypeDefinition<List<String>>() {}.type;
@@ -127,6 +129,11 @@ public class WorldDaoImpl implements WorldDao {
     @Override
     public Map<String, UnitJson> readUnits() {
         return this.readIndexedJson(this.unitsJsonFile, this.commonPath, UnitJson.class);
+    }
+
+    @Override
+    public LocalDate readStartDate() {
+        return LocalDate.parse(this.readJson(this.bookmarkJsonFile, BookmarkFileJson.class).bookmark().date());
     }
 
     @Override
