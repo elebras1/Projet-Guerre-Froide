@@ -9,7 +9,7 @@ public record ResourceGathering(
     float efficiency,
     int size,
     float production,
-    float scale,
+    float employmentRemainder,
     int workerAmount,
     int slaveAmount,
     int vacancies,

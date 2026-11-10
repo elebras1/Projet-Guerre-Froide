@@ -69,10 +69,18 @@ public class RGOEmploymentSystem {
             if (adjustment > 0f && stocksAboveTarget || adjustment < 0f && !stocksAboveTarget) {
                 adjustment = 0f;
             }
-            int workerAmount = resourceGathering.workerAmount() + Math.round(adjustment * maximumWorkers);
+            float remainder = resourceGathering.employmentRemainder();
+            if (adjustment == 0f || adjustment > 0f != remainder > 0f) {
+                remainder = 0f;
+            }
+            float step = adjustment * maximumWorkers + remainder;
+            int moved = (int) step;
+            int workerAmount = resourceGathering.workerAmount() + moved;
+            int boundedWorkerAmount = Math.max(0, Math.min(maximumWorkers, workerAmount));
+            resourceGathering.employmentRemainder(boundedWorkerAmount == workerAmount ? step - moved : 0f);
             resourceGathering.vacancies(adjustment > 0f ? Math.max(0, targetWorkers - activeWorkerAmount) : 0);
             resourceGathering.applicants(0f);
-            resourceGathering.workerAmount(Math.max(0, Math.min(maximumWorkers, workerAmount)));
+            resourceGathering.workerAmount(boundedWorkerAmount);
             resourceGathering.slaveAmount(Math.min(targetSlaves, demographics.totalByPopType(slaveIndex)));
         }
     }
