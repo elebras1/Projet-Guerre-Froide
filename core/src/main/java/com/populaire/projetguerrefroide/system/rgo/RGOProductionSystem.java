@@ -66,7 +66,9 @@ public class RGOProductionSystem {
             float currentSlaveBonus = 1.0f + (slaveFulfillment * maxBonus);
 
             ProvinceInfrastructureView provinceInfrastructure = provinceInfrastructureField.getMutView(i);
-            resourceGathering.production(coreProduction * currentSlaveBonus * (1f + provinceInfrastructure.productionBonus()));
+            float infrastructure = 1f + provinceInfrastructure.productionBonus();
+            resourceGathering.production(coreProduction * currentSlaveBonus * infrastructure);
+            resourceGathering.workerOutput(targetWorkers > 0 ? baseProduction * workerEffectMultiplier * currentSlaveBonus * infrastructure / targetWorkers : 0f);
         }
     }
 }

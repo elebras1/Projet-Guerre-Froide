@@ -31,6 +31,8 @@ public class EconomyPipelines {
     private final TechnologyEffectInitializationSystem technologyEffectInitializationSystem;
     private final DevelopmentIndexSystem developmentIndexSystem;
     private final ResearchSystem researchSystem;
+    private final RGOMechanizationDemandSystem rgoMechanizationDemandSystem;
+    private final RGOMechanizationPurchaseSystem rgoMechanizationPurchaseSystem;
     private final EconomyBuildingRecipeSystem economyBuildingRecipeSystem;
     private final EconomyBuildingOwnerInitializationSystem economyBuildingOwnerInitializationSystem;
     private final CountryMarketInitializationSystem countryMarketInitializationSystem;
@@ -295,6 +297,7 @@ public class EconomyPipelines {
         this.economyBuildingConsumptionSystem = new EconomyBuildingConsumptionSystem(ecsWorld, phaseConsumption);
         this.artisanDemandSystem = new ArtisanDemandSystem(ecsWorld, simulationContext.getEcsConstants(), phaseConsumption);
         this.constructionDemandSystem = new ConstructionDemandSystem(ecsWorld, simulationContext.getEcsConstants(), phaseConsumption);
+        this.rgoMechanizationDemandSystem = new RGOMechanizationDemandSystem(ecsWorld, simulationContext.getEcsConstants(), phaseConsumption);
         this.stateConsumptionDemandSystem = new StateConsumptionDemandSystem(ecsWorld, simulationContext.getEcsConstants(), phaseConsumption);
         this.maintenanceDemandSystem = new MaintenanceDemandSystem(ecsWorld, phaseConsumption);
         this.strategicStockDemandSystem = new StrategicStockDemandSystem(ecsWorld, phaseConsumption);
@@ -308,6 +311,7 @@ public class EconomyPipelines {
         this.economyBuildingPurchaseSystem = new EconomyBuildingPurchaseSystem(ecsWorld, phaseSettlement);
         this.artisanPurchaseSystem = new ArtisanPurchaseSystem(ecsWorld, phaseSettlement);
         this.constructionPurchaseSystem = new ConstructionPurchaseSystem(ecsWorld, simulationContext.getEcsConstants(), phaseSettlement);
+        this.rgoMechanizationPurchaseSystem = new RGOMechanizationPurchaseSystem(ecsWorld, simulationContext.getEcsConstants(), phaseSettlement);
         this.stateConsumptionPurchaseSystem = new StateConsumptionPurchaseSystem(ecsWorld, phaseSettlement);
         this.maintenancePurchaseSystem = new MaintenancePurchaseSystem(ecsWorld, phaseSettlement);
         this.strategicStockPurchaseSystem = new StrategicStockPurchaseSystem(ecsWorld, phaseSettlement);

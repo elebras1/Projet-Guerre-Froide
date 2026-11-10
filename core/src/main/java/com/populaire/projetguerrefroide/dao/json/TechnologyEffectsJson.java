@@ -11,5 +11,6 @@ public record TechnologyEffectsJson(
     Map<String, Double> modifiers,
     @JsonAttribute(name = "rgo_productivity") Map<String, Double> rgoProductivity,
     @JsonAttribute(name = "factory_productivity") Map<String, Double> factoryProductivity,
-    @JsonAttribute(name = "production_methods") List<String> productionMethods) {
+    @JsonAttribute(name = "production_methods") List<String> productionMethods,
+    @JsonAttribute(name = "rgo_mechanization_cap") Map<String, Double> rgoMechanizationCap) {
 }

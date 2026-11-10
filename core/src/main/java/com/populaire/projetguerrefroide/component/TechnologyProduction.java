@@ -11,5 +11,7 @@ public record TechnologyProduction(
     @FixedArray(length = MAX_TECHNOLOGY_EFFECTS) float[] rgoProductivities,
     @FixedArray(length = MAX_TECHNOLOGY_EFFECTS) int[] factoryTypeIndexes,
     @FixedArray(length = MAX_TECHNOLOGY_EFFECTS) float[] factoryProductivities,
-    @FixedArray(length = MAX_TECHNOLOGY_EFFECTS) int[] recipeTypeIndexes) {
+    @FixedArray(length = MAX_TECHNOLOGY_EFFECTS) int[] recipeTypeIndexes,
+    @FixedArray(length = MAX_TECHNOLOGY_EFFECTS) int[] mechanizationGoodIndexes,
+    @FixedArray(length = MAX_TECHNOLOGY_EFFECTS) int[] mechanizationCaps) {
 }

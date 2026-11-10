@@ -6,6 +6,8 @@ import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.simulation.EcsConstants;
 
 import static com.populaire.projetguerrefroide.simulation.Constants.MAX_GOODS;
+import static com.populaire.projetguerrefroide.simulation.Constants.RGO_MECHANIZATION_COST_SHARES;
+import static com.populaire.projetguerrefroide.simulation.Constants.RGO_MECHANIZATION_DAYS;
 import static com.populaire.projetguerrefroide.system.building.OwnerUtils.ownerIndex;
 
 public class ConstructionUtils {
@@ -90,6 +92,36 @@ public class ConstructionUtils {
         countryInvestment.sitesInProgress(countryInvestment.sitesInProgress() + 1);
         countryInvestment.sitesStarted(countryInvestment.sitesStarted() + 1);
         world.obtainEntityView(world.entity()).set(new ConstructionSite(buildingId, buildingTypeId, regionInstanceId, countryId, ownerTagId,
+            duration, committedCost, goodIndexes, goodAmounts, dailyGoods, new float[MAX_GOODS]));
+    }
+
+    /** A mechanization level of an RGO (decision T14 c): one year of the extra output at base cost, in capital goods. */
+    public static void startMechanizationSite(World world, EcsConstants ecsConstants, long provinceId, long regionInstanceId, long countryId, long ownerTagId, double baseValue) {
+        int[] costGoods = ecsConstants.mechanizationCostGoods();
+        float[] goodCosts = ecsConstants.goodCosts();
+        int[] goodIndexes = new int[MAX_GOODS];
+        float[] goodAmounts = new float[MAX_GOODS];
+        java.util.Arrays.fill(goodIndexes, -1);
+        EntityView country = world.obtainEntityView(countryId);
+        CountryMarketView countryMarket = country.getView(CountryMarket.class);
+        double committedCost = 0.0;
+        for (int k = 0; k < costGoods.length; k++) {
+            goodIndexes[k] = costGoods[k];
+            goodAmounts[k] = (float) (baseValue * RGO_MECHANIZATION_COST_SHARES[k] / goodCosts[costGoods[k]]);
+            committedCost += (double) goodAmounts[k] * countryMarket.goodBudgetPrices(costGoods[k]);
+        }
+        CountryProductionPolicyView productionPolicy = country.getView(CountryProductionPolicy.class);
+        int duration = Math.max(1, (int) (RGO_MECHANIZATION_DAYS * (1f - productionPolicy.constructionSpeed())));
+        CountryInvestmentMutView countryInvestment = country.getMutView(CountryInvestment.class);
+        int owner = ownerIndex(ownerTagId, ecsConstants);
+        countryInvestment.committed(owner, countryInvestment.committed(owner) + committedCost);
+        float[] dailyGoods = new float[MAX_GOODS];
+        for (int k = 0; k < MAX_GOODS; k++) {
+            dailyGoods[k] = goodIndexes[k] >= 0 ? goodAmounts[k] / duration : 0f;
+        }
+        countryInvestment.sitesInProgress(countryInvestment.sitesInProgress() + 1);
+        countryInvestment.sitesStarted(countryInvestment.sitesStarted() + 1);
+        world.obtainEntityView(world.entity()).set(new ConstructionSite(provinceId, ecsConstants.rgoMechanization(), regionInstanceId, countryId, ownerTagId,
             duration, committedCost, goodIndexes, goodAmounts, dailyGoods, new float[MAX_GOODS]));
     }
 

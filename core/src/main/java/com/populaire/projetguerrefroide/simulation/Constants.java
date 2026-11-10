@@ -92,6 +92,13 @@ public class Constants {
     public static float NEEDS_SCALING_FACTOR = 100000f;
     public static final float SHORTAGE_PRICE_PREMIUM = 0.5f;
     public static final float RECIPE_SWITCH_MARGIN = 0.1f;
+    public static final float RGO_MECHANIZATION_EFFICIENCY = 0.25f;
+    public static final int RGO_MECHANIZATION_DAYS = 180;
+    public static final float RGO_MECHANIZATION_UPKEEP_RATE = 0.1f;
+    public static final String[] RGO_MECHANIZATION_COST_GOODS = {"steel", "cement", "machine_parts"};
+    public static final float[] RGO_MECHANIZATION_COST_SHARES = {0.4f, 0.2f, 0.4f};
+    public static final String[] RGO_MECHANIZATION_UPKEEP_GOODS = {"machine_parts", "fuel"};
+    public static final float[] RGO_MECHANIZATION_UPKEEP_SHARES = {0.5f, 0.5f};
     public static final float[] SPENDING_RATES_BY_STRATA = {0.10f, 0.06f, 0.03f};
     public static final float MAXIMUM_LUXURY_BASKETS = 4f;
     public static final float SUBSISTENCE_LIFE_SHARE = 0.75f;

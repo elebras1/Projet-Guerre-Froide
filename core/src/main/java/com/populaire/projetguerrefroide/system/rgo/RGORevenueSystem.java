@@ -21,6 +21,25 @@ public class RGORevenueSystem {
             .iter(this::distribute);
     }
 
+    /**
+     * An RGO without workers or output takes the margin of a first hire: output of one worker at the country's price
+     * against the wage of one worker (decision T15). Otherwise its margin is computed on its revenue and wage bill.
+     */
+    private static float unitMargin(ResourceGatheringView resourceGathering, CountryMarketView countryMarket, int workerPopTypeIndex, float minWageFactor,
+                                    double revenue, float wageBill) {
+        if (wageBill > 0f) {
+            return (float) ((revenue - wageBill) / wageBill);
+        }
+        if (revenue > 0.0) {
+            return 1f;
+        }
+        float workerWage = wageBill(countryMarket, workerPopTypeIndex, minWageFactor, 1);
+        if (workerWage <= 0f || resourceGathering.workerOutput() <= 0f) {
+            return 0f;
+        }
+        return (countryMarket.goodPrices(resourceGathering.goodIndex()) * resourceGathering.workerOutput() - workerWage) / workerWage;
+    }
+
     private void distribute(Iter iter) {
         long countryId = 0;
         CountryMarketView countryMarket = null;
@@ -55,7 +74,7 @@ public class RGORevenueSystem {
             resourceGathering.treasury(treasury);
             resourceGathering.workerMinWage(wage);
             resourceGathering.profit((float) profit);
-            resourceGathering.unitMargin(wageBill > 0f ? (float) ((revenue - wageBill) / wageBill) : (revenue > 0.0 ? 1f : 0f));
+            resourceGathering.unitMargin(unitMargin(resourceGathering, countryMarket, workerPopTypeIndex, countryLaborPolicy.minWageFactor(), revenue, wageBill));
         }
     }
 }

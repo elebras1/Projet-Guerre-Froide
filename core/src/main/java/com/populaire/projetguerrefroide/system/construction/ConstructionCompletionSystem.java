@@ -9,6 +9,8 @@ import com.populaire.projetguerrefroide.simulation.EcsConstants;
 import com.populaire.projetguerrefroide.system.building.InfrastructureUtils;
 
 import static com.populaire.projetguerrefroide.system.construction.ConstructionUtils.finished;
+import static com.populaire.projetguerrefroide.simulation.Constants.RGO_MECHANIZATION_EFFICIENCY;
+import static com.populaire.projetguerrefroide.simulation.Constants.RGO_MECHANIZATION_UPKEEP_RATE;
 import static com.populaire.projetguerrefroide.system.building.EconomyBuildingUtils.chooseAdvancedRecipe;
 import static com.populaire.projetguerrefroide.system.building.EconomyBuildingUtils.newEconomyBuilding;
 
@@ -29,6 +31,13 @@ public class ConstructionCompletionSystem {
         for (int i = 0; i < iter.count(); i++) {
             ConstructionSiteView site = constructionSiteField.getMutView(i);
             if (!finished(site)) {
+                continue;
+            }
+            if (site.buildingTypeId() == this.ecsConstants.rgoMechanization()) {
+                ResourceGatheringMutView rgo = iter.stage().obtainEntityView(site.buildingId()).getMutView(ResourceGathering.class);
+                float extraDaily = rgo.production() / Math.max(1e-6f, rgo.efficiency()) * RGO_MECHANIZATION_EFFICIENCY;
+                rgo.upkeepValue(rgo.upkeepValue() + extraDaily * this.ecsConstants.goodCosts()[rgo.goodIndex()] * RGO_MECHANIZATION_UPKEEP_RATE);
+                rgo.mechanization(rgo.mechanization() + 1);
                 continue;
             }
             if (site.buildingId() == 0) {

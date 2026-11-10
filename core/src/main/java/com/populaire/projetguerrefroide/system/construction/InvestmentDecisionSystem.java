@@ -26,6 +26,7 @@ import java.util.Comparator;
 import static com.populaire.projetguerrefroide.util.ArrayUtils.zeroed;
 import static com.populaire.projetguerrefroide.simulation.Constants.*;
 import static com.populaire.projetguerrefroide.system.construction.ConstructionUtils.levelCost;
+import static com.populaire.projetguerrefroide.system.construction.ConstructionUtils.startMechanizationSite;
 import static com.populaire.projetguerrefroide.system.construction.ConstructionUtils.startSite;
 import static com.populaire.projetguerrefroide.system.building.OwnerUtils.ownerIndex;
 import static com.populaire.projetguerrefroide.system.building.OwnerUtils.ownerTag;
@@ -48,6 +49,14 @@ public class InvestmentDecisionSystem {
         private int freeLevels;
         private double levelCost;
         private float annualReturn;
+        private boolean mechanization;
+        private double baseValue;
+
+        private Candidate mechanization(double baseValue) {
+            this.mechanization = true;
+            this.baseValue = baseValue;
+            return this;
+        }
 
         private Candidate set(long buildingId, long buildingTypeId, long regionInstanceId, long countryId, long ownerTagId, int owner, int primaryWorkerPopTypeIndex,
                               float workersPerLevel, int freeLevels, double levelCost, float annualReturn) {
@@ -62,7 +71,17 @@ public class InvestmentDecisionSystem {
             this.freeLevels = freeLevels;
             this.levelCost = levelCost;
             this.annualReturn = annualReturn;
+            this.mechanization = false;
+            this.baseValue = 0.0;
             return this;
+        }
+
+        private boolean isMechanization() {
+            return this.mechanization;
+        }
+
+        private double baseValue() {
+            return this.baseValue;
         }
 
         private long buildingId() {
@@ -151,6 +170,7 @@ public class InvestmentDecisionSystem {
     private final Query buildingQuery;
     private final Query siteQuery;
     private final Query regionQuery;
+    private final Query rgoQuery;
     private final LongIntMap queuedLevels = new LongIntMap();
     private final LongFloatMap reservedWorkers = new LongFloatMap();
     private final LongObjectMap<LongIntMap> typesByRegion = new LongObjectMap<>();
@@ -180,6 +200,7 @@ public class InvestmentDecisionSystem {
     private final EntityCallback siteReader = this::readSite;
     private final EntityCallback regionReader = this::readRegion;
     private final IterCallback buildingReader = this::readBuildings;
+    private final IterCallback rgoReader = this::readRgos;
     private World world;
 
     public InvestmentDecisionSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
@@ -187,6 +208,8 @@ public class InvestmentDecisionSystem {
         this.buildingQuery = ecsWorld.query().with(Building.class).with(EconomyBuilding.class).with(EconomyBuildingType.class).build();
         this.siteQuery = ecsWorld.query().with(ConstructionSite.class).build();
         this.regionQuery = ecsWorld.query().with(RegionInstance.class).build();
+        this.rgoQuery = ecsWorld.query().with(Province.class).with(ResourceGathering.class).with(Demographics.class)
+            .with(ResourceGatheringType.class).up(ecsConstants.rgoType()).build();
         ecsWorld.system("InvestmentDecisionSystem")
             .kind(phaseId)
             .with(CountryInvestment.class)
@@ -246,13 +269,17 @@ public class InvestmentDecisionSystem {
                     Candidate candidate = candidates.get(c);
                     int freeLevels = candidate.freeLevels();
                     while (freeLevels > 0
-                        && this.availableWorkers(world, candidate, ruralTypes) - reservedWorkers.get(candidate.regionInstanceId()) >= candidate.workersPerLevel()
+                        && (candidate.isMechanization() || this.availableWorkers(world, candidate, ruralTypes) - reservedWorkers.get(candidate.regionInstanceId()) >= candidate.workersPerLevel())
                         && (parkUtilization(parkUsedLevels, parkLevels, countryId, candidate.buildingTypeId()) >= MINIMUM_UTILIZATION_FOR_EXPANSION
                             ? finance(countryBank, countryInvestment, countryMarket, availableFunds, candidate.owner(), candidate.levelCost(), candidate.annualReturn())
                             : stateOwnedEconomy && candidate.owner() == STATE_OWNER && availableFunds[STATE_OWNER] >= candidate.levelCost())) {
-                        startSite(world, this.ecsConstants, candidate.buildingId(), candidate.buildingTypeId(), candidate.regionInstanceId(), candidate.countryId(), candidate.ownerTagId());
-                        addPendingOutput(world, pendingOutputs, levelOutputs, candidate.buildingTypeId());
-                        this.addLevels(parkLevels, countryId, candidate.buildingTypeId(), 1f);
+                        if (candidate.isMechanization()) {
+                            startMechanizationSite(world, this.ecsConstants, candidate.buildingId(), candidate.regionInstanceId(), candidate.countryId(), candidate.ownerTagId(), candidate.baseValue());
+                        } else {
+                            startSite(world, this.ecsConstants, candidate.buildingId(), candidate.buildingTypeId(), candidate.regionInstanceId(), candidate.countryId(), candidate.ownerTagId());
+                            addPendingOutput(world, pendingOutputs, levelOutputs, candidate.buildingTypeId());
+                            this.addLevels(parkLevels, countryId, candidate.buildingTypeId(), 1f);
+                        }
                         availableFunds[candidate.owner()] -= candidate.levelCost();
                         reservedWorkers.put(candidate.regionInstanceId(), reservedWorkers.get(candidate.regionInstanceId()) + candidate.workersPerLevel());
                         freeLevels--;
@@ -508,6 +535,7 @@ public class InvestmentDecisionSystem {
 
     private void collectCandidates() {
         this.buildingQuery.iter(this.buildingReader);
+        this.rgoQuery.iter(this.rgoReader);
         LongFloatSlotMap levelsByType = this.levelsByType;
         for (int slot = 0; slot < levelsByType.slotCount(); slot++) {
             long buildingTypeId = levelsByType.slotKey(slot);
@@ -595,6 +623,93 @@ public class InvestmentDecisionSystem {
             }
             candidates.add(this.candidatePool.obtain().set(buildingId, buildingTypeId, building.parentId(), countryId, economyBuilding.ownerTagId(), owner,
                 primaryWorkerPopTypeIndex, workersPerLevel, freeLevels, levelCost, annualReturn));
+        }
+    }
+
+    /**
+     * Mechanization levels of RGOs (decision T14 e, f): below the country's cap, all available workers of the type employed,
+     * return = (extra output x price - upkeep) x share of the investing group in the RGO profit / level cost.
+     */
+    private void readRgos(Iter rgoIter) {
+        World world = this.world;
+        Field<Province> provinceField = rgoIter.field(Province.class, 0);
+        Field<ResourceGathering> rgoField = rgoIter.field(ResourceGathering.class, 1);
+        Field<Demographics> demographicsField = rgoIter.field(Demographics.class, 2);
+        ResourceGatheringTypeView rgoType = rgoIter.field(ResourceGatheringType.class, 3).getView(0);
+        int workerIndex = rgoType.workerPopTypeIndex();
+        float baseShare = this.ecsConstants.baseWorkforceShares()[workerIndex];
+        float[] goodCosts = this.ecsConstants.goodCosts();
+        int[] costGoods = this.ecsConstants.mechanizationCostGoods();
+        int[] upkeepGoods = this.ecsConstants.mechanizationUpkeepGoods();
+        long countryId = 0;
+        CountryProductionTechnologyView production = null;
+        CountryMarketView countryMarket = null;
+        float lendingRate = 0f;
+        long ownerTagId = 0;
+        int owner = 0;
+        float ownerShare = 0f;
+        float workforceShare = 0f;
+        double costPerBaseValue = 0.0;
+        double upkeepPerBaseValue = 0.0;
+        for (int i = 0; i < rgoIter.count(); i++) {
+            ProvinceView province = provinceField.getMutView(i);
+            if (province.ownerId() != countryId) {
+                countryId = province.ownerId();
+                EntityView country = world.obtainEntityView(countryId);
+                production = country.getView(CountryProductionTechnology.class);
+                countryMarket = country.getView(CountryMarket.class);
+                lendingRate = country.<CountryBankView>getView(CountryBank.class).lendingRate();
+                CountryProfitDistributionPolicyView profitPolicy = country.getView(CountryProfitDistributionPolicy.class);
+                float capitalistShare = profitPolicy.capitalistProfitShareRate();
+                float workerShare = profitPolicy.workerProfitShareRate();
+                float stateShare = capitalistShare > 0f ? 0f : profitPolicy.stateProfitShareRate();
+                float total = capitalistShare + workerShare + stateShare + profitPolicy.aristocratProfitShareRate();
+                ownerTagId = ownerTag(capitalistShare, workerShare, stateShare, this.ecsConstants);
+                owner = ownerIndex(ownerTagId, this.ecsConstants);
+                float share = owner == CAPITALIST_OWNER ? capitalistShare : owner == WORKERS_OWNER ? workerShare : stateShare;
+                ownerShare = total > 0f ? share / total : 1f;
+                workforceShare = EmploymentUtils.activeShare(baseShare, country.<CountryPopulationPolicyView>getView(CountryPopulationPolicy.class).workforceShareModifier());
+                costPerBaseValue = 0.0;
+                for (int k = 0; k < costGoods.length; k++) {
+                    costPerBaseValue += RGO_MECHANIZATION_COST_SHARES[k] * countryMarket.goodBudgetPrices(costGoods[k]) / goodCosts[costGoods[k]];
+                }
+                upkeepPerBaseValue = 0.0;
+                for (int k = 0; k < upkeepGoods.length; k++) {
+                    upkeepPerBaseValue += RGO_MECHANIZATION_UPKEEP_SHARES[k] * countryMarket.goodBudgetPrices(upkeepGoods[k]) / goodCosts[upkeepGoods[k]];
+                }
+            }
+            ResourceGatheringView rgo = rgoField.getMutView(i);
+            int good = rgo.goodIndex();
+            long provinceId = rgoIter.entity(i);
+            int freeLevels = production.mechanizationCaps(good) - rgo.mechanization() - this.queuedLevels.get(provinceId);
+            if (freeLevels <= 0 || rgo.production() <= 0f || ownerShare <= 0f) {
+                continue;
+            }
+            DemographicsView demographics = demographicsField.getMutView(i);
+            int activeWorkers = EmploymentUtils.activeWorkers(demographics.totalByPopType(workerIndex), workforceShare);
+            int maximumWorkers = Math.min((int) (rgo.size() * rgoType.workforce() * rgoType.workerPopTypeRatio()), activeWorkers);
+            if (maximumWorkers <= 0 || rgo.workerAmount() < maximumWorkers) {
+                continue;
+            }
+            float extraDaily = rgo.production() / Math.max(1e-6f, rgo.efficiency()) * RGO_MECHANIZATION_EFFICIENCY;
+            double baseValue = (double) extraDaily * DAYS_PER_YEAR * goodCosts[good];
+            double levelCost = baseValue * costPerBaseValue;
+            if (levelCost <= 0.0) {
+                continue;
+            }
+            double upkeepDaily = baseValue * RGO_MECHANIZATION_UPKEEP_RATE / DAYS_PER_YEAR * upkeepPerBaseValue;
+            double grossAnnual = ((double) extraDaily * countryMarket.goodPrices(good) - upkeepDaily) * DAYS_PER_YEAR;
+            float annualReturn = (float) (grossAnnual * ownerShare / levelCost);
+            if (!qualifies(owner, annualReturn, lendingRate)) {
+                continue;
+            }
+            ObjectList<Candidate> candidates = this.candidatesByCountry.get(countryId);
+            if (candidates == null) {
+                candidates = this.candidateListPool.obtain();
+                this.candidatesByCountry.put(countryId, candidates);
+            }
+            candidates.add(this.candidatePool.obtain().set(provinceId, this.ecsConstants.rgoMechanization(), province.regionInstanceId(), countryId, ownerTagId, owner,
+                workerIndex, 0f, freeLevels, levelCost, annualReturn).mechanization(baseValue));
         }
     }
 

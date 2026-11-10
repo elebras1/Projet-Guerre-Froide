@@ -667,6 +667,7 @@ public class SimulationRecorder implements AutoCloseable {
             "research_efficiency", "acquired_production", "acquired_military", "acquired_society");
         this.writer("country/technology_acquired.csv").header("year", "date", "country", "technology");
         this.writer("building_types/recipes.csv").header("year", "date", "building_type", "buildings", "advanced");
+        this.writer("rgo/mechanization.csv").header("year", "date", "country", "good", "rgos", "mechanized", "levels", "workers", "production", "upkeep_value", "served_value");
         this.writer("country/strategic_stock.csv").header("tick", "date", "country", "levels", "capacity", "stock_value", "purchased_value", "released_value", "lost_value",
             "spent", "earned", "stock_market_value");
         this.writer("country/military_bases.csv").header("tick", "date", "country", "naval_capacity", "naval_load", "air_capacity", "air_load",
@@ -906,6 +907,7 @@ public class SimulationRecorder implements AutoCloseable {
         int year = (tick + 1) / DAYS_PER_YEAR;
         this.recordTechnology(year, date);
         this.recordRecipes(year, date);
+        this.recordMechanization(year, date);
         double ticks = Math.max(1, this.yearTicks);
 
         double worstCountryLife = Double.MAX_VALUE;
@@ -1430,6 +1432,40 @@ public class SimulationRecorder implements AutoCloseable {
             float[] agg = entry.getValue();
             writer.row(tick, date, this.countryNames.get(countryIndex), this.goodNames[goodIndex],
                 agg[0], agg[1], agg[2], agg[3], agg[4]);
+        }
+    }
+
+    private void recordMechanization(int year, String date) {
+        java.util.Map<Long, double[]> rows = new java.util.TreeMap<>();
+        this.rgoQuery.iter(iter -> {
+            Field<Province> provinceField = iter.field(Province.class, 0);
+            Field<ResourceGathering> rgoField = iter.field(ResourceGathering.class, 1);
+            for (int i = 0; i < iter.count(); i++) {
+                ProvinceView province = provinceField.getMutView(i);
+                ResourceGatheringView rgo = rgoField.getMutView(i);
+                Integer countryIndex = this.countryIndexByEntity.get(province.ownerId());
+                if (countryIndex == null) {
+                    continue;
+                }
+                double[] row = rows.computeIfAbsent(key(countryIndex, rgo.goodIndex()), k -> new double[7]);
+                row[0]++;
+                row[1] += rgo.mechanization() > 0 ? 1 : 0;
+                row[2] += rgo.mechanization();
+                row[3] += rgo.workerAmount();
+                row[4] += rgo.production();
+                row[5] += rgo.upkeepValue();
+                row[6] += rgo.upkeepValue() * rgo.upkeepServed();
+            }
+        });
+        for (java.util.Map.Entry<Long, double[]> entry : rows.entrySet()) {
+            double[] row = entry.getValue();
+            if (row[2] <= 0) {
+                continue;
+            }
+            int countryIndex = (int) (entry.getKey() >> 16);
+            int goodIndex = (int) (entry.getKey() & 0xFFFF);
+            this.writer("rgo/mechanization.csv").row(year, date, this.countryNames.get(countryIndex), this.goodNames[goodIndex],
+                (int) row[0], (int) row[1], (int) row[2], (long) row[3], row[4], row[5], row[6]);
         }
     }
 

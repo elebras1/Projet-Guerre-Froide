@@ -27,6 +27,11 @@ public final class TechnologyEffectUtils {
         for (int f = 0; f < factoryTypes.length; f++) {
             production.factoryProductivities(factoryTypes[f], production.factoryProductivities(factoryTypes[f]) + factoryProductivities[f]);
         }
+        int[] mechanizationGoods = ecsConstants.technologyMechanizationGoods()[technology];
+        int[] mechanizationCaps = ecsConstants.technologyMechanizationCaps()[technology];
+        for (int m = 0; m < mechanizationGoods.length; m++) {
+            production.mechanizationCaps(mechanizationGoods[m], production.mechanizationCaps(mechanizationGoods[m]) + mechanizationCaps[m]);
+        }
         for (int recipeType : ecsConstants.technologyRecipeTypes()[technology]) {
             production.advancedRecipes(recipeType, true);
         }

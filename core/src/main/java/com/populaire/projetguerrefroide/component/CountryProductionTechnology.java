@@ -10,5 +10,6 @@ import static com.populaire.projetguerrefroide.simulation.Constants.MAX_ECONOMY_
 public record CountryProductionTechnology(
     @FixedArray(length = GOOD_COUNT) float[] rgoProductivities,
     @FixedArray(length = MAX_ECONOMY_BUILDING_TYPES) float[] factoryProductivities,
-    @FixedArray(length = MAX_ECONOMY_BUILDING_TYPES) boolean[] advancedRecipes) {
+    @FixedArray(length = MAX_ECONOMY_BUILDING_TYPES) boolean[] advancedRecipes,
+    @FixedArray(length = GOOD_COUNT) int[] mechanizationCaps) {
 }

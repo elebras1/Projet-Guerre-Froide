@@ -17,7 +17,13 @@ public record ResourceGathering(
     float profit,
     float unitMargin,
     float workerMinWage,
-    double treasury) {
+    double treasury,
+    int mechanization,
+    float upkeepValue,
+    float upkeepServed,
+    float upkeepPartsDemanded,
+    float upkeepFuelDemanded,
+    float workerOutput) {
 
 }
 

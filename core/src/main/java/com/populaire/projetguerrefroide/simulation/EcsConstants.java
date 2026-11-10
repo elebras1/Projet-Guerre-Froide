@@ -32,6 +32,8 @@ import static com.populaire.projetguerrefroide.simulation.Constants.MAX_MODIFIER
 import static com.populaire.projetguerrefroide.simulation.Constants.MAX_TECHNOLOGIES;
 import static com.populaire.projetguerrefroide.simulation.Constants.MAX_TECHNOLOGY_EFFECTS;
 import static com.populaire.projetguerrefroide.simulation.Constants.POP_TYPE_COUNT;
+import static com.populaire.projetguerrefroide.simulation.Constants.RGO_MECHANIZATION_COST_GOODS;
+import static com.populaire.projetguerrefroide.simulation.Constants.RGO_MECHANIZATION_UPKEEP_GOODS;
 
 public class EcsConstants {
     private static final String SEA_PROVINCE_TAG = "SeaProvinceTag";
@@ -124,6 +126,11 @@ public class EcsConstants {
     private final int[][] technologyFactoryTypes;
     private final float[][] technologyFactoryProductivities;
     private final int[][] technologyRecipeTypes;
+    private final int[][] technologyMechanizationGoods;
+    private final int[][] technologyMechanizationCaps;
+    private final long rgoMechanization;
+    private final int[] mechanizationCostGoods = new int[RGO_MECHANIZATION_COST_GOODS.length];
+    private final int[] mechanizationUpkeepGoods = new int[RGO_MECHANIZATION_UPKEEP_GOODS.length];
     private int technologyCount;
     private final float[] goodStockDecays;
     private long globalMarket;
@@ -189,6 +196,9 @@ public class EcsConstants {
         this.technologyFactoryTypes = new int[MAX_TECHNOLOGIES][0];
         this.technologyFactoryProductivities = new float[MAX_TECHNOLOGIES][0];
         this.technologyRecipeTypes = new int[MAX_TECHNOLOGIES][0];
+        this.technologyMechanizationGoods = new int[MAX_TECHNOLOGIES][0];
+        this.technologyMechanizationCaps = new int[MAX_TECHNOLOGIES][0];
+        this.rgoMechanization = ecsWorld.entity("RgoMechanization");
         this.goodStockDecays = new float[GOOD_COUNT];
         this.declareTypeInheritance(ecsWorld);
     }
@@ -222,6 +232,12 @@ public class EcsConstants {
             this.civilianGoodCosts[g] = goodEntity.has(this.militaryGoodTag) ? 0f : good.cost();
         }
         this.resolveTechnologies(ecsWorld);
+        for (int k = 0; k < RGO_MECHANIZATION_COST_GOODS.length; k++) {
+            this.mechanizationCostGoods[k] = goodIndex(ecsWorld, globalGoodData, RGO_MECHANIZATION_COST_GOODS[k]);
+        }
+        for (int k = 0; k < RGO_MECHANIZATION_UPKEEP_GOODS.length; k++) {
+            this.mechanizationUpkeepGoods[k] = goodIndex(ecsWorld, globalGoodData, RGO_MECHANIZATION_UPKEEP_GOODS[k]);
+        }
         this.globalsResolved = true;
     }
 
@@ -278,6 +294,9 @@ public class EcsConstants {
                 int[] factoryTypes = new int[MAX_TECHNOLOGY_EFFECTS];
                 float[] factoryProductivities = new float[MAX_TECHNOLOGY_EFFECTS];
                 int[] recipeTypes = new int[MAX_TECHNOLOGY_EFFECTS];
+                int[] mechanizationGoods = new int[MAX_TECHNOLOGY_EFFECTS];
+                int[] mechanizationCaps = new int[MAX_TECHNOLOGY_EFFECTS];
+                int mechanizationCount = 0;
                 for (int e = 0; e < MAX_TECHNOLOGY_EFFECTS; e++) {
                     if (production.rgoGoodIndexes(e) >= 0) {
                         rgoGoods[rgoCount] = production.rgoGoodIndexes(e);
@@ -289,6 +308,11 @@ public class EcsConstants {
                         factoryProductivities[factoryCount] = production.factoryProductivities(e);
                         factoryCount++;
                     }
+                    if (production.mechanizationGoodIndexes(e) >= 0) {
+                        mechanizationGoods[mechanizationCount] = production.mechanizationGoodIndexes(e);
+                        mechanizationCaps[mechanizationCount] = production.mechanizationCaps(e);
+                        mechanizationCount++;
+                    }
                     if (production.recipeTypeIndexes(e) >= 0) {
                         recipeTypes[recipeCount] = production.recipeTypeIndexes(e);
                         recipeCount++;
@@ -299,6 +323,8 @@ public class EcsConstants {
                 this.technologyFactoryTypes[index] = Arrays.copyOf(factoryTypes, factoryCount);
                 this.technologyFactoryProductivities[index] = Arrays.copyOf(factoryProductivities, factoryCount);
                 this.technologyRecipeTypes[index] = Arrays.copyOf(recipeTypes, recipeCount);
+                this.technologyMechanizationGoods[index] = Arrays.copyOf(mechanizationGoods, mechanizationCount);
+                this.technologyMechanizationCaps[index] = Arrays.copyOf(mechanizationCaps, mechanizationCount);
             }
         });
         technologyQuery.destruct();
@@ -448,6 +474,40 @@ public class EcsConstants {
     public int[][] technologyRecipeTypes() {
         this.requireGlobals();
         return this.technologyRecipeTypes;
+    }
+
+    private static int goodIndex(World ecsWorld, GlobalGoodView globalGoodData, String name) {
+        long goodId = ecsWorld.lookup(name);
+        for (int g = 0; g < GOOD_COUNT; g++) {
+            if (globalGoodData.goodIds(g) == goodId) {
+                return g;
+            }
+        }
+        throw new IllegalArgumentException("Unknown good: " + name);
+    }
+
+    public int[][] technologyMechanizationGoods() {
+        this.requireGlobals();
+        return this.technologyMechanizationGoods;
+    }
+
+    public int[][] technologyMechanizationCaps() {
+        this.requireGlobals();
+        return this.technologyMechanizationCaps;
+    }
+
+    public long rgoMechanization() {
+        return this.rgoMechanization;
+    }
+
+    public int[] mechanizationCostGoods() {
+        this.requireGlobals();
+        return this.mechanizationCostGoods;
+    }
+
+    public int[] mechanizationUpkeepGoods() {
+        this.requireGlobals();
+        return this.mechanizationUpkeepGoods;
     }
 
     public float[] goodCosts() {

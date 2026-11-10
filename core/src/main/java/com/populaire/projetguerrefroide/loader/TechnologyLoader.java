@@ -75,7 +75,7 @@ public final class TechnologyLoader {
                     }
                     technologyEntity.set(new Modifiers(modifierValues, modifierTagIds));
                 }
-                if (effects != null && (effects.rgoProductivity() != null || effects.factoryProductivity() != null || effects.productionMethods() != null)) {
+                if (effects != null && (effects.rgoProductivity() != null || effects.factoryProductivity() != null || effects.productionMethods() != null || effects.rgoMechanizationCap() != null)) {
                     technologyEntity.set(this.production(technologyEntry.getKey(), effects));
                 }
                 index++;
@@ -91,6 +91,9 @@ public final class TechnologyLoader {
         int[] factoryTypeIndexes = new int[MAX_TECHNOLOGY_EFFECTS];
         float[] factoryProductivities = new float[MAX_TECHNOLOGY_EFFECTS];
         int[] recipeTypeIndexes = new int[MAX_TECHNOLOGY_EFFECTS];
+        int[] mechanizationGoodIndexes = new int[MAX_TECHNOLOGY_EFFECTS];
+        int[] mechanizationCaps = new int[MAX_TECHNOLOGY_EFFECTS];
+        Arrays.fill(mechanizationGoodIndexes, -1);
         Arrays.fill(rgoGoodIndexes, -1);
         Arrays.fill(factoryTypeIndexes, -1);
         Arrays.fill(recipeTypeIndexes, -1);
@@ -129,7 +132,20 @@ public final class TechnologyLoader {
                 slot++;
             }
         }
-        return new TechnologyProduction(rgoGoodIndexes, rgoProductivities, factoryTypeIndexes, factoryProductivities, recipeTypeIndexes);
+        if (effects.rgoMechanizationCap() != null) {
+            int slot = 0;
+            for (Map.Entry<String, Double> entry : effects.rgoMechanizationCap().entrySet()) {
+                this.checkSlot(technologyName, slot);
+                long goodId = this.ecsWorld.lookup(entry.getKey());
+                if (goodId == 0) {
+                    throw new IllegalArgumentException("Unknown good in " + technologyName + ": " + entry.getKey());
+                }
+                mechanizationGoodIndexes[slot] = this.context.getGoodIndex(goodId);
+                mechanizationCaps[slot] = entry.getValue().intValue();
+                slot++;
+            }
+        }
+        return new TechnologyProduction(rgoGoodIndexes, rgoProductivities, factoryTypeIndexes, factoryProductivities, recipeTypeIndexes, mechanizationGoodIndexes, mechanizationCaps);
     }
 
     private int economyBuildingTypeIndex(String technologyName, String buildingType) {
