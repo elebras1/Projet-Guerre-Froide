@@ -32,6 +32,8 @@ public class EconomyPipelines {
     private final DevelopmentIndexSystem developmentIndexSystem;
     private final ResearchSystem researchSystem;
     private final RGOMechanizationDemandSystem rgoMechanizationDemandSystem;
+    private final RGOMechanizationInitializationSystem rgoMechanizationInitializationSystem;
+    private final RGOMechanizationUpkeepInitializationSystem rgoMechanizationUpkeepInitializationSystem;
     private final RGOMechanizationPurchaseSystem rgoMechanizationPurchaseSystem;
     private final EconomyBuildingRecipeSystem economyBuildingRecipeSystem;
     private final EconomyBuildingOwnerInitializationSystem economyBuildingOwnerInitializationSystem;
@@ -259,6 +261,7 @@ public class EconomyPipelines {
         this.demographicsRegionInstanceSpreadSystem = new DemographicsRegionInstanceSpreadSystem(ecsWorld, phaseSpread);
         this.lawEffectInitializationSystem = new LawEffectInitializationSystem(ecsWorld, phaseInit);
         this.technologyEffectInitializationSystem = new TechnologyEffectInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInit);
+        this.rgoMechanizationInitializationSystem = new RGOMechanizationInitializationSystem(ecsWorld, phaseInit);
         this.economyBuildingOwnerInitializationSystem = new EconomyBuildingOwnerInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInit);
         this.rgoSizeSystem = new RGOSizeSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInit);
         this.infrastructureInitializationSystem = new InfrastructureInitializationSystem(ecsWorld, phaseInit);
@@ -330,6 +333,7 @@ public class EconomyPipelines {
         this.countryProductionSpreadSystem = new CountryProductionSpreadSystem(ecsWorld, simulationContext.getEcsConstants(), phaseToStock);
         this.goodAvailabilityInitializationSystem = new GoodAvailabilityInitializationSystem(ecsWorld, phaseInitAvailability);
         this.countryStockInitializationSystem = new CountryStockInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInitStock);
+        this.rgoMechanizationUpkeepInitializationSystem = new RGOMechanizationUpkeepInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInitStock);
         this.globalMarketResolveSystem = new GlobalMarketResolveSystem(ecsWorld, simulationContext.getEcsConstants(), phasePrice);
         this.countryProductionValueSystem = new CountryProductionValueSystem(ecsWorld, phaseRevenue);
         this.rgoRevenueSystem = new RGORevenueSystem(ecsWorld, simulationContext.getEcsConstants(), phaseRevenue);

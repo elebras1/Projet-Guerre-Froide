@@ -92,7 +92,8 @@ public class WorldDaoImplTest {
         assertEquals(4629, countriesHistory.get("RIF").capital());
         assertTrue(countriesHistory.get("USA").technologies().contains("mathematics"));
         assertNull(countriesHistory.get("BGL").technologies());
-        assertTrue(countriesHistory.get("WBR").technologies().isEmpty());
+        assertTrue(countriesHistory.get("AFG").technologies().isEmpty());
+        assertEquals(List.of("mining_mechanization"), countriesHistory.get("WBR").technologies());
         assertEquals(255, this.worldDao.readLeaders().size());
         assertFalse(this.worldDao.readRelations().relation().isEmpty());
         assertFalse(this.worldDao.readAlliances().alliances().isEmpty());

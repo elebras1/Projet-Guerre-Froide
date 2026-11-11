@@ -224,7 +224,7 @@ public class EconomySimulationAnalysisTest {
                 acquired++;
             }
         }
-        assertEquals(21, acquired);
+        assertEquals(28, acquired);
         assertEquals(0.97f, this.ecsWorld.obtainEntityView(usaId).<CountryDevelopmentView>getView(CountryDevelopment.class).literacy(), 1e-6f);
 
         long westBerlinId = this.ecsWorld.lookup("WBR");
@@ -236,7 +236,7 @@ public class EconomySimulationAnalysisTest {
                 westBerlinAcquired++;
             }
         }
-        assertEquals(0, westBerlinAcquired);
+        assertEquals(1, westBerlinAcquired);
     }
 
     @Test
