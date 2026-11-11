@@ -10,6 +10,7 @@ public final class UiState {
     private long selectedBuilding;
     private boolean provincePanelOpen;
     private boolean economyPanelOpen;
+    private boolean countryRankingOpen;
     private SortType regionSort = SortType.DEFAULT;
     private MapMode mapMode = MapMode.POLITICAL;
     private int requestedSpeed = 1;
@@ -75,6 +76,17 @@ public final class UiState {
     public void economyPanelOpen(boolean open) {
         if (this.economyPanelOpen != open) {
             this.economyPanelOpen = open;
+            this.changed();
+        }
+    }
+
+    public boolean countryRankingOpen() {
+        return this.countryRankingOpen;
+    }
+
+    public void countryRankingOpen(boolean open) {
+        if (this.countryRankingOpen != open) {
+            this.countryRankingOpen = open;
             this.changed();
         }
     }

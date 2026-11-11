@@ -5,6 +5,7 @@ public interface GameFlowHandler {
     void resume();
     void setInputEnabled(boolean enabled);
     void toggleEconomyPanel();
+    void toggleCountryRankingPanel();
     void showTooltip(String content);
     void hideTooltip();
     void moveCameraTo(int x, int y);

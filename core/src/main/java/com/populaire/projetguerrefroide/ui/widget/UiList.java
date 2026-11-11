@@ -16,6 +16,7 @@ public class UiList<T extends UiWindow> extends HoverScrollPane {
     private final ObjectList<T> rows;
     private final float spacing;
     private int rowCount;
+    private float scrollStep;
     private UiWindow header;
 
     public UiList(UiBuilder ui, Skin skin, String style, float width, float height, float spacing, float borderWidth, float borderHeight, RowFactory<T> rowFactory) {
@@ -55,6 +56,20 @@ public class UiList<T extends UiWindow> extends HoverScrollPane {
 
     public T row(int index) {
         return this.rows.get(index);
+    }
+
+    public void setScrollStep(float scrollStep) {
+        this.scrollStep = scrollStep;
+        this.setSmoothScrolling(scrollStep <= 0f);
+    }
+
+    @Override
+    protected void scrollY(float pixelsY) {
+        if (this.scrollStep > 0f) {
+            float snapped = Math.round(pixelsY / this.scrollStep) * this.scrollStep;
+            pixelsY = Math.min(snapped, Math.max(this.getMaxY(), 0f));
+        }
+        super.scrollY(pixelsY);
     }
 
     private void rebuild() {

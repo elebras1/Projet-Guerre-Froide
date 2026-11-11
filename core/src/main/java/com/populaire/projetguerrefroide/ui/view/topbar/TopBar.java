@@ -185,6 +185,7 @@ public class TopBar extends UiWindow {
         this.armsProgress.setVisible(false);
         this.techProgress.setVisible(false);
         ui.onClick(this.topbarbuttonEconomy, listener::onEconomyClicked);
+        ui.onClick(this.topbarbuttonStatistics, listener::onStatisticsClicked);
         ui.onClick(this.topbarMenubutton, listener::onMenuClicked);
         ui.onClick(this.pauseBg, () -> this.setSpeedState(listener.onTogglePause()));
         ui.onClick(this.buttonSpeedup, () -> this.setSpeedState(listener.onSpeedUp()));

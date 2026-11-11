@@ -57,6 +57,13 @@ public class EconomyPanelPresenter extends RequestingPresenter implements Econom
         this.regionsWatch.invalidate();
     }
 
+    public void close() {
+        this.session.uiState().economyPanelOpen(false);
+        this.opening = false;
+        this.economyPanel.setTouchable(Touchable.disabled);
+        this.economyPanel.setVisible(false);
+    }
+
     private void applyRegions(RegionsBuildings regions) {
         if (!regions.found()) {
             return;
@@ -80,10 +87,7 @@ public class EconomyPanelPresenter extends RequestingPresenter implements Econom
 
     @Override
     public void onCloseEconomyPanelClicked() {
-        this.session.uiState().economyPanelOpen(false);
-        this.opening = false;
-        this.economyPanel.setTouchable(Touchable.disabled);
-        this.economyPanel.setVisible(false);
+        this.close();
     }
 
     @Override

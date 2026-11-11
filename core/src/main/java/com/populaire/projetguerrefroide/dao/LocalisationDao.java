@@ -16,6 +16,7 @@ public interface LocalisationDao {
     Map<String, String> readRegions();
     Map<String, String> readUnits();
     Map<String, String> readInterface();
+    Map<String, String> readLedger();
     Map<String , String> readEconomy();
     Map<String, String> readOrganisations();
     Map<String, String> readCredits();

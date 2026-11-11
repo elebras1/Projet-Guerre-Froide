@@ -9,5 +9,7 @@ public interface TopBarListener {
 
     void onEconomyClicked();
 
+    void onStatisticsClicked();
+
     void onMenuClicked();
 }

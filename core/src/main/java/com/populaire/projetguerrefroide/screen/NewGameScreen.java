@@ -118,6 +118,11 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
     }
 
     @Override
+    public void toggleCountryRankingPanel() {
+
+    }
+
+    @Override
     public void showTooltip(String content) {
 
     }

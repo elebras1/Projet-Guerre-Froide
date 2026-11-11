@@ -46,6 +46,7 @@ public class GameScreen implements Screen, GameInputListener, GameFlowHandler {
     private final ProvincePanelPresenter provincePanelPresenter;
     private final TooltipPresenter tooltipPresenter;
     private final EconomyPanelPresenter economyPanelPresenter;
+    private final CountryRankingPresenter countryRankingPresenter;
     private final MiniMapPresenter minimapPresenter;
     private final List<Presenter> presenters;
     private final Stage stage;
@@ -81,6 +82,7 @@ public class GameScreen implements Screen, GameInputListener, GameFlowHandler {
         this.provincePanelPresenter = new ProvincePanelPresenter(session, this.uiContext, this, textFormat);
         this.tooltipPresenter = new TooltipPresenter(session, this.uiContext, skinUi, skinFlags);
         this.economyPanelPresenter = new EconomyPanelPresenter(session, this.uiContext, textFormat);
+        this.countryRankingPresenter = new CountryRankingPresenter(session, this.uiContext, textFormat);
         this.minimapPresenter = new MiniMapPresenter(session, this.uiContext, this);
         this.initializeDebug();
 
@@ -90,11 +92,13 @@ public class GameScreen implements Screen, GameInputListener, GameFlowHandler {
         this.tooltipPresenter.initialize(this.stage);
         this.economyPanelPresenter.initialize(this.stage);
         this.minimapPresenter.initialize(this.stage);
+        this.countryRankingPresenter.initialize(this.stage);
         this.presenters.add(this.topBarPresenter);
         this.presenters.add(this.provincePanelPresenter);
         this.presenters.add(this.tooltipPresenter);
         this.presenters.add(this.economyPanelPresenter);
         this.presenters.add(this.minimapPresenter);
+        this.presenters.add(this.countryRankingPresenter);
         this.multiplexer.addProcessor(this.stage);
         this.multiplexer.addProcessor(this.inputHandler);
         Gdx.input.setInputProcessor(this.multiplexer);
@@ -248,7 +252,14 @@ public class GameScreen implements Screen, GameInputListener, GameFlowHandler {
 
     @Override
     public void toggleEconomyPanel() {
+        this.countryRankingPresenter.close();
         this.economyPanelPresenter.open();
+    }
+
+    @Override
+    public void toggleCountryRankingPanel() {
+        this.economyPanelPresenter.close();
+        this.countryRankingPresenter.toggle();
     }
 
     private void setAllStageTouchable(boolean touchable) {

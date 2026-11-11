@@ -96,6 +96,11 @@ public class UiBuilder {
         Label label = new Label(this.localise(key), this.font(font));
         label.setTouchable(Touchable.disabled);
         label.setAlignment(align);
+        return this.placeLabel(parent, label, x, y, width, height, anchor, borderWidth, borderHeight);
+    }
+
+    /** Moves or resizes a label with the same EvW box rules as {@link #label}. */
+    public Label placeLabel(Group parent, Label label, float x, float y, float width, float height, UiAnchor anchor, float borderWidth, float borderHeight) {
         label.setSize(width > 0f ? width : label.getPrefWidth(), height > 0f ? height : label.getPrefHeight());
         BitmapFont bitmapFont = label.getStyle().font;
         float lineTopShift = -(bitmapFont.getAscent() + bitmapFont.getDescent());

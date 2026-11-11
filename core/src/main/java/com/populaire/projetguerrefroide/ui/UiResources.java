@@ -83,6 +83,7 @@ public class UiResources {
         assetManager.load(Skins.UI_MINIMAP, Skin.class);
         assetManager.load(Skins.UI_PROVINCE, Skin.class);
         assetManager.load(Skins.UI_ECONOMY, Skin.class);
+        assetManager.load(Skins.UI_LEDGER, Skin.class);
     }
 
     public void loadMainMenuLocalisation(UiContext uiContext) {
@@ -116,6 +117,7 @@ public class UiResources {
         uiContext.putAllLocalisation(this.localisationDao.readUnits());
         uiContext.putAllLocalisation(this.localisationDao.readLanguage());
         uiContext.putAllLocalisation(this.localisationDao.readInterface());
+        uiContext.putAllLocalisation(this.localisationDao.readLedger());
         uiContext.putAllLocalisation(this.localisationDao.readEconomy());
         uiContext.putAllLocalisation(this.localisationDao.readOrganisations());
     }

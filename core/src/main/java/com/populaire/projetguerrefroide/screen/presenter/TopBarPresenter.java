@@ -95,6 +95,11 @@ public class TopBarPresenter extends RequestingPresenter implements TopBarListen
     }
 
     @Override
+    public void onStatisticsClicked() {
+        this.gameFlowHandler.toggleCountryRankingPanel();
+    }
+
+    @Override
     public void onMenuClicked() {
         this.gameFlowHandler.openInGameMenu();
     }

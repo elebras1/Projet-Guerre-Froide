@@ -11,6 +11,7 @@ import com.populaire.projetguerrefroide.simulation.SimulationState;
 public final class RequestService {
     private final CountryOverviewHandler countryOverview;
     private final CountrySummaryHandler countrySummary;
+    private final CountryRankingsHandler countryRankings;
     private final ProvinceDetailsHandler provinceDetails;
     private final ProvinceHoverHandler provinceHover;
     private final RegionsBuildingsHandler regionsBuildings;
@@ -22,6 +23,7 @@ public final class RequestService {
     public RequestService(SimulationContext simulationContext, SimulationState state, SimulationHeader header) {
         this.countryOverview = new CountryOverviewHandler(simulationContext, state, header);
         this.countrySummary = new CountrySummaryHandler(simulationContext, state, header);
+        this.countryRankings = new CountryRankingsHandler(simulationContext, state, header);
         this.provinceDetails = new ProvinceDetailsHandler(simulationContext, state, header);
         this.provinceHover = new ProvinceHoverHandler(simulationContext, state, header);
         this.regionsBuildings = new RegionsBuildingsHandler(simulationContext, state, header);
@@ -34,6 +36,7 @@ public final class RequestService {
     public void setCatalog(Catalog catalog) {
         this.countryOverview.setCatalog(catalog);
         this.countrySummary.setCatalog(catalog);
+        this.countryRankings.setCatalog(catalog);
         this.provinceDetails.setCatalog(catalog);
         this.provinceHover.setCatalog(catalog);
         this.regionsBuildings.setCatalog(catalog);
@@ -61,6 +64,7 @@ public final class RequestService {
         return switch (request.kind()) {
             case COUNTRY_OVERVIEW -> this.countryOverview.serve((Request<CountryOverview>) request);
             case COUNTRY_SUMMARY -> this.countrySummary.serve((Request<CountrySummary>) request);
+            case COUNTRY_RANKINGS -> this.countryRankings.serve((Request<CountryRankings>) request);
             case PROVINCE_DETAILS -> this.provinceDetails.serve((Request<ProvinceDetails>) request);
             case PROVINCE_HOVER -> this.provinceHover.serve((Request<ProvinceHover>) request);
             case REGIONS_BUILDINGS -> this.regionsBuildings.serve((Request<RegionsBuildings>) request);
