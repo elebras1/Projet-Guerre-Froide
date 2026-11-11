@@ -98,6 +98,7 @@ public class UiResources {
         this.setLanguage(uiContext);
         uiContext.putAllLocalisation(this.localisationDao.readNewgame());
         uiContext.putAllLocalisation(this.localisationDao.readBookmark());
+        uiContext.putAllLocalisation(this.localisationDao.readOrganisations());
         uiContext.putAllLocalisation(this.localisationDao.readPolitics());
         uiContext.putAllLocalisation(this.localisationDao.readMainMenuInGame());
         uiContext.putAllLocalisation(this.localisationDao.readPopup());
@@ -116,6 +117,7 @@ public class UiResources {
         uiContext.putAllLocalisation(this.localisationDao.readLanguage());
         uiContext.putAllLocalisation(this.localisationDao.readInterface());
         uiContext.putAllLocalisation(this.localisationDao.readEconomy());
+        uiContext.putAllLocalisation(this.localisationDao.readOrganisations());
     }
 
     private void setLanguage(UiContext uiContext) {

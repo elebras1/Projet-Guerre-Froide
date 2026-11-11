@@ -1,0 +1,74 @@
+{
+    "organisations": [
+        {
+            "id": "UN",
+            "flag": "XUN",
+            "type": "global",
+            "color": [
+                73,
+                126,
+                173
+            ]
+        },
+        {
+            "id": "NATO",
+            "flag": "XNA",
+            "type": "military",
+            "color": [
+                33,
+                64,
+                124
+            ]
+        },
+        {
+            "id": "WP",
+            "flag": "XWP",
+            "type": "military",
+            "color": [
+                178,
+                34,
+                34
+            ]
+        },
+        {
+            "id": "COMMONWEALTH",
+            "flag": "XCW",
+            "type": "regional",
+            "color": [
+                120,
+                80,
+                160
+            ]
+        },
+        {
+            "id": "FRENCH_UNION",
+            "flag": "XFU",
+            "type": "regional",
+            "color": [
+                0,
+                85,
+                164
+            ]
+        },
+        {
+            "id": "ARAB_LEAGUE",
+            "flag": "XAL",
+            "type": "regional",
+            "color": [
+                0,
+                122,
+                61
+            ]
+        },
+        {
+            "id": "OAS",
+            "flag": "XOAS",
+            "type": "regional",
+            "color": [
+                0,
+                130,
+                150
+            ]
+        }
+    ]
+}
