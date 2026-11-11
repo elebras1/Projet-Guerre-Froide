@@ -687,7 +687,7 @@ public class InvestmentDecisionSystem {
             }
             DemographicsView demographics = demographicsField.getMutView(i);
             int activeWorkers = EmploymentUtils.activeWorkers(demographics.totalByPopType(workerIndex), workforceShare);
-            int maximumWorkers = Math.min((int) (rgo.size() * rgoType.workforce() * rgoType.workerPopTypeRatio()), activeWorkers);
+            int maximumWorkers = rgo.endowmentShare() > 0f ? activeWorkers : Math.min((int) (rgo.endowment() * rgoType.workforce() * rgoType.workerPopTypeRatio()), activeWorkers);
             if (maximumWorkers <= 0 || rgo.workerAmount() < maximumWorkers) {
                 continue;
             }

@@ -14,5 +14,6 @@ public record ProvinceJson(
     @JsonAttribute(name = "population_total", mandatory = true) PopulationTotalJson populationTotal,
     @JsonAttribute(name = "economy_buildings") List<ProvinceBuildingJson> economyBuildings,
     String good,
+    @JsonAttribute(name = "good_potential") Float goodPotential,
     List<ProvinceBuildingJson> buildings) {
 }

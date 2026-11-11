@@ -496,7 +496,8 @@ public final class EconomyLoader {
                     productionType.workerPopTypeIndexes()[1],
                     productionType.workerPopTypeIds()[1],
                     productionType.workerPopTypeRatios()[1],
-                    productionType.workerPopTypeEffectMultipliers()[1]
+                    productionType.workerPopTypeEffectMultipliers()[1],
+                    "type_rgo_farmers".equals(resourceProductionEntry.getValue().baseType()) ? RGO_ENDOWMENT_SHARE_FARMERS : RGO_ENDOWMENT_SHARE_LABOURERS
                 ));
             }
         } catch (Exception exception) {

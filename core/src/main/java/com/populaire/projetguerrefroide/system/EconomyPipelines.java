@@ -26,7 +26,7 @@ public class EconomyPipelines {
     private final DemographicsPopulationSpreadSystem demographicsPopulationSpreadSystem;
     private final DemographicsProvinceSpreadSystem demographicsProvinceSpreadSystem;
     private final DemographicsRegionInstanceSpreadSystem demographicsRegionInstanceSpreadSystem;
-    private final RGOSizeSystem rgoSizeSystem;
+    private final RGOEndowmentInitializationSystem rgoEndowmentInitializationSystem;
     private final LawEffectInitializationSystem lawEffectInitializationSystem;
     private final TechnologyEffectInitializationSystem technologyEffectInitializationSystem;
     private final DevelopmentIndexSystem developmentIndexSystem;
@@ -263,8 +263,8 @@ public class EconomyPipelines {
         this.technologyEffectInitializationSystem = new TechnologyEffectInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInit);
         this.rgoMechanizationInitializationSystem = new RGOMechanizationInitializationSystem(ecsWorld, phaseInit);
         this.economyBuildingOwnerInitializationSystem = new EconomyBuildingOwnerInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInit);
-        this.rgoSizeSystem = new RGOSizeSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInit);
         this.infrastructureInitializationSystem = new InfrastructureInitializationSystem(ecsWorld, phaseInit);
+        this.rgoEndowmentInitializationSystem = new RGOEndowmentInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInit);
         this.regionProvinceCountSystem = new RegionProvinceCountSystem(ecsWorld, phaseInit);
         this.rgoEmploymentInitializationSystem = new RGOEmploymentInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInit);
         this.countryMarketInitializationSystem = new CountryMarketInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInit);

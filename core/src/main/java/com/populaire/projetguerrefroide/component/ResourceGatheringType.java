@@ -12,6 +12,7 @@ public record ResourceGatheringType(
     int slavePopTypeIndex,
     long slavePopTypeId,
     float slavePopTypeRatio,
-    float slaveEffectMultiplier) {
+    float slaveEffectMultiplier,
+    float endowmentShare) {
 
 }

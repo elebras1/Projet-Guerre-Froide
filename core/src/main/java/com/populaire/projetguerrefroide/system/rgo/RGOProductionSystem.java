@@ -51,16 +51,22 @@ public class RGOProductionSystem {
                 rgoProductivity = country.<CountryProductionTechnologyView>getView(CountryProductionTechnology.class).rgoProductivities(goodIndex);
             }
 
-            int maxCapacity = resourceGathering.size() * workforce;
-            float baseProduction = resourceGathering.size() * goodValue * resourceGathering.efficiency() * (1f + rgoOutputModifier + rgoProductivity);
+            float endowment = resourceGathering.endowment();
+            float capacity = endowment * workforce;
+            float levelProduction = goodValue * resourceGathering.efficiency() * (1f + rgoOutputModifier + rgoProductivity);
+            float baseProduction = endowment * levelProduction;
 
-            int targetWorkers = (int) (maxCapacity * workerPopTypeRatio);
-            int targetSlaves = (int) (maxCapacity * slavePopTypeRatio);
+            int targetWorkers = (int) (capacity * workerPopTypeRatio);
+            int targetSlaves = (int) (capacity * slavePopTypeRatio);
 
-            float workerFulfillment = (float) resourceGathering.workerAmount() / Math.max(1, targetWorkers);
             float slaveFulfillment = (float) resourceGathering.slaveAmount() / Math.max(1, targetSlaves);
 
-            float coreProduction = workerFulfillment * baseProduction * workerEffectMultiplier;
+            // production = value x M x endowment^alpha x levels^(1 - alpha), levels = workers / (workforce x worker ratio)
+            // (decision 184); alpha = 0 keeps the former rule, proportional to the workers
+            float workerLevels = resourceGathering.workerAmount() / Math.max(1f, workforce * workerPopTypeRatio);
+            float alpha = resourceGathering.endowmentShare();
+            float scale = alpha > 0f ? (float) (Math.pow(endowment, alpha) * Math.pow(workerLevels, 1f - alpha)) : workerLevels;
+            float coreProduction = scale * levelProduction * workerEffectMultiplier;
 
             float maxBonus = slaveEffectMultiplier - 1.0f;
             float currentSlaveBonus = 1.0f + (slaveFulfillment * maxBonus);

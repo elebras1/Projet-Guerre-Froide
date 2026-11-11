@@ -60,9 +60,20 @@ public class RGOEmploymentSystem {
             }
             int activeWorkerAmount = activeWorkers(demographics.totalByPopType(workerIndex), workforceShare);
 
-            int maxCapacity = resourceGathering.size() * workforce;
-            int targetWorkers = (int) (maxCapacity * workerPopTypeRatio);
-            int targetSlaves = (int) (maxCapacity * slavePopTypeRatio);
+            float capacity = resourceGathering.endowment() * workforce;
+            int targetWorkers = (int) (capacity * workerPopTypeRatio);
+            int targetSlaves = (int) (capacity * slavePopTypeRatio);
+            if (resourceGathering.endowmentShare() > 0f) {
+                // endowment RGOs work as family farms (annex 10, § 10.20 and 10.21): every active worker of the type works the
+                // endowment and the income is what it yields; no hiring or firing on the margin, the number of
+                // workers follows the population (births, promotions, migrations), with diminishing returns
+                resourceGathering.employmentRemainder(0f);
+                resourceGathering.vacancies(0);
+                resourceGathering.applicants(0f);
+                resourceGathering.workerAmount(activeWorkerAmount);
+                resourceGathering.slaveAmount(Math.min(targetSlaves, demographics.totalByPopType(slaveIndex)));
+                continue;
+            }
             int maximumWorkers = Math.min(targetWorkers, activeWorkerAmount);
 
             float adjustment = RGO_EMPLOYMENT_ADJUSTMENT_RATE * Math.clamp(resourceGathering.unitMargin(), -1f, 1f);

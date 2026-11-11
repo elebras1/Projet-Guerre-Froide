@@ -92,6 +92,13 @@ public class Constants {
     public static float NEEDS_SCALING_FACTOR = 100000f;
     public static final float SHORTAGE_PRICE_PREMIUM = 0.5f;
     public static final float RECIPE_SWITCH_MARGIN = 0.1f;
+    /**
+     * Share of an RGO's output due to its endowment (land for farmers, deposit or forest for labourers): alpha in
+     * production = value x M x endowment^alpha x levels^(1 - alpha) (annex 10 of the economy plan, § 10.21).
+     * Only RGOs with a natural potential (province field good_potential) use it; the others keep alpha = 0.
+     */
+    public static final float RGO_ENDOWMENT_SHARE_FARMERS = 0.4f;
+    public static final float RGO_ENDOWMENT_SHARE_LABOURERS = 0.4f;
     public static final float RGO_MECHANIZATION_EFFICIENCY = 0.25f;
     public static final int RGO_MECHANIZATION_DAYS = 180;
     public static final float RGO_MECHANIZATION_UPKEEP_RATE = 0.1f;

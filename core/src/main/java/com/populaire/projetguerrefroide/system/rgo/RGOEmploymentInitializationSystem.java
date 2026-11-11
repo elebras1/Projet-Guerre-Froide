@@ -46,10 +46,12 @@ public class RGOEmploymentInitializationSystem {
                 CountryPopulationPolicyView populationPolicy = iter.stage().obtainEntityView(countryId).getView(CountryPopulationPolicy.class);
                 workforceShare = activeShare(workerBaseShare, populationPolicy.workforceShareModifier());
             }
-            int maxCapacity = resourceGathering.size() * workforce;
-            int targetWorkers = (int) (maxCapacity * workerPopTypeRatio);
-            int targetSlaves = (int) (maxCapacity * slavePopTypeRatio);
-            resourceGathering.workerAmount(Math.min(targetWorkers, activeWorkers(demographics.totalByPopType(workerIndex), workforceShare)));
+            float capacity = resourceGathering.endowment() * workforce;
+            int targetWorkers = (int) (capacity * workerPopTypeRatio);
+            int targetSlaves = (int) (capacity * slavePopTypeRatio);
+            int active = activeWorkers(demographics.totalByPopType(workerIndex), workforceShare);
+            // endowment RGOs (decision 185 a): no hiring cap, diminishing returns limit employment
+            resourceGathering.workerAmount(resourceGathering.endowmentShare() > 0f ? active : Math.min(targetWorkers, active));
             resourceGathering.slaveAmount(Math.min(targetSlaves, demographics.totalByPopType(slaveIndex)));
         }
     }
