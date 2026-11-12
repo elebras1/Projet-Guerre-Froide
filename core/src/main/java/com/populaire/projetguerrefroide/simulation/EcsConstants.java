@@ -12,6 +12,8 @@ import com.populaire.projetguerrefroide.component.GlobalPopulationTypeView;
 import com.populaire.projetguerrefroide.component.Modifiers;
 import com.populaire.projetguerrefroide.component.ModifiersView;
 import com.populaire.projetguerrefroide.component.PopulationType;
+import com.populaire.projetguerrefroide.component.RgoModeView;
+import com.populaire.projetguerrefroide.component.RgoMode;
 import com.populaire.projetguerrefroide.component.PopulationTypeView;
 import com.populaire.projetguerrefroide.component.SpecialBuildingType;
 import com.populaire.projetguerrefroide.component.Technology;
@@ -29,6 +31,8 @@ import java.util.Arrays;
 
 import static com.populaire.projetguerrefroide.simulation.Constants.GOOD_COUNT;
 import static com.populaire.projetguerrefroide.simulation.Constants.MAX_MODIFIERS;
+import static com.populaire.projetguerrefroide.simulation.Constants.MAX_RGO_MODES;
+import static com.populaire.projetguerrefroide.simulation.Constants.MAX_RGO_MODE_INPUTS;
 import static com.populaire.projetguerrefroide.simulation.Constants.MAX_TECHNOLOGIES;
 import static com.populaire.projetguerrefroide.simulation.Constants.MAX_TECHNOLOGY_EFFECTS;
 import static com.populaire.projetguerrefroide.simulation.Constants.POP_TYPE_COUNT;
@@ -128,6 +132,12 @@ public class EcsConstants {
     private final int[][] technologyRecipeTypes;
     private final int[][] technologyMechanizationGoods;
     private final int[][] technologyMechanizationCaps;
+    private final int[][] technologyRgoModes;
+    private int rgoModeCount = 1;
+    private final boolean[][] rgoModeGoods = new boolean[MAX_RGO_MODES][GOOD_COUNT];
+    private final int[][] rgoModeInputGoods = new int[MAX_RGO_MODES][0];
+    private final float[][] rgoModeInputAmounts = new float[MAX_RGO_MODES][0];
+    private final float[] rgoModeOutputs = new float[MAX_RGO_MODES];
     private final long rgoMechanization;
     private final int[] mechanizationCostGoods = new int[RGO_MECHANIZATION_COST_GOODS.length];
     private final int[] mechanizationUpkeepGoods = new int[RGO_MECHANIZATION_UPKEEP_GOODS.length];
@@ -198,6 +208,7 @@ public class EcsConstants {
         this.technologyRecipeTypes = new int[MAX_TECHNOLOGIES][0];
         this.technologyMechanizationGoods = new int[MAX_TECHNOLOGIES][0];
         this.technologyMechanizationCaps = new int[MAX_TECHNOLOGIES][0];
+        this.technologyRgoModes = new int[MAX_TECHNOLOGIES][0];
         this.rgoMechanization = ecsWorld.entity("RgoMechanization");
         this.goodStockDecays = new float[GOOD_COUNT];
         this.declareTypeInheritance(ecsWorld);
@@ -232,6 +243,7 @@ public class EcsConstants {
             this.civilianGoodCosts[g] = goodEntity.has(this.militaryGoodTag) ? 0f : good.cost();
         }
         this.resolveTechnologies(ecsWorld);
+        this.resolveRgoModes(ecsWorld);
         for (int k = 0; k < RGO_MECHANIZATION_COST_GOODS.length; k++) {
             this.mechanizationCostGoods[k] = goodIndex(ecsWorld, globalGoodData, RGO_MECHANIZATION_COST_GOODS[k]);
         }
@@ -328,6 +340,73 @@ public class EcsConstants {
             }
         });
         technologyQuery.destruct();
+    }
+
+    /** RGO production modes (annex 12, decision 188); mode 0 is traditional: no input, output x 1, every good. */
+    private void resolveRgoModes(World ecsWorld) {
+        Arrays.fill(this.rgoModeGoods[0], true);
+        this.rgoModeOutputs[0] = 1f;
+        int[][] modesByTechnology = new int[MAX_TECHNOLOGIES][MAX_RGO_MODES];
+        int[] counts = new int[MAX_TECHNOLOGIES];
+        Query modeQuery = ecsWorld.query().with(RgoMode.class).build();
+        modeQuery.each(modeId -> {
+            RgoModeView mode = ecsWorld.obtainEntityView(modeId).getView(RgoMode.class);
+            int index = mode.index();
+            this.rgoModeCount = Math.max(this.rgoModeCount, index + 1);
+            for (int g = 0; g < GOOD_COUNT; g++) {
+                this.rgoModeGoods[index][g] = mode.goods(g);
+            }
+            int inputs = 0;
+            while (inputs < MAX_RGO_MODE_INPUTS && mode.inputGoodIndexes(inputs) >= 0) {
+                inputs++;
+            }
+            this.rgoModeInputGoods[index] = new int[inputs];
+            this.rgoModeInputAmounts[index] = new float[inputs];
+            for (int k = 0; k < inputs; k++) {
+                this.rgoModeInputGoods[index][k] = mode.inputGoodIndexes(k);
+                this.rgoModeInputAmounts[index][k] = mode.inputAmounts(k);
+            }
+            this.rgoModeOutputs[index] = mode.output();
+            EntityView technology = ecsWorld.obtainEntityView(mode.technologyId());
+            if (technology.has(Technology.class)) {
+                int t = technology.<TechnologyView>getView(Technology.class).index();
+                modesByTechnology[t][counts[t]++] = index;
+            }
+        });
+        modeQuery.destruct();
+        for (int t = 0; t < MAX_TECHNOLOGIES; t++) {
+            this.technologyRgoModes[t] = Arrays.copyOf(modesByTechnology[t], counts[t]);
+        }
+    }
+
+    public int rgoModeCount() {
+        this.requireGlobals();
+        return this.rgoModeCount;
+    }
+
+    public boolean[][] rgoModeGoods() {
+        this.requireGlobals();
+        return this.rgoModeGoods;
+    }
+
+    public int[][] rgoModeInputGoods() {
+        this.requireGlobals();
+        return this.rgoModeInputGoods;
+    }
+
+    public float[][] rgoModeInputAmounts() {
+        this.requireGlobals();
+        return this.rgoModeInputAmounts;
+    }
+
+    public float[] rgoModeOutputs() {
+        this.requireGlobals();
+        return this.rgoModeOutputs;
+    }
+
+    public int[][] technologyRgoModes() {
+        this.requireGlobals();
+        return this.technologyRgoModes;
     }
 
     private void requireGlobals() {

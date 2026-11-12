@@ -1,10 +1,12 @@
 package com.populaire.projetguerrefroide.system.rgo;
 
+import io.github.elebras1.flecs.EntityView;
 import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.simulation.EcsConstants;
+import com.populaire.projetguerrefroide.system.population.PopulationMobilityUtils;
 
 import static com.populaire.projetguerrefroide.simulation.Constants.*;
 import static com.populaire.projetguerrefroide.system.population.EmploymentUtils.activeWorkers;
@@ -47,16 +49,20 @@ public class RGOEmploymentSystem {
         boolean stocksAboveTarget = inventory > STOCK_TARGET_DAYS * worldDemand;
 
         float workerBaseShare = this.ecsConstants.baseWorkforceShares()[workerIndex];
+        boolean month = PopulationMobilityUtils.isMobilityDay(iter.stage(), this.ecsConstants);
         long countryId = 0;
         float workforceShare = 0f;
+        CountryMarketView countryMarket = null;
         for (int i = 0; i < iter.count(); i++) {
             ResourceGatheringMutView resourceGathering = resourceGatheringField.getMutView(i);
             DemographicsView demographics = demographicsField.getMutView(i);
             ProvinceView province = provinceField.getMutView(i);
             if (province.ownerId() != countryId) {
                 countryId = province.ownerId();
-                CountryPopulationPolicyView populationPolicy = iter.stage().obtainEntityView(countryId).getView(CountryPopulationPolicy.class);
+                EntityView country = iter.stage().obtainEntityView(countryId);
+                CountryPopulationPolicyView populationPolicy = country.getView(CountryPopulationPolicy.class);
                 workforceShare = activeShare(workerBaseShare, populationPolicy.workforceShareModifier());
+                countryMarket = country.getView(CountryMarket.class);
             }
             int activeWorkerAmount = activeWorkers(demographics.totalByPopType(workerIndex), workforceShare);
 
@@ -70,7 +76,11 @@ public class RGOEmploymentSystem {
                 resourceGathering.employmentRemainder(0f);
                 resourceGathering.vacancies(0);
                 resourceGathering.applicants(0f);
-                resourceGathering.workerAmount(activeWorkerAmount);
+                int neededWorkers = RgoUtils.neededWorkers(activeWorkerAmount, RgoUtils.addedLevel(resourceGathering));
+                if (month) {
+                    this.updateFamilyShare(resourceGathering, countryMarket, workerIndex, neededWorkers);
+                }
+                resourceGathering.workerAmount(RgoUtils.familyWorkers(neededWorkers, resourceGathering.familyShare()));
                 resourceGathering.slaveAmount(Math.min(targetSlaves, demographics.totalByPopType(slaveIndex)));
                 continue;
             }
@@ -94,5 +104,33 @@ public class RGOEmploymentSystem {
             resourceGathering.workerAmount(boundedWorkerAmount);
             resourceGathering.slaveAmount(Math.min(targetSlaves, demographics.totalByPopType(slaveIndex)));
         }
+    }
+
+    /**
+     * Departure and return of the family farm's workers (annex 12, decision 197), monthly. R = what working the farm paid
+     * per worker over the month (wages paid and the workers' share of the profit), S = the subsistence a worker gets off
+     * the farm (75 % of his life needs at the country's prices). Below S, a share 1 % x (1 - R / S) of the workers leaves
+     * the farm; above, a share 1 % x min(1, R / S - 1) of those who left comes back, never beyond the needed workers.
+     * Without workers, R is the output of a first worker at the country's price (decision T15).
+     */
+    private void updateFamilyShare(ResourceGatheringMutView rgo, CountryMarketView countryMarket, int workerIndex, int neededWorkers) {
+        float subsistence = SUBSISTENCE_LIFE_SHARE * countryMarket.lifeCostsByPopType(workerIndex) / NEEDS_SCALING_FACTOR;
+        float income = rgo.monthWorkerDays() > 0f ? rgo.monthIncome() / rgo.monthWorkerDays()
+            : rgo.workerOutput() * countryMarket.goodPrices(rgo.goodIndex());
+        rgo.monthIncome(0f);
+        rgo.monthWorkerDays(0f);
+        if (subsistence <= 0f || neededWorkers <= 0) {
+            rgo.familyRatio(0f);
+            return;
+        }
+        float ratio = income / subsistence;
+        rgo.familyRatio(ratio);
+        int workers = RgoUtils.familyWorkers(neededWorkers, rgo.familyShare());
+        if (ratio < 1f) {
+            workers -= (int) Math.ceil(PROMOTION_RATE * (1f - ratio) * workers);
+        } else if (ratio > 1f) {
+            workers += (int) Math.ceil(PROMOTION_RATE * Math.min(1f, ratio - 1f) * (neededWorkers - workers));
+        }
+        rgo.familyShare(Math.clamp((float) workers / neededWorkers, 0f, 1f));
     }
 }

@@ -32,7 +32,7 @@ public final class EconomyLoader {
         float startYear = startDate.getYear() + (startDate.getDayOfYear() - 1) / DAYS_PER_YEAR;
         this.ecsWorld.obtainEntity(calendarId).set(new EconomyCalendar(0, startYear));
         long globalMarketId = this.ecsWorld.entity("global_market");
-        this.ecsWorld.obtainEntity(globalMarketId).set(new GlobalMarket(new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new double[GOOD_COUNT], new boolean[GOOD_COUNT]));
+        this.ecsWorld.obtainEntity(globalMarketId).set(new GlobalMarket(new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new double[GOOD_COUNT], new boolean[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT]));
     }
 
     public void loadGoods(GoodsJson goods) {
@@ -478,6 +478,53 @@ public final class EconomyLoader {
             i++;
         }
         return new Modifiers(modifierValues, modifierIds);
+    }
+
+    /**
+     * RGO production modes (annex 12, decisions 188 and 191): one entity "rgo_mode_<name>" per mode, indexes from 1 (0 is the
+     * traditional mode). With the game rule {@code enabled} false, no mode is loaded and every RGO stays traditional.
+     */
+    public void loadRgoModes(RgoModesJson rgoModes) {
+        if (rgoModes == null || rgoModes.modes() == null || Boolean.FALSE.equals(rgoModes.enabled())) {
+            return;
+        }
+        int index = 1;
+        for (var modeEntry : rgoModes.modes().entrySet()) {
+            if (index >= MAX_RGO_MODES) {
+                throw new IllegalArgumentException("Too many RGO modes, at most " + (MAX_RGO_MODES - 1));
+            }
+            RgoModeJson mode = modeEntry.getValue();
+            boolean[] goods = new boolean[GOOD_COUNT];
+            for (String good : mode.goods()) {
+                long goodId = this.ecsWorld.lookup(good);
+                if (goodId == 0) {
+                    throw new IllegalArgumentException("Unknown good " + good + " in RGO mode " + modeEntry.getKey());
+                }
+                goods[this.context.getGoodIndex(goodId)] = true;
+            }
+            int[] inputGoodIndexes = new int[MAX_RGO_MODE_INPUTS];
+            float[] inputAmounts = new float[MAX_RGO_MODE_INPUTS];
+            java.util.Arrays.fill(inputGoodIndexes, -1);
+            int inputCount = 0;
+            if (mode.inputs() != null) {
+                for (var input : mode.inputs().entrySet()) {
+                    if (inputCount >= MAX_RGO_MODE_INPUTS) {
+                        throw new IllegalArgumentException("Too many inputs in RGO mode " + modeEntry.getKey());
+                    }
+                    long goodId = this.ecsWorld.lookup(input.getKey());
+                    if (goodId == 0) {
+                        throw new IllegalArgumentException("Unknown good " + input.getKey() + " in RGO mode " + modeEntry.getKey());
+                    }
+                    inputGoodIndexes[inputCount] = this.context.getGoodIndex(goodId);
+                    inputAmounts[inputCount] = input.getValue().floatValue();
+                    inputCount++;
+                }
+            }
+            long technologyId = this.ecsWorld.entity(mode.technology());
+            EntityView modeEntity = this.ecsWorld.obtainEntityView(this.ecsWorld.entity("rgo_mode_" + modeEntry.getKey()));
+            modeEntity.set(new RgoMode(index, technologyId, goods, inputGoodIndexes, inputAmounts, mode.output().floatValue()));
+            index++;
+        }
     }
 
     public void loadResourceProductions(Map<String, ResourceProductionJson> resourceProductions, Map<String, ProductionType> productionTypes) {

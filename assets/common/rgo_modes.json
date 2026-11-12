@@ -1,0 +1,29 @@
+{
+    "enabled": true,
+    "modes": {
+        "fertilizers": {
+            "technology": "fertilizers",
+            "goods": ["grain", "vegetables", "fruits"],
+            "inputs": {"inorganic_chemicals": 0.02},
+            "output": 1.5
+        },
+        "intensive": {
+            "technology": "green_revolution",
+            "goods": ["grain", "vegetables", "fruits"],
+            "inputs": {"inorganic_chemicals": 0.04, "fuel": 0.02},
+            "output": 2.2
+        },
+        "precision": {
+            "technology": "precision_agriculture",
+            "goods": ["grain", "vegetables", "fruits"],
+            "inputs": {"inorganic_chemicals": 0.04, "fuel": 0.02, "electronic_components": 0.01},
+            "output": 2.6
+        },
+        "feedlot": {
+            "technology": "cold_chain",
+            "goods": ["meat"],
+            "inputs": {"grain": 0.6, "fuel": 0.04},
+            "output": 2
+        }
+    }
+}

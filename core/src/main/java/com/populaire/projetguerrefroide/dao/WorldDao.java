@@ -29,6 +29,8 @@ public interface WorldDao {
 
     Map<String, ResourceProductionJson> readResourceProductions();
 
+    RgoModesJson readRgoModes();
+
     Map<String, Map<String, Double>> readTraits();
 
     Map<String, Map<String, Double>> readStateConsumption();

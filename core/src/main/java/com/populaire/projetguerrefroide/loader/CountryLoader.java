@@ -132,7 +132,17 @@ public final class CountryLoader {
             country.set(new CountryTechnology(acquiredTechnologies, currentTechnologyIndexes, new float[MAX_TECHNOLOGIES]));
             float literacy = countryHistory.literacy() != null ? countryHistory.literacy().floatValue() : 0f;
             country.set(new CountryDevelopment(literacy, 0f, 0f, 0f, 0f));
-            country.set(new CountryProductionTechnology(new float[GOOD_COUNT], new float[MAX_ECONOMY_BUILDING_TYPES], new boolean[MAX_ECONOMY_BUILDING_TYPES], new int[GOOD_COUNT]));
+            boolean[] rgoModes = new boolean[MAX_RGO_MODES];
+            if (countryHistory.rgoModes() != null) {
+                // modes already in use in 1946 (annex 12, decision 194), on top of those of the 1946 technologies
+                for (String modeName : countryHistory.rgoModes()) {
+                    long modeId = this.ecsWorld.lookup("rgo_mode_" + modeName);
+                    if (modeId != 0) {
+                        rgoModes[this.ecsWorld.obtainEntityView(modeId).<RgoModeView>getView(RgoMode.class).index()] = true;
+                    }
+                }
+            }
+            country.set(new CountryProductionTechnology(new float[GOOD_COUNT], new float[MAX_ECONOMY_BUILDING_TYPES], new boolean[MAX_ECONOMY_BUILDING_TYPES], new int[GOOD_COUNT], rgoModes));
             country.set(new CountryMarket(new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new double[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new double[POP_TYPE_COUNT], new double[POP_TYPE_COUNT], new double[POP_TYPE_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], 0d, 0f, new double[GOOD_COUNT], 0f, 0f, 0f, 0d, 0d, 0d, new float[GOOD_COUNT]));
             country.set(new CountryDemographics(0, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, new long[POP_TYPE_COUNT], new long[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0, new float[POP_TYPE_COUNT]));
             country.set(new CountryTaxPolicy(0f, 0f, 0f, 0f, 0f));

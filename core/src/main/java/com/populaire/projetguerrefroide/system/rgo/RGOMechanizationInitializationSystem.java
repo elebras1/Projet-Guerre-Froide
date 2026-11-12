@@ -37,6 +37,7 @@ public class RGOMechanizationInitializationSystem {
                 continue;
             }
             rgo.mechanization(cap);
+            rgo.mechanizationBase(cap);
             rgo.upkeepServed(1f);
             rgo.efficiency(1f + RGO_MECHANIZATION_EFFICIENCY * cap);
         }

@@ -49,7 +49,7 @@ public class ArtisanDemandSystem {
         GlobalMarketView globalMarket = world.obtainEntityView(this.ecsConstants.globalMarket()).getView(GlobalMarket.class);
         boolean[] lacking = zeroed(this.lacking);
         for (int c = 0; c < count; c++) {
-            lacking[c] = MarketUtils.clearingGap(globalMarket, buildingTypes[c].goodOutputIndex()) > 0f;
+            lacking[c] = MarketUtils.clearingGap(globalMarket, buildingTypes[c].goodOutputIndex(), this.ecsConstants.goodStockDecays()[buildingTypes[c].goodOutputIndex()]) > 0f;
         }
 
         float[] needs = zeroed(this.needs);

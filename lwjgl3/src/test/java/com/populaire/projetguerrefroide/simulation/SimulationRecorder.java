@@ -668,6 +668,8 @@ public class SimulationRecorder implements AutoCloseable {
         this.writer("country/technology_acquired.csv").header("year", "date", "country", "technology");
         this.writer("building_types/recipes.csv").header("year", "date", "building_type", "buildings", "advanced");
         this.writer("rgo/mechanization.csv").header("year", "date", "country", "good", "rgos", "mechanized", "levels", "workers", "production", "upkeep_value", "served_value");
+        this.writer("rgo/family.csv").header("year", "date", "country", "good", "rgos", "workers", "family_share_mean", "income_ratio_mean", "rgos_below_subsistence", "rgos_with_departures");
+        this.writer("rgo/modes.csv").header("year", "date", "country", "good", "rgos", "mode0", "mode1", "mode2", "mode3", "mode4", "workers", "production", "mode_served_mean");
         this.writer("country/strategic_stock.csv").header("tick", "date", "country", "levels", "capacity", "stock_value", "purchased_value", "released_value", "lost_value",
             "spent", "earned", "stock_market_value");
         this.writer("country/military_bases.csv").header("tick", "date", "country", "naval_capacity", "naval_load", "air_capacity", "air_load",
@@ -807,6 +809,10 @@ public class SimulationRecorder implements AutoCloseable {
         this.checkConsistency();
         this.trackGoodsConservation();
         this.trackInvariants(tick, tickNanos);
+        if (tick == 30) {
+            // first month (annex 12, § 9.8): income of the family farms against subsistence, before any departure adds up
+            this.recordFamily(0, date);
+        }
         if ((tick + 1) % DAYS_PER_YEAR == 0) {
             this.recordYear(tick, date);
         }
@@ -908,6 +914,7 @@ public class SimulationRecorder implements AutoCloseable {
         this.recordTechnology(year, date);
         this.recordRecipes(year, date);
         this.recordMechanization(year, date);
+        this.recordFamily(year, date);
         double ticks = Math.max(1, this.yearTicks);
 
         double worstCountryLife = Double.MAX_VALUE;
@@ -1435,6 +1442,37 @@ public class SimulationRecorder implements AutoCloseable {
         }
     }
 
+    /** Family farms (annex 12, decision 197): share of the needed workers on the farm, income per worker over subsistence. */
+    private void recordFamily(int year, String date) {
+        java.util.Map<Long, double[]> rows = new java.util.TreeMap<>();
+        this.rgoQuery.iter(iter -> {
+            Field<Province> provinceField = iter.field(Province.class, 0);
+            Field<ResourceGathering> rgoField = iter.field(ResourceGathering.class, 1);
+            for (int i = 0; i < iter.count(); i++) {
+                ProvinceView province = provinceField.getMutView(i);
+                ResourceGatheringView rgo = rgoField.getMutView(i);
+                Integer countryIndex = this.countryIndexByEntity.get(province.ownerId());
+                if (countryIndex == null || rgo.endowmentShare() <= 0f) {
+                    continue;
+                }
+                double[] row = rows.computeIfAbsent(key(countryIndex, rgo.goodIndex()), k -> new double[6]);
+                row[0]++;
+                row[1] += rgo.workerAmount();
+                row[2] += rgo.familyShare();
+                row[3] += (double) rgo.familyRatio() * rgo.workerAmount();
+                row[4] += rgo.familyRatio() < 1f ? 1 : 0;
+                row[5] += rgo.familyShare() < 1f ? 1 : 0;
+            }
+        });
+        for (java.util.Map.Entry<Long, double[]> entry : rows.entrySet()) {
+            double[] row = entry.getValue();
+            int countryIndex = (int) (entry.getKey() >> 16);
+            int goodIndex = (int) (entry.getKey() & 0xFFFF);
+            this.writer("rgo/family.csv").row(year, date, this.countryNames.get(countryIndex), this.goodNames[goodIndex],
+                (int) row[0], (long) row[1], row[2] / row[0], row[1] > 0 ? row[3] / row[1] : 0.0, (int) row[4], (int) row[5]);
+        }
+    }
+
     private void recordMechanization(int year, String date) {
         java.util.Map<Long, double[]> rows = new java.util.TreeMap<>();
         this.rgoQuery.iter(iter -> {
@@ -1447,7 +1485,10 @@ public class SimulationRecorder implements AutoCloseable {
                 if (countryIndex == null) {
                     continue;
                 }
-                double[] row = rows.computeIfAbsent(key(countryIndex, rgo.goodIndex()), k -> new double[7]);
+                double[] row = rows.computeIfAbsent(key(countryIndex, rgo.goodIndex()), k -> new double[13]);
+                // modes de production (annexe 12) : nombre de RGO par mode, part servie de leurs intrants
+                row[7 + Math.min(rgo.mode(), 4)]++;
+                row[12] += rgo.mode() > 0 ? rgo.modeServed() : 0;
                 row[0]++;
                 row[1] += rgo.mechanization() > 0 ? 1 : 0;
                 row[2] += rgo.mechanization();
@@ -1459,11 +1500,14 @@ public class SimulationRecorder implements AutoCloseable {
         });
         for (java.util.Map.Entry<Long, double[]> entry : rows.entrySet()) {
             double[] row = entry.getValue();
+            int countryIndex = (int) (entry.getKey() >> 16);
+            int goodIndex = (int) (entry.getKey() & 0xFFFF);
+            double moded = row[0] - row[7];
+            this.writer("rgo/modes.csv").row(year, date, this.countryNames.get(countryIndex), this.goodNames[goodIndex],
+                (int) row[0], (int) row[7], (int) row[8], (int) row[9], (int) row[10], (int) row[11], (long) row[3], row[4], moded > 0 ? row[12] / moded : 0.0);
             if (row[2] <= 0) {
                 continue;
             }
-            int countryIndex = (int) (entry.getKey() >> 16);
-            int goodIndex = (int) (entry.getKey() & 0xFFFF);
             this.writer("rgo/mechanization.csv").row(year, date, this.countryNames.get(countryIndex), this.goodNames[goodIndex],
                 (int) row[0], (int) row[1], (int) row[2], (long) row[3], row[4], row[5], row[6]);
         }

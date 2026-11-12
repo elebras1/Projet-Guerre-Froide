@@ -5,11 +5,16 @@ import io.github.elebras1.flecs.EntityView;
 import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
+
+import static com.populaire.projetguerrefroide.simulation.Constants.RGO_MECHANIZATION_LABOUR_SAVING;
 import com.populaire.projetguerrefroide.component.*;
 
 public class RGOProductionSystem {
 
+    private final EcsConstants ecsConstants;
+
     public RGOProductionSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("RGOProductionSystem")
             .kind(phaseId)
             .with(ResourceGathering.class)
@@ -65,6 +70,10 @@ public class RGOProductionSystem {
             // (decision 184); alpha = 0 keeps the former rule, proportional to the workers
             float workerLevels = resourceGathering.workerAmount() / Math.max(1f, workforce * workerPopTypeRatio);
             float alpha = resourceGathering.endowmentShare();
+            if (alpha > 0f) {
+                // mechanization saves labour (annex 12, decision 192): each worker does the work of 1 + k x effective level
+                workerLevels *= 1f + RGO_MECHANIZATION_LABOUR_SAVING * RgoUtils.addedLevel(resourceGathering);
+            }
             float scale = alpha > 0f ? (float) (Math.pow(endowment, alpha) * Math.pow(workerLevels, 1f - alpha)) : workerLevels;
             float coreProduction = scale * levelProduction * workerEffectMultiplier;
 
@@ -73,7 +82,12 @@ public class RGOProductionSystem {
 
             ProvinceInfrastructureView provinceInfrastructure = provinceInfrastructureField.getMutView(i);
             float infrastructure = 1f + provinceInfrastructure.productionBonus();
-            resourceGathering.production(coreProduction * currentSlaveBonus * infrastructure);
+            // production mode (annex 12, decision 188): 1 + (output - 1) x share of its inputs served
+            float modeBase = coreProduction * currentSlaveBonus * infrastructure;
+            int mode = resourceGathering.mode();
+            float modeFactor = mode > 0 ? 1f + (this.ecsConstants.rgoModeOutputs()[mode] - 1f) * resourceGathering.modeServed() : 1f;
+            resourceGathering.modeBaseProduction(modeBase);
+            resourceGathering.production(modeBase * modeFactor);
             resourceGathering.workerOutput(targetWorkers > 0 ? baseProduction * workerEffectMultiplier * currentSlaveBonus * infrastructure / targetWorkers : 0f);
         }
     }

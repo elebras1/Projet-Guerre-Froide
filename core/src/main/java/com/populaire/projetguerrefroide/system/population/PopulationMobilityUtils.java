@@ -41,7 +41,7 @@ public class PopulationMobilityUtils {
     }
 
     public static void shares(PopulationView population, float classRigidity, float workforceShare, float[] promotionWeights, float[] demotionWeights,
-                              boolean[] employeeTypes, boolean[] ruralTypes, int rgoWorkerIndex, DemographicsView demographics,
+                              boolean[] employeeTypes, boolean[] ruralTypes, boolean ruralSource, int rgoWorkerIndex, DemographicsView demographics,
                               float[] vacancyShares, float[] openShares, float[] fallbackSources, float[] fallbackWeights) {
         int amount = population.amount();
         float active = amount * workforceShare;
@@ -71,19 +71,26 @@ public class PopulationMobilityUtils {
             fallbackSources[b] = 0f;
             fallbackWeights[b] = fallback && ruralTypes[b] ? demotionWeights[b] / fallbackWeightTotal : 0f;
             if (employeeTypes[b]) {
-                vacancyShares[b] = (ambition + jobSearch) * promotionWeights[b] + demotionPart;
+                // rural exodus (annex 12, decision 193): an employed rural pop is also drawn to a job that pays more than its income
+                float pull = ruralSource ? PROMOTION_RATE * openness * attraction(demographics, b, sourceIncome) : 0f;
+                vacancyShares[b] = (ambition + jobSearch + pull) * promotionWeights[b] + demotionPart;
                 fallbackSources[b] = demotionPart;
             } else if (ruralTypes[b]) {
                 vacancyShares[b] = b == rgoWorkerIndex ? (ambition + jobSearch) * promotionWeights[b] : 0f;
                 openShares[b] = demotionPart;
             } else {
-                int targetTotal = demographics.totalByPopType(b);
-                float attraction = targetTotal > 0 && sourceIncome > 0f
-                    ? Math.clamp(demographics.incomeByPopType(b) / targetTotal / sourceIncome - 1f, 0f, 1f)
-                    : 0f;
+                float attraction = attraction(demographics, b, sourceIncome);
                 openShares[b] = (ambition * promotionWeights[b] + demotionPart) * attraction;
                 fallbackSources[b] = demotionPart * (1f - attraction);
             }
         }
+    }
+
+    /** Income gap towards a pop type of the province: its income per pop over the source's, minus one, within [0, 1]. */
+    private static float attraction(DemographicsView demographics, int popType, float sourceIncome) {
+        int targetTotal = demographics.totalByPopType(popType);
+        return targetTotal > 0 && sourceIncome > 0f
+            ? Math.clamp(demographics.incomeByPopType(popType) / targetTotal / sourceIncome - 1f, 0f, 1f)
+            : 0f;
     }
 }

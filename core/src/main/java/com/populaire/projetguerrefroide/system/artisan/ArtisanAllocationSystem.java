@@ -50,7 +50,7 @@ public class ArtisanAllocationSystem {
         GlobalMarketView globalMarket = world.obtainEntityView(this.ecsConstants.globalMarket()).getView(GlobalMarket.class);
         float[] gaps = zeroed(this.gaps);
         for (int c = 0; c < count; c++) {
-            gaps[c] = MarketUtils.clearingGap(globalMarket, buildingTypes[c].goodOutputIndex());
+            gaps[c] = MarketUtils.clearingGap(globalMarket, buildingTypes[c].goodOutputIndex(), this.ecsConstants.goodStockDecays()[buildingTypes[c].goodOutputIndex()]);
         }
 
         float[] scores = zeroed(this.scores);

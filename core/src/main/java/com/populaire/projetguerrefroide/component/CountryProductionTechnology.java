@@ -5,11 +5,13 @@ import io.github.elebras1.flecs.annotation.FixedArray;
 
 import static com.populaire.projetguerrefroide.simulation.Constants.GOOD_COUNT;
 import static com.populaire.projetguerrefroide.simulation.Constants.MAX_ECONOMY_BUILDING_TYPES;
+import static com.populaire.projetguerrefroide.simulation.Constants.MAX_RGO_MODES;
 
 @Component
 public record CountryProductionTechnology(
     @FixedArray(length = GOOD_COUNT) float[] rgoProductivities,
     @FixedArray(length = MAX_ECONOMY_BUILDING_TYPES) float[] factoryProductivities,
     @FixedArray(length = MAX_ECONOMY_BUILDING_TYPES) boolean[] advancedRecipes,
-    @FixedArray(length = GOOD_COUNT) int[] mechanizationCaps) {
+    @FixedArray(length = GOOD_COUNT) int[] mechanizationCaps,
+    @FixedArray(length = MAX_RGO_MODES) boolean[] rgoModes) {
 }

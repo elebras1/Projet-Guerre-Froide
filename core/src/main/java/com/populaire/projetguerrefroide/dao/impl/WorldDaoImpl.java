@@ -44,6 +44,7 @@ public class WorldDaoImpl implements WorldDao {
     private final String productionTypesJsonFile = this.commonPath + "production_types.json";
     private final String buildingsJsonFile = this.commonPath + "buildings.json";
     private final String resourceProductionsJsonFile = this.commonPath + "resource_productions.json";
+    private final String rgoModesJsonFile = this.commonPath + "rgo_modes.json";
     private final String populationTypesJsonFile = this.commonPath + "poptypes.json";
     private final String lawsJsonFile = this.commonPath + "laws.json";
     private final String relationJsonFile = this.diplomacyPath + "relation.json";
@@ -114,6 +115,11 @@ public class WorldDaoImpl implements WorldDao {
     @Override
     public Map<String, ResourceProductionJson> readResourceProductions() {
         return this.readJson(this.resourceProductionsJsonFile, this.resourceProductionsType);
+    }
+
+    @Override
+    public RgoModesJson readRgoModes() {
+        return this.readJson(this.rgoModesJsonFile, RgoModesJson.class);
     }
 
     @Override

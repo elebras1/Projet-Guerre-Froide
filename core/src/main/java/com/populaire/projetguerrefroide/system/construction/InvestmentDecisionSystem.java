@@ -21,7 +21,10 @@ import com.populaire.projetguerrefroide.simulation.EcsConstants;
 import com.populaire.projetguerrefroide.system.population.EmploymentUtils;
 import com.populaire.projetguerrefroide.system.market.MarketUtils;
 
+import java.util.Arrays;
 import java.util.Comparator;
+
+import com.populaire.projetguerrefroide.system.rgo.RgoUtils;
 
 import static com.populaire.projetguerrefroide.util.ArrayUtils.zeroed;
 import static com.populaire.projetguerrefroide.simulation.Constants.*;
@@ -51,10 +54,14 @@ public class InvestmentDecisionSystem {
         private float annualReturn;
         private boolean mechanization;
         private double baseValue;
+        private int goodIndex;
+        private float extraOutput;
 
-        private Candidate mechanization(double baseValue) {
+        private Candidate mechanization(double baseValue, int goodIndex, float extraOutput) {
             this.mechanization = true;
             this.baseValue = baseValue;
+            this.goodIndex = goodIndex;
+            this.extraOutput = extraOutput;
             return this;
         }
 
@@ -184,6 +191,11 @@ public class InvestmentDecisionSystem {
     private final LongFloatSlotMap levelsByType = new LongFloatSlotMap();
     private final LongObjectMap<LongList> regionsByCountry = new LongObjectMap<>();
     private final float[] pendingOutputs = new float[GOOD_COUNT];
+    private final double[] rgoPendingOutputs = new double[GOOD_COUNT];
+    private final double[] rgoCandidateGains = new double[GOOD_COUNT];
+    private final double[] rgoPendingModeGains = new double[GOOD_COUNT];
+    private final double[] rgoDiffusion = new double[GOOD_COUNT];
+    private final double[] rgoShares = new double[GOOD_COUNT];
     private final double[] availableFunds = new double[OWNER_COUNT];
     private final ObjectList<Candidate> noCandidates = new ObjectList<>();
     private final ObjectList<TypeReturn> newBuildingTypes = new ObjectList<>();
@@ -239,6 +251,8 @@ public class InvestmentDecisionSystem {
 
         double[] availableFunds = this.availableFunds;
         GlobalMarketView globalMarket = world.obtainEntityView(this.ecsConstants.globalMarket()).getMutView(GlobalMarket.class);
+        MarketUtils.updateTrendDemands(world.obtainEntityView(this.ecsConstants.globalMarket()).getMutView(GlobalMarket.class));
+        this.rationMechanization(globalMarket);
         while (iter.next()) {
             Field<CountryInvestment> countryInvestmentField = iter.field(CountryInvestment.class, 0);
             Field<CountryBudget> countryBudgetField = iter.field(CountryBudget.class, 1);
@@ -267,7 +281,7 @@ public class InvestmentDecisionSystem {
                 candidates.sort(CANDIDATE_ORDER);
                 for (int c = 0; c < candidates.size(); c++) {
                     Candidate candidate = candidates.get(c);
-                    int freeLevels = candidate.freeLevels();
+                    int freeLevels = candidate.isMechanization() ? this.rationedLevels(candidate) : candidate.freeLevels();
                     while (freeLevels > 0
                         && (candidate.isMechanization() || this.availableWorkers(world, candidate, ruralTypes) - reservedWorkers.get(candidate.regionInstanceId()) >= candidate.workersPerLevel())
                         && (parkUtilization(parkUsedLevels, parkLevels, countryId, candidate.buildingTypeId()) >= MINIMUM_UTILIZATION_FOR_EXPANSION
@@ -275,6 +289,7 @@ public class InvestmentDecisionSystem {
                             : stateOwnedEconomy && candidate.owner() == STATE_OWNER && availableFunds[STATE_OWNER] >= candidate.levelCost())) {
                         if (candidate.isMechanization()) {
                             startMechanizationSite(world, this.ecsConstants, candidate.buildingId(), candidate.regionInstanceId(), candidate.countryId(), candidate.ownerTagId(), candidate.baseValue());
+                            this.rgoPendingOutputs[candidate.goodIndex] += candidate.extraOutput;
                         } else {
                             startSite(world, this.ecsConstants, candidate.buildingId(), candidate.buildingTypeId(), candidate.regionInstanceId(), candidate.countryId(), candidate.ownerTagId());
                             addPendingOutput(world, pendingOutputs, levelOutputs, candidate.buildingTypeId());
@@ -303,6 +318,45 @@ public class InvestmentDecisionSystem {
                 }
             }
         }
+        // output of the mechanization levels under construction, read by the mode choice (decision 202)
+        GlobalMarketMutView market = world.obtainEntityView(this.ecsConstants.globalMarket()).getMutView(GlobalMarket.class);
+        for (int g = 0; g < GOOD_COUNT; g++) {
+            market.goodPendingRgoOutputs(g, (float) this.rgoPendingOutputs[g]);
+        }
+    }
+
+    /**
+     * Mechanization within what the world lacks (decision 202): for each good, the shortfall ({@link
+     * MarketUtils#trendClearingProduction}, on the yearly demand, minus the world production, the levels under construction and the mode gains not
+     * served yet) is shared among the candidate RGOs in proportion to the extra output of their free levels, by error
+     * diffusion from an offset that changes every day, so that the adopters change from day to day; the levels are cut in
+     * the funding loop ({@link #rationedLevels}).
+     */
+    private void rationMechanization(GlobalMarketView globalMarket) {
+        float[] decays = this.ecsConstants.goodStockDecays();
+        int day = this.world.obtainEntityView(this.ecsConstants.economyCalendar()).<EconomyCalendarView>getView(EconomyCalendar.class).day();
+        double offset = (day * 0.6180339887498949) % 1.0;
+        for (int g = 0; g < GOOD_COUNT; g++) {
+            this.rgoShares[g] = 0.0;
+            this.rgoDiffusion[g] = offset;
+            if (this.rgoCandidateGains[g] > 0.0) {
+                double shortfall = MarketUtils.trendClearingProduction(globalMarket, g, decays[g]) - globalMarket.goodProductionAmounts(g) - this.rgoPendingOutputs[g]
+                    - this.rgoPendingModeGains[g];
+                this.rgoShares[g] = Math.clamp(shortfall / this.rgoCandidateGains[g], 0.0, 1.0);
+            }
+        }
+    }
+
+    /** Levels a mechanization candidate may start within its good's share of the shortfall (error diffusion). */
+    private int rationedLevels(Candidate candidate) {
+        if (candidate.extraOutput <= 0f) {
+            return 0;
+        }
+        int good = candidate.goodIndex;
+        this.rgoDiffusion[good] += this.rgoShares[good] * candidate.freeLevels() * candidate.extraOutput;
+        int levels = Math.min(candidate.freeLevels(), (int) (this.rgoDiffusion[good] / candidate.extraOutput));
+        this.rgoDiffusion[good] -= levels * candidate.extraOutput;
+        return levels;
     }
 
     private void buildNewBuildings(World world, long countryId, long ownerTagId, boolean stateOwnedEconomy, LongObjectSlotMap<TypeReturn> typeReturns, LongList regions,
@@ -352,7 +406,7 @@ public class InvestmentDecisionSystem {
             }
             EconomyBuildingTypeView buildingType = world.obtainEntityView(typeReturn.buildingTypeId()).getView(EconomyBuildingType.class);
             int goodIndex = buildingType.goodOutputIndex();
-            if (MarketUtils.clearingProduction(globalMarket, goodIndex) > globalMarket.goodProductionAmounts(goodIndex) + pendingOutputs[goodIndex]) {
+            if (MarketUtils.clearingProduction(globalMarket, goodIndex, this.ecsConstants.goodStockDecays()[goodIndex]) > globalMarket.goodProductionAmounts(goodIndex) + pendingOutputs[goodIndex]) {
                 types.add(typeReturn);
             }
         }
@@ -534,6 +588,9 @@ public class InvestmentDecisionSystem {
     }
 
     private void collectCandidates() {
+        Arrays.fill(this.rgoPendingOutputs, 0.0);
+        Arrays.fill(this.rgoPendingModeGains, 0.0);
+        Arrays.fill(this.rgoCandidateGains, 0.0);
         this.buildingQuery.iter(this.buildingReader);
         this.rgoQuery.iter(this.rgoReader);
         LongFloatSlotMap levelsByType = this.levelsByType;
@@ -628,7 +685,8 @@ public class InvestmentDecisionSystem {
 
     /**
      * Mechanization levels of RGOs (decision T14 e, f): below the country's cap, all available workers of the type employed,
-     * return = (extra output x price - upkeep) x share of the investing group in the RGO profit / level cost.
+     * the world lacking the good (decision 198, {@link MarketUtils#clearingGap} above zero), return = (extra output x
+     * price - upkeep) x share of the investing group in the RGO profit / level cost.
      */
     private void readRgos(Iter rgoIter) {
         World world = this.world;
@@ -651,6 +709,7 @@ public class InvestmentDecisionSystem {
         float workforceShare = 0f;
         double costPerBaseValue = 0.0;
         double upkeepPerBaseValue = 0.0;
+        float[] modeOutputs = this.ecsConstants.rgoModeOutputs();
         for (int i = 0; i < rgoIter.count(); i++) {
             ProvinceView province = provinceField.getMutView(i);
             if (province.ownerId() != countryId) {
@@ -681,17 +740,24 @@ public class InvestmentDecisionSystem {
             ResourceGatheringView rgo = rgoField.getMutView(i);
             int good = rgo.goodIndex();
             long provinceId = rgoIter.entity(i);
-            int freeLevels = production.mechanizationCaps(good) - rgo.mechanization() - this.queuedLevels.get(provinceId);
+            float extraDaily = rgo.production() / Math.max(1e-6f, rgo.efficiency()) * RGO_MECHANIZATION_EFFICIENCY;
+            int queued = this.queuedLevels.get(provinceId);
+            // output on its way (decision 202): levels under construction, mode gains whose inputs are not served yet
+            this.rgoPendingOutputs[good] += (double) queued * extraDaily;
+            if (rgo.mode() > 0) {
+                this.rgoPendingModeGains[good] += (double) rgo.modeBaseProduction() * (modeOutputs[rgo.mode()] - 1f) * (1f - rgo.modeServed());
+            }
+            int freeLevels = production.mechanizationCaps(good) - rgo.mechanization() - queued;
             if (freeLevels <= 0 || rgo.production() <= 0f || ownerShare <= 0f) {
                 continue;
             }
             DemographicsView demographics = demographicsField.getMutView(i);
             int activeWorkers = EmploymentUtils.activeWorkers(demographics.totalByPopType(workerIndex), workforceShare);
-            int maximumWorkers = rgo.endowmentShare() > 0f ? activeWorkers : Math.min((int) (rgo.endowment() * rgoType.workforce() * rgoType.workerPopTypeRatio()), activeWorkers);
+            int maximumWorkers = rgo.endowmentShare() > 0f ? RgoUtils.neededWorkers(activeWorkers, RgoUtils.addedLevel(rgo))
+                : Math.min((int) (rgo.endowment() * rgoType.workforce() * rgoType.workerPopTypeRatio()), activeWorkers);
             if (maximumWorkers <= 0 || rgo.workerAmount() < maximumWorkers) {
                 continue;
             }
-            float extraDaily = rgo.production() / Math.max(1e-6f, rgo.efficiency()) * RGO_MECHANIZATION_EFFICIENCY;
             double baseValue = (double) extraDaily * DAYS_PER_YEAR * goodCosts[good];
             double levelCost = baseValue * costPerBaseValue;
             if (levelCost <= 0.0) {
@@ -709,7 +775,8 @@ public class InvestmentDecisionSystem {
                 this.candidatesByCountry.put(countryId, candidates);
             }
             candidates.add(this.candidatePool.obtain().set(provinceId, this.ecsConstants.rgoMechanization(), province.regionInstanceId(), countryId, ownerTagId, owner,
-                workerIndex, 0f, freeLevels, levelCost, annualReturn).mechanization(baseValue));
+                workerIndex, 0f, freeLevels, levelCost, annualReturn).mechanization(baseValue, good, extraDaily));
+            this.rgoCandidateGains[good] += (double) freeLevels * extraDaily;
         }
     }
 

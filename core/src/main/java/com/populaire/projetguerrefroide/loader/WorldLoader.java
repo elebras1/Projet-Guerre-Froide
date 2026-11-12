@@ -34,6 +34,7 @@ public final class WorldLoader {
         Map<String, ProductionType> productionTypes = economy.loadProductionTypes(this.worldDao.readProductionTypes());
         economy.loadBuildings(this.worldDao.readBuildings(), productionTypes);
         economy.loadResourceProductions(this.worldDao.readResourceProductions(), productionTypes);
+        economy.loadRgoModes(this.worldDao.readRgoModes());
         economy.loadStateConsumption(this.worldDao.readStateConsumption());
         military.loadTraits(this.worldDao.readTraits());
         military.loadUnits(this.worldDao.readUnits());

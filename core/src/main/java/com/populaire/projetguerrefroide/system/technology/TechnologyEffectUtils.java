@@ -35,6 +35,9 @@ public final class TechnologyEffectUtils {
         for (int recipeType : ecsConstants.technologyRecipeTypes()[technology]) {
             production.advancedRecipes(recipeType, true);
         }
+        for (int mode : ecsConstants.technologyRgoModes()[technology]) {
+            production.rgoModes(mode, true);
+        }
     }
 
     private static void applyModifier(EntityView country, PolicyModifier modifier, float value) {

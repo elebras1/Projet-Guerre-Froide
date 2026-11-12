@@ -15,5 +15,7 @@ public record GlobalMarket(
     @FixedArray(length = GOOD_COUNT) float[] goodNeedTotals,
     @FixedArray(length = GOOD_COUNT) float[] goodTradeRatios,
     @FixedArray(length = GOOD_COUNT) double[] goodTradeMoney,
-    @FixedArray(length = GOOD_COUNT) boolean[] goodAvailabilities){
+    @FixedArray(length = GOOD_COUNT) boolean[] goodAvailabilities,
+    @FixedArray(length = GOOD_COUNT) float[] goodPendingRgoOutputs,
+    @FixedArray(length = GOOD_COUNT) float[] goodTrendDemands){
 }

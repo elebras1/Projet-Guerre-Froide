@@ -77,7 +77,7 @@ public class PopulationApplicationSystem {
                 rgoWorkerIndex = rgoType.workerPopTypeIndex();
             }
             PopulationMobilityUtils.shares(population, classRigidity, workforceShare, promotionWeights, demotionWeights, employeeTypes, ruralTypes,
-                rgoWorkerIndex, province.getView(Demographics.class), vacancyShares, openShares, fallbackSources, fallbackWeights);
+                ruralTypes[populationType.index()], rgoWorkerIndex, province.getView(Demographics.class), vacancyShares, openShares, fallbackSources, fallbackWeights);
 
             RegionInstanceMutView regionInstance = world.obtainEntityView(population.regionInstanceId()).getMutView(RegionInstance.class);
             for (int b = 0; b < POP_TYPE_COUNT; b++) {

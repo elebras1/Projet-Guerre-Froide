@@ -114,7 +114,7 @@ public final class MapLoader {
                 long rgoTypeId = this.ecsWorld.lookup("rgo_" + goodNameId);
                 province.add(this.ecsConstants.rgoType(), rgoTypeId);
                 float potential = provinceJson.goodPotential() != null ? provinceJson.goodPotential() : 0f;
-                province.set(new ResourceGathering(goodId, this.context.getGoodIndex(goodId), 1f, 0f, 0f, potential, 0f, 0f, 0, 0, 0, 0f, 0f, 0f, 0f, 0d, 0, 0f, 1f, 0f, 0f, 0f));
+                province.set(new ResourceGathering(goodId, this.context.getGoodIndex(goodId), 1f, 0f, 0f, potential, 0f, 0f, 0, 0, 0, 0f, 0f, 0f, 0f, 0d, 0, 0f, 1f, 0f, 0f, 0f, 0, 1f, 0f, new float[MAX_RGO_MODE_INPUTS], 0, 1f, 0f, 0f, 0f, 0f));
             }
 
             if(provinceJson.buildings() != null) {

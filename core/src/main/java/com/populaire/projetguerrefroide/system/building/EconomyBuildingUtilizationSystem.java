@@ -45,7 +45,7 @@ public class EconomyBuildingUtilizationSystem {
         Field<EconomyBuilding> economyBuildingField = iter.field(EconomyBuilding.class, 1);
         EconomyBuildingTypeView buildingTypeData = iter.field(EconomyBuildingType.class, 2).getView(0);
         GlobalMarketView globalMarket = iter.stage().obtainEntityView(this.ecsConstants.globalMarket()).getView(GlobalMarket.class);
-        float demandGap = Math.clamp(MarketUtils.clearingGap(globalMarket, buildingTypeData.goodOutputIndex()), -1f, 1f);
+        float demandGap = Math.clamp(MarketUtils.clearingGap(globalMarket, buildingTypeData.goodOutputIndex(), this.ecsConstants.goodStockDecays()[buildingTypeData.goodOutputIndex()]), -1f, 1f);
         boolean ordered = iter.isSet(3);
 
         for (int i = 0; i < iter.count(); i++) {

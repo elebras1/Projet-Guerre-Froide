@@ -47,6 +47,8 @@ public class PopulationIncomeDistributionSystem {
 
         long provinceId = 0;
         ProvinceView province = null;
+        float provinceRgoPay = 0f;
+        int provinceRgoWorkerIndex = -1;
 
         long countryId = 0;
         CountryMarketMutView countryMarket = null;
@@ -71,7 +73,15 @@ public class PopulationIncomeDistributionSystem {
 
             if (population.provinceId() != provinceId) {
                 provinceId = population.provinceId();
-                province = iter.stage().obtainEntityView(provinceId).getView(Province.class);
+                EntityView provinceEntity = iter.stage().obtainEntityView(provinceId);
+                province = provinceEntity.getView(Province.class);
+                provinceRgoPay = 0f;
+                provinceRgoWorkerIndex = -1;
+                if (rural && provinceEntity.has(ResourceGathering.class)) {
+                    provinceRgoPay = provinceEntity.<ResourceGatheringView>getView(ResourceGathering.class).workerPay();
+                    long rgoTypeId = provinceEntity.target(this.ecsConstants.rgoType(), 0);
+                    provinceRgoWorkerIndex = iter.stage().obtainEntityView(rgoTypeId).<ResourceGatheringTypeView>getView(ResourceGatheringType.class).workerPopTypeIndex();
+                }
             }
 
             if (population.countryId() != countryId) {
@@ -93,7 +103,15 @@ public class PopulationIncomeDistributionSystem {
             float totalMinWages = regionInstanceIncome.minWagesByPopType(typeIdx);
             float totalBonus = regionInstanceIncome.profitShareByPopType(typeIdx);
             int totalPopType = regionDemographics.totalByPopType(typeIdx);
-            if (totalPopType > 0) {
+            if (rural) {
+                // rural workers are paid by the RGO of their own province only (decision 201 b): those of a province whose
+                // RGO employs another type, or nobody, get nothing from the wages of the others
+                float pay = typeIdx == provinceRgoWorkerIndex ? provinceRgoPay : 0f;
+                grossIncome += pay;
+                regionInstanceIncome.claimedIncomeByPopType(typeIdx, regionInstanceIncome.claimedIncomeByPopType(typeIdx) + pay);
+            } else if (totalPopType > 0) {
+                // the other types share the region's wages per head, which is per employment: every pop of a type has the
+                // region's employment rate (PopulationEmploymentSynchronizationSystem)
                 float distributedIncome = (totalMinWages + totalBonus) * popAmount / totalPopType;
                 grossIncome += distributedIncome;
                 regionInstanceIncome.claimedIncomeByPopType(typeIdx, regionInstanceIncome.claimedIncomeByPopType(typeIdx) + distributedIncome);

@@ -100,6 +100,14 @@ public class Constants {
     public static final float RGO_ENDOWMENT_SHARE_FARMERS = 0.4f;
     public static final float RGO_ENDOWMENT_SHARE_LABOURERS = 0.4f;
     public static final float RGO_MECHANIZATION_EFFICIENCY = 0.25f;
+    /** RGO production modes, the traditional one (index 0) included (annex 12, decision 188). */
+    public static final int MAX_RGO_MODES = 8;
+    public static final int MAX_RGO_MODE_INPUTS = 3;
+    /**
+     * Labour saved by mechanization in an endowment RGO (annex 12, decision 192): a mechanized RGO needs
+     * endowment x workforce / (1 + k x effective level) workers; k measured between 0.25 and 0.5.
+     */
+    public static final float RGO_MECHANIZATION_LABOUR_SAVING = 0.5f;
     public static final int RGO_MECHANIZATION_DAYS = 180;
     public static final float RGO_MECHANIZATION_UPKEEP_RATE = 0.1f;
     public static final String[] RGO_MECHANIZATION_COST_GOODS = {"steel", "cement", "machine_parts"};

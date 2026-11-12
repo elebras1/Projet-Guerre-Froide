@@ -45,7 +45,7 @@ public class RGOProfitSharingSystem {
         int workerPopTypeIndex = iter.field(ResourceGatheringType.class, 2).<ResourceGatheringTypeView>getView(0).workerPopTypeIndex();
         for(int i = 0; i < iter.count(); i++) {
             ProvinceView province = provinceField.getMutView(i);
-            ResourceGatheringView resourceGathering = resourceGatheringField.getMutView(i);
+            ResourceGatheringMutView resourceGathering = resourceGatheringField.getMutView(i);
 
             if(province.regionInstanceId() != regionId) {
                 regionId = province.regionInstanceId();
@@ -69,8 +69,14 @@ public class RGOProfitSharingSystem {
             regionIncome.minWagesByPopType(workerPopTypeIndex, regionIncome.minWagesByPopType(workerPopTypeIndex) + resourceGathering.workerMinWage());
             regionIncome.workersByPopType(workerPopTypeIndex, regionIncome.workersByPopType(workerPopTypeIndex) + resourceGathering.workerAmount());
 
+            // the RGO pays the workers of its own province (decision 201 b): wage and workers' share of the profit, read by
+            // PopulationIncomeDistributionSystem; the region totals stay for the accounts
+            resourceGathering.workerPay(resourceGathering.workerMinWage());
+            resourceGathering.monthWorkerDays(resourceGathering.monthWorkerDays() + resourceGathering.workerAmount());
+
             float profit = resourceGathering.profit();
             if(profit <= 0f) {
+                resourceGathering.monthIncome(resourceGathering.monthIncome() + resourceGathering.workerPay());
                 continue;
             }
 
@@ -90,6 +96,7 @@ public class RGOProfitSharingSystem {
             float totalShareRatio = stateShareRatio + capitalistShareRatio + aristocratShareRatio + workerShareRatio;
             if (totalShareRatio <= 0f) {
                 regionIncome.countryProfitShare(regionIncome.countryProfitShare() + profit);
+                resourceGathering.monthIncome(resourceGathering.monthIncome() + resourceGathering.workerPay());
                 continue;
             }
 
@@ -116,11 +123,13 @@ public class RGOProfitSharingSystem {
             }
 
             float workerShare = workerShareRatio * profit;
-            if(regionDemographics.totalByPopType(workerPopTypeIndex) > 0) {
+            if(resourceGathering.workerAmount() > 0) {
                 regionIncome.profitShareByPopType(workerPopTypeIndex, regionIncome.profitShareByPopType(workerPopTypeIndex) + workerShare);
+                resourceGathering.workerPay(resourceGathering.workerPay() + workerShare);
             } else {
                 regionIncome.countryProfitShare(regionIncome.countryProfitShare() + workerShare);
             }
+            resourceGathering.monthIncome(resourceGathering.monthIncome() + resourceGathering.workerPay());
         }
     }
 }

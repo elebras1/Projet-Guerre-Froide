@@ -78,7 +78,7 @@ public class PopulationPromotionSystem {
                 ResourceGatheringTypeView rgoType = world.obtainEntityView(province.target(this.ecsConstants.rgoType(), 0)).getView(ResourceGatheringType.class);
                 rgoWorkerIndex = rgoType.workerPopTypeIndex();
             }
-            PopulationMobilityUtils.shares(population, classRigidity, workforceShare, promotionWeights, demotionWeights, employeeTypes, ruralTypes,
+            PopulationMobilityUtils.shares(population, classRigidity, workforceShare, promotionWeights, demotionWeights, employeeTypes, ruralTypes, ruralTypes[populationType.index()],
                 rgoWorkerIndex, province.getView(Demographics.class), vacancyShares, openShares, fallbackSources, fallbackWeights);
 
             PopulationTransferMutView transfer = province.getMutView(PopulationTransfer.class);

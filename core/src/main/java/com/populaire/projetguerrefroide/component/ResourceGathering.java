@@ -1,6 +1,9 @@
 package com.populaire.projetguerrefroide.component;
 
 import io.github.elebras1.flecs.annotation.Component;
+import io.github.elebras1.flecs.annotation.FixedArray;
+
+import static com.populaire.projetguerrefroide.simulation.Constants.MAX_RGO_MODE_INPUTS;
 
 @Component
 public record ResourceGathering(
@@ -25,7 +28,17 @@ public record ResourceGathering(
     float upkeepServed,
     float upkeepPartsDemanded,
     float upkeepFuelDemanded,
-    float workerOutput) {
+    float workerOutput,
+    int mode,
+    float modeServed,
+    float modeBaseProduction,
+    @FixedArray(length = MAX_RGO_MODE_INPUTS) float[] modeInputsDemanded,
+    int mechanizationBase,
+    float familyShare,
+    float monthIncome,
+    float monthWorkerDays,
+    float familyRatio,
+    float workerPay) {
 
 }
 

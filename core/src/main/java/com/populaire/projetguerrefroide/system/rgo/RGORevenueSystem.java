@@ -7,12 +7,16 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 
+import static com.populaire.projetguerrefroide.simulation.Constants.RGO_MECHANIZATION_UPKEEP_SHARES;
 import static com.populaire.projetguerrefroide.simulation.Constants.RGO_TREASURY_BUFFER_DAYS;
 import static com.populaire.projetguerrefroide.system.rgo.RgoUtils.wageBill;
 
 public class RGORevenueSystem {
 
+    private final EcsConstants ecsConstants;
+
     public RGORevenueSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("RGORevenueSystem")
             .kind(phaseId)
             .with(Province.class)
@@ -66,9 +70,12 @@ public class RGORevenueSystem {
             double treasury = resourceGathering.treasury() + revenue;
 
             float wageBill = wageBill(countryMarket, workerPopTypeIndex, countryLaborPolicy.minWageFactor(), resourceGathering.workerAmount());
-            float wage = (float) Math.min(wageBill, treasury);
+            // the next day's inputs (production mode, mechanization upkeep) are set aside before wages and profit: without
+            // them there is no harvest (annex 12, decision 188)
+            double inputs = this.dailyInputCost(resourceGathering, countryMarket);
+            float wage = (float) Math.min(wageBill, Math.max(0.0, treasury - inputs));
             treasury -= wage;
-            double profit = Math.max(0.0, treasury - RGO_TREASURY_BUFFER_DAYS * wageBill);
+            double profit = Math.max(0.0, treasury - RGO_TREASURY_BUFFER_DAYS * wageBill - inputs);
             treasury -= profit;
 
             resourceGathering.treasury(treasury);
@@ -76,5 +83,27 @@ public class RGORevenueSystem {
             resourceGathering.profit((float) profit);
             resourceGathering.unitMargin(unitMargin(resourceGathering, countryMarket, workerPopTypeIndex, countryLaborPolicy.minWageFactor(), revenue, wageBill));
         }
+    }
+
+    /** Daily cost of the inputs of the RGO's production mode and of its mechanization upkeep, at the country's budget prices. */
+    private double dailyInputCost(ResourceGatheringView rgo, CountryMarketView countryMarket) {
+        double cost = 0.0;
+        int mode = rgo.mode();
+        if (mode > 0) {
+            int[] inputs = this.ecsConstants.rgoModeInputGoods()[mode];
+            float[] amounts = this.ecsConstants.rgoModeInputAmounts()[mode];
+            float output = rgo.modeBaseProduction() * this.ecsConstants.rgoModeOutputs()[mode];
+            for (int k = 0; k < inputs.length; k++) {
+                cost += (double) amounts[k] * output * countryMarket.goodBudgetPrices(inputs[k]);
+            }
+        }
+        if (rgo.mechanization() > 0) {
+            int[] upkeepGoods = this.ecsConstants.mechanizationUpkeepGoods();
+            float[] goodCosts = this.ecsConstants.goodCosts();
+            for (int k = 0; k < upkeepGoods.length; k++) {
+                cost += (double) rgo.upkeepValue() * RGO_MECHANIZATION_UPKEEP_SHARES[k] / goodCosts[upkeepGoods[k]] * countryMarket.goodBudgetPrices(upkeepGoods[k]);
+            }
+        }
+        return cost;
     }
 }

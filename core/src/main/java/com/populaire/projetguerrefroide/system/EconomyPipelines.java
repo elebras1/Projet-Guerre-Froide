@@ -27,6 +27,10 @@ public class EconomyPipelines {
     private final DemographicsProvinceSpreadSystem demographicsProvinceSpreadSystem;
     private final DemographicsRegionInstanceSpreadSystem demographicsRegionInstanceSpreadSystem;
     private final RGOEndowmentInitializationSystem rgoEndowmentInitializationSystem;
+    private final RGOModeSystem rgoModeInitializationSystem;
+    private final RGOModeSystem rgoModeSystem;
+    private final RGOModeDemandSystem rgoModeDemandSystem;
+    private final RGOModePurchaseSystem rgoModePurchaseSystem;
     private final LawEffectInitializationSystem lawEffectInitializationSystem;
     private final TechnologyEffectInitializationSystem technologyEffectInitializationSystem;
     private final DevelopmentIndexSystem developmentIndexSystem;
@@ -262,6 +266,7 @@ public class EconomyPipelines {
         this.lawEffectInitializationSystem = new LawEffectInitializationSystem(ecsWorld, phaseInit);
         this.technologyEffectInitializationSystem = new TechnologyEffectInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInit);
         this.rgoMechanizationInitializationSystem = new RGOMechanizationInitializationSystem(ecsWorld, phaseInit);
+        this.rgoModeInitializationSystem = new RGOModeSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInit, true);
         this.economyBuildingOwnerInitializationSystem = new EconomyBuildingOwnerInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInit);
         this.infrastructureInitializationSystem = new InfrastructureInitializationSystem(ecsWorld, phaseInit);
         this.rgoEndowmentInitializationSystem = new RGOEndowmentInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInit);
@@ -301,6 +306,7 @@ public class EconomyPipelines {
         this.artisanDemandSystem = new ArtisanDemandSystem(ecsWorld, simulationContext.getEcsConstants(), phaseConsumption);
         this.constructionDemandSystem = new ConstructionDemandSystem(ecsWorld, simulationContext.getEcsConstants(), phaseConsumption);
         this.rgoMechanizationDemandSystem = new RGOMechanizationDemandSystem(ecsWorld, simulationContext.getEcsConstants(), phaseConsumption);
+        this.rgoModeDemandSystem = new RGOModeDemandSystem(ecsWorld, simulationContext.getEcsConstants(), phaseConsumption);
         this.stateConsumptionDemandSystem = new StateConsumptionDemandSystem(ecsWorld, simulationContext.getEcsConstants(), phaseConsumption);
         this.maintenanceDemandSystem = new MaintenanceDemandSystem(ecsWorld, phaseConsumption);
         this.strategicStockDemandSystem = new StrategicStockDemandSystem(ecsWorld, phaseConsumption);
@@ -315,6 +321,7 @@ public class EconomyPipelines {
         this.artisanPurchaseSystem = new ArtisanPurchaseSystem(ecsWorld, phaseSettlement);
         this.constructionPurchaseSystem = new ConstructionPurchaseSystem(ecsWorld, simulationContext.getEcsConstants(), phaseSettlement);
         this.rgoMechanizationPurchaseSystem = new RGOMechanizationPurchaseSystem(ecsWorld, simulationContext.getEcsConstants(), phaseSettlement);
+        this.rgoModePurchaseSystem = new RGOModePurchaseSystem(ecsWorld, simulationContext.getEcsConstants(), phaseSettlement);
         this.stateConsumptionPurchaseSystem = new StateConsumptionPurchaseSystem(ecsWorld, phaseSettlement);
         this.maintenancePurchaseSystem = new MaintenancePurchaseSystem(ecsWorld, phaseSettlement);
         this.strategicStockPurchaseSystem = new StrategicStockPurchaseSystem(ecsWorld, phaseSettlement);
@@ -369,6 +376,7 @@ public class EconomyPipelines {
         this.developmentIndexSystem = new DevelopmentIndexSystem(ecsWorld, simulationContext.getEcsConstants(), phaseState);
         this.researchSystem = new ResearchSystem(ecsWorld, simulationContext.getEcsConstants(), phaseState);
         this.economyBuildingRecipeSystem = new EconomyBuildingRecipeSystem(ecsWorld, simulationContext.getEcsConstants(), phaseState);
+        this.rgoModeSystem = new RGOModeSystem(ecsWorld, simulationContext.getEcsConstants(), phaseState, false);
         this.economyCalendarSystem = new EconomyCalendarSystem(ecsWorld, phaseCalendar);
     }
 

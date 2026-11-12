@@ -125,7 +125,10 @@ public class RGOEndowmentInitializationSystem {
             this.modifiers = 1f + outputModifier + productivity;
         }
 
-        /** Levels of workers in 1946: active workers / (workforce x worker ratio), as in the production formula. */
+        /**
+         * Levels of workers in 1946: active workers / (workforce x worker ratio). A mechanized RGO employs fewer of them, each
+         * doing the work of 1 + k x level (annex 12, decision 192): the effective levels are still the active workers.
+         */
         private double levels(DemographicsView demographics) {
             int active = activeWorkers(demographics.totalByPopType(this.rgoType.workerPopTypeIndex()), this.workforceShare);
             return active / ((double) Math.max(1, this.rgoType.workforce()) * this.rgoType.workerPopTypeRatio());
@@ -133,7 +136,8 @@ public class RGOEndowmentInitializationSystem {
 
         /** M of the production formula in 1946 (no slaves employed yet). */
         private double multiplier(ResourceGatheringView rgo, ProvinceInfrastructureView infrastructure) {
-            return (double) rgo.efficiency() * this.modifiers * this.rgoType.workerEffectMultiplier() * (1f + infrastructure.productionBonus());
+            float modeFactor = rgo.mode() > 0 ? 1f + (ecsConstants.rgoModeOutputs()[rgo.mode()] - 1f) * rgo.modeServed() : 1f;
+            return (double) rgo.efficiency() * this.modifiers * this.rgoType.workerEffectMultiplier() * (1f + infrastructure.productionBonus()) * modeFactor;
         }
     }
 }
