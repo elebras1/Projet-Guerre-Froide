@@ -10,13 +10,13 @@
         "amount": 3810220,
         "template": 15,
         "populations": {
-            "labourers": 0.79155,
-            "farmers": 0.10213,
-            "craftsmen": 0.00709,
-            "clerks": 0.00304,
+            "labourers": 0.02032,
+            "farmers": 0.09435,
+            "craftsmen": 0.22763,
+            "clerks": 0.23789,
             "aristocrats": 0.00285,
-            "artisans": 0.03484,
-            "bureaucrats": 0.00353,
+            "artisans": 0.32055,
+            "bureaucrats": 0.04144,
             "capitalists": 0.0391,
             "clergymen": 0.01587,
             "officers": 0.0,
@@ -48,6 +48,10 @@
         {
             "name": "financial_district",
             "size": 1
+        },
+        {
+            "name": "services_firm",
+            "size": 58
         }
     ]
 }

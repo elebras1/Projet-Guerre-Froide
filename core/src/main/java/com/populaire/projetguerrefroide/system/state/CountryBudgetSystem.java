@@ -38,6 +38,10 @@ public class CountryBudgetSystem {
         int statePostIndex = this.ecsConstants.statePostIndex();
         float[] baseWorkforceShares = this.ecsConstants.baseWorkforceShares();
         GlobalMarketView globalMarket = iter.stage().obtainEntityView(this.ecsConstants.globalMarket()).getMutView(GlobalMarket.class);
+        int day = iter.stage().obtainEntityView(this.ecsConstants.economyCalendar()).<EconomyCalendarView>getView(EconomyCalendar.class).day();
+        // the revenue trend is the mean of the days seen during the first year, then a one-year moving average (annex 14,
+        // decision 228): anchored on the first day alone, it stayed a year below the revenue (tariffs start at zero)
+        double trendWeight = Math.min(DAYS_PER_YEAR, day + 1.0);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         Field<CountryDemographics> countryDemographicsField = iter.field(CountryDemographics.class, 1);
@@ -73,16 +77,29 @@ public class CountryBudgetSystem {
                 }
             }
 
-            double stateConsumptionCost = StateConsumptionUtils.dailyCost(stateConsumption, countryMarket,
-                StateConsumptionUtils.administrationUnits(countryDemographics, statePostIndex, countryBudgetPolicy),
+            double administrationConsumptionCost = StateConsumptionUtils.dailyCost(stateConsumption, countryMarket,
+                StateConsumptionUtils.administrationUnits(countryDemographics, statePostIndex, countryBudgetPolicy), 0f);
+            double healthConsumptionCost = StateConsumptionUtils.dailyCost(stateConsumption, countryMarket, 0f,
                 StateConsumptionUtils.publicHealthUnits(countryDemographics, countryBudgetPolicy));
+            double stateConsumptionCost = administrationConsumptionCost + healthConsumptionCost;
             double militarySupplyCost = militarySupplyCost(countryMilitary, countryMarket);
             double maintenanceCost = maintenanceCost(countryMaintenance, countryMarket);
             double needs = dailyNeeds(incomeTypes, assistedTypes, countryMarket, countryDemographics, countryBudgetPolicy, countryEducationPolicy, statePostIndex, baseWorkforceShares, workforceShareModifier)
                 + subsidies + stateConsumptionCost + militarySupplyCost + maintenanceCost;
             double revenue = countryMarket.taxRevenue() + countryMarket.tariffRevenue() + countryMarket.profitRevenue();
-            double revenueTrend = countryBudget.revenueTrend() > 0.0 ? countryBudget.revenueTrend() + (revenue - countryBudget.revenueTrend()) / DAYS_PER_YEAR : revenue;
+            double revenueTrend = countryBudget.revenueTrend() > 0.0 ? countryBudget.revenueTrend() + (revenue - countryBudget.revenueTrend()) / trendWeight : revenue;
             double creditLimit = CREDIT_LIMIT_YEARS * DAYS_PER_YEAR * revenueTrend;
+            // public posts within the state's revenue (annex 14, decision 228): what the yearly revenue leaves after every
+            // other need pays at most this many state posts, wage and supplies; StatePostSystem opens no more posts the next
+            // day (negative = no limit: no revenue known yet, or fewer than 30 days of it)
+            double postWage = statePostIndex >= 0 ? wageRate(countryMarket, statePostIndex, wageSlider(incomeTypes[statePostIndex], countryBudgetPolicy, countryEducationPolicy)) : 0.0;
+            double postSupplies = statePostIndex >= 0 ? StateConsumptionUtils.dailyCost(stateConsumption, countryMarket, slider(countryBudgetPolicy.administrationSpendingRate()), 0f) : 0.0;
+            double postNeeds = (statePostIndex >= 0 ? scaledWageBase(countryDemographics, statePostIndex, statePostIndex, incomeTypes[statePostIndex]) * postWage : 0.0)
+                + administrationConsumptionCost;
+            double otherNeeds = needs - postNeeds;
+            countryBudget.statePostNeeds((float) postNeeds);
+            countryBudget.statePostCapacity(day >= STATE_POST_CAPACITY_WARMUP_DAYS && revenueTrend > 0.0 && postWage + postSupplies > 0.0
+                ? (float) (Math.max(0.0, revenueTrend - otherNeeds) / (postWage + postSupplies) * NEEDS_SCALING_FACTOR) : -1f);
             double stateLoans = countryBank.loans(STATE_OWNER);
             double interest = stateLoans * stateInterestRate(stateLoans, creditLimit, countryBank.lendingRate()) / DAYS_PER_YEAR;
             double interestPaid = Math.min(interest, Math.max(0.0, countryMarket.treasury()));
@@ -106,6 +123,30 @@ public class CountryBudgetSystem {
                     stateLoans = 0.0;
                 }
             }
+            // the state's account at the bank (annex 13, decision 219): its share of the bank's losses and interest, like the
+            // pops' deposits; it pays off the state's loans first (both claims cancel, reserves unchanged); a treasury below its
+            // needs, target and commitments draws on it within the bank's reserves
+            double stateDeposit = countryBank.stateDeposit() * (1.0 - countryBank.depositLossRatio());
+            double depositInterest = Math.min(stateDeposit * countryBank.depositRate(), Math.max(0.0, countryBank.interestPool()));
+            if (depositInterest > 0.0) {
+                countryBank.interestPool(countryBank.interestPool() - depositInterest);
+                countryMarket.treasury(countryMarket.treasury() + depositInterest);
+            }
+            double netted = Math.min(stateDeposit, stateLoans);
+            if (netted > 0.0) {
+                stateDeposit -= netted;
+                stateLoans -= netted;
+                countryBank.repaid(STATE_OWNER, countryBank.repaid(STATE_OWNER) + netted);
+            }
+            double treasuryFloor = needs * (1.0 + TARGET_TREASURY_DAYS) + countryInvestment.committed(STATE_OWNER);
+            double withdrawal = Math.min(Math.max(0.0, treasuryFloor - countryMarket.treasury()), Math.min(stateDeposit, Math.max(0.0, countryBank.reserves())));
+            if (withdrawal > 0.0) {
+                stateDeposit -= withdrawal;
+                countryBank.reserves(countryBank.reserves() - withdrawal);
+                countryMarket.treasury(countryMarket.treasury() + withdrawal);
+            }
+            countryBank.stateDeposit(stateDeposit);
+            countryBank.deposits(countryBank.deposits() + stateDeposit);
             double treasury = Math.max(0.0, countryMarket.treasury());
             double loan = needs > treasury
                 ? Math.min(needs - treasury, Math.min(Math.max(0.0, countryBank.reserves()), Math.max(0.0, creditLimit - stateLoans))) : 0.0;
@@ -116,7 +157,10 @@ public class CountryBudgetSystem {
                 stateLoans += loan;
                 treasury += loan;
             }
-            float spendingRatio = needs > treasury ? (float) (treasury / needs) : 1f;
+            // when the treasury cannot pay every need, the state posts take the cut first (decision 228): the army, aid,
+            // pensions and upkeep are paid before the civil servants
+            float spendingRatio = otherNeeds > treasury ? (float) (treasury / otherNeeds) : 1f;
+            float postRatio = postNeeds > 0.0 ? (float) Math.clamp((treasury - otherNeeds) / postNeeds, 0.0, 1.0) : 1f;
             double targetTreasury = TARGET_TREASURY_DAYS * needs;
             double excess = treasury - needs - targetTreasury;
 
@@ -131,7 +175,7 @@ public class CountryBudgetSystem {
                     popTypeSocialRate = spendingRatio * socialRate(countryMarket, p, socialSlider);
                     socialBudget += (double) scaledUnemployed(countryDemographics, p, EmploymentUtils.activeShare(baseWorkforceShares[p], workforceShareModifier)) * popTypeSocialRate;
                 } else {
-                    popTypeWageRate = spendingRatio * wageRate(countryMarket, p, wageSlider(incomeTypes[p], countryBudgetPolicy, countryEducationPolicy));
+                    popTypeWageRate = (p == statePostIndex ? postRatio : spendingRatio) * wageRate(countryMarket, p, wageSlider(incomeTypes[p], countryBudgetPolicy, countryEducationPolicy));
                     wagesBudget += scaledWageBase(countryDemographics, p, statePostIndex, incomeTypes[p]) * popTypeWageRate;
                 }
                 countryBudget.wageRatesByPopType(p, popTypeWageRate);
@@ -150,6 +194,8 @@ public class CountryBudgetSystem {
                 stateLoans -= repaid;
                 investableSurplus -= repaid;
             }
+            // the state can also spend what it can draw from its account (decision 219)
+            investableSurplus += Math.min(stateDeposit, Math.max(0.0, countryBank.reserves()));
             countryBank.loans(STATE_OWNER, stateLoans);
             countryBank.creditLimit(creditLimit);
 
@@ -163,7 +209,7 @@ public class CountryBudgetSystem {
             countryBudget.socialBudget((float) socialBudget);
             countryBudget.pensionBudget((float) pensionBudget);
             countryBudget.pensionCoverage(spendingRatio * countryBudgetPolicy.pensionRate());
-            countryBudget.stateConsumptionBudget((float) (spendingRatio * stateConsumptionCost));
+            countryBudget.stateConsumptionBudget((float) (spendingRatio * healthConsumptionCost + postRatio * administrationConsumptionCost));
             countryBudget.militarySupplyRatio(spendingRatio);
         }
     }

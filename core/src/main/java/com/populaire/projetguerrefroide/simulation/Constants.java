@@ -1,7 +1,7 @@
 package com.populaire.projetguerrefroide.simulation;
 
 public class Constants {
-    public static final int GOOD_COUNT = 41;
+    public static final int GOOD_COUNT = 42;
     public static final int CULTURE_COUNT = 406;
     public static final int RELIGION_COUNT = 13;
     public static final int IDEOLOGY_COUNT = 9;
@@ -131,6 +131,7 @@ public class Constants {
     public static final float ARTISAN_OUTPUT_SHARE = 0.01f;
     public static final float ARTISAN_REALLOCATION_RATE = 0.1f;
     public static final float ARTISAN_TREASURY_BUFFER_DAYS = 15f;
+    public static final int STATE_POST_CAPACITY_WARMUP_DAYS = 30;
     public static final float DAYS_PER_YEAR = 365f;
     public static final float RURAL_WAGE_SHARE = 0.5f;
     public static final float RGO_TREASURY_BUFFER_DAYS = 15f;

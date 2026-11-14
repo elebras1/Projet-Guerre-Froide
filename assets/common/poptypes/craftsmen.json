@@ -21,11 +21,13 @@
         "paper": 0.1,
         "communication": 0.5,
         "transport": 0.25,
-        "gas": 0.1
+        "gas": 0.1,
+        "services": 6.83
     },
     "luxury_needs": {
         "automobiles": 0.5,
-        "computers": 0.05
+        "computers": 0.05,
+        "services": 2.61
     },
     "workforce_share": 0.6,
     "strata": "poor",

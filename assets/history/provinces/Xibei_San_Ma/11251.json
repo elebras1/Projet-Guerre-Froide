@@ -10,13 +10,13 @@
         "amount": 401,
         "template": 6,
         "populations": {
-            "labourers": 0.79697,
-            "farmers": 0.0949,
-            "craftsmen": 0.0,
-            "clerks": 0.0,
+            "labourers": 0.02758,
+            "farmers": 0.22444,
+            "craftsmen": 0.08593,
+            "clerks": 0.2221,
             "aristocrats": 0.0038,
-            "artisans": 0.03534,
-            "bureaucrats": 0.00443,
+            "artisans": 0.31309,
+            "bureaucrats": 0.0585,
             "capitalists": 0.03304,
             "clergymen": 0.01652,
             "officers": 0.00156,
@@ -39,5 +39,5 @@
     ],
     "terrain": "hills",
     "good": "gas",
-    "good_potential": 6257.30
+    "good_potential": 6257.3
 }

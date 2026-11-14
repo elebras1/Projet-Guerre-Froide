@@ -8,13 +8,13 @@
         "amount": 550529,
         "template": 93,
         "populations": {
-            "farmers": 0.4068,
-            "labourers": 0.4068,
-            "craftsmen": 0.04166,
-            "clerks": 0.01785,
+            "farmers": 0.18112,
+            "labourers": 0.0,
+            "craftsmen": 0.17905,
+            "clerks": 0.46278,
             "aristocrats": 0.00551,
-            "artisans": 0.04688,
-            "bureaucrats": 0.00677,
+            "artisans": 0.0093,
+            "bureaucrats": 0.09451,
             "capitalists": 0.03215,
             "clergymen": 0.02172,
             "officers": 0.0014,
@@ -40,6 +40,10 @@
         {
             "name": "nuclear_test_site",
             "size": 1
+        },
+        {
+            "name": "services_firm",
+            "size": 9
         }
     ]
 }

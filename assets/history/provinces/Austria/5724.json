@@ -8,13 +8,13 @@
         "amount": 382804,
         "template": 68,
         "populations": {
-            "labourers": 0.55202,
-            "farmers": 0.08488,
-            "craftsmen": 0.18093,
-            "clerks": 0.07754,
+            "labourers": 0.03844,
+            "farmers": 0.05428,
+            "craftsmen": 0.32934,
+            "clerks": 0.2397,
             "aristocrats": 0.00292,
-            "artisans": 0.03195,
-            "bureaucrats": 0.00337,
+            "artisans": 0.10521,
+            "bureaucrats": 0.16372,
             "capitalists": 0.04272,
             "clergymen": 0.0152,
             "officers": 0.00095,
@@ -52,6 +52,10 @@
         {
             "name": "communication_factory",
             "size": 1
+        },
+        {
+            "name": "services_firm",
+            "size": 2
         }
     ]
 }

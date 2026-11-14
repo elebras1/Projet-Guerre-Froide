@@ -8,13 +8,13 @@
         "amount": 129091,
         "template": 16,
         "populations": {
-            "farmers": 0.26444,
-            "labourers": 0.09027,
-            "craftsmen": 0.37825,
-            "clerks": 0.16211,
+            "farmers": 0.36707,
+            "labourers": 0.0,
+            "craftsmen": 0.40438,
+            "clerks": 0.11827,
             "aristocrats": 0.00433,
-            "artisans": 0.0333,
-            "bureaucrats": 0.0043,
+            "artisans": 0.04295,
+            "bureaucrats": 0.0,
             "capitalists": 0.03604,
             "clergymen": 0.01583,
             "officers": 0.00114,
@@ -47,7 +47,7 @@
     "economy_buildings": [
         {
             "name": "refinery",
-            "size": 5
+            "size": 2
         }
     ]
 }

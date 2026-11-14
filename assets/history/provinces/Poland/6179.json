@@ -8,13 +8,13 @@
         "amount": 2079413,
         "template": 49,
         "populations": {
-            "labourers": 0.76509,
-            "farmers": 0.10434,
-            "craftsmen": 0.02342,
-            "clerks": 0.01003,
+            "labourers": 0.02748,
+            "farmers": 0.1107,
+            "craftsmen": 0.23422,
+            "clerks": 0.24778,
             "aristocrats": 0.00388,
-            "artisans": 0.03633,
-            "bureaucrats": 0.00463,
+            "artisans": 0.16526,
+            "bureaucrats": 0.1584,
             "capitalists": 0.03331,
             "clergymen": 0.01691,
             "officers": 0.00027,
@@ -32,7 +32,7 @@
         }
     },
     "good": "rare_metals",
-    "good_potential": 8761.20,
+    "good_potential": 8761.2,
     "buildings": [
         {
             "name": "railway",
@@ -44,6 +44,10 @@
         {
             "name": "inorganic_chemicals_factory",
             "size": 3
+        },
+        {
+            "name": "services_firm",
+            "size": 35
         }
     ]
 }

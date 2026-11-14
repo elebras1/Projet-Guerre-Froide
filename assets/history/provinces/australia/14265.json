@@ -8,13 +8,13 @@
         "amount": 1098,
         "template": 94,
         "populations": {
-            "labourers": 0.80833,
-            "farmers": 0.0746,
-            "craftsmen": 0.0,
-            "clerks": 0.0,
+            "labourers": 0.08257,
+            "farmers": 0.02358,
+            "craftsmen": 0.34686,
+            "clerks": 0.44025,
             "aristocrats": 0.004,
-            "artisans": 0.03568,
-            "bureaucrats": 0.00451,
+            "artisans": 0.02986,
+            "bureaucrats": 0.0,
             "capitalists": 0.03399,
             "clergymen": 0.01914,
             "officers": 0.00217,
@@ -30,7 +30,7 @@
         }
     },
     "good": "uranium",
-    "good_potential": 54841.80,
+    "good_potential": 54841.8,
     "buildings": [
         {
             "name": "railway",

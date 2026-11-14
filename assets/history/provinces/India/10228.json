@@ -10,13 +10,13 @@
         "amount": 2478860,
         "template": 15,
         "populations": {
-            "farmers": 0.83135,
-            "labourers": 0.07049,
-            "craftsmen": 0.0,
-            "clerks": 0.0,
+            "farmers": 0.83316,
+            "labourers": 0.0,
+            "craftsmen": 0.01163,
+            "clerks": 0.03007,
             "aristocrats": 0.0033,
-            "artisans": 0.03529,
-            "bureaucrats": 0.00308,
+            "artisans": 0.05833,
+            "bureaucrats": 0.00702,
             "capitalists": 0.04025,
             "clergymen": 0.01624,
             "officers": 0.0,
@@ -40,5 +40,11 @@
             "size": 5
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "services_firm",
+            "size": 5
+        }
+    ]
 }

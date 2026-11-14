@@ -9,13 +9,13 @@
         "amount": 1548,
         "template": 6,
         "populations": {
-            "farmers": 0.82951,
-            "labourers": 0.06132,
-            "craftsmen": 0.0,
-            "clerks": 0.0,
+            "farmers": 0.85955,
+            "labourers": 0.0,
+            "craftsmen": 0.0081,
+            "clerks": 0.02094,
             "aristocrats": 0.00425,
-            "artisans": 0.03619,
-            "bureaucrats": 0.00478,
+            "artisans": 0.03572,
+            "bureaucrats": 0.00749,
             "capitalists": 0.03562,
             "clergymen": 0.0193,
             "officers": 0.0009,
@@ -32,7 +32,7 @@
         }
     },
     "good": "vegetables",
-    "good_potential": 45.90,
+    "good_potential": 45.9,
     "buildings": [
         {
             "name": "railway",

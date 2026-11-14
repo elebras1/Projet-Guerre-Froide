@@ -10,13 +10,13 @@
         "amount": 506713,
         "template": 24,
         "populations": {
-            "farmers": 0.84737,
-            "labourers": 0.06168,
-            "craftsmen": 0.0,
-            "clerks": 0.0,
+            "farmers": 0.77412,
+            "labourers": 0.0,
+            "craftsmen": 0.08803,
+            "clerks": 0.04875,
             "aristocrats": 0.00311,
-            "artisans": 0.03217,
-            "bureaucrats": 0.00341,
+            "artisans": 0.02469,
+            "bureaucrats": 0.00904,
             "capitalists": 0.03603,
             "clergymen": 0.01623,
             "officers": 0.0,
@@ -39,5 +39,11 @@
             "size": 1
         }
     ],
-    "terrain": "jungle"
+    "terrain": "jungle",
+    "economy_buildings": [
+        {
+            "name": "services_firm",
+            "size": 3
+        }
+    ]
 }

@@ -8,13 +8,13 @@
         "amount": 293702,
         "template": 93,
         "populations": {
-            "farmers": 0.25994,
-            "labourers": 0.09407,
-            "craftsmen": 0.3685,
-            "clerks": 0.15795,
+            "farmers": 0.07881,
+            "labourers": 0.0,
+            "craftsmen": 0.62232,
+            "clerks": 0.10771,
             "aristocrats": 0.00617,
-            "artisans": 0.04582,
-            "bureaucrats": 0.00594,
+            "artisans": 0.01588,
+            "bureaucrats": 0.1075,
             "capitalists": 0.02663,
             "clergymen": 0.02085,
             "officers": 0.00148,
@@ -42,17 +42,17 @@
     "economy_buildings": [
         {
             "name": "machine_parts_factory",
-            "size": 7,
+            "size": 6,
             "input_mode": "advanced"
         },
         {
             "name": "fabric_factory",
-            "size": 7,
+            "size": 6,
             "input_mode": "advanced"
         },
         {
             "name": "clothes_factory",
-            "size": 7,
+            "size": 6,
             "input_mode": "advanced"
         }
     ]

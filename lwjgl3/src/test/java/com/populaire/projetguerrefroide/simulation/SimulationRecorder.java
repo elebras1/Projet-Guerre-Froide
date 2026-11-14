@@ -680,7 +680,8 @@ public class SimulationRecorder implements AutoCloseable {
             "capitalist_fund", "state_fund", "workers_fund", "construction_spending",
             "capitalist_committed", "state_committed", "workers_committed", "military_supply", "military_needed", "military_supply_ratio", "credit_limit", "revenue_trend",
             "lending_rate", "bankruptcies", "public_works_loan", "public_works_return", "price_index", "created_money",
-            "public_works_sites", "public_works_daily", "maintenance_spending", "maintenance_satisfaction");
+            "public_works_sites", "public_works_daily", "maintenance_spending", "maintenance_satisfaction", "state_deposit",
+            "state_post_capacity", "state_post_employed", "state_post_holders");
         this.writer("country/budget.csv").header("tick", "date", "country", "needs", "military_pay", "administration_pay", "education_pay", "clergy_pay", "social",
             "state_consumption", "military_supply", "maintenance", "subsidies", "tax", "tariff", "profit", "spending_ratio", "state_loans", "credit_limit", "military_pops",
             "military_posts", "military_filled", "units", "pensions", "pension_coverage");
@@ -1203,6 +1204,7 @@ public class SimulationRecorder implements AutoCloseable {
             EntityView country = this.ecsWorld.obtainEntityView(countryId);
             CountryMarketView cm = country.getMutView(CountryMarket.class);
             CountryDemographicsView cd = country.getMutView(CountryDemographics.class);
+            int postIndex = this.ecsConstants.statePostIndex();
             CountryBudgetView budget = country.getMutView(CountryBudget.class);
             CountryBankView bank = country.getMutView(CountryBank.class);
             CountryInvestmentView investment = country.getMutView(CountryInvestment.class);
@@ -1332,7 +1334,8 @@ public class SimulationRecorder implements AutoCloseable {
                 investment.committed(0), investment.committed(1), investment.committed(2), military.spentToday(), militaryNeeded, budget.militarySupplyRatio(), bank.creditLimit(), budget.revenueTrend(),
                 bank.lendingRate(), bank.bankruptcies(), budget.publicWorksLoan(), publicWorks.targetReturn(),
                 country.<CountryCentralBankView>getView(CountryCentralBank.class).priceIndex(), country.<CountryCentralBankView>getView(CountryCentralBank.class).createdMoney(),
-                publicWorks.sitesInProgress(), publicWorks.dailyCommitment(), maintenance.spentToday(), maintenance.satisfaction());
+                publicWorks.sitesInProgress(), publicWorks.dailyCommitment(), maintenance.spentToday(), maintenance.satisfaction(), bank.stateDeposit(),
+                budget.statePostCapacity(), postIndex >= 0 ? cd.employmentByPopType(postIndex) : 0L, postIndex >= 0 ? cd.totalByPopType(postIndex) : 0L);
 
             if (this.detail) {
                 double[] pay = new double[RELIGIOUS_INCOME_TYPE + 1];

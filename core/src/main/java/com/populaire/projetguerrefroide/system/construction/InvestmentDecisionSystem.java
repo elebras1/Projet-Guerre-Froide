@@ -313,8 +313,8 @@ public class InvestmentDecisionSystem {
                         pendingOutputs, levelOutputs, countryBank, countryInvestment, countryMarket);
                 }
                 if (productionPolicy.stateConstruction() > 0f) {
-                    this.buildScarceBuildings(world, countryId, globalMarket, typeReturns, regions, typesByRegion, reservedWorkers, ruralTypes, availableFunds, parkUsedLevels, parkLevels,
-                        pendingOutputs, levelOutputs);
+                    this.buildScarceBuildings(world, countryId, globalMarket, countryMarket, typeReturns, regions, typesByRegion, reservedWorkers, ruralTypes, availableFunds, parkUsedLevels,
+                        parkLevels, pendingOutputs, levelOutputs);
                 }
             }
         }
@@ -391,7 +391,7 @@ public class InvestmentDecisionSystem {
         }
     }
 
-    private void buildScarceBuildings(World world, long countryId, GlobalMarketView globalMarket, LongObjectSlotMap<TypeReturn> typeReturns, LongList regions,
+    private void buildScarceBuildings(World world, long countryId, GlobalMarketView globalMarket, CountryMarketView countryMarket, LongObjectSlotMap<TypeReturn> typeReturns, LongList regions,
                                       LongObjectMap<LongIntMap> typesByRegion, LongFloatMap reservedWorkers, boolean[] ruralTypes, double[] availableFunds,
                                       LongObjectMap<LongFloatMap> parkUsedLevels, LongObjectMap<LongFloatMap> parkLevels, float[] pendingOutputs, LongFloatMap levelOutputs) {
         ObjectList<TypeReturn> types = this.scarceBuildingTypes;
@@ -406,7 +406,15 @@ public class InvestmentDecisionSystem {
             }
             EconomyBuildingTypeView buildingType = world.obtainEntityView(typeReturn.buildingTypeId()).getView(EconomyBuildingType.class);
             int goodIndex = buildingType.goodOutputIndex();
-            if (MarketUtils.clearingProduction(globalMarket, goodIndex, this.ecsConstants.goodStockDecays()[goodIndex]) > globalMarket.goodProductionAmounts(goodIndex) + pendingOutputs[goodIndex]) {
+            if (this.ecsConstants.localGoods()[goodIndex]) {
+                // a good that is not traded lacks in the country (decision 207): its demand above the output of all its levels,
+                // built or under construction
+                LongFloatMap countryPark = parkLevels.get(countryId);
+                float capacity = (countryPark != null ? countryPark.get(typeReturn.buildingTypeId()) : 0f) * levelOutputs.get(typeReturn.buildingTypeId());
+                if (countryMarket.goodDemandAmounts(goodIndex) > capacity) {
+                    types.add(typeReturn);
+                }
+            } else if (MarketUtils.clearingProduction(globalMarket, goodIndex, this.ecsConstants.goodStockDecays()[goodIndex]) > globalMarket.goodProductionAmounts(goodIndex) + pendingOutputs[goodIndex]) {
                 types.add(typeReturn);
             }
         }

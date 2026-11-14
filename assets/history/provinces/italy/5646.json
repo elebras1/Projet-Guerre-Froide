@@ -8,13 +8,13 @@
         "amount": 329794,
         "template": 64,
         "populations": {
-            "labourers": 0.27412,
-            "farmers": 0.09433,
-            "craftsmen": 0.37097,
-            "clerks": 0.15898,
+            "labourers": 0.00379,
+            "farmers": 0.05476,
+            "craftsmen": 0.65307,
+            "clerks": 0.11303,
             "aristocrats": 0.00407,
-            "artisans": 0.03908,
-            "bureaucrats": 0.00453,
+            "artisans": 0.0,
+            "bureaucrats": 0.11736,
             "capitalists": 0.03463,
             "clergymen": 0.01688,
             "officers": 0.00027,
@@ -45,7 +45,7 @@
     "economy_buildings": [
         {
             "name": "coal_powerplant",
-            "size": 6
+            "size": 5
         }
     ]
 }

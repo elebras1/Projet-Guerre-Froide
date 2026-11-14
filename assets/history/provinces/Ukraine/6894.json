@@ -9,13 +9,13 @@
         "amount": 156765,
         "template": 45,
         "populations": {
-            "farmers": 0.26222,
-            "labourers": 0.10431,
-            "craftsmen": 0.39368,
-            "clerks": 0.16874,
+            "farmers": 0.27082,
+            "labourers": 0.0,
+            "craftsmen": 0.44856,
+            "clerks": 0.09217,
             "aristocrats": 0.0,
-            "artisans": 0.0,
-            "bureaucrats": 0.05246,
+            "artisans": 0.01687,
+            "bureaucrats": 0.15299,
             "capitalists": 0.0,
             "clergymen": 0.00446,
             "officers": 0.00134,
@@ -44,11 +44,11 @@
     "economy_buildings": [
         {
             "name": "communication_factory",
-            "size": 3
+            "size": 4
         },
         {
             "name": "aluminium_factory",
-            "size": 3
+            "size": 4
         }
     ]
 }

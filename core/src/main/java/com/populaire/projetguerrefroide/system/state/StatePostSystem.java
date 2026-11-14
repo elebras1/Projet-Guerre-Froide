@@ -35,9 +35,11 @@ public class StatePostSystem {
         float taxCollectionFloor = statePostType.taxCollectionFloor();
         float managementOutputBonus = statePostType.managementOutputBonus();
         float postBaseShare = globalPopulationType.workforceShareByPopType(postIndex);
+        boolean[] ruralPopTypes = this.ecsConstants.ruralPopTypes();
 
         long countryId = 0;
         float administrationSlider = 0f;
+        float postShare = 1f;
         float efficiency = 1f;
         float workforceShare = 0f;
 
@@ -60,10 +62,31 @@ public class StatePostSystem {
                 workforceShare = EmploymentUtils.activeShare(postBaseShare, populationPolicy.workforceShareModifier());
                 administrationSlider = StateBudgetUtils.slider(budgetPolicy.administrationSpendingRate());
                 efficiency = Math.max(0f, 1f + politicalPolicy.administrativeEfficiency());
+                // the state opens the posts its revenue pays (annex 14, decision 228): the capacity computed by CountryBudgetSystem
+                // the day before, against the administration posts the rule gives the whole country; management posts follow
+                CountryDemographicsView countryDemographics = country.getView(CountryDemographics.class);
+                long countryRural = 0L;
+                for (int p = 0; p < ruralPopTypes.length; p++) {
+                    if (ruralPopTypes[p]) {
+                        countryRural += countryDemographics.totalByPopType(p);
+                    }
+                }
+                double countryRulePosts = (double) administrationRatio * Math.max(0L, countryDemographics.totalAdults() - countryRural) * administrationSlider;
+                float capacity = country.<CountryBudgetView>getView(CountryBudget.class).statePostCapacity();
+                postShare = capacity < 0f || countryRulePosts <= 0.0 ? 1f : (float) Math.min(1.0, capacity / countryRulePosts);
             }
 
             float managementPosts = managementRatio * regionInstanceIncome.stateBuildingWorkers();
-            float statePosts = managementPosts + administrationRatio * regionDemographics.totalAdults() * administrationSlider;
+            // public services (administration, teaching, health) grow with the non-rural adults of the region (annex 14,
+            // decision 226): about 16 % of the non-agricultural actives in every country around 1950 (GGDC)
+            int ruralAdults = 0;
+            for (int p = 0; p < ruralPopTypes.length; p++) {
+                if (ruralPopTypes[p]) {
+                    ruralAdults += regionDemographics.totalByPopType(p);
+                }
+            }
+            float nonRuralAdults = Math.max(0, regionDemographics.totalAdults() - ruralAdults);
+            float statePosts = (managementPosts + administrationRatio * nonRuralAdults * administrationSlider) * postShare;
             float buildingPosts = regionSpecialBuildings.staffPosts();
             float posts = statePosts + buildingPosts;
             int holders = regionDemographics.totalByPopType(postIndex);

@@ -46,6 +46,9 @@ public final class EconomyLoader {
                 good.add(this.ecsConstants.ressourceGoodTag());
                 good.set(new Color(this.context.parseColor(resourceGood.color())));
                 good.set(new Good((float) resourceGood.cost(), resourceGood.value().floatValue(), stockDecay(resourceGood)));
+                if (Boolean.FALSE.equals(resourceGood.tradable())) {
+                    good.add(this.ecsConstants.localGoodTag());
+                }
                 this.context.goodIds()[goodIndex] = goodId;
                 goodIndex++;
             }
@@ -57,6 +60,9 @@ public final class EconomyLoader {
                 good.add(this.ecsConstants.advancedGoodTag());
                 good.set(new Color(this.context.parseColor(advancedGood.color())));
                 good.set(new Good((float) advancedGood.cost(), 1, stockDecay(advancedGood)));
+                if (Boolean.FALSE.equals(advancedGood.tradable())) {
+                    good.add(this.ecsConstants.localGoodTag());
+                }
                 this.context.goodIds()[goodIndex] = goodId;
                 goodIndex++;
             }
@@ -69,6 +75,9 @@ public final class EconomyLoader {
                 good.add(this.ecsConstants.serviceGoodTag());
                 good.set(new Color(this.context.parseColor(serviceGood.color())));
                 good.set(new Good((float) serviceGood.cost(), 1, stockDecay(serviceGood)));
+                if (Boolean.FALSE.equals(serviceGood.tradable())) {
+                    good.add(this.ecsConstants.localGoodTag());
+                }
                 this.context.goodIds()[goodIndex] = goodId;
                 goodIndex++;
             }
@@ -81,6 +90,9 @@ public final class EconomyLoader {
                 good.add(this.ecsConstants.militaryGoodTag());
                 good.set(new Color(this.context.parseColor(militaryGood.color())));
                 good.set(new Good((float) militaryGood.cost(), 1, stockDecay(militaryGood)));
+                if (Boolean.FALSE.equals(militaryGood.tradable())) {
+                    good.add(this.ecsConstants.localGoodTag());
+                }
                 this.context.goodIds()[goodIndex] = goodId;
                 goodIndex++;
             }

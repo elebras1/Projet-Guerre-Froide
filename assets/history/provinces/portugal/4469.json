@@ -8,13 +8,13 @@
         "amount": 147556,
         "template": 66,
         "populations": {
-            "farmers": 0.26124,
-            "labourers": 0.06933,
-            "craftsmen": 0.40013,
-            "clerks": 0.17148,
+            "farmers": 0.21127,
+            "labourers": 0.0,
+            "craftsmen": 0.47363,
+            "clerks": 0.19909,
             "aristocrats": 0.00379,
-            "artisans": 0.03445,
-            "bureaucrats": 0.00458,
+            "artisans": 0.01439,
+            "bureaucrats": 0.04283,
             "capitalists": 0.03071,
             "clergymen": 0.0155,
             "officers": 0.00087,
@@ -41,7 +41,7 @@
     "economy_buildings": [
         {
             "name": "coal_powerplant",
-            "size": 3
+            "size": 2
         },
         {
             "name": "canned_vegetables_factory",

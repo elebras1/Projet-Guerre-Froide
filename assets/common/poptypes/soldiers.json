@@ -21,11 +21,13 @@
         "communication": 0.5,
         "transport": 0.5,
         "weaponry": 0.2,
-        "gas": 0.1
+        "gas": 0.1,
+        "services": 5.7
     },
     "luxury_needs": {
         "automobiles": 0.5,
-        "computers": 0.25
+        "computers": 0.25,
+        "services": 3.45
     },
     "strata": "poor",
     "income_type": "military",

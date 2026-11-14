@@ -27,6 +27,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import static com.populaire.projetguerrefroide.simulation.Constants.GOOD_COUNT;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -42,7 +43,7 @@ public class EconomySimulationAnalysisTest {
     private static final int LONG_RUN_DETAIL_EVERY = 30;
     private static final Map<String, List<String>> FROZEN_SYSTEMS = Map.of(
         "production", List.of("RGOEmploymentSystem", "RGOProductionSystem", "EconomyBuildingProductionSystem", "EconomyBuildingUtilizationSystem", "EconomyBuildingWorkingCapitalSystem", "ConstructionCompletionSystem"),
-        "prices", List.of("GlobalMarketResolveSystem"),
+        "prices", List.of("GlobalMarketResolveSystem", "CountryLocalPriceSystem"),
         "factories", List.of("EconomyBuildingProductionSystem", "EconomyBuildingUtilizationSystem", "EconomyBuildingWorkingCapitalSystem", "ConstructionCompletionSystem"));
 
     private static final float NEGATIVE_BALANCE_TOLERANCE = 1e-6f;
@@ -537,7 +538,7 @@ public class EconomySimulationAnalysisTest {
     private static final int HEALTH_TREASURY_MULTIPLIER = 100;
 
     private void assertDataSanity(SimulationRecorder recorder) {
-        assertEquals(41, recorder.getGoodNames().length, "Expected all goods to be recorded");
+        assertEquals(GOOD_COUNT, recorder.getGoodNames().length, "Expected all goods to be recorded");
         assertTrue(recorder.getCountryNames().size() > 100,
             "Expected a full set of countries, got " + recorder.getCountryNames().size());
         assertTrue(recorder.getBuildingTypeNames().size() > 0, "Expected economy building types");

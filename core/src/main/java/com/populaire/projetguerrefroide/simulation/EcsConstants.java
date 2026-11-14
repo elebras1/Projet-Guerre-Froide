@@ -58,6 +58,7 @@ public class EcsConstants {
     public static final String ADVANCED_GOOD_TAG = "AdvancedGoodTag";
     public static final String MILITARY_GOOD_TAG = "MilitaryGoodTag";
     public static final String SERVICE_GOOD_TAG = "ServiceGoodTag";
+    public static final String LOCAL_GOOD_TAG = "LocalGoodTag";
     public static final String ON_MAP = "OnMap";
     public static final String SUSPENDED = "Suspended";
     public static final String LEVELED_UP = "LeveledUp";
@@ -98,6 +99,7 @@ public class EcsConstants {
     private final long advancedGoodTag;
     private final long militaryGoodTag;
     private final long serviceGoodTag;
+    private final long localGoodTag;
     private final long onMap;
     private final long suspended;
     private final long leveledUp;
@@ -143,6 +145,7 @@ public class EcsConstants {
     private final int[] mechanizationUpkeepGoods = new int[RGO_MECHANIZATION_UPKEEP_GOODS.length];
     private int technologyCount;
     private final float[] goodStockDecays;
+    private final boolean[] localGoods;
     private long globalMarket;
     private long globalPopulationType;
     private long globalGood;
@@ -173,6 +176,7 @@ public class EcsConstants {
         this.advancedGoodTag = ecsWorld.entity(ADVANCED_GOOD_TAG);
         this.militaryGoodTag = ecsWorld.entity(MILITARY_GOOD_TAG);
         this.serviceGoodTag = ecsWorld.entity(SERVICE_GOOD_TAG);
+        this.localGoodTag = ecsWorld.entity(LOCAL_GOOD_TAG);
         this.onMap = ecsWorld.entity(ON_MAP);
         this.suspended = ecsWorld.entity(SUSPENDED);
         this.leveledUp = ecsWorld.entity(LEVELED_UP);
@@ -211,6 +215,7 @@ public class EcsConstants {
         this.technologyRgoModes = new int[MAX_TECHNOLOGIES][0];
         this.rgoMechanization = ecsWorld.entity("RgoMechanization");
         this.goodStockDecays = new float[GOOD_COUNT];
+        this.localGoods = new boolean[GOOD_COUNT];
         this.declareTypeInheritance(ecsWorld);
     }
 
@@ -240,6 +245,7 @@ public class EcsConstants {
             GoodView good = goodEntity.getView(Good.class);
             this.goodCosts[g] = good.cost();
             this.goodStockDecays[g] = good.stockDecay();
+            this.localGoods[g] = goodEntity.has(this.localGoodTag);
             this.civilianGoodCosts[g] = goodEntity.has(this.militaryGoodTag) ? 0f : good.cost();
         }
         this.resolveTechnologies(ecsWorld);
@@ -599,6 +605,12 @@ public class EcsConstants {
         return this.goodStockDecays;
     }
 
+    /** Goods that are not traded between countries (decision 207): each country has its own price and market. */
+    public boolean[] localGoods() {
+        this.requireGlobals();
+        return this.localGoods;
+    }
+
     private void declareTypeInheritance(World ecsWorld) {
         ecsWorld.obtainEntity(ecsWorld.component(PopulationType.class)).add(Flecs.OnInstantiate, Flecs.Inherit);
         ecsWorld.obtainEntity(ecsWorld.component(Color.class)).add(Flecs.OnInstantiate, Flecs.DontInherit);
@@ -683,6 +695,10 @@ public class EcsConstants {
 
     public long serviceGoodTag() {
         return this.serviceGoodTag;
+    }
+
+    public long localGoodTag() {
+        return this.localGoodTag;
     }
 
     public long onMap() {

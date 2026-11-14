@@ -8,13 +8,13 @@
         "amount": 173328,
         "template": 33,
         "populations": {
-            "labourers": 0.39942,
-            "farmers": 0.06923,
-            "craftsmen": 0.29796,
-            "clerks": 0.1277,
+            "labourers": 0.02276,
+            "farmers": 0.06228,
+            "craftsmen": 0.56803,
+            "clerks": 0.2601,
             "aristocrats": 0.00414,
-            "artisans": 0.0398,
-            "bureaucrats": 0.00417,
+            "artisans": 0.02016,
+            "bureaucrats": 0.00495,
             "capitalists": 0.03332,
             "clergymen": 0.01969,
             "officers": 0.00052,
@@ -32,7 +32,7 @@
         }
     },
     "good": "oil",
-    "good_potential": 1120.80,
+    "good_potential": 1120.8,
     "buildings": [
         {
             "name": "railway",
@@ -47,7 +47,7 @@
     "economy_buildings": [
         {
             "name": "refinery",
-            "size": 2
+            "size": 1
         }
     ]
 }

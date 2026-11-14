@@ -8,13 +8,13 @@
         "amount": 2524,
         "template": 92,
         "populations": {
-            "farmers": 0.27122,
-            "labourers": 0.07876,
-            "craftsmen": 0.37728,
-            "clerks": 0.1617,
+            "farmers": 0.07998,
+            "labourers": 0.0,
+            "craftsmen": 0.67154,
+            "clerks": 0.11623,
             "aristocrats": 0.00428,
-            "artisans": 0.03952,
-            "bureaucrats": 0.00409,
+            "artisans": 0.0,
+            "bureaucrats": 0.06482,
             "capitalists": 0.03295,
             "clergymen": 0.01902,
             "officers": 0.00131,
@@ -41,17 +41,17 @@
     "economy_buildings": [
         {
             "name": "steel_factory",
-            "size": 6,
+            "size": 1,
             "input_mode": "advanced"
         },
         {
             "name": "multimodal_transport",
-            "size": 6,
+            "size": 1,
             "input_mode": "advanced"
         },
         {
             "name": "aluminium_factory",
-            "size": 6,
+            "size": 1,
             "input_mode": "advanced"
         }
     ]

@@ -9,13 +9,13 @@
         "amount": 3690765,
         "template": 6,
         "populations": {
-            "farmers": 0.79103,
-            "labourers": 0.0793,
-            "craftsmen": 0.05973,
-            "clerks": 0.0256,
+            "farmers": 0.83977,
+            "labourers": 0.0,
+            "craftsmen": 0.02528,
+            "clerks": 0.03795,
             "aristocrats": 0.0,
-            "artisans": 0.00208,
-            "bureaucrats": 0.00286,
+            "artisans": 0.05675,
+            "bureaucrats": 0.00085,
             "capitalists": 0.0,
             "clergymen": 0.00419,
             "officers": 0.00343,
@@ -31,7 +31,7 @@
         }
     },
     "good": "grain",
-    "good_potential": 580.00,
+    "good_potential": 580.0,
     "buildings": [
         {
             "name": "railway",
@@ -43,6 +43,10 @@
         {
             "name": "armoured_vehicles_factory",
             "size": 8
+        },
+        {
+            "name": "services_firm",
+            "size": 22
         }
     ]
 }

@@ -8,13 +8,13 @@
         "amount": 214764,
         "template": 93,
         "populations": {
-            "labourers": 0.26864,
-            "farmers": 0.07635,
-            "craftsmen": 0.37386,
-            "clerks": 0.16024,
+            "labourers": 0.0154,
+            "farmers": 0.017,
+            "craftsmen": 0.6476,
+            "clerks": 0.12673,
             "aristocrats": 0.00665,
-            "artisans": 0.03997,
-            "bureaucrats": 0.00601,
+            "artisans": 0.00613,
+            "bureaucrats": 0.11221,
             "capitalists": 0.02996,
             "clergymen": 0.02226,
             "officers": 0.0015,
@@ -44,22 +44,22 @@
     "economy_buildings": [
         {
             "name": "multimodal_transport",
-            "size": 5,
+            "size": 4,
             "input_mode": "advanced"
         },
         {
             "name": "steel_factory",
-            "size": 5,
+            "size": 4,
             "input_mode": "advanced"
         },
         {
             "name": "cement_factory",
-            "size": 5,
+            "size": 4,
             "input_mode": "advanced"
         },
         {
             "name": "automobiles_factory",
-            "size": 5,
+            "size": 4,
             "input_mode": "advanced"
         }
     ]

@@ -8,13 +8,13 @@
         "amount": 1923761,
         "template": 73,
         "populations": {
-            "farmers": 0.73641,
-            "labourers": 0.09266,
-            "craftsmen": 0.05029,
-            "clerks": 0.02155,
+            "farmers": 0.19767,
+            "labourers": 0.0,
+            "craftsmen": 0.35509,
+            "clerks": 0.30351,
             "aristocrats": 0.0041,
-            "artisans": 0.03532,
-            "bureaucrats": 0.0047,
+            "artisans": 0.00407,
+            "bureaucrats": 0.08059,
             "capitalists": 0.03268,
             "clergymen": 0.01624,
             "officers": 0.00071,
@@ -49,12 +49,16 @@
         },
         {
             "name": "paper_factory",
-            "size": 3,
+            "size": 10,
             "input_mode": "advanced"
         },
         {
             "name": "inorganic_chemicals_factory",
-            "size": 3
+            "size": 10
+        },
+        {
+            "name": "services_firm",
+            "size": 47
         }
     ]
 }

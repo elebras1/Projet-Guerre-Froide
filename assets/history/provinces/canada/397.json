@@ -8,13 +8,13 @@
         "amount": 758483,
         "template": 92,
         "populations": {
-            "farmers": 0.79283,
-            "labourers": 0.09772,
-            "craftsmen": 0.0,
-            "clerks": 0.0,
+            "farmers": 0.20351,
+            "labourers": 0.0,
+            "craftsmen": 0.52006,
+            "clerks": 0.12573,
             "aristocrats": 0.00394,
-            "artisans": 0.03881,
-            "bureaucrats": 0.00405,
+            "artisans": 0.02808,
+            "bureaucrats": 0.05603,
             "capitalists": 0.03213,
             "clergymen": 0.01878,
             "officers": 0.00117,
@@ -36,7 +36,7 @@
         }
     },
     "good": "meat",
-    "good_potential": 306.00,
+    "good_potential": 306.0,
     "buildings": [
         {
             "name": "railway",
@@ -48,6 +48,10 @@
         {
             "name": "canned_meat_factory",
             "size": 6
+        },
+        {
+            "name": "services_firm",
+            "size": 1
         }
     ]
 }

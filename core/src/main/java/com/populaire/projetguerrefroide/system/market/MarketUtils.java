@@ -1,5 +1,6 @@
 package com.populaire.projetguerrefroide.system.market;
 
+import com.populaire.projetguerrefroide.component.CountryMarketView;
 import com.populaire.projetguerrefroide.component.GlobalMarketMutView;
 import com.populaire.projetguerrefroide.component.GlobalMarketView;
 
@@ -7,6 +8,16 @@ import static com.populaire.projetguerrefroide.simulation.Constants.RGO_STOCK_AD
 import static com.populaire.projetguerrefroide.simulation.Constants.STOCK_TARGET_DAYS;
 
 public class MarketUtils {
+
+    /**
+     * Same as {@link #clearingGap} for a good that is not traded (decision 207): the gap between the demand and the production
+     * of the country, which cannot be stored.
+     */
+    public static float countryClearingGap(CountryMarketView countryMarket, int goodIndex) {
+        float production = countryMarket.goodProducedAmounts(goodIndex);
+        float demand = countryMarket.goodDemandAmounts(goodIndex);
+        return production > 0f ? demand / production - 1f : (demand > 0f ? 1f : 0f);
+    }
 
     public static float clearingGap(GlobalMarketView globalMarket, int goodIndex, float stockDecay) {
         float worldProduction = globalMarket.goodProductionAmounts(goodIndex);

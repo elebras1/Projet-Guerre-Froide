@@ -1,7 +1,7 @@
 {
   "resource_goods": {
     "fish": {
-      "value": 8.44,
+      "value": 18.23,
       "cost": 1.4,
       "stock_decay": 0.02,
       "color": [
@@ -11,7 +11,7 @@
       ]
     },
     "grain": {
-      "value": 2.3,
+      "value": 3.06,
       "cost": 1.2,
       "stock_decay": 0.005,
       "color": [
@@ -21,7 +21,7 @@
       ]
     },
     "vegetables": {
-      "value": 3.56,
+      "value": 5.31,
       "cost": 1.2,
       "stock_decay": 0.02,
       "color": [
@@ -31,7 +31,7 @@
       ]
     },
     "fruits": {
-      "value": 1.69,
+      "value": 3.29,
       "cost": 1.4,
       "stock_decay": 0.02,
       "color": [
@@ -41,7 +41,7 @@
       ]
     },
     "meat": {
-      "value": 1.36,
+      "value": 3.28,
       "cost": 1.8,
       "stock_decay": 0.02,
       "color": [
@@ -51,7 +51,7 @@
       ]
     },
     "oil": {
-      "value": 1.16,
+      "value": 50.68,
       "cost": 2,
       "stock_decay": 0.002,
       "color": [
@@ -61,7 +61,7 @@
       ]
     },
     "coal": {
-      "value": 3.62,
+      "value": 136.61,
       "cost": 1.7,
       "stock_decay": 0.002,
       "color": [
@@ -71,7 +71,7 @@
       ]
     },
     "gas": {
-      "value": 2.08,
+      "value": 77.71,
       "cost": 2.5,
       "stock_decay": 0.002,
       "color": [
@@ -81,7 +81,7 @@
       ]
     },
     "wood": {
-      "value": 1.65,
+      "value": 91.31,
       "cost": 1.2,
       "stock_decay": 0.002,
       "color": [
@@ -91,7 +91,7 @@
       ]
     },
     "renewable_energy": {
-      "value": 1.67,
+      "value": 96.63,
       "cost": 1.4,
       "stock_decay": 0.002,
       "color": [
@@ -101,7 +101,7 @@
       ]
     },
     "uranium": {
-      "value": 2.7,
+      "value": 46.63,
       "cost": 3,
       "stock_decay": 0.002,
       "color": [
@@ -111,7 +111,7 @@
       ]
     },
     "iron": {
-      "value": 4.36,
+      "value": 333.98,
       "cost": 1.5,
       "stock_decay": 0.002,
       "color": [
@@ -121,7 +121,7 @@
       ]
     },
     "precious_metals": {
-      "value": 2.06,
+      "value": 31.04,
       "cost": 8,
       "stock_decay": 0.002,
       "color": [
@@ -131,7 +131,7 @@
       ]
     },
     "rare_metals": {
-      "value": 1.11,
+      "value": 86.95,
       "cost": 4,
       "stock_decay": 0.002,
       "color": [
@@ -310,6 +310,15 @@
         129,
         63,
         10
+      ]
+    },
+    "services": {
+      "cost": 1.0,
+      "tradable": false,
+      "color": [
+        230,
+        150,
+        40
       ]
     }
   },

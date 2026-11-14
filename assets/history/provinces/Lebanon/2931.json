@@ -9,13 +9,13 @@
         "amount": 720536,
         "template": 37,
         "populations": {
-            "farmers": 0.59036,
-            "labourers": 0.10175,
-            "craftsmen": 0.14267,
-            "clerks": 0.06114,
+            "farmers": 0.59606,
+            "labourers": 0.0,
+            "craftsmen": 0.23373,
+            "clerks": 0.09363,
             "aristocrats": 0.00436,
-            "artisans": 0.03557,
-            "bureaucrats": 0.00401,
+            "artisans": 0.01208,
+            "bureaucrats": 0.0,
             "capitalists": 0.03622,
             "clergymen": 0.01899,
             "officers": 0.00049,
@@ -50,6 +50,10 @@
         },
         {
             "name": "weaponry_factory",
+            "size": 2
+        },
+        {
+            "name": "services_firm",
             "size": 2
         }
     ]

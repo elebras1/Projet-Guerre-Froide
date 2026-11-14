@@ -8,13 +8,13 @@
         "amount": 2479171,
         "template": 63,
         "populations": {
-            "farmers": 0.8083,
-            "labourers": 0.06186,
-            "craftsmen": 0.01023,
-            "clerks": 0.00439,
+            "farmers": 0.74718,
+            "labourers": 0.0,
+            "craftsmen": 0.11227,
+            "clerks": 0.052,
             "aristocrats": 0.00402,
-            "artisans": 0.04126,
-            "bureaucrats": 0.00463,
+            "artisans": 0.00285,
+            "bureaucrats": 0.01637,
             "capitalists": 0.03678,
             "clergymen": 0.01918,
             "officers": 0.00105,
@@ -32,7 +32,7 @@
         }
     },
     "good": "fish",
-    "good_potential": 697.00,
+    "good_potential": 697.0,
     "buildings": [
         {
             "name": "railway",
@@ -52,6 +52,10 @@
         {
             "name": "military_academy",
             "size": 1
+        },
+        {
+            "name": "services_firm",
+            "size": 7
         }
     ]
 }

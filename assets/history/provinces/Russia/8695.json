@@ -9,13 +9,13 @@
         "amount": 574586,
         "template": 45,
         "populations": {
-            "labourers": 0.83695,
-            "farmers": 0.09183,
-            "craftsmen": 0.0,
-            "clerks": 0.0,
+            "labourers": 0.02817,
+            "farmers": 0.08488,
+            "craftsmen": 0.49715,
+            "clerks": 0.17651,
             "aristocrats": 0.0,
             "artisans": 0.0,
-            "bureaucrats": 0.0501,
+            "bureaucrats": 0.19217,
             "capitalists": 0.0,
             "clergymen": 0.00461,
             "officers": 0.00166,
@@ -46,7 +46,7 @@
     "economy_buildings": [
         {
             "name": "electronic_components_factory",
-            "size": 3
+            "size": 5
         }
     ]
 }

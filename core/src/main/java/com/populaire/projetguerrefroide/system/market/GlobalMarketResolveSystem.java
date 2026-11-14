@@ -27,11 +27,17 @@ public class GlobalMarketResolveSystem {
         int serviceGoodStartIndex = globalGoodData.serviceGoodStartIndex();
         int serviceGoodEndIndex = globalGoodData.serviceGoodEndIndex();
 
+        boolean[] localGoods = this.ecsConstants.localGoods();
         Field<GlobalMarket> marketField = iter.field(GlobalMarket.class, 0);
         for (int i = 0; i < iter.count(); i++) {
             GlobalMarketMutView gm = marketField.getMutView(i);
 
             for (int g = 0; g < gm.goodPricesLength(); g++) {
+                if (localGoods[g]) {
+                    // price set country by country (CountryLocalPriceSystem, decision 207)
+                    gm.goodAvailabilities(g, gm.goodStockAmounts(g) > 0f);
+                    continue;
+                }
                 float demand = gm.goodDemandAmounts(g);
                 float production = gm.goodProductionAmounts(g);
                 float offer = production;

@@ -22,5 +22,7 @@ public record CountryBudget(
     float publicWorksLoan,
     float militarySupplyRatio,
     float pensionBudget,
-    float pensionCoverage) {
+    float pensionCoverage,
+    float statePostCapacity,
+    float statePostNeeds) {
 }

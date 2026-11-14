@@ -23,11 +23,18 @@ public class WorldMarketTotalsSystem {
         EntityView globalMarket = iter.stage().obtainEntityView(this.ecsConstants.globalMarket());
         GlobalMarketMutView globalMarketData = globalMarket.getMutView(GlobalMarket.class);
 
+        boolean[] localGoods = this.ecsConstants.localGoods();
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         for (int i = 0; i < iter.count(); i++) {
             CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
 
             for (int g = 0; g < countryMarket.goodImportNeedsLength(); g++) {
+                if (localGoods[g]) {
+                    // neither imported nor exported (decision 207)
+                    countryMarket.goodImportNeeds(g, 0f);
+                    countryMarket.goodExportOffers(g, 0f);
+                    continue;
+                }
                 float demand = countryMarket.goodDemandAmounts(g);
                 float stock = countryMarket.goodStocks(g);
 

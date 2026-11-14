@@ -10,13 +10,13 @@
         "amount": 6374522,
         "template": 15,
         "populations": {
-            "farmers": 0.78278,
-            "labourers": 0.08047,
-            "craftsmen": 0.02537,
-            "clerks": 0.01088,
+            "farmers": 0.79751,
+            "labourers": 0.0,
+            "craftsmen": 0.02163,
+            "clerks": 0.04699,
             "aristocrats": 0.00317,
-            "artisans": 0.03487,
-            "bureaucrats": 0.00351,
+            "artisans": 0.06429,
+            "bureaucrats": 0.00746,
             "capitalists": 0.04435,
             "clergymen": 0.0146,
             "officers": 0.0,
@@ -54,6 +54,10 @@
         {
             "name": "aluminium_factory",
             "size": 2
+        },
+        {
+            "name": "services_firm",
+            "size": 116
         }
     ]
 }

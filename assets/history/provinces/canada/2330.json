@@ -9,13 +9,13 @@
         "amount": 1284184,
         "template": 92,
         "populations": {
-            "farmers": 0.68512,
-            "labourers": 0.08084,
-            "craftsmen": 0.09067,
-            "clerks": 0.03886,
+            "farmers": 0.17504,
+            "labourers": 0.0,
+            "craftsmen": 0.4213,
+            "clerks": 0.25888,
             "aristocrats": 0.0038,
-            "artisans": 0.03161,
-            "bureaucrats": 0.00456,
+            "artisans": 0.0185,
+            "bureaucrats": 0.05794,
             "capitalists": 0.03449,
             "clergymen": 0.01881,
             "officers": 0.0011,
@@ -48,16 +48,20 @@
         },
         {
             "name": "communication_factory",
-            "size": 2
+            "size": 1
         },
         {
             "name": "cement_factory",
-            "size": 2,
+            "size": 1,
             "input_mode": "advanced"
         },
         {
             "name": "electronic_components_factory",
-            "size": 3
+            "size": 1
+        },
+        {
+            "name": "services_firm",
+            "size": 11
         }
     ]
 }

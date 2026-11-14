@@ -11,13 +11,13 @@
         "amount": 1529,
         "template": 3,
         "populations": {
-            "farmers": 0.45771,
-            "labourers": 0.45768,
+            "farmers": 0.8292,
+            "labourers": 0.0,
             "craftsmen": 0.0,
             "clerks": 0.0,
             "aristocrats": 0.00348,
-            "artisans": 0.02851,
-            "bureaucrats": 0.00339,
+            "artisans": 0.11809,
+            "bureaucrats": 0.0,
             "capitalists": 0.03462,
             "clergymen": 0.01461,
             "officers": 0.0,
@@ -39,5 +39,11 @@
             "size": 1
         }
     ],
-    "terrain": "desert"
+    "terrain": "desert",
+    "economy_buildings": [
+        {
+            "name": "services_firm",
+            "size": 1
+        }
+    ]
 }

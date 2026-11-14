@@ -10,13 +10,13 @@
         "amount": 2048412,
         "template": 15,
         "populations": {
-            "farmers": 0.82104,
-            "labourers": 0.07166,
-            "craftsmen": 0.01231,
-            "clerks": 0.00527,
+            "farmers": 0.82473,
+            "labourers": 0.0,
+            "craftsmen": 0.01277,
+            "clerks": 0.033,
             "aristocrats": 0.00267,
-            "artisans": 0.03168,
-            "bureaucrats": 0.00319,
+            "artisans": 0.06646,
+            "bureaucrats": 0.00819,
             "capitalists": 0.03873,
             "clergymen": 0.01345,
             "officers": 0.0,
@@ -45,6 +45,10 @@
         {
             "name": "military_academy",
             "size": 1
+        },
+        {
+            "name": "services_firm",
+            "size": 4
         }
     ]
 }

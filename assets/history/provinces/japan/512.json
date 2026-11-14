@@ -8,16 +8,16 @@
         "amount": 767629,
         "template": 8,
         "populations": {
-            "farmers": 0.83349,
-            "labourers": 0.06535,
-            "craftsmen": 0.0,
-            "clerks": 0.0,
+            "farmers": 0.56963,
+            "labourers": 0.0,
+            "craftsmen": 0.18092,
+            "clerks": 0.1144,
             "aristocrats": 0.0044,
-            "artisans": 0.03672,
-            "bureaucrats": 0.00447,
+            "artisans": 3e-05,
+            "bureaucrats": 0.07505,
             "capitalists": 0.03625,
             "clergymen": 0.01848,
-            "officers": 0.00009,
+            "officers": 9e-05,
             "slaves": 0.0,
             "soldiers": 0.00075
         },
@@ -30,7 +30,7 @@
         }
     },
     "good": "grain",
-    "good_potential": 134.10,
+    "good_potential": 134.1,
     "buildings": [
         {
             "name": "railway",

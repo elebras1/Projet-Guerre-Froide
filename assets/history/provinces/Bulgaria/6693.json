@@ -8,13 +8,13 @@
         "amount": 1869081,
         "template": 46,
         "populations": {
-            "labourers": 0.77207,
-            "farmers": 0.0607,
-            "craftsmen": 0.03889,
-            "clerks": 0.01666,
+            "labourers": 0.00928,
+            "farmers": 0.50583,
+            "craftsmen": 0.20613,
+            "clerks": 0.14932,
             "aristocrats": 0.00452,
-            "artisans": 0.04148,
-            "bureaucrats": 0.00439,
+            "artisans": 0.02973,
+            "bureaucrats": 0.0339,
             "capitalists": 0.03688,
             "clergymen": 0.01966,
             "officers": 0.00052,
@@ -56,6 +56,10 @@
         {
             "name": "glass_factory",
             "size": 1
+        },
+        {
+            "name": "services_firm",
+            "size": 10
         }
     ]
 }

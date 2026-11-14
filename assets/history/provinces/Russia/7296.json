@@ -9,13 +9,13 @@
         "amount": 2081162,
         "template": 45,
         "populations": {
-            "farmers": 0.83586,
-            "labourers": 0.08956,
-            "craftsmen": 0.0,
-            "clerks": 0.0,
+            "farmers": 0.85538,
+            "labourers": 0.0,
+            "craftsmen": 0.07735,
+            "clerks": 0.01561,
             "aristocrats": 0.0,
-            "artisans": 0.0,
-            "bureaucrats": 0.05478,
+            "artisans": 0.00424,
+            "bureaucrats": 0.02762,
             "capitalists": 0.0,
             "clergymen": 0.00489,
             "officers": 0.00169,
@@ -42,11 +42,11 @@
     "economy_buildings": [
         {
             "name": "inorganic_chemicals_factory",
-            "size": 4
+            "size": 1
         },
         {
             "name": "electronic_components_factory",
-            "size": 4
+            "size": 1
         }
     ]
 }

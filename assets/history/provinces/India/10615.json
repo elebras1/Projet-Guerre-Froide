@@ -10,13 +10,13 @@
         "amount": 5418451,
         "template": 15,
         "populations": {
-            "farmers": 0.76959,
-            "labourers": 0.06957,
-            "craftsmen": 0.04628,
-            "clerks": 0.01984,
+            "farmers": 0.77526,
+            "labourers": 0.0,
+            "craftsmen": 0.04263,
+            "clerks": 0.04534,
             "aristocrats": 0.00268,
-            "artisans": 0.03184,
-            "bureaucrats": 0.00305,
+            "artisans": 0.06589,
+            "bureaucrats": 0.01105,
             "capitalists": 0.04179,
             "clergymen": 0.01536,
             "officers": 0.0,
@@ -49,6 +49,10 @@
         {
             "name": "cement_factory",
             "size": 5
+        },
+        {
+            "name": "services_firm",
+            "size": 26
         }
     ]
 }

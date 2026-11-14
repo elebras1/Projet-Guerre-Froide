@@ -8,13 +8,13 @@
         "amount": 328564,
         "template": 70,
         "populations": {
-            "farmers": 0.27761,
-            "labourers": 0.08739,
-            "craftsmen": 0.37771,
-            "clerks": 0.16189,
+            "farmers": 0.15323,
+            "labourers": 0.0,
+            "craftsmen": 0.46878,
+            "clerks": 0.15726,
             "aristocrats": 0.0033,
-            "artisans": 0.03214,
-            "bureaucrats": 0.00388,
+            "artisans": 0.00654,
+            "bureaucrats": 0.15481,
             "capitalists": 0.03723,
             "clergymen": 0.01495,
             "officers": 0.00047,
@@ -45,17 +45,17 @@
         },
         {
             "name": "automobiles_factory",
-            "size": 6,
+            "size": 10,
             "input_mode": "advanced"
         },
         {
             "name": "steel_factory",
-            "size": 6,
+            "size": 10,
             "input_mode": "advanced"
         },
         {
             "name": "cement_factory",
-            "size": 6,
+            "size": 10,
             "input_mode": "advanced"
         }
     ]

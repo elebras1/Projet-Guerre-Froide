@@ -9,13 +9,13 @@
         "amount": 1280466,
         "template": 45,
         "populations": {
-            "labourers": 0.70528,
-            "farmers": 0.0705,
-            "craftsmen": 0.10171,
-            "clerks": 0.04359,
+            "labourers": 0.04202,
+            "farmers": 0.05209,
+            "craftsmen": 0.56161,
+            "clerks": 0.1204,
             "aristocrats": 0.0,
-            "artisans": 0.0,
-            "bureaucrats": 0.05659,
+            "artisans": 0.0112,
+            "bureaucrats": 0.19035,
             "capitalists": 0.0,
             "clergymen": 0.00562,
             "officers": 0.00168,
@@ -46,11 +46,15 @@
         },
         {
             "name": "refinery",
-            "size": 4
+            "size": 6
         },
         {
             "name": "electronic_components_factory",
-            "size": 3
+            "size": 4
+        },
+        {
+            "name": "services_firm",
+            "size": 1
         }
     ]
 }

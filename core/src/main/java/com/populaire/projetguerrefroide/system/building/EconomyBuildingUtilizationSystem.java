@@ -47,6 +47,7 @@ public class EconomyBuildingUtilizationSystem {
         GlobalMarketView globalMarket = iter.stage().obtainEntityView(this.ecsConstants.globalMarket()).getView(GlobalMarket.class);
         float demandGap = Math.clamp(MarketUtils.clearingGap(globalMarket, buildingTypeData.goodOutputIndex(), this.ecsConstants.goodStockDecays()[buildingTypeData.goodOutputIndex()]), -1f, 1f);
         boolean ordered = iter.isSet(3);
+        boolean localOutput = this.ecsConstants.localGoods()[buildingTypeData.goodOutputIndex()];
 
         for (int i = 0; i < iter.count(); i++) {
             BuildingView building = buildingField.getMutView(i);
@@ -97,7 +98,7 @@ public class EconomyBuildingUtilizationSystem {
             }
             float signal;
             if (economyBuilding.ownerTagId() == this.stateOwnerTag && countryMarket.treasury() > countryBudget.targetTreasury()) {
-                signal = demandGap;
+                signal = localOutput ? Math.clamp(MarketUtils.countryClearingGap(countryMarket, buildingTypeData.goodOutputIndex()), -1f, 1f) : demandGap;
             } else {
                 signal = Math.clamp(coveredMargin, -1f, 1f);
             }

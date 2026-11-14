@@ -8,16 +8,16 @@
         "amount": 15432232,
         "template": 8,
         "populations": {
-            "farmers": 0.78877,
-            "labourers": 0.06219,
-            "craftsmen": 0.03199,
-            "clerks": 0.01371,
+            "farmers": 0.53928,
+            "labourers": 0.0,
+            "craftsmen": 0.197,
+            "clerks": 0.12176,
             "aristocrats": 0.00379,
-            "artisans": 0.04024,
-            "bureaucrats": 0.00494,
+            "artisans": 0.00135,
+            "bureaucrats": 0.08245,
             "capitalists": 0.03532,
             "clergymen": 0.01817,
-            "officers": 0.00008,
+            "officers": 8e-05,
             "slaves": 0.0,
             "soldiers": 0.0008
         },
@@ -53,16 +53,20 @@
         },
         {
             "name": "machine_parts_factory",
-            "size": 6,
+            "size": 14,
             "input_mode": "advanced"
         },
         {
             "name": "plastics_factory",
-            "size": 6
+            "size": 14
         },
         {
             "name": "inorganic_chemicals_factory",
-            "size": 5
+            "size": 12
+        },
+        {
+            "name": "services_firm",
+            "size": 67
         }
     ]
 }

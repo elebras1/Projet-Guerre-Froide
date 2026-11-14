@@ -21,11 +21,13 @@
         "paper": 0.5,
         "communication": 1,
         "transport": 0.5,
-        "gas": 0.1
+        "gas": 0.1,
+        "services": 11.7
     },
     "luxury_needs": {
         "automobiles": 1,
-        "computers": 0.15
+        "computers": 0.15,
+        "services": 5.43
     },
     "workforce_share": 0.6,
     "strata": "middle",
@@ -38,7 +40,7 @@
     },
     "state_posts": {
         "management_ratio": 0.05,
-        "administration_ratio": 0.005,
+        "administration_ratio": 0.09,
         "tax_collection_floor": 0.5,
         "management_output_bonus": 0.1
     },

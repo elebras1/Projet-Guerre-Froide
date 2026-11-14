@@ -2,20 +2,20 @@
     "owner": "KIR",
     "controller": "KIR",
     "add_core": [
-      "KIR",
-      "ENG"
+        "KIR",
+        "ENG"
     ],
     "population_total": {
         "amount": 30986,
         "template": 155,
         "populations": {
-            "farmers": 0.8286,
-            "labourers": 0.08397,
+            "farmers": 0.06341,
+            "labourers": 0.0,
             "craftsmen": 0.0,
             "clerks": 0.0,
             "aristocrats": 0.00292,
-            "artisans": 0.03144,
-            "bureaucrats": 0.00308,
+            "artisans": 0.88368,
+            "bureaucrats": 0.0,
             "capitalists": 0.03421,
             "clergymen": 0.01578,
             "officers": 0.0,
@@ -42,5 +42,11 @@
             "size": 2
         }
     ],
-    "terrain": "jungle"
+    "terrain": "jungle",
+    "economy_buildings": [
+        {
+            "name": "services_firm",
+            "size": 1
+        }
+    ]
 }

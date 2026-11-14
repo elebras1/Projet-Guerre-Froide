@@ -8,16 +8,16 @@
         "amount": 1352240,
         "template": 8,
         "populations": {
-            "farmers": 0.65711,
-            "labourers": 0.05607,
-            "craftsmen": 0.13204,
-            "clerks": 0.05658,
+            "farmers": 0.45196,
+            "labourers": 0.0,
+            "craftsmen": 0.23873,
+            "clerks": 0.15096,
             "aristocrats": 0.00369,
-            "artisans": 0.03478,
-            "bureaucrats": 0.00415,
+            "artisans": 5e-05,
+            "bureaucrats": 0.09903,
             "capitalists": 0.03518,
             "clergymen": 0.01946,
-            "officers": 0.00009,
+            "officers": 9e-05,
             "slaves": 0.0,
             "soldiers": 0.00085
         },
@@ -30,7 +30,7 @@
         }
     },
     "good": "grain",
-    "good_potential": 157.60,
+    "good_potential": 157.6,
     "buildings": [
         {
             "name": "railway",
@@ -41,7 +41,7 @@
     "economy_buildings": [
         {
             "name": "coal_powerplant",
-            "size": 7
+            "size": 17
         }
     ]
 }

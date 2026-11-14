@@ -21,5 +21,6 @@ public record CountryBank(
     float lendingRate,
     double depositRate,
     float depositLossRatio,
-    int bankruptcies) {
+    int bankruptcies,
+    double stateDeposit) {
 }

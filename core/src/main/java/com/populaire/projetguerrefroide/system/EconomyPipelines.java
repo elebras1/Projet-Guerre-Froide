@@ -121,6 +121,7 @@ public class EconomyPipelines {
     private final WorldTradeMoneySettleSystem worldTradeMoneySettleSystem;
     private final CountryPriceSystem countryPriceSystem;
     private final GlobalMarketResolveSystem globalMarketResolveSystem;
+    private final CountryLocalPriceSystem countryLocalPriceSystem;
     private final CountryProductionValueSystem countryProductionValueSystem;
     private final RGORevenueSystem rgoRevenueSystem;
     private final EconomyBuildingRevenueSystem economyBuildingRevenueSystem;
@@ -135,6 +136,7 @@ public class EconomyPipelines {
     private final ReligiousDonationSystem religiousDonationSystem;
     private final RegionIncomeResidualSystem regionIncomeResidualSystem;
     private final CountryBudgetSystem countryBudgetSystem;
+    private final StateDepositSystem stateDepositSystem;
     private final CountryInvestmentResetSystem countryInvestmentResetSystem;
     private final ConstructionDemandSystem constructionDemandSystem;
     private final ConstructionPurchaseSystem constructionPurchaseSystem;
@@ -342,6 +344,7 @@ public class EconomyPipelines {
         this.countryStockInitializationSystem = new CountryStockInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInitStock);
         this.rgoMechanizationUpkeepInitializationSystem = new RGOMechanizationUpkeepInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInitStock);
         this.globalMarketResolveSystem = new GlobalMarketResolveSystem(ecsWorld, simulationContext.getEcsConstants(), phasePrice);
+        this.countryLocalPriceSystem = new CountryLocalPriceSystem(ecsWorld, simulationContext.getEcsConstants(), phasePrice);
         this.countryProductionValueSystem = new CountryProductionValueSystem(ecsWorld, phaseRevenue);
         this.rgoRevenueSystem = new RGORevenueSystem(ecsWorld, simulationContext.getEcsConstants(), phaseRevenue);
         this.economyBuildingRevenueSystem = new EconomyBuildingRevenueSystem(ecsWorld, simulationContext.getEcsConstants(), phaseRevenue);
@@ -377,6 +380,7 @@ public class EconomyPipelines {
         this.researchSystem = new ResearchSystem(ecsWorld, simulationContext.getEcsConstants(), phaseState);
         this.economyBuildingRecipeSystem = new EconomyBuildingRecipeSystem(ecsWorld, simulationContext.getEcsConstants(), phaseState);
         this.rgoModeSystem = new RGOModeSystem(ecsWorld, simulationContext.getEcsConstants(), phaseState, false);
+        this.stateDepositSystem = new StateDepositSystem(ecsWorld, phaseState);
         this.economyCalendarSystem = new EconomyCalendarSystem(ecsWorld, phaseCalendar);
     }
 

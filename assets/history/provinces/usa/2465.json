@@ -8,13 +8,13 @@
         "amount": 634808,
         "template": 93,
         "populations": {
-            "farmers": 0.26918,
-            "labourers": 0.09135,
-            "craftsmen": 0.35771,
-            "clerks": 0.15331,
+            "farmers": 0.08026,
+            "labourers": 0.0,
+            "craftsmen": 0.49706,
+            "clerks": 0.23621,
             "aristocrats": 0.00632,
-            "artisans": 0.04687,
-            "bureaucrats": 0.00698,
+            "artisans": 0.00487,
+            "bureaucrats": 0.107,
             "capitalists": 0.03233,
             "clergymen": 0.02181,
             "officers": 0.00141,
@@ -45,7 +45,7 @@
         },
         {
             "name": "renewable_powerplant",
-            "size": 9
+            "size": 24
         }
     ]
 }

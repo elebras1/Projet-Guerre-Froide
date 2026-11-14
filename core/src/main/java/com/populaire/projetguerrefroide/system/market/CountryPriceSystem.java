@@ -45,7 +45,12 @@ public class CountryPriceSystem {
             countryMarket.effectiveTariffRate(effectiveTariffRate);
 
             float maximumTariff = 1f + Math.max(0f, tariffRate);
+            boolean[] localGoods = this.ecsConstants.localGoods();
             for (int g = 0; g < countryMarket.goodPricesLength(); g++) {
+                if (localGoods[g]) {
+                    // kept: the country's own price (CountryLocalPriceSystem, decision 207)
+                    continue;
+                }
                 float consumed = countryMarket.goodConsumedAmounts(g);
                 float importedShare = consumed > 0f ? countryMarket.goodImportedAmounts(g) / consumed : 0f;
                 countryMarket.goodPrices(g, countryMarket.goodBudgetPrices(g) * ((1f + effectiveTariffRate * importedShare) / maximumTariff));

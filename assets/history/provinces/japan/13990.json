@@ -8,16 +8,16 @@
         "amount": 7516262,
         "template": 8,
         "populations": {
-            "farmers": 0.78004,
-            "labourers": 0.06199,
-            "craftsmen": 0.04455,
-            "clerks": 0.0191,
+            "farmers": 0.53362,
+            "labourers": 0.0,
+            "craftsmen": 0.20059,
+            "clerks": 0.12684,
             "aristocrats": 0.00374,
-            "artisans": 0.0342,
-            "bureaucrats": 0.00441,
+            "artisans": 4e-05,
+            "bureaucrats": 0.0832,
             "capitalists": 0.03239,
             "clergymen": 0.01871,
-            "officers": 0.00008,
+            "officers": 8e-05,
             "slaves": 0.0,
             "soldiers": 0.00079
         },
@@ -53,17 +53,21 @@
         },
         {
             "name": "cement_factory",
-            "size": 6,
+            "size": 14,
             "input_mode": "advanced"
         },
         {
             "name": "automobiles_factory",
-            "size": 6,
+            "size": 14,
             "input_mode": "advanced"
         },
         {
             "name": "inorganic_chemicals_factory",
-            "size": 4
+            "size": 9
+        },
+        {
+            "name": "services_firm",
+            "size": 42
         }
     ]
 }

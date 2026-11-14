@@ -9,13 +9,13 @@
         "amount": 1299872,
         "template": 45,
         "populations": {
-            "farmers": 0.26348,
-            "labourers": 0.10293,
-            "craftsmen": 0.39218,
-            "clerks": 0.16808,
+            "farmers": 0.33868,
+            "labourers": 0.0,
+            "craftsmen": 0.41928,
+            "clerks": 0.07805,
             "aristocrats": 0.0,
             "artisans": 0.0,
-            "bureaucrats": 0.05269,
+            "bureaucrats": 0.14335,
             "capitalists": 0.0,
             "clergymen": 0.00481,
             "officers": 0.00142,
@@ -45,7 +45,7 @@
     "economy_buildings": [
         {
             "name": "renewable_powerplant",
-            "size": 15
+            "size": 7
         },
         {
             "name": "ammunition_factory",
@@ -59,7 +59,7 @@
         },
         {
             "name": "inorganic_chemicals_factory",
-            "size": 4
+            "size": 2
         }
     ],
     "terrain": "forest"

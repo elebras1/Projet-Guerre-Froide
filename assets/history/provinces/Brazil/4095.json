@@ -8,13 +8,13 @@
         "amount": 489073,
         "template": 77,
         "populations": {
-            "farmers": 0.61917,
-            "labourers": 0.07325,
-            "craftsmen": 0.17103,
-            "clerks": 0.07329,
+            "farmers": 0.48694,
+            "labourers": 0.0,
+            "craftsmen": 0.1822,
+            "clerks": 0.14759,
             "aristocrats": 0.00297,
-            "artisans": 0.00953,
-            "bureaucrats": 0.00057,
+            "artisans": 0.05822,
+            "bureaucrats": 0.07189,
             "capitalists": 0.02452,
             "clergymen": 0.02162,
             "officers": 0.00046,
@@ -43,6 +43,10 @@
         {
             "name": "armoured_vehicles_factory",
             "size": 3
+        },
+        {
+            "name": "services_firm",
+            "size": 2
         }
     ]
 }

@@ -9,10 +9,10 @@
         "machine_parts": 350
       },
       "input_goods": {
-        "oil": 2.15
+        "oil": 1.63
       },
       "output_goods": {
-        "fuel": 4.35
+        "fuel": 3.28
       },
       "max_level": 99,
       "time": 730
@@ -26,10 +26,10 @@
         "machine_parts": 350
       },
       "input_goods": {
-        "coal": 3.37
+        "coal": 3.06
       },
       "output_goods": {
-        "electricity": 5.54
+        "electricity": 5.05
       },
       "max_level": 99,
       "time": 200
@@ -43,10 +43,10 @@
         "machine_parts": 350
       },
       "input_goods": {
-        "renewable_energy": 3.37
+        "renewable_energy": 3.06
       },
       "output_goods": {
-        "electricity": 5.54
+        "electricity": 5.05
       },
       "max_level": 99,
       "time": 200
@@ -61,10 +61,10 @@
         "electronic_components": 500
       },
       "input_goods": {
-        "uranium": 1.84
+        "uranium": 1.69
       },
       "output_goods": {
-        "electricity": 5.54
+        "electricity": 5.05
       },
       "max_level": 99,
       "time": 200
@@ -100,16 +100,16 @@
         "machine_parts": 350
       },
       "input_goods": {
-        "iron": 13.18,
-        "coal": 5.28
+        "iron": 17.93,
+        "coal": 7.17
       },
       "advanced_input_goods": {
-        "iron": 13.18,
-        "coal": 2.64,
-        "electricity": 2.64
+        "iron": 17.93,
+        "coal": 3.59,
+        "electricity": 3.59
       },
       "output_goods": {
-        "steel": 16.88
+        "steel": 22.93
       },
       "max_level": 99,
       "time": 150
@@ -123,17 +123,17 @@
         "machine_parts": 350
       },
       "input_goods": {
-        "coal": 2.36,
-        "rare_metals": 1.58,
-        "inorganic_chemicals": 0.77
+        "coal": 2.04,
+        "rare_metals": 1.38,
+        "inorganic_chemicals": 0.66
       },
       "advanced_input_goods": {
-        "electricity": 2.36,
-        "rare_metals": 1.58,
-        "inorganic_chemicals": 0.77
+        "electricity": 2.04,
+        "rare_metals": 1.38,
+        "inorganic_chemicals": 0.66
       },
       "output_goods": {
-        "aluminium": 11.99
+        "aluminium": 10.44
       },
       "max_level": 99,
       "time": 120
@@ -248,17 +248,17 @@
         "machine_parts": 350
       },
       "input_goods": {
-        "coal": 1.95,
-        "oil": 2.6,
-        "rare_metals": 1.31
+        "coal": 0.53,
+        "oil": 0.71,
+        "rare_metals": 0.36
       },
       "advanced_input_goods": {
-        "electricity": 1.95,
-        "oil": 2.6,
-        "rare_metals": 1.31
+        "electricity": 0.53,
+        "oil": 0.71,
+        "rare_metals": 0.36
       },
       "output_goods": {
-        "inorganic_chemicals": 7.66
+        "inorganic_chemicals": 2.12
       },
       "max_level": 99,
       "time": 110
@@ -273,15 +273,15 @@
         "machine_parts": 350
       },
       "input_goods": {
-        "vegetables": 1.5,
-        "coal": 0.16
+        "vegetables": 1.42,
+        "coal": 0.15
       },
       "advanced_input_goods": {
-        "vegetables": 1.5,
-        "electricity": 0.16
+        "vegetables": 1.42,
+        "electricity": 0.15
       },
       "output_goods": {
-        "fabric": 3.46
+        "fabric": 3.27
       },
       "max_level": 99,
       "time": 90
@@ -295,10 +295,10 @@
         "machine_parts": 350
       },
       "input_goods": {
-        "oil": 0.63
+        "oil": 0.74
       },
       "output_goods": {
-        "plastics": 2.36
+        "plastics": 2.78
       },
       "max_level": 99,
       "time": 130
@@ -313,15 +313,15 @@
         "machine_parts": 350
       },
       "input_goods": {
-        "wood": 1.48,
-        "coal": 0.38
+        "wood": 1.73,
+        "coal": 0.43
       },
       "advanced_input_goods": {
-        "wood": 1.48,
-        "electricity": 0.38
+        "wood": 1.73,
+        "electricity": 0.43
       },
       "output_goods": {
-        "paper": 2.73
+        "paper": 3.19
       },
       "max_level": 99,
       "time": 100
@@ -356,12 +356,12 @@
         "aluminium": 500
       },
       "input_goods": {
-        "rare_metals": 2.43,
-        "inorganic_chemicals": 3.05,
-        "plastics": 2.43
+        "rare_metals": 0.9,
+        "inorganic_chemicals": 1.13,
+        "plastics": 0.9
       },
       "output_goods": {
-        "electronic_components": 22.37
+        "electronic_components": 8.26
       },
       "max_level": 99,
       "time": 150
@@ -376,17 +376,17 @@
         "aluminium": 500
       },
       "input_goods": {
-        "steel": 0.8,
-        "aluminium": 0.4,
-        "coal": 0.2
+        "steel": 1.21,
+        "aluminium": 0.6,
+        "coal": 0.31
       },
       "advanced_input_goods": {
-        "steel": 0.8,
-        "aluminium": 0.4,
-        "electricity": 0.2
+        "steel": 1.21,
+        "aluminium": 0.6,
+        "electricity": 0.31
       },
       "output_goods": {
-        "machine_parts": 9.41
+        "machine_parts": 14.18
       },
       "max_level": 99,
       "time": 140
@@ -422,19 +422,19 @@
         "machine_parts": 2500
       },
       "input_goods": {
-        "plastics": 1.74,
-        "steel": 2.34,
-        "machine_parts": 2.34,
-        "coal": 0.57
+        "plastics": 1.37,
+        "steel": 1.85,
+        "machine_parts": 1.85,
+        "coal": 0.45
       },
       "advanced_input_goods": {
-        "plastics": 1.74,
-        "steel": 2.34,
-        "machine_parts": 2.34,
-        "electricity": 0.57
+        "plastics": 1.37,
+        "steel": 1.85,
+        "machine_parts": 1.85,
+        "electricity": 0.45
       },
       "output_goods": {
-        "automobiles": 13.47
+        "automobiles": 10.64
       },
       "max_level": 99,
       "time": 200
@@ -449,15 +449,15 @@
         "machine_parts": 350
       },
       "input_goods": {
-        "fabric": 4.32,
-        "coal": 0.44
+        "fabric": 4.52,
+        "coal": 0.48
       },
       "advanced_input_goods": {
-        "fabric": 4.32,
-        "electricity": 0.44
+        "fabric": 4.52,
+        "electricity": 0.48
       },
       "output_goods": {
-        "clothes": 6.74
+        "clothes": 7.07
       },
       "max_level": 99,
       "time": 90
@@ -472,11 +472,11 @@
         "electronic_components": 500
       },
       "input_goods": {
-        "inorganic_chemicals": 2.98,
-        "plastics": 1.98
+        "inorganic_chemicals": 1.39,
+        "plastics": 0.92
       },
       "output_goods": {
-        "pharmaceuticals": 18.07
+        "pharmaceuticals": 8.42
       },
       "max_level": 99,
       "time": 160
@@ -491,12 +491,12 @@
         "electronic_components": 500
       },
       "input_goods": {
-        "electronic_components": 4.78,
-        "plastics": 1.59,
-        "rare_metals": 1.59
+        "electronic_components": 2.8,
+        "plastics": 0.94,
+        "rare_metals": 0.94
       },
       "output_goods": {
-        "communication": 30.65
+        "communication": 18.02
       },
       "max_level": 99,
       "time": 170
@@ -510,24 +510,39 @@
         "machine_parts": 350
       },
       "input_goods": {
-        "automobiles": 0.95,
-        "aeroplanes": 0.95,
-        "fuel": 0.95,
-        "ships": 0.95,
-        "coal": 0.95
+        "automobiles": 0.77,
+        "aeroplanes": 0.77,
+        "fuel": 0.77,
+        "ships": 0.77,
+        "coal": 0.77
       },
       "advanced_input_goods": {
-        "automobiles": 0.95,
-        "aeroplanes": 0.95,
-        "fuel": 0.95,
-        "ships": 0.95,
-        "electricity": 0.95
+        "automobiles": 0.77,
+        "aeroplanes": 0.77,
+        "fuel": 0.77,
+        "ships": 0.77,
+        "electricity": 0.77
       },
       "output_goods": {
-        "transport": 18.24
+        "transport": 14.67
       },
       "max_level": 99,
       "time": 240
+    },
+    "services_firm": {
+      "base_type": "type_economy_services",
+      "goods_cost": {
+        "cement": 1000,
+        "glass": 350,
+        "steel": 1000,
+        "machine_parts": 350
+      },
+      "input_goods": {},
+      "output_goods": {
+        "services": 5.47
+      },
+      "max_level": 99,
+      "time": 100
     },
     "ammunition_factory": {
       "base_type": "type_economy",

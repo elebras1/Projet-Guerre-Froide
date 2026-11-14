@@ -9,13 +9,13 @@
         "amount": 1595294,
         "template": 69,
         "populations": {
-            "farmers": 0.50864,
-            "labourers": 0.06417,
-            "craftsmen": 0.22164,
-            "clerks": 0.09499,
+            "farmers": 0.08833,
+            "labourers": 0.0,
+            "craftsmen": 0.4865,
+            "clerks": 0.30579,
             "aristocrats": 0.00395,
-            "artisans": 0.0364,
-            "bureaucrats": 0.00483,
+            "artisans": 0.00087,
+            "bureaucrats": 0.04918,
             "capitalists": 0.03629,
             "clergymen": 0.01905,
             "officers": 0.00097,
@@ -31,7 +31,7 @@
         }
     },
     "good": "grain",
-    "good_potential": 434.30,
+    "good_potential": 434.3,
     "buildings": [
         {
             "name": "railway",
@@ -50,13 +50,17 @@
         },
         {
             "name": "paper_factory",
-            "size": 7,
+            "size": 11,
             "input_mode": "advanced"
         },
         {
             "name": "clothes_factory",
-            "size": 7,
+            "size": 11,
             "input_mode": "advanced"
+        },
+        {
+            "name": "services_firm",
+            "size": 42
         }
     ]
 }
