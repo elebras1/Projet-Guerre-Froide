@@ -9,13 +9,13 @@
         "amount": 835864,
         "template": 45,
         "populations": {
-            "farmers": 0.5685,
+            "farmers": 0.5671,
             "labourers": 0.0,
-            "craftsmen": 0.24919,
-            "clerks": 0.07005,
+            "craftsmen": 0.25929,
+            "clerks": 0.0617,
             "aristocrats": 0.0,
-            "artisans": 0.00299,
-            "bureaucrats": 0.08858,
+            "artisans": 0.0,
+            "bureaucrats": 0.09122,
             "capitalists": 0.0,
             "clergymen": 0.00492,
             "officers": 0.0016,
@@ -52,11 +52,7 @@
         },
         {
             "name": "inorganic_chemicals_factory",
-            "size": 4
-        },
-        {
-            "name": "services_firm",
-            "size": 2
+            "size": 5
         }
     ]
 }

@@ -158,6 +158,7 @@ public class LawEffectInitializationSystem {
                             case MIGRATION_PULL -> populationPolicy.migrationPull(overrideValue);
                             case POP_SPENDING -> budgetPolicy.popSpending(overrideValue);
                             case SLAVERY_ALLOWED -> laborPolicy.slaveryAllowed(overrideValue > 0);
+                            case ADMINISTERED_WAGES -> laborPolicy.administeredWages(overrideValue > 0);
                             case POLITICAL_CONSCIOUSNESS -> politicalPolicy.politicalConsciousness(overrideValue);
                             case POLITICAL_RADICALISM -> politicalPolicy.politicalRadicalism(overrideValue);
                             case SUPPRESSION -> politicalPolicy.suppression(overrideValue);

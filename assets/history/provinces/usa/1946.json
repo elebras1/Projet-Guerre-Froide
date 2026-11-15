@@ -9,12 +9,12 @@
         "template": 93,
         "populations": {
             "labourers": 0.0,
-            "farmers": 0.11628,
-            "craftsmen": 0.57238,
-            "clerks": 0.13133,
+            "farmers": 0.11629,
+            "craftsmen": 0.58229,
+            "clerks": 0.12862,
             "aristocrats": 0.00562,
-            "artisans": 0.00606,
-            "bureaucrats": 0.10233,
+            "artisans": 0.00153,
+            "bureaucrats": 0.09965,
             "capitalists": 0.03037,
             "clergymen": 0.02131,
             "officers": 0.00143,
@@ -41,12 +41,12 @@
     "economy_buildings": [
         {
             "name": "glass_factory",
-            "size": 9,
+            "size": 10,
             "input_mode": "advanced"
         },
         {
             "name": "multimodal_transport",
-            "size": 9,
+            "size": 10,
             "input_mode": "advanced"
         }
     ]

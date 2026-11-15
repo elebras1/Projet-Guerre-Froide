@@ -297,7 +297,7 @@ public class EconomyPipelines {
         this.militaryBaseCapacitySystem = new MilitaryBaseCapacitySystem(ecsWorld, simulationContext.getEcsConstants(), phaseNeedsCosts);
         this.militarySupplyNeedSystem = new MilitarySupplyNeedSystem(ecsWorld, simulationContext.getEcsConstants(), phaseNeedsCosts);
         this.maintenanceSystem = new MaintenanceSystem(ecsWorld, simulationContext.getEcsConstants(), phaseNeedsCosts);
-        this.economyBuildingTreasuryInitializationSystem = new EconomyBuildingTreasuryInitializationSystem(ecsWorld, phaseInitTreasury);
+        this.economyBuildingTreasuryInitializationSystem = new EconomyBuildingTreasuryInitializationSystem(ecsWorld, ecsConstants, phaseInitTreasury);
         this.artisanTreasuryInitializationSystem = new ArtisanTreasuryInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInitTreasury);
         this.economyBuildingInputStockInitializationSystem = new EconomyBuildingInputStockInitializationSystem(ecsWorld, phaseInitTreasury);
         this.rgoTreasuryInitializationSystem = new RGOTreasuryInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInitTreasury);

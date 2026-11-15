@@ -22,5 +22,6 @@ public record Population(
     float income,
     float unspentBudget,
     float deposit,
-    float growthRemainder) {
+    float growthRemainder,
+    float incomeTrend) {
 }

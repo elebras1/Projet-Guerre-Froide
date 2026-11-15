@@ -6,6 +6,7 @@ import com.populaire.projetguerrefroide.component.Building;
 import com.populaire.projetguerrefroide.component.BuildingView;
 import com.populaire.projetguerrefroide.component.CountryInvestment;
 import com.populaire.projetguerrefroide.component.CountryInvestmentMutView;
+import com.populaire.projetguerrefroide.component.CountryLaborPolicyView;
 import com.populaire.projetguerrefroide.component.CountryMarket;
 import com.populaire.projetguerrefroide.component.CountryMarketMutView;
 import com.populaire.projetguerrefroide.component.CountryMarketView;
@@ -133,12 +134,29 @@ public class EconomyBuildingUtils {
     }
 
     public static float wagePerUnit(CountryMarketView countryMarket, RegionInstanceView regionInstance, int popTypeIndex, float minWageFactor) {
-        float minimumWage = (countryMarket.lifeCostsByPopType(popTypeIndex) + 0.2f * countryMarket.everydayCostsByPopType(popTypeIndex)) * (1f + minWageFactor);
-        return minimumWage * (1f + regionInstance.wagePremiumByPopType(popTypeIndex));
+        return wagePerUnit(countryMarket, regionInstance, popTypeIndex, minWageFactor, false);
     }
 
-    public static float wageBill(CountryMarketView countryMarket, RegionInstanceView regionInstance, EconomyBuildingTypeView buildingType, float minWageFactor, float primaryWorkers, float secondaryWorkers) {
-        return (wagePerUnit(countryMarket, regionInstance, buildingType.primaryWorkerPopTypeIndex(), minWageFactor) * primaryWorkers
-            + wagePerUnit(countryMarket, regionInstance, buildingType.secondaryWorkerPopTypeIndex(), minWageFactor) * secondaryWorkers) / NEEDS_SCALING_FACTOR;
+    /**
+     * Legal wage of one worker unit: the minimum wage of the laws, times the regional scarcity premium (decision 92)
+     * unless the wage is administered (decision 234).
+     */
+    public static float wagePerUnit(CountryMarketView countryMarket, RegionInstanceView regionInstance, int popTypeIndex, float minWageFactor, boolean administered) {
+        float minimumWage = (countryMarket.lifeCostsByPopType(popTypeIndex) + 0.2f * countryMarket.everydayCostsByPopType(popTypeIndex)) * (1f + minWageFactor);
+        return administered ? minimumWage : minimumWage * (1f + regionInstance.wagePremiumByPopType(popTypeIndex));
+    }
+
+    /**
+     * Decision 234 (economy plan annex 15): under a law with administered wages (planned economy), the buildings the
+     * state owns pay the legal minimum wage, without the scarcity premium; their vacant posts are filled by mobility
+     * and promotion, which follow vacancies, not wages.
+     */
+    public static boolean administeredWage(EconomyBuildingView economyBuilding, CountryLaborPolicyView laborPolicy, long stateOwnerTag) {
+        return laborPolicy.administeredWages() && economyBuilding.ownerTagId() == stateOwnerTag;
+    }
+
+    public static float wageBill(CountryMarketView countryMarket, RegionInstanceView regionInstance, EconomyBuildingTypeView buildingType, float minWageFactor, boolean administered, float primaryWorkers, float secondaryWorkers) {
+        return (wagePerUnit(countryMarket, regionInstance, buildingType.primaryWorkerPopTypeIndex(), minWageFactor, administered) * primaryWorkers
+            + wagePerUnit(countryMarket, regionInstance, buildingType.secondaryWorkerPopTypeIndex(), minWageFactor, administered) * secondaryWorkers) / NEEDS_SCALING_FACTOR;
     }
 }

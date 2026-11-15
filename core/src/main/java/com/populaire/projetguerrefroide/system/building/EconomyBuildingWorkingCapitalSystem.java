@@ -67,6 +67,7 @@ public class EconomyBuildingWorkingCapitalSystem {
             float utilization = economyBuilding.utilization();
             double dailyCost = inputCost(economyBuilding, countryMarket, inputScale(countryProductionPolicy, level, utilization * level))
                 + wageBill(countryMarket, regionInstance, buildingTypeData, countryLaborPolicy.minWageFactor(),
+                    administeredWage(economyBuilding, countryLaborPolicy, this.ecsConstants.countryTag()),
                     utilization * maxWorkers(buildingTypeData, level, buildingTypeData.primaryWorkerPopTypeRatio()),
                     utilization * maxWorkers(buildingTypeData, level, buildingTypeData.secondaryWorkerPopTypeRatio()));
             if (economyBuilding.treasury() >= dailyCost) {

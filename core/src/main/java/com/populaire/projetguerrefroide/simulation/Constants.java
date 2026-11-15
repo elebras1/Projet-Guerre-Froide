@@ -54,6 +54,7 @@ public class Constants {
     public static final String ARISTOCRAT_PROFIT_SHARE = "aristocrat_profit_share";
     public static final String STATE_PROFIT_SHARE = "state_profit_share";
     public static final String MIN_WAGE_FACTOR = "min_wage_factor";
+    public static final String ADMINISTERED_WAGES = "administered_wages";
     public static final String FACTORY_INPUT_MODIFIER = "factory_input_modifier";
     public static final String FACTORY_OUTPUT_MODIFIER = "factory_output_modifier";
     public static final String RGO_OUTPUT_MODIFIER = "rgo_output_modifier";
@@ -116,6 +117,14 @@ public class Constants {
     public static final float[] RGO_MECHANIZATION_UPKEEP_SHARES = {0.5f, 0.5f};
     public static final float[] SPENDING_RATES_BY_STRATA = {0.10f, 0.06f, 0.03f};
     public static final float MAXIMUM_LUXURY_BASKETS = 4f;
+    /**
+     * Decision 230 (economy plan annex 15): a pop whose income, followed over a year (habits), exceeds the cost of all
+     * its baskets (vital, everyday and the luxury cap) saves this share of it and spends the rest: its everyday basket and
+     * luxury cap grow together, the vital basket does not (Engel's law). Mean US personal saving rate 1950-1979, BEA
+     * (11.4 %, FRED A072RC1A156NBEA). Below its baskets, nothing changes: it spends its budget.
+     */
+    public static final float HOUSEHOLD_SAVING_SHARE = 0.11f;
+    public static final float INCOME_TREND_DAYS = 365f;
     public static final float SUBSISTENCE_LIFE_SHARE = 0.75f;
     public static final float STATE_LUXURY_WAGE_SHARE = 0.2f;
     public static final float SOCIAL_LIFE_SHARE = 0.3f;

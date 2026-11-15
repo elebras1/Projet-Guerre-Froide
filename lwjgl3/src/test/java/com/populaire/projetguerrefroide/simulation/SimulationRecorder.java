@@ -695,7 +695,7 @@ public class SimulationRecorder implements AutoCloseable {
             "education_spending_rate", "administration_spending_rate", "tariff_rate", "capitalist_profit_share_rate",
             "worker_profit_share_rate", "aristocrat_profit_share_rate", "state_profit_share_rate", "min_wage_factor",
             "education_efficiency", "factory_output_modifier", "factory_input_modifier", "rgo_output_modifier",
-            "construction_speed", "pop_growth_factor", "migration_pull", "pop_spending", "slavery_allowed",
+            "construction_speed", "pop_growth_factor", "migration_pull", "pop_spending", "slavery_allowed", "administered_wages",
             "political_consciousness", "political_radicalism", "suppression", "social_mobility", "class_rigidity",
             "administrative_efficiency", "religious_conversion_speed", "secularism", "assimilation_rate",
             "migration_push", "maximum_economy_scale_factor");
@@ -1399,7 +1399,7 @@ public class SimulationRecorder implements AutoCloseable {
                 profitDistributionPolicy.stateProfitShareRate(), laborPolicy.minWageFactor(), educationPolicy.educationEfficiency(),
                 productionPolicy.factoryOutputModifier(), productionPolicy.factoryInputModifier(), productionPolicy.rgoOutputModifier(),
                 productionPolicy.constructionSpeed(), populationPolicy.popGrowthFactor(), populationPolicy.migrationPull(), budgetPolicy.popSpending(),
-                laborPolicy.slaveryAllowed() ? 1 : 0, politicalPolicy.politicalConsciousness(), politicalPolicy.politicalRadicalism(),
+                laborPolicy.slaveryAllowed() ? 1 : 0, laborPolicy.administeredWages() ? 1 : 0, politicalPolicy.politicalConsciousness(), politicalPolicy.politicalRadicalism(),
                 politicalPolicy.suppression(), politicalPolicy.socialMobility(), politicalPolicy.classRigidity(), politicalPolicy.administrativeEfficiency(),
                 culturePolicy.religiousConversionSpeed(), culturePolicy.secularism(), culturePolicy.assimilationRate(), populationPolicy.migrationPush(),
                 productionPolicy.maximumEconomyScaleFactor());

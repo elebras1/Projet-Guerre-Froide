@@ -64,8 +64,9 @@ public class EconomyBuildingRevenueSystem {
             double treasury = economyBuilding.treasury() + revenue;
 
             float minWageFactor = countryLaborPolicy.minWageFactor();
-            float primaryWages = wagePerUnit(countryMarket, regionInstance, buildingTypeData.primaryWorkerPopTypeIndex(), minWageFactor) * economyBuilding.primaryWorkerAmount() / NEEDS_SCALING_FACTOR;
-            float secondaryWages = wagePerUnit(countryMarket, regionInstance, buildingTypeData.secondaryWorkerPopTypeIndex(), minWageFactor) * economyBuilding.secondaryWorkerAmount() / NEEDS_SCALING_FACTOR;
+            boolean administered = administeredWage(economyBuilding, countryLaborPolicy, this.stateOwnerTag);
+            float primaryWages = wagePerUnit(countryMarket, regionInstance, buildingTypeData.primaryWorkerPopTypeIndex(), minWageFactor, administered) * economyBuilding.primaryWorkerAmount() / NEEDS_SCALING_FACTOR;
+            float secondaryWages = wagePerUnit(countryMarket, regionInstance, buildingTypeData.secondaryWorkerPopTypeIndex(), minWageFactor, administered) * economyBuilding.secondaryWorkerAmount() / NEEDS_SCALING_FACTOR;
             float wageBill = primaryWages + secondaryWages;
             double available = Math.max(0.0, treasury);
             float wageRatio = wageBill > available ? (float) (available / wageBill) : 1f;

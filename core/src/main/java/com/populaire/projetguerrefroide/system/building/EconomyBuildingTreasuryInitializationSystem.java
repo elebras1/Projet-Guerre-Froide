@@ -5,14 +5,17 @@ import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.simulation.EcsConstants;
 
 import static com.populaire.projetguerrefroide.simulation.Constants.DIVIDEND_RATE;
 import static com.populaire.projetguerrefroide.simulation.Constants.FACTORY_TREASURY_BUFFER_DAYS;
 import static com.populaire.projetguerrefroide.system.building.EconomyBuildingUtils.*;
 
 public class EconomyBuildingTreasuryInitializationSystem {
+    private final long stateOwnerTag;
 
-    public EconomyBuildingTreasuryInitializationSystem(World ecsWorld, long phaseId) {
+    public EconomyBuildingTreasuryInitializationSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.stateOwnerTag = ecsConstants.countryTag();
         ecsWorld.system("EconomyBuildingTreasuryInitializationSystem")
             .kind(phaseId)
             .with(Building.class)
@@ -52,7 +55,8 @@ public class EconomyBuildingTreasuryInitializationSystem {
             int level = building.size();
             float inputScale = inputScale(countryProductionPolicy, level, effectiveScale(economyBuilding, buildingTypeData, level));
             double dailyCost = inputCost(economyBuilding, countryMarket, inputScale)
-                + wageBill(countryMarket, regionInstance, buildingTypeData, countryLaborPolicy.minWageFactor(), economyBuilding.primaryWorkerAmount(), economyBuilding.secondaryWorkerAmount());
+                + wageBill(countryMarket, regionInstance, buildingTypeData, countryLaborPolicy.minWageFactor(),
+                    administeredWage(economyBuilding, countryLaborPolicy, this.stateOwnerTag), economyBuilding.primaryWorkerAmount(), economyBuilding.secondaryWorkerAmount());
             economyBuilding.treasury(FACTORY_TREASURY_BUFFER_DAYS * dailyCost + Math.max(0f, economyBuilding.profit()) / DIVIDEND_RATE);
             economyBuilding.profitTrend(economyBuilding.profit());
         }

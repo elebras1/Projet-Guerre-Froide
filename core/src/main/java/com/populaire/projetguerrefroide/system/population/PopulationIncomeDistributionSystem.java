@@ -173,6 +173,11 @@ public class PopulationIncomeDistributionSystem {
 
             float income = netIncome - donation + stateIncome + interestIncome;
             population.income(income);
+            if (population.amount() > 0) {
+                // decision 230: income per 100 000 people, followed over a year (habits)
+                float perUnit = Math.max(0f, income) / (population.amount() / NEEDS_SCALING_FACTOR);
+                population.incomeTrend(population.incomeTrend() > 0f ? population.incomeTrend() + (perUnit - population.incomeTrend()) / INCOME_TREND_DAYS : perUnit);
+            }
             population.savings(population.savings() + income - purchase);
 
             float deposit = Math.min(population.unspentBudget(), Math.max(0f, population.savings()));

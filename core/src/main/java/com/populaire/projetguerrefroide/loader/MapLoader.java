@@ -147,13 +147,13 @@ public final class MapLoader {
             long popId = this.ecsWorld.entity();
             EntityView pop = this.ecsWorld.obtainEntityView(popId);
             pop.isA(typeId);
-            pop.set(new Population(countryId, provinceId, 0, amount, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
+            pop.set(new Population(countryId, provinceId, 0, amount, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
         }
         for (long typeId : this.context.populationTypeIds()) {
             if (typeId != 0 && !distribution.containsKey(this.ecsWorld.obtainEntity(typeId).name())) {
                 EntityView pop = this.ecsWorld.obtainEntityView(this.ecsWorld.entity());
                 pop.isA(typeId);
-                pop.set(new Population(countryId, provinceId, 0, 0, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
+                pop.set(new Population(countryId, provinceId, 0, 0, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
             }
         }
         return popsAmount;

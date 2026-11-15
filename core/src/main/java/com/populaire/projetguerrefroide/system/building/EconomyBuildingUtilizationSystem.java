@@ -72,6 +72,7 @@ public class EconomyBuildingUtilizationSystem {
                 * (1f + managementBonus(economyBuilding, regionInstance, this.stateOwnerTag)) * (1f + infrastructureBonus(regionInstance));
             double costs = inputCost(economyBuilding, countryMarket, inputScale(countryProductionPolicy, level, level))
                 + wageBill(countryMarket, regionInstance, buildingTypeData, countryLaborPolicy.minWageFactor(),
+                    administeredWage(economyBuilding, countryLaborPolicy, this.stateOwnerTag),
                     maxWorkers(buildingTypeData, level, buildingTypeData.primaryWorkerPopTypeRatio()),
                     maxWorkers(buildingTypeData, level, buildingTypeData.secondaryWorkerPopTypeRatio()));
             float unitMargin = costs > 0.0 ? (float) ((value - costs) / costs) : (value > 0.0 ? 1f : 0f);
