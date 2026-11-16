@@ -681,7 +681,7 @@ public class SimulationRecorder implements AutoCloseable {
             "capitalist_committed", "state_committed", "workers_committed", "military_supply", "military_needed", "military_supply_ratio", "credit_limit", "revenue_trend",
             "lending_rate", "bankruptcies", "public_works_loan", "public_works_return", "price_index", "created_money",
             "public_works_sites", "public_works_daily", "maintenance_spending", "maintenance_satisfaction", "state_deposit",
-            "state_post_capacity", "state_post_employed", "state_post_holders");
+            "state_post_capacity", "state_post_employed", "state_post_holders", "inflation", "policy_rate", "central_bank_remittances");
         this.writer("country/budget.csv").header("tick", "date", "country", "needs", "military_pay", "administration_pay", "education_pay", "clergy_pay", "social",
             "state_consumption", "military_supply", "maintenance", "subsidies", "tax", "tariff", "profit", "spending_ratio", "state_loans", "credit_limit", "military_pops",
             "military_posts", "military_filled", "units", "pensions", "pension_coverage");
@@ -1272,8 +1272,7 @@ public class SimulationRecorder implements AutoCloseable {
             this.tickMilitaryNeededTotal += militaryNeeded;
             this.tickTargetTreasuryTotal += budget.targetTreasury();
             this.tickBankReservesTotal += bank.reserves() + bank.interestPool();
-            CountryCentralBankView centralBank = country.getView(CountryCentralBank.class);
-            this.tickCreatedMoneyTotal += centralBank.createdMoney();
+            this.tickCreatedMoneyTotal += bank.centralBankAdvances();
             this.tickStateLoansTotal += bank.loans(STATE_OWNER);
             this.tickPrivateLoansTotal += bank.loans(CAPITALIST_OWNER) + bank.loans(WORKERS_OWNER);
             this.tickLoanFlows[0] += bank.borrowed(STATE_OWNER);
@@ -1333,9 +1332,11 @@ public class SimulationRecorder implements AutoCloseable {
                 investment.funds(0), investment.funds(1), investment.funds(2), constructionSpending,
                 investment.committed(0), investment.committed(1), investment.committed(2), military.spentToday(), militaryNeeded, budget.militarySupplyRatio(), bank.creditLimit(), budget.revenueTrend(),
                 bank.lendingRate(), bank.bankruptcies(), budget.publicWorksLoan(), publicWorks.targetReturn(),
-                country.<CountryCentralBankView>getView(CountryCentralBank.class).priceIndex(), country.<CountryCentralBankView>getView(CountryCentralBank.class).createdMoney(),
+                country.<CountryCentralBankView>getView(CountryCentralBank.class).priceIndex(), bank.centralBankAdvances(),
                 publicWorks.sitesInProgress(), publicWorks.dailyCommitment(), maintenance.spentToday(), maintenance.satisfaction(), bank.stateDeposit(),
-                budget.statePostCapacity(), postIndex >= 0 ? cd.employmentByPopType(postIndex) : 0L, postIndex >= 0 ? cd.totalByPopType(postIndex) : 0L);
+                budget.statePostCapacity(), postIndex >= 0 ? cd.employmentByPopType(postIndex) : 0L, postIndex >= 0 ? cd.totalByPopType(postIndex) : 0L,
+                country.<CountryCentralBankView>getView(CountryCentralBank.class).inflation(), country.<CountryCentralBankView>getView(CountryCentralBank.class).policyRate(),
+                country.<CountryCentralBankView>getView(CountryCentralBank.class).remittances());
 
             if (this.detail) {
                 double[] pay = new double[RELIGIOUS_INCOME_TYPE + 1];

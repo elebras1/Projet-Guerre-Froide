@@ -129,12 +129,22 @@ public class Constants {
     public static final float STATE_LUXURY_WAGE_SHARE = 0.2f;
     public static final float SOCIAL_LIFE_SHARE = 0.3f;
     public static final float TARGET_TREASURY_DAYS = 60f;
-    public static final float MAXIMUM_LENDING_RATE = 0.04f;
     public static final float BANK_LOAN_TERM_DAYS = 3650f;
+    /**
+     * Decision 238 (economy plan annex 15): no borrower owes the bank more than this many years of its income, the state
+     * of its revenue, a private owner (capitalists, workers) of its share of the profits, both followed over a year.
+     */
     public static final float CREDIT_LIMIT_YEARS = 2f;
+    /**
+     * Decision 235 (economy plan annex 15): the central bank creates money only when it advances the bank what its
+     * reserves lack for a payment (a loan granted, a deposit withdrawn); its rate follows J. B. Taylor's rule (1993)
+     * without the output gap, i = r* + pi + 0.5 (pi - 2 %), at least 0, pi being last year's inflation; no ceiling: above
+     * 5.3 % inflation a 10 % ceiling made the real rate negative (annex 15, § 12.2). The bank lends at this rate.
+     */
     public static final float CENTRAL_BANK_TARGET_INFLATION = 0.02f;
-    public static final float CENTRAL_BANK_GAP_GAIN = 0.5f;
-    public static final float CENTRAL_BANK_MAX_RATE = 0.1f;
+    public static final float CENTRAL_BANK_REAL_RATE = 0.02f;
+    public static final float CENTRAL_BANK_INFLATION_GAIN = 0.5f;
+    public static final float INFLATION_TREND_DAYS = 365f;
     public static final float PUBLIC_WORKS_RATE = 0.02f;
     public static final float MAINTENANCE_DECAY_YEARS = 2f;
     public static final float ARTISAN_OUTPUT_SHARE = 0.01f;

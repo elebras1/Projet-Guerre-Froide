@@ -3,6 +3,7 @@ package com.populaire.projetguerrefroide.system.population;
 import io.github.elebras1.flecs.*;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.simulation.EcsConstants;
+import com.populaire.projetguerrefroide.system.state.BankUtils;
 
 import static com.populaire.projetguerrefroide.simulation.Constants.*;
 
@@ -54,10 +55,10 @@ public class PopulationConsumptionSystem {
             float luxuryBaskets = MAXIMUM_LUXURY_BASKETS * factor;
             float shortfall = neededLife + neededEveryday + luxuryBaskets * neededLuxury - budget;
             if (shortfall > 0f) {
-                float withdrawal = (float) Math.min(shortfall, Math.min(pop.deposit(), Math.max(0.0, countryBank.reserves())));
+                float withdrawal = Math.min(shortfall, pop.deposit());
                 if (withdrawal > 0f) {
                     pop.deposit(pop.deposit() - withdrawal);
-                    countryBank.reserves(countryBank.reserves() - withdrawal);
+                    BankUtils.draw(countryBank, withdrawal);
                     pop.savings(pop.savings() + withdrawal);
                     budget += withdrawal;
                 }

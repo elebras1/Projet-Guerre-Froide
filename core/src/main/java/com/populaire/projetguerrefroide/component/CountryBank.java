@@ -22,5 +22,8 @@ public record CountryBank(
     double depositRate,
     float depositLossRatio,
     int bankruptcies,
-    double stateDeposit) {
+    double stateDeposit,
+    double centralBankAdvances,
+    @FixedArray(length = OWNER_COUNT) double[] ownerIncome,
+    @FixedArray(length = OWNER_COUNT) double[] ownerIncomeTrend) {
 }

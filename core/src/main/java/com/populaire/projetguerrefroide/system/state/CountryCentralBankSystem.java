@@ -18,12 +18,13 @@ public class CountryCentralBankSystem {
             .with(CountryCentralBank.class)
             .with(CountryMarket.class)
             .with(CountryDemographics.class)
-            .with(CountryBank.class)
-            .with(CountryInvestment.class)
-            .with(CountryStrategicStock.class)
             .iter(this::regulate);
     }
 
+    /**
+     * Decision 235 (economy plan annex 15): the central bank no longer creates money of its own accord; it advances the
+     * bank what its reserves lack for a payment ({@link BankUtils#draw}) at this rate, set on last year's inflation.
+     */
     private void regulate(Iter iter) {
         World world = iter.stage();
         float[] baseCosts = this.ecsConstants.goodCosts();
@@ -32,25 +33,14 @@ public class CountryCentralBankSystem {
         Field<CountryCentralBank> countryCentralBankField = iter.field(CountryCentralBank.class, 0);
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 1);
         Field<CountryDemographics> countryDemographicsField = iter.field(CountryDemographics.class, 2);
-        Field<CountryBank> countryBankField = iter.field(CountryBank.class, 3);
-        Field<CountryInvestment> countryInvestmentField = iter.field(CountryInvestment.class, 4);
-        Field<CountryStrategicStock> countryStrategicStockField = iter.field(CountryStrategicStock.class, 5);
         for (int i = 0; i < iter.count(); i++) {
             CountryCentralBankMutView countryCentralBank = countryCentralBankField.getMutView(i);
             CountryMarketView countryMarket = countryMarketField.getMutView(i);
             CountryDemographicsView countryDemographics = countryDemographicsField.getMutView(i);
-            CountryBankMutView countryBank = countryBankField.getMutView(i);
-            CountryInvestmentView countryInvestment = countryInvestmentField.getMutView(i);
-            CountryStrategicStockView countryStrategicStock = countryStrategicStockField.getMutView(i);
 
-            double realOutput = 0.0;
-            for (int g = 0; g < baseCosts.length; g++) {
-                realOutput += (double) (countryMarket.goodProducedAmounts(g) - countryStrategicStock.releasedAmounts(g)) * baseCosts[g];
-            }
-
-            if (countryCentralBank.targetPriceIndex() <= 0f) {
+            if (countryCentralBank.priceIndex() <= 0f) {
                 initialize(world, globalPopulationType, countryCentralBank, countryMarket, countryDemographics, baseCosts);
-                countryCentralBank.realOutputTrend(realOutput);
+                countryCentralBank.policyRate(taylorRate(0f));
                 continue;
             }
 
@@ -61,27 +51,21 @@ public class CountryCentralBankSystem {
                     priceIndex += weight * countryMarket.goodPrices(g) / countryCentralBank.basePrices(g);
                 }
             }
-            double targetPriceIndex = countryCentralBank.targetPriceIndex() * Math.pow(1.0 + CENTRAL_BANK_TARGET_INFLATION, 1.0 / DAYS_PER_YEAR);
-            double realOutputTrend = countryCentralBank.realOutputTrend() > 0.0
-                ? countryCentralBank.realOutputTrend() + (realOutput - countryCentralBank.realOutputTrend()) / DAYS_PER_YEAR : realOutput;
-            double realGrowth = realOutputTrend > 0.0 ? realOutput / realOutputTrend - 1.0 : 0.0;
-            double gap = priceIndex > 0.0 ? Math.log(targetPriceIndex / priceIndex) : 0.0;
-            double annualRate = Math.clamp(CENTRAL_BANK_TARGET_INFLATION + realGrowth + CENTRAL_BANK_GAP_GAIN * gap, -CENTRAL_BANK_MAX_RATE, CENTRAL_BANK_MAX_RATE);
-
-            double moneyStock = countryDemographics.savings() + Math.max(0.0, countryMarket.treasury()) + Math.max(0.0, countryBank.reserves()) + countryBank.interestPool();
-            for (int o = 0; o < OWNER_COUNT; o++) {
-                moneyStock += Math.max(0.0, countryInvestment.funds(o));
+            // last year's inflation: the yearly moving average of the daily change of the index, annualised
+            float inflation = countryCentralBank.inflation();
+            if (priceIndex > 0.0) {
+                double dailyChange = Math.log(priceIndex / countryCentralBank.priceIndex());
+                inflation += (float) ((DAYS_PER_YEAR * dailyChange - inflation) / INFLATION_TREND_DAYS);
+                countryCentralBank.priceIndex((float) priceIndex);
             }
-            double amount = moneyStock * annualRate / DAYS_PER_YEAR;
-            if (amount < 0.0) {
-                amount = -Math.min(-amount, Math.max(0.0, countryBank.reserves()));
-            }
-            countryBank.reserves(countryBank.reserves() + amount);
-            countryCentralBank.createdMoney(countryCentralBank.createdMoney() + amount);
-            countryCentralBank.priceIndex((float) priceIndex);
-            countryCentralBank.targetPriceIndex((float) targetPriceIndex);
-            countryCentralBank.realOutputTrend(realOutputTrend);
+            countryCentralBank.inflation(inflation);
+            countryCentralBank.policyRate(taylorRate(inflation));
         }
+    }
+
+    private static float taylorRate(float inflation) {
+        float rate = CENTRAL_BANK_REAL_RATE + inflation + CENTRAL_BANK_INFLATION_GAIN * (inflation - CENTRAL_BANK_TARGET_INFLATION);
+        return Math.max(0f, rate);
     }
 
     private static void initialize(World world, GlobalPopulationTypeView globalPopulationType, CountryCentralBankMutView countryCentralBank,
@@ -116,6 +100,6 @@ public class CountryCentralBankSystem {
             countryCentralBank.basePrices(g, price > 0f ? price : baseCosts[g]);
         }
         countryCentralBank.priceIndex(1f);
-        countryCentralBank.targetPriceIndex(1f);
+        countryCentralBank.inflation(0f);
     }
 }

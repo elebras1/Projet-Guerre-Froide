@@ -26,6 +26,8 @@ import java.util.Comparator;
 
 import com.populaire.projetguerrefroide.system.rgo.RgoUtils;
 
+import com.populaire.projetguerrefroide.system.state.BankUtils;
+
 import static com.populaire.projetguerrefroide.util.ArrayUtils.zeroed;
 import static com.populaire.projetguerrefroide.simulation.Constants.*;
 import static com.populaire.projetguerrefroide.system.construction.ConstructionUtils.levelCost;
@@ -477,11 +479,11 @@ public class InvestmentDecisionSystem {
         double loans = countryBank.loans(owner);
         boolean state = owner == STATE_OWNER;
         double rate = state ? stateInterestRate(loans, countryBank.creditLimit(), countryBank.lendingRate()) : countryBank.lendingRate();
-        if (annualReturn < rate || countryBank.reserves() < shortfall
-            || state && loans + shortfall > countryBank.creditLimit()) {
+        // decisions 235 and 238: the borrower's credit limit bounds the loan, not the bank's reserves
+        if (annualReturn < rate || (state ? loans + shortfall > countryBank.creditLimit() : shortfall > BankUtils.privateCreditHeadroom(countryBank, owner))) {
             return false;
         }
-        countryBank.reserves(countryBank.reserves() - shortfall);
+        BankUtils.draw(countryBank, shortfall);
         countryBank.loans(owner, countryBank.loans(owner) + shortfall);
         countryBank.borrowed(owner, countryBank.borrowed(owner) + shortfall);
         if (state) {

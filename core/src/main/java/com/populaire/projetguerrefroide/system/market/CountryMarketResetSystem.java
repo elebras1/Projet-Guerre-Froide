@@ -8,6 +8,8 @@ import com.populaire.projetguerrefroide.component.CountryBankMutView;
 import com.populaire.projetguerrefroide.component.CountryMarket;
 import com.populaire.projetguerrefroide.component.CountryMarketMutView;
 
+import static com.populaire.projetguerrefroide.simulation.Constants.OWNER_COUNT;
+
 public class CountryMarketResetSystem {
 
     public CountryMarketResetSystem(World ecsWorld, long phaseId) {
@@ -43,6 +45,9 @@ public class CountryMarketResetSystem {
             countryMarket.enterpriseSupport(0.0);
             countryMarket.profitRevenue(0.0);
             countryBank.deposits(0.0);
+            for (int o = 0; o < OWNER_COUNT; o++) {
+                countryBank.ownerIncome(o, 0.0);
+            }
 
         }
     }

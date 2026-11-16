@@ -17,6 +17,7 @@ import com.populaire.projetguerrefroide.simulation.EcsConstants;
 import com.populaire.projetguerrefroide.system.building.InfrastructureUtils;
 import com.populaire.projetguerrefroide.system.military.MilitaryUtils;
 import com.populaire.projetguerrefroide.system.population.PopulationMobilityUtils;
+import com.populaire.projetguerrefroide.system.state.BankUtils;
 import com.populaire.projetguerrefroide.system.state.StateBudgetUtils;
 import com.populaire.projetguerrefroide.system.state.StateConsumptionUtils;
 import com.populaire.projetguerrefroide.util.collection.ObjectPool;
@@ -266,7 +267,7 @@ public class PublicWorksSystem {
                     double ownFunds = countryBudget.investableSurplus();
                     double stateLoans = countryBank.loans(STATE_OWNER);
                     float stateRate = (float) stateInterestRate(stateLoans, countryBank.creditLimit(), countryBank.lendingRate());
-                    double headroom = Math.max(0.0, Math.min(countryBank.reserves(), countryBank.creditLimit() - stateLoans));
+                    double headroom = Math.max(0.0, countryBank.creditLimit() - stateLoans);
                     double monthlyShare = Math.min(1.0, PUBLIC_WORKS_RATE * Math.max(0f, 1f + productionPolicy.publicWorksModifier()) * DAYS_PER_MONTH);
                     double ownBudget = monthlyShare * ownFunds;
                     double loanBudget = monthlyShare * headroom;
@@ -322,7 +323,7 @@ public class PublicWorksSystem {
                                 break;
                             }
                             if (shortfall > 0.0) {
-                                countryBank.reserves(countryBank.reserves() - shortfall);
+                                BankUtils.draw(countryBank, shortfall);
                                 countryBank.loans(STATE_OWNER, countryBank.loans(STATE_OWNER) + shortfall);
                                 countryBank.borrowed(STATE_OWNER, countryBank.borrowed(STATE_OWNER) + shortfall);
                                 countryMarket.treasury(countryMarket.treasury() + shortfall);

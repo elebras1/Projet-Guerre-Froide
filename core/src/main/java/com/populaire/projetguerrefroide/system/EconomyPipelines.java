@@ -369,7 +369,7 @@ public class EconomyPipelines {
         this.countryBudgetSystem = new CountryBudgetSystem(ecsWorld, simulationContext.getEcsConstants(), phaseState);
         this.armyDisbandSystem = new ArmyDisbandSystem(ecsWorld, simulationContext.getEcsConstants(), phaseState);
         this.artisanAllocationSystem = new ArtisanAllocationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseState);
-        this.bankSystem = new BankSystem(ecsWorld, phaseState);
+        this.bankSystem = new BankSystem(ecsWorld, simulationContext.getEcsConstants(), phaseState);
         this.publicWorksSystem = new PublicWorksSystem(ecsWorld, simulationContext.getEcsConstants(), phaseState);
         this.strategicStockPlanSystem = new StrategicStockPlanSystem(ecsWorld, simulationContext.getEcsConstants(), phaseState);
         this.constructionCompletionSystem = new ConstructionCompletionSystem(ecsWorld, simulationContext.getEcsConstants(), phaseState);

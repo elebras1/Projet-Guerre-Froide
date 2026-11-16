@@ -10,7 +10,7 @@ public record CountryCentralBank(
     @FixedArray(length = GOOD_COUNT) float[] priceIndexWeights,
     @FixedArray(length = GOOD_COUNT) float[] basePrices,
     float priceIndex,
-    float targetPriceIndex,
-    double realOutputTrend,
-    double createdMoney) {
+    float inflation,
+    float policyRate,
+    double remittances) {
 }

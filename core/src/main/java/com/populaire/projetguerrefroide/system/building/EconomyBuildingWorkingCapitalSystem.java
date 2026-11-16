@@ -6,6 +6,7 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.simulation.EcsConstants;
+import com.populaire.projetguerrefroide.system.state.BankUtils;
 
 import static com.populaire.projetguerrefroide.simulation.Constants.*;
 import static com.populaire.projetguerrefroide.system.building.EconomyBuildingUtils.*;
@@ -76,9 +77,9 @@ public class EconomyBuildingWorkingCapitalSystem {
 
             double need = FACTORY_TREASURY_BUFFER_DAYS * dailyCost - economyBuilding.treasury();
             if (owner != STATE_OWNER && need > Math.max(0.0, countryInvestment.funds(owner))) {
-                double loan = Math.min(need - Math.max(0.0, countryInvestment.funds(owner)), Math.max(0.0, countryBank.reserves()));
+                double loan = Math.min(need - Math.max(0.0, countryInvestment.funds(owner)), BankUtils.privateCreditHeadroom(countryBank, owner));
                 if (loan > 0.0) {
-                    countryBank.reserves(countryBank.reserves() - loan);
+                    BankUtils.draw(countryBank, loan);
                     countryBank.loans(owner, countryBank.loans(owner) + loan);
                     countryBank.borrowed(owner, countryBank.borrowed(owner) + loan);
                     countryInvestment.funds(owner, countryInvestment.funds(owner) + loan);

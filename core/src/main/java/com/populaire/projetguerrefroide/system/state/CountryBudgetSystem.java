@@ -110,9 +110,9 @@ public class CountryBudgetSystem {
             }
             double unpaidInterest = interest - interestPaid;
             if (unpaidInterest > 0.0) {
-                if (unpaidInterest <= Math.min(Math.max(0.0, countryBank.reserves()), Math.max(0.0, creditLimit - stateLoans))) {
+                if (unpaidInterest <= Math.max(0.0, creditLimit - stateLoans)) {
                     stateLoans += unpaidInterest;
-                    countryBank.reserves(countryBank.reserves() - unpaidInterest);
+                    BankUtils.draw(countryBank, unpaidInterest);
                     countryBank.borrowed(STATE_OWNER, countryBank.borrowed(STATE_OWNER) + unpaidInterest);
                     countryBank.interestPool(countryBank.interestPool() + unpaidInterest);
                     countryBank.interestPaid(STATE_OWNER, countryBank.interestPaid(STATE_OWNER) + unpaidInterest);
@@ -125,7 +125,7 @@ public class CountryBudgetSystem {
             }
             // the state's account at the bank (annex 13, decision 219): its share of the bank's losses and interest, like the
             // pops' deposits; it pays off the state's loans first (both claims cancel, reserves unchanged); a treasury below its
-            // needs, target and commitments draws on it within the bank's reserves
+            // needs, target and commitments draws on it (the bank pays it, with an advance if its reserves lack: decision 235)
             double stateDeposit = countryBank.stateDeposit() * (1.0 - countryBank.depositLossRatio());
             double depositInterest = Math.min(stateDeposit * countryBank.depositRate(), Math.max(0.0, countryBank.interestPool()));
             if (depositInterest > 0.0) {
@@ -139,19 +139,19 @@ public class CountryBudgetSystem {
                 countryBank.repaid(STATE_OWNER, countryBank.repaid(STATE_OWNER) + netted);
             }
             double treasuryFloor = needs * (1.0 + TARGET_TREASURY_DAYS) + countryInvestment.committed(STATE_OWNER);
-            double withdrawal = Math.min(Math.max(0.0, treasuryFloor - countryMarket.treasury()), Math.min(stateDeposit, Math.max(0.0, countryBank.reserves())));
+            double withdrawal = Math.min(Math.max(0.0, treasuryFloor - countryMarket.treasury()), stateDeposit);
             if (withdrawal > 0.0) {
                 stateDeposit -= withdrawal;
-                countryBank.reserves(countryBank.reserves() - withdrawal);
+                BankUtils.draw(countryBank, withdrawal);
                 countryMarket.treasury(countryMarket.treasury() + withdrawal);
             }
             countryBank.stateDeposit(stateDeposit);
             countryBank.deposits(countryBank.deposits() + stateDeposit);
             double treasury = Math.max(0.0, countryMarket.treasury());
             double loan = needs > treasury
-                ? Math.min(needs - treasury, Math.min(Math.max(0.0, countryBank.reserves()), Math.max(0.0, creditLimit - stateLoans))) : 0.0;
+                ? Math.min(needs - treasury, Math.max(0.0, creditLimit - stateLoans)) : 0.0;
             if (loan > 0.0) {
-                countryBank.reserves(countryBank.reserves() - loan);
+                BankUtils.draw(countryBank, loan);
                 countryMarket.treasury(countryMarket.treasury() + loan);
                 countryBank.borrowed(STATE_OWNER, countryBank.borrowed(STATE_OWNER) + loan);
                 stateLoans += loan;
@@ -195,7 +195,7 @@ public class CountryBudgetSystem {
                 investableSurplus -= repaid;
             }
             // the state can also spend what it can draw from its account (decision 219)
-            investableSurplus += Math.min(stateDeposit, Math.max(0.0, countryBank.reserves()));
+            investableSurplus += stateDeposit;
             countryBank.loans(STATE_OWNER, stateLoans);
             countryBank.creditLimit(creditLimit);
 
