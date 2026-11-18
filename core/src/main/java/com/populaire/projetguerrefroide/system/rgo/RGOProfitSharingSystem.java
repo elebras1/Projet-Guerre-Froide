@@ -69,8 +69,6 @@ public class RGOProfitSharingSystem {
             regionIncome.minWagesByPopType(workerPopTypeIndex, regionIncome.minWagesByPopType(workerPopTypeIndex) + resourceGathering.workerMinWage());
             regionIncome.workersByPopType(workerPopTypeIndex, regionIncome.workersByPopType(workerPopTypeIndex) + resourceGathering.workerAmount());
 
-            // the RGO pays the workers of its own province (decision 201 b): wage and workers' share of the profit, read by
-            // PopulationIncomeDistributionSystem; the region totals stay for the accounts
             resourceGathering.workerPay(resourceGathering.workerMinWage());
             resourceGathering.monthWorkerDays(resourceGathering.monthWorkerDays() + resourceGathering.workerAmount());
 

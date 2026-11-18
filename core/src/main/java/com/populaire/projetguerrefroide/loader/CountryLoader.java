@@ -134,7 +134,6 @@ public final class CountryLoader {
             country.set(new CountryDevelopment(literacy, 0f, 0f, 0f, 0f));
             boolean[] rgoModes = new boolean[MAX_RGO_MODES];
             if (countryHistory.rgoModes() != null) {
-                // modes already in use in 1946 (annex 12, decision 194), on top of those of the 1946 technologies
                 for (String modeName : countryHistory.rgoModes()) {
                     long modeId = this.ecsWorld.lookup("rgo_mode_" + modeName);
                     if (modeId != 0) {

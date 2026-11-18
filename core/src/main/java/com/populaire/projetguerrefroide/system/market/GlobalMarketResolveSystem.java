@@ -34,7 +34,6 @@ public class GlobalMarketResolveSystem {
 
             for (int g = 0; g < gm.goodPricesLength(); g++) {
                 if (localGoods[g]) {
-                    // price set country by country (CountryLocalPriceSystem, decision 207)
                     gm.goodAvailabilities(g, gm.goodStockAmounts(g) > 0f);
                     continue;
                 }

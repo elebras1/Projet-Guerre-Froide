@@ -10,12 +10,6 @@ import com.populaire.projetguerrefroide.ui.view.BuildingUtils;
 import com.populaire.projetguerrefroide.ui.widget.SkinDrawables;
 import com.populaire.projetguerrefroide.ui.widget.UiBuilder;
 
-/**
- * Images de l'économie résolues une fois par type de bâtiment et par bien. EvW n'a que sept catégories d'usines
- * (images composites 129×121) ; PGF a une image `building_<type>` (108×57) posée dans le cadre
- * `building_box_template`, une image `pinned_<type>` (246×137) pour la fiche et la barre de couleur de sa
- * catégorie.
- */
 final class EconomyDrawables {
     private final Drawable[] buildings;
     private final Drawable[] pinned;

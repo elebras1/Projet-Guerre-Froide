@@ -11,11 +11,6 @@ public final class LedgerPages {
     public static final int MILITARY = 3;
     public static final int HISTORY = 4;
 
-    /*
-     * Pages in reading order: the arrows walk through all of them across the tabs, a tab button opens its first page.
-     * Only pages backed by PGF data are listed; the other EvW pages (armies, resources, charts...) come back with their
-     * data. A tab without page is hidden.
-     */
     public static final LedgerPage[] PAGES = {
         page(OVERVIEW, "ELEDGER_NATIONAL_STATISTICS", CountrySort.GDP,
             column("GDP", LedgerMetric.GDP),

@@ -37,7 +37,6 @@ public class CountryBudgetPriceSystem {
             for (int g = 0; g < countryMarket.goodBudgetPricesLength(); g++) {
                 float shortage = 1f - countryMarket.goodDemandSatisfactionRatios(g);
                 if (localGoods[g]) {
-                    // the country's own price, without tariff (decision 207)
                     countryMarket.goodBudgetPrices(g, countryMarket.goodPrices(g) * (1f + SHORTAGE_PRICE_PREMIUM * shortage));
                     continue;
                 }

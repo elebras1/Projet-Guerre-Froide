@@ -50,7 +50,6 @@ public class RGOEmploymentInitializationSystem {
             int targetWorkers = (int) (capacity * workerPopTypeRatio);
             int targetSlaves = (int) (capacity * slavePopTypeRatio);
             int active = activeWorkers(demographics.totalByPopType(workerIndex), workforceShare);
-            // endowment RGOs (decision 185 a): no hiring cap, diminishing returns limit employment
             resourceGathering.workerAmount(resourceGathering.endowmentShare() > 0f
                 ? RgoUtils.neededWorkers(active, RgoUtils.addedLevel(resourceGathering)) : Math.min(targetWorkers, active));
             resourceGathering.slaveAmount(Math.min(targetSlaves, demographics.totalByPopType(slaveIndex)));

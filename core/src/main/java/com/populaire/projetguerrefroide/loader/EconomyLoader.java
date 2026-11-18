@@ -492,10 +492,6 @@ public final class EconomyLoader {
         return new Modifiers(modifierValues, modifierIds);
     }
 
-    /**
-     * RGO production modes (annex 12, decisions 188 and 191): one entity "rgo_mode_<name>" per mode, indexes from 1 (0 is the
-     * traditional mode). With the game rule {@code enabled} false, no mode is loaded and every RGO stays traditional.
-     */
     public void loadRgoModes(RgoModesJson rgoModes) {
         if (rgoModes == null || rgoModes.modes() == null || Boolean.FALSE.equals(rgoModes.enabled())) {
             return;

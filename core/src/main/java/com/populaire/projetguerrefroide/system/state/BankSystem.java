@@ -24,8 +24,6 @@ public class BankSystem {
 
     private void settle(Iter iter) {
         int day = iter.stage().obtainEntityView(this.ecsConstants.economyCalendar()).<EconomyCalendarView>getView(EconomyCalendar.class).day();
-        // the owners' income is the mean of the days seen during the first year, then a one-year moving average, like the
-        // state's revenue (decision 228)
         double trendWeight = Math.min(DAYS_PER_YEAR, day + 1.0);
         Field<CountryBank> countryBankField = iter.field(CountryBank.class, 0);
         Field<CountryInvestment> countryInvestmentField = iter.field(CountryInvestment.class, 1);
@@ -66,8 +64,6 @@ public class BankSystem {
                 countryBank.loans(o, loans - principalPaid);
             }
 
-            // decision 235: the bank pays the interest of its advances out of its borrowers' interest, then out of its
-            // reserves; it goes to the treasury, like the profits of real central banks
             double advances = countryBank.centralBankAdvances();
             double advanceInterest = advances * countryCentralBank.policyRate() / DAYS_PER_YEAR;
             if (advanceInterest > 0.0) {
@@ -84,7 +80,6 @@ public class BankSystem {
             countryBank.depositLossRatio(deposits > 0.0 ? (float) Math.min(1.0, countryBank.losses() / deposits) : 0f);
             countryBank.losses(0.0);
 
-            // the reserves repay the advances every day: the money lent comes back and is destroyed
             double repaid = Math.min(advances, Math.max(0.0, countryBank.reserves()));
             if (repaid > 0.0) {
                 countryBank.reserves(countryBank.reserves() - repaid);
@@ -92,9 +87,6 @@ public class BankSystem {
                 countryBank.centralBankAdvances(advances);
             }
 
-            // decision 238: the bank lends at the central bank's rate, without the 4 % ceiling of the rule that priced its
-            // own reserves: since decision 235 its funds at the margin are the central bank's advances, and lending its
-            // reserves below that rate would undo the central bank (a bank with spare reserves at 2 % under a 10 % rate)
             float lendingRate = countryCentralBank.policyRate();
             countryBank.lendingRate(lendingRate);
             for (int o = 0; o < OWNER_COUNT; o++) {

@@ -811,7 +811,6 @@ public class SimulationRecorder implements AutoCloseable {
         this.trackGoodsConservation();
         this.trackInvariants(tick, tickNanos);
         if (tick == 30) {
-            // first month (annex 12, § 9.8): income of the family farms against subsistence, before any departure adds up
             this.recordFamily(0, date);
         }
         if ((tick + 1) % DAYS_PER_YEAR == 0) {
@@ -1446,7 +1445,6 @@ public class SimulationRecorder implements AutoCloseable {
         }
     }
 
-    /** Family farms (annex 12, decision 197): share of the needed workers on the farm, income per worker over subsistence. */
     private void recordFamily(int year, String date) {
         java.util.Map<Long, double[]> rows = new java.util.TreeMap<>();
         this.rgoQuery.iter(iter -> {
@@ -1490,7 +1488,6 @@ public class SimulationRecorder implements AutoCloseable {
                     continue;
                 }
                 double[] row = rows.computeIfAbsent(key(countryIndex, rgo.goodIndex()), k -> new double[13]);
-                // modes de production (annexe 12) : nombre de RGO par mode, part servie de leurs intrants
                 row[7 + Math.min(rgo.mode(), 4)]++;
                 row[12] += rgo.mode() > 0 ? rgo.modeServed() : 0;
                 row[0]++;

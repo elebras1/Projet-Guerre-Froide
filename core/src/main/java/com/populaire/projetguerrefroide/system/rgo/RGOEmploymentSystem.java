@@ -70,9 +70,6 @@ public class RGOEmploymentSystem {
             int targetWorkers = (int) (capacity * workerPopTypeRatio);
             int targetSlaves = (int) (capacity * slavePopTypeRatio);
             if (resourceGathering.endowmentShare() > 0f) {
-                // endowment RGOs work as family farms (annex 10, § 10.20 and 10.21): every active worker of the type works the
-                // endowment and the income is what it yields; no hiring or firing on the margin, the number of
-                // workers follows the population (births, promotions, migrations), with diminishing returns
                 resourceGathering.employmentRemainder(0f);
                 resourceGathering.vacancies(0);
                 resourceGathering.applicants(0f);
@@ -106,13 +103,6 @@ public class RGOEmploymentSystem {
         }
     }
 
-    /**
-     * Departure and return of the family farm's workers (annex 12, decision 197), monthly. R = what working the farm paid
-     * per worker over the month (wages paid and the workers' share of the profit), S = the subsistence a worker gets off
-     * the farm (75 % of his life needs at the country's prices). Below S, a share 1 % x (1 - R / S) of the workers leaves
-     * the farm; above, a share 1 % x min(1, R / S - 1) of those who left comes back, never beyond the needed workers.
-     * Without workers, R is the output of a first worker at the country's price (decision T15).
-     */
     private void updateFamilyShare(ResourceGatheringMutView rgo, CountryMarketView countryMarket, int workerIndex, int neededWorkers) {
         float subsistence = SUBSISTENCE_LIFE_SHARE * countryMarket.lifeCostsByPopType(workerIndex) / NEEDS_SCALING_FACTOR;
         float income = rgo.monthWorkerDays() > 0f ? rgo.monthIncome() / rgo.monthWorkerDays()

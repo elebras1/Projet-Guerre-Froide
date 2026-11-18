@@ -39,8 +39,6 @@ public class CountryBudgetSystem {
         float[] baseWorkforceShares = this.ecsConstants.baseWorkforceShares();
         GlobalMarketView globalMarket = iter.stage().obtainEntityView(this.ecsConstants.globalMarket()).getMutView(GlobalMarket.class);
         int day = iter.stage().obtainEntityView(this.ecsConstants.economyCalendar()).<EconomyCalendarView>getView(EconomyCalendar.class).day();
-        // the revenue trend is the mean of the days seen during the first year, then a one-year moving average (annex 14,
-        // decision 228): anchored on the first day alone, it stayed a year below the revenue (tariffs start at zero)
         double trendWeight = Math.min(DAYS_PER_YEAR, day + 1.0);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
@@ -89,9 +87,6 @@ public class CountryBudgetSystem {
             double revenue = countryMarket.taxRevenue() + countryMarket.tariffRevenue() + countryMarket.profitRevenue();
             double revenueTrend = countryBudget.revenueTrend() > 0.0 ? countryBudget.revenueTrend() + (revenue - countryBudget.revenueTrend()) / trendWeight : revenue;
             double creditLimit = CREDIT_LIMIT_YEARS * DAYS_PER_YEAR * revenueTrend;
-            // public posts within the state's revenue (annex 14, decision 228): what the yearly revenue leaves after every
-            // other need pays at most this many state posts, wage and supplies; StatePostSystem opens no more posts the next
-            // day (negative = no limit: no revenue known yet, or fewer than 30 days of it)
             double postWage = statePostIndex >= 0 ? wageRate(countryMarket, statePostIndex, wageSlider(incomeTypes[statePostIndex], countryBudgetPolicy, countryEducationPolicy)) : 0.0;
             double postSupplies = statePostIndex >= 0 ? StateConsumptionUtils.dailyCost(stateConsumption, countryMarket, slider(countryBudgetPolicy.administrationSpendingRate()), 0f) : 0.0;
             double postNeeds = (statePostIndex >= 0 ? scaledWageBase(countryDemographics, statePostIndex, statePostIndex, incomeTypes[statePostIndex]) * postWage : 0.0)
@@ -123,9 +118,6 @@ public class CountryBudgetSystem {
                     stateLoans = 0.0;
                 }
             }
-            // the state's account at the bank (annex 13, decision 219): its share of the bank's losses and interest, like the
-            // pops' deposits; it pays off the state's loans first (both claims cancel, reserves unchanged); a treasury below its
-            // needs, target and commitments draws on it (the bank pays it, with an advance if its reserves lack: decision 235)
             double stateDeposit = countryBank.stateDeposit() * (1.0 - countryBank.depositLossRatio());
             double depositInterest = Math.min(stateDeposit * countryBank.depositRate(), Math.max(0.0, countryBank.interestPool()));
             if (depositInterest > 0.0) {
@@ -157,8 +149,6 @@ public class CountryBudgetSystem {
                 stateLoans += loan;
                 treasury += loan;
             }
-            // when the treasury cannot pay every need, the state posts take the cut first (decision 228): the army, aid,
-            // pensions and upkeep are paid before the civil servants
             float spendingRatio = otherNeeds > treasury ? (float) (treasury / otherNeeds) : 1f;
             float postRatio = postNeeds > 0.0 ? (float) Math.clamp((treasury - otherNeeds) / postNeeds, 0.0, 1.0) : 1f;
             double targetTreasury = TARGET_TREASURY_DAYS * needs;
@@ -194,7 +184,6 @@ public class CountryBudgetSystem {
                 stateLoans -= repaid;
                 investableSurplus -= repaid;
             }
-            // the state can also spend what it can draw from its account (decision 219)
             investableSurplus += stateDeposit;
             countryBank.loans(STATE_OWNER, stateLoans);
             countryBank.creditLimit(creditLimit);

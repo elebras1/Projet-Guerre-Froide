@@ -17,7 +17,6 @@ import com.populaire.projetguerrefroide.ui.widget.UiBuilder;
 import com.populaire.projetguerrefroide.ui.widget.UiWindow;
 
 public class CountryRankingEntry extends UiWindow {
-    // ledger_columns stripes are 30 px high
     static final float HEIGHT = 30f;
     static final int MAX_METRICS = 4;
     static final float COUNTRY_X = 96f;

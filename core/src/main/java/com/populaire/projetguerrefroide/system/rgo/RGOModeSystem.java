@@ -16,18 +16,6 @@ import java.util.Arrays;
 import static com.populaire.projetguerrefroide.simulation.Constants.GOOD_COUNT;
 import static com.populaire.projetguerrefroide.simulation.Constants.RECIPE_SWITCH_MARGIN;
 
-/**
- * Production mode of each RGO (annex 12, decisions 188 and 190). The owner takes, among the modes its country has for the
- * RGO's good, the one with the best margin per unit of traditional output: output x (price - cost of the inputs per
- * unit), at the country's prices, monthly, and only when it beats the current mode by {@link
- * com.populaire.projetguerrefroide.simulation.Constants#RECIPE_SWITCH_MARGIN} (no oscillation). A lower mode is taken at
- * once. A more productive one is taken only within what the world lacks (decision 202): each month and for each good, the
- * shortfall ({@link MarketUtils#trendClearingProduction}, on the yearly demand, minus the world production, the output of the mechanization levels
- * under construction and the gains of the modes whose inputs are not served yet) is shared among the candidate RGOs in
- * proportion to their extra output; the share is spread by error diffusion, from an offset that changes every month, so
- * that the adopters change from month to month. At loading, the choice uses the base costs of the goods, has no limit and
- * the inputs count as served, so that the 1946 endowment includes the mode.
- */
 public class RGOModeSystem {
     private static final double OFFSET_STEP = 0.6180339887498949;
 
@@ -56,7 +44,6 @@ public class RGOModeSystem {
         World world = iter.stage();
         this.world = world;
         while (iter.next()) {
-            // the global market is read below
         }
         if (this.ecsConstants.rgoModeCount() <= 1 || !this.initial && !PopulationMobilityUtils.isMobilityDay(world, this.ecsConstants)) {
             return;
@@ -83,7 +70,6 @@ public class RGOModeSystem {
         this.rgoQuery.iter(this.chooser);
     }
 
-    /** Extra output of the candidate upgrades and gains not yet served, per good. */
     private void readGains(Iter iter) {
         Field<ResourceGathering> rgoField = iter.field(ResourceGathering.class, 0);
         Field<Province> provinceField = iter.field(Province.class, 1);
@@ -153,13 +139,11 @@ public class RGOModeSystem {
         }
     }
 
-    /** The RGO's mode, or the traditional one when its country has lost the mode. */
     private int availableCurrent(ResourceGatheringView rgo, CountryProductionTechnologyView production) {
         int current = rgo.mode();
         return current > 0 && !production.rgoModes(current) ? 0 : current;
     }
 
-    /** Best mode on the margin; a change needs RECIPE_SWITCH_MARGIN over the current one, except at loading. */
     private int best(int current, int good, CountryProductionTechnologyView production, CountryMarketView market) {
         double currentValue = this.value(current, good, market);
         int best = current;
@@ -180,7 +164,6 @@ public class RGOModeSystem {
         return best;
     }
 
-    /** Margin of a mode per unit of traditional output: output x (price - inputs per unit x their prices). */
     private double value(int mode, int good, CountryMarketView market) {
         float[] costs = this.ecsConstants.goodCosts();
         double price = this.initial ? costs[good] : market.goodPrices(good);

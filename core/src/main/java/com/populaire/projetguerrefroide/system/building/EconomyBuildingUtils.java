@@ -126,7 +126,6 @@ public class EconomyBuildingUtils {
         return cost;
     }
 
-    /** Recipe of a new building: the advanced one when the country has its technology and it costs less. */
     public static boolean chooseAdvancedRecipe(EconomyBuildingTypeView buildingType, CountryProductionTechnologyView production, CountryMarketView countryMarket) {
         return buildingType.advancedGoodInputIndexes(0) >= 0
             && production.advancedRecipes(buildingType.typeIndex())
@@ -137,20 +136,11 @@ public class EconomyBuildingUtils {
         return wagePerUnit(countryMarket, regionInstance, popTypeIndex, minWageFactor, false);
     }
 
-    /**
-     * Legal wage of one worker unit: the minimum wage of the laws, times the regional scarcity premium (decision 92)
-     * unless the wage is administered (decision 234).
-     */
     public static float wagePerUnit(CountryMarketView countryMarket, RegionInstanceView regionInstance, int popTypeIndex, float minWageFactor, boolean administered) {
         float minimumWage = (countryMarket.lifeCostsByPopType(popTypeIndex) + 0.2f * countryMarket.everydayCostsByPopType(popTypeIndex)) * (1f + minWageFactor);
         return administered ? minimumWage : minimumWage * (1f + regionInstance.wagePremiumByPopType(popTypeIndex));
     }
 
-    /**
-     * Decision 234 (economy plan annex 15): under a law with administered wages (planned economy), the buildings the
-     * state owns pay the legal minimum wage, without the scarcity premium; their vacant posts are filled by mobility
-     * and promotion, which follow vacancies, not wages.
-     */
     public static boolean administeredWage(EconomyBuildingView economyBuilding, CountryLaborPolicyView laborPolicy, long stateOwnerTag) {
         return laborPolicy.administeredWages() && economyBuilding.ownerTagId() == stateOwnerTag;
     }

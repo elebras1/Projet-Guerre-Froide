@@ -6,11 +6,6 @@ import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 
-/**
- * Delivers and pays the inputs of the production mode (annex 12, decision 188); the mode works in proportion of the value of
- * its inputs served, at base costs: output factor = 1 + (output - 1) x share served. Nothing demanded (first day, empty
- * treasury) counts as served when the RGO had nothing to produce, so that a stopped RGO does not lose its mode.
- */
 public class RGOModePurchaseSystem {
     private final EcsConstants ecsConstants;
 

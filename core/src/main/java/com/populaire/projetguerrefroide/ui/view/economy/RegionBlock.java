@@ -9,11 +9,6 @@ import com.populaire.projetguerrefroide.ui.widget.UiAnchor;
 import com.populaire.projetguerrefroide.ui.widget.UiBuilder;
 import com.populaire.projetguerrefroide.ui.widget.UiWindow;
 
-/**
- * Ligne de `regions_listbox` : la liste EvW alterne `region_entry_title` et `region_entry_factories`. Une région PGF
- * peut avoir plus de bâtiments que la largeur visible (six cases) : elle reçoit alors plusieurs rangées
- * `region_entry_factories`, complétées par des emplacements vides comme le panneau PGF précédent.
- */
 public class RegionBlock extends UiWindow {
     private static final int FACTORIES_PER_ROW = 6;
     private static final float TITLE_HEIGHT = 42f;

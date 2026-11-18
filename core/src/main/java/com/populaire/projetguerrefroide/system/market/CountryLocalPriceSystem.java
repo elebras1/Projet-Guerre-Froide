@@ -8,12 +8,6 @@ import com.populaire.projetguerrefroide.simulation.EcsConstants;
 
 import static com.populaire.projetguerrefroide.simulation.Constants.*;
 
-/**
- * Price of the goods that are not traded between countries (decision 207): each country moves its own price with the gap
- * between its demand and its production, by the rule and within the bounds of the world price
- * ({@link GlobalMarketResolveSystem}); the world price of such a good is the average of the country prices weighted by the
- * demand, for the statistics and the world-level readers.
- */
 public class CountryLocalPriceSystem {
     private final EcsConstants ecsConstants;
     private final double[] weightedPrices = new double[GOOD_COUNT];

@@ -25,10 +25,6 @@ public class RGORevenueSystem {
             .iter(this::distribute);
     }
 
-    /**
-     * An RGO without workers or output takes the margin of a first hire: output of one worker at the country's price
-     * against the wage of one worker (decision T15). Otherwise its margin is computed on its revenue and wage bill.
-     */
     private static float unitMargin(ResourceGatheringView resourceGathering, CountryMarketView countryMarket, int workerPopTypeIndex, float minWageFactor,
                                     double revenue, float wageBill) {
         if (wageBill > 0f) {
@@ -70,8 +66,6 @@ public class RGORevenueSystem {
             double treasury = resourceGathering.treasury() + revenue;
 
             float wageBill = wageBill(countryMarket, workerPopTypeIndex, countryLaborPolicy.minWageFactor(), resourceGathering.workerAmount());
-            // the next day's inputs (production mode, mechanization upkeep) are set aside before wages and profit: without
-            // them there is no harvest (annex 12, decision 188)
             double inputs = this.dailyInputCost(resourceGathering, countryMarket);
             float wage = (float) Math.min(wageBill, Math.max(0.0, treasury - inputs));
             treasury -= wage;
@@ -85,7 +79,6 @@ public class RGORevenueSystem {
         }
     }
 
-    /** Daily cost of the inputs of the RGO's production mode and of its mechanization upkeep, at the country's budget prices. */
     private double dailyInputCost(ResourceGatheringView rgo, CountryMarketView countryMarket) {
         double cost = 0.0;
         int mode = rgo.mode();

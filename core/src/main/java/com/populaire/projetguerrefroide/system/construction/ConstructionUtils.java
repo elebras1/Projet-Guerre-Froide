@@ -95,7 +95,6 @@ public class ConstructionUtils {
             duration, committedCost, goodIndexes, goodAmounts, dailyGoods, new float[MAX_GOODS]));
     }
 
-    /** A mechanization level of an RGO (decision T14 c): one year of the extra output at base cost, in capital goods. */
     public static void startMechanizationSite(World world, EcsConstants ecsConstants, long provinceId, long regionInstanceId, long countryId, long ownerTagId, double baseValue) {
         int[] costGoods = ecsConstants.mechanizationCostGoods();
         float[] goodCosts = ecsConstants.goodCosts();

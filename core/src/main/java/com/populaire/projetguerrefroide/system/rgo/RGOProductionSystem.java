@@ -66,12 +66,9 @@ public class RGOProductionSystem {
 
             float slaveFulfillment = (float) resourceGathering.slaveAmount() / Math.max(1, targetSlaves);
 
-            // production = value x M x endowment^alpha x levels^(1 - alpha), levels = workers / (workforce x worker ratio)
-            // (decision 184); alpha = 0 keeps the former rule, proportional to the workers
             float workerLevels = resourceGathering.workerAmount() / Math.max(1f, workforce * workerPopTypeRatio);
             float alpha = resourceGathering.endowmentShare();
             if (alpha > 0f) {
-                // mechanization saves labour (annex 12, decision 192): each worker does the work of 1 + k x effective level
                 workerLevels *= 1f + RGO_MECHANIZATION_LABOUR_SAVING * RgoUtils.addedLevel(resourceGathering);
             }
             float scale = alpha > 0f ? (float) (Math.pow(endowment, alpha) * Math.pow(workerLevels, 1f - alpha)) : workerLevels;
@@ -82,7 +79,6 @@ public class RGOProductionSystem {
 
             ProvinceInfrastructureView provinceInfrastructure = provinceInfrastructureField.getMutView(i);
             float infrastructure = 1f + provinceInfrastructure.productionBonus();
-            // production mode (annex 12, decision 188): 1 + (output - 1) x share of its inputs served
             float modeBase = coreProduction * currentSlaveBonus * infrastructure;
             int mode = resourceGathering.mode();
             float modeFactor = mode > 0 ? 1f + (this.ecsConstants.rgoModeOutputs()[mode] - 1f) * resourceGathering.modeServed() : 1f;

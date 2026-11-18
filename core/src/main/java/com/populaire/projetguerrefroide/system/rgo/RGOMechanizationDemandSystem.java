@@ -8,7 +8,6 @@ import io.github.elebras1.flecs.World;
 
 import static com.populaire.projetguerrefroide.simulation.Constants.RGO_MECHANIZATION_UPKEEP_SHARES;
 
-/** Daily upkeep of the mechanization levels of an RGO (decision T14 d), demanded within what its treasury can pay. */
 public class RGOMechanizationDemandSystem {
     private final EcsConstants ecsConstants;
 

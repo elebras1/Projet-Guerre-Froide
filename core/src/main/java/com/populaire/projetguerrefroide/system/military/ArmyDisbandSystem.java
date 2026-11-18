@@ -80,8 +80,6 @@ public class ArmyDisbandSystem {
             Field<CountryBudget> countryBudgetField = iter.field(CountryBudget.class, 0);
             for (int i = 0; i < iter.count(); i++) {
                 CountryBudgetView countryBudget = countryBudgetField.getMutView(i);
-                // the state posts are paid last and take the cut first (annex 14, decision 228): the units close only the gap of
-                // the other needs
                 double gap = countryBudget.reservedNeeds() - countryBudget.statePostNeeds() - countryBudget.revenueTrend();
                 if (countryBudget.spendingRatio() < 1f && gap > 0.0) {
                     gaps.put(iter.entity(i), (float) gap);

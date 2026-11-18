@@ -30,7 +30,6 @@ public class WorldMarketTotalsSystem {
 
             for (int g = 0; g < countryMarket.goodImportNeedsLength(); g++) {
                 if (localGoods[g]) {
-                    // neither imported nor exported (decision 207)
                     countryMarket.goodImportNeeds(g, 0f);
                     countryMarket.goodExportOffers(g, 0f);
                     continue;

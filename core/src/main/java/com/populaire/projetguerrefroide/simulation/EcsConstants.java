@@ -348,7 +348,6 @@ public class EcsConstants {
         technologyQuery.destruct();
     }
 
-    /** RGO production modes (annex 12, decision 188); mode 0 is traditional: no input, output x 1, every good. */
     private void resolveRgoModes(World ecsWorld) {
         Arrays.fill(this.rgoModeGoods[0], true);
         this.rgoModeOutputs[0] = 1f;
@@ -605,7 +604,6 @@ public class EcsConstants {
         return this.goodStockDecays;
     }
 
-    /** Goods that are not traded between countries (decision 207): each country has its own price and market. */
     public boolean[] localGoods() {
         this.requireGlobals();
         return this.localGoods;

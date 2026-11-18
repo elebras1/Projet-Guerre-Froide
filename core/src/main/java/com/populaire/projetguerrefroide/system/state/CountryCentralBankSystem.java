@@ -21,10 +21,6 @@ public class CountryCentralBankSystem {
             .iter(this::regulate);
     }
 
-    /**
-     * Decision 235 (economy plan annex 15): the central bank no longer creates money of its own accord; it advances the
-     * bank what its reserves lack for a payment ({@link BankUtils#draw}) at this rate, set on last year's inflation.
-     */
     private void regulate(Iter iter) {
         World world = iter.stage();
         float[] baseCosts = this.ecsConstants.goodCosts();
@@ -51,7 +47,6 @@ public class CountryCentralBankSystem {
                     priceIndex += weight * countryMarket.goodPrices(g) / countryCentralBank.basePrices(g);
                 }
             }
-            // last year's inflation: the yearly moving average of the daily change of the index, annualised
             float inflation = countryCentralBank.inflation();
             if (priceIndex > 0.0) {
                 double dailyChange = Math.log(priceIndex / countryCentralBank.priceIndex());

@@ -48,7 +48,6 @@ public class CountryPriceSystem {
             boolean[] localGoods = this.ecsConstants.localGoods();
             for (int g = 0; g < countryMarket.goodPricesLength(); g++) {
                 if (localGoods[g]) {
-                    // kept: the country's own price (CountryLocalPriceSystem, decision 207)
                     continue;
                 }
                 float consumed = countryMarket.goodConsumedAmounts(g);

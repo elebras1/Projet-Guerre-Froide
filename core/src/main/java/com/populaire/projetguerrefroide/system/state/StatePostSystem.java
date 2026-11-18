@@ -62,8 +62,6 @@ public class StatePostSystem {
                 workforceShare = EmploymentUtils.activeShare(postBaseShare, populationPolicy.workforceShareModifier());
                 administrationSlider = StateBudgetUtils.slider(budgetPolicy.administrationSpendingRate());
                 efficiency = Math.max(0f, 1f + politicalPolicy.administrativeEfficiency());
-                // the state opens the posts its revenue pays (annex 14, decision 228): the capacity computed by CountryBudgetSystem
-                // the day before, against the administration posts the rule gives the whole country; management posts follow
                 CountryDemographicsView countryDemographics = country.getView(CountryDemographics.class);
                 long countryRural = 0L;
                 for (int p = 0; p < ruralPopTypes.length; p++) {
@@ -77,8 +75,6 @@ public class StatePostSystem {
             }
 
             float managementPosts = managementRatio * regionInstanceIncome.stateBuildingWorkers();
-            // public services (administration, teaching, health) grow with the non-rural adults of the region (annex 14,
-            // decision 226): about 16 % of the non-agricultural actives in every country around 1950 (GGDC)
             int ruralAdults = 0;
             for (int p = 0; p < ruralPopTypes.length; p++) {
                 if (ruralPopTypes[p]) {

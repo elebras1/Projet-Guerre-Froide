@@ -10,7 +10,6 @@ import io.github.elebras1.flecs.World;
 import static com.populaire.projetguerrefroide.simulation.Constants.RGO_MECHANIZATION_EFFICIENCY;
 import static com.populaire.projetguerrefroide.simulation.Constants.RGO_MECHANIZATION_UPKEEP_RATE;
 
-/** Upkeep of the 1946 mechanization levels, from the first production: same rule as a level completed in play. */
 public class RGOMechanizationUpkeepInitializationSystem {
     private final EcsConstants ecsConstants;
 

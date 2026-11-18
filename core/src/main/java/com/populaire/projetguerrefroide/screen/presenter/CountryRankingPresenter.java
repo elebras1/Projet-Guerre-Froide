@@ -82,7 +82,6 @@ public class CountryRankingPresenter extends RequestingPresenter implements Coun
 
     @Override
     public void onCountryRankingPageChanged() {
-        // same sort: rebind the shown response at once; other sort: the watch requests it, rows wait for it
         this.countryRankingPanel.setData(this.rankingsWatch.hasCurrentResponse() ? this.rankingsWatch.response() : null);
     }
 

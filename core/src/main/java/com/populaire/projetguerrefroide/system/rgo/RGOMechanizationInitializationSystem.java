@@ -7,10 +7,6 @@ import io.github.elebras1.flecs.World;
 
 import static com.populaire.projetguerrefroide.simulation.Constants.RGO_MECHANIZATION_EFFICIENCY;
 
-/**
- * 1946 mechanization (decision S5-c): each RGO starts at the cap its country's 1946 technologies give for its good,
- * before the first production. RGOMechanizationUpkeepInitializationSystem sets the upkeep once that production is known.
- */
 public class RGOMechanizationInitializationSystem {
     public RGOMechanizationInitializationSystem(World ecsWorld, long phaseId) {
         ecsWorld.system("RGOMechanizationInitializationSystem")

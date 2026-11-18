@@ -63,10 +63,6 @@ public enum PolicyModifier {
         return VALUES[ordinal];
     }
 
-    /**
-     * Policy modifier carried by a technology, or null for the names listed as read later (military, espionage).
-     * An unknown name fails the loading.
-     */
     public static PolicyModifier forTechnology(String name) {
         for (PolicyModifier modifier : VALUES) {
             if (modifier.key.equals(name)) {

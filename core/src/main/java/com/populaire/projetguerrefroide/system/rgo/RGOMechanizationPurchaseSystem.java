@@ -8,7 +8,6 @@ import io.github.elebras1.flecs.World;
 
 import static com.populaire.projetguerrefroide.simulation.Constants.RGO_MECHANIZATION_EFFICIENCY;
 
-/** Delivers and pays the upkeep; the effective level is level x share of upkeep served (decision T14 b, d). */
 public class RGOMechanizationPurchaseSystem {
     private final EcsConstants ecsConstants;
 

@@ -93,21 +93,11 @@ public class Constants {
     public static float NEEDS_SCALING_FACTOR = 100000f;
     public static final float SHORTAGE_PRICE_PREMIUM = 0.5f;
     public static final float RECIPE_SWITCH_MARGIN = 0.1f;
-    /**
-     * Share of an RGO's output due to its endowment (land for farmers, deposit or forest for labourers): alpha in
-     * production = value x M x endowment^alpha x levels^(1 - alpha) (annex 10 of the economy plan, § 10.21).
-     * Only RGOs with a natural potential (province field good_potential) use it; the others keep alpha = 0.
-     */
     public static final float RGO_ENDOWMENT_SHARE_FARMERS = 0.4f;
     public static final float RGO_ENDOWMENT_SHARE_LABOURERS = 0.4f;
     public static final float RGO_MECHANIZATION_EFFICIENCY = 0.25f;
-    /** RGO production modes, the traditional one (index 0) included (annex 12, decision 188). */
     public static final int MAX_RGO_MODES = 8;
     public static final int MAX_RGO_MODE_INPUTS = 3;
-    /**
-     * Labour saved by mechanization in an endowment RGO (annex 12, decision 192): a mechanized RGO needs
-     * endowment x workforce / (1 + k x effective level) workers; k measured between 0.25 and 0.5.
-     */
     public static final float RGO_MECHANIZATION_LABOUR_SAVING = 0.5f;
     public static final int RGO_MECHANIZATION_DAYS = 180;
     public static final float RGO_MECHANIZATION_UPKEEP_RATE = 0.1f;
@@ -117,12 +107,6 @@ public class Constants {
     public static final float[] RGO_MECHANIZATION_UPKEEP_SHARES = {0.5f, 0.5f};
     public static final float[] SPENDING_RATES_BY_STRATA = {0.10f, 0.06f, 0.03f};
     public static final float MAXIMUM_LUXURY_BASKETS = 4f;
-    /**
-     * Decision 230 (economy plan annex 15): a pop whose income, followed over a year (habits), exceeds the cost of all
-     * its baskets (vital, everyday and the luxury cap) saves this share of it and spends the rest: its everyday basket and
-     * luxury cap grow together, the vital basket does not (Engel's law). Mean US personal saving rate 1950-1979, BEA
-     * (11.4 %, FRED A072RC1A156NBEA). Below its baskets, nothing changes: it spends its budget.
-     */
     public static final float HOUSEHOLD_SAVING_SHARE = 0.11f;
     public static final float INCOME_TREND_DAYS = 365f;
     public static final float SUBSISTENCE_LIFE_SHARE = 0.75f;
@@ -130,17 +114,7 @@ public class Constants {
     public static final float SOCIAL_LIFE_SHARE = 0.3f;
     public static final float TARGET_TREASURY_DAYS = 60f;
     public static final float BANK_LOAN_TERM_DAYS = 3650f;
-    /**
-     * Decision 238 (economy plan annex 15): no borrower owes the bank more than this many years of its income, the state
-     * of its revenue, a private owner (capitalists, workers) of its share of the profits, both followed over a year.
-     */
     public static final float CREDIT_LIMIT_YEARS = 2f;
-    /**
-     * Decision 235 (economy plan annex 15): the central bank creates money only when it advances the bank what its
-     * reserves lack for a payment (a loan granted, a deposit withdrawn); its rate follows J. B. Taylor's rule (1993)
-     * without the output gap, i = r* + pi + 0.5 (pi - 2 %), at least 0, pi being last year's inflation; no ceiling: above
-     * 5.3 % inflation a 10 % ceiling made the real rate negative (annex 15, § 12.2). The bank lends at this rate.
-     */
     public static final float CENTRAL_BANK_TARGET_INFLATION = 0.02f;
     public static final float CENTRAL_BANK_REAL_RATE = 0.02f;
     public static final float CENTRAL_BANK_INFLATION_GAIN = 0.5f;
@@ -161,7 +135,7 @@ public class Constants {
     public static final float INPUT_STOCK_DAYS = 10f;
     public static final float FACTORY_TREASURY_BUFFER_DAYS = 15f;
     public static final float DIVIDEND_RATE = 0.1f;
-    public static final float WAGE_ADJUSTMENT_RATE = 0.01f;
+    public static final float WAGE_ADJUSTMENT_RATE = 0.00026f;
     public static final float PROMOTION_RATE = 0.01f;
     public static final int DAYS_PER_MONTH = 30;
     public static final int FACTORY_LOSS_SUSPENSION_DAYS = 12 * DAYS_PER_MONTH;

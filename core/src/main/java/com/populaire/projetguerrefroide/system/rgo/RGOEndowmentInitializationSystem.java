@@ -10,22 +10,6 @@ import static com.populaire.projetguerrefroide.simulation.Constants.GOOD_COUNT;
 import static com.populaire.projetguerrefroide.system.population.EmploymentUtils.activeShare;
 import static com.populaire.projetguerrefroide.system.population.EmploymentUtils.activeWorkers;
 
-/**
- * RGO endowment at loading (annex 10 of the economy plan, § 10.21): land for farmers, deposit or forest for labourers,
- * in levels of {@code workforce}. Production is {@code value x M x endowment^alpha x levels^(1 - alpha)}.
- * <p>
- * The province field {@code good_potential} is the natural production potential of the RGO, reachable after 2000 (its
- * share of the world potential of its good). The endowment is proportional to it, {@code endowment = k x potential},
- * with k such that the 1946 world production of the good is the one of the former rule (value x sum of M x levels):
- * {@code k = (sum(M x L) / sum(M x potential^alpha x L^(1 - alpha)))^(1 / alpha)}. {@code value} cancels out, so the
- * supply calibration still scales the good through {@code value}; the 1946 production of each RGO then follows its
- * potential, its 1946 workers and its owner's technologies, and nothing caps it later.
- * <p>
- * An RGO without potential keeps the former rule: endowment = 1.5 x levels of its worker type, alpha = 0 (production
- * proportional to its workers, capped at the endowment).
- * <p>
- * Runs after the law, technology, mechanization and infrastructure initializations, before the employment one.
- */
 public class RGOEndowmentInitializationSystem {
     private final EcsConstants ecsConstants;
     private final double[] effectiveLevels = new double[GOOD_COUNT];
@@ -99,7 +83,6 @@ public class RGOEndowmentInitializationSystem {
         }
     }
 
-    /** Owner data read once per country, and the 1946 terms of the production formula. */
     private final class Context {
         private final ResourceGatheringTypeView rgoType;
         private final float workerBaseShare;
@@ -125,16 +108,11 @@ public class RGOEndowmentInitializationSystem {
             this.modifiers = 1f + outputModifier + productivity;
         }
 
-        /**
-         * Levels of workers in 1946: active workers / (workforce x worker ratio). A mechanized RGO employs fewer of them, each
-         * doing the work of 1 + k x level (annex 12, decision 192): the effective levels are still the active workers.
-         */
         private double levels(DemographicsView demographics) {
             int active = activeWorkers(demographics.totalByPopType(this.rgoType.workerPopTypeIndex()), this.workforceShare);
             return active / ((double) Math.max(1, this.rgoType.workforce()) * this.rgoType.workerPopTypeRatio());
         }
 
-        /** M of the production formula in 1946 (no slaves employed yet). */
         private double multiplier(ResourceGatheringView rgo, ProvinceInfrastructureView infrastructure) {
             float modeFactor = rgo.mode() > 0 ? 1f + (ecsConstants.rgoModeOutputs()[rgo.mode()] - 1f) * rgo.modeServed() : 1f;
             return (double) rgo.efficiency() * this.modifiers * this.rgoType.workerEffectMultiplier() * (1f + infrastructure.productionBonus()) * modeFactor;

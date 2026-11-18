@@ -9,7 +9,6 @@ public final class TechnologyEffectUtils {
     private TechnologyEffectUtils() {
     }
 
-    /** Adds the policy modifiers and the production effects of one acquired technology to its country. */
     public static void applyTechnology(EcsConstants ecsConstants, EntityView country, int technology) {
         int[] modifiers = ecsConstants.technologyModifiers()[technology];
         float[] values = ecsConstants.technologyModifierValues()[technology];
@@ -213,7 +212,6 @@ public final class TechnologyEffectUtils {
         }
     }
 
-    /** Bounds kept by the policies once technologies are added (same bounds as at initialization). */
     public static void clampPolicies(EntityView country) {
         CountryTaxPolicyMutView taxPolicy = country.getMutView(CountryTaxPolicy.class);
         taxPolicy.poorTaxRate(Math.max(0f, taxPolicy.poorTaxRate()));

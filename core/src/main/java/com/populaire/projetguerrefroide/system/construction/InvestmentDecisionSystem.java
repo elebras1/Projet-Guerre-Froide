@@ -320,20 +320,12 @@ public class InvestmentDecisionSystem {
                 }
             }
         }
-        // output of the mechanization levels under construction, read by the mode choice (decision 202)
         GlobalMarketMutView market = world.obtainEntityView(this.ecsConstants.globalMarket()).getMutView(GlobalMarket.class);
         for (int g = 0; g < GOOD_COUNT; g++) {
             market.goodPendingRgoOutputs(g, (float) this.rgoPendingOutputs[g]);
         }
     }
 
-    /**
-     * Mechanization within what the world lacks (decision 202): for each good, the shortfall ({@link
-     * MarketUtils#trendClearingProduction}, on the yearly demand, minus the world production, the levels under construction and the mode gains not
-     * served yet) is shared among the candidate RGOs in proportion to the extra output of their free levels, by error
-     * diffusion from an offset that changes every day, so that the adopters change from day to day; the levels are cut in
-     * the funding loop ({@link #rationedLevels}).
-     */
     private void rationMechanization(GlobalMarketView globalMarket) {
         float[] decays = this.ecsConstants.goodStockDecays();
         int day = this.world.obtainEntityView(this.ecsConstants.economyCalendar()).<EconomyCalendarView>getView(EconomyCalendar.class).day();
@@ -349,7 +341,6 @@ public class InvestmentDecisionSystem {
         }
     }
 
-    /** Levels a mechanization candidate may start within its good's share of the shortfall (error diffusion). */
     private int rationedLevels(Candidate candidate) {
         if (candidate.extraOutput <= 0f) {
             return 0;
@@ -409,8 +400,6 @@ public class InvestmentDecisionSystem {
             EconomyBuildingTypeView buildingType = world.obtainEntityView(typeReturn.buildingTypeId()).getView(EconomyBuildingType.class);
             int goodIndex = buildingType.goodOutputIndex();
             if (this.ecsConstants.localGoods()[goodIndex]) {
-                // a good that is not traded lacks in the country (decision 207): its demand above the output of all its levels,
-                // built or under construction
                 LongFloatMap countryPark = parkLevels.get(countryId);
                 float capacity = (countryPark != null ? countryPark.get(typeReturn.buildingTypeId()) : 0f) * levelOutputs.get(typeReturn.buildingTypeId());
                 if (countryMarket.goodDemandAmounts(goodIndex) > capacity) {
@@ -479,7 +468,6 @@ public class InvestmentDecisionSystem {
         double loans = countryBank.loans(owner);
         boolean state = owner == STATE_OWNER;
         double rate = state ? stateInterestRate(loans, countryBank.creditLimit(), countryBank.lendingRate()) : countryBank.lendingRate();
-        // decisions 235 and 238: the borrower's credit limit bounds the loan, not the bank's reserves
         if (annualReturn < rate || (state ? loans + shortfall > countryBank.creditLimit() : shortfall > BankUtils.privateCreditHeadroom(countryBank, owner))) {
             return false;
         }
@@ -693,11 +681,6 @@ public class InvestmentDecisionSystem {
         }
     }
 
-    /**
-     * Mechanization levels of RGOs (decision T14 e, f): below the country's cap, all available workers of the type employed,
-     * the world lacking the good (decision 198, {@link MarketUtils#clearingGap} above zero), return = (extra output x
-     * price - upkeep) x share of the investing group in the RGO profit / level cost.
-     */
     private void readRgos(Iter rgoIter) {
         World world = this.world;
         Field<Province> provinceField = rgoIter.field(Province.class, 0);
@@ -752,7 +735,6 @@ public class InvestmentDecisionSystem {
             long provinceId = rgoIter.entity(i);
             float extraDaily = rgo.production() / Math.max(1e-6f, rgo.efficiency()) * RGO_MECHANIZATION_EFFICIENCY;
             int queued = this.queuedLevels.get(provinceId);
-            // output on its way (decision 202): levels under construction, mode gains whose inputs are not served yet
             this.rgoPendingOutputs[good] += (double) queued * extraDaily;
             if (rgo.mode() > 0) {
                 this.rgoPendingModeGains[good] += (double) rgo.modeBaseProduction() * (modeOutputs[rgo.mode()] - 1f) * (1f - rgo.modeServed());

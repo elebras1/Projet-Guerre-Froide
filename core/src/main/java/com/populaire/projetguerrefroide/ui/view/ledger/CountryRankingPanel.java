@@ -25,7 +25,6 @@ import com.populaire.projetguerrefroide.ui.widget.UiList;
 import com.populaire.projetguerrefroide.ui.widget.UiWindow;
 
 public class CountryRankingPanel extends UiWindow {
-    // ledger_overlay (ledger_columns, at 51,140): header strip 143-196, then 15 stripes of 30 px from 198
     private static final float TABLE_X = 51f;
     private static final float TABLE_Y = 198f;
     private static final float TABLE_WIDTH = 980f;
@@ -86,7 +85,6 @@ public class CountryRankingPanel extends UiWindow {
         this.graphBackground = ui.add(this, new GraphBackground(ui), 200f, 160f, UiAnchor.UPPER_LEFT);
         this.graphBackground.setVisible(false);
         this.header = ui.label(this, "", FontsSkin.Styles.Label.JOCKEY_24, 360f, 106f, 340f, 30f, Align.top, UiAnchor.UPPER_LEFT, 4f, 4f);
-        // EvW 530,658 30x30 : élargi à la case entre les flèches pour « page/total »
         this.pageNumber = ui.label(this, "", FontsSkin.Styles.Label.JOCKEY_18, 515f, 658f, 72f, 30f, Align.top, UiAnchor.UPPER_LEFT, 4f, 4f);
         this.previousButton = ui.button(this, newGameSkin, UiNewgameSkin.Styles.Button.ARROW_LEFT_BTN, 493f, 655f, UiAnchor.UPPER_LEFT);
         ui.shortcut(this, this.previousButton, Input.Keys.LEFT);
@@ -148,7 +146,6 @@ public class CountryRankingPanel extends UiWindow {
         return LedgerPages.PAGES[this.page].sort();
     }
 
-    /** Binds the rankings sorted for the current page; null clears the table until they arrive. */
     public void setData(CountryRankings rankings) {
         if (rankings == null) {
             this.table.setRowCount(0);

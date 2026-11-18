@@ -7,12 +7,6 @@ import com.populaire.projetguerrefroide.component.*;
 
 import static com.populaire.projetguerrefroide.simulation.Constants.STATE_OWNER;
 
-/**
- * The state's surplus deposited at the national bank (annex 13, decision 219, J4 of annex 8): after the day's decisions of
- * the state (budget, public works, investment), what the treasury keeps above its needs of the day, its target and its
- * commitments goes to the state's account at the bank, whose reserves the bank lends to the firms; {@link CountryBudgetSystem}
- * pays its interest and draws on it when the treasury falls below that floor.
- */
 public class StateDepositSystem {
 
     public StateDepositSystem(World ecsWorld, long phaseId) {

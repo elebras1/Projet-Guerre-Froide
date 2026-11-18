@@ -86,10 +86,6 @@ public class PopulationConsumptionSystem {
         }
     }
 
-    /**
-     * Decision 230: factor on the everyday basket and the luxury cap so that a pop whose yearly income exceeds all its
-     * baskets spends (1 - HOUSEHOLD_SAVING_SHARE) of it; never below 1 (the type's baskets).
-     */
     static float needsFactor(float income, float neededLife, float growingNeeds) {
         if (growingNeeds <= 0f) {
             return 1f;

@@ -14,10 +14,6 @@ import static com.populaire.projetguerrefroide.simulation.Constants.MAX_GOODS;
 import static com.populaire.projetguerrefroide.simulation.Constants.RECIPE_SWITCH_MARGIN;
 import static com.populaire.projetguerrefroide.system.building.EconomyBuildingUtils.recipeCost;
 
-/**
- * Once a month, the owner of a factory whose country has the technology of its advanced recipe takes the recipe whose
- * inputs cost less at the country's prices, when the gap exceeds RECIPE_SWITCH_MARGIN (decision T13).
- */
 public class EconomyBuildingRecipeSystem {
     private final EcsConstants ecsConstants;
     private final int[] newGoodIndexes = new int[MAX_GOODS];

@@ -104,14 +104,10 @@ public class PopulationIncomeDistributionSystem {
             float totalBonus = regionInstanceIncome.profitShareByPopType(typeIdx);
             int totalPopType = regionDemographics.totalByPopType(typeIdx);
             if (rural) {
-                // rural workers are paid by the RGO of their own province only (decision 201 b): those of a province whose
-                // RGO employs another type, or nobody, get nothing from the wages of the others
                 float pay = typeIdx == provinceRgoWorkerIndex ? provinceRgoPay : 0f;
                 grossIncome += pay;
                 regionInstanceIncome.claimedIncomeByPopType(typeIdx, regionInstanceIncome.claimedIncomeByPopType(typeIdx) + pay);
             } else if (totalPopType > 0) {
-                // the other types share the region's wages per head, which is per employment: every pop of a type has the
-                // region's employment rate (PopulationEmploymentSynchronizationSystem)
                 float distributedIncome = (totalMinWages + totalBonus) * popAmount / totalPopType;
                 grossIncome += distributedIncome;
                 regionInstanceIncome.claimedIncomeByPopType(typeIdx, regionInstanceIncome.claimedIncomeByPopType(typeIdx) + distributedIncome);
@@ -174,7 +170,6 @@ public class PopulationIncomeDistributionSystem {
             float income = netIncome - donation + stateIncome + interestIncome;
             population.income(income);
             if (population.amount() > 0) {
-                // decision 230: income per 100 000 people, followed over a year (habits)
                 float perUnit = Math.max(0f, income) / (population.amount() / NEEDS_SCALING_FACTOR);
                 population.incomeTrend(population.incomeTrend() > 0f ? population.incomeTrend() + (perUnit - population.incomeTrend()) / INCOME_TREND_DAYS : perUnit);
             }

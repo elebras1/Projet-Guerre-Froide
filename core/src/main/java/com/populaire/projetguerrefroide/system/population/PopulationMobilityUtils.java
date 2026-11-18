@@ -71,7 +71,6 @@ public class PopulationMobilityUtils {
             fallbackSources[b] = 0f;
             fallbackWeights[b] = fallback && ruralTypes[b] ? demotionWeights[b] / fallbackWeightTotal : 0f;
             if (employeeTypes[b]) {
-                // rural exodus (annex 12, decision 193): an employed rural pop is also drawn to a job that pays more than its income
                 float pull = ruralSource ? PROMOTION_RATE * openness * attraction(demographics, b, sourceIncome) : 0f;
                 vacancyShares[b] = (ambition + jobSearch + pull) * promotionWeights[b] + demotionPart;
                 fallbackSources[b] = demotionPart;
@@ -86,7 +85,6 @@ public class PopulationMobilityUtils {
         }
     }
 
-    /** Income gap towards a pop type of the province: its income per pop over the source's, minus one, within [0, 1]. */
     private static float attraction(DemographicsView demographics, int popType, float sourceIncome) {
         int targetTotal = demographics.totalByPopType(popType);
         return targetTotal > 0 && sourceIncome > 0f

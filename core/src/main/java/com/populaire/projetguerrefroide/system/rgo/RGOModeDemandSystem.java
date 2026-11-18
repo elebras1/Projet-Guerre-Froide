@@ -6,10 +6,6 @@ import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 
-/**
- * Daily inputs of the production mode of an RGO (annex 12, decision 188): inputs per unit x the output the mode gives on the
- * last traditional-equivalent output, demanded within what the RGO's treasury can pay (same rule as the mechanization upkeep).
- */
 public class RGOModeDemandSystem {
     private final EcsConstants ecsConstants;
 
