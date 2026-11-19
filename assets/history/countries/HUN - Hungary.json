@@ -30,11 +30,11 @@
         "economic_system": "interventionism",
         "trade_policy": "protectionism",
         "taxation": "progressive_tax",
-        "land_reform": "commercialized_agriculture",
+        "land_reform": "homesteading",
         "colonization": "colonial_exploitation",
         "policing": "dedicated_police_force",
-        "education_system": "private_schools",
-        "health_system": "private_healthcare",
+        "education_system": "mixed_education",
+        "health_system": "mixed_healthcare",
         "public_expression": "free_speech",
         "labor_rights": "regulatory_bodies",
         "childrens_rights": "child_protection",
@@ -97,12 +97,15 @@
     "air_wings": [],
     "literacy": 0.96,
     "technologies": [
+        "agrarian_reform",
         "assembly_line",
         "chemistry",
         "coal_power",
         "industrial_mechanization",
         "mathematics",
         "oil_refining",
+        "public_education",
+        "public_health",
         "synthetic_polymers"
     ]
 }

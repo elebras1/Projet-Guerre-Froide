@@ -21,7 +21,7 @@
     "head_of_government": "Kijuro_Shidehara_1",
     "laws": {
         "governance_principles": "monarchy",
-        "distribution_of_power": "census_suffrage",
+        "distribution_of_power": "universal_suffrage",
         "citizenship": "cultural_exclusion",
         "church_and_state": "religious_tolerance",
         "bureaucracy": "appointed_bureaucrats",
@@ -29,11 +29,11 @@
         "economic_system": "interventionism",
         "trade_policy": "protectionism",
         "taxation": "progressive_tax",
-        "land_reform": "commercialized_agriculture",
+        "land_reform": "tenant_farming",
         "colonization": "colonial_exploitation",
         "policing": "dedicated_police_force",
         "education_system": "mixed_education",
-        "health_system": "private_healthcare",
+        "health_system": "mixed_healthcare",
         "public_expression": "right_of_assembly",
         "labor_rights": "regulatory_bodies",
         "childrens_rights": "child_protection",
@@ -166,6 +166,7 @@
         "oil_refining",
         "physics",
         "public_education",
+        "public_health",
         "small_arms",
         "synthetic_polymers"
     ]

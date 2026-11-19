@@ -21,19 +21,19 @@
     "head_of_government": "José_Luis_Bustamante_y_Rivero_1",
     "laws": {
         "governance_principles": "presidential_republic",
-        "distribution_of_power": "universal_suffrage",
+        "distribution_of_power": "census_suffrage",
         "citizenship": "cultural_exclusion",
         "church_and_state": "religious_tolerance",
         "bureaucracy": "appointed_bureaucrats",
-        "army_model": "professional_army",
+        "army_model": "mass_conscript_army",
         "economic_system": "interventionism",
         "trade_policy": "protectionism",
         "taxation": "progressive_tax",
-        "land_reform": "commercialized_agriculture",
+        "land_reform": "tenant_farming",
         "colonization": "colonial_exploitation",
-        "policing": "dedicated_police_force",
-        "education_system": "private_schools",
-        "health_system": "private_healthcare",
+        "policing": "militarized_police_force",
+        "education_system": "mixed_education",
+        "health_system": "mixed_healthcare",
         "public_expression": "free_speech",
         "labor_rights": "regulatory_bodies",
         "childrens_rights": "child_protection",
@@ -154,7 +154,11 @@
     "literacy": 0.48,
     "technologies": [
         "hydroelectric_power",
+        "mass_conscription",
         "oil_refining",
-        "rotary_drilling"
+        "public_education",
+        "public_health",
+        "rotary_drilling",
+        "small_arms"
     ]
 }

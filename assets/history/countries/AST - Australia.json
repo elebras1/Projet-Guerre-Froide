@@ -21,7 +21,7 @@
     "head_of_government": "Ben_Chifley_1",
     "laws": {
         "governance_principles": "monarchy",
-        "distribution_of_power": "census_suffrage",
+        "distribution_of_power": "universal_suffrage",
         "citizenship": "cultural_exclusion",
         "church_and_state": "religious_tolerance",
         "bureaucracy": "appointed_bureaucrats",
@@ -32,10 +32,10 @@
         "land_reform": "commercialized_agriculture",
         "colonization": "colonial_exploitation",
         "policing": "dedicated_police_force",
-        "education_system": "private_schools",
-        "health_system": "private_healthcare",
+        "education_system": "mixed_education",
+        "health_system": "mixed_healthcare",
         "public_expression": "right_of_assembly",
-        "labor_rights": "regulatory_bodies",
+        "labor_rights": "workers_protection",
         "childrens_rights": "child_protection",
         "rights_of_women": "women_in_workforce",
         "welfare": "wage_subsidies",
@@ -336,9 +336,12 @@
         "coal_power",
         "hydroelectric_power",
         "industrial_mechanization",
+        "labor_movement",
         "mathematics",
         "mining_mechanization",
         "oil_refining",
+        "public_education",
+        "public_health",
         "synthetic_polymers"
     ]
 }

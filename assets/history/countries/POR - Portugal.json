@@ -21,25 +21,25 @@
     "head_of_government": "António_de_Oliveira_Salazar_1",
     "set_country_flag": "colonial_army_tech",
     "laws": {
-        "governance_principles": "presidential_republic",
-        "distribution_of_power": "oligarchy",
+        "governance_principles": "corporate_state",
+        "distribution_of_power": "single_party_state",
         "citizenship": "cultural_exclusion",
         "church_and_state": "religious_tolerance",
         "bureaucracy": "appointed_bureaucrats",
-        "army_model": "professional_army",
+        "army_model": "mass_conscript_army",
         "economic_system": "interventionism",
         "trade_policy": "protectionism",
         "taxation": "flat_tax",
         "land_reform": "commercialized_agriculture",
         "colonization": "colonial_exploitation",
         "policing": "militarized_police_force",
-        "education_system": "private_schools",
-        "health_system": "private_healthcare",
+        "education_system": "mixed_education",
+        "health_system": "charity_hospitals",
         "public_expression": "censorship",
         "labor_rights": "regulatory_bodies",
         "childrens_rights": "child_protection",
         "rights_of_women": "women_in_workforce",
-        "welfare": "poor_laws",
+        "welfare": "wage_subsidies",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
     },
@@ -194,8 +194,11 @@
     "technologies": [
         "chemistry",
         "coal_power",
+        "mass_conscription",
         "mathematics",
         "oil_refining",
+        "public_education",
+        "small_arms",
         "synthetic_polymers"
     ]
 }

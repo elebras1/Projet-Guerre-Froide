@@ -25,7 +25,7 @@
     },
     "laws": {
         "governance_principles": "monarchy",
-        "distribution_of_power": "census_suffrage",
+        "distribution_of_power": "universal_suffrage",
         "citizenship": "cultural_exclusion",
         "church_and_state": "religious_tolerance",
         "bureaucracy": "appointed_bureaucrats",
@@ -36,13 +36,13 @@
         "land_reform": "commercialized_agriculture",
         "colonization": "colonial_exploitation",
         "policing": "dedicated_police_force",
-        "education_system": "private_schools",
-        "health_system": "private_healthcare",
+        "education_system": "mixed_education",
+        "health_system": "public_healthcare",
         "public_expression": "right_of_assembly",
-        "labor_rights": "regulatory_bodies",
+        "labor_rights": "workers_protection",
         "childrens_rights": "child_protection",
         "rights_of_women": "women_in_workforce",
-        "welfare": "wage_subsidies",
+        "welfare": "universal_social_security",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
     },
@@ -98,8 +98,13 @@
     "technologies": [
         "agricultural_mechanization",
         "chemistry",
+        "civil_service",
         "coal_power",
+        "labor_movement",
         "mathematics",
+        "public_education",
+        "public_health",
+        "social_security",
         "synthetic_polymers"
     ]
 }

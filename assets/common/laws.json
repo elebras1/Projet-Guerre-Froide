@@ -483,8 +483,7 @@
         "professional_army": {
           "requirements": [],
           "modifiers": {
-            "military_spending": 0.3,
-            "tax_middle": 0.05
+            "military_spending": 0.3
           },
           "interest_ideologies": {
             "market_liberal_idolg": 1,
@@ -508,8 +507,7 @@
         "mass_conscript_army": {
           "requirements": ["mass_conscription"],
           "modifiers": {
-            "military_spending": 0.5,
-            "tax_poor": 0.1
+            "military_spending": 0.5
           },
           "interest_ideologies": {
             "left_wing_radical_idolg": -1

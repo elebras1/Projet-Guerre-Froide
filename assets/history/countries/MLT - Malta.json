@@ -31,17 +31,19 @@
         "taxation": "progressive_tax",
         "land_reform": "commercialized_agriculture",
         "colonization": "colonial_exploitation",
-        "policing": "dedicated_police_force",
-        "education_system": "private_schools",
-        "health_system": "private_healthcare",
+        "policing": "militarized_police_force",
+        "education_system": "mixed_education",
+        "health_system": "charity_hospitals",
         "public_expression": "right_of_assembly",
         "labor_rights": "regulatory_bodies",
         "childrens_rights": "child_protection",
         "rights_of_women": "women_in_workforce",
-        "welfare": "wage_subsidies",
+        "welfare": "no_social_security",
         "migration": "migration_controls",
         "slavery": "slavery_banned"
     },
     "literacy": 0.58,
-    "technologies": []
+    "technologies": [
+        "public_education"
+    ]
 }
