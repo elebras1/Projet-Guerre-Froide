@@ -16,5 +16,7 @@ public record PopulationTypeJson(
     @JsonAttribute(name = "promote_to") Map<String, Double> promoteTo,
     @JsonAttribute(name = "demote_to") Map<String, Double> demoteTo,
     @JsonAttribute(name = "state_posts") StatePostsJson statePosts,
-    @JsonAttribute(name = "workforce_share") Double workforceShare) {
+    @JsonAttribute(name = "workforce_share") Double workforceShare,
+    @JsonAttribute(name = "wage_earner") Boolean wageEarner,
+    @JsonAttribute(name = "income_tax") Boolean incomeTax) {
 }

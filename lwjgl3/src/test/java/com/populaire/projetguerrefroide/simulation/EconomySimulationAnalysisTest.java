@@ -44,7 +44,8 @@ public class EconomySimulationAnalysisTest {
     private static final Map<String, List<String>> FROZEN_SYSTEMS = Map.of(
         "production", List.of("RGOEmploymentSystem", "RGOProductionSystem", "EconomyBuildingProductionSystem", "EconomyBuildingUtilizationSystem", "EconomyBuildingWorkingCapitalSystem", "ConstructionCompletionSystem"),
         "prices", List.of("GlobalMarketResolveSystem", "CountryLocalPriceSystem"),
-        "factories", List.of("EconomyBuildingProductionSystem", "EconomyBuildingUtilizationSystem", "EconomyBuildingWorkingCapitalSystem", "ConstructionCompletionSystem"));
+        "factories", List.of("EconomyBuildingProductionSystem", "EconomyBuildingUtilizationSystem", "EconomyBuildingWorkingCapitalSystem", "ConstructionCompletionSystem"),
+        "investment", List.of("InvestmentDecisionSystem", "PublicWorksSystem", "RGOMechanizationDemandSystem"));
 
     private static final float NEGATIVE_BALANCE_TOLERANCE = 1e-6f;
     private static final double MONEY_DRIFT_TOLERANCE = 1e-3;
@@ -225,7 +226,7 @@ public class EconomySimulationAnalysisTest {
                 acquired++;
             }
         }
-        assertEquals(28, acquired);
+        assertEquals(31, acquired);
         assertEquals(0.97f, this.ecsWorld.obtainEntityView(usaId).<CountryDevelopmentView>getView(CountryDevelopment.class).literacy(), 1e-6f);
 
         long westBerlinId = this.ecsWorld.lookup("WBR");

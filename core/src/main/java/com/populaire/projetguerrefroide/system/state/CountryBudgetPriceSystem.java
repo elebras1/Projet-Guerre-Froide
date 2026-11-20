@@ -27,20 +27,21 @@ public class CountryBudgetPriceSystem {
         GlobalMarketView globalMarketData = globalMarket.getMutView(GlobalMarket.class);
 
         boolean[] localGoods = this.ecsConstants.localGoods();
+        int[] tariffCategories = this.ecsConstants.goodTariffCategories();
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         Field<CountryTradePolicy> countryTradePolicyField = iter.field(CountryTradePolicy.class, 1);
         for (int i = 0; i < iter.count(); i++) {
             CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
             CountryTradePolicyView countryTradePolicy = countryTradePolicyField.getMutView(i);
 
-            float maximumTariff = 1f + Math.max(0f, countryTradePolicy.tariffRate());
             for (int g = 0; g < countryMarket.goodBudgetPricesLength(); g++) {
                 float shortage = 1f - countryMarket.goodDemandSatisfactionRatios(g);
                 if (localGoods[g]) {
                     countryMarket.goodBudgetPrices(g, countryMarket.goodPrices(g) * (1f + SHORTAGE_PRICE_PREMIUM * shortage));
                     continue;
                 }
-                countryMarket.goodBudgetPrices(g, globalMarketData.goodPrices(g) * (1f + SHORTAGE_PRICE_PREMIUM * shortage) * maximumTariff);
+                float tariff = countryTradePolicy.categoryTariffRates(tariffCategories[g]);
+                countryMarket.goodBudgetPrices(g, globalMarketData.goodPrices(g) * (1f + SHORTAGE_PRICE_PREMIUM * shortage) * (1f + tariff));
             }
         }
     }

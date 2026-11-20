@@ -39,6 +39,7 @@ public class PopulationIncomeDistributionSystem {
         int religiousIndex = globalPopulationType.religiousPopTypeIndex();
         boolean donor = religiousIndex >= 0 && typeIdx != religiousIndex;
         float baseWorkforceShare = globalPopulationType.workforceShareByPopType(typeIdx);
+        boolean incomeTaxed = !this.ecsConstants.incomeTaxExemptPopTypes()[typeIdx];
 
         long regionInstanceId = 0;
         RegionInstanceView regionInstance = null;
@@ -134,10 +135,12 @@ public class PopulationIncomeDistributionSystem {
             }
 
             float taxRate = 0f;
-            switch (strata) {
-                case POOR_STRATA -> taxRate = countryTaxPolicy.poorTaxRate();
-                case MIDDLE_STRATA -> taxRate = countryTaxPolicy.middleTaxRate();
-                case RICH_STRATA -> taxRate = countryTaxPolicy.richTaxRate();
+            if (incomeTaxed) {
+                switch (strata) {
+                    case POOR_STRATA -> taxRate = countryTaxPolicy.poorTaxRate();
+                    case MIDDLE_STRATA -> taxRate = countryTaxPolicy.middleTaxRate();
+                    case RICH_STRATA -> taxRate = countryTaxPolicy.richTaxRate();
+                }
             }
             float tax = grossIncome * taxRate * regionInstance.taxCollectionShare();
             float netIncome = grossIncome - tax;

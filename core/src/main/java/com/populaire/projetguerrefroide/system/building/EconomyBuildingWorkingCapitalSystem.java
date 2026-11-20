@@ -82,6 +82,7 @@ public class EconomyBuildingWorkingCapitalSystem {
                     BankUtils.draw(countryBank, loan);
                     countryBank.loans(owner, countryBank.loans(owner) + loan);
                     countryBank.borrowed(owner, countryBank.borrowed(owner) + loan);
+                    countryBank.workingCapitalBorrowed(owner, countryBank.workingCapitalBorrowed(owner) + loan);
                     countryInvestment.funds(owner, countryInvestment.funds(owner) + loan);
                 }
             }

@@ -49,6 +49,10 @@ public class StateBudgetUtils {
         return pension * (countryMarket.lifeCostsByPopType(popTypeIndex) + countryMarket.everydayCostsByPopType(popTypeIndex));
     }
 
+    public static float pensionShare(CountryBudgetPolicyView budgetPolicy, boolean wageEarner) {
+        return wageEarner ? budgetPolicy.pensionRate() : budgetPolicy.basicPensionRate();
+    }
+
     public static float pensionMortality(float pensionCoverage) {
         return (1f + PENSION_MORTALITY_FACTOR) / (1f + PENSION_MORTALITY_FACTOR * pensionCoverage / PENSION_REFERENCE_COVERAGE);
     }
@@ -78,7 +82,7 @@ public class StateBudgetUtils {
         return cost;
     }
 
-    public static double dailyNeeds(int[] incomeTypes, boolean[] assistedTypes, CountryMarketView countryMarket, CountryDemographicsView countryDemographics,
+    public static double dailyNeeds(int[] incomeTypes, boolean[] assistedTypes, boolean[] wageEarnerTypes, CountryMarketView countryMarket, CountryDemographicsView countryDemographics,
                                     CountryBudgetPolicyView budgetPolicy, CountryEducationPolicyView educationPolicy, int statePostIndex,
                                     float[] baseWorkforceShares, float workforceShareModifier) {
         float socialSlider = slider(budgetPolicy.socialSpendingRate());
@@ -89,7 +93,7 @@ public class StateBudgetUtils {
             } else {
                 needs += scaledWageBase(countryDemographics, p, statePostIndex, incomeTypes[p]) * wageRate(countryMarket, p, wageSlider(incomeTypes[p], budgetPolicy, educationPolicy));
             }
-            needs += (double) countryDemographics.seniorsByPopType(p) / NEEDS_SCALING_FACTOR * pensionRate(countryMarket, p, budgetPolicy.pensionRate());
+            needs += (double) countryDemographics.seniorsByPopType(p) / NEEDS_SCALING_FACTOR * pensionRate(countryMarket, p, pensionShare(budgetPolicy, wageEarnerTypes[p]));
         }
         return needs;
     }

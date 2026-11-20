@@ -25,5 +25,6 @@ public record CountryBank(
     double stateDeposit,
     double centralBankAdvances,
     @FixedArray(length = OWNER_COUNT) double[] ownerIncome,
-    @FixedArray(length = OWNER_COUNT) double[] ownerIncomeTrend) {
+    @FixedArray(length = OWNER_COUNT) double[] ownerIncomeTrend,
+    @FixedArray(length = OWNER_COUNT) double[] workingCapitalBorrowed) {
 }

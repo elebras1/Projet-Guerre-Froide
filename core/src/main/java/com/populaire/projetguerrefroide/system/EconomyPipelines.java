@@ -301,6 +301,7 @@ public class EconomyPipelines {
         this.artisanTreasuryInitializationSystem = new ArtisanTreasuryInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInitTreasury);
         this.economyBuildingInputStockInitializationSystem = new EconomyBuildingInputStockInitializationSystem(ecsWorld, phaseInitTreasury);
         this.rgoTreasuryInitializationSystem = new RGOTreasuryInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInitTreasury);
+        new PrivateDebtInitializationSystem(ecsWorld, phaseInitTreasury);
         this.countryTreasuryInitializationSystem = new CountryTreasuryInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInitBudget);
         this.populationConsumptionSystem = new PopulationConsumptionSystem(ecsWorld, simulationContext.getEcsConstants(), phaseConsumption);
         this.countryPopulationDemandSystem = new CountryPopulationDemandSystem(ecsWorld, simulationContext.getEcsConstants(), phaseConsumption);
@@ -355,11 +356,11 @@ public class EconomyPipelines {
         this.rgoProfitSharingSystem = new RGOProfitSharingSystem(ecsWorld, simulationContext.getEcsConstants(), phaseIncome);
         this.economyBuildingProfitSharingSystem = new EconomyBuildingProfitSharingSystem(ecsWorld, simulationContext.getEcsConstants(), phaseIncome);
         this.artisanIncomeSystem = new ArtisanIncomeSystem(ecsWorld, simulationContext.getEcsConstants(), phaseIncome);
-        this.countryIncomeDistributionSystem = new CountryIncomeDistributionSystem(ecsWorld, phaseIncome);
+        this.countryIncomeDistributionSystem = new CountryIncomeDistributionSystem(ecsWorld, simulationContext.getEcsConstants(), phaseIncome);
         this.populationIncomeDistributionSystem = new PopulationIncomeDistributionSystem(ecsWorld, simulationContext.getEcsConstants(), phaseIncome);
         this.religiousDonationSystem = new ReligiousDonationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseIncome);
         this.regionIncomeResidualSystem = new RegionIncomeResidualSystem(ecsWorld, phaseIncome);
-        this.populationSavingsInitializationSystem = new PopulationSavingsInitializationSystem(ecsWorld, phaseInitSavings);
+        this.populationSavingsInitializationSystem = new PopulationSavingsInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInitSavings);
         this.provinceDemographySystem = new ProvinceDemographySystem(ecsWorld, simulationContext.getEcsConstants(), phasePromotion);
         this.populationGrowthSystem = new PopulationGrowthSystem(ecsWorld, simulationContext.getEcsConstants(), phasePromotion);
         this.populationApplicationSystem = new PopulationApplicationSystem(ecsWorld, simulationContext.getEcsConstants(), phasePromotion);

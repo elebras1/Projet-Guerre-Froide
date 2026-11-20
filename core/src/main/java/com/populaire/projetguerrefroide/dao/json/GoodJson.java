@@ -9,5 +9,6 @@ public record GoodJson(
     Double value,
     @JsonAttribute(name = "stock_decay") Double stockDecay,
     Boolean tradable,
+    @JsonAttribute(name = "tariff_category", mandatory = true) String tariffCategory,
     @JsonAttribute(mandatory = true) int[] color) {
 }

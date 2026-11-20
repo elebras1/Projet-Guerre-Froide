@@ -45,23 +45,29 @@ public class BankSystem {
                 }
                 double interest = loans * countryBank.lendingRate() / DAYS_PER_YEAR;
                 double funds = Math.max(0.0, countryInvestment.funds(o));
-                if (funds < interest) {
+                if (funds < interest * (1.0 - 1e-4)) {
+                    double writeOff = loans * (interest - funds) / interest;
                     countryInvestment.funds(o, countryInvestment.funds(o) - funds);
                     countryBank.interestPool(countryBank.interestPool() + funds);
                     countryBank.interestPaid(o, countryBank.interestPaid(o) + funds);
-                    countryBank.losses(countryBank.losses() + loans);
-                    countryBank.writtenOff(o, countryBank.writtenOff(o) + loans);
+                    countryBank.losses(countryBank.losses() + writeOff);
+                    countryBank.writtenOff(o, countryBank.writtenOff(o) + writeOff);
                     countryBank.bankruptcies(countryBank.bankruptcies() + 1);
-                    countryBank.loans(o, 0.0);
+                    countryBank.loans(o, loans - writeOff);
                     continue;
                 }
-                double principalPaid = Math.min(loans / BANK_LOAN_TERM_DAYS, funds - interest);
-                countryInvestment.funds(o, countryInvestment.funds(o) - interest - principalPaid);
-                countryBank.reserves(countryBank.reserves() + principalPaid);
-                countryBank.interestPool(countryBank.interestPool() + interest);
-                countryBank.interestPaid(o, countryBank.interestPaid(o) + interest);
-                countryBank.repaid(o, countryBank.repaid(o) + principalPaid);
-                countryBank.loans(o, loans - principalPaid);
+                double paid = Math.min(interest, funds);
+                countryInvestment.funds(o, countryInvestment.funds(o) - paid);
+                countryBank.interestPool(countryBank.interestPool() + paid);
+                countryBank.interestPaid(o, countryBank.interestPaid(o) + paid);
+                double spare = countryInvestment.funds(o) - countryInvestment.committed(o);
+                double principalPaid = Math.min(loans, Math.max(0.0, spare));
+                if (principalPaid > 0.0) {
+                    countryInvestment.funds(o, countryInvestment.funds(o) - principalPaid);
+                    countryBank.reserves(countryBank.reserves() + principalPaid);
+                    countryBank.repaid(o, countryBank.repaid(o) + principalPaid);
+                    countryBank.loans(o, loans - principalPaid);
+                }
             }
 
             double advances = countryBank.centralBankAdvances();
@@ -91,7 +97,7 @@ public class BankSystem {
             countryBank.lendingRate(lendingRate);
             for (int o = 0; o < OWNER_COUNT; o++) {
                 double owed = o == STATE_OWNER ? 0.0 : countryBank.loans(o);
-                countryBank.debtServiceDue(o, owed * lendingRate / DAYS_PER_YEAR + owed / BANK_LOAN_TERM_DAYS);
+                countryBank.debtServiceDue(o, owed * lendingRate / DAYS_PER_YEAR);
                 if (o != STATE_OWNER) {
                     double income = countryBank.ownerIncome(o);
                     double trend = countryBank.ownerIncomeTrend(o);

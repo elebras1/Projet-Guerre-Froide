@@ -230,6 +230,7 @@ public final class TechnologyEffectUtils {
         budgetPolicy.clergyFundingRate(Math.max(0f, budgetPolicy.clergyFundingRate()));
         budgetPolicy.publicHealthRate(Math.clamp(budgetPolicy.publicHealthRate(), 0f, 1f));
         budgetPolicy.pensionRate(Math.max(0f, budgetPolicy.pensionRate()));
+        budgetPolicy.basicPensionRate(Math.max(0f, budgetPolicy.basicPensionRate()));
         CountryPopulationPolicyMutView populationPolicy = country.getMutView(CountryPopulationPolicy.class);
         populationPolicy.workforceShareModifier(Math.max(-1f, populationPolicy.workforceShareModifier()));
         CountryProductionPolicyMutView productionPolicy = country.getMutView(CountryProductionPolicy.class);

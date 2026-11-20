@@ -637,7 +637,7 @@
             "aristocrat_profit_share": 0.0,
             "worker_profit_share": 0.2,
             "state_profit_share": 0.8,
-            "administered_wages": 1
+            "administered_wages": 2.4
           },
           "interest_ideologies": {
             "market_liberal_idolg": -1,
@@ -656,6 +656,7 @@
         "protectionism": {
           "requirements": [],
           "modifiers": {
+            "tariff_floor": 0.02,
             "tariff_rate": 0.25
           },
           "interest_ideologies": {
@@ -672,7 +673,8 @@
         "free_trade": {
           "requirements": [],
           "modifiers": {
-            "tariff_rate": -0.25,
+            "tariff_floor": 0,
+            "tariff_rate": 0.05,
             "migration_pull": 0.05
           },
           "interest_ideologies": {
@@ -687,7 +689,8 @@
         "isolationism": {
           "requirements": [],
           "modifiers": {
-            "tariff_rate": 0.5,
+            "tariff_floor": 0.15,
+            "tariff_rate": 0.50,
             "migration_pull": -0.2,
             "migration_push": 0.1
           },
@@ -701,7 +704,8 @@
         "mercantilism": {
           "requirements": [],
           "modifiers": {
-            "tariff_rate": 0.1
+            "tariff_floor": 0.1,
+            "tariff_rate": 0.2
           },
           "interest_ideologies": {
             "paternal_auto_idolg": 1,
@@ -1401,6 +1405,7 @@
           "modifiers": {
             "social_spending": 0.4,
             "pension": 0.5,
+            "basic_pension": 0.5,
             "min_wage_factor": 0.2,
             "social_mobility": 0.15,
             "political_radicalism": -0.15,

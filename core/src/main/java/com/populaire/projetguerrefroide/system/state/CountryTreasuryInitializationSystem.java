@@ -32,6 +32,7 @@ public class CountryTreasuryInitializationSystem {
     private void initialize(Iter iter) {
         int[] incomeTypes = this.ecsConstants.incomeTypes();
         boolean[] assistedTypes = this.ecsConstants.assistedTypes();
+        boolean[] wageEarnerTypes = this.ecsConstants.wageEarnerPopTypes();
         int statePostIndex = this.ecsConstants.statePostIndex();
         float[] baseWorkforceShares = this.ecsConstants.baseWorkforceShares();
         GlobalStateConsumptionView stateConsumption = StateConsumptionUtils.globalStateConsumption(iter.stage(), this.ecsConstants);
@@ -52,7 +53,7 @@ public class CountryTreasuryInitializationSystem {
             CountryPopulationPolicyView countryPopulationPolicy = countryPopulationPolicyField.getMutView(i);
             CountryMilitaryView countryMilitary = countryMilitaryField.getMutView(i);
             CountryMaintenanceView countryMaintenance = countryMaintenanceField.getMutView(i);
-            double needs = dailyNeeds(incomeTypes, assistedTypes, countryMarket, countryDemographics, countryBudgetPolicy, countryEducationPolicy, statePostIndex,
+            double needs = dailyNeeds(incomeTypes, assistedTypes, wageEarnerTypes, countryMarket, countryDemographics, countryBudgetPolicy, countryEducationPolicy, statePostIndex,
                 baseWorkforceShares, countryPopulationPolicy.workforceShareModifier())
                 + StateConsumptionUtils.dailyCost(stateConsumption, countryMarket,
                     StateConsumptionUtils.administrationUnits(countryDemographics, statePostIndex, countryBudgetPolicy),

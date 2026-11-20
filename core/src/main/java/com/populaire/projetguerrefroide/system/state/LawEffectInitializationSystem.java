@@ -81,6 +81,7 @@ public class LawEffectInitializationSystem {
                             case RESOURCE_TAX -> taxPolicy.resourceTaxRate(taxPolicy.resourceTaxRate() + modifierValue);
                             case PROFIT_TAX -> taxPolicy.profitTaxRate(taxPolicy.profitTaxRate() + modifierValue);
                             case TARIFF_RATE -> tradePolicy.tariffRate(tradePolicy.tariffRate() + modifierValue);
+                            case TARIFF_FLOOR -> tradePolicy.tariffFloor(tradePolicy.tariffFloor() + modifierValue);
                             case MILITARY_SPENDING -> budgetPolicy.militarySpendingRate(budgetPolicy.militarySpendingRate() + modifierValue);
                             case EDUCATION_SPENDING -> educationPolicy.educationSpendingRate(educationPolicy.educationSpendingRate() + modifierValue);
                             case ADMINISTRATION_SPENDING -> budgetPolicy.administrationSpendingRate(budgetPolicy.administrationSpendingRate() + modifierValue);
@@ -116,6 +117,7 @@ public class LawEffectInitializationSystem {
                             case PUBLIC_HEALTH -> budgetPolicy.publicHealthRate(budgetPolicy.publicHealthRate() + modifierValue);
                             case PUBLIC_WORKS -> productionPolicy.publicWorksModifier(productionPolicy.publicWorksModifier() + modifierValue);
                             case PENSION -> budgetPolicy.pensionRate(budgetPolicy.pensionRate() + modifierValue);
+                            case BASIC_PENSION -> budgetPolicy.basicPensionRate(budgetPolicy.basicPensionRate() + modifierValue);
                         }
                     }
                 }
@@ -139,6 +141,7 @@ public class LawEffectInitializationSystem {
                             case RESOURCE_TAX -> taxPolicy.resourceTaxRate(overrideValue);
                             case PROFIT_TAX -> taxPolicy.profitTaxRate(overrideValue);
                             case TARIFF_RATE -> tradePolicy.tariffRate(overrideValue);
+                            case TARIFF_FLOOR -> tradePolicy.tariffFloor(overrideValue);
                             case MILITARY_SPENDING -> budgetPolicy.militarySpendingRate(overrideValue);
                             case EDUCATION_SPENDING -> educationPolicy.educationSpendingRate(overrideValue);
                             case ADMINISTRATION_SPENDING -> budgetPolicy.administrationSpendingRate(overrideValue);
@@ -158,7 +161,7 @@ public class LawEffectInitializationSystem {
                             case MIGRATION_PULL -> populationPolicy.migrationPull(overrideValue);
                             case POP_SPENDING -> budgetPolicy.popSpending(overrideValue);
                             case SLAVERY_ALLOWED -> laborPolicy.slaveryAllowed(overrideValue > 0);
-                            case ADMINISTERED_WAGES -> laborPolicy.administeredWages(overrideValue > 0);
+                            case ADMINISTERED_WAGES -> laborPolicy.administeredWages(Math.max(0f, overrideValue));
                             case POLITICAL_CONSCIOUSNESS -> politicalPolicy.politicalConsciousness(overrideValue);
                             case POLITICAL_RADICALISM -> politicalPolicy.politicalRadicalism(overrideValue);
                             case SUPPRESSION -> politicalPolicy.suppression(overrideValue);
@@ -176,6 +179,7 @@ public class LawEffectInitializationSystem {
                             case PUBLIC_HEALTH -> budgetPolicy.publicHealthRate(overrideValue);
                             case PUBLIC_WORKS -> productionPolicy.publicWorksModifier(overrideValue);
                             case PENSION -> budgetPolicy.pensionRate(overrideValue);
+                            case BASIC_PENSION -> budgetPolicy.basicPensionRate(overrideValue);
                         }
                     }
                 }
@@ -186,6 +190,7 @@ public class LawEffectInitializationSystem {
             taxPolicy.richTaxRate(Math.max(0f, taxPolicy.richTaxRate()));
             taxPolicy.resourceTaxRate(Math.clamp(taxPolicy.resourceTaxRate(), 0f, 1f));
             taxPolicy.profitTaxRate(Math.clamp(taxPolicy.profitTaxRate(), 0f, 1f));
+            tradePolicy.tariffFloor(Math.max(0f, tradePolicy.tariffFloor()));
             profitDistributionPolicy.capitalistProfitShareRate(Math.max(0f, profitDistributionPolicy.capitalistProfitShareRate()));
             profitDistributionPolicy.workerProfitShareRate(Math.max(0f, profitDistributionPolicy.workerProfitShareRate()));
             profitDistributionPolicy.aristocratProfitShareRate(Math.max(0f, profitDistributionPolicy.aristocratProfitShareRate()));
@@ -197,6 +202,7 @@ public class LawEffectInitializationSystem {
             budgetPolicy.publicHealthRate(Math.clamp(budgetPolicy.publicHealthRate(), 0f, 1f));
             productionPolicy.publicWorksModifier(Math.max(-1f, productionPolicy.publicWorksModifier()));
             budgetPolicy.pensionRate(Math.max(0f, budgetPolicy.pensionRate()));
+            budgetPolicy.basicPensionRate(Math.max(0f, budgetPolicy.basicPensionRate()));
         }
     }
 }

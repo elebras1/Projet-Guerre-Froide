@@ -40,7 +40,6 @@ public record CountryMarket(
     float privateInvestmentAmount,
     @FixedArray(length = GOOD_COUNT) double[] goodRevenues,
     float productionValue,
-    float effectiveTariffRate,
     float tariffRevenue,
     double taxRevenue,
     double enterpriseSupport,

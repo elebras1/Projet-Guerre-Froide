@@ -68,6 +68,8 @@ public class EcsConstants {
     public static final String ARISTOCRAT_TAG = "AristocratTag";
     public static final String RURAL_TAG = "RuralTag";
     public static final String EMPLOYEE_TAG = "EmployeeTag";
+    public static final String WAGE_EARNER_TAG = "WageEarnerTag";
+    public static final String INCOME_TAX_EXEMPT_TAG = "IncomeTaxExemptTag";
     public static final String RELIGIOUS_TAG = "ReligiousTag";
     public static final String SEA_FORCE_TAG = "SeaForceTypeTag";
     public static final String LAND_FORCE_TAG = "LandForceTypeTag";
@@ -109,6 +111,8 @@ public class EcsConstants {
     private final long aristocratTag;
     private final long ruralTag;
     private final long employeeTag;
+    private final long wageEarnerTag;
+    private final long incomeTaxExemptTag;
     private final long religiousTag;
     private final long seaForceTag;
     private final long landForceTag;
@@ -118,6 +122,8 @@ public class EcsConstants {
     private final boolean[] assistedTypes;
     private final boolean[] ruralPopTypes;
     private final boolean[] employeePopTypes;
+    private final boolean[] wageEarnerPopTypes;
+    private final boolean[] incomeTaxExemptPopTypes;
     private final float[] goodCosts;
     private final float[] civilianGoodCosts;
     private final long[] technologyIds;
@@ -146,6 +152,7 @@ public class EcsConstants {
     private int technologyCount;
     private final float[] goodStockDecays;
     private final boolean[] localGoods;
+    private final int[] goodTariffCategories;
     private long globalMarket;
     private long globalPopulationType;
     private long globalGood;
@@ -187,6 +194,8 @@ public class EcsConstants {
         this.aristocratTag = ecsWorld.entity(ARISTOCRAT_TAG);
         this.ruralTag = ecsWorld.entity(RURAL_TAG);
         this.employeeTag = ecsWorld.entity(EMPLOYEE_TAG);
+        this.wageEarnerTag = ecsWorld.entity(WAGE_EARNER_TAG);
+        this.incomeTaxExemptTag = ecsWorld.entity(INCOME_TAX_EXEMPT_TAG);
         this.religiousTag = ecsWorld.entity(RELIGIOUS_TAG);
         this.seaForceTag = ecsWorld.entity(SEA_FORCE_TAG);
         this.landForceTag = ecsWorld.entity(LAND_FORCE_TAG);
@@ -196,6 +205,8 @@ public class EcsConstants {
         this.assistedTypes = new boolean[POP_TYPE_COUNT];
         this.ruralPopTypes = new boolean[POP_TYPE_COUNT];
         this.employeePopTypes = new boolean[POP_TYPE_COUNT];
+        this.wageEarnerPopTypes = new boolean[POP_TYPE_COUNT];
+        this.incomeTaxExemptPopTypes = new boolean[POP_TYPE_COUNT];
         this.goodCosts = new float[GOOD_COUNT];
         this.civilianGoodCosts = new float[GOOD_COUNT];
         this.technologyIds = new long[MAX_TECHNOLOGIES];
@@ -216,6 +227,7 @@ public class EcsConstants {
         this.rgoMechanization = ecsWorld.entity("RgoMechanization");
         this.goodStockDecays = new float[GOOD_COUNT];
         this.localGoods = new boolean[GOOD_COUNT];
+        this.goodTariffCategories = new int[GOOD_COUNT];
         this.declareTypeInheritance(ecsWorld);
     }
 
@@ -238,6 +250,8 @@ public class EcsConstants {
             this.assistedTypes[p] = StateBudgetUtils.assisted(populationType.strata(), populationType.incomeType());
             this.ruralPopTypes[p] = populationTypeEntity.has(this.ruralTag);
             this.employeePopTypes[p] = populationTypeEntity.has(this.employeeTag);
+            this.wageEarnerPopTypes[p] = populationTypeEntity.has(this.wageEarnerTag);
+            this.incomeTaxExemptPopTypes[p] = populationTypeEntity.has(this.incomeTaxExemptTag);
         }
         GlobalGoodView globalGoodData = ecsWorld.obtainEntityView(this.globalGood).getView(GlobalGood.class);
         for (int g = 0; g < GOOD_COUNT; g++) {
@@ -246,6 +260,7 @@ public class EcsConstants {
             this.goodCosts[g] = good.cost();
             this.goodStockDecays[g] = good.stockDecay();
             this.localGoods[g] = goodEntity.has(this.localGoodTag);
+            this.goodTariffCategories[g] = good.tariffCategory();
             this.civilianGoodCosts[g] = goodEntity.has(this.militaryGoodTag) ? 0f : good.cost();
         }
         this.resolveTechnologies(ecsWorld);
@@ -490,6 +505,16 @@ public class EcsConstants {
         return this.employeePopTypes;
     }
 
+    public boolean[] wageEarnerPopTypes() {
+        this.requireGlobals();
+        return this.wageEarnerPopTypes;
+    }
+
+    public boolean[] incomeTaxExemptPopTypes() {
+        this.requireGlobals();
+        return this.incomeTaxExemptPopTypes;
+    }
+
     public float[] civilianGoodCosts() {
         this.requireGlobals();
         return this.civilianGoodCosts;
@@ -607,6 +632,11 @@ public class EcsConstants {
     public boolean[] localGoods() {
         this.requireGlobals();
         return this.localGoods;
+    }
+
+    public int[] goodTariffCategories() {
+        this.requireGlobals();
+        return this.goodTariffCategories;
     }
 
     private void declareTypeInheritance(World ecsWorld) {
@@ -733,6 +763,14 @@ public class EcsConstants {
 
     public long employeeTag() {
         return this.employeeTag;
+    }
+
+    public long wageEarnerTag() {
+        return this.wageEarnerTag;
+    }
+
+    public long incomeTaxExemptTag() {
+        return this.incomeTaxExemptTag;
     }
 
     public long religiousTag() {

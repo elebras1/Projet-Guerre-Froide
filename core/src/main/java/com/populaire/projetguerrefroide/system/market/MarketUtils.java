@@ -6,8 +6,16 @@ import com.populaire.projetguerrefroide.component.GlobalMarketView;
 
 import static com.populaire.projetguerrefroide.simulation.Constants.RGO_STOCK_ADJUSTMENT_DAYS;
 import static com.populaire.projetguerrefroide.simulation.Constants.STOCK_TARGET_DAYS;
+import static com.populaire.projetguerrefroide.simulation.Constants.TARIFF_RAW;
 
 public class MarketUtils {
+
+    public static float tariffRate(float floor, float legalRate, int category, float importShare) {
+        if (category == TARIFF_RAW) {
+            return floor;
+        }
+        return floor + Math.max(0f, legalRate - floor) * (1f - Math.clamp(importShare, 0f, 1f));
+    }
 
     public static float countryClearingGap(CountryMarketView countryMarket, int goodIndex) {
         float production = countryMarket.goodProducedAmounts(goodIndex);

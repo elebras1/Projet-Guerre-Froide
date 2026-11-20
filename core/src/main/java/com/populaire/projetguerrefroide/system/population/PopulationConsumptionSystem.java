@@ -50,7 +50,8 @@ public class PopulationConsumptionSystem {
             float neededLife = marketLifeShare * countryMarket.lifeBudgetCostsByPopType(popTypeIndex) * scaledAmount;
             float everydayBasket = countryMarket.everydayBudgetCostsByPopType(popTypeIndex) * scaledAmount;
             float neededLuxury = countryMarket.luxuryBudgetCostsByPopType(popTypeIndex) * scaledAmount;
-            float factor = needsFactor(pop.incomeTrend() * scaledAmount, neededLife, everydayBasket + MAXIMUM_LUXURY_BASKETS * neededLuxury);
+            float wealthSpending = HOUSEHOLD_WEALTH_SPENDING_RATE / DAYS_PER_YEAR * pop.deposit();
+            float factor = needsFactor(pop.incomeTrend() * scaledAmount, wealthSpending, neededLife, everydayBasket + MAXIMUM_LUXURY_BASKETS * neededLuxury);
             float neededEveryday = everydayBasket * factor;
             float luxuryBaskets = MAXIMUM_LUXURY_BASKETS * factor;
             float shortfall = neededLife + neededEveryday + luxuryBaskets * neededLuxury - budget;
@@ -86,10 +87,11 @@ public class PopulationConsumptionSystem {
         }
     }
 
-    static float needsFactor(float income, float neededLife, float growingNeeds) {
+    static float needsFactor(float income, float wealthSpending, float neededLife, float growingNeeds) {
         if (growingNeeds <= 0f) {
             return 1f;
         }
-        return Math.max(1f, ((1f - HOUSEHOLD_SAVING_SHARE) * income - neededLife) / growingNeeds);
+        float incomeSpending = Math.max(neededLife + growingNeeds, (1f - HOUSEHOLD_SAVING_SHARE) * income);
+        return (incomeSpending + wealthSpending - neededLife) / growingNeeds;
     }
 }

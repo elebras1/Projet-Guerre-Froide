@@ -133,19 +133,19 @@ public class EconomyBuildingUtils {
     }
 
     public static float wagePerUnit(CountryMarketView countryMarket, RegionInstanceView regionInstance, int popTypeIndex, float minWageFactor) {
-        return wagePerUnit(countryMarket, regionInstance, popTypeIndex, minWageFactor, false);
+        return wagePerUnit(countryMarket, regionInstance, popTypeIndex, minWageFactor, 0f);
     }
 
-    public static float wagePerUnit(CountryMarketView countryMarket, RegionInstanceView regionInstance, int popTypeIndex, float minWageFactor, boolean administered) {
+    public static float wagePerUnit(CountryMarketView countryMarket, RegionInstanceView regionInstance, int popTypeIndex, float minWageFactor, float administeredScale) {
         float minimumWage = (countryMarket.lifeCostsByPopType(popTypeIndex) + 0.2f * countryMarket.everydayCostsByPopType(popTypeIndex)) * (1f + minWageFactor);
-        return administered ? minimumWage : minimumWage * (1f + regionInstance.wagePremiumByPopType(popTypeIndex));
+        return administeredScale > 0f ? minimumWage * administeredScale : minimumWage * (1f + regionInstance.wagePremiumByPopType(popTypeIndex));
     }
 
-    public static boolean administeredWage(EconomyBuildingView economyBuilding, CountryLaborPolicyView laborPolicy, long stateOwnerTag) {
-        return laborPolicy.administeredWages() && economyBuilding.ownerTagId() == stateOwnerTag;
+    public static float administeredWage(EconomyBuildingView economyBuilding, CountryLaborPolicyView laborPolicy, long stateOwnerTag) {
+        return economyBuilding.ownerTagId() == stateOwnerTag ? laborPolicy.administeredWages() : 0f;
     }
 
-    public static float wageBill(CountryMarketView countryMarket, RegionInstanceView regionInstance, EconomyBuildingTypeView buildingType, float minWageFactor, boolean administered, float primaryWorkers, float secondaryWorkers) {
+    public static float wageBill(CountryMarketView countryMarket, RegionInstanceView regionInstance, EconomyBuildingTypeView buildingType, float minWageFactor, float administered, float primaryWorkers, float secondaryWorkers) {
         return (wagePerUnit(countryMarket, regionInstance, buildingType.primaryWorkerPopTypeIndex(), minWageFactor, administered) * primaryWorkers
             + wagePerUnit(countryMarket, regionInstance, buildingType.secondaryWorkerPopTypeIndex(), minWageFactor, administered) * secondaryWorkers) / NEEDS_SCALING_FACTOR;
     }

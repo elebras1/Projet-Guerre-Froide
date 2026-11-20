@@ -15,7 +15,6 @@ public record CountryBudget(
     double investableSurplus,
     double revenueTrend,
     float spendingRatio,
-    float subsidyAllowance,
     float wagesBudget,
     float socialBudget,
     float stateConsumptionBudget,

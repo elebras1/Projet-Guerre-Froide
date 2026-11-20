@@ -21,7 +21,6 @@ public class CountryBudgetSystem {
             .with(CountryDemographics.class)
             .with(CountryBudgetPolicy.class)
             .with(CountryEducationPolicy.class)
-            .with(CountryTradePolicy.class)
             .with(CountryBudget.class)
             .with(CountryBank.class)
             .with(CountryInvestment.class)
@@ -35,9 +34,9 @@ public class CountryBudgetSystem {
     private void budget(Iter iter) {
         int[] incomeTypes = this.ecsConstants.incomeTypes();
         boolean[] assistedTypes = this.ecsConstants.assistedTypes();
+        boolean[] wageEarnerTypes = this.ecsConstants.wageEarnerPopTypes();
         int statePostIndex = this.ecsConstants.statePostIndex();
         float[] baseWorkforceShares = this.ecsConstants.baseWorkforceShares();
-        GlobalMarketView globalMarket = iter.stage().obtainEntityView(this.ecsConstants.globalMarket()).getMutView(GlobalMarket.class);
         int day = iter.stage().obtainEntityView(this.ecsConstants.economyCalendar()).<EconomyCalendarView>getView(EconomyCalendar.class).day();
         double trendWeight = Math.min(DAYS_PER_YEAR, day + 1.0);
 
@@ -45,20 +44,18 @@ public class CountryBudgetSystem {
         Field<CountryDemographics> countryDemographicsField = iter.field(CountryDemographics.class, 1);
         Field<CountryBudgetPolicy> countryBudgetPolicyField = iter.field(CountryBudgetPolicy.class, 2);
         Field<CountryEducationPolicy> countryEducationPolicyField = iter.field(CountryEducationPolicy.class, 3);
-        Field<CountryTradePolicy> countryTradePolicyField = iter.field(CountryTradePolicy.class, 4);
-        Field<CountryBudget> countryBudgetField = iter.field(CountryBudget.class, 5);
-        Field<CountryBank> countryBankField = iter.field(CountryBank.class, 6);
-        Field<CountryInvestment> countryInvestmentField = iter.field(CountryInvestment.class, 7);
-        Field<CountryPopulationPolicy> countryPopulationPolicyField = iter.field(CountryPopulationPolicy.class, 8);
-        Field<CountryMilitary> countryMilitaryField = iter.field(CountryMilitary.class, 9);
-        Field<CountryMaintenance> countryMaintenanceField = iter.field(CountryMaintenance.class, 10);
+        Field<CountryBudget> countryBudgetField = iter.field(CountryBudget.class, 4);
+        Field<CountryBank> countryBankField = iter.field(CountryBank.class, 5);
+        Field<CountryInvestment> countryInvestmentField = iter.field(CountryInvestment.class, 6);
+        Field<CountryPopulationPolicy> countryPopulationPolicyField = iter.field(CountryPopulationPolicy.class, 7);
+        Field<CountryMilitary> countryMilitaryField = iter.field(CountryMilitary.class, 8);
+        Field<CountryMaintenance> countryMaintenanceField = iter.field(CountryMaintenance.class, 9);
         GlobalStateConsumptionView stateConsumption = StateConsumptionUtils.globalStateConsumption(iter.stage(), this.ecsConstants);
         for (int i = 0; i < iter.count(); i++) {
             CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
             CountryDemographicsView countryDemographics = countryDemographicsField.getMutView(i);
             CountryBudgetPolicyView countryBudgetPolicy = countryBudgetPolicyField.getMutView(i);
             CountryEducationPolicyView countryEducationPolicy = countryEducationPolicyField.getMutView(i);
-            CountryTradePolicyView countryTradePolicy = countryTradePolicyField.getMutView(i);
             CountryBudgetMutView countryBudget = countryBudgetField.getMutView(i);
             CountryBankMutView countryBank = countryBankField.getMutView(i);
             CountryInvestmentMutView countryInvestment = countryInvestmentField.getMutView(i);
@@ -67,14 +64,6 @@ public class CountryBudgetSystem {
             CountryMilitaryView countryMilitary = countryMilitaryField.getMutView(i);
             CountryMaintenanceView countryMaintenance = countryMaintenanceField.getMutView(i);
 
-            double subsidies = 0.0;
-            float tariffRate = countryTradePolicy.tariffRate();
-            if (tariffRate < 0f) {
-                for (int g = 0; g < countryMarket.goodImportedAmountsLength(); g++) {
-                    subsidies += (double) countryMarket.goodImportedAmounts(g) * globalMarket.goodPrices(g) * -tariffRate;
-                }
-            }
-
             double administrationConsumptionCost = StateConsumptionUtils.dailyCost(stateConsumption, countryMarket,
                 StateConsumptionUtils.administrationUnits(countryDemographics, statePostIndex, countryBudgetPolicy), 0f);
             double healthConsumptionCost = StateConsumptionUtils.dailyCost(stateConsumption, countryMarket, 0f,
@@ -82,11 +71,11 @@ public class CountryBudgetSystem {
             double stateConsumptionCost = administrationConsumptionCost + healthConsumptionCost;
             double militarySupplyCost = militarySupplyCost(countryMilitary, countryMarket);
             double maintenanceCost = maintenanceCost(countryMaintenance, countryMarket);
-            double needs = dailyNeeds(incomeTypes, assistedTypes, countryMarket, countryDemographics, countryBudgetPolicy, countryEducationPolicy, statePostIndex, baseWorkforceShares, workforceShareModifier)
-                + subsidies + stateConsumptionCost + militarySupplyCost + maintenanceCost;
+            double needs = dailyNeeds(incomeTypes, assistedTypes, wageEarnerTypes, countryMarket, countryDemographics, countryBudgetPolicy, countryEducationPolicy, statePostIndex, baseWorkforceShares, workforceShareModifier)
+                + stateConsumptionCost + militarySupplyCost + maintenanceCost;
             double revenue = countryMarket.taxRevenue() + countryMarket.tariffRevenue() + countryMarket.profitRevenue();
             double revenueTrend = countryBudget.revenueTrend() > 0.0 ? countryBudget.revenueTrend() + (revenue - countryBudget.revenueTrend()) / trendWeight : revenue;
-            double creditLimit = CREDIT_LIMIT_YEARS * DAYS_PER_YEAR * revenueTrend;
+            double creditLimit = STATE_CREDIT_LIMIT_YEARS * DAYS_PER_YEAR * revenueTrend;
             double postWage = statePostIndex >= 0 ? wageRate(countryMarket, statePostIndex, wageSlider(incomeTypes[statePostIndex], countryBudgetPolicy, countryEducationPolicy)) : 0.0;
             double postSupplies = statePostIndex >= 0 ? StateConsumptionUtils.dailyCost(stateConsumption, countryMarket, slider(countryBudgetPolicy.administrationSpendingRate()), 0f) : 0.0;
             double postNeeds = (statePostIndex >= 0 ? scaledWageBase(countryDemographics, statePostIndex, statePostIndex, incomeTypes[statePostIndex]) * postWage : 0.0)
@@ -158,6 +147,8 @@ public class CountryBudgetSystem {
             double wagesBudget = 0.0;
             double socialBudget = 0.0;
             double pensionBudget = 0.0;
+            double seniors = 0.0;
+            double coveredSeniors = 0.0;
             for (int p = 0; p < POP_TYPE_COUNT; p++) {
                 float popTypeWageRate = 0f;
                 float popTypeSocialRate = 0f;
@@ -170,7 +161,10 @@ public class CountryBudgetSystem {
                 }
                 countryBudget.wageRatesByPopType(p, popTypeWageRate);
                 countryBudget.socialRatesByPopType(p, popTypeSocialRate);
-                float popTypePensionRate = spendingRatio * pensionRate(countryMarket, p, countryBudgetPolicy.pensionRate());
+                float pensionShare = pensionShare(countryBudgetPolicy, wageEarnerTypes[p]);
+                float popTypePensionRate = spendingRatio * pensionRate(countryMarket, p, pensionShare);
+                seniors += countryDemographics.seniorsByPopType(p);
+                coveredSeniors += (double) countryDemographics.seniorsByPopType(p) * pensionShare;
                 pensionBudget += (double) countryDemographics.seniorsByPopType(p) / NEEDS_SCALING_FACTOR * popTypePensionRate;
                 countryBudget.pensionRatesByPopType(p, popTypePensionRate);
             }
@@ -193,11 +187,10 @@ public class CountryBudgetSystem {
             countryBudget.investableSurplus(investableSurplus);
             countryBudget.revenueTrend(revenueTrend);
             countryBudget.spendingRatio(spendingRatio);
-            countryBudget.subsidyAllowance((float) (spendingRatio * subsidies));
             countryBudget.wagesBudget((float) wagesBudget);
             countryBudget.socialBudget((float) socialBudget);
             countryBudget.pensionBudget((float) pensionBudget);
-            countryBudget.pensionCoverage(spendingRatio * countryBudgetPolicy.pensionRate());
+            countryBudget.pensionCoverage(seniors > 0.0 ? (float) (spendingRatio * coveredSeniors / seniors) : 0f);
             countryBudget.stateConsumptionBudget((float) (spendingRatio * healthConsumptionCost + postRatio * administrationConsumptionCost));
             countryBudget.militarySupplyRatio(spendingRatio);
         }

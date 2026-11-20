@@ -15,6 +15,7 @@ public class CountryImportPaymentSystem {
         ecsWorld.system("CountryImportPaymentSystem")
             .kind(phaseId)
             .with(CountryMarket.class)
+            .with(CountryTradePolicy.class)
             .iter(this::pay);
     }
 
@@ -22,18 +23,20 @@ public class CountryImportPaymentSystem {
         EntityView globalMarket = iter.stage().obtainEntityView(this.ecsConstants.globalMarket());
         GlobalMarketMutView globalMarketData = globalMarket.getMutView(GlobalMarket.class);
 
+        int[] tariffCategories = this.ecsConstants.goodTariffCategories();
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
+        Field<CountryTradePolicy> countryTradePolicyField = iter.field(CountryTradePolicy.class, 1);
         for (int i = 0; i < iter.count(); i++) {
             CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
+            CountryTradePolicyView countryTradePolicy = countryTradePolicyField.getMutView(i);
 
-            float effectiveTariffRate = countryMarket.effectiveTariffRate();
             double tariffRevenue = 0.0;
             for (int g = 0; g < countryMarket.goodImportedAmountsLength(); g++) {
                 double importValue = (double) countryMarket.goodImportedAmounts(g) * globalMarketData.goodPrices(g);
                 if (importValue <= 0.0) {
                     continue;
                 }
-                double tariff = importValue * effectiveTariffRate;
+                double tariff = importValue * countryTradePolicy.categoryTariffRates(tariffCategories[g]);
                 globalMarketData.goodTradeMoney(g, globalMarketData.goodTradeMoney(g) + importValue);
                 countryMarket.goodRevenues(g, countryMarket.goodRevenues(g) - importValue - tariff);
                 tariffRevenue += tariff;

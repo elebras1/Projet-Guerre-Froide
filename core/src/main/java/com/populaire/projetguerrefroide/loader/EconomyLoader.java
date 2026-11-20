@@ -45,7 +45,7 @@ public final class EconomyLoader {
                 EntityView good = this.ecsWorld.obtainEntityView(goodId);
                 good.add(this.ecsConstants.ressourceGoodTag());
                 good.set(new Color(this.context.parseColor(resourceGood.color())));
-                good.set(new Good((float) resourceGood.cost(), resourceGood.value().floatValue(), stockDecay(resourceGood)));
+                good.set(new Good((float) resourceGood.cost(), resourceGood.value().floatValue(), stockDecay(resourceGood), tariffCategory(resourceGood)));
                 if (Boolean.FALSE.equals(resourceGood.tradable())) {
                     good.add(this.ecsConstants.localGoodTag());
                 }
@@ -59,7 +59,7 @@ public final class EconomyLoader {
                 EntityView good = this.ecsWorld.obtainEntityView(goodId);
                 good.add(this.ecsConstants.advancedGoodTag());
                 good.set(new Color(this.context.parseColor(advancedGood.color())));
-                good.set(new Good((float) advancedGood.cost(), 1, stockDecay(advancedGood)));
+                good.set(new Good((float) advancedGood.cost(), 1, stockDecay(advancedGood), tariffCategory(advancedGood)));
                 if (Boolean.FALSE.equals(advancedGood.tradable())) {
                     good.add(this.ecsConstants.localGoodTag());
                 }
@@ -74,7 +74,7 @@ public final class EconomyLoader {
                 EntityView good = this.ecsWorld.obtainEntityView(goodId);
                 good.add(this.ecsConstants.serviceGoodTag());
                 good.set(new Color(this.context.parseColor(serviceGood.color())));
-                good.set(new Good((float) serviceGood.cost(), 1, stockDecay(serviceGood)));
+                good.set(new Good((float) serviceGood.cost(), 1, stockDecay(serviceGood), tariffCategory(serviceGood)));
                 if (Boolean.FALSE.equals(serviceGood.tradable())) {
                     good.add(this.ecsConstants.localGoodTag());
                 }
@@ -89,7 +89,7 @@ public final class EconomyLoader {
                 EntityView good = this.ecsWorld.obtainEntityView(goodId);
                 good.add(this.ecsConstants.militaryGoodTag());
                 good.set(new Color(this.context.parseColor(militaryGood.color())));
-                good.set(new Good((float) militaryGood.cost(), 1, stockDecay(militaryGood)));
+                good.set(new Good((float) militaryGood.cost(), 1, stockDecay(militaryGood), tariffCategory(militaryGood)));
                 if (Boolean.FALSE.equals(militaryGood.tradable())) {
                     good.add(this.ecsConstants.localGoodTag());
                 }
@@ -106,6 +106,15 @@ public final class EconomyLoader {
 
     private float stockDecay(GoodJson good) {
         return good.stockDecay() != null ? good.stockDecay().floatValue() : 0f;
+    }
+
+    private int tariffCategory(GoodJson good) {
+        return switch (good.tariffCategory()) {
+            case "food" -> TARIFF_FOOD;
+            case "raw" -> TARIFF_RAW;
+            case "manufactured" -> TARIFF_MANUFACTURED;
+            default -> throw new IllegalArgumentException("Unknown tariff category: " + good.tariffCategory());
+        };
     }
 
     public void loadPopulationTypes(Map<String, PopulationTypeJson> populationTypes) {
@@ -205,6 +214,12 @@ public final class EconomyLoader {
                 populationType.set(new StatePostType((float) statePosts.managementRatio(), (float) statePosts.administrationRatio(),
                     (float) statePosts.taxCollectionFloor(), (float) statePosts.managementOutputBonus()));
                 populationType.add(this.ecsConstants.employeeTag());
+            }
+            if (Boolean.TRUE.equals(populationTypeJson.wageEarner())) {
+                populationType.add(this.ecsConstants.wageEarnerTag());
+            }
+            if (Boolean.FALSE.equals(populationTypeJson.incomeTax())) {
+                populationType.add(this.ecsConstants.incomeTaxExemptTag());
             }
 
             int[] lifeNeedsGoodIndexes = new int[MAX_LIFE_NEEDS_GOODS];

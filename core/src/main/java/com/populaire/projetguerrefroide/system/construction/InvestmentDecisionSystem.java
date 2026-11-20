@@ -19,6 +19,7 @@ import io.github.elebras1.flecs.callback.IterCallback;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.simulation.EcsConstants;
 import com.populaire.projetguerrefroide.system.population.EmploymentUtils;
+import com.populaire.projetguerrefroide.system.population.PopulationMobilityUtils;
 import com.populaire.projetguerrefroide.system.market.MarketUtils;
 
 import java.util.Arrays;
@@ -35,6 +36,7 @@ import static com.populaire.projetguerrefroide.system.construction.ConstructionU
 import static com.populaire.projetguerrefroide.system.construction.ConstructionUtils.startSite;
 import static com.populaire.projetguerrefroide.system.building.OwnerUtils.ownerIndex;
 import static com.populaire.projetguerrefroide.system.building.OwnerUtils.ownerTag;
+import static com.populaire.projetguerrefroide.system.state.StateBudgetUtils.paidOnPosts;
 import static com.populaire.projetguerrefroide.system.state.StateBudgetUtils.stateInterestRate;
 
 public class InvestmentDecisionSystem {
@@ -182,6 +184,7 @@ public class InvestmentDecisionSystem {
     private final Query rgoQuery;
     private final LongIntMap queuedLevels = new LongIntMap();
     private final LongFloatMap reservedWorkers = new LongFloatMap();
+    private float[] ruralPull;
     private final LongObjectMap<LongIntMap> typesByRegion = new LongObjectMap<>();
     private final LongObjectMap<LongFloatMap> parkUsedLevels = new LongObjectMap<>();
     private final LongObjectMap<LongFloatMap> parkLevels = new LongObjectMap<>();
@@ -285,7 +288,7 @@ public class InvestmentDecisionSystem {
                     Candidate candidate = candidates.get(c);
                     int freeLevels = candidate.isMechanization() ? this.rationedLevels(candidate) : candidate.freeLevels();
                     while (freeLevels > 0
-                        && (candidate.isMechanization() || this.availableWorkers(world, candidate, ruralTypes) - reservedWorkers.get(candidate.regionInstanceId()) >= candidate.workersPerLevel())
+                        && (candidate.isMechanization() || this.availableWorkers(world, candidate.regionInstanceId(), candidate.primaryWorkerPopTypeIndex(), candidate.buildingTypeId(), ruralTypes) - reservedWorkers.get(candidate.regionInstanceId()) >= candidate.workersPerLevel())
                         && (parkUtilization(parkUsedLevels, parkLevels, countryId, candidate.buildingTypeId()) >= MINIMUM_UTILIZATION_FOR_EXPANSION
                             ? finance(countryBank, countryInvestment, countryMarket, availableFunds, candidate.owner(), candidate.levelCost(), candidate.annualReturn())
                             : stateOwnedEconomy && candidate.owner() == STATE_OWNER && availableFunds[STATE_OWNER] >= candidate.levelCost())) {
@@ -433,7 +436,7 @@ public class InvestmentDecisionSystem {
             if (regionTypes != null && regionTypes.containsKey(typeReturn.buildingTypeId())) {
                 continue;
             }
-            float workers = this.availableWorkers(world, regionInstanceId, typeReturn.primaryWorkerPopTypeIndex(), ruralTypes) - reservedWorkers.get(regionInstanceId);
+            float workers = this.availableWorkers(world, regionInstanceId, typeReturn.primaryWorkerPopTypeIndex(), typeReturn.buildingTypeId(), ruralTypes) - reservedWorkers.get(regionInstanceId);
             if (workers >= bestWorkers) {
                 bestWorkers = workers;
                 bestRegion = regionInstanceId;
@@ -772,11 +775,26 @@ public class InvestmentDecisionSystem {
         }
     }
 
-    private float availableWorkers(World world, Candidate candidate, boolean[] ruralTypes) {
-        return this.availableWorkers(world, candidate.regionInstanceId(), candidate.primaryWorkerPopTypeIndex(), ruralTypes);
+    private float[] ruralPull(World world) {
+        if (this.ruralPull == null) {
+            float[] pull = new float[POP_TYPE_COUNT * POP_TYPE_COUNT];
+            float[] weights = new float[POP_TYPE_COUNT];
+            GlobalPopulationTypeView globalPopulationType = world.obtainEntityView(this.ecsConstants.globalPopulationType()).getView(GlobalPopulationType.class);
+            for (int p = 0; p < POP_TYPE_COUNT; p++) {
+                long popTypeId = globalPopulationType.popTypeIds(p);
+                if (popTypeId == 0) {
+                    continue;
+                }
+                PopulationTypeView populationType = world.obtainEntityView(popTypeId).getView(PopulationType.class);
+                PopulationMobilityUtils.normalizedWeights(populationType, true, weights);
+                System.arraycopy(weights, 0, pull, p * POP_TYPE_COUNT, POP_TYPE_COUNT);
+            }
+            this.ruralPull = pull;
+        }
+        return this.ruralPull;
     }
 
-    private float availableWorkers(World world, long regionInstanceId, int primaryWorkerPopTypeIndex, boolean[] ruralTypes) {
+    private float availableWorkers(World world, long regionInstanceId, int primaryWorkerPopTypeIndex, long buildingTypeId, boolean[] ruralTypes) {
         EntityView regionInstanceEntity = world.obtainEntityView(regionInstanceId);
         RegionDemographicsView regionDemographics = regionInstanceEntity.getView(RegionDemographics.class);
         RegionInstanceView regionInstance = regionInstanceEntity.getView(RegionInstance.class);
@@ -786,6 +804,22 @@ public class InvestmentDecisionSystem {
         for (int p = 0; p < POP_TYPE_COUNT; p++) {
             if (p == primaryWorkerPopTypeIndex || ruralTypes[p]) {
                 availableWorkers += Math.max(0f, regionDemographics.totalByPopType(p) * EmploymentUtils.activeShare(baseWorkforceShares[p], populationPolicy.workforceShareModifier()) - regionDemographics.employmentByPopType(p));
+            }
+        }
+        float openness = Math.max(0f, 1f - world.obtainEntityView(regionInstance.ownerId()).<CountryPoliticalPolicyView>getView(CountryPoliticalPolicy.class).classRigidity());
+        float buildMonths = (float) world.obtainEntityView(buildingTypeId).<EconomyBuildingTypeView>getView(EconomyBuildingType.class).time() / DAYS_PER_MONTH;
+        float[] ruralPull = this.ruralPull(world);
+        for (int p = 0; p < POP_TYPE_COUNT; p++) {
+            if (ruralTypes[p]) {
+                availableWorkers += regionDemographics.employmentByPopType(p) * PROMOTION_RATE * openness * ruralPull[p * POP_TYPE_COUNT + primaryWorkerPopTypeIndex] * buildMonths;
+            }
+        }
+        boolean[] employeeTypes = this.ecsConstants.employeePopTypes();
+        int[] incomeTypes = this.ecsConstants.incomeTypes();
+        int statePostIndex = world.obtainEntityView(this.ecsConstants.globalPopulationType()).<GlobalPopulationTypeView>getView(GlobalPopulationType.class).statePostPopTypeIndex();
+        for (int p = 0; p < POP_TYPE_COUNT; p++) {
+            if (employeeTypes[p] && !paidOnPosts(p, statePostIndex, incomeTypes[p])) {
+                availableWorkers -= regionInstance.vacanciesByPopType(p);
             }
         }
         return availableWorkers;
