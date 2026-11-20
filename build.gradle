@@ -54,13 +54,15 @@ subprojects {
   }
 
   dependencies {
-    implementation 'io.github.monstroussoftware.gdx-webgpu:gdx-webgpu:-SNAPSHOT'
-    implementation 'io.github.monstroussoftware.gdx-webgpu:backend-desktop-ffm-wgpu:-SNAPSHOT'
+    implementation 'io.github.monstroussoftware.gdx-webgpu:gdx-webgpu:0.8.5'
+    implementation 'io.github.monstroussoftware.gdx-webgpu:backend-desktop-ffm-wgpu:0.8.5'
     implementation 'com.github.tommyettinger:jdkgdxds:2.1.9'
     implementation 'com.dslplatform:dsl-json:2.0.2'
     annotationProcessor 'com.dslplatform:dsl-json:2.0.2'
     implementation 'io.github.elebras1:flecs-java:1.1.1'
     annotationProcessor 'io.github.elebras1:flecs-java:1.1.1'
+    implementation "games.rednblack.miniaudio:miniaudio:0.9"
+    implementation "games.rednblack.miniaudio:gdx-miniaudio-platform:0.9:natives-desktop"
   }
 }
 

@@ -1,0 +1,1036 @@
+{
+  "allies_battle1": {
+    "file": "allies_battle1.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "faction": "allies",
+            "war": true
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "faction": "allies"
+            },
+            "war": false
+          }
+        }
+      ]
+    }
+  },
+  "allies_peace1": {
+    "file": "allies_peace1.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "faction": "allies",
+            "war": false
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "faction": "allies"
+            },
+            "war": true
+          }
+        }
+      ]
+    }
+  },
+  "allies_peace2": {
+    "file": "allies_peace2.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "faction": "allies",
+            "war": false
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "faction": "allies"
+            },
+            "war": true
+          }
+        }
+      ]
+    }
+  },
+  "allies_peace3": {
+    "file": "allies_peace3.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "faction": "allies",
+            "war": false
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "faction": "allies"
+            },
+            "war": true
+          }
+        }
+      ]
+    }
+  },
+  "desertatdusk": {
+    "file": "desertatdusk.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "national_culture": "cul_middle_east"
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "national_culture": "cul_middle_east"
+            }
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "war": true
+          }
+        }
+      ]
+    }
+  },
+  "gradient": {
+    "file": "gradient.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "dissent": 3
+            }
+          }
+        },
+        {
+          "factor": 2,
+          "conditions": {
+            "dissent": 15
+          }
+        }
+      ]
+    }
+  },
+  "apathofdanger": {
+    "file": "apathofdanger.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "dissent": 15
+            }
+          }
+        },
+        {
+          "factor": 2,
+          "conditions": {
+            "dissent": 50
+          }
+        }
+      ]
+    }
+  },
+  "astateofpanic": {
+    "file": "astateofpanic.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "dissent": 50
+            }
+          }
+        },
+        {
+          "factor": 2,
+          "conditions": {
+            "dissent": 100
+          }
+        }
+      ]
+    }
+  },
+  "superpowers": {
+    "file": "superpowers.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "faction": "comintern"
+            }
+          }
+        },
+        {
+          "factor": 2,
+          "conditions": {
+            "faction": "comintern"
+          }
+        }
+      ]
+    }
+  },
+  "gen_war_worldatwar": {
+    "file": "gen_war_worldatwar.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 0,
+          "conditions": {
+            "war": false
+          }
+        },
+        {
+          "factor": 2,
+          "conditions": {
+            "war": true
+          }
+        }
+      ]
+    }
+  },
+  "general_battle1": {
+    "file": "general_battle1.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "not": {
+              "and": [
+                {
+                  "faction": "allies"
+                },
+                {
+                  "faction": "comintern"
+                }
+              ]
+            },
+            "war": true
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "and": [
+              {
+                "faction": "allies"
+              },
+              {
+                "faction": "comintern"
+              },
+              {
+                "war": false
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "meo": {
+    "file": "meo.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 0,
+          "conditions": {
+            "war": true
+          }
+        },
+        {
+          "factor": 2,
+          "conditions": {
+            "war": false
+          }
+        }
+      ]
+    }
+  },
+  "beacon": {
+    "file": "beacon.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 0,
+          "conditions": {
+            "war": true
+          }
+        },
+        {
+          "factor": 2,
+          "conditions": {
+            "war": false
+          }
+        }
+      ]
+    }
+  },
+  "float": {
+    "file": "float.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 0,
+          "conditions": {
+            "war": true
+          }
+        },
+        {
+          "factor": 2,
+          "conditions": {
+            "war": false
+          }
+        }
+      ]
+    }
+  },
+  "waveform": {
+    "file": "waveform.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 0,
+          "conditions": {
+            "war": true
+          }
+        },
+        {
+          "factor": 2,
+          "conditions": {
+            "war": false
+          }
+        }
+      ]
+    }
+  },
+  "neutral1_savedbychoppers": {
+    "file": "neutral1_savedbychoppers.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 0,
+          "conditions": {
+            "war": false
+          }
+        },
+        {
+          "factor": 2,
+          "conditions": {
+            "war": true
+          }
+        }
+      ]
+    }
+  },
+  "orient": {
+    "file": "orient.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "national_culture": "cul_east_asia"
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "national_culture": "cul_east_asia"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "watervapour": {
+    "file": "watervapour.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "national_culture": "cul_east_asia"
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "national_culture": "cul_east_asia"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "spanish_heart": {
+    "file": "spanish_heart.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "national_culture": "cul_latin_america"
+          }
+        },
+        {
+          "factor": 2,
+          "conditions": {
+            "tag": "SPA"
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "or": [
+                {
+                  "national_culture": "cul_latin_america"
+                },
+                {
+                  "tag": "SPA"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "war": true
+          }
+        }
+      ]
+    }
+  },
+  "latin_battle": {
+    "file": "latin_battle.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "national_culture": "cul_latin_america",
+            "war": true
+          }
+        },
+        {
+          "factor": 2,
+          "conditions": {
+            "tag": "SPA",
+            "war": true
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "or": [
+                {
+                  "national_culture": "cul_latin_america"
+                },
+                {
+                  "tag": "SPA"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "war": false
+          }
+        }
+      ]
+    }
+  },
+  "sandstruggle": {
+    "file": "sandstruggle.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "national_culture": "cul_middle_east",
+            "war": true
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "national_culture": "cul_middle_east"
+            }
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "war": false
+          }
+        }
+      ]
+    }
+  },
+  "tranquillite": {
+    "file": "tranquillite.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "tag": "FRA"
+          }
+        },
+        {
+          "factor": 2,
+          "conditions": {
+            "vassal_of": "FRA"
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "or": [
+                {
+                  "tag": "FRA"
+                },
+                {
+                  "vassal_of": "FRA"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "war": true
+          }
+        }
+      ]
+    }
+  },
+  "voicesthroughlights": {
+    "file": "voicesthroughlights.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "national_culture": "cul_western_europe"
+          }
+        },
+        {
+          "factor": 2,
+          "conditions": {
+            "national_culture": "cul_north_america"
+          }
+        },
+        {
+          "factor": 2,
+          "conditions": {
+            "tag": "AST"
+          }
+        },
+        {
+          "factor": 2,
+          "conditions": {
+            "tag": "NZL"
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "or": [
+                {
+                  "national_culture": "cul_western_europe"
+                },
+                {
+                  "national_culture": "cul_north_america"
+                },
+                {
+                  "tag": "AST"
+                },
+                {
+                  "tag": "NZL"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "war": true
+          }
+        }
+      ]
+    }
+  },
+  "russianbattle1": {
+    "file": "russianbattle1.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "faction": "comintern",
+            "war": true
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "faction": "comintern"
+            },
+            "war": false
+          }
+        }
+      ]
+    }
+  },
+  "russianbattle2": {
+    "file": "russianbattle2.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "faction": "comintern",
+            "war": true
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "faction": "comintern"
+            },
+            "war": false
+          }
+        }
+      ]
+    }
+  },
+  "russia_peace1": {
+    "file": "russia_peace1.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "faction": "comintern",
+            "war": false
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "faction": "comintern"
+            },
+            "war": true
+          }
+        }
+      ]
+    }
+  },
+  "russianpeace2_notfinished": {
+    "file": "russianpeace2_notfinished.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "faction": "comintern",
+            "war": false
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "faction": "comintern"
+            },
+            "war": true
+          }
+        }
+      ]
+    }
+  },
+  "russianpeace3": {
+    "file": "russianpeace3.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "faction": "comintern",
+            "war": false
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "faction": "comintern"
+            },
+            "war": true
+          }
+        }
+      ]
+    }
+  },
+  "defcon1": {
+    "file": "defcon1.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "defcon": 1
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "defcon": 1
+            }
+          }
+        }
+      ]
+    }
+  },
+  "defcon2": {
+    "file": "defcon2.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "defcon": 2,
+            "not": {
+              "defcon": 3
+            }
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "defcon": 2
+            }
+          }
+        }
+      ]
+    }
+  },
+  "defcon3": {
+    "file": "defcon3.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "defcon": 3,
+            "not": {
+              "defcon": 4
+            }
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "defcon": 3
+            }
+          }
+        }
+      ]
+    }
+  },
+  "nukeatmosphere": {
+    "file": "nukeatmosphere.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "doomsday_clock": 2
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "doomsday_clock": 2
+            }
+          }
+        }
+      ]
+    }
+  },
+  "gridlock": {
+    "file": "gridlock.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "doomsday_clock": 4,
+            "not": {
+              "doomsday_clock": 2
+            }
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "doomsday_clock": 4
+            }
+          }
+        }
+      ]
+    }
+  },
+  "nonplus": {
+    "file": "nonplus.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "doomsday_clock": 6,
+            "not": {
+              "doomsday_clock": 4
+            }
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "doomsday_clock": 6
+            }
+          }
+        }
+      ]
+    }
+  },
+  "anuncertainfuture": {
+    "file": "anuncertainfuture.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "war": false
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "war": true
+          }
+        }
+      ]
+    }
+  },
+  "tiesarebroken": {
+    "file": "tiesarebroken.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "war": false
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "war": true
+          }
+        }
+      ]
+    }
+  },
+  "democraticrebellion": {
+    "file": "democraticrebellion.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "war": true
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "war": false
+          }
+        }
+      ]
+    }
+  },
+  "non_democraticrebellion": {
+    "file": "non-democraticrebellion.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "has_country_flag": "signed_suspended_elections"
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "has_country_flag": "signed_suspended_elections"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "diminishment": {
+    "file": "diminishment.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "war": true
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "war": false
+          }
+        }
+      ]
+    }
+  },
+  "delightfulpoetry": {
+    "file": "delightfulpoetry.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "has_country_modifier": "signed_the_geneva_convention",
+            "war": false
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "has_country_modifier": "signed_the_geneva_convention"
+            },
+            "war": true
+          }
+        }
+      ]
+    }
+  },
+  "dilemma": {
+    "file": "dilemma.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "has_country_modifier": "pride_of_the_fleet_dead"
+          }
+        },
+        {
+          "factor": 2,
+          "conditions": {
+            "last_naval_battle_loser_losses": 1
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "has_country_modifier": "pride_of_the_fleet_dead"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "responsibilities": {
+    "file": "responsibilities.mp3",
+    "chance": {
+      "modifiers": [
+        {
+          "factor": 2,
+          "conditions": {
+            "is_org_leader": "xun",
+            "war": false
+          }
+        },
+        {
+          "factor": 0,
+          "conditions": {
+            "not": {
+              "is_org_leader": "xun"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ww3": {
+    "file": "ww3.mp3",
+    "chance": {
+      "modifiers": []
+    }
+  }
+}
