@@ -166,7 +166,7 @@ public class RGOModeSystem {
 
     private double value(int mode, int good, CountryMarketView market) {
         float[] costs = this.ecsConstants.goodCosts();
-        double price = this.initial ? costs[good] : market.goodPrices(good);
+        double price = this.initial ? costs[good] : market.goodProducerPrices(good);
         int[] inputs = this.ecsConstants.rgoModeInputGoods()[mode];
         float[] amounts = this.ecsConstants.rgoModeInputAmounts()[mode];
         double inputCost = 0.0;

@@ -43,10 +43,7 @@ public class RGOEmploymentSystem {
 
         ResourceGatheringView firstResourceGathering = resourceGatheringField.getMutView(0);
         int goodIndex = firstResourceGathering.goodIndex();
-        GlobalMarketView globalMarket = iter.stage().obtainEntityView(this.ecsConstants.globalMarket()).getView(GlobalMarket.class);
-        float worldDemand = globalMarket.goodDemandAmounts(goodIndex);
-        float inventory = globalMarket.goodStockAmounts(goodIndex) - globalMarket.goodProductionAmounts(goodIndex);
-        boolean stocksAboveTarget = inventory > STOCK_TARGET_DAYS * worldDemand;
+        boolean stocksAboveTarget = false;
 
         float workerBaseShare = this.ecsConstants.baseWorkforceShares()[workerIndex];
         boolean month = PopulationMobilityUtils.isMobilityDay(iter.stage(), this.ecsConstants);
@@ -63,6 +60,8 @@ public class RGOEmploymentSystem {
                 CountryPopulationPolicyView populationPolicy = country.getView(CountryPopulationPolicy.class);
                 workforceShare = activeShare(workerBaseShare, populationPolicy.workforceShareModifier());
                 countryMarket = country.getView(CountryMarket.class);
+                float inventory = countryMarket.goodStocks(goodIndex) - countryMarket.goodProducedAmounts(goodIndex);
+                stocksAboveTarget = inventory > STOCK_TARGET_DAYS * countryMarket.goodSalesAmounts(goodIndex);
             }
             int activeWorkerAmount = activeWorkers(demographics.totalByPopType(workerIndex), workforceShare);
 
@@ -106,7 +105,7 @@ public class RGOEmploymentSystem {
     private void updateFamilyShare(ResourceGatheringMutView rgo, CountryMarketView countryMarket, int workerIndex, int neededWorkers) {
         float subsistence = SUBSISTENCE_LIFE_SHARE * countryMarket.lifeCostsByPopType(workerIndex) / NEEDS_SCALING_FACTOR;
         float income = rgo.monthWorkerDays() > 0f ? rgo.monthIncome() / rgo.monthWorkerDays()
-            : rgo.workerOutput() * countryMarket.goodPrices(rgo.goodIndex());
+            : rgo.workerOutput() * countryMarket.goodProducerPrices(rgo.goodIndex());
         rgo.monthIncome(0f);
         rgo.monthWorkerDays(0f);
         if (subsistence <= 0f || neededWorkers <= 0) {

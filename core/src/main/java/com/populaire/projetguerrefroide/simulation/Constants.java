@@ -97,7 +97,6 @@ public class Constants {
     public static final String ESPIONAGE_BONUS = "espionage_bonus";
 
     public static float NEEDS_SCALING_FACTOR = 100000f;
-    public static final float SHORTAGE_PRICE_PREMIUM = 0.5f;
     public static final float RECIPE_SWITCH_MARGIN = 0.1f;
     public static final float RGO_ENDOWMENT_SHARE_FARMERS = 0.4f;
     public static final float RGO_ENDOWMENT_SHARE_LABOURERS = 0.4f;
@@ -172,6 +171,8 @@ public class Constants {
     public static final float MAXIMUM_PRICE_RATIO = 4f;
     public static final float STOCK_TARGET_DAYS = 15f;
     public static final float STOCK_ADJUSTMENT_DAYS = 60f;
+    public static final double TRADE_ELASTICITY = 5.0;
+    public static final double TRADE_COST = 2.0;
     public static final float STORAGE_BUY_PRICE_RATIO = 0.5f;
     public static final float STORAGE_SELL_PRICE_RATIO = 1.5f;
     public static final float STORAGE_BUY_RATE = 0.02f;

@@ -60,7 +60,7 @@ public class EconomyBuildingRevenueSystem {
 
             float producedAmount = countryMarket.goodProducedAmounts(outputIndex);
             double revenue = producedAmount > 0f ? countryMarket.goodRevenues(outputIndex) * economyBuilding.production() / producedAmount : 0.0;
-            economyBuilding.unitRevenue(producedAmount > 0f ? (float) (countryMarket.goodRevenues(outputIndex) / producedAmount) : countryMarket.goodPrices(outputIndex));
+            economyBuilding.unitRevenue(producedAmount > 0f ? (float) (countryMarket.goodRevenues(outputIndex) / producedAmount) : countryMarket.goodProducerPrices(outputIndex));
             double treasury = economyBuilding.treasury() + revenue;
 
             float minWageFactor = countryLaborPolicy.minWageFactor();

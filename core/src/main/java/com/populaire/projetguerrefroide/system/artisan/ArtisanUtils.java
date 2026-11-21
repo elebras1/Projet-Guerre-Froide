@@ -38,7 +38,7 @@ public class ArtisanUtils {
     }
 
     public static float marginPerArtisan(EconomyBuildingTypeView buildingType, ArtisanCraftView artisanCraft, CountryMarketView countryMarket) {
-        double value = (double) ARTISAN_OUTPUT_SHARE * buildingType.goodOutputAmount() * countryMarket.goodPrices(buildingType.goodOutputIndex());
+        double value = (double) ARTISAN_OUTPUT_SHARE * buildingType.goodOutputAmount() * countryMarket.goodProducerPrices(buildingType.goodOutputIndex());
         for (int k = 0; k < buildingType.goodInputIndexesLength(); k++) {
             int goodIndex = buildingType.goodInputIndexes(k);
             if (goodIndex < 0) {

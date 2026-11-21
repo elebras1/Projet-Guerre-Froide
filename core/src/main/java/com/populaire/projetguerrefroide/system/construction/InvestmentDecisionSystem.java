@@ -759,7 +759,7 @@ public class InvestmentDecisionSystem {
                 continue;
             }
             double upkeepDaily = baseValue * RGO_MECHANIZATION_UPKEEP_RATE / DAYS_PER_YEAR * upkeepPerBaseValue;
-            double grossAnnual = ((double) extraDaily * countryMarket.goodPrices(good) - upkeepDaily) * DAYS_PER_YEAR;
+            double grossAnnual = ((double) extraDaily * countryMarket.goodProducerPrices(good) - upkeepDaily) * DAYS_PER_YEAR;
             float annualReturn = (float) (grossAnnual * ownerShare / levelCost);
             if (!qualifies(owner, annualReturn, lendingRate)) {
                 continue;

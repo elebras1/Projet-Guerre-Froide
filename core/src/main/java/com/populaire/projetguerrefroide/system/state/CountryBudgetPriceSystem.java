@@ -6,8 +6,7 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.simulation.EcsConstants;
-
-import static com.populaire.projetguerrefroide.simulation.Constants.SHORTAGE_PRICE_PREMIUM;
+import com.populaire.projetguerrefroide.system.market.MarketUtils;
 
 public class CountryBudgetPriceSystem {
     private final EcsConstants ecsConstants;
@@ -35,13 +34,23 @@ public class CountryBudgetPriceSystem {
             CountryTradePolicyView countryTradePolicy = countryTradePolicyField.getMutView(i);
 
             for (int g = 0; g < countryMarket.goodBudgetPricesLength(); g++) {
-                float shortage = 1f - countryMarket.goodDemandSatisfactionRatios(g);
+                float producerPrice = countryMarket.goodProducerPrices(g);
                 if (localGoods[g]) {
-                    countryMarket.goodBudgetPrices(g, countryMarket.goodPrices(g) * (1f + SHORTAGE_PRICE_PREMIUM * shortage));
+                    countryMarket.goodImportShares(g, 0f);
+                    countryMarket.goodBudgetPrices(g, producerPrice);
                     continue;
                 }
+                double ownWeight = countryMarket.goodTradeWeights(g);
+                double foreignWeight = globalMarketData.goodTradeWeights(g) - ownWeight;
                 float tariff = countryTradePolicy.categoryTariffRates(tariffCategories[g]);
-                countryMarket.goodBudgetPrices(g, globalMarketData.goodPrices(g) * (1f + SHORTAGE_PRICE_PREMIUM * shortage) * (1f + tariff));
+                float importShare = MarketUtils.importShare(ownWeight, foreignWeight, tariff);
+                countryMarket.goodImportShares(g, importShare);
+                if (importShare <= 0f) {
+                    countryMarket.goodBudgetPrices(g, producerPrice);
+                    continue;
+                }
+                double foreignPrice = MarketUtils.foreignPrice(globalMarketData, g, ownWeight, producerPrice);
+                countryMarket.goodBudgetPrices(g, (float) ((1f - importShare) * producerPrice + importShare * (1f + tariff) * foreignPrice));
             }
         }
     }

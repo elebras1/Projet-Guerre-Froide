@@ -819,7 +819,7 @@ public class PublicWorksSystem {
         if (province.has(ResourceGathering.class) && province.has(ProvinceInfrastructure.class)) {
             ResourceGatheringView resourceGathering = province.getView(ResourceGathering.class);
             ProvinceInfrastructureView provinceInfrastructure = province.getView(ProvinceInfrastructure.class);
-            baseValue += resourceGathering.production() * countryMarket.goodPrices(resourceGathering.goodIndex()) / (1f + provinceInfrastructure.productionBonus());
+            baseValue += resourceGathering.production() * countryMarket.goodProducerPrices(resourceGathering.goodIndex()) / (1f + provinceInfrastructure.productionBonus());
         }
         ProvinceView provinceData = province.getView(Province.class);
         long regionInstanceId = provinceData.regionInstanceId();

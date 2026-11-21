@@ -32,7 +32,6 @@ public record CountryMarket(
     @FixedArray(length = GOOD_COUNT) float[] goodProducedAmounts,
     @FixedArray(length = GOOD_COUNT) float[] goodConsumedAmounts,
     @FixedArray(length = GOOD_COUNT) float[] goodImportNeeds,
-    @FixedArray(length = GOOD_COUNT) float[] goodExportOffers,
     @FixedArray(length = GOOD_COUNT) float[] goodImportedAmounts,
     @FixedArray(length = GOOD_COUNT) float[] goodExportedAmounts,
     @FixedArray(length = GOOD_COUNT) float[] goodLostAmounts,
@@ -44,5 +43,10 @@ public record CountryMarket(
     double taxRevenue,
     double enterpriseSupport,
     double profitRevenue,
-    @FixedArray(length = GOOD_COUNT) float[] goodReturnedAmounts) {
+    @FixedArray(length = GOOD_COUNT) float[] goodReturnedAmounts,
+    @FixedArray(length = GOOD_COUNT) float[] goodProducerPrices,
+    @FixedArray(length = GOOD_COUNT) float[] goodImportShares,
+    @FixedArray(length = GOOD_COUNT) float[] goodSalesAmounts,
+    @FixedArray(length = GOOD_COUNT) float[] goodDeliveryRatios,
+    @FixedArray(length = GOOD_COUNT) double[] goodTradeWeights) {
 }

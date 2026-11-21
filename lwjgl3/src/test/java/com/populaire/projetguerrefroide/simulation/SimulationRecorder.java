@@ -664,7 +664,7 @@ public class SimulationRecorder implements AutoCloseable {
         this.writer("meta/building_types.csv").header("building_type", "output_good", "primary_worker_pop_type", "secondary_worker_pop_type");
         this.writer("meta/rgo_types.csv").header("good", "worker_pop_type", "slave_pop_type");
 
-        this.writer("world/market.csv").header("tick", "date", "good", "production", "demand", "price", "stock", "offer_total", "need_total", "trade_ratio");
+        this.writer("world/market.csv").header("tick", "date", "good", "production", "demand", "price", "stock", "trade_weight", "foreign_demand", "delivered_weight");
 
         this.writer("country/market.csv").header("tick", "date", "country", "good", "price", "demand", "satisfaction", "stock", "produced", "consumed", "import_need", "imported", "exported", "lost");
         this.writer("country/poor_life.csv").header("year", "date", "country", "adults", "poor_life");
@@ -1150,8 +1150,7 @@ public class SimulationRecorder implements AutoCloseable {
             this.tickRevenueTotal += production * price;
             this.lastPrices[g] = price;
             writer.row(tick, date, this.goodNames[g], production, demand, price, data.goodStockAmounts(g),
-                data.goodOfferTotals(g), data.goodNeedTotals(g), data.goodTradeRatios(g));
-            this.tickTradeMoneyTotal += data.goodTradeMoney(g);
+                data.goodTradeWeights(g), data.goodForeignDemands(g), data.goodDeliveredWeights(g));
         }
     }
 

@@ -34,7 +34,6 @@ public class CountryMarketResetSystem {
                 countryMarket.goodProducedAmounts(g, 0f);
                 countryMarket.goodConsumedAmounts(g, 0f);
                 countryMarket.goodImportNeeds(g, 0f);
-                countryMarket.goodExportOffers(g, 0f);
                 countryMarket.goodImportedAmounts(g, 0f);
                 countryMarket.goodExportedAmounts(g, 0f);
                 countryMarket.goodLostAmounts(g, 0f);

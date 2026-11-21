@@ -37,7 +37,7 @@ public class RGORevenueSystem {
         if (workerWage <= 0f || resourceGathering.workerOutput() <= 0f) {
             return 0f;
         }
-        return (countryMarket.goodPrices(resourceGathering.goodIndex()) * resourceGathering.workerOutput() - workerWage) / workerWage;
+        return (countryMarket.goodProducerPrices(resourceGathering.goodIndex()) * resourceGathering.workerOutput() - workerWage) / workerWage;
     }
 
     private void distribute(Iter iter) {

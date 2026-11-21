@@ -18,7 +18,6 @@ public class ArtisanAllocationSystem {
     private final EcsConstants ecsConstants;
     private final EconomyBuildingTypeView[] buildingTypes = new EconomyBuildingTypeView[MAX_ARTISAN_CRAFTS];
     private final ArtisanCraftView[] artisanCrafts = new ArtisanCraftView[MAX_ARTISAN_CRAFTS];
-    private final float[] gaps = new float[MAX_ARTISAN_CRAFTS];
     private final float[] scores = new float[MAX_ARTISAN_CRAFTS];
     private final float[] weights = new float[MAX_ARTISAN_CRAFTS];
 
@@ -47,12 +46,6 @@ public class ArtisanAllocationSystem {
             artisanCrafts[c] = buildingType.getView(ArtisanCraft.class);
         }
 
-        GlobalMarketView globalMarket = world.obtainEntityView(this.ecsConstants.globalMarket()).getView(GlobalMarket.class);
-        float[] gaps = zeroed(this.gaps);
-        for (int c = 0; c < count; c++) {
-            gaps[c] = MarketUtils.clearingGap(globalMarket, buildingTypes[c].goodOutputIndex(), this.ecsConstants.goodStockDecays()[buildingTypes[c].goodOutputIndex()]);
-        }
-
         float[] scores = zeroed(this.scores);
         float[] weights = zeroed(this.weights);
         Field<RegionArtisans> regionArtisansField = iter.field(RegionArtisans.class, 0);
@@ -68,9 +61,9 @@ public class ArtisanAllocationSystem {
                 countryMarket = country.getView(CountryMarket.class);
                 boolean supported = ArtisanUtils.stateSupported(country.getView(CountryProfitDistributionPolicy.class), countryMarket, country.getView(CountryBudget.class), this.ecsConstants);
                 for (int c = 0; c < count; c++) {
-                    scores[c] = supported ? gaps[c] : ArtisanUtils.marginPerArtisan(buildingTypes[c], artisanCrafts[c], countryMarket);
                     int outputIndex = buildingTypes[c].goodOutputIndex();
-                    weights[c] = countryMarket.goodDemandAmounts(outputIndex) * countryMarket.goodPrices(outputIndex);
+                    scores[c] = supported ? MarketUtils.countryClearingGap(countryMarket, outputIndex) : ArtisanUtils.marginPerArtisan(buildingTypes[c], artisanCrafts[c], countryMarket);
+                    weights[c] = countryMarket.goodSalesAmounts(outputIndex) * countryMarket.goodProducerPrices(outputIndex);
                 }
             }
 

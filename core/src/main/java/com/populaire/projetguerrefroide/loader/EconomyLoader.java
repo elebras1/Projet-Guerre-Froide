@@ -32,7 +32,7 @@ public final class EconomyLoader {
         float startYear = startDate.getYear() + (startDate.getDayOfYear() - 1) / DAYS_PER_YEAR;
         this.ecsWorld.obtainEntity(calendarId).set(new EconomyCalendar(0, startYear));
         long globalMarketId = this.ecsWorld.entity("global_market");
-        this.ecsWorld.obtainEntity(globalMarketId).set(new GlobalMarket(new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new double[GOOD_COUNT], new boolean[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT]));
+        this.ecsWorld.obtainEntity(globalMarketId).set(new GlobalMarket(new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new double[GOOD_COUNT], new double[GOOD_COUNT], new double[GOOD_COUNT], new double[GOOD_COUNT], new double[GOOD_COUNT], new boolean[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT]));
     }
 
     public void loadGoods(GoodsJson goods) {

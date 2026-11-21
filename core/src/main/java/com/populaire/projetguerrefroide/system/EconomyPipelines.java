@@ -110,16 +110,9 @@ public class EconomyPipelines {
     private final CountryTreasuryInitializationSystem countryTreasuryInitializationSystem;
     private final GoodAvailabilityInitializationSystem goodAvailabilityInitializationSystem;
     private final CountryStockInitializationSystem countryStockInitializationSystem;
-    private final WorldMarketTotalsSystem worldMarketTotalsSystem;
-    private final GlobalTradeRatioSystem globalTradeRatioSystem;
-    private final CountryMarketResolveSystem countryMarketResolveSystem;
     private final CountryMarketSpreadSystem countryMarketSpreadSystem;
     private final CountryPurchaseSystem countryPurchaseSystem;
     private final EconomyBuildingPurchaseSystem economyBuildingPurchaseSystem;
-    private final CountryImportPaymentSystem countryImportPaymentSystem;
-    private final CountryExportPayoutSystem countryExportPayoutSystem;
-    private final WorldTradeMoneySettleSystem worldTradeMoneySettleSystem;
-    private final CountryPriceSystem countryPriceSystem;
     private final GlobalMarketResolveSystem globalMarketResolveSystem;
     private final CountryLocalPriceSystem countryLocalPriceSystem;
     private final CountryProductionValueSystem countryProductionValueSystem;
@@ -292,6 +285,7 @@ public class EconomyPipelines {
         this.countryInvestmentResetSystem = new CountryInvestmentResetSystem(ecsWorld, phaseReset);
         this.militarySupplyResetSystem = new MilitarySupplyResetSystem(ecsWorld, phaseReset);
         this.regionIncomeResetSystem = new RegionIncomeResetSystem(ecsWorld, phaseReset);
+        new TradeWeightSystem(ecsWorld, simulationContext.getEcsConstants(), phaseNeedsCosts);
         this.countryBudgetPriceSystem = new CountryBudgetPriceSystem(ecsWorld, simulationContext.getEcsConstants(), phaseNeedsCosts);
         this.needsCostsCalculationSystem = new NeedsCostsCalculationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseNeedsCosts);
         this.militaryBaseCapacitySystem = new MilitaryBaseCapacitySystem(ecsWorld, simulationContext.getEcsConstants(), phaseNeedsCosts);
@@ -314,11 +308,10 @@ public class EconomyPipelines {
         this.maintenanceDemandSystem = new MaintenanceDemandSystem(ecsWorld, phaseConsumption);
         this.strategicStockDemandSystem = new StrategicStockDemandSystem(ecsWorld, phaseConsumption);
         this.militarySupplyDemandSystem = new MilitarySupplyDemandSystem(ecsWorld, phaseConsumption);
-        this.worldMarketTotalsSystem = new WorldMarketTotalsSystem(ecsWorld, simulationContext.getEcsConstants(), phaseMarket);
-        this.globalTradeRatioSystem = new GlobalTradeRatioSystem(ecsWorld, phaseMarket);
-        this.countryMarketResolveSystem = new CountryMarketResolveSystem(ecsWorld, simulationContext.getEcsConstants(), phaseMarket);
+        new TradeDemandSystem(ecsWorld, simulationContext.getEcsConstants(), phaseMarket);
+        new TradeDeliverySystem(ecsWorld, simulationContext.getEcsConstants(), phaseMarket);
+        new TradeSettlementSystem(ecsWorld, simulationContext.getEcsConstants(), phaseMarket);
         this.countryMarketSpreadSystem = new CountryMarketSpreadSystem(ecsWorld, simulationContext.getEcsConstants(), phaseMarket);
-        this.countryPriceSystem = new CountryPriceSystem(ecsWorld, simulationContext.getEcsConstants(), phaseMarket);
         this.countryPurchaseSystem = new CountryPurchaseSystem(ecsWorld, simulationContext.getEcsConstants(), phaseSettlement);
         this.economyBuildingPurchaseSystem = new EconomyBuildingPurchaseSystem(ecsWorld, phaseSettlement);
         this.artisanPurchaseSystem = new ArtisanPurchaseSystem(ecsWorld, phaseSettlement);
@@ -330,9 +323,6 @@ public class EconomyPipelines {
         this.strategicStockPurchaseSystem = new StrategicStockPurchaseSystem(ecsWorld, phaseSettlement);
         this.militarySupplyPurchaseSystem = new MilitarySupplyPurchaseSystem(ecsWorld, phaseSettlement);
         this.militaryOrganisationSystem = new MilitaryOrganisationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseSettlement);
-        this.countryImportPaymentSystem = new CountryImportPaymentSystem(ecsWorld, simulationContext.getEcsConstants(), phaseSettlement);
-        this.countryExportPayoutSystem = new CountryExportPayoutSystem(ecsWorld, simulationContext.getEcsConstants(), phaseSettlement);
-        this.worldTradeMoneySettleSystem = new WorldTradeMoneySettleSystem(ecsWorld, phaseSettlement);
         this.rgoProduceSystem = new RGOProductionSystem(ecsWorld, simulationContext.getEcsConstants(), phaseProduction);
         this.economyBuildingProductionSystem = new EconomyBuildingProductionSystem(ecsWorld, simulationContext.getEcsConstants(), phaseProduction);
         this.artisanProductionSystem = new ArtisanProductionSystem(ecsWorld, simulationContext.getEcsConstants(), phaseProduction);
@@ -344,7 +334,7 @@ public class EconomyPipelines {
         this.goodAvailabilityInitializationSystem = new GoodAvailabilityInitializationSystem(ecsWorld, phaseInitAvailability);
         this.countryStockInitializationSystem = new CountryStockInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInitStock);
         this.rgoMechanizationUpkeepInitializationSystem = new RGOMechanizationUpkeepInitializationSystem(ecsWorld, simulationContext.getEcsConstants(), phaseInitStock);
-        this.globalMarketResolveSystem = new GlobalMarketResolveSystem(ecsWorld, simulationContext.getEcsConstants(), phasePrice);
+        this.globalMarketResolveSystem = new GlobalMarketResolveSystem(ecsWorld, phasePrice);
         this.countryLocalPriceSystem = new CountryLocalPriceSystem(ecsWorld, simulationContext.getEcsConstants(), phasePrice);
         this.countryProductionValueSystem = new CountryProductionValueSystem(ecsWorld, phaseRevenue);
         this.rgoRevenueSystem = new RGORevenueSystem(ecsWorld, simulationContext.getEcsConstants(), phaseRevenue);

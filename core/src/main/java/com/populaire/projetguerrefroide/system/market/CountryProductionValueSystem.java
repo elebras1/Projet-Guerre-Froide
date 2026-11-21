@@ -29,7 +29,7 @@ public class CountryProductionValueSystem {
 
             float productionValue = 0f;
             for(int g = 0; g < countryMarket.goodProducedAmountsLength(); g++) {
-                productionValue += (countryMarket.goodProducedAmounts(g) - stock.releasedAmounts(g)) * countryMarket.goodPrices(g);
+                productionValue += (countryMarket.goodProducedAmounts(g) - stock.releasedAmounts(g)) * countryMarket.goodProducerPrices(g);
             }
             countryMarket.productionValue(productionValue);
         }

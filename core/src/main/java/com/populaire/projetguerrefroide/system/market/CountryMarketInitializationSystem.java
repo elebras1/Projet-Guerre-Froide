@@ -32,6 +32,8 @@ public class CountryMarketInitializationSystem {
                 EntityView good = iter.stage().obtainEntityView(globalGoodData.goodIds(g));
                 GoodView goodData = good.getMutView(Good.class);
                 countryMarket.goodPrices(g, goodData.cost());
+                countryMarket.goodProducerPrices(g, goodData.cost());
+                countryMarket.goodBudgetPrices(g, goodData.cost());
                 countryMarket.goodDemandSatisfactionRatios(g, 1f);
             }
         }
