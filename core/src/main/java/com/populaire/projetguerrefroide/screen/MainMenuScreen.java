@@ -30,6 +30,7 @@ public class MainMenuScreen implements Screen {
     @Override
     public void show() {
         this.mainMenuPresenter.initialize(this.stage);
+        this.uiContext.getAudioContext().playMenuMusic();
     }
 
     @Override

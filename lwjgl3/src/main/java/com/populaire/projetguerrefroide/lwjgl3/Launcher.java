@@ -20,6 +20,7 @@ public class Launcher {
         configuration.setWindowedMode(1080, 720);
         configuration.setTitle("ProjetGuerreFroide");
         configuration.useVsync(true);
+        configuration.disableAudio(true);
         configuration.backendWebGPU = JWebGPUBackend.WGPU;
         //configuration.setFullscreenMode(WgDesktopApplicationConfiguration.getDisplayMode());
         configuration.setWindowIcon("logo32.png");

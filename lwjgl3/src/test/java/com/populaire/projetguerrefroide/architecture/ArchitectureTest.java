@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class ArchitectureTest {
     private static final Path SOURCES = Path.of("..", "core", "src", "main", "java", "com", "populaire", "projetguerrefroide");
     private static final String GAME_PACKAGE = "com.populaire.projetguerrefroide.";
-    private static final List<String> RENDER_PACKAGES = List.of("screen", "ui", "renderer");
+    private static final List<String> RENDER_PACKAGES = List.of("screen", "ui", "renderer", "audio");
     private static final List<String> FORBIDDEN_IMPORTS = List.of(
         "io.github.elebras1.flecs",
         GAME_PACKAGE + "component.",
@@ -30,7 +30,8 @@ public class ArchitectureTest {
         "com.monstrous.gdx.webgpu",
         GAME_PACKAGE + "screen.",
         GAME_PACKAGE + "ui.",
-        GAME_PACKAGE + "renderer.");
+        GAME_PACKAGE + "renderer.",
+        GAME_PACKAGE + "audio.");
 
     @Test
     public void renderPackagesDoNotTouchTheSimulation() throws IOException {

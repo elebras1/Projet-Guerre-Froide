@@ -4,6 +4,7 @@ import com.badlogic.gdx.utils.Disposable;
 import com.populaire.projetguerrefroide.protocol.LoadingStage;
 import com.populaire.projetguerrefroide.protocol.SimulationChannel;
 import com.populaire.projetguerrefroide.protocol.SimulationHeader;
+import com.populaire.projetguerrefroide.protocol.event.EventKind;
 import com.populaire.projetguerrefroide.protocol.event.EventRing;
 import com.populaire.projetguerrefroide.protocol.request.RequestBoard;
 import com.populaire.projetguerrefroide.renderer.MapView;
@@ -51,6 +52,9 @@ public final class GameSession implements Disposable {
         EventRing events = this.channel.events();
         while (events.poll()) {
             this.uiState.version();
+            if (events.kind() == EventKind.COMMAND_REJECTED) {
+                this.uiContext.getAudioContext().playError();
+            }
         }
     }
 

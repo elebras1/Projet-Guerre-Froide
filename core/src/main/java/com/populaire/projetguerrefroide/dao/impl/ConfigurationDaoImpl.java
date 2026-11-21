@@ -2,6 +2,8 @@ package com.populaire.projetguerrefroide.dao.impl;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
+import com.badlogic.gdx.utils.Os;
+import com.badlogic.gdx.utils.SharedLibraryLoader;
 import com.dslplatform.json.DslJson;
 import com.dslplatform.json.JsonWriter;
 import com.github.tommyettinger.ds.ObjectList;
@@ -16,18 +18,18 @@ import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.configuration.TutorialCategory;
 import com.populaire.projetguerrefroide.configuration.TutorialChapter;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.time.LocalDate;
 import java.util.List;
 
 public class ConfigurationDaoImpl implements ConfigurationDao {
     private final DslJson<Object> dslJson;
     private final String commonPath = "common/";
-    private final String settingsPath = "settings/";
+    private final String userPath = SharedLibraryLoader.os == Os.Linux ? ".local/share/ProjetGuerreFroide/" : "Documents/ProjetGuerreFroide/";
     private final String bookmarkJsonFile = this.commonPath + "bookmark.json";
     private final String tutorialsJsonFile = this.commonPath + "tutorials.json";
-    private final String settingsJsonFile = this.settingsPath + "settings.json";
+    private final String settingsJsonFile = this.userPath + "settings.json";
 
     public ConfigurationDaoImpl() {
         this.dslJson = new DslJson<>();
@@ -38,9 +40,8 @@ public class ConfigurationDaoImpl implements ConfigurationDao {
         return this.dslJson.deserialize(type, bytes, bytes.length);
     }
 
-    private FileHandle getSettingsFileHandle(String filePath) {
-        Gdx.files.local(this.settingsPath).mkdirs();
-        return Gdx.files.local(filePath);
+    private FileHandle getSettingsFileHandle() {
+        return Gdx.files.external(this.settingsJsonFile);
     }
 
     @Override
@@ -90,7 +91,7 @@ public class ConfigurationDaoImpl implements ConfigurationDao {
         Settings settings;
 
         try {
-            FileHandle fileHandle = this.getSettingsFileHandle(this.settingsJsonFile);
+            FileHandle fileHandle = this.getSettingsFileHandle();
             if (fileHandle.exists() && fileHandle.length() > 0) {
                 settings = this.readJson(fileHandle, Settings.class);
             } else {
@@ -113,8 +114,8 @@ public class ConfigurationDaoImpl implements ConfigurationDao {
         try {
             JsonWriter writer = this.dslJson.newWriter();
             this.dslJson.serialize(writer, settings);
-            try (FileOutputStream fileOutputStream = new FileOutputStream(Gdx.files.local(this.settingsJsonFile).file())) {
-                writer.toStream(fileOutputStream);
+            try (OutputStream outputStream = this.getSettingsFileHandle().write(false)) {
+                writer.toStream(outputStream);
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();

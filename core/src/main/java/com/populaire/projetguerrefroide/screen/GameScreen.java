@@ -116,6 +116,7 @@ public class GameScreen implements Screen, GameInputListener, GameFlowHandler {
     @Override
     public void onClick(int x, int y) {
         int provinceIndex = this.session.mapView().provinceIndexAt(x, y);
+        this.uiContext.getAudioContext().playClick();
         this.session.uiState().selectProvince(provinceIndex);
         this.session.mapView().highlightProvince(provinceIndex);
         this.provincePanelPresenter.open(provinceIndex);
@@ -181,6 +182,7 @@ public class GameScreen implements Screen, GameInputListener, GameFlowHandler {
     @Override
     public void show() {
         this.uiContext.getCursorManager().defaultCursor();
+        this.uiContext.getAudioContext().playGameMusic();
     }
 
     @Override

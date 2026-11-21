@@ -27,6 +27,18 @@ public class ProjetGuerreFroide extends Game {
     }
 
     @Override
+    public void pause() {
+        super.pause();
+        this.uiContext.getAudioContext().pause();
+    }
+
+    @Override
+    public void resume() {
+        this.uiContext.getAudioContext().resume();
+        super.resume();
+    }
+
+    @Override
     public void dispose() {
         this.screenManager.dispose();
         this.uiContext.dispose();

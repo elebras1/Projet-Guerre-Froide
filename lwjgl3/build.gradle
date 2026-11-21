@@ -80,6 +80,7 @@ jar {
   from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
 // these "exclude" lines remove some unnecessary duplicate files in the output JAR.
   exclude('META-INF/INDEX.LIST', 'META-INF/*.SF', 'META-INF/*.DSA', 'META-INF/*.RSA')
+  exclude('music/*.mp3')
   dependencies {
     exclude('META-INF/INDEX.LIST', 'META-INF/maven/**')
   }
@@ -105,6 +106,10 @@ construo {
   roast {
     useZgc.set(false)
     vmArgs.addAll("-XX:+UseCompactObjectHeaders", "--enable-native-access=ALL-UNNAMED")
+  }
+
+  rootProject.file('assets/music').eachFileMatch(~/.*\.mp3/) { track ->
+    packageFiles.put("music/${track.name}".toString(), rootProject.layout.projectDirectory.file("assets/music/${track.name}"))
   }
 
   targets.configure {

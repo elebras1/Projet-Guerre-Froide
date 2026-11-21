@@ -13,6 +13,7 @@ a refactored political and law system, and simplified warfare mechanics.
 ## Stack
 - libGDX
 - gdx-webgpu
+- gdx-miniaudio
 - flecs-java
 
 ## License

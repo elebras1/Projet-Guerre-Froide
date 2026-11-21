@@ -4,6 +4,7 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.Disposable;
 import com.github.tommyettinger.ds.ObjectObjectMap;
+import com.populaire.projetguerrefroide.audio.AudioContext;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.configuration.Bookmark;
 import com.populaire.projetguerrefroide.ui.widget.ColorDrawablePool;
@@ -15,15 +16,17 @@ public class UiContext implements Disposable {
     private final Bookmark bookmark;
     private final AssetManager assetManager;
     private final CursorManager cursorManager;
+    private final AudioContext audioContext;
     private final Skin skinFonts;
     private final ColorDrawablePool colorTexturePool;
     private final Map<String, String> localisation;
     private Settings settings;
 
-    public UiContext(Bookmark bookmark, AssetManager assetManager, CursorManager cursorManager, Settings settings, Skin skinFonts) {
+    public UiContext(Bookmark bookmark, AssetManager assetManager, CursorManager cursorManager, AudioContext audioContext, Settings settings, Skin skinFonts) {
         this.bookmark = bookmark;
         this.assetManager = assetManager;
         this.cursorManager = cursorManager;
+        this.audioContext = audioContext;
         this.skinFonts = skinFonts;
         this.colorTexturePool = new ColorDrawablePool();
         this.localisation = new ObjectObjectMap<>();
@@ -40,6 +43,10 @@ public class UiContext implements Disposable {
 
     public CursorManager getCursorManager() {
         return this.cursorManager;
+    }
+
+    public AudioContext getAudioContext() {
+        return this.audioContext;
     }
 
     public Skin getSkinFonts() {
@@ -70,5 +77,6 @@ public class UiContext implements Disposable {
     public void dispose() {
         this.assetManager.dispose();
         this.cursorManager.dispose();
+        this.audioContext.dispose();
     }
 }

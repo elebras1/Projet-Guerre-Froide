@@ -19,6 +19,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.SpriteDrawable;
 import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
 import com.badlogic.gdx.utils.Align;
+import com.populaire.projetguerrefroide.audio.AudioContext;
 import com.populaire.projetguerrefroide.ui.UiContext;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.Skins;
 import com.populaire.projetguerrefroide.ui.skin.SkinNames.UiScrollbarsSkin;
@@ -144,7 +145,7 @@ public class UiBuilder {
     }
 
     public void onClick(Actor actor, Runnable action) {
-        actor.addListener(new UiClick(action));
+        actor.addListener(new UiClick(this.context.getAudioContext(), action));
     }
 
     public void onChange(Actor actor, Runnable action) {
@@ -164,7 +165,7 @@ public class UiBuilder {
         window.shortcut(owner, keycode, () -> {
             for (EventListener listener : owner.getListeners()) {
                 if (listener instanceof UiClick click) {
-                    click.action.run();
+                    click.run();
                 }
             }
         });
@@ -180,15 +181,22 @@ public class UiBuilder {
     }
 
     private static final class UiClick extends ClickListener {
+        private final AudioContext audioContext;
         private final Runnable action;
 
-        private UiClick(Runnable action) {
+        private UiClick(AudioContext audioContext, Runnable action) {
+            this.audioContext = audioContext;
             this.action = action;
+        }
+
+        private void run() {
+            this.audioContext.playClick();
+            this.action.run();
         }
 
         @Override
         public void clicked(InputEvent event, float x, float y) {
-            this.action.run();
+            this.run();
         }
     }
 

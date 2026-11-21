@@ -7,8 +7,11 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.ObjectMap;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.monstrous.gdx.webgpu.assets.WgAssetManager;
+import com.populaire.projetguerrefroide.audio.AudioContext;
+import com.populaire.projetguerrefroide.dao.AudioDao;
 import com.populaire.projetguerrefroide.dao.ConfigurationDao;
 import com.populaire.projetguerrefroide.dao.LocalisationDao;
+import com.populaire.projetguerrefroide.dao.impl.AudioDaoImpl;
 import com.populaire.projetguerrefroide.dao.impl.ConfigurationDaoImpl;
 import com.populaire.projetguerrefroide.dao.impl.LocalisationDaoImpl;
 import com.populaire.projetguerrefroide.configuration.Bookmark;
@@ -25,10 +28,12 @@ public class UiResources {
     private static final Pattern FONT_SIZE = Pattern.compile("(_[0-9]{2})");
     private final ConfigurationDao configurationDao;
     private final LocalisationDao localisationDao;
+    private final AudioDao audioDao;
 
     public UiResources() {
         this.configurationDao = new ConfigurationDaoImpl();
         this.localisationDao = new LocalisationDaoImpl();
+        this.audioDao = new AudioDaoImpl();
     }
 
     public UiContext getUiContext() {
@@ -37,9 +42,10 @@ public class UiResources {
         this.loadInitialAssets(assetManager);
         CursorManager cursorManager = new CursorManager();
         Settings settings = this.configurationDao.loadSettings();
+        AudioContext audioContext = new AudioContext(settings, this.audioDao.readSongs());
         Skin skinFonts = assetManager.get(Skins.FONTS);
         this.applyLanguageFonts(skinFonts, settings.getLanguage());
-        return new UiContext(bookmark, assetManager, cursorManager, settings, skinFonts);
+        return new UiContext(bookmark, assetManager, cursorManager, audioContext, settings, skinFonts);
     }
 
     private void applyLanguageFonts(Skin skinFonts, String language) {

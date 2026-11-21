@@ -33,9 +33,18 @@ public class SettingsAudioTab extends UiWindow {
         this.effectvolumeSlider = ui.slider(this, 33f, 192f, 305f, 12f, UiAnchor.UPPER_LEFT, 0f, 100f, 1f, 20f);
         this.musicvolumeLabel = ui.label(this, "MUSIC_VOLUME", FontsSkin.Styles.Label.JOCKEY_14_GLOW_BLUE, 31f, 225f, 306f, 18f, Align.top, UiAnchor.UPPER_LEFT);
         this.musicvolumeSlider = ui.slider(this, 33f, 253f, 305f, 12f, UiAnchor.UPPER_LEFT, 0f, 100f, 1f, 20f);
-        ui.onChange(this.mastervolumeSlider, () -> this.settings.setMasterVolume((short) this.mastervolumeSlider.getValue()));
-        ui.onChange(this.effectvolumeSlider, () -> this.settings.setEffectsVolume((short) this.effectvolumeSlider.getValue()));
-        ui.onChange(this.musicvolumeSlider, () -> this.settings.setMusicVolume((short) this.musicvolumeSlider.getValue()));
+        ui.onChange(this.mastervolumeSlider, () -> {
+            this.settings.setMasterVolume((short) this.mastervolumeSlider.getValue());
+            this.applyVolumes();
+        });
+        ui.onChange(this.effectvolumeSlider, () -> {
+            this.settings.setEffectsVolume((short) this.effectvolumeSlider.getValue());
+            this.applyVolumes();
+        });
+        ui.onChange(this.musicvolumeSlider, () -> {
+            this.settings.setMusicVolume((short) this.musicvolumeSlider.getValue());
+            this.applyVolumes();
+        });
     }
 
     public void bind(Settings settings) {
@@ -43,5 +52,9 @@ public class SettingsAudioTab extends UiWindow {
         this.mastervolumeSlider.setValue(settings.getMasterVolume());
         this.effectvolumeSlider.setValue(settings.getEffectsVolume());
         this.musicvolumeSlider.setValue(settings.getMusicVolume());
+    }
+
+    private void applyVolumes() {
+        this.ui.context().getAudioContext().applyVolumes(this.settings);
     }
 }
